@@ -11,7 +11,7 @@ This tutorial set was created using the Sphinx documentation package built with 
 **To Download the Tutorials**
 
 - Click on the Code button above.
-- Select Download zip, this will save a file ``Calculus-Tutorials-main.zip`` to your computer.
+- Select Download ZIP, this will save a file ``Calculus-Tutorials-main.zip`` to your computer.
 - Extract the contents of the file.
 - Go into the ``CalculusTutorials`` directory and open the ``CalculusTutorials.html`` file in your web browser.
 

@@ -1,0 +1,866 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Antiderivatives and The Indefinite Integral &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/indefint';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integral Calculus" href="../IntCalc/index.html" />
+    <link rel="prev" title="Newton’s Method" href="newton.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Antiderivatives and The Indefinite Integral</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="antiderivatives-and-the-indefinite-integral">
+<h1><span class="target" id="index-0"></span>Antiderivatives and The Indefinite Integral<a class="headerlink" href="#antiderivatives-and-the-indefinite-integral" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>We have seen that derivatives have numerous applications.  One of the first was velocity and acceleration.  We know that if we have a function <span class="math notranslate nohighlight">\(s(t)\)</span> that represents the position of an object over time then the velocity is <span class="math notranslate nohighlight">\(v(t) = s'(t)\)</span>.  Furthermore, the acceleration of the object is <span class="math notranslate nohighlight">\(a(t) = v'(t) = s''(t)\)</span>.  Let’s turn this around a little.  What if we had a function that represented velocity <span class="math notranslate nohighlight">\(v(t)\)</span>, such as a monitor that recorded your car’s speedometer as you were driving, can we find a function <span class="math notranslate nohighlight">\(s(t)\)</span> that represents the position of the object?  If we can we would have to have a process that undoes the derivative in some way and apply that process to the velocity function.  We would need to develop a process that takes a rate of change and produces a total change.</p>
+<p>As you would guess, of course there is a process to undo the derivative, this is the main topic in integral calculus but also has applications in differential calculus.  The process is called antidifferentiation or integration.</p>
+<section id="antiderivatives">
+<h3>Antiderivatives<a class="headerlink" href="#antiderivatives" title="Link to this heading">#</a></h3>
+<p>Basically we call a function <span class="math notranslate nohighlight">\(F\)</span> an antiderivative of a function <span class="math notranslate nohighlight">\(f\)</span> if <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span>.</p>
+<div class="admonition-definition-antiderivative admonition">
+<p class="admonition-title">Definition: Antiderivative</p>
+<p>A function <span class="math notranslate nohighlight">\(F\)</span> is an antiderivative of the function <span class="math notranslate nohighlight">\(f\)</span> if</p>
+<div class="math notranslate nohighlight">
+\[F'(x) = f(x)\]</div>
+<p>for all <span class="math notranslate nohighlight">\(x\)</span> in the domain of <span class="math notranslate nohighlight">\(f.\)</span></p>
+</div>
+<p><strong>Example:</strong> As an easy example, we know that <span class="math notranslate nohighlight">\(\frac{d}{dx}\left( x^2 \right) = 2x\)</span>. Turning this around into the language of antiderivatives, an antiderivative of <span class="math notranslate nohighlight">\(2x\)</span> is <span class="math notranslate nohighlight">\(x^2\)</span>.  Notice that we are saying <em>an</em> antiderivative and not <em>the</em> antiderivative.  Note that <span class="math notranslate nohighlight">\(x^2 + 1\)</span> is also an antiderivative of <span class="math notranslate nohighlight">\(2x\)</span>, so is <span class="math notranslate nohighlight">\(x^2 + 7\)</span>, <span class="math notranslate nohighlight">\(x^2 -1234.5678\)</span>, <span class="math notranslate nohighlight">\(x^2 + \frac{23}{47}\)</span> , and <span class="math notranslate nohighlight">\(x^2 + \pi.\)</span>  In general, <span class="math notranslate nohighlight">\(x^2 + C\)</span> is an antiderivative of <span class="math notranslate nohighlight">\(2x\)</span> where <em>C</em> is any constant.</p>
+<p>The above example should not be any surprise since we had a corollary to the Mean Value Theorem that stated just this.  Recall,</p>
+<div class="admonition-corollary-constant-difference-theorem admonition">
+<p class="admonition-title">Corollary: Constant Difference Theorem</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are differentiable over an interval <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(f'(x) = g'(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in I\)</span>, then <span class="math notranslate nohighlight">\(f(x) = g(x) + C\)</span> for some constant <span class="math notranslate nohighlight">\(C\)</span>.</p>
+</div>
+<p>In our language of antiderivatives, this corollary is saying that any two antiderivatives of the same function differ by a constant.  With this observation we can formalize the general form of an antiderivative.</p>
+<div class="admonition-theorem-general-form-of-an-antiderivative admonition">
+<p class="admonition-title">Theorem: General Form of an Antiderivative</p>
+<p>Let <span class="math notranslate nohighlight">\(F\)</span> be an antiderivative of <span class="math notranslate nohighlight">\(f\)</span> over an interval <span class="math notranslate nohighlight">\(I\)</span>. Then,</p>
+<ol class="lowerroman simple">
+<li><p>For each constant <span class="math notranslate nohighlight">\(C,\)</span> the function <span class="math notranslate nohighlight">\(F(x) + C\)</span> is also an antiderivative of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(G\)</span> is an antiderivative of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(I\)</span>, there is a constant <span class="math notranslate nohighlight">\(C\)</span> for which <span class="math notranslate nohighlight">\(G(x) = F(x) + C\)</span> over <span class="math notranslate nohighlight">\(I\)</span>.</p></li>
+</ol>
+</div>
+<p>In other words, the most general form of the antiderivative of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(I\)</span> is <span class="math notranslate nohighlight">\(F(x) + C.\)</span></p>
+</section>
+<section id="the-indefinite-integral">
+<h3>The Indefinite Integral<a class="headerlink" href="#the-indefinite-integral" title="Link to this heading">#</a></h3>
+<p>As you would expect this undoing process is very important and has as many applications as does differentiation and we do not want to keep writing “is an antiderivative of …” each time so we will adopt some notation and another name for the general antiderivative.</p>
+<div class="admonition-definition-indefinite-integral admonition">
+<p class="admonition-title">Definition: Indefinite Integral</p>
+<p>Given a function <span class="math notranslate nohighlight">\(f\)</span>, the indefinite integral of <span class="math notranslate nohighlight">\(f\)</span>, denoted</p>
+<div class="math notranslate nohighlight">
+\[\int f(x) \; dx\]</div>
+<p>is the most general antiderivative of <span class="math notranslate nohighlight">\(f\)</span>. If <span class="math notranslate nohighlight">\(F\)</span> is an antiderivative of <span class="math notranslate nohighlight">\(f\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\int f(x) \; dx = F(x) + C\]</div>
+<p>The expression <span class="math notranslate nohighlight">\(f(x)\)</span> is called the integrand and the variable <span class="math notranslate nohighlight">\(x\)</span> is the <em>variable of integration</em>.</p>
+</div>
+<p>A couple things to notice about the indefinite integral (and hence the general antiderivative) is that the result is an infinite family of functions (and hence curves).  Taking the example above,</p>
+<div class="math notranslate nohighlight">
+\[\int 2x \; dx = x^2 + C\]</div>
+<p>A few members if the family of solutions are picture below.  For all of them you need to consider every real number <em>C</em>.</p>
+<figure class="align-default" id="id1">
+<img alt="Family of Antiderivatives" src="../_images/IndefInt001.png" />
+<figcaption>
+<p><span class="caption-text">Family of Antiderivatives</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="the-integral-formulas">
+<h3>The Integral Formulas<a class="headerlink" href="#the-integral-formulas" title="Link to this heading">#</a></h3>
+<p>So if we are to do this process by hand, or by computer, we need to know some formulas for integration just like we developed for differentiation.  The nifty part is that every differentiation formal produces a corresponding integration formula, just by interchanging the roles of the expressions.  We will cover the basics formulas here and the more advanced techniques of undoing a product rule or a chain rules will be the topic of the techniques of integration section in the Integral Calculus part of these tutorials.</p>
+<section id="basic-rules">
+<h4>Basic Rules<a class="headerlink" href="#basic-rules" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+{\rm\bf Derivative \; Formula} &amp; {\rm\bf Integral \; Formula} \\ \hline
+\displaystyle \frac{d}{dx} \left(c \right) = 0 &amp; \displaystyle \int k \; dx = kx + C \\
+\displaystyle \frac{d}{dx} \left(x^n \right) = n x^{n-1} &amp; \displaystyle \int x^n \; dx = \frac{x^{n+1}}{n+1} + C {\;\; \rm for \;\;} n \neq -1\\
+\end{array}\end{split}\]</div>
+</section>
+<section id="exponential-logarithmic-rules">
+<h4>Exponential &amp; Logarithmic Rules<a class="headerlink" href="#exponential-logarithmic-rules" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+{\rm\bf Derivative \; Formula} &amp; {\rm\bf Integral \; Formula} \\ \hline
+\displaystyle \frac{d}{dx} \left(e^x \right) = e^x &amp; \displaystyle \int e^k \; dx = e^x + C \\
+\displaystyle \frac{d}{dx} \left(a^x \right) = a^x \ln(a) &amp; \displaystyle \int a^x \; dx = \frac{a^x}{\ln(a)} + C \\
+\displaystyle \frac{d}{dx} \left(\ln|x| \right) = \frac{1}{x} &amp; \displaystyle \int \frac{1}{x} \; dx = \ln|x| + C \\
+\displaystyle \frac{d}{dx} \left(\log_b|x| \right) = \frac{1}{x \ln(b)} &amp; \displaystyle \int \frac{1}{x \ln(b)} \; dx = \log_b|x| + C \\
+\end{array}\end{split}\]</div>
+</section>
+<section id="trigonometric-rules">
+<h4>Trigonometric Rules<a class="headerlink" href="#trigonometric-rules" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+{\rm\bf Derivative \; Formula} &amp; {\rm\bf Integral \; Formula} \\ \hline
+\displaystyle \frac{d}{dx} \left(\sin(x) \right) = \cos(x) &amp; \displaystyle \int \cos(x) \; dx = \sin(x) + C \\
+\displaystyle \frac{d}{dx} \left(\cos(x) \right) = -\sin(x) &amp; \displaystyle \int \sin(x) \; dx = -\cos(x) + C \\
+\displaystyle \frac{d}{dx} \left(\tan(x) \right) = \sec^2(x) &amp; \displaystyle \int \sec^2(x) \; dx = \tan(x) + C \\
+\displaystyle \frac{d}{dx} \left(\cot(x) \right) = -\csc^2(x) &amp; \displaystyle \int \csc^2(x) \; dx = -\cot(x) + C \\
+\displaystyle \frac{d}{dx} \left(\sec(x) \right) = \sec(x)\tan(x) &amp; \displaystyle \int \sec(x)\tan(x) \; dx = \sec(x) + C \\
+\displaystyle \frac{d}{dx} \left(\csc(x) \right) = -\csc(x)\cot(x) &amp; \displaystyle \int \csc(x)\cot(x) \; dx = -\csc(x) + C \\
+\end{array}\end{split}\]</div>
+</section>
+<section id="inverse-trigonometric-rules">
+<h4>Inverse Trigonometric Rules<a class="headerlink" href="#inverse-trigonometric-rules" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+{\rm\bf Derivative \; Formula} &amp; {\rm\bf Integral \; Formula} \\ \hline
+\displaystyle \frac{d}{dx} \left(\sin^{-1}(x) \right) = \frac{1}{\sqrt{1-x^2}} &amp; \displaystyle \int \frac{1}{\sqrt{1-x^2}} \; dx = \sin^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\cos^{-1}(x) \right) = -\frac{1}{\sqrt{1-x^2}} &amp; \displaystyle \int \frac{1}{\sqrt{1-x^2}} \; dx = -\cos^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\tan^{-1}(x) \right) = \frac{1}{1+x^2} &amp; \displaystyle \int \frac{1}{1+x^2} \; dx = \tan^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\cot^{-1}(x) \right) = -\frac{1}{1+x^2} &amp; \displaystyle \int \frac{1}{1+x^2} \; dx = -\cot^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\sec^{-1}(x) \right) = \frac{1}{x \sqrt{x^2 - 1}} &amp; \displaystyle \int \frac{1}{x \sqrt{x^2 - 1}} \; dx = \sec^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\csc^{-1}(x) \right) = -\frac{1}{x \sqrt{x^2 - 1}} &amp; \displaystyle \int \frac{1}{x \sqrt{x^2 - 1}} \; dx = -\csc^{-1}(x) + C \\
+\end{array}\end{split}\]</div>
+</section>
+<section id="hyperbolic-rules">
+<h4>Hyperbolic Rules<a class="headerlink" href="#hyperbolic-rules" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+{\rm\bf Derivative \; Formula} &amp; {\rm\bf Integral \; Formula} \\ \hline
+\displaystyle \frac{d}{dx} \left(\sinh(x) \right) = \cosh(x) &amp; \displaystyle \int \cosh(x) \; dx = \sinh(x) + C \\
+\displaystyle \frac{d}{dx} \left(\cosh(x) \right) = \sinh(x) &amp; \displaystyle \int \sinh(x) \; dx = \cosh(x) + C \\
+\displaystyle \frac{d}{dx} \left(\tanh(x) \right) = \text{sech}^2(x) &amp; \displaystyle \int \text{sech}^2(x) \; dx = \tanh(x) + C \\
+\displaystyle \frac{d}{dx} \left(\coth(x) \right) = -\text{csch}^2(x) &amp; \displaystyle \int \text{csch}^2(x) \; dx = - \coth(x) + C \\
+\displaystyle \frac{d}{dx} \left(\text{sech}(x) \right) = -\text{sech}(x)\tanh(x) &amp; \displaystyle \int \text{sech}(x)\tanh(x) \; dx = - \text{sech}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\text{csch}(x) \right) = -\text{csch}(x)\coth(x) &amp; \displaystyle \int \text{csch}(x)\coth(x) \; dx = - \text{csch}(x) + C \\
+\end{array}\end{split}\]</div>
+</section>
+<section id="inverse-hyperbolic-rules">
+<h4>Inverse Hyperbolic Rules<a class="headerlink" href="#inverse-hyperbolic-rules" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+{\rm\bf Derivative \; Formula} &amp; {\rm\bf Integral \; Formula} \\ \hline
+\displaystyle \frac{d}{dx} \left(\sinh^{-1}(x) \right) = \frac{1}{\sqrt{1+x^2}} &amp; \displaystyle \int \frac{1}{\sqrt{1+x^2}} \; dx = \sinh^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\cosh^{-1}(x) \right) = \frac{1}{\sqrt{x^2 - 1}} &amp; \displaystyle \int \frac{1}{\sqrt{x^2 - 1}} \; dx = \cosh^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\tanh^{-1}(x) \right) = \frac{1}{1-x^2} &amp; \displaystyle \int \frac{1}{1-x^2} \; dx = \tanh^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\coth^{-1}(x) \right) = \frac{1}{1-x^2} &amp; \displaystyle \int \frac{1}{1-x^2} \; dx = \coth^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\text{sech}^{-1}(x) \right) = - \frac{1}{x\sqrt{1-x^2}} &amp; \displaystyle \int \frac{1}{x\sqrt{1-x^2}} \; dx = -\text{sech}^{-1}(x) + C \\
+\displaystyle \frac{d}{dx} \left(\text{csch}^{-1}(x) \right) = - \frac{1}{|x|\sqrt{x^2 + 1}} &amp; \displaystyle \int \frac{1}{|x|\sqrt{x^2 + 1}} \; dx = -\text{csch}^{-1}(x) + C \\
+\end{array}\end{split}\]</div>
+</section>
+<section id="arithmetic-rules">
+<h4>Arithmetic Rules<a class="headerlink" href="#arithmetic-rules" title="Link to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+{\rm\bf Derivative \; Formula} &amp; {\rm\bf Integral \; Formula} \\ \hline
+\displaystyle \frac{d}{dx} \left(c f(x)  \right) = c f'(x) &amp; \displaystyle \int c f(x) \; dx =  c \int f(x) \; dx \\
+\displaystyle \frac{d}{dx} \left(f(x) + g(x) \right) = f'(x) + g'(x) &amp; \displaystyle \int f(x) + g(x) \; dx =  \int f(x) \; dx + \int g(x) \; dx \\
+\displaystyle \frac{d}{dx} \left(f(x) - g(x) \right) = f'(x) - g'(x) &amp; \displaystyle \int f(x) - g(x) \; dx =  \int f(x) \; dx - \int g(x) \; dx \\
+\end{array}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Onr thing to note about these formulas is that in some cases you can use different formulas for the same integrand.  So when you are using a CAS to so an integral the result might not be what you expect.  In other cases the CAS might use a different technique to find the integral.  For example, in CLAE</p>
+<div class="math notranslate nohighlight">
+\[\int \frac{1}{x^{2} + 1} \; dx = \tan^{-1}(x) + C\]</div>
+<p>so it uses the arc tangent and not the arc cotangent.  Also,</p>
+<div class="math notranslate nohighlight">
+\[\int \frac{1}{1 - x^{2}} = - \frac{\ln{\left(x - 1 \right)}}{2} + \frac{\ln{\left(x + 1 \right)}}{2} +C\]</div>
+<p>so it used partial fractions instead of one of the formulas above.</p>
+</div>
+</section>
+</section>
+<section id="initial-value-problems">
+<h3>Initial-Value Problems<a class="headerlink" href="#initial-value-problems" title="Link to this heading">#</a></h3>
+<p>One application we can do at this point is solve some simple initial-value problems.  An initial-value problem is a particular type of problem you encounter in an area of mathematics known as Differential Equations.  A differential equation is simply an equation with derivatives in it amd your goal is to find a function or all functions that satisfy the equation.  For example,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{d}{d x} f{\left(x \right)} + \frac{d^{2}}{d x^{2}} f{\left(x \right)} = 0\]</div>
+<p>is a differential equation.  The solution to this equation is</p>
+<div class="math notranslate nohighlight">
+\[f{\left(x \right)} = C_{1} + C_{2} e^{x}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C_{1}\)</span> and <span class="math notranslate nohighlight">\(C_{2}\)</span> are arbitrary constants.  Both the first and second derivatives of this function are <span class="math notranslate nohighlight">\(C_{2} e^{x}\)</span>, so</p>
+<div class="math notranslate nohighlight">
+\[- \frac{d}{d x} f{\left(x \right)} + \frac{d^{2}}{d x^{2}} f{\left(x \right)} = - C_{2} e^{x} + C_{2} e^{x} = 0\]</div>
+<p>Hence it solves the differential equation.</p>
+<p>Note in our example above the solution had arbitrary constants in it.  So there is an infinite family of solutions to this equation just like there is for an integral.  If we knew some specific details about the function <span class="math notranslate nohighlight">\(f(x)\)</span> we might be able to find particular solutions for <span class="math notranslate nohighlight">\(C_{1}\)</span> and <span class="math notranslate nohighlight">\(C_{2}\)</span>.  This is where initial-value problems come in.  These include a differential equation and extra information so we can find a particular solution from the family of solutions.  We will not be looking at differential equations that are as difficult as the one above, ours will be of the form,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx}\left( f(x) \right) = g(x)  \quad {\rm or \; equivalently } \quad \frac{dy}{dx} = f(x)\]</div>
+<p>and we will have some more information, such as <span class="math notranslate nohighlight">\(y(0) = 5\)</span>.  With differential equations like these the solution is simply finding an antiderivative, more specifically, if we have the equation,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx}\left( f(x) \right) = g(x)\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \int g(x) \; dx\]</div>
+<p>Although the notation here is a little misleading, keep in mind that this is a family of solutions.  The extra information we might have my allow us to narrow it down to a single solution.</p>
+<p>For example, say we have an object that is being moved by a periodic engine and we know that the velocity of the object is given by,</p>
+<div class="math notranslate nohighlight">
+\[v(t) = - 6 \sin{\left(2 t \right)} + 6 \cos{\left(3 t \right)}\]</div>
+<figure class="align-default" id="id2">
+<img alt="Velocity Example Curve" src="../_images/IndefInt002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(v(t) = - 6 \sin{\left(2 t \right)} + 6 \cos{\left(3 t \right)}\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Say we also know that the object starts at position 0, so <span class="math notranslate nohighlight">\(s(0) = 0\)</span>, find the displacement function <span class="math notranslate nohighlight">\(s(t)\)</span> for the object.</p>
+<p>Although we have not discussed integration techniques beyond the formula charts above, knowing the derivatives of trigonometric functions and the chain rule it is not too difficult to see that,</p>
+<div class="math notranslate nohighlight">
+\[s(t) = C_{1} + 2 \sin{\left(3 t \right)} + 3 \cos{\left(2 t \right)}\]</div>
+<p>With the added information we can take this a little further.  From, <span class="math notranslate nohighlight">\(s(0) = 0\)</span>, we get,</p>
+<div class="math notranslate nohighlight">
+\[0 = s(0) = C_{1} + 2 \sin{\left(3 \cdot 0 \right)} + 3 \cos{\left(2 \cdot 0 \right)} = C_{1} + 3\]</div>
+<p>so <span class="math notranslate nohighlight">\(C_{1} = -3\)</span> and <span class="math notranslate nohighlight">\(s(t) = -3 + 2 \sin{\left(3 t \right)} + 3 \cos{\left(2 t \right)}\)</span></p>
+<figure class="align-default" id="id3">
+<img alt="Velocity and Distance Example Curve" src="../_images/IndefInt003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(v(t) = - 6 \sin{\left(2 t \right)} + 6 \cos{\left(3 t \right)}\)</span> and <span class="math notranslate nohighlight">\(s(t) = -3 + 2 \sin{\left(3 t \right)} + 3 \cos{\left(2 t \right)}\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-finding-indefinite-integrals">
+<h2>Example: Finding Indefinite Integrals<a class="headerlink" href="#example-finding-indefinite-integrals" title="Link to this heading">#</a></h2>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>In GeoGebra you can find an indefinite integral using the <code class="docutils literal notranslate"><span class="pre">Integral</span></code> command.  The integral command comes in several forms the two for indefinite integrals are,</p>
+<ul class="simple">
+<li><p>Integral(fct): If the function is in a single variable.</p></li>
+<li><p>Integral(fct, var): If the function is in a several variables and you want to specify the one to integrate with respect to.</p></li>
+</ul>
+<p>We will take the example above, input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-6 sin(2 x)+6 cos(3 x)</span>
+</pre></div>
+</div>
+<p>Now type in and select <code class="docutils literal notranslate"><span class="pre">Integral</span></code> and then type <code class="docutils literal notranslate"><span class="pre">f</span></code> for the function, you will get,</p>
+<div class="math notranslate nohighlight">
+\[3 \cos(2x) + 2 \sin(3x)\]</div>
+<p>and a <span class="math notranslate nohighlight">\(c_1\)</span> slider.</p>
+<figure class="align-default" id="id4">
+<img alt="Velocity and Distance Example Curve" src="../_images/IndefInt004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(v(t) = - 6 \sin{\left(2 t \right)} + 6 \cos{\left(3 t \right)}\)</span> and Antiderivative</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As you move the slider around the solution curve will move vertically and the <span class="math notranslate nohighlight">\(c_1\)</span> value is added to the equation.  So even though it is not displayed this way the solution was <span class="math notranslate nohighlight">\(f(x) = 3 \cos(2x) + 2 \sin(3x) + c_1\)</span>. Since GeoGebra automatically inputs values for the constant, for graphical purposes, using it to solve for <span class="math notranslate nohighlight">\(c_1\)</span> given the initial value is cumbersome.  Frankly this is easy enough to do in our heads.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>In CLAE you can find an indefinite integral using the <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Indefinite</span> <span class="pre">Integral</span></code> option.  When you do, a dialog box will appear asking you for the variable, to include the constant, and to use course techniques. There is also a variable properties editor for the variables.  This is rarely needed but is there just in case, nonetheless.</p>
+<ul class="simple">
+<li><p>The variable is the variable of integration.</p></li>
+<li><p>If you select to include the constant the program will add the <span class="math notranslate nohighlight">\(C_1\)</span> to the expression, there are some cases where you do not need the entire family of antiderivatives and do not want to bother with the constant.</p></li>
+<li><p>The course techniques selection will tell CLAE to use techniques that you would most likely see in a Calculus class.  If unselected it will use whatever technique it feels is best.  Keeping this option selected will make the output as reasonable as possible, when not selected you may see some functions ate are beyond the scope of a college Calculus course.  With this said, if CLAE does not Calculate the integral with this option set you can always retry it with the option deselected.</p></li>
+</ul>
+<p>We will take the example above, input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-6*sin(2*x) + 6*cos(3*x)</span>
+</pre></div>
+</div>
+<p>Select the function then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Indefinite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, select include constant and course techniques, the result is,</p>
+<div class="math notranslate nohighlight">
+\[C_{1} + 2 \sin{\left(3 x \right)} + 3 \cos{\left(2 x \right)}\]</div>
+<p>If you graph the original function and the integral you will see,</p>
+<figure class="align-default" id="id5">
+<img alt="Velocity and Distance Example Curve" src="../_images/IndefInt005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(v(t) = - 6 \sin{\left(2 t \right)} + 6 \cos{\left(3 t \right)}\)</span> and Antiderivative</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>and there is a <span class="math notranslate nohighlight">\(C_1\)</span> slider that will move the function vertically.  Although we can do the remainder of the initial-value problem by hand we can also use CLAE.  Select the integral expression, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable is <em>x</em> and the expression is 0.  As expected, you will get <span class="math notranslate nohighlight">\(C_{1} + 3\)</span>, so obviously <span class="math notranslate nohighlight">\(C_{1} = -3\)</span>.  You can also select this expression and then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> to get <span class="math notranslate nohighlight">\(\left[ -3\right]\)</span>.  In any case our initial value solution is,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = -3 + 2 \sin{\left(3 x \right)} + 3 \cos{\left(2 x \right)}\]</div>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>In Maxima you can find an indefinite integral using the <code class="docutils literal notranslate"><span class="pre">integrate</span></code> command.  The syntax is <code class="docutils literal notranslate"><span class="pre">integrate(exp,</span> <span class="pre">var)</span></code> where the first argument is the expression to integrate and the second is the variable to integrate with respect to.</p>
+<p>We will take the example above, input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x) := -6*sin(2*x) + 6*cos(3*x)</span>
+</pre></div>
+</div>
+<p>Then to integrate the function we use</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fp:integrate(f(x), x)</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[2 \sin{\left( 3 x\right) }+3 \cos{\left( 2 x\right) }\mbox{}\]</div>
+<p>Note that it does not include a constant of integration, it assumes that user can do that themselves.  We can graph these expressions together with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x), fp], [x,-1, 10]);</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id6">
+<img alt="Velocity and Distance Example Curve" src="../_images/IndefInt006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(v(t) = - 6 \sin{\left(2 t \right)} + 6 \cos{\left(3 t \right)}\)</span> and Antiderivative</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-more-indefinite-integrals">
+<h2>Example: More Indefinite Integrals<a class="headerlink" href="#example-more-indefinite-integrals" title="Link to this heading">#</a></h2>
+<p>The following are simply some expressions to find the integrals of using the software.  In each case, use the software you would like and follow the procedures  outlines in the first example to complete the calculation.  Note that your results may differ since the software packages may use different techniques in their calculations.</p>
+<div class="math notranslate nohighlight">
+\[\int 6 x \cos{\left(3 x^{2} \right)} \; dx = \sin{\left(3 x^{2} \right)} + C\]</div>
+<div class="math notranslate nohighlight">
+\[\int \frac{2 x}{\left(x^{2} - 1\right)^{2}} \; dx = -\frac{1}{x^{2} - 1} + C\]</div>
+<div class="math notranslate nohighlight">
+\[\int \frac{1}{x^{2} - 1} \; dx = \frac{\ln{\left(x - 1 \right)}}{2} - \frac{\ln{\left(x + 1 \right)}}{2} + C\]</div>
+<p>Try some more on your own.</p>
+<p>Note that integration takes a bit more effort in general than does differentiation.  Also in some cases finding an antiderivative is very difficult or impossible.  By impossible, we usually mean that the antiderivative is not an elementary function.  In other words, it is not built up from functions you are familiar with, like polynomials, rational functions, trigonometric functions, etc.   For example try to find the integrals of <span class="math notranslate nohighlight">\(f(x) = \sin(\cos(x))\)</span> or <span class="math notranslate nohighlight">\(f(x) = e^{\sin(x)}\)</span>.  In GeoGebra the result will probably be a question mark and in CLAE and Maxima it will probably just return the integral back to you.  In either case this simply means that the software could not do the integral.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="newton.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Newton’s Method</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../IntCalc/index.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integral Calculus</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#antiderivatives">Antiderivatives</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-indefinite-integral">The Indefinite Integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integral-formulas">The Integral Formulas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-rules">Basic Rules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-logarithmic-rules">Exponential &amp; Logarithmic Rules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-rules">Trigonometric Rules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-rules">Inverse Trigonometric Rules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-rules">Hyperbolic Rules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic-rules">Inverse Hyperbolic Rules</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-rules">Arithmetic Rules</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-value-problems">Initial-Value Problems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-finding-indefinite-integrals">Example: Finding Indefinite Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-more-indefinite-integrals">Example: More Indefinite Integrals</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

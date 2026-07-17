@@ -1,0 +1,896 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Calculus and Support Functions &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CASGenIntro/MaximaCalculus';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2D Graphs" href="Maxima2DGraphs.html" />
+    <link rel="prev" title="Maxima Expression Syntax" href="MaximaSyntax.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CLAE/index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Maxima.html">Maxima User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="MaximaIntro.html">Introduction to Maxima</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MaximaGenUse.html">Maxima General Use</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MaximaSyntax.html">Maxima Expression Syntax</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Calculus and Support Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxima2DGraphs.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Maxima3DGraphs.html">3D Graphs</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="Maxima.html" class="nav-link">Maxima User’s Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Calculus and Support Functions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="calculus-and-support-functions">
+<h1>Calculus and Support Functions<a class="headerlink" href="#calculus-and-support-functions" title="Link to this heading">#</a></h1>
+<section id="solving-equations">
+<h2>Solving Equations<a class="headerlink" href="#solving-equations" title="Link to this heading">#</a></h2>
+<section id="exact-solutions">
+<h3>Exact Solutions<a class="headerlink" href="#exact-solutions" title="Link to this heading">#</a></h3>
+<p>To find exact solutions to an equation you can use the solve command.  The first argument is an equation and the second is the variable to solve for.  For example, to solve the equation <span class="math notranslate nohighlight">\(x^2-3x+4 = 2\)</span> we can use,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(x^2-3*x+4 = 2,x)</span>
+</pre></div>
+</div>
+<p>the solutions would be 1 and 2.  We can also input an expression instead  of an equation if we are solving for 0.  For example, to solve the equation <span class="math notranslate nohighlight">\(x^2-3x+4 = 0\)</span> we can use,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(x^2-3*x+4,x)</span>
+</pre></div>
+</div>
+<p>and we would get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ x=-\frac{\sqrt{7} \% i-3}{2}\operatorname{,}x=\frac{\sqrt{7} \% i+3}{2}\right] \mbox{}\]</div>
+</section>
+<section id="approximate-solutions">
+<h3>Approximate Solutions<a class="headerlink" href="#approximate-solutions" title="Link to this heading">#</a></h3>
+<p>To find approximate real solutions to a function we can use the <code class="docutils literal notranslate"><span class="pre">find_root</span></code> command.  The <code class="docutils literal notranslate"><span class="pre">find_root</span></code> command takes the function or expression in a single variable, and two values that are on either side of the root. For example, say we want the roots of <span class="math notranslate nohighlight">\(f(x) = x^3-4x+1\)</span>.  First define the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-4*x+1</span>
+</pre></div>
+</div>
+<p>Plot the function to get an idea where the real roots are,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d(f(x),[x,-2,2])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id1">
+<img alt="y=x^3-4x+1" src="../_images/Calc001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y=x^3-4x+1\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There seems to be one between 0 and 1 and another between 1 and 2.  There is another but we will just do these two.  The command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">find_root(f(x),0,1);</span>
+</pre></div>
+</div>
+<p>will return the root, 0.2541016883650524, and the command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">find_root(f(x),1,2);</span>
+</pre></div>
+</div>
+<p>will return the root, 1.860805853111703.</p>
+</section>
+</section>
+<section id="equations">
+<h2>Equations<a class="headerlink" href="#equations" title="Link to this heading">#</a></h2>
+<p>In Maxima an equation is an expression with an <code class="docutils literal notranslate"><span class="pre">=</span></code> sign in it. From the above example the expression <code class="docutils literal notranslate"><span class="pre">x^2-3*x+4</span> <span class="pre">=</span> <span class="pre">2</span></code> is an equation.  Often the results of the solve command will be a list of equations.  In many cases you will want to extract an expression from an equation, you can do so with the <code class="docutils literal notranslate"><span class="pre">rhs</span></code> and <code class="docutils literal notranslate"><span class="pre">lhs</span></code> functions.  For example, in the above example we ran the command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s:solve(x^2-3*x+4,x)</span>
+</pre></div>
+</div>
+<p>This returned,</p>
+<div class="math notranslate nohighlight">
+\[\left[ x=-\frac{\sqrt{7} \% i-3}{2}\operatorname{,}x=\frac{\sqrt{7} \% i+3}{2}\right]\]</div>
+<p>If we want the first solution we can extract the first entry by,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s1:s[1]</span>
+</pre></div>
+</div>
+<p>This will return the equation,</p>
+<div class="math notranslate nohighlight">
+\[x=-\frac{\sqrt{7} \% i-3}{2}\]</div>
+<p>Then we can extract the value with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">v:rhs(s1)</span>
+</pre></div>
+</div>
+<p>and <em>v</em> will have the value,</p>
+<div class="math notranslate nohighlight">
+\[-\frac{\sqrt{7} \% i-3}{2}\]</div>
+<p>We could have done this is one step with</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">v:rhs(s[1])</span>
+</pre></div>
+</div>
+</section>
+<section id="simplifying-expressions">
+<h2>Simplifying Expressions<a class="headerlink" href="#simplifying-expressions" title="Link to this heading">#</a></h2>
+<p>Maxima has numerous simplification functions that you can invoke through the Simplify submenu of the main menu in wxMaxima, so we will not discuss each of the commands.  The most common is <code class="docutils literal notranslate"><span class="pre">ratsimp</span></code> for rational expression simplification.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a:1/(x-1)+ (x+1)/(x^2+1)</span>
+</pre></div>
+</div>
+<p>defines <em>a</em> as <span class="math notranslate nohighlight">\(\frac{x+1}{{{x}^{2}}+1}+\frac{1}{x-1}\)</span>.  Then</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ratsimp(a)</span>
+</pre></div>
+</div>
+<p>returns <span class="math notranslate nohighlight">\(\frac{2 {{x}^{2}}}{{{x}^{3}}-{{x}^{2}}+x-1}\)</span>.</p>
+</section>
+<section id="rational-expressions">
+<h2>Rational Expressions<a class="headerlink" href="#rational-expressions" title="Link to this heading">#</a></h2>
+<p>From time to time you may need to extract the numerator or denominator of a rational expression, the commands <code class="docutils literal notranslate"><span class="pre">num</span></code> and <code class="docutils literal notranslate"><span class="pre">denom</span></code> do just that.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f:(sin(x)*cos(x^2))/(x^4-tan(3/x));</span>
+<span class="go">num(f);</span>
+<span class="go">denom(f);</span>
+<span class="go">df:diff(f,x);</span>
+<span class="go">dfs:ratsimp(df);</span>
+<span class="go">num(dfs);</span>
+<span class="go">denom(dfs);</span>
+</pre></div>
+</div>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="no">%i</span><span class="mi">26</span><span class="p">)</span><span class="w">      </span><span class="nv">f</span><span class="o">:</span><span class="p">(</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">));</span>
+<span class="w">    </span><span class="nf">num</span><span class="p">(</span><span class="nv">f</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">denom</span><span class="p">(</span><span class="nv">f</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">df</span><span class="o">:</span><span class="nf">diff</span><span class="p">(</span><span class="nv">f</span><span class="p">,</span><span class="nv">x</span><span class="p">);</span>
+<span class="w">    </span><span class="nv">dfs</span><span class="o">:</span><span class="nf">ratsimp</span><span class="p">(</span><span class="nv">df</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">num</span><span class="p">(</span><span class="nv">dfs</span><span class="p">);</span>
+<span class="w">    </span><span class="nf">denom</span><span class="p">(</span><span class="nv">dfs</span><span class="p">);</span>
+<span class="p">(</span><span class="nv">%o20</span><span class="p">)</span><span class="w">      </span><span class="p">(</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">%o21</span><span class="p">)</span><span class="w">      </span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">%o22</span><span class="p">)</span><span class="w">      </span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">%o23</span><span class="p">)</span><span class="w">      </span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nv">x</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">))</span><span class="o">-</span><span class="p">((</span><span class="mi">4</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nf">sec</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">))</span><span class="o">^</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="o">-</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">))</span>
+<span class="p">(</span><span class="nv">%o24</span><span class="p">)</span><span class="w">      </span><span class="o">-</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">7</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="p">((</span><span class="mi">4</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nf">sec</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="nv">x</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="p">))</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">10</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">6</span><span class="o">+</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">%o25</span><span class="p">)</span><span class="w">      </span><span class="o">-</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">7</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">((</span><span class="mi">4</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">5</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nf">sec</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nf">sin</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="o">-</span><span class="nv">x</span><span class="o">^</span><span class="mi">6</span><span class="p">)</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="p">))</span><span class="o">*</span><span class="nf">cos</span><span class="p">(</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span><span class="p">)</span>
+<span class="p">(</span><span class="nv">%o26</span><span class="p">)</span><span class="w">      </span><span class="nv">x</span><span class="o">^</span><span class="mi">10</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">6</span><span class="o">+</span><span class="nf">tan</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="nv">x</span><span class="p">)</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="complex-numbers">
+<h2>Complex Numbers<a class="headerlink" href="#complex-numbers" title="Link to this heading">#</a></h2>
+<p>In Maxima the imaginary unit is <code class="docutils literal notranslate"><span class="pre">%i</span></code>, so <code class="docutils literal notranslate"><span class="pre">z:3+4*%i</span></code> will define <code class="docutils literal notranslate"><span class="pre">z</span></code> as <span class="math notranslate nohighlight">\(3+4i\)</span>.  We can extract the real and imaginary parts of a complex number with <code class="docutils literal notranslate"><span class="pre">realpart</span></code> and <code class="docutils literal notranslate"><span class="pre">imagpart</span></code>.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">z:3+4*%i;</span>
+<span class="go">realpart(z);</span>
+<span class="go">imagpart(z)</span>
+</pre></div>
+</div>
+<p>We can also take the complex conjugate with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">z:3+4*%i;</span>
+<span class="go">conjugate(z);</span>
+</pre></div>
+</div>
+<p>and the modulus, absolute value, with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">z:3+4*%i;</span>
+<span class="go">abs(z);</span>
+</pre></div>
+</div>
+</section>
+<section id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h2>
+<p>Maxima’s limit function takes two forms, a two-sided limit the a one-sided limit.</p>
+<p>For a two-sided limit you give it the function or expression to take the limit of, the variable, and the limit point.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)/x;</span>
+<span class="go">limit(f(x), x, 0)</span>
+</pre></div>
+</div>
+<p>will find,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x}\]</div>
+<p>For a one-sided limit you give it the function or expression to take the limit of, the variable, the limit point, and the direction, <code class="docutils literal notranslate"><span class="pre">minus</span></code> to approach from the left and <code class="docutils literal notranslate"><span class="pre">plus</span></code> to approach from the right.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)/x;</span>
+<span class="go">limit(f(x), x, 0, minus)</span>
+</pre></div>
+</div>
+<p>will find,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x}\]</div>
+<p>and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)/x;</span>
+<span class="go">limit(f(x), x, 0, plus)</span>
+</pre></div>
+</div>
+<p>will find,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{\sin(x)}{x}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For infinite limits use <code class="docutils literal notranslate"><span class="pre">inf</span></code> for <span class="math notranslate nohighlight">\(\infty\)</span> and <code class="docutils literal notranslate"><span class="pre">-inf</span></code> or <code class="docutils literal notranslate"><span class="pre">minf</span></code> for <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
+</div>
+</section>
+<section id="derivatives">
+<h2>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h2>
+<p>To find a derivative or partial derivative use the <code class="docutils literal notranslate"><span class="pre">diff</span></code> command.  The <code class="docutils literal notranslate"><span class="pre">diff</span></code> command takes the function or expression, the variable to differentiate with respect to and an optional order of the derivative.  There are several options here for input se we will do several examples.</p>
+<p>Say we have the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x*sin(x)</span>
+</pre></div>
+</div>
+<p>then we can take its derivative with respect to <em>x</em> by</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>which will return <span class="math notranslate nohighlight">\(\sin{(x)}+x \cos{(x)}\)</span>.</p>
+<p>We can do higher-order derivatives by adding an order at the end of the command, so the second derivative would be,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x),x, 2)</span>
+</pre></div>
+</div>
+<p>which will return <span class="math notranslate nohighlight">\(2 \cos{(x)}-x \sin{(x)}\)</span>. The third derivative would be</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x),x, 3)</span>
+</pre></div>
+</div>
+<p>which will return <span class="math notranslate nohighlight">\(-3 \sin{(x)}-x \cos{(x)}\)</span>.</p>
+<p>If you have a function of several variables then the <code class="docutils literal notranslate"><span class="pre">diff</span></code> command returns the partial derivative.  For example, if we have the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x, y):=sin(x*y)+y^4-3*x^2</span>
+</pre></div>
+</div>
+<p>then the following command will find the partial derivative with respect to <em>x</em></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x, y),x)</span>
+</pre></div>
+</div>
+<p>and the following command will find the partial derivative with respect to <em>y</em></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x, y),y)</span>
+</pre></div>
+</div>
+<p>You can also do mixed partials in a single command, the following will take the partial with respect to <em>x</em> and then the partial with respect to <em>y</em>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x, y),x,1,y,1)</span>
+</pre></div>
+</div>
+<p>and the following will take the third partial with respect to <em>x</em> and then the second partial with respect to <em>y</em>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x, y),x,3,y,2)</span>
+</pre></div>
+</div>
+</section>
+<section id="implicit-differentiation">
+<h2>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Link to this heading">#</a></h2>
+<p>The procedure for implicit differentiation is a little different.  We keep the implicit relationship as an equation, but we need to tell Maxima that <em>y</em> is a function of <em>x</em> with the notation, <code class="docutils literal notranslate"><span class="pre">y(x)</span></code>, and then we can use the <code class="docutils literal notranslate"><span class="pre">diff</span></code> command, followed by solving for the derivative.  For example, we will implicitly differentiate the following.</p>
+<div class="math notranslate nohighlight">
+\[x \cos{\left(y \right)} = -y \sin{\left(x \right)} + \frac{1}{2}\]</div>
+<p>Input the expression using <code class="docutils literal notranslate"><span class="pre">y(x)</span></code> for <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f:x*cos(y(x)) = -y(x)*sin(x) + 1/2</span>
+</pre></div>
+</div>
+<p>Now take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dy:diff(f, x)</span>
+</pre></div>
+</div>
+<p>You should get the following,</p>
+<div class="math notranslate nohighlight">
+\[\cos{\left( \operatorname{y}(x)\right) }-x \sin{\left( \operatorname{y}(x)\right) } \left( \frac{d}{d x} \operatorname{y}(x)\right) =-\sin{(x)} \left( \frac{d}{d x} \operatorname{y}(x)\right) -\operatorname{y}(x) \cos{(x)}\]</div>
+<p>Maxima took the derivative implicitly but did not solve for <span class="math notranslate nohighlight">\(y'\)</span>.  The following command will solve for <span class="math notranslate nohighlight">\(y'\)</span>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(dy,diff(y(x),x))</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{d}{d x} \operatorname{y}(x)=\frac{\cos{\left( \operatorname{y}(x)\right) }+\operatorname{y}(x) \cos{(x)}}{x \sin{\left( \operatorname{y}(x)\right) }-\sin{(x)}}\right]\]</div>
+<p>which, of course, translates to</p>
+<div class="math notranslate nohighlight">
+\[\frac{y \cos{\left(x \right)} + \cos{\left(y \right)}}{x \sin{\left(y \right)} - \sin{\left(x \right)}}\]</div>
+</section>
+<section id="integrals">
+<h2>Integrals<a class="headerlink" href="#integrals" title="Link to this heading">#</a></h2>
+<section id="area-approximations">
+<h3>Area Approximations<a class="headerlink" href="#area-approximations" title="Link to this heading">#</a></h3>
+<p>Maxima does not have a built-in function for Riemann sums nor the Trapezoidal Rule or Simpson’s Rule, but it does have a sum command that we can use to get the job done.  If you wish to use these simply copy and paste the code into the wxMaxima workspace and then hit Shift-Enter to load the definition into memory. All of these functions have the same syntax, <code class="docutils literal notranslate"><span class="pre">left_sum(RSfct,lb,ub,n)</span></code>, <code class="docutils literal notranslate"><span class="pre">RSfct</span></code> is the function to be used in the approximation, this must be defined as a function of a single variable, for example <code class="docutils literal notranslate"><span class="pre">f(x):=x^2+3</span></code>.  The <code class="docutils literal notranslate"><span class="pre">lb</span></code> is the lower bound of the interval, <code class="docutils literal notranslate"><span class="pre">ub</span></code> is the upper bound of the interval, and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of rectangles.</p>
+<p>The left-hand endpoint approximation function.</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nf">left_sum</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">)</span><span class="o">:=</span><span class="nf">block</span><span class="p">([</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">a</span><span class="p">],</span><span class="nf">local</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">,</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">a</span><span class="p">),</span>
+<span class="nv">dx</span><span class="o">:</span><span class="p">(</span><span class="nv">ub</span><span class="o">-</span><span class="nv">lb</span><span class="p">)</span><span class="o">/</span><span class="nv">n</span><span class="p">,</span>
+<span class="nv">s</span><span class="o">:</span><span class="nf">sum</span><span class="p">(</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">lb</span><span class="o">+</span><span class="p">(</span><span class="nv">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="nv">dx</span><span class="p">)</span><span class="o">*</span><span class="nv">dx</span><span class="p">,</span><span class="nv">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nv">n</span><span class="p">),</span>
+<span class="nv">a</span><span class="o">:</span><span class="nf">float</span><span class="p">(</span><span class="nv">s</span><span class="p">),</span><span class="w"> </span><span class="nv">numer</span><span class="p">,</span>
+<span class="nv">a</span><span class="p">)$</span>
+</pre></div>
+</div>
+<p>The right-hand endpoint approximation function.</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nf">right_sum</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">)</span><span class="o">:=</span><span class="nf">block</span><span class="p">([</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">a</span><span class="p">],</span><span class="nf">local</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">,</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">a</span><span class="p">),</span>
+<span class="nv">dx</span><span class="o">:</span><span class="p">(</span><span class="nv">ub</span><span class="o">-</span><span class="nv">lb</span><span class="p">)</span><span class="o">/</span><span class="nv">n</span><span class="p">,</span>
+<span class="nv">s</span><span class="o">:</span><span class="nf">sum</span><span class="p">(</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">lb</span><span class="o">+</span><span class="nv">i</span><span class="o">*</span><span class="nv">dx</span><span class="p">)</span><span class="o">*</span><span class="nv">dx</span><span class="p">,</span><span class="nv">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nv">n</span><span class="p">),</span>
+<span class="nv">a</span><span class="o">:</span><span class="nf">float</span><span class="p">(</span><span class="nv">s</span><span class="p">),</span><span class="w"> </span><span class="nv">numer</span><span class="p">,</span>
+<span class="nv">a</span><span class="p">)$</span>
+</pre></div>
+</div>
+<p>The midpoint approximation function.</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nf">mid_sum</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">)</span><span class="o">:=</span><span class="nf">block</span><span class="p">([</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">xp</span><span class="p">,</span><span class="nv">a</span><span class="p">],</span><span class="nf">local</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">,</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">xp</span><span class="p">,</span><span class="nv">a</span><span class="p">),</span>
+<span class="nv">dx</span><span class="o">:</span><span class="p">(</span><span class="nv">ub</span><span class="o">-</span><span class="nv">lb</span><span class="p">)</span><span class="o">/</span><span class="nv">n</span><span class="p">,</span>
+<span class="nv">xp</span><span class="o">:</span><span class="nv">lb</span><span class="o">+</span><span class="nv">i</span><span class="o">*</span><span class="nv">dx</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">dx</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>
+<span class="nv">s</span><span class="o">:</span><span class="nf">sum</span><span class="p">(</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">xp</span><span class="p">),</span><span class="nv">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nv">n</span><span class="p">),</span>
+<span class="nv">a</span><span class="o">:</span><span class="nf">float</span><span class="p">(</span><span class="nv">s</span><span class="o">*</span><span class="nv">dx</span><span class="p">),</span><span class="w"> </span><span class="nv">numer</span><span class="p">,</span>
+<span class="nv">a</span><span class="p">)$</span>
+</pre></div>
+</div>
+<p>The Trapezoidal Rule approximation function.</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nf">trap_sum</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">)</span><span class="o">:=</span><span class="nf">block</span><span class="p">([</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">xp</span><span class="p">,</span><span class="nv">nxp</span><span class="p">,</span><span class="nv">a</span><span class="p">],</span><span class="nf">local</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">,</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">xp</span><span class="p">,</span><span class="nv">nxp</span><span class="p">,</span><span class="nv">a</span><span class="p">),</span>
+<span class="nv">dx</span><span class="o">:</span><span class="p">(</span><span class="nv">ub</span><span class="o">-</span><span class="nv">lb</span><span class="p">)</span><span class="o">/</span><span class="nv">n</span><span class="p">,</span>
+<span class="nv">xp</span><span class="o">:</span><span class="nv">lb</span><span class="o">+</span><span class="p">(</span><span class="nv">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="nv">dx</span><span class="p">,</span>
+<span class="nv">nxp</span><span class="o">:</span><span class="nv">lb</span><span class="o">+</span><span class="nv">i</span><span class="o">*</span><span class="nv">dx</span><span class="p">,</span>
+<span class="nv">s</span><span class="o">:</span><span class="nf">sum</span><span class="p">(</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">xp</span><span class="p">)</span><span class="o">+</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">nxp</span><span class="p">),</span><span class="nv">i</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="nv">n</span><span class="p">),</span>
+<span class="nv">a</span><span class="o">:</span><span class="nf">float</span><span class="p">(</span><span class="nv">s</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="nv">dx</span><span class="p">),</span><span class="w"> </span><span class="nv">numer</span><span class="p">,</span>
+<span class="nv">a</span><span class="p">)$</span>
+</pre></div>
+</div>
+<p>Simpson’s Rule approximation function.</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nf">simp_sum</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">)</span><span class="o">:=</span><span class="nf">block</span><span class="p">([</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">xp0</span><span class="p">,</span><span class="nv">xp1</span><span class="p">,</span><span class="nv">xp2</span><span class="p">,</span><span class="nv">a</span><span class="p">],</span><span class="nf">local</span><span class="p">(</span><span class="nv">RSfct</span><span class="p">,</span><span class="nv">lb</span><span class="p">,</span><span class="nv">ub</span><span class="p">,</span><span class="nv">n</span><span class="p">,</span><span class="nv">dx</span><span class="p">,</span><span class="nv">s</span><span class="p">,</span><span class="nv">xp0</span><span class="p">,</span><span class="nv">xp1</span><span class="p">,</span><span class="nv">xp2</span><span class="p">,</span><span class="nv">a</span><span class="p">),</span>
+<span class="nv">dx</span><span class="o">:</span><span class="p">(</span><span class="nv">ub</span><span class="o">-</span><span class="nv">lb</span><span class="p">)</span><span class="o">/</span><span class="nv">n</span><span class="p">,</span>
+<span class="nv">xp0</span><span class="o">:</span><span class="nv">lb</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="nv">i</span><span class="o">*</span><span class="nv">dx</span><span class="p">,</span>
+<span class="nv">xp1</span><span class="o">:</span><span class="nv">lb</span><span class="o">+</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nv">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="nv">dx</span><span class="p">,</span>
+<span class="nv">xp2</span><span class="o">:</span><span class="nv">lb</span><span class="o">+</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nv">i</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nv">dx</span><span class="p">,</span>
+<span class="nv">s</span><span class="o">:</span><span class="nf">sum</span><span class="p">((</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">xp0</span><span class="p">)</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">xp1</span><span class="p">)</span><span class="o">+</span><span class="nf">RSfct</span><span class="p">(</span><span class="nv">xp2</span><span class="p">)),</span><span class="nv">i</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="nv">n</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+<span class="nv">a</span><span class="o">:</span><span class="nf">float</span><span class="p">(</span><span class="nv">s</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="nv">dx</span><span class="p">),</span><span class="w"> </span><span class="nv">numer</span><span class="p">,</span>
+<span class="nv">a</span><span class="p">)$</span>
+</pre></div>
+</div>
+<p>For example, input the <code class="docutils literal notranslate"><span class="pre">mid_sum</span></code> code then input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3 - 3*x^2 + 2*x + 3;</span>
+<span class="go">mid_sum(f, 0, 3, 100);</span>
+</pre></div>
+</div>
+<p>The result is, 11.2496625.  Doing the same thing with Simpson’s Rule gives, 11.25.</p>
+</section>
+<section id="definite-and-indefinite-integrals">
+<h3>Definite and Indefinite Integrals<a class="headerlink" href="#definite-and-indefinite-integrals" title="Link to this heading">#</a></h3>
+<p>Exact definite and indefinite integrals can be calculated with the <code class="docutils literal notranslate"><span class="pre">integrate</span></code> command.  The <code class="docutils literal notranslate"><span class="pre">integrate</span></code> command comes in two forms,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">integrate(f,</span> <span class="pre">var)</span></code>, <code class="docutils literal notranslate"><span class="pre">f</span></code> is the function or expression to be integrated and <code class="docutils literal notranslate"><span class="pre">var</span></code> is the variable to integrate with respect to.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">integrate(f,</span> <span class="pre">var,</span> <span class="pre">lb,</span> <span class="pre">ub)</span></code>, <code class="docutils literal notranslate"><span class="pre">f</span></code> is the function or expression to be integrated and <code class="docutils literal notranslate"><span class="pre">var</span></code> is the variable to integrate with respect to, <code class="docutils literal notranslate"><span class="pre">lb</span></code> is the lower bound for the interval, and <code class="docutils literal notranslate"><span class="pre">ub</span></code> is the upper bound for the interval.</p></li>
+</ul>
+<p>For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3 - 3*x^2 + 2*x + 3;</span>
+<span class="go">integrate(f(x), x, 0, 3);</span>
+</pre></div>
+</div>
+<p>returns <span class="math notranslate nohighlight">\(\frac{45}{4} = 11.25\)</span>, and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)^6*cos(x)^4;</span>
+<span class="go">integrate(f(x), x);</span>
+</pre></div>
+</div>
+<p>returns</p>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{\frac{\frac{\sin{\left( 8 x\right) }}{2}+4 x}{8}-\frac{\sin{\left( 4 x\right) }}{2}+x}{4}-\frac{{{\sin{\left( 2 x\right) }}^{5}}}{10}}{32}\mbox{}\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\frac{5 \sin{\left( 8 x\right) }-40 \sin{\left( 4 x\right) }-32 {{\sin{\left( 2 x\right) }}^{5}}+120 x}{10240}\mbox{}\]</div>
+</section>
+<section id="approximate-integration">
+<h3>Approximate Integration<a class="headerlink" href="#approximate-integration" title="Link to this heading">#</a></h3>
+<p>Maxima also has several definite integral approximation functions, the two we will look at are <code class="docutils literal notranslate"><span class="pre">quad_qags</span></code> and <code class="docutils literal notranslate"><span class="pre">romberg</span></code>.  We will not get into how these are implemented, just how they are used.  The syntax of these are similar to the integrate command, function, variable, lower bound, and upper bound.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">quad_qags(f(x), x, 1, 4);</span>
+</pre></div>
+</div>
+<p>will return</p>
+<div class="math notranslate nohighlight">
+\[\left[ 147.0\operatorname{,}1.63202784619898 \cdot {{10}^{-12}}\operatorname{,}21\operatorname{,}0\right] \mbox{}\]</div>
+<p>The first number in the list is the approximation, and the second is the error bound for the approximation.  Don’t worry about the last two values, these deal with the method itself.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">romberg(f(x), x, 1, 4);</span>
+</pre></div>
+</div>
+<p>will return 147.0, just the approximation.</p>
+</section>
+</section>
+<section id="ordinary-differential-equations">
+<h2>Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Link to this heading">#</a></h2>
+<p>To find exact solutions to ordinary differential equations use the <code class="docutils literal notranslate"><span class="pre">ode2</span></code>.  The syntax is <code class="docutils literal notranslate"><span class="pre">ode2(DifEq,</span> <span class="pre">Ind,</span> <span class="pre">Dep);</span></code> where <code class="docutils literal notranslate"><span class="pre">DifEq</span></code> is the differential equation, <code class="docutils literal notranslate"><span class="pre">Ind</span></code> is the independent variable, and <code class="docutils literal notranslate"><span class="pre">Dep</span></code> is the dependent variable.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">de:3*x + x*y - &#39;diff(y, x);</span>
+<span class="go">sl:ode2(de, y, x);</span>
+</pre></div>
+</div>
+</section>
+<section id="power-series-and-taylor-series">
+<h2>Power Series and Taylor Series<a class="headerlink" href="#power-series-and-taylor-series" title="Link to this heading">#</a></h2>
+<p>Maxima can create a finite portion of a power series and of a Taylor series (a Taylor polynomial).  For power series simply use the <code class="docutils literal notranslate"><span class="pre">sum</span></code> command and for Taylor polynomials use the <code class="docutils literal notranslate"><span class="pre">taylor</span></code> command.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sum(fct(n),n,start</span> <span class="pre">n,end</span> <span class="pre">n)</span></code> where <code class="docutils literal notranslate"><span class="pre">fct(n)</span></code> is the expression for the nth term.  For example, <code class="docutils literal notranslate"><span class="pre">sum(x^n,n,0,10)</span></code> produces <span class="math notranslate nohighlight">\(x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1.\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">taylor(f(x),</span> <span class="pre">point,</span> <span class="pre">degree)</span></code> where <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> is the function, point is the expansion (center) point, and degree is the degree (or order) of the polynomial.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="MaximaSyntax.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Maxima Expression Syntax</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Maxima2DGraphs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2D Graphs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-equations">Solving Equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solutions">Exact Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approximate-solutions">Approximate Solutions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equations">Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplifying-expressions">Simplifying Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-expressions">Rational Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit Differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrals">Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-approximations">Area Approximations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-and-indefinite-integrals">Definite and Indefinite Integrals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#approximate-integration">Approximate Integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-differential-equations">Ordinary Differential Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-series-and-taylor-series">Power Series and Taylor Series</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

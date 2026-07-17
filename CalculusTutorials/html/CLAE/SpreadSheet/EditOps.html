@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Edit Options &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/SpreadSheet/EditOps';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Math Options" href="MathOps.html" />
+    <link rel="prev" title="File Options" href="FileOps.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Spreadsheet</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Spreadsheet Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cassyntax.html">CAS Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOps.html">File Options</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Edit Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MathOps.html">Math Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOps.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Spreadsheet</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Edit Options</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="edit-options">
+<h1>Edit Options<a class="headerlink" href="#edit-options" title="Link to this heading">#</a></h1>
+<p>The Edit menu contains standard copy and paste options as one would expect. It also has options for creating LaTeX code, as the program was designed to do, and export to specialized formats.</p>
+<p>One non-standard user interface here is the existence of two paste options, Paste and Paste from Clipboard and two different copy options for spreadsheet values, Copy Values and Copy Values as Tab Delimited.  The reason for the two different paste options is to have one that will copy and paste grid information internally as to use cell references and one that will copy and paste to an external spreadsheet program. In general, use Copy Formulas, Copy Values, and Paste when you are copying and pasting from this spreadsheet back into this spreadsheet.  Use Copy Values as Tab Delimited and Paste from Clipboard when you are copying or pasting to and from an external spreadsheet program.  There are numerous other copies designed to be used with external programs.</p>
+<section id="copy-formulas">
+<h2>Copy Formulas<a class="headerlink" href="#copy-formulas" title="Link to this heading">#</a></h2>
+<p>This copies the formulas of the selected cells to the internal clipboard.  Use this if you want cell references to update on a paste, as is common in standard spreadsheets.  Note that this copy uses an internal clipboard to store the information for the paste command, not the system clipboard.</p>
+</section>
+<section id="copy-values">
+<h2>Copy Values<a class="headerlink" href="#copy-values" title="Link to this heading">#</a></h2>
+<p>This copies the values of the selected cells to the internal clipboard.  Use this if you want to remove the cell references and just paste the cell values. Note that this copy uses an internal clipboard to store the information for the paste command, not the system clipboard..</p>
+</section>
+<section id="paste">
+<h2>Paste<a class="headerlink" href="#paste" title="Link to this heading">#</a></h2>
+<p>Pastes the contents of the clipboard into the grid at the currently selected position.  It is assumed that the data on the clipboard is form either the Copy Formulas or the Copy Values option.  If what is being pasted at the current position needs more space, rows or columns, the content of the paste will be trimmed to a size that fits the spreadsheet, no extra rows or columns will be added to the spreadsheet interface. This spreadsheet is a fixed size. Note that this paste uses the internal clipboard to retrieve the information, use the Paste from Clipboard option to load in the values from an external clipboard.</p>
+<p>When pasting in some copied cells the program will paste the block of cells at each location that is currently selected when the paste is initiated.  So if there is only one cell selected when Paste is selected the copied block will be pasted one time at that position.  If a block of 3 rows and 4 columns is selected there will be 12 pastes of the copied data, one using each of the selected positions as the paste target for the copied block.</p>
+</section>
+<section id="copy-values-as-tab-delimited">
+<h2>Copy Values as Tab Delimited<a class="headerlink" href="#copy-values-as-tab-delimited" title="Link to this heading">#</a></h2>
+<p>This copies the values of the selected cells to the system clipboard.  Use this if you want to load the cell values into an external spreadsheet program.</p>
+</section>
+<section id="paste-from-clipboard">
+<h2>Paste from Clipboard<a class="headerlink" href="#paste-from-clipboard" title="Link to this heading">#</a></h2>
+<p>Pastes the contents of the system clipboard into the grid at the currently selected position.  It is assumed that the data on the clipboard is in tab-delimited form, a standard format for spreadsheets. If what is being pasted at the current position needs more space, rows or columns, the content of the paste will be trimmed to a size that fits the spreadsheet, no extra rows or columns will be added to the spreadsheet interface. This spreadsheet is a fixed size.</p>
+</section>
+<section id="load-to-cas">
+<h2>Load to CAS<a class="headerlink" href="#load-to-cas" title="Link to this heading">#</a></h2>
+<p>This loads the currently selected cells into the CAS of the program.  If a single cell is selected the value of that cell will be loaded as an expression, if a block of cells are selected then the values of the cells in that block will be loaded into the CAS as a matrix.</p>
+</section>
+<section id="copy-as-latex">
+<h2>Copy as LaTeX<a class="headerlink" href="#copy-as-latex" title="Link to this heading">#</a></h2>
+<p>This copies the values of the selected cells to the system clipboard in LaTeX syntax.  If only one cell is selected the copy will be just that cell’s expression.  If a block of cells are selected then the copy will be a matrix of the selected cells.</p>
+</section>
+<section id="special-latex-copy">
+<h2>Special LaTeX Copy<a class="headerlink" href="#special-latex-copy" title="Link to this heading">#</a></h2>
+<p>This submenu of options will copy the selected cells to special LaTeX array and matrix formats.</p>
+<section id="copy-to-array-environment">
+<h3>Copy to Array Environment<a class="headerlink" href="#copy-to-array-environment" title="Link to this heading">#</a></h3>
+<p>This mode has options for column alignment, a table border, and several options for division lines between rows and columns. These are the same as with the longtable and tabular options. There are also options to include the arraystretch renew command and a decoration, that is include brackets, parenthesis, or vertical bars around the matrix.  Since this will most likely be a displayed formula for your document the code is automatically placed into display math mode.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="sb">\[</span>
+<span class="nv">\left</span><span class="o">[</span>
+<span class="nv">\begin</span><span class="nb">{array}{lll}</span>
+<span class="m">1</span><span class="nb"> &amp; </span><span class="m">4</span><span class="nb"> &amp; </span><span class="m">7</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">2</span><span class="nb"> &amp; </span><span class="m">5</span><span class="nb"> &amp; </span><span class="m">8</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">3</span><span class="nb"> &amp; </span><span class="m">6</span><span class="nb"> &amp; </span><span class="m">9</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="nv">\end</span><span class="nb">{array}</span>
+<span class="nv">\right</span><span class="o">]</span>
+<span class="s">\]</span>
+</pre></div>
+</div>
+<p>Which would result in the following matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{array}{lll}
+1 &amp; 4 &amp; 7 \\
+2 &amp; 5 &amp; 8 \\
+3 &amp; 6 &amp; 9 \\
+\end{array}
+\right]\end{split}\]</div>
+</section>
+<section id="copy-to-matrix-environment">
+<h3>Copy to Matrix Environment<a class="headerlink" href="#copy-to-matrix-environment" title="Link to this heading">#</a></h3>
+<p>This option requires the amsmath package to be used. There are options the arraystretch renew, and to include bracket, parenthesis, or vertical bar decorations around the matrix.  Since this will most likely be a displayed formula for your document the code is automatically placed into display math mode.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Package: \usepackage{amsmath}</span>
+
+<span class="sb">\[</span>
+<span class="nv">\left</span><span class="o">[</span>
+<span class="nv">\begin</span><span class="nb">{matrix}</span>
+<span class="m">1</span><span class="nb"> &amp; </span><span class="m">4</span><span class="nb"> &amp; </span><span class="m">7</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">2</span><span class="nb"> &amp; </span><span class="m">5</span><span class="nb"> &amp; </span><span class="m">8</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">3</span><span class="nb"> &amp; </span><span class="m">6</span><span class="nb"> &amp; </span><span class="m">9</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="nv">\end</span><span class="nb">{matrix}</span>
+<span class="nv">\right</span><span class="o">]</span>
+<span class="s">\]</span>
+</pre></div>
+</div>
+<p>Which would result in the following matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[
+\begin{matrix}
+1 &amp; 4 &amp; 7 \\
+2 &amp; 5 &amp; 8 \\
+3 &amp; 6 &amp; 9 \\
+\end{matrix}
+\right]\end{split}\]</div>
+</section>
+<section id="copy-to-special-matrix-environment">
+<h3>Copy to Special Matrix Environment<a class="headerlink" href="#copy-to-special-matrix-environment" title="Link to this heading">#</a></h3>
+<p>All of these option will require the amsmath package to be used. When the special matrix option is selected the user will have the option of exporting to a pmatrix, bmatrix, vmatrix, or Vmatrix. The only other option is to include the arraystretch renew command. Since this will most likely be a displayed formula for your document the code is automatically placed into display math mode.</p>
+<p>With pmatrix selected, a simple example of the code would look like,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Package: \usepackage{amsmath}</span>
+
+<span class="sb">\[</span>
+<span class="nv">\begin</span><span class="nb">{pmatrix}</span>
+<span class="m">1</span><span class="nb"> &amp; </span><span class="m">4</span><span class="nb"> &amp; </span><span class="m">7</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">2</span><span class="nb"> &amp; </span><span class="m">5</span><span class="nb"> &amp; </span><span class="m">8</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">3</span><span class="nb"> &amp; </span><span class="m">6</span><span class="nb"> &amp; </span><span class="m">9</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="nv">\end</span><span class="nb">{pmatrix}</span>
+<span class="s">\]</span>
+</pre></div>
+</div>
+<p>Which would result in the following matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+1 &amp; 4 &amp; 7 \\
+2 &amp; 5 &amp; 8 \\
+3 &amp; 6 &amp; 9 \\
+\end{pmatrix}\end{split}\]</div>
+<p>With bmatrix selected, a simple example of the code would look like,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Package: \usepackage{amsmath}</span>
+
+<span class="sb">\[</span>
+<span class="nv">\begin</span><span class="nb">{bmatrix}</span>
+<span class="m">1</span><span class="nb"> &amp; </span><span class="m">4</span><span class="nb"> &amp; </span><span class="m">7</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">2</span><span class="nb"> &amp; </span><span class="m">5</span><span class="nb"> &amp; </span><span class="m">8</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">3</span><span class="nb"> &amp; </span><span class="m">6</span><span class="nb"> &amp; </span><span class="m">9</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="nv">\end</span><span class="nb">{bmatrix}</span>
+<span class="s">\]</span>
+</pre></div>
+</div>
+<p>Which would result in the following matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+1 &amp; 4 &amp; 7 \\
+2 &amp; 5 &amp; 8 \\
+3 &amp; 6 &amp; 9 \\
+\end{bmatrix}\end{split}\]</div>
+<p>With vmatrix selected, a simple example of the code would look like,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Package: \usepackage{amsmath}</span>
+
+<span class="sb">\[</span>
+<span class="nv">\begin</span><span class="nb">{vmatrix}</span>
+<span class="m">1</span><span class="nb"> &amp; </span><span class="m">4</span><span class="nb"> &amp; </span><span class="m">7</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">2</span><span class="nb"> &amp; </span><span class="m">5</span><span class="nb"> &amp; </span><span class="m">8</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">3</span><span class="nb"> &amp; </span><span class="m">6</span><span class="nb"> &amp; </span><span class="m">9</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="nv">\end</span><span class="nb">{vmatrix}</span>
+<span class="s">\]</span>
+</pre></div>
+</div>
+<p>Which would result in the following matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{vmatrix}
+1 &amp; 4 &amp; 7 \\
+2 &amp; 5 &amp; 8 \\
+3 &amp; 6 &amp; 9 \\
+\end{vmatrix}\end{split}\]</div>
+<p>With Vmatrix selected, a simple example of the code would look like,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Package: \usepackage{amsmath}</span>
+
+<span class="sb">\[</span>
+<span class="nv">\begin</span><span class="nb">{Vmatrix}</span>
+<span class="m">1</span><span class="nb"> &amp; </span><span class="m">4</span><span class="nb"> &amp; </span><span class="m">7</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">2</span><span class="nb"> &amp; </span><span class="m">5</span><span class="nb"> &amp; </span><span class="m">8</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="m">3</span><span class="nb"> &amp; </span><span class="m">6</span><span class="nb"> &amp; </span><span class="m">9</span><span class="nb"> </span><span class="nv">\\</span>
+<span class="nv">\end</span><span class="nb">{Vmatrix}</span>
+<span class="s">\]</span>
+</pre></div>
+</div>
+<p>Which would result in the following matrix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{Vmatrix}
+1 &amp; 4 &amp; 7 \\
+2 &amp; 5 &amp; 8 \\
+3 &amp; 6 &amp; 9 \\
+\end{Vmatrix}\end{split}\]</div>
+</section>
+<section id="selected-cells-to-latex-code">
+<h3>Selected Cells to LaTeX Code<a class="headerlink" href="#selected-cells-to-latex-code" title="Link to this heading">#</a></h3>
+<p>This will take the entries in the selected cells and convert them from CAS workspace expressions (SymPy syntax) to LaTeX syntax.  So if you copied an entry or matrix (or several of these) from the CAS to the LaTeX Table Editor tool you can convert them into LaTeX syntax automatically.  For example, if our grid contained the following expressions,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cos(t^2)    ln(x+4)  x^2-3*x+5</span>
+<span class="go">exp(x)      1/2      4/x</span>
+<span class="go">sin(cos(x)) x/y^2    x^x</span>
+</pre></div>
+</div>
+<p>This option would alter the grid into the following,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">\cos{\left(t^{2} \right)}                  \ln{\left(x + 4 \right)}  x^{2} - 3 x + 5</span>
+<span class="go">e^{x}                                      \frac{1}{2}               \frac{4}{x}</span>
+<span class="go">\sin{\left(\cos{\left(x \right)} \right)}  \frac{x}{y^{2}}           x^{x}</span>
+</pre></div>
+</div>
+</section>
+<section id="selected-cells-to-latex-code-in-math-mode">
+<h3>Selected Cells to LaTeX Code in Math Mode<a class="headerlink" href="#selected-cells-to-latex-code-in-math-mode" title="Link to this heading">#</a></h3>
+<p>This will take the entries in the selected cells and convert them from CAS workspace expressions (SymPy syntax) to LaTeX syntax and put each cell into inline math mode.  So if you copied an entry or matrix (or several of these) from the CAS to the LaTeX Table Editor tool you can convert them into LaTeX syntax automatically.  For example, if our grid contained the following expressions,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cos(t^2)    ln(x+4)  x^2-3*x+5</span>
+<span class="go">exp(x)      1/2      4/x</span>
+<span class="go">sin(cos(x)) x/y^2    x^x</span>
+</pre></div>
+</div>
+<p>This option would alter the grid into the following,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span><span class="se">\c</span>os<span class="o">{</span><span class="se">\l</span>eft<span class="o">(</span>t^<span class="o">{</span><span class="m">2</span><span class="o">}</span><span class="w"> </span><span class="se">\r</span>ight<span class="o">)}</span>$<span class="w">                   </span>$<span class="se">\l</span>n<span class="o">{</span><span class="se">\l</span>eft<span class="o">(</span>x<span class="w"> </span>+<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="se">\r</span>ight<span class="o">)}</span>$<span class="w">   </span><span class="nv">$x</span>^<span class="o">{</span><span class="m">2</span><span class="o">}</span><span class="w"> </span>-<span class="w"> </span><span class="m">3</span><span class="w"> </span>x<span class="w"> </span>+<span class="w"> </span><span class="m">5</span>$
+<span class="gp">$</span>e^<span class="o">{</span>x<span class="o">}</span>$<span class="w">                                       </span>$<span class="se">\f</span>rac<span class="o">{</span><span class="m">1</span><span class="o">}{</span><span class="m">2</span><span class="o">}</span>$<span class="w">                </span>$<span class="se">\f</span>rac<span class="o">{</span><span class="m">4</span><span class="o">}{</span>x<span class="o">}</span>$
+<span class="gp">$</span><span class="se">\s</span>in<span class="o">{</span><span class="se">\l</span>eft<span class="o">(</span><span class="se">\c</span>os<span class="o">{</span><span class="se">\l</span>eft<span class="o">(</span>x<span class="w"> </span><span class="se">\r</span>ight<span class="o">)}</span><span class="w"> </span><span class="se">\r</span>ight<span class="o">)}</span>$<span class="w">   </span>$<span class="se">\f</span>rac<span class="o">{</span>x<span class="o">}{</span>y^<span class="o">{</span><span class="m">2</span><span class="o">}}</span>$<span class="w">            </span><span class="nv">$x</span>^<span class="o">{</span>x<span class="o">}</span>$
+</pre></div>
+</div>
+</section>
+<section id="copy-to-longtable-environment">
+<h3>Copy to Longtable Environment<a class="headerlink" href="#copy-to-longtable-environment" title="Link to this heading">#</a></h3>
+<p>The Longtable Environment and Tabular Environment have options for column alignment, a table border, and several options for division lines between rows and columns. The Column Alignment is the alignment used for all columns in the table. These can be overridden by header rows or columns. The alignment is on each column but is easily editable in the pasted LaTeX code.</p>
+<p>The Divisions options are for the selection of common division lines in the table. If you have worked with LaTeX you know there are many more possibilities here for row and column divisions. This tool just includes some of the more common selections and if they are not exactly what is needed it should only take some minimal editing.</p>
+<ul class="simple">
+<li><p>Table Boarder puts a simple border around the entire table.</p></li>
+<li><p>Division After First Row puts a line directly below the first row.</p></li>
+<li><p>Division on All Rows puts a line directly below each row of the table and one at the top.</p></li>
+<li><p>Division After First Column puts a line directly to the right of the first column.</p></li>
+<li><p>Division After All Columns puts a line directly to the right of each column of the table and one at the left.</p></li>
+</ul>
+<p>At the bottom there are options to include math mode around the contents of each cell, and to include the arraystretch renew command. If the math mode is selected, then each cell will be put into inline math mode.</p>
+<p>There are also have options for both row and column headers. Each header type can include as many rows and columns as you wish, you can set the alignment of the headers as well as the font styles of the headers. When a cell is both a row header and a column header the attributes for the column header are used. For example,</p>
+<ul class="simple">
+<li><p>A table with no headers:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="A table with no headers." src="../../_images/Tab0011.png" />
+</figure>
+<ul class="simple">
+<li><p>The same table with just one column header in bold:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="The same table with just one column header in bold." src="../../_images/Tab0021.png" />
+</figure>
+<ul class="simple">
+<li><p>The same table with just one row header in italics:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="The same table with just one row header in italics." src="../../_images/Tab0031.png" />
+</figure>
+<ul class="simple">
+<li><p>The same table with one row header in italics and one column header in bold:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="The same table with one row header in italics and one column header in bold." src="../../_images/Tab0041.png" />
+</figure>
+<p>A simple example of the output of this option, note the commented inclusion of the preamble package.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="c">% Package: \usepackage{longtable}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>longtable<span class="nb">}</span>[l]<span class="nb">{</span>lll<span class="nb">}</span>
+1 <span class="nb">&amp;</span> 4 <span class="nb">&amp;</span> 7 <span class="k">\\</span>
+2 <span class="nb">&amp;</span> 5 <span class="nb">&amp;</span> 8 <span class="k">\\</span>
+3 <span class="nb">&amp;</span> 6 <span class="nb">&amp;</span> 9 <span class="k">\\</span>
+<span class="k">\end</span><span class="nb">{</span>longtable<span class="nb">}</span>
+</pre></div>
+</div>
+</section>
+<section id="copy-to-tabular-environment">
+<h3>Copy to Tabular Environment<a class="headerlink" href="#copy-to-tabular-environment" title="Link to this heading">#</a></h3>
+<p>The Longtable Environment and Tabular Environment have options for column alignment, a table border, and several options for division lines between rows and columns. The Column Alignment is the alignment used for all columns in the table. These can be overridden by header rows or columns. The alignment is on each column but is easily editable in the pasted LaTeX code.</p>
+<p>The Divisions options are for the selection of common division lines in the table. If you have worked with LaTeX you know there are many more possibilities here for row and column divisions. This tool just includes some of the more common selections and if they are not exactly what is needed it should only take some minimal editing.</p>
+<ul class="simple">
+<li><p>Table Boarder puts a simple border around the entire table.</p></li>
+<li><p>Division After First Row puts a line directly below the first row.</p></li>
+<li><p>Division on All Rows puts a line directly below each row of the table and one at the top.</p></li>
+<li><p>Division After First Column puts a line directly to the right of the first column.</p></li>
+<li><p>Division After All Columns puts a line directly to the right of each column of the table and one at the left.</p></li>
+</ul>
+<p>At the bottom there are options to include math mode around the contents of each cell, and to include the arraystretch renew command. If the math mode is selected, then each cell will be put into inline math mode.</p>
+<p>There are also have options for both row and column headers. Each header type can include as many rows and columns as you wish, you can set the alignment of the headers as well as the font styles of the headers. When a cell is both a row header and a column header the attributes for the column header are used. For example,</p>
+<ul class="simple">
+<li><p>A table with no headers:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="A table with no headers." src="../../_images/Tab0011.png" />
+</figure>
+<ul class="simple">
+<li><p>The same table with just one column header in bold:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="The same table with just one column header in bold." src="../../_images/Tab0021.png" />
+</figure>
+<ul class="simple">
+<li><p>The same table with just one row header in italics:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="The same table with just one row header in italics." src="../../_images/Tab0031.png" />
+</figure>
+<ul class="simple">
+<li><p>The same table with one row header in italics and one column header in bold:</p></li>
+</ul>
+<figure class="align-default">
+<img alt="The same table with one row header in italics and one column header in bold." src="../../_images/Tab0041.png" />
+</figure>
+<p>A simple example of the output of this option, note the commented inclusion of the preamble package.</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>tabular<span class="nb">}{</span>lll<span class="nb">}</span>
+1 <span class="nb">&amp;</span> 4 <span class="nb">&amp;</span> 7 <span class="k">\\</span>
+2 <span class="nb">&amp;</span> 5 <span class="nb">&amp;</span> 8 <span class="k">\\</span>
+3 <span class="nb">&amp;</span> 6 <span class="nb">&amp;</span> 9 <span class="k">\\</span>
+<span class="k">\end</span><span class="nb">{</span>tabular<span class="nb">}</span>
+</pre></div>
+</div>
+</section>
+<section id="copy-to-tabbing-environment">
+<h3>Copy to Tabbing Environment<a class="headerlink" href="#copy-to-tabbing-environment" title="Link to this heading">#</a></h3>
+<p>The Tabbing Environment has only two options, the column spacing for each column and to include math mode on each cell. The column spacing will be in points, remember 72 points to an inch. If the math mode is selected, then each cell will be put into inline math mode. A simple example of the output of this option,</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>tabbing<span class="nb">}</span>
+<span class="k">\hspace</span><span class="nb">{</span>20pt<span class="nb">}</span><span class="k">\=\hspace</span><span class="nb">{</span>20pt<span class="nb">}</span><span class="k">\=\hspace</span><span class="nb">{</span>20pt<span class="nb">}</span><span class="k">\=\kill</span>
+1 <span class="k">\&gt;</span> 4 <span class="k">\&gt;</span> 7 <span class="k">\\</span>
+2 <span class="k">\&gt;</span> 5 <span class="k">\&gt;</span> 8 <span class="k">\\</span>
+3 <span class="k">\&gt;</span> 6 <span class="k">\&gt;</span> 9 <span class="k">\\</span>
+<span class="k">\end</span><span class="nb">{</span>tabbing<span class="nb">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="copy-as-geogebra">
+<h2>Copy as GeoGebra<a class="headerlink" href="#copy-as-geogebra" title="Link to this heading">#</a></h2>
+<p>The Copy as GeoGebra will formulate the grid as a GeoGebra matrix, that is { } delimited. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>copies as</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{{1,4,7},{2,5,8},{3,6,9}}</span>
+</pre></div>
+</div>
+</section>
+<section id="copy-as-maxima">
+<h2>Copy as Maxima<a class="headerlink" href="#copy-as-maxima" title="Link to this heading">#</a></h2>
+<p>The Copy as Maxima will formulate the grid as a Maxima matrix. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>will copy as</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">matrix([1,4,7],[2,5,8],[3,6,9])</span>
+</pre></div>
+</div>
+</section>
+<section id="copy-as-sagemath">
+<h2>Copy as SageMath<a class="headerlink" href="#copy-as-sagemath" title="Link to this heading">#</a></h2>
+<p>The Copy as SageMath will formulate the grid as a SageMath matrix. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>will copy as</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">matrix(QQ,[[1,4,7],[2,5,8],[3,6,9]])</span>
+</pre></div>
+</div>
+</section>
+<section id="copy-delimited">
+<h2>Copy (…) Delimited<a class="headerlink" href="#copy-delimited" title="Link to this heading">#</a></h2>
+<p>This copies as ( ) delimited string. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>copies as</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">((1,4,7)</span><span class="go">,(2,5,8),(3,6,9))</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h2>Copy […] Delimited<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>This copies as [ ] delimited string. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>copies as</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[[1,4,7],[2,5,8],[3,6,9]]</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Copy {…} Delimited<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>This copies as { } delimited string. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>copies as</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">{{1,4,7},{2,5,8},{3,6,9}}</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Copy &lt;…&gt; Delimited<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>This copies as &lt; &gt; delimited string. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>copies as</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&lt;&lt;1,4,7&gt;,&lt;2,5,8&gt;,&lt;3,6,9&gt;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="copy-as-html">
+<h2>Copy as HTML<a class="headerlink" href="#copy-as-html" title="Link to this heading">#</a></h2>
+<p>This copies the table to HTML markup. For example, the standard grid</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1  4  7</span>
+<span class="go">2  5  8</span>
+<span class="go">3  6  9</span>
+</pre></div>
+</div>
+<p>copies as</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">TABLE</span> <span class="na">BORDER</span><span class="o">=</span><span class="s">1</span> <span class="na">CELLPADDING</span><span class="o">=</span><span class="s">1</span> <span class="na">CELLSPACING</span><span class="o">=</span><span class="s">0</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">TR</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>1<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>4<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>7<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">TR</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">TR</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>2<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>5<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>8<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">TR</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">TR</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>3<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>6<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;&lt;</span><span class="nt">TD</span><span class="p">&gt;</span>9<span class="p">&lt;/</span><span class="nt">TD</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">TR</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">TABLE</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="undo-redo">
+<h2>Undo &amp; Redo<a class="headerlink" href="#undo-redo" title="Link to this heading">#</a></h2>
+<p>This tool also has its own undo and redo history. Every time the grid is changed the undo history is updated with the new grid. The program does not limit the number of undos that are possible.</p>
+</section>
+<section id="delete">
+<h2>Delete<a class="headerlink" href="#delete" title="Link to this heading">#</a></h2>
+<p>This will remove the currently selected cells from the grid.  As with all edits the old data is still in the undo/redo history and can be retrieved with an undo.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="FileOps.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">File Options</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="MathOps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Math Options</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-formulas">Copy Formulas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-values">Copy Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paste">Paste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-values-as-tab-delimited">Copy Values as Tab Delimited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paste-from-clipboard">Paste from Clipboard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-to-cas">Load to CAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-latex">Copy as LaTeX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-latex-copy">Special LaTeX Copy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-to-array-environment">Copy to Array Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-to-matrix-environment">Copy to Matrix Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-to-special-matrix-environment">Copy to Special Matrix Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-cells-to-latex-code">Selected Cells to LaTeX Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#selected-cells-to-latex-code-in-math-mode">Selected Cells to LaTeX Code in Math Mode</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-to-longtable-environment">Copy to Longtable Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-to-tabular-environment">Copy to Tabular Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-to-tabbing-environment">Copy to Tabbing Environment</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-geogebra">Copy as GeoGebra</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-maxima">Copy as Maxima</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-sagemath">Copy as SageMath</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-delimited">Copy (…) Delimited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Copy […] Delimited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Copy {…} Delimited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Copy &lt;…&gt; Delimited</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-html">Copy as HTML</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#undo-redo">Undo &amp; Redo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete">Delete</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

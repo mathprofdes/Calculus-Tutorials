@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Green’s Theorem &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/greenstheorem';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Divergence and Curl" href="divergencecurl.html" />
+    <link rel="prev" title="Conservative Vector Fields" href="conservativevf.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Green’s Theorem</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="green-s-theorem">
+<h1><span class="target" id="index-0"></span>Green’s Theorem<a class="headerlink" href="#green-s-theorem" title="Link to this heading">#</a></h1>
+<p>Green’s Theorem gives the relationship between a line integral around a simple closed curve and a double integral over the plane region bounded by the curve.</p>
+<section id="orientation">
+<h2>Orientation<a class="headerlink" href="#orientation" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-positive-and-negative-orientation admonition">
+<p class="admonition-title">Definition: Positive and Negative Orientation</p>
+<p>Say we have a simple closed curve <em>C</em> that encloses a region <em>D</em>. We say that <em>C</em> has positive orientation if the traversal around <em>C</em> is counterclockwise.  That is, if we walk around the curve <em>C</em> the region <em>D</em> is always on our left.</p>
+<figure class="align-default" id="id2">
+<img alt="Positive Orientation" src="../_images/Green001.png" />
+<figcaption>
+<p><span class="caption-text">Positive Orientation</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Similarly, <em>C</em> has a negative orientation if the traversal around <em>C</em> is clockwise.  That is, if we walk around the curve <em>C</em> the region <em>D</em> is always on our right.</p>
+<figure class="align-default" id="id3">
+<img alt="Negative Orientation" src="../_images/Green002.png" />
+<figcaption>
+<p><span class="caption-text">Negative Orientation</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="id1">
+<h2>Green’s Theorem<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="admonition-theorem-green-s-theorem admonition">
+<p class="admonition-title">Theorem: Green’s Theorem</p>
+<p>If <em>C</em> is a positively oriented, piecewise-smooth, simple closed curve and <em>D</em> is the region bounded by the curve <em>C</em>. If <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q)\)</span> where <em>P</em> and <em>Q</em> have continuous partial derivatives on an open region containing <em>D</em>, then</p>
+<div class="math notranslate nohighlight">
+\[\oint_C \mathbf{F} \cdot d\mathbf{r} = \oint_C P \; dx + Q \; dy = \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \; dA\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The notation,</p>
+<div class="math notranslate nohighlight">
+\[\oint_C P \; dx + Q \; dy\]</div>
+<p>is the same as</p>
+<div class="math notranslate nohighlight">
+\[\int_C P \; dx + Q \; dy\]</div>
+<p>The circle on the integral sign is sometimes used to represent an integral on a positively oriented closed curve <em>C</em>.</p>
+</div>
+<section id="example-green-s-theorem">
+<h3>Example: Green’s Theorem<a class="headerlink" href="#example-green-s-theorem" title="Link to this heading">#</a></h3>
+<p>In this example we are going to calculate the line integral,</p>
+<div class="math notranslate nohighlight">
+\[\oint_C x^2y^3 \; dx + \cos(x)e^y \; dy\]</div>
+<p>where <em>C</em> is the positively oriented rectangle with vertices <span class="math notranslate nohighlight">\((1, 1)\)</span>, <span class="math notranslate nohighlight">\((5, 1)\)</span>, <span class="math notranslate nohighlight">\((5, 3)\)</span>, <span class="math notranslate nohighlight">\((1, 3)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P &amp;= x^2y^3 \\
+Q &amp;= \cos(x)e^y \\
+P_y &amp;= 3x^2y^2 \\
+Q_x &amp;= -\sin(x)e^y \\\end{split}\]</div>
+<p>So the integral is,</p>
+<div class="math notranslate nohighlight">
+\[\oint_C x^2y^3 \; dx + \cos(x)e^y \; dy = \int_1^3 \int_1^5 -\sin(x)e^y - 3x^2y^2 \; dx \; dy\]</div>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>We could have used the CAS to help with the derivatives but they are easy to do in this example.  For the final integral, also easy to do, input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-3*x^2*y^2 - exp(y)*sin(x)</span>
+</pre></div>
+</div>
+<p>Then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, first variable is x with bounds <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">5</span></code>, the second variable is <code class="docutils literal notranslate"><span class="pre">y</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">3</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{3224}{3} + \left(- \cos{\left(1 \right)} + \cos{\left(5 \right)}\right) e^{3} - e \left(- \cos{\left(1 \right)} + \cos{\left(5 \right)}\right) \approx -1079.1238011052806669\]</div>
+<p>Note how much work this has saved.  If we had done the line integral we would have had to break the integral up into four integrals, one for each line segment, parameterize each line segment, and do the four integrals.  Green’s theorem reduced all of this to a simple double integral.</p>
+</section>
+</section>
+</section>
+<section id="green-s-theorem-on-general-regions">
+<h2>Green’s Theorem on General Regions<a class="headerlink" href="#green-s-theorem-on-general-regions" title="Link to this heading">#</a></h2>
+<p>Green’s Theorem, as stated, does not apply to regions like region <em>D</em> in the image below.  It can easily be extended to regions of this type.</p>
+<figure class="align-default" id="id4">
+<img alt="General Region" src="../_images/Green003.png" />
+<figcaption>
+<p><span class="caption-text">General Region</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we cut the region through the internal holes maintaining a positive orientation note that the line integrals in the cuts will cancel out and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\oint_C \mathbf{F} \cdot d\mathbf{r} &amp; = \oint_{C_1} \mathbf{F} \cdot d\mathbf{r} + \oint_{C_2} \mathbf{F} \cdot d\mathbf{r} \\
+&amp; = \iint_{A} (Q_x - P_y) \; dA + \iint_{B} (Q_x - P_y) \; dA \\
+&amp; = \iint_{D} (Q_x - P_y) \; dA\end{split}\]</div>
+<p>So, Green’s theorem also holds for regions that have a finite number of holes in them as long as the holes are positively oriented, that is, the region is on the left.</p>
+<section id="example-green-s-theorem-on-a-general-region">
+<h3>Example: Green’s Theorem on a General Region<a class="headerlink" href="#example-green-s-theorem-on-a-general-region" title="Link to this heading">#</a></h3>
+<p>In this exercise we will be finding the integral,</p>
+<div class="math notranslate nohighlight">
+\[\oint_C \left( \sin(x^2) - \frac{y^3}{3} \right) \; dx + \left( \frac{x^3}{3} + e^{\sqrt{y}} \right) \; dy\]</div>
+<p>where <em>C</em> is the positively oriented curve enclosing the region <em>D</em> in the image below.</p>
+<figure class="align-default" id="id5">
+<img alt="Region *D*" src="../_images/Green004.png" />
+<figcaption>
+<p><span class="caption-text">Region <em>D</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="math notranslate nohighlight">
+\[\begin{split}P &amp;= \sin(x^2) - \frac{y^3}{3} \\
+Q &amp;= \frac{x^3}{3} + e^{\sqrt{y}} \\
+P_y &amp;= -y^2 \\
+Q_x &amp;= x^2 \\\end{split}\]</div>
+<p>So the integral is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\oint_C \left( \sin(x^2) - \frac{y^3}{3} \right) \; dx + \left( \frac{x^3}{3} + e^{\sqrt{y}} \right) \; dy &amp; = \iint_D x^2+y^2 \; dA \\
+&amp; = \int_0^{2\pi} \int_1^2 r^3 \; dr \; d\theta \\
+&amp; = \frac{15 \pi}{2}\end{split}\]</div>
+<p>Once again this saved us a significant amount of work and some nasty integrals.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="conservativevf.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Conservative Vector Fields</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="divergencecurl.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Divergence and Curl</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orientation">Orientation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Green’s Theorem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-green-s-theorem">Example: Green’s Theorem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#green-s-theorem-on-general-regions">Green’s Theorem on General Regions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-green-s-theorem-on-a-general-region">Example: Green’s Theorem on a General Region</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,723 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Differentiation Rules &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/derivativerules';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Higher-Order Derivatives" href="derivativehigher.html" />
+    <link rel="prev" title="The Derivative as a Function" href="derivativefct.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Differentiation Rules</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="differentiation-rules">
+<h1><span class="target" id="index-0"></span>Differentiation Rules<a class="headerlink" href="#differentiation-rules" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>In most Calculus textbooks the following set of derivative formulas are usually spread across several sections and there are numerous exercises for you to become proficient in applying these rules to find derivatives of some fairly complicated functions.  We will not be going over this by hand as your textbook will do that.  With that said, differentiation rules are not just for finding a derivative by hand, these are written into computer algebra systems as part of their differentiation function code.  In fact, we can use the power of a computer algebra system to experiment and extend the basic rules learned in class.</p>
+<p>If <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> are two differentiable functions and if <em>c</em> is a constant then we have the following differentiation rules:</p>
+<section id="basic-rules">
+<h3>Basic Rules<a class="headerlink" href="#basic-rules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (c) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (x) = 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (x^n) = n x^{n-1}\)</span> for <em>n</em> any real number.</p></li>
+</ul>
+</section>
+<section id="arithmetic-rules">
+<h3>Arithmetic Rules<a class="headerlink" href="#arithmetic-rules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (c f(x)) = c f'(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (f(x) + g(x)) = f'(x) + g'(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (f(x) - g(x)) = f'(x) - g'(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (f(x) g(x)) = f(x)g'(x) + f'(x)g(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} \left(\frac{f(x)}{g(x)}\right) = \displaystyle \frac{g(x)f'(x) - f(x)g'(x)}{(g(x))^2}\)</span></p></li>
+</ul>
+</section>
+<section id="chain-rule-compositions">
+<h3>Chain Rule: Compositions<a class="headerlink" href="#chain-rule-compositions" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (f(g(x))) = f'(g(x))g'(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle  \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}\)</span></p></li>
+</ul>
+</section>
+<section id="exponential-logarithmic-rules">
+<h3>Exponential &amp; Logarithmic Rules<a class="headerlink" href="#exponential-logarithmic-rules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (e^x) = e^x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (a^x) = a^x \ln(a)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\ln|x|) = \displaystyle \frac{1}{x}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\log_b(x)) = \displaystyle \frac{1}{x \ln(b)}\)</span></p></li>
+</ul>
+</section>
+<section id="trigonometric-rules">
+<h3>Trigonometric Rules<a class="headerlink" href="#trigonometric-rules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\sin(x)) = \cos(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\cos(x)) = -\sin(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\tan(x)) = \sec^2(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\cot(x)) = -\csc^2(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\sec(x)) = \sec(x)\tan(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\csc(x)) = -\csc(x)\cot(x)\)</span></p></li>
+</ul>
+</section>
+<section id="inverse-trigonometric-rules">
+<h3>Inverse Trigonometric Rules<a class="headerlink" href="#inverse-trigonometric-rules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\sin^{-1}(x)) = \displaystyle \frac{1}{\sqrt{1-x^2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\cos^{-1}(x)) = \displaystyle -\frac{1}{\sqrt{1-x^2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\tan^{-1}(x)) = \displaystyle \frac{1}{1+x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\cot^{-1}(x)) = \displaystyle -\frac{1}{1+x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\sec^{-1}(x)) = \displaystyle \frac{1}{x \sqrt{x^2 - 1}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\csc^{-1}(x)) = \displaystyle -\frac{1}{x \sqrt{x^2 - 1}}\)</span></p></li>
+</ul>
+</section>
+<section id="hyperbolic-rules">
+<h3>Hyperbolic Rules<a class="headerlink" href="#hyperbolic-rules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\sinh(x)) = \cosh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\cosh(x)) = \sinh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\tanh(x)) = \text{sech}^2(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\coth(x)) = -\text{csch}^2(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\text{sech}(x)) = -\text{sech}(x)\tanh(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\text{csch}(x)) = -\text{csch}(x)\coth(x)\)</span></p></li>
+</ul>
+</section>
+<section id="inverse-hyperbolic-rules">
+<h3>Inverse Hyperbolic Rules<a class="headerlink" href="#inverse-hyperbolic-rules" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\sinh^{-1}(x)) = \displaystyle \frac{1}{\sqrt{1+x^2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\cosh^{-1}(x)) = \displaystyle \frac{1}{\sqrt{x^2 - 1}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\tanh^{-1}(x)) = \displaystyle \frac{1}{1-x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\coth^{-1}(x)) = \displaystyle \frac{1}{1-x^2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\text{sech}^{-1}(x)) = \displaystyle - \frac{1}{x\sqrt{1-x^2}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{d}{dx} (\text{csch}^{-1}(x)) = \displaystyle - \frac{1}{|x|\sqrt{x^2 + 1}}\)</span></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>For the readers who have studied computer science</strong>: You will note that several of the rules (product, quotient, and chain) have derivatives on the right hand side of the equation.  So when doing a derivative by hand, one needs to find the derivatives of the smaller portions and substitute them into the right hand side to get the final answer.  In programming, this is called a recursive definition.  To take a derivative of a product you need to take the derivative of each of the factors and then combine these into the final answer.  So when building a computer algebra system, the functions that find derivatives are recursive.</p>
+<p>To take this one step further, for the machine to take the derivative of</p>
+<div class="math notranslate nohighlight">
+\[\left(x^3 \sin^7(x)\right)^5 \left(3x+\sin^2(x)\cos(e^x+4x^3)\right)\]</div>
+<p>The derivative function would first do a product rule, then inside that (on the left) it would need to do a chain rule then a product rule, followed by another chain rule, and finally a derivative formula.  On the right a sum rule, followed by a product rule, then chain rules, then a sum rule, and finally some formulas.  The usual way to accomplish this repetition of rules inside the execution of other rules is to have an expression function call a term function on each term, then the term function to call a factor function on each factor, then the factor function to call a power function on each power, and the power function apply a rule or call the expression function, and so on.  So this system of differentiation function code is indirectly recursive.  A similar system is built into programming language compilers and interpreters. For the interested reader you may wish to look up Backus-Naur Form and the theory of languages.</p>
+</div>
+</section>
+</section>
+<section id="example-generalizing-the-product-rule">
+<h2>Example: Generalizing the Product Rule<a class="headerlink" href="#example-generalizing-the-product-rule" title="Link to this heading">#</a></h2>
+<p>These exercises are best done with either CLAE or Maxima. If you have not read the previous section, <a class="reference internal" href="derivativefct.html"><span class="doc">The Derivative as a Function</span></a>, on how to do the quick derivative function in CLAE and Maxima you should do so before continuing with this example.</p>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Make sure you start with an empty workspace,</p>
+<p>Input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)</span>
+</pre></div>
+</div>
+<p>Take the derivative and you will get the product rule,</p>
+<div class="math notranslate nohighlight">
+\[f{\left(x \right)} \frac{d}{d x} g{\left(x \right)} + g{\left(x \right)} \frac{d}{d x} f{\left(x \right)}\]</div>
+<p>Input the following and take its derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)*h(x)</span>
+</pre></div>
+</div>
+<p>Input the following and take its derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)*h(x)*k(x)</span>
+</pre></div>
+</div>
+<p>Input the following and take its derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)*h(x)*k(x)*m(x)</span>
+</pre></div>
+</div>
+<p>Do you notice a pattern?  What is it?</p>
+<p>If you were given the function,</p>
+<div class="math notranslate nohighlight">
+\[\sin(x) \cdot (x^2-3x+4) \cdot  \cos(x) \cdot  \ln(x) \cdot  \frac{1}{x^3} \cdot  \sqrt[3]{x}\]</div>
+<p>could you write down the derivative without any intermediate steps?</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Make sure you start with a new workspace,</p>
+<p>Input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)</span>
+</pre></div>
+</div>
+<p>Take the derivative and you will get the product rule,</p>
+<div class="math notranslate nohighlight">
+\[f{\left(x \right)} \frac{d}{d x} g{\left(x \right)} + g{\left(x \right)} \frac{d}{d x} f{\left(x \right)}\]</div>
+<p>Input the following and take its derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)*h(x)</span>
+</pre></div>
+</div>
+<p>Input the following and take its derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)*h(x)*k(x)</span>
+</pre></div>
+</div>
+<p>Input the following and take its derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x)*g(x)*h(x)*k(x)*m(x)</span>
+</pre></div>
+</div>
+<p>Do you notice a pattern?  What is it?</p>
+<p>If you were given the function,</p>
+<div class="math notranslate nohighlight">
+\[\sin(x) \cdot (x^2-3x+4) \cdot  \cos(x) \cdot  \ln(x) \cdot  \frac{1}{x^3} \cdot  \sqrt[3]{x}\]</div>
+<p>could you write down the derivative without any intermediate steps?</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="derivativefct.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Derivative as a Function</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="derivativehigher.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Higher-Order Derivatives</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-rules">Basic Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-rules">Arithmetic Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-rule-compositions">Chain Rule: Compositions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-logarithmic-rules">Exponential &amp; Logarithmic Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-rules">Trigonometric Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-rules">Inverse Trigonometric Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-rules">Hyperbolic Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic-rules">Inverse Hyperbolic Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-generalizing-the-product-rule">Example: Generalizing the Product Rule</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,803 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Directional Derivatives and the Gradient &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/directionalder';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Maxima and Minima" href="maxmin.html" />
+    <link rel="prev" title="The Chain Rule" href="chain.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Directional Derivatives and the Gradient</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="directional-derivatives-and-the-gradient">
+<h1><span class="target" id="index-0"></span>Directional Derivatives and the Gradient<a class="headerlink" href="#directional-derivatives-and-the-gradient" title="Link to this heading">#</a></h1>
+<section id="directional-derivative">
+<h2>Directional Derivative<a class="headerlink" href="#directional-derivative" title="Link to this heading">#</a></h2>
+<p>Rcall that the partial derivatives <span class="math notranslate nohighlight">\(f_x(x, y)\)</span> and <span class="math notranslate nohighlight">\(f_y(x, y)\)</span> are the rates of change in the <em>x</em> and <em>y</em> directions.  One question is can we find the rate of change on a surface at a point in a direction that is not parallel to the <em>x</em> or <em>y</em> axes.  The answer is, of course, yes, we simply need to approach the point of tangency along the line in the direction of a unit vector <span class="math notranslate nohighlight">\(\mathbf{u} = (a, b).\)</span> This can be done easily by the following calculation.</p>
+<div class="admonition-definition-directional-derivative admonition">
+<p class="admonition-title">Definition: Directional Derivative</p>
+<p>The directional derivative of a function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> at the point <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\mathbf{u} = (a, b)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{u}}f(x_0, y_0) = \lim_{h \to 0} \frac{f(x_0 + ah, y_0 + bh) - f(x_0, y_0)}{h}\]</div>
+<p>if this limit exists.</p>
+</div>
+<p>Note that if our unit vector is <span class="math notranslate nohighlight">\(\mathbf{i} = (1, 0)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{i}}f(x_0, y_0) = \lim_{h \to 0} \frac{f(x_0 + h, y_0) - f(x_0, y_0)}{h} = f_x(x_0, y_0)\]</div>
+<p>and if our unit vector is <span class="math notranslate nohighlight">\(\mathbf{j} = (0, 1)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{j}}f(x_0, y_0) = \lim_{h \to 0} \frac{f(x_0 , y_0+h) - f(x_0, y_0)}{h} = f_y(x_0, y_0)\]</div>
+<p>So the directional derivative simply generalized the partial derivatives.</p>
+<p>Fortunately we do not need to result to the limit definition when calculating the directional derivative, it can be written in terms of the partial derivatives and the direction vector.</p>
+<div class="admonition-theorem-calculating-directional-derivative admonition">
+<p class="admonition-title">Theorem: Calculating Directional Derivative</p>
+<p>Given the function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> and a unit vector <span class="math notranslate nohighlight">\(\mathbf{u} = (a, b)\)</span> then,</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{u}}f(x, y) = f_x(x, y) a + f_y(x, y) b\]</div>
+</div>
+</section>
+<section id="the-gradient-vector">
+<h2>The Gradient Vector<a class="headerlink" href="#the-gradient-vector" title="Link to this heading">#</a></h2>
+<p>Note from the last theorem on calculating the directional derivative, we can rewrite the expression as the dot product of two vectors.</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{u}}f(x, y) = f_x(x, y) a + f_y(x, y) b = (f_x(x, y), f_y(x, y)) \cdot (a, b) = (f_x(x, y), f_y(x, y)) \cdot \mathbf{u}\]</div>
+<p>The first vector in this dot product comes up fairly often and we give it a name.</p>
+<div class="admonition-definition-gradient-vector admonition">
+<p class="admonition-title">Definition: Gradient Vector</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x, y)\)</span> be a function of two variables, then the gradient of <em>f</em> is the vector function <span class="math notranslate nohighlight">\(\nabla f\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\nabla f = (f_x(x, y), f_y(x, y)) = f_x(x, y) \mathbf{i} + f_y(x, y) \mathbf{j}\]</div>
+</div>
+<p>Given the above notation we can rewrite the directional derivative calculation.</p>
+<div class="admonition-theorem-calculating-directional-derivative admonition">
+<p class="admonition-title">Theorem: Calculating Directional Derivative</p>
+<p>Given the function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> and a unit vector <span class="math notranslate nohighlight">\(\mathbf{u} = (a, b)\)</span> then,</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{u}}f(x, y) =  \nabla f(x, y) \cdot \mathbf{u}\]</div>
+</div>
+<section id="example-f-x-y-x-2-ln-left-y-right-at-3-1-in-the-direction-5-12">
+<h3>Example: <span class="math notranslate nohighlight">\(f(x, y) = x^{2} \ln{\left(y \right)}\)</span> at <span class="math notranslate nohighlight">\((3, 1)\)</span> in the direction <span class="math notranslate nohighlight">\((-5, 12)\)</span><a class="headerlink" href="#example-f-x-y-x-2-ln-left-y-right-at-3-1-in-the-direction-5-12" title="Link to this heading">#</a></h3>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>This calculation in CLAE takes only a couple of steps.  First input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2*ln(y)</span>
+</pre></div>
+</div>
+<p>Find is gradiant with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code>, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 x \ln{\left(y \right)}\\\frac{x^{2}}{y}\end{array}\right]\end{split}\]</div>
+<p>Evaluate this at <span class="math notranslate nohighlight">\((3, 1)\)</span> with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, keep the variables as <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> and input <code class="docutils literal notranslate"><span class="pre">[3,</span> <span class="pre">1]</span></code> for the expressions.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}0\\9\end{array}\right]\end{split}\]</div>
+<p>Now input the direction <span class="math notranslate nohighlight">\((-5, 12)\)</span> as a vector, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}-5\\12\end{array}\right]\end{split}\]</div>
+<p>This is not a unit vector so we will convert it using <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Normalize</span></code>, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \frac{5}{13}\\\frac{12}{13}\end{array}\right]\end{split}\]</div>
+<p>Finally take the dot product of this and the evaluated gradiant vector with <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Dot</span> <span class="pre">Product</span></code> and the result is <span class="math notranslate nohighlight">\(\frac{108}{13}.\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that all of this can be generalized to three variables,</p>
+<div class="admonition-definition-directional-derivative admonition">
+<p class="admonition-title">Definition: Directional Derivative</p>
+<p>The directional derivative of a function <span class="math notranslate nohighlight">\(w = f(x, y, z)\)</span> at the point <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span> in the direction of a unit vector <span class="math notranslate nohighlight">\(\mathbf{u} = (a, b, c)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{u}}f(x_0, y_0, z_0) = \lim_{h \to 0} \frac{f(x_0 + ah, y_0 + bh, z_0 + ch) - f(x_0, y_0, z_0)}{h}\]</div>
+<p>if this limit exists.</p>
+</div>
+<div class="admonition-definition-gradient-vector admonition">
+<p class="admonition-title">Definition: Gradient Vector</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> be a function of three variables, then the gradient of <em>f</em> is the vector function <span class="math notranslate nohighlight">\(\nabla f\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\nabla f = (f_x(x, y, z), f_y(x, y, z), f_z(x, y, z)) = f_x(x, y, z) \mathbf{i} + f_y(x, y, z) \mathbf{j}+ f_z(x, y, z) \mathbf{k}\]</div>
+</div>
+<div class="admonition-theorem-calculating-directional-derivative admonition">
+<p class="admonition-title">Theorem: Calculating Directional Derivative</p>
+<p>Given the function <span class="math notranslate nohighlight">\(z = f(x, y, z)\)</span> and a unit vector <span class="math notranslate nohighlight">\(\mathbf{u} = (a, b, c)\)</span> then,</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{u}}f(x, y, z) =  \nabla f(x, y, z) \cdot \mathbf{u}\]</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="properties-of-the-directional-derivative-and-the-gradiant">
+<h2>Properties of the Directional Derivative and the Gradiant<a class="headerlink" href="#properties-of-the-directional-derivative-and-the-gradiant" title="Link to this heading">#</a></h2>
+<p>Suppose we have a function <em>f</em> of two or three variables and we consider all possible directional derivatives of <em>f</em> at a given point. These give the rates of change of <em>f</em> in all possible directions. We can then ask the questions: in which of these directions does <em>f</em> change fastest and what is the maximum rate of change?</p>
+<p>This is fairly easy to determine, consider the following derivation from the equations above,</p>
+<div class="math notranslate nohighlight">
+\[D_{\mathbf{u}} f = \nabla f \cdot \mathbf{u} = |\nabla f| |\mathbf{u}| \cos(\theta) = |\nabla f| \cos(\theta)\]</div>
+<p>Remember that <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is a unit vector and <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(\nabla f\)</span> and <span class="math notranslate nohighlight">\(\mathbf{u}.\)</span>  This last formula is a maximum when <span class="math notranslate nohighlight">\(\cos(\theta) = 1\)</span> and hence <span class="math notranslate nohighlight">\(\theta = 0.\)</span>  So the maximum directional derivative is <span class="math notranslate nohighlight">\(|\nabla f|\)</span> and happens when <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is in the same direction as <span class="math notranslate nohighlight">\(\nabla f.\)</span></p>
+<p>Another interesting property is between the gradiant vector and the level curves (or surfaces) of the function.  We will look at the situation with level curves, surfaces follow the same derivations and logic with three variables instead of two.  Take a level curve to a function of two variables, that is, <span class="math notranslate nohighlight">\(f(x, y) = k\)</span> for some constant <em>k</em>.  The level curve is a line so it can be represented as <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (x(t), y(t)).\)</span> So <span class="math notranslate nohighlight">\(f(x(t), y(t)) = k,\)</span> taking the derivative of both sides gives us,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt} &amp; = 0 \\
+f_x x'(t) + f_y y'(t) &amp; = 0 \\
+(f_x, f_y) \cdot (x'(t), y'(t)) &amp; = 0 \\
+\nabla f \cdot \mathbf{r}'(t) &amp; = 0 \\\end{split}\]</div>
+<p>The vector <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\)</span> is tangent to the level curve and since the dot product of this and the gradiant is 0, the gradiant vector is perpendicular (orthogonal or normal) to the level curve or surface.</p>
+<p>We summarize the discussion above with the following theorem.</p>
+<div class="admonition-theorem-properties-of-the-gradiant-vector admonition">
+<p class="admonition-title">Theorem: Properties of the Gradiant Vector</p>
+<p>Let <em>f</em> be a differentiable function of two or three variables and suppose that <span class="math notranslate nohighlight">\(\nabla f(\mathbf{x}) \neq \mathbf{0}.\)</span></p>
+<ul class="simple">
+<li><p>The directional derivative in the direction of a unit vector <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is <span class="math notranslate nohighlight">\(D_{\mathbf{u}}f(\mathbf{x}) =  \nabla f(\mathbf{x}) \cdot \mathbf{u}.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla f(\mathbf{x})\)</span> points in the direction of the maximum rate of increase of the function <em>f</em> at the point <span class="math notranslate nohighlight">\(\mathbf{x}\)</span> and that maximum rate is <span class="math notranslate nohighlight">\(|\nabla f(\mathbf{x})|.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla f(\mathbf{x})\)</span> is perpendicular (orthogonal) to the level curve or surface of <em>f</em> at the point <span class="math notranslate nohighlight">\(\mathbf{x}.\)</span></p></li>
+</ul>
+</div>
+<section id="example-visualizing-the-properties-of-the-gradiant-vector-theorem">
+<h3>Example: Visualizing the Properties of the Gradiant Vector Theorem<a class="headerlink" href="#example-visualizing-the-properties-of-the-gradiant-vector-theorem" title="Link to this heading">#</a></h3>
+<p>We will illustrate the second and third parts of the theorem with the function of two variables,</p>
+<div class="math notranslate nohighlight">
+\[f(x, y) = \frac{x^{2} y}{x^{2} + y^{2}}\]</div>
+<section id="id1">
+<h4>CLAE<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>First input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2*y/(x^2 + y^2)</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window, the image should look like the following (we did scale the <em>z</em>-axis a little).</p>
+<figure class="align-default" id="id3">
+<img alt=":math:`f(x, y) = \frac{x^{2} y}{x^{2} + y^{2}}`" src="../_images/DirDer001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = \frac{x^{2} y}{x^{2} + y^{2}}\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Select the function and take its gradiant with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code> the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \frac{2 x^{3} y}{\left(x^{2} + y^{2}\right)^{2}} + \frac{2 x y}{x^{2} + y^{2}}\\- \frac{2 x^{2} y^{2}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{x^{2}}{x^{2} + y^{2}}\end{array}\right]\end{split}\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{2 x y^{3}}{\left(x^{2} + y^{2}\right)^{2}}\\\frac{x^{2} \left(x^{2} - y^{2}\right)}{x^{4} + 2 x^{2} y^{2} + y^{4}}\end{array}\right]\end{split}\]</div>
+<p>What we want to do now is plot a grid of gradiant vectors along with this surface so we can see a relationship between the surface and the gradiant vectors.  To do this we need to rewrite the gradiant as a three dimensional vector instead of a two dimensional vector.  Assuming that this last vector was in <code class="docutils literal notranslate"><span class="pre">R3</span></code>, select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Input</span> <span class="pre">Vector</span></code> or hit the corresponding toolbar button.  Input <code class="docutils literal notranslate"><span class="pre">R3,</span> <span class="pre">0</span></code> and click OK.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{2 x y^{3}}{\left(x^{2} + y^{2}\right)^{2}}\\\frac{x^{2} \left(x^{2} - y^{2}\right)}{x^{4} + 2 x^{2} y^{2} + y^{4}}\\0\end{array}\right]\end{split}\]</div>
+<p>This just put in a 0 for the <em>z</em> component.  Click and drag this vector over to the 3D graphics window, it should come in as a vector field, which is what we want.  Go into the properties and change the number of <em>z</em> divisions to 3 (which is the minimum).  Also change the <em>x</em> and <em>y</em> grid divisions to 20 each.  The image you get should look like the ones displayed below.  Move the graph around and notice that the vectors are pointing in the direction that is moving up the surface.  Hence the gradiant vectors are in the direction of the maximum increase of the function.</p>
+<figure class="align-default" id="id4">
+<img alt="Surface and Gradiant Field" src="../_images/DirDer002.png" />
+<figcaption>
+<p><span class="caption-text">Surface and Gradiant Field</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="Surface and Gradiant Field" src="../_images/DirDer003.png" />
+<figcaption>
+<p><span class="caption-text">Surface and Gradiant Field</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another way to see this is using a color contour map.  Here is how we can do this.  For the surface, go into the properties and change the surface shading  to shade surface by height.  Change the gradiant vector colors to black. Select <code class="docutils literal notranslate"><span class="pre">Camera</span> <span class="pre">&gt;</span> <span class="pre">Position</span> <span class="pre">to</span> <span class="pre">Top</span> <span class="pre">of</span> <span class="pre">Z-Axis</span></code> and select <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Orthogonal</span> <span class="pre">Mode</span></code>.  You should see the following image.</p>
+<figure class="align-default" id="id6">
+<img alt="Surface Color Contour and Gradiant Field" src="../_images/DirDer004.png" />
+<figcaption>
+<p><span class="caption-text">Surface Color Contour and Gradiant Field</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The colors go ROYGBIV from top to bottom.  Here again we can see that the gradiant vectors point in the direction of moving up the surface.</p>
+<p>To visualize the third statement we will use the 2D graphics window.  Click and drag the original function over to the 2D graphics window, change the type to Contour Map, select <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Set</span> <span class="pre">View</span> <span class="pre">Window</span> <span class="pre">to</span> <span class="pre">1-1</span></code>.  Click and drag the gradiant vector (2D version) to the 2D graphics window, it should come in as a vector field.  The image should look like the following.</p>
+<figure class="align-default" id="id7">
+<img alt="Contour Map and Gradiant Field" src="../_images/DirDer005.png" />
+<figcaption>
+<p><span class="caption-text">Contour Map and Gradiant Field</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that the gradiant vectors are perpendicular to each of the graphed level curves.</p>
+</section>
+</section>
+</section>
+<section id="tangent-planes-to-level-surfaces">
+<h2>Tangent Planes to Level Surfaces<a class="headerlink" href="#tangent-planes-to-level-surfaces" title="Link to this heading">#</a></h2>
+<p>Extending the above theorem just a little. If we have a level surface, that is, <span class="math notranslate nohighlight">\(f(x, y, z) = k\)</span> and a point <span class="math notranslate nohighlight">\(P = (x_0, y_0, z_0)\)</span> on the surface, we know that the gradient vector <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span> is normal to the surface at <em>P</em>, and hence is a normal vector to the tangent plane to the surface at <em>P</em>.  Hence the equation of the tangent plane to <em>f</em> at <em>P</em> can be written as,</p>
+<div class="math notranslate nohighlight">
+\[f_x(x_0, y_0, z_0) (x-x_0) + f_y(x_0, y_0, z_0) (y-y_0) + f_z(x_0, y_0, z_0) (z-z_0) = 0\]</div>
+<section id="example-tangent-plane-to-x-y-2-z-3-8-at-2-2-1">
+<h3>Example: Tangent Plane to <span class="math notranslate nohighlight">\(x y^{2} z^{3} = 8\)</span> at <span class="math notranslate nohighlight">\((2, 2, 1)\)</span><a class="headerlink" href="#example-tangent-plane-to-x-y-2-z-3-8-at-2-2-1" title="Link to this heading">#</a></h3>
+<p>Here we will use the above theorem to find the tangent plane to the surface <span class="math notranslate nohighlight">\(x y^{2} z^{3} = 8\)</span> at the point <span class="math notranslate nohighlight">\((2, 2, 1).\)</span></p>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>First input the surface, in CALE we need to define all implicit curves and surfaces as expressions equal to 0, so we rewrite this as <span class="math notranslate nohighlight">\(x y^{2} z^{3} - 8 = 0.\)</span></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*y^2*z^3 - 8</span>
+</pre></div>
+</div>
+<p>CLick and drag this over to the 3D graphics window.  The plot may look a little rough, to smooth it out go into the properties and set the grid divisions to 50 each.  We did zoom in a little for the following image.</p>
+<figure class="align-default" id="id8">
+<img alt="Surface" src="../_images/DirDer006.png" />
+<figcaption>
+<p><span class="caption-text">Surface</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The tangent plane takes only a couple steps, take the gradiant vector with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code> the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}y^{2} z^{3}\\2 x y z^{3}\\3 x y^{2} z^{2}\end{array}\right]\end{split}\]</div>
+<p>Now evaluate it at the point <span class="math notranslate nohighlight">\((2, 2, 1)\)</span> with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the variables as <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> and input for the expressions <code class="docutils literal notranslate"><span class="pre">[2,2,1]</span></code>.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}4\\8\\24\end{array}\right]\end{split}\]</div>
+<p>This is a normal vector to the tangent plane.  To make the editing a minimum we will create the vector,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}x - 2\\y - 2\\z - 1\end{array}\right]\end{split}\]</div>
+<p>Use the vector input dialog and input <code class="docutils literal notranslate"><span class="pre">[x-2,</span> <span class="pre">y-2,</span> <span class="pre">z-1]</span></code>.  Now take the dot product of this and the evaluated gradiant vector to get the tangent plane,</p>
+<div class="math notranslate nohighlight">
+\[4 x + 8 y + 24 z - 48\]</div>
+<p>which means</p>
+<div class="math notranslate nohighlight">
+\[4 x + 8 y + 24 z - 48 = 0  \qquad {\rm or } \qquad 4 x + 8 y + 24 z = 48\]</div>
+<p>CLick and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id9">
+<img alt="Surface and Tangent Plane" src="../_images/DirDer007.png" />
+<figcaption>
+<p><span class="caption-text">Surface and Tangent Plane</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chain.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Chain Rule</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="maxmin.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Maxima and Minima</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directional-derivative">Directional Derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-gradient-vector">The Gradient Vector</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-y-x-2-ln-left-y-right-at-3-1-in-the-direction-5-12">Example: <span class="math notranslate nohighlight">\(f(x, y) = x^{2} \ln{\left(y \right)}\)</span> at <span class="math notranslate nohighlight">\((3, 1)\)</span> in the direction <span class="math notranslate nohighlight">\((-5, 12)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#properties-of-the-directional-derivative-and-the-gradiant">Properties of the Directional Derivative and the Gradiant</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-the-properties-of-the-gradiant-vector-theorem">Example: Visualizing the Properties of the Gradiant Vector Theorem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-planes-to-level-surfaces">Tangent Planes to Level Surfaces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tangent-plane-to-x-y-2-z-3-8-at-2-2-1">Example: Tangent Plane to <span class="math notranslate nohighlight">\(x y^{2} z^{3} = 8\)</span> at <span class="math notranslate nohighlight">\((2, 2, 1)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

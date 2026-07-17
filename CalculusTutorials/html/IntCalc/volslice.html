@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Volumes by Slicing &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/volslice';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Volumes of Revolution: Disk and Washer Methods" href="volrev.html" />
+    <link rel="prev" title="Areas Between Curves" href="areabetcurves.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Volumes by Slicing</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="volumes-by-slicing">
+<h1><span class="target" id="index-0"></span>Volumes by Slicing<a class="headerlink" href="#volumes-by-slicing" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Just like the area between two curves, this is a good introductory exercise in going through the process of representing a quantity as the limit of a Riemann sum and hence establishing that it is a definite integral.  This is a good exercise to do since many quantities in the physical sciences and economics (among others) can be represented this way, but we will leave the details to the textbook you are using.</p>
+<div class="admonition-theorem-finding-the-volume-of-an-object-by-cross-sections admonition">
+<p class="admonition-title">Theorem: Finding the Volume of an Object by Cross Sections</p>
+<p>If <span class="math notranslate nohighlight">\(A(x)\)</span> represents the cross sectional area of an object that extends from <span class="math notranslate nohighlight">\(x = a\)</span> to <span class="math notranslate nohighlight">\(x = b\)</span> then the volume of the object is given by</p>
+<div class="math notranslate nohighlight">
+\[V = \int_a^b A(x) \; dx\]</div>
+</div>
+<p>The above theorem is called the <strong>slicing method</strong>.</p>
+<div class="admonition-problem-solving-finding-volumes-by-the-slicing-method admonition">
+<p class="admonition-title">Problem Solving: Finding Volumes by the Slicing Method</p>
+<ol class="arabic simple">
+<li><p>Examine the solid, put an x-axis along the object so that the cross sections perpendicular to the axis form a familiar shape, circle, rectangle, triangle, etc.</p></li>
+<li><p>Determine a formula for the area of the cross-section at any point <em>x</em> on the axis, <span class="math notranslate nohighlight">\(A(x)\)</span>.</p></li>
+<li><p>Integrate the area formula over the appropriate interval to get the volume.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[V = \int_a^b A(x) \; dx\]</div>
+<figure class="align-default" id="id3">
+<img alt="Cross-Section Visualization" src="../_images/CrossArea001.png" />
+<figcaption>
+<p><span class="caption-text">Cross-Section Visualization</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-volume-of-a-right-tetrahedron">
+<h2>Example: Volume of a Right Tetrahedron<a class="headerlink" href="#example-volume-of-a-right-tetrahedron" title="Link to this heading">#</a></h2>
+<p>Find the volume of the given right tetrahedron.</p>
+<figure class="align-default" id="id4">
+<img alt="Example Visualization" src="../_images/CrossArea002.png" />
+<figcaption>
+<p><span class="caption-text">Example Visualization</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>First we will take a cross section perpendicular to the <em>x</em>-axis at a point <em>x</em>.  The cross section is a right triangle with base length <em>b</em> and height <em>a</em>.</p>
+<figure class="align-default" id="id5">
+<img alt="Example Visualization" src="../_images/CrossArea003.png" />
+<figcaption>
+<p><span class="caption-text">Example Visualization</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The area of the cross section triangle is,</p>
+<div class="math notranslate nohighlight">
+\[A = \frac{1}{2}ab\]</div>
+<p>We can find <em>a</em> and <em>b</em> in terms of <em>x</em> by using similar triangles.  Looking at the triangle containing <em>a</em> we have,</p>
+<div class="math notranslate nohighlight">
+\[\frac{5-x}{a} = \frac{5}{3}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[a = \frac{3}{5}(5-x)\]</div>
+<p>Doing the same with the triangle containing <em>b</em> we have,</p>
+<div class="math notranslate nohighlight">
+\[\frac{5-x}{b} = \frac{5}{4}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[b = \frac{4}{5}(5-x)\]</div>
+<p>and hence,</p>
+<div class="math notranslate nohighlight">
+\[A(x) = \frac{1}{2}ab = \frac{1}{2} \left( \frac{3}{5}(5-x) \right) \left( \frac{4}{5}(5-x) \right) = \frac{6 \left(x - 5\right)^{2}}{25}\]</div>
+<p>The interval we need to integrate over is <span class="math notranslate nohighlight">\([0, 5]\)</span>, hence the volume is,</p>
+<div class="math notranslate nohighlight">
+\[V = \int_0^5 \frac{6 \left(x - 5\right)^{2}}{25} \; dx = 10\]</div>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>The majority of these types of exercises are done by hand but the CAS can com in handy if there are difficult integrals to take at the end or if there are complex simplifications that need to be done. In this exercise there is really neither but we will do the last integral.</p>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">6 (x - 5)^2/25</span>
+</pre></div>
+</div>
+<p>Select a new cell and input <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">0,</span> <span class="pre">5)</span></code>.  The result will be 10.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>The majority of these types of exercises are done by hand but the CAS can com in handy if there are difficult integrals to take at the end or if there are complex simplifications that need to be done. In this exercise there is really neither but we will do the last integral.</p>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">6*(x - 5)^2/25</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, using the 0 and 5 bounds.  The result will be 10.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>The majority of these types of exercises are done by hand but the CAS can com in handy if there are difficult integrals to take at the end or if there are complex simplifications that need to be done. In this exercise there is really neither but we will do the last integral.</p>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=6*(x - 5)^2/25</span>
+</pre></div>
+</div>
+<p>then integrate with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(f(x),x,0,5)</span>
+</pre></div>
+</div>
+<p>The result will be 10.</p>
+</section>
+</section>
+<section id="example-volume-of-a-general-right-tetrahedron">
+<h2>Example: Volume of a General Right Tetrahedron<a class="headerlink" href="#example-volume-of-a-general-right-tetrahedron" title="Link to this heading">#</a></h2>
+<p>Find the volume of the given general right tetrahedron.  This is just an extension of the example above and is done in the same manner.</p>
+<figure class="align-default" id="id6">
+<img alt="Example Visualization" src="../_images/CrossArea004.png" />
+<figcaption>
+<p><span class="caption-text">Example Visualization</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>First we will take a cross section perpendicular to the <em>x</em>-axis at a point <em>x</em>.  The cross section is a right triangle with base length <em>k</em> and height <em>h</em>.</p>
+<figure class="align-default" id="id7">
+<img alt="Example Visualization" src="../_images/CrossArea005.png" />
+<figcaption>
+<p><span class="caption-text">Example Visualization</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The area of the cross section triangle is,</p>
+<div class="math notranslate nohighlight">
+\[A = \frac{1}{2}hk\]</div>
+<p>We can find <em>h</em> and <em>k</em> in terms of <em>x</em> by using similar triangles.  Looking at the triangle containing <em>h</em> we have,</p>
+<div class="math notranslate nohighlight">
+\[\frac{a-x}{h} = \frac{a}{b}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[h = \frac{b}{a}(a-x)\]</div>
+<p>Doing the same with the triangle containing <em>k</em> we have,</p>
+<div class="math notranslate nohighlight">
+\[\frac{a-x}{k} = \frac{a}{c}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[k = \frac{c}{a}(a-x)\]</div>
+<p>and hence,</p>
+<div class="math notranslate nohighlight">
+\[A(x) = \frac{1}{2}hk = \frac{1}{2} \left( \frac{b}{a}(a-x) \right) \left( \frac{c}{a}(a-x) \right) = \frac{bc(a-x)^2}{2a^2}\]</div>
+<p>The interval we need to integrate over is <span class="math notranslate nohighlight">\([0, a]\)</span>, hence the volume is,</p>
+<div class="math notranslate nohighlight">
+\[V = \int_0^a \frac{bc(a-x)^2}{2a^2} \; dx = \frac{a b c}{6}\]</div>
+<section id="id1">
+<h3>CLAE<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Again this is an easy integral but we will use the CAS just for practice.</p>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">b*c*(a - x)^2/(2*a^2)</span>
+</pre></div>
+</div>
+<p>Then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound 0 and upper bound <em>a</em>.  The result is</p>
+<div class="math notranslate nohighlight">
+\[\frac{a b c}{6}\]</div>
+</section>
+<section id="id2">
+<h3>Maxima<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Again this is an easy integral but we will use the CAS just for practice.</p>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=b*c*(a - x)^2/(2*a^2)</span>
+</pre></div>
+</div>
+<p>Then integrate with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(f(x), x, 0, a)</span>
+</pre></div>
+</div>
+<p>The result is</p>
+<div class="math notranslate nohighlight">
+\[\frac{a b c}{6}\]</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="areabetcurves.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Areas Between Curves</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="volrev.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Volumes of Revolution: Disk and Washer Methods</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-volume-of-a-right-tetrahedron">Example: Volume of a Right Tetrahedron</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-volume-of-a-general-right-tetrahedron">Example: Volume of a General Right Tetrahedron</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Copy, Paste, and Special Copy Options &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/casCopySpecialCopy';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Extract from Matrix" href="casMatrixExtract.html" />
+    <link rel="prev" title="3-D Transformations" href="casTransform3DInput.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseConvert.html">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSimplify.html">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSolving.html">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalLimitsDerivatives.html">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalOde.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecProj.html">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Copy, Paste, and Special Copy Options</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="copy-paste-and-special-copy-options">
+<h1><span class="target" id="index-0"></span>Copy, Paste, and Special Copy Options<a class="headerlink" href="#copy-paste-and-special-copy-options" title="Link to this heading">#</a></h1>
+<p>There are many options for copying program data to the clipboard.  One of the goals of this program is to make it as easy as possible to integrate this package with other standard software systems.  The main copy and paste options for the CAS are Copy, Paste, Copy as LaTeX, and the Special Copy submenu of the main program menu.  Many of these options have a corresponding toolbar button to make their selection quick and easy.</p>
+<section id="copy">
+<h2>Copy<a class="headerlink" href="#copy" title="Link to this heading">#</a></h2>
+<p>This will copy the currently selected object to the clipboard using the program syntax for the object.</p>
+</section>
+<section id="paste">
+<h2>Paste<a class="headerlink" href="#paste" title="Link to this heading">#</a></h2>
+<p>This will paste the contents of the clipboard to a new CAS item. It is assumed that the clipboard contents contain correct program syntax.</p>
+</section>
+<section id="copy-as-latex">
+<h2>Copy as LaTeX<a class="headerlink" href="#copy-as-latex" title="Link to this heading">#</a></h2>
+<p>This will copy the LaTeX code for the currently selected object to the clipboard.  These can then be pasted into your favorite LaTeX editor or text editor to then be compiled by the LaTeX composer.  For example, the CAS entry,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin{\left(\cos{\left(\frac{x}{3} \right)} \right)}}{\ln{\left(x \right)}}\]</div>
+<p>would be copied as</p>
+<p><code class="docutils literal notranslate"><span class="pre">\frac{\sin{\left(\cos{\left(\frac{x}{3}</span> <span class="pre">\right)}</span> <span class="pre">\right)}}{\ln{\left(x</span> <span class="pre">\right)}}</span></code></p>
+<p>and the entry</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would be copied as</p>
+<p><code class="docutils literal notranslate"><span class="pre">\left[\begin{array}{ccc}\cos{\left(a</span> <span class="pre">\right)}</span> <span class="pre">&amp;</span> <span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">\sin{\left(a</span> <span class="pre">\right)}\\0</span> <span class="pre">&amp;</span> <span class="pre">1</span> <span class="pre">&amp;</span> <span class="pre">0\\-</span> <span class="pre">\sin{\left(a</span> <span class="pre">\right)}</span> <span class="pre">&amp;</span> <span class="pre">0</span> <span class="pre">&amp;</span> <span class="pre">\cos{\left(a</span> <span class="pre">\right)}\end{array}\right]</span></code></p>
+</section>
+<section id="special-copy">
+<h2>Special Copy<a class="headerlink" href="#special-copy" title="Link to this heading">#</a></h2>
+<p>The Special Copy submenu contains options for special formatting of CAS objects.  This is in hopes that whatever system these copies will be pasted into will require little to no extra editing.</p>
+<section id="copy-workspace-as-latex">
+<h3>Copy Workspace as LaTeX<a class="headerlink" href="#copy-workspace-as-latex" title="Link to this heading">#</a></h3>
+<p>All the options in this menu work only on the currently selected item except for this one.  This option will convert the entire CAS workspace into one LaTeX output.  The descriptions are put in as verbatim environments and the mathematical code is placed in displayed equation delimiters.  Note that error entries in the CAS are skipped in this copy.</p>
+</section>
+<section id="copy-as-text">
+<h3>Copy as Text<a class="headerlink" href="#copy-as-text" title="Link to this heading">#</a></h3>
+<p>The CAS workspace entries are displayed in what is called a pretty print format that is produced by SymPy.  This is just a plain text format that is broken up line by line and includes some Unicode characters to make the presentation more mathematical in style and easier for the user to read.  The catch here is that to display this correctly the font that is being used must be a mono-spaced font, that is, all characters use the same amount of horizontal space, which is not the case for most fonts.  This is why if you go into the preferences to change the display font you only get a few choices and they are all mono-spaced.</p>
+<p>This copy will simply copy the pretty print text to the clipboard.  When this is pasted into a word processor the font around the text will most likely need to be changed to a mono-spaced font.</p>
+</section>
+<section id="copy-as-mathematical-code">
+<h3>Copy as Mathematical Code<a class="headerlink" href="#copy-as-mathematical-code" title="Link to this heading">#</a></h3>
+<p>This will copy the item to a mathematical format similar to the SymPy syntax.</p>
+</section>
+<section id="copy-matrix-to-tab-delimited">
+<h3>Copy Matrix to Tab Delimited<a class="headerlink" href="#copy-matrix-to-tab-delimited" title="Link to this heading">#</a></h3>
+<p>This is intended for matrices.  It will copy the matrix using a tab-delimited format that can be paste into most word processors.</p>
+</section>
+<section id="copy-as-image">
+<h3>Copy as Image<a class="headerlink" href="#copy-as-image" title="Link to this heading">#</a></h3>
+<p>This will copy the current item to an image.  If you are not using LaTeX to format your documents and using a standard word processor this may be a good way to get readable mathematics into your document without using the equation editors in the word processor.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin{\left(\cos{\left(\frac{x}{3} \right)} \right)}}{\ln{\left(x \right)}}\]</div>
+<p>would look like,</p>
+<figure class="align-default">
+<img alt="Pretty Print Expression" src="../../_images/CopyImage001.png" />
+</figure>
+</section>
+<section id="copy-as-image-with-padding">
+<h3>Copy as Image with Padding<a class="headerlink" href="#copy-as-image-with-padding" title="Link to this heading">#</a></h3>
+<p>This is the same as the Copy as Image option but it allows the user to add some extra padding around the text.  In some cases the automatic calculation of the minimal height and width of the image is a little off.  This is usually due to the use of Unicode characters in the expression (e and i and a few others) since their font metrics are a little off of where they need to be.  In these cases you may see lines wrapping within the image where they are not supposed to.  If this happens select this option and input some extra padding width and height in the dialog box that appears.</p>
+</section>
+<section id="copy-as-mathml">
+<h3>Copy as MathML<a class="headerlink" href="#copy-as-mathml" title="Link to this heading">#</a></h3>
+<p>This will copy the current object to MathML code.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin{\left(\cos{\left(\frac{x}{3} \right)} \right)}}{\ln{\left(x \right)}}\]</div>
+<p>would copy to,</p>
+<p>&lt;apply&gt;&lt;divide/&gt;&lt;apply&gt;&lt;sin/&gt;&lt;apply&gt;&lt;cos/&gt;&lt;apply&gt;&lt;divide/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;cn&gt;3&lt;/cn&gt;&lt;/apply&gt;&lt;/apply&gt;&lt;/apply&gt;&lt;apply&gt;&lt;ln/&gt;&lt;ci&gt;x&lt;/ci&gt;&lt;/apply&gt;&lt;/apply&gt;</p>
+</section>
+<section id="copy-as-geogebra">
+<h3>Copy as GeoGebra<a class="headerlink" href="#copy-as-geogebra" title="Link to this heading">#</a></h3>
+<p>This will copy the currently selected expression to GeoGebra code.  Not everything will copy in seamlessly, in particular, piecewise defined functions.  It does its best on expressions and matrices in the hopes that there will be a little editing as possible once pasted into GeoGebra.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin{\left(\cos{\left(\frac{x}{3} \right)} \right)}}{\ln{\left(x \right)}}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">sin(cos(x/3))/ln(x)</span></code>, which is correct syntax.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">{{cos(a),0,sin(a)},{0,1,0},{-sin(a),0,cos(a)}}</span></code>, which is also correct syntax.</p>
+</section>
+<section id="copy-as-maxima">
+<h3>Copy as Maxima<a class="headerlink" href="#copy-as-maxima" title="Link to this heading">#</a></h3>
+<p>This will copy the currently selected expression to Maxima code.  Not everything will copy in seamlessly, in particular, piecewise defined functions.  It does its best on expressions and matrices in the hopes that there will be a little editing as possible once pasted into Maxima.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin{\left(\cos{\left(\frac{x}{3} \right)} \right)}}{\ln{\left(x \right)}}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">sin(cos(x/3))/log(x)</span></code>, which is correct syntax.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">matrix([cos(a),0,sin(a)],[0,1,0],[-sin(a),0,cos(a)])</span></code>, which is also correct syntax.</p>
+</section>
+<section id="copy-as-sagemath">
+<h3>Copy as SageMath<a class="headerlink" href="#copy-as-sagemath" title="Link to this heading">#</a></h3>
+<p>This will copy the currently selected expression to SageMath code.  Not everything will copy in seamlessly, in particular, piecewise defined functions.  It does its best on expressions and matrices in the hopes that there will be a little editing as possible once pasted into SageMath.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sin{\left(\cos{\left(\frac{x}{3} \right)} \right)}}{\ln{\left(x \right)}}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">sin(cos(x/3))/log(x)</span></code>, which is correct syntax.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">matrix([[cos(a),0,sin(a)],[0,1,0],[-sin(a),0,cos(a)]])</span></code>, which is also correct syntax.  A note to Sage users, the matrix domain is ignored here.</p>
+</section>
+<section id="copy-delimited">
+<h3>Copy (…) Delimited<a class="headerlink" href="#copy-delimited" title="Link to this heading">#</a></h3>
+<p>This is intended for matrices.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">((cos(a),0,sin(a)),(0,1,0),(-sin(a),0,cos(a)))</span></code>.</p>
+</section>
+<section id="id1">
+<h3>Copy […] Delimited<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>This is intended for matrices.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">[[cos(a),0,sin(a)],[0,1,0],[-sin(a),0,cos(a)]]</span></code>.</p>
+</section>
+<section id="id2">
+<h3>Copy {…} Delimited<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>This is intended for matrices.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">{{cos(a),0,sin(a)},{0,1,0},{-sin(a),0,cos(a)}}</span></code>.</p>
+</section>
+<section id="id3">
+<h3>Copy &lt;…&gt; Delimited<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>This is intended for matrices.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\cos{\left(a \right)} &amp; 0 &amp; \sin{\left(a \right)}\\0 &amp; 1 &amp; 0\\- \sin{\left(a \right)} &amp; 0 &amp; \cos{\left(a \right)}\end{array}\right]\end{split}\]</div>
+<p>would copy to, <code class="docutils literal notranslate"><span class="pre">&lt;&lt;cos(a),0,sin(a)&gt;,&lt;0,1,0&gt;,&lt;-sin(a),0,cos(a)&gt;&gt;</span></code>.</p>
+</section>
+<section id="copy-description">
+<h3>Copy Description<a class="headerlink" href="#copy-description" title="Link to this heading">#</a></h3>
+<p>This option simply copies the description of the currently selected item to the clipboard.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="casTransform3DInput.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">3-D Transformations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="casMatrixExtract.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extract from Matrix</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy">Copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paste">Paste</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-latex">Copy as LaTeX</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-copy">Special Copy</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-workspace-as-latex">Copy Workspace as LaTeX</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-text">Copy as Text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-mathematical-code">Copy as Mathematical Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-matrix-to-tab-delimited">Copy Matrix to Tab Delimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-image">Copy as Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-image-with-padding">Copy as Image with Padding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-mathml">Copy as MathML</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-geogebra">Copy as GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-maxima">Copy as Maxima</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-as-sagemath">Copy as SageMath</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-delimited">Copy (…) Delimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Copy […] Delimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Copy {…} Delimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Copy &lt;…&gt; Delimited</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-description">Copy Description</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

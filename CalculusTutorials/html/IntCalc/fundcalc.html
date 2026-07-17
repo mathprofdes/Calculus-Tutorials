@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Fundamental Theorem of Calculus &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/fundcalc';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Net Change Theorem" href="netchange.html" />
+    <link rel="prev" title="Antiderivatives and The Indefinite Integral" href="indefint.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The Fundamental Theorem of Calculus</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-fundamental-theorem-of-calculus">
+<h1><span class="target" id="index-0"></span>The Fundamental Theorem of Calculus<a class="headerlink" href="#the-fundamental-theorem-of-calculus" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>The Fundamental Theorem of Calculus, as its name implies, is one of the most important theorems in Calculus and frankly one of the most important theorems in the past millennia.  We will not prove the theorem here, most textbooks prove the theorem or outline a proof of the theorem.  The theorem comes in two parts.  The first part is a formulation of what we have observed in the previous section, that integration and differentiation are inverse operations of each other.</p>
+<div class="admonition-theorem-the-fundamental-theorem-of-calculus-part-1 admonition">
+<p class="admonition-title">Theorem: The Fundamental Theorem of Calculus, Part 1</p>
+<p>If <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous over an interval <span class="math notranslate nohighlight">\([a, b]\)</span>, and the function <span class="math notranslate nohighlight">\(F(x)\)</span> is defined by</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int_a^x f(t) \; dt\]</div>
+<p>then <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span> over <span class="math notranslate nohighlight">\([a, b].\)</span></p>
+</div>
+<p>The second part is also known as the <strong>integral evaluation theorem</strong>.  Thus far in our discussion the only way that we can calculate a definite integral is as a limit of a Riemann sum, which we know is difficult to do even with simple integrands.  This theorem gives us an alternative approach to calculating definite integrals that is far easier and more powerful to implement.  The second part is an easy consequence of the first.</p>
+<div class="admonition-theorem-the-fundamental-theorem-of-calculus-part-2 admonition">
+<p class="admonition-title">Theorem: The Fundamental Theorem of Calculus, Part 2</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is continuous over the interval <span class="math notranslate nohighlight">\([a, b]\)</span>, and <span class="math notranslate nohighlight">\(F(x)\)</span> is any antiderivative of <span class="math notranslate nohighlight">\(f(x)\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b f(x) \; dx = F(b) − F(a).\]</div>
+</div>
+</section>
+<section id="example-int-0-1-x-2-dx">
+<h2>Example: <span class="math notranslate nohighlight">\(\int_0^1 x^2 \; dx\)</span><a class="headerlink" href="#example-int-0-1-x-2-dx" title="Link to this heading">#</a></h2>
+<p>We will start upt with a fairly simple example, <span class="math notranslate nohighlight">\(\int_0^1 x^2 \; dx.\)</span>  By The Fundamental Theorem of Calculus, Part 2, it is <span class="math notranslate nohighlight">\(F(1) − F(0)\)</span>, where <span class="math notranslate nohighlight">\(F(x)\)</span> is any antiderivative of <span class="math notranslate nohighlight">\(x^2.\)</span>  Using the formulas from the antiderivative section we know that an antiderivative of <span class="math notranslate nohighlight">\(x^2\)</span> is <span class="math notranslate nohighlight">\(\frac{x^{3}}{3}.\)</span> So</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 x^2 \; dx = F(1) − F(0) = \frac{1^{3}}{3} - \frac{0^{3}}{3} = \frac{1}{3}\]</div>
+<p>Since finding the definite integral is a much used process, as with finding the indefinite integral, most CAS include a function to do it all for you.  Im most cases the CAS does not show you the antiderivative it uses but does the entire calculation. We will show both methods.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2</span>
+</pre></div>
+</div>
+<p>In a new cell start typing then select <code class="docutils literal notranslate"><span class="pre">Integral</span></code>, input <code class="docutils literal notranslate"><span class="pre">f,</span> <span class="pre">0,</span> <span class="pre">1</span></code>.  This will return 0.33333 and also give a nice image of the area being calculated.</p>
+<figure class="align-default" id="id6">
+<img alt="y = x^2" src="../_images/FTC001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^2\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To go through the calculation by Part 2 we can first find the antiderivative and then do the substitutions.  Select a new cell and input <code class="docutils literal notranslate"><span class="pre">Integral(f)</span></code>.  GeoGebra should return <span class="math notranslate nohighlight">\(g(x) = \frac{x^{3}}{3}.\)</span>  Now in a new cell input <code class="docutils literal notranslate"><span class="pre">g(1)</span> <span class="pre">-</span> <span class="pre">g(0)</span></code>.  This should return the exact solution of <span class="math notranslate nohighlight">\(\frac{1}{3}.\)</span></p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2</span>
+</pre></div>
+</div>
+<p>Select the function and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound 0, and upper bound 1. The result will be <span class="math notranslate nohighlight">\(\frac{1}{3}.\)</span></p>
+<p>Using the Part 2 approach, select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Indefinite</span> <span class="pre">Integral</span></code>, variable <em>x</em>.  The result will be <span class="math notranslate nohighlight">\(\frac{x^{3}}{3}\)</span>.  For convenience we will define this as a function, assuming that the indefinite integral is in cell <code class="docutils literal notranslate"><span class="pre">R3</span></code>, input <code class="docutils literal notranslate"><span class="pre">F(x):=R3</span></code> into the CAS.  Then input <code class="docutils literal notranslate"><span class="pre">F(1)</span> <span class="pre">-</span> <span class="pre">F(0)</span></code> into the cas for the final result of <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span>.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=x^2</span>
+</pre></div>
+</div>
+<p>Then to do the definite integral run,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(f(x),x,0,1)</span>
+</pre></div>
+</div>
+<p>In general, this command is <code class="docutils literal notranslate"><span class="pre">integrate(fct,var,lb,ub)</span></code> with fct being the function, var is the variable of integration, lb is the lower bound, and ub is the upper bound.</p>
+<p>Using the Part 2 method, find the indefinite integral with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">idef:integrate(f(x),x)</span>
+</pre></div>
+</div>
+<p>Turn it into a function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">F(x):=&#39;&#39;idef</span>
+</pre></div>
+</div>
+<p>Then complete the calculation with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">F(1)-F(0)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="example-int-0-pi-2-sin-3-left-x-right-cos-left-x-right-dx">
+<h2>Example: <span class="math notranslate nohighlight">\(\int_0^{\pi/2} \sin^{3}{\left(x \right)} \cos{\left(x \right)} \; dx\)</span><a class="headerlink" href="#example-int-0-pi-2-sin-3-left-x-right-cos-left-x-right-dx" title="Link to this heading">#</a></h2>
+<p>Although we have not discussed the technique for the antiderivative of this integrand we can simply let the machine do it.</p>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)^3 cos(x)</span>
+</pre></div>
+</div>
+<p>Then input <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">0,</span> <span class="pre">pi/2)</span></code>, the result will be 0.25 with the following image,</p>
+<figure class="align-default" id="id7">
+<img alt="y = sin(x)^3 cos(x)" src="../_images/FTC002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin(x)^3 \cos(x)\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To go through the calculation by Part 2 we can first find the antiderivative and then do the substitutions.  Select a new cell and input <code class="docutils literal notranslate"><span class="pre">Integral(f)</span></code>.  GeoGebra should return <span class="math notranslate nohighlight">\(g(x) = \frac{\sin^{4}{\left(x \right)}}{4}.\)</span>  Now in a new cell input <code class="docutils literal notranslate"><span class="pre">g(pi/2)</span> <span class="pre">-</span> <span class="pre">g(0)</span></code>.  This should return the exact solution of <span class="math notranslate nohighlight">\(\frac{1}{4}.\)</span></p>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)^3*cos(x)</span>
+</pre></div>
+</div>
+<p>Select the function and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound 0, and upper bound pi/2. The result will be <span class="math notranslate nohighlight">\(\frac{1}{4}.\)</span></p>
+<p>Using the Part 2 approach, select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Indefinite</span> <span class="pre">Integral</span></code>, variable <em>x</em>.  The result will be <span class="math notranslate nohighlight">\(\frac{\sin^{4}{\left(x \right)}}{4}\)</span>.  For convenience we will define this as a function, assuming that the indefinite integral is in cell <code class="docutils literal notranslate"><span class="pre">R3</span></code>, input <code class="docutils literal notranslate"><span class="pre">F(x):=R3</span></code> into the CAS.  Then input <code class="docutils literal notranslate"><span class="pre">F(pi/2)</span> <span class="pre">-</span> <span class="pre">F(0)</span></code> into the cas for the final result of <span class="math notranslate nohighlight">\(\frac{1}{4}\)</span>.</p>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=sin(x)^3*cos(x)</span>
+</pre></div>
+</div>
+<p>Then to do the definite integral run,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(f(x),x,0,%pi/2)</span>
+</pre></div>
+</div>
+<p>Using the Part 2 method, find the indefinite integral with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">idef:integrate(f(x),x)</span>
+</pre></div>
+</div>
+<p>Turn it into a function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">F(x):=&#39;&#39;idef</span>
+</pre></div>
+</div>
+<p>Then complete the calculation with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">F(%pi/2)-F(0)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="example-extending-the-fundamental-theorem-of-calculus-part-1">
+<h2>Example: Extending The Fundamental Theorem of Calculus, Part 1<a class="headerlink" href="#example-extending-the-fundamental-theorem-of-calculus-part-1" title="Link to this heading">#</a></h2>
+<p>The Fundamental Theorem of Calculus, Part 1 can be rewritten as,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( \int_a^x f(t) \; dt \right) = f(x)\]</div>
+<p>What if the upper bound is not just <em>x</em>? What if the lower bound is <em>x</em> and the upper bound is a constant?  What if both the lower and upper bounds are functions of <em>x</em>?  We can answer all of these questions by applying the chain rule to the derivative in the equation above but we will let the power of the CAS develop the formulas for us.</p>
+<section id="id4">
+<h3>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Input a general function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(t)</span>
+</pre></div>
+</div>
+<p>CLAE will treat this as a general function of <em>t</em>.  First we will start off with The Fundamental Theorem of Calculus, Part 1 as is,</p>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable is <em>t</em>, lower bound is 0, upper bound is <em>x</em>.  CLAE will return,</p>
+<div class="math notranslate nohighlight">
+\[\int\limits_{0}^{x} f{\left(t \right)}\, dt\]</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>x</em>, it will return <span class="math notranslate nohighlight">\(f(x)\)</span> which we expected from Part 1.</p>
+<p>Now let’s explore different bounds.  Select the <code class="docutils literal notranslate"><span class="pre">f(t)</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable is <em>t</em>, lower bound is 0, upper bound is <em>g(x)</em>.  CLAE will return,</p>
+<div class="math notranslate nohighlight">
+\[\int\limits_{0}^{g{\left(x \right)}} f{\left(t \right)}\, dt\]</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>x</em>, it will return,</p>
+<div class="math notranslate nohighlight">
+\[f{\left(g{\left(x \right)} \right)} \frac{d}{d x} g{\left(x \right)}\]</div>
+<p>So the general formula is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( \int_a^{g(x)} f(t) \; dt \right) = f{\left(g{\left(x \right)} \right)} \frac{d}{d x} g{\left(x \right)}\]</div>
+<p>Can you see where the chain rule was used here?  Now repeat the process using <code class="docutils literal notranslate"><span class="pre">g(x)</span></code> as the lower bound and 0 as the upper bound, the final result should show,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( \int_{g(x)}^a f(t) \; dt \right) = - f{\left(g{\left(x \right)} \right)} \frac{d}{d x} g{\left(x \right)}\]</div>
+<p>Can you see what property was used here?  Finally do the same with a lower bound of <code class="docutils literal notranslate"><span class="pre">g(x)</span></code> and an upper bound of <code class="docutils literal notranslate"><span class="pre">h(x)</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( \int_{g(x)}^{h(x)} f(t) \; dt \right) = f{\left(h{\left(x \right)} \right)} \frac{d}{d x} h{\left(x \right)}- f{\left(g{\left(x \right)} \right)} \frac{d}{d x} g{\left(x \right)}\]</div>
+<p>Can you follow the steps through to what was done at each step?</p>
+</section>
+<section id="id5">
+<h3>Maxima<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>In Maxima we can do all the steps at once.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(integrate(f(t),t,0,x), x)</span>
+</pre></div>
+</div>
+<p>will return <span class="math notranslate nohighlight">\(f(x)\)</span> and is Part 1.  Now run the following,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(integrate(f(t),t,0,g(x)), x)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(integrate(f(t),t,g(x),0), x)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(integrate(f(t),t,g(x),h(x)), x)</span>
+</pre></div>
+</div>
+<p>The first shows,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( \int_a^{g(x)} f(t) \; dt \right) = f{\left(g{\left(x \right)} \right)} \frac{d}{d x} g{\left(x \right)}\]</div>
+<p>Can you see where the chain rule was used here?  The second one shows,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( \int_{g(x)}^a f(t) \; dt \right) = - f{\left(g{\left(x \right)} \right)} \frac{d}{d x} g{\left(x \right)}\]</div>
+<p>Can you see what property was used here?  Finally, the last shows,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dx} \left( \int_{g(x)}^{h(x)} f(t) \; dt \right) = f{\left(h{\left(x \right)} \right)} \frac{d}{d x} h{\left(x \right)}- f{\left(g{\left(x \right)} \right)} \frac{d}{d x} g{\left(x \right)}\]</div>
+<p>Can you follow the steps through to what was done at each step?</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="indefint.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Antiderivatives and The Indefinite Integral</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="netchange.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Net Change Theorem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-0-1-x-2-dx">Example: <span class="math notranslate nohighlight">\(\int_0^1 x^2 \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-0-pi-2-sin-3-left-x-right-cos-left-x-right-dx">Example: <span class="math notranslate nohighlight">\(\int_0^{\pi/2} \sin^{3}{\left(x \right)} \cos{\left(x \right)} \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-extending-the-fundamental-theorem-of-calculus-part-1">Example: Extending The Fundamental Theorem of Calculus, Part 1</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

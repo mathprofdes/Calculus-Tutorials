@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Surface Integrals &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/surfaceint';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Stokes’ Theorem" href="stokes.html" />
+    <link rel="prev" title="Parametric Surfaces" href="parasurface.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Saturday, July 11, 2026  -  05:21 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Surface Integrals</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="surface-integrals">
+<h1><span class="target" id="index-0"></span>Surface Integrals<a class="headerlink" href="#surface-integrals" title="Link to this heading">#</a></h1>
+<p>The relationship between surface integrals and surface area is much the same as the relationship between line integrals and arc length.  Recall that the arc length of a space curve <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[L = \int_a^b |\mathbf{r}'(t)| \; dt\]</div>
+<p>The line integral of a function over this curve is,</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(x, y, z) \; ds = \int_a^b f(\mathbf{r}(t)) |\mathbf{r}'(t)| \; dt\]</div>
+<p>So if our function <span class="math notranslate nohighlight">\(f(x, y, z) = 1\)</span> the line integral turns out to be exactly the arc length.</p>
+<section id="id1">
+<h2>Surface Integrals<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-surface-integral admonition">
+<p class="admonition-title">Definition: Surface Integral</p>
+<p>If we have a surface <em>S</em> defined parametrically,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}(u, v) = x(u, v) \; \mathbf{i} + y(u, v) \; \mathbf{j} + z(u, v) \; \mathbf{k}\]</div>
+<p>for <span class="math notranslate nohighlight">\((u, v) \in D.\)</span>  For a function of three variables <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the surface integral of <em>f</em> over the surface <em>S</em> is</p>
+<div class="math notranslate nohighlight">
+\[\iint_S f(x, y, z) \; dS = \iint_D f(\mathbf{r}(u, v)) |\mathbf{r}_u \times \mathbf{r}_v|  \; dA\]</div>
+</div>
+<p>Note that if <span class="math notranslate nohighlight">\(f(x, y, z) = 1\)</span> then the surface integral reduces to the surface area of the surface.</p>
+<section id="example-surface-integral">
+<h3>Example: Surface Integral<a class="headerlink" href="#example-surface-integral" title="Link to this heading">#</a></h3>
+<p>In this example we will calculate the surface integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_S x^2+y^2 \; dS\]</div>
+<p>where the surface <em>S</em> is the unit sphere, <span class="math notranslate nohighlight">\(x^2+y^2+z^2=1.\)</span></p>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>The first step is to parameterize the unit sphere.  These are the familiar spherical coordinates.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}(\varphi, \theta) = \sin(\varphi) \cos(\theta) \mathbf{i} + \sin(\varphi) \sin(\theta) \mathbf{j} + \cos(\varphi) \mathbf{k}\]</div>
+<p>for <span class="math notranslate nohighlight">\(0 \leq \varphi \leq \pi\)</span> and <span class="math notranslate nohighlight">\(0 \leq \theta \leq 2\pi.\)</span>  Input the parameterization,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[sin(p)*cos(t),sin(p)*sin(t),cos(p)]</span>
+</pre></div>
+</div>
+<p>Now we will calculate <span class="math notranslate nohighlight">\(|\mathbf{r}_\varphi \times \mathbf{r}_\theta|.\)</span> Select the parametric equations then <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, use the variable, <em>p</em>, then do the same using the variable <em>t</em>.  The results are,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \cos{\left(p \right)} \cos{\left(t \right)}, \  \sin{\left(t \right)} \cos{\left(p \right)}, \  - \sin{\left(p \right)}\right]\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \sin{\left(p \right)} \sin{\left(t \right)}, \  \sin{\left(p \right)} \cos{\left(t \right)}, \  0\right]\]</div>
+<p>Now take their cross product,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\sin^{2}{\left(p \right)} \cos{\left(t \right)}\\\sin^{2}{\left(p \right)} \sin{\left(t \right)}\\\sin{\left(p \right)} \sin^{2}{\left(t \right)} \cos{\left(p \right)} + \sin{\left(p \right)} \cos{\left(p \right)} \cos^{2}{\left(t \right)}\end{array}\right]\end{split}\]</div>
+<p>Then take the length of this,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\left(\sin{\left(p \right)} \sin^{2}{\left(t \right)} \cos{\left(p \right)} + \sin{\left(p \right)} \cos{\left(p \right)} \cos^{2}{\left(t \right)}\right)^{2} + \sin^{4}{\left(p \right)} \sin^{2}{\left(t \right)} + \sin^{4}{\left(p \right)} \cos^{2}{\left(t \right)}}\]</div>
+<p>simplify this expression,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\sin^{2}{\left(p \right)}}\]</div>
+<p>Since this is real we can further do <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span> <span class="pre">Assuming</span> <span class="pre">Real</span> <span class="pre">Variables</span></code> the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left|{\sin{\left(p \right)}}\right|\]</div>
+<p>Now we will input the function substituting the parametric equations for <em>x</em> and <em>y</em></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(p)^2*sin(t)^2 + sin(p)^2*cos(t)^2</span>
+</pre></div>
+</div>
+<p>Multiply this by the result of the cross product,</p>
+<div class="math notranslate nohighlight">
+\[\left(\sin^{2}{\left(p \right)} \sin^{2}{\left(t \right)} + \sin^{2}{\left(p \right)} \cos^{2}{\left(t \right)}\right) \left|{\sin{\left(p \right)}}\right|\]</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, use the first variable as <code class="docutils literal notranslate"><span class="pre">p</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">pi</span></code>, the second variable as <code class="docutils literal notranslate"><span class="pre">t</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2*pi</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{8 \pi}{3}\]</div>
+<div class="admonition-definition-surface-integral-for-math-z-g-x-y admonition">
+<p class="admonition-title">Definition: Surface Integral for <span class="math notranslate nohighlight">\(z = g(x, y)\)</span></p>
+<p>Given a function <span class="math notranslate nohighlight">\(z = g(x, y)\)</span> we can parameterize the surface as,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}(x, y) = x \; \mathbf{i} + y \; \mathbf{j} + g(x, y) \; \mathbf{k}\]</div>
+<p>for <span class="math notranslate nohighlight">\((x, y) \in D.\)</span>  For a function of three variables <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, the surface integral of <em>f</em> over the surface <em>S</em> is</p>
+<div class="math notranslate nohighlight">
+\[\iint_S f(x, y, z) \; dS = \iint_D f(x, y, g(x, y)) \sqrt{\left( \frac{\partial z}{\partial x} \right)^2 + \left( \frac{\partial z}{\partial y} \right)^2 + 1  }  \; dA\]</div>
+</div>
+</section>
+</section>
+<section id="example-surface-integral-for-z-g-x-y">
+<h3>Example: Surface Integral for <span class="math notranslate nohighlight">\(z = g(x, y)\)</span><a class="headerlink" href="#example-surface-integral-for-z-g-x-y" title="Link to this heading">#</a></h3>
+<p>In this example we will calculate the surface integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_S x+y+z \; dS\]</div>
+<p>where the surface <em>S</em> is, <span class="math notranslate nohighlight">\(z = x^2+y^2\)</span> on <span class="math notranslate nohighlight">\([0, 1] \times [0, 1].\)</span></p>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>The derivatives and substitutions are easy to do by hand but we will let the CAS do the integrals.  The integrand will be,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x+y+x^2+y^2)</span><span class="go">*((2*x)^2 + (2*y)^2+1)</span>
+</pre></div>
+</div>
+<p>Select this integrand, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, first variable is <code class="docutils literal notranslate"><span class="pre">x</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> and the second variable is <code class="docutils literal notranslate"><span class="pre">x</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>.  The result is, <span class="math notranslate nohighlight">\(\frac{337}{45}.\)</span></p>
+</section>
+</section>
+</section>
+<section id="oriented-surfaces">
+<h2>Oriented Surfaces<a class="headerlink" href="#oriented-surfaces" title="Link to this heading">#</a></h2>
+<p>Not all surfaces are created equally.  For many of the results we will be looking at later need to be “nice” in a particular way, specifically they need to be oriented.  Many textbooks start this discussion by giving an example of a classic non-oriented surface, the Möbius strip.  The parametric equations for the Möbius strip are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x(u,v) &amp;= \left(R + v \cdot \cos\left(\frac{u}{2}\right)\right) \cdot \cos(u) \\ y(u,v) &amp;= \left(R + v \cdot \cos\left(\frac{u}{2}\right)\right) \cdot \sin(u) \\ z(u,v) &amp;= v \cdot \sin\left(\frac{u}{2}\right)\end{split}\]</div>
+<p>where <em>R</em> is the radius of the strip and <em>v</em> is the width parameter of the strip. A graph of this is below.</p>
+<figure class="align-default" id="id6">
+<img alt="Mobius Strip" src="../_images/SurfInt001.png" />
+<figcaption>
+<p><span class="caption-text">Mobius Strip</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you started walking on one side of the strip after one time around you will be on the “other” side of the strip and in another time around you would end up back where you started having walked “both” sides. This is a non-oriented surface for the following reason.  Say that you and your friend start at the same place on the surface, you do not move and your friend walks around one turn of the strip.  At this point you are on top pointing up and they on the bottom pointing down.</p>
+<p>Now lets think about this more mathematically.  Thinking with the person walking example, the direction you are standing would be a normal vector to the surface. When you get around once the normal vector is pointing in the opposite direction.  to make these point in the same direction we need to do an abrupt flip (a discontinuous operation) of the normal vector.  With a non-oriented surface like this there is no distinction between the sides of the surface.</p>
+<section id="example-mobius-strip">
+<h3>Example: Mobius Strip<a class="headerlink" href="#example-mobius-strip" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>We will graph a Mobius strip in two ways, one that shows the normal vector discontinuity.  We will graph one that had a radius of 5, you can use another radius, even keep it <em>R</em> to animate it, but 5 is good to illustrate.  Input the parametric equations,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[(v*cos(u/2) + 5)*cos(u),(v*cos(u/2) + 5)*sin(u),v*sin(u/2)]</span>
+</pre></div>
+</div>
+<p>CLick and drag this over to the 3D graphics window.  The image you see will not look like the one below, go into the properties and change the <code class="docutils literal notranslate"><span class="pre">V</span></code> range to <code class="docutils literal notranslate"><span class="pre">-1</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code> and the <code class="docutils literal notranslate"><span class="pre">U</span></code> bounds to <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2*pi</span></code>.  The result should look close the following.</p>
+<figure class="align-default" id="id7">
+<img alt="Mobius Strip" src="../_images/SurfInt001.png" />
+<figcaption>
+<p><span class="caption-text">Mobius Strip</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This surface looks nice and smooth but to see the normal vector discontinuity go into the properties again and change the Surface Shading to Shade by Camera and Normals.  This shading mode takes into account the normal vector to the surface when determining the color.</p>
+<figure class="align-default" id="id8">
+<img alt="Mobius Strip Showing Inconsistency" src="../_images/SurfInt002.png" />
+<figcaption>
+<p><span class="caption-text">Mobius Strip Showing Inconsistency</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Where the surface comes together on the positive <em>x</em>-axis you can see a distinct change in color, that is the normal vector discontinuity.</p>
+<p>Now on to what an oriented surface is.</p>
+<div class="admonition-definition-oriented-surface admonition">
+<p class="admonition-title">Definition: Oriented Surface</p>
+<p>Given a surface <em>S</em>, if it is possible to choose a unit normal vector <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> at every such point <span class="math notranslate nohighlight">\((x, y, z)\)</span> so that <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> varies continuously over <em>S</em>, then <em>S</em> is an oriented surface and the given choice of <span class="math notranslate nohighlight">\(\mathbf{N}\)</span> provides <em>S</em> with an orientation. For any orientable surface, there are two possible orientations.</p>
+</div>
+<p>In general we can calculate a normal for a parametric surface or a surface defined by a function.  If we have a surface defined parametrically, <span class="math notranslate nohighlight">\(\mathbf{r}(u, v)\)</span> then we can define,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{N} = \frac{\mathbf{r}_u \times \mathbf{r}_v}{|\mathbf{r}_u \times \mathbf{r}_v|}\]</div>
+<p>If our surface is defined as a function of two variables, <span class="math notranslate nohighlight">\(g(x, y)\)</span> then we can write the above formula as,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{N} = \frac{-\frac{\partial g}{\partial x} \; \mathbf{i} - \frac{\partial g}{\partial y} \; \mathbf{j} + \mathbf{k} }{\sqrt{\left( \frac{\partial g}{\partial x} \right)^2 + \left( \frac{\partial g}{\partial y} \right)^2 + 1}}\]</div>
+<div class="admonition-definition-closed-surfaces admonition">
+<p class="admonition-title">Definition: Closed Surfaces</p>
+<p>A closed surface, one that is the boundary of a solid region <em>E</em>, the convention is that the positive orientation is the one for which the normal vectors point outward from <em>E</em>, and inward-pointing normals give the negative orientation.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="flux-surface-integrals-of-vector-fields">
+<h2>Flux: Surface Integrals of Vector Fields<a class="headerlink" href="#flux-surface-integrals-of-vector-fields" title="Link to this heading">#</a></h2>
+<p>You can think about surface integrals of vector fields (flux) as a measure of how much of the field is flowing through the surface.  For example, consider the surface and vector field pictured below.</p>
+<figure class="align-default" id="id9">
+<img alt="Flux" src="../_images/SurfInt003.png" />
+<figcaption>
+<p><span class="caption-text">Flux</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we think about the surface being submerged in water and the vector field representing the velocity of the flow of the water then the flux is the amount of water flowing through the surface.  We also consider the surface to be an imaginary surface that is not restricting the flow of the field.</p>
+<div class="admonition-definition-surface-integral-of-a-vector-field admonition">
+<p class="admonition-title">Definition: Surface Integral of a Vector Field</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a continuous vector field defined on an oriented surface <em>S</em> with unit normal vector <span class="math notranslate nohighlight">\(\mathbf{N}\)</span>, then the surface integral of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> over <em>S</em> (or the flux of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> across <em>S</em>) is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iint_S \mathbf{F} \cdot d\mathbf{S} &amp; = \iint_S \mathbf{F} \cdot \mathbf{N} \; dS \\
+&amp; = \iint_D \mathbf{F} \cdot ( \mathbf{r}_u \times \mathbf{r}_v) \; dA \\\end{split}\]</div>
+</div>
+<section id="example-surface-integral-of-a-vector-field">
+<h3>Example: Surface Integral of a Vector Field<a class="headerlink" href="#example-surface-integral-of-a-vector-field" title="Link to this heading">#</a></h3>
+<p>In this example we will calculate the surface integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_S \mathbf{F} \cdot d\mathbf{S}\]</div>
+<p>where the surface <em>S</em> is the unit sphere, <span class="math notranslate nohighlight">\(x^2+y^2+z^2=1\)</span> and <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is the vector field,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y, z) = (z^2, y^3, x^4)\]</div>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>The first step is to parameterize the unit sphere.  These are the familiar spherical coordinates.</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}(\varphi, \theta) = \sin(\varphi) \cos(\theta) \mathbf{i} + \sin(\varphi) \sin(\theta) \mathbf{j} + \cos(\varphi) \mathbf{k}\]</div>
+<p>for <span class="math notranslate nohighlight">\(0 \leq \varphi \leq \pi\)</span> and <span class="math notranslate nohighlight">\(0 \leq \theta \leq 2\pi.\)</span>  Input the parameterization,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[sin(p)*cos(t),sin(p)*sin(t),cos(p)]</span>
+</pre></div>
+</div>
+<p>Now we will calculate <span class="math notranslate nohighlight">\(\mathbf{r}_\varphi \times \mathbf{r}_\theta.\)</span> Select the parametric equations then <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, use the variable, <em>p</em>, then do the same using the variable <em>t</em>.  The results are,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \cos{\left(p \right)} \cos{\left(t \right)}, \  \sin{\left(t \right)} \cos{\left(p \right)}, \  - \sin{\left(p \right)}\right]\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \sin{\left(p \right)} \sin{\left(t \right)}, \  \sin{\left(p \right)} \cos{\left(t \right)}, \  0\right]\]</div>
+<p>Now take their cross product,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\sin^{2}{\left(p \right)} \cos{\left(t \right)}\\\sin^{2}{\left(p \right)} \sin{\left(t \right)}\\\sin{\left(p \right)} \sin^{2}{\left(t \right)} \cos{\left(p \right)} + \sin{\left(p \right)} \cos{\left(p \right)} \cos^{2}{\left(t \right)}\end{array}\right]\end{split}\]</div>
+<p>Now input the vector field,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[z^2, y^3, x^4]</span>
+</pre></div>
+</div>
+<p>Select this field, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variables default to <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code>, for the expressions input the CAS designation for the sphere parametric equations, the result will be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \cos^{2}{\left(p \right)}, \  \sin^{3}{\left(p \right)} \sin^{3}{\left(t \right)}, \  \sin^{4}{\left(p \right)} \cos^{4}{\left(t \right)}\right]\]</div>
+<p>Now use <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Dot</span> <span class="pre">Product</span></code> to take the dot product of the last result and the cross of the partial derivatives, the result will be,</p>
+<div class="math notranslate nohighlight">
+\[\left(\sin{\left(\overline{p} \right)} \sin^{2}{\left(\overline{t} \right)} \cos{\left(\overline{p} \right)} + \sin{\left(\overline{p} \right)} \cos{\left(\overline{p} \right)} \cos^{2}{\left(\overline{t} \right)}\right) \sin^{4}{\left(p \right)} \cos^{4}{\left(t \right)} + \sin^{3}{\left(p \right)} \sin^{3}{\left(t \right)} \sin^{2}{\left(\overline{p} \right)} \sin{\left(\overline{t} \right)} + \sin^{2}{\left(\overline{p} \right)} \cos^{2}{\left(p \right)} \cos{\left(\overline{t} \right)}\]</div>
+<p>You may have encountered the bars before, these are complex conjugates since CLAE (SymPy) treats all variables as complex.  Select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span> <span class="pre">Assuming</span> <span class="pre">Real</span> <span class="pre">Variables</span></code> and the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left(\sin^{3}{\left(p \right)} \sin^{4}{\left(t \right)} + \sin^{3}{\left(p \right)} \cos{\left(p \right)} \cos^{4}{\left(t \right)} + \cos^{2}{\left(p \right)} \cos{\left(t \right)}\right) \sin^{2}{\left(p \right)}\]</div>
+<p>Finally we integrate, select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, first variable is <code class="docutils literal notranslate"><span class="pre">p</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">pi</span></code> and the second variable is <code class="docutils literal notranslate"><span class="pre">t</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2*pi</span></code>.  The result is, <span class="math notranslate nohighlight">\(\frac{4 \pi}{5}.\)</span></p>
+<div class="admonition-definition-functional-surface-integral-of-a-vector-field admonition">
+<p class="admonition-title">Definition: Functional Surface Integral of a Vector Field</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q, R)\)</span> is a continuous vector field defined on an oriented surface <em>S</em> given by <span class="math notranslate nohighlight">\(z = g(x, y)\)</span>, then the surface integral can be calculated by</p>
+<div class="math notranslate nohighlight">
+\[\iint_S \mathbf{F} \cdot d\mathbf{S} = \iint_D \left( -P \frac{\partial g}{\partial x} - Q \frac{\partial g}{\partial y} + R \right) \; dA\]</div>
+</div>
+</section>
+</section>
+<section id="example-functional-surface-integral-of-a-vector-field">
+<h3>Example: Functional Surface Integral of a Vector Field<a class="headerlink" href="#example-functional-surface-integral-of-a-vector-field" title="Link to this heading">#</a></h3>
+<p>In this example we will calculate the surface integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_S \mathbf{F} \cdot d\mathbf{S}\]</div>
+<p>where the surface <em>S</em> is, <span class="math notranslate nohighlight">\(z = x^2+y^2\)</span> on <span class="math notranslate nohighlight">\([-1, 1] \times [-1, 1]\)</span> and <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is the vector field,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y, z) = (z^2, y^3, x^4)\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iint_S \mathbf{F} \cdot d\mathbf{S} &amp; = \iint_D \left( -P \frac{\partial g}{\partial x} - Q \frac{\partial g}{\partial y} + R \right) \; dA \\
+&amp; = \iint_D \left( -2xz^2  - 2y^4  + x^4 \right) \; dA \\
+&amp; = \iint_D \left( -2x(x^2+y^2)^2  - 2y^4  + x^4 \right) \; dA \\
+&amp; = \int_{-1}^1 \int_{-1}^1 \left( -2x(x^2+y^2)^2  - 2y^4  + x^4 \right) \; dx \; dy \\\end{split}\]</div>
+<p>This is easy enough to do by hand but we will let the CAS handle the integration.</p>
+<section id="id5">
+<h4>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Input the integrand,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-2*x*(x^2+y^2)^2-2*y^4+x^4</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, first variable is <code class="docutils literal notranslate"><span class="pre">x</span></code> bounds <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> and the second variable is <code class="docutils literal notranslate"><span class="pre">y</span></code> also with  bounds <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>. The result is <span class="math notranslate nohighlight">\(- \frac{4}{5}.\)</span></p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="parasurface.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Parametric Surfaces</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="stokes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Stokes’ Theorem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Surface Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-surface-integral">Example: Surface Integral</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-surface-integral-for-z-g-x-y">Example: Surface Integral for <span class="math notranslate nohighlight">\(z = g(x, y)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#oriented-surfaces">Oriented Surfaces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mobius-strip">Example: Mobius Strip</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flux-surface-integrals-of-vector-fields">Flux: Surface Integrals of Vector Fields</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-surface-integral-of-a-vector-field">Example: Surface Integral of a Vector Field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-functional-surface-integral-of-a-vector-field">Example: Functional Surface Integral of a Vector Field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Saturday, July 11, 2026  -  05:21 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

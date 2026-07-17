@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linear System &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/Graph2D/LinearSystem';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Direction Field" href="DirectionField.html" />
+    <link rel="prev" title="Vector Set" href="VectorSet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2D Graphs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Function y = f(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewiseRect.html">Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricRect.html">Parametric Equations (x, y) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SeqSeries.html">Sequence / Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Implicit2D.html">Implicit Relationship f(x, y) = 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContourMap.html">Contour Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HorizontalLine.html">Horizontal Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VerticalLine.html">Vertical Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyPointSet.html">Empty Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Linear System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DirectionField.html">Direction Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EulerCurve.html">Euler’s Method Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolarFunction.html">Polar Function r = f(t)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewisePolar.html">Polar Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricPolar.html">Polar Parametric Equations (r, theta) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOpts.html">Editing Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotViewer.html">Snapshot Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AdvPlotCreator.html">Advanced Plot Creator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LegendOpts.html">Legend Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2D Graphs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Linear System</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="linear-system">
+<h1><span class="target" id="index-0"></span>Linear System<a class="headerlink" href="#linear-system" title="Link to this heading">#</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>This type is for graphing a linear system of lines defined by the rows of a matrix that defines the linear system.  The input is an <span class="math notranslate nohighlight">\(n \times 3\)</span> matrix where each row defines a linear equation in two variables.  For example, the matrix,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}1 &amp; 3 &amp; 5\\2 &amp; 4 &amp; 6\end{array}\right]\end{split}\]</div>
+<p>defines the linear system, <span class="math notranslate nohighlight">\(\{x + 3y = 5, 2x + 4y = 6\}\)</span>.</p>
+</section>
+<section id="insert-edit-dialog">
+<h2>Insert/Edit Dialog<a class="headerlink" href="#insert-edit-dialog" title="Link to this heading">#</a></h2>
+<p>The Insert/Edit Dialog for a 2D linear system is pictured below.</p>
+<figure class="align-default" id="id1">
+<img alt="Linear System Properties Dialog" src="../../_images/LS_dialog.png" />
+<figcaption>
+<p><span class="caption-text">Linear System Properties Dialog</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The dialog is set up in a similar manner as the matrix input dialog except that the number of columns is fixed at 3. The menu and toolbar have options for the input of the points in the editing grid on the left.  In the grid, note that the headers are labeled <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>.  So each row represents the linear equation <span class="math notranslate nohighlight">\(ax + by = c\)</span>.</p>
+<section id="dialog-use-options">
+<h3>Dialog Use &amp; Options<a class="headerlink" href="#dialog-use-options" title="Link to this heading">#</a></h3>
+<p>To use the dialog, select the number of points, input any valid expression, that does not contain the set of independent variables (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>, and <code class="docutils literal notranslate"><span class="pre">y</span></code> in 2D and <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>, and <code class="docutils literal notranslate"><span class="pre">v</span></code> in 3D), into each of the cells, see the <a class="reference internal" href="syntax.html"><span class="doc">Expression Syntax</span></a> page for details on expressions.  Note that any blank cells will be replaced with 0 and any blank points (both the x and y cells for the point are empty) are ignored.  Once all the entries are filled out click OK and the set will be added to the plot.</p>
+</section>
+<section id="menu-and-tool-options">
+<h3>Menu and Tool Options<a class="headerlink" href="#menu-and-tool-options" title="Link to this heading">#</a></h3>
+<p>The dialog does have a few editing options, many of these have corresponding toolbar buttons.</p>
+<section id="file-menu">
+<h4>File Menu<a class="headerlink" href="#file-menu" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Select All:</strong>  Selects all the cells in the expression editing area.</p></li>
+<li><p><strong>Copy Selected:</strong> Copies the selected cells to the clipboard in a tab-delimited format that can be pasted into most spreadsheets.</p></li>
+<li><p><strong>Copy All:</strong> Copies all the cells to the clipboard in a tab-delimited format that can be pasted into most spreadsheets.</p></li>
+<li><p><strong>Paste:</strong> Pastes the clipboard contents into the editing grid.  It is assumed that the data is in tab-delimited format.</p></li>
+<li><p><strong>Fill Selected Cells with Text:</strong> When this option is selected a dialog box will appear allowing the user to input text that will fill all the currently selected cells.</p></li>
+<li><p><strong>Apply Function to Selected Cells:</strong> When this option is selected a dialog box will appear allowing the user to input a function and the variable for substitution that will be applied to all currently selected cells.  The function can be any valid  expression including workspace entries, see the <a class="reference internal" href="syntax.html"><span class="doc">Expression Syntax</span></a> page for details on expressions. The variable is the variable of the expression that each of the selected cell values will be substituted into.  The program will do easy simplifications and evaluations but will not do a full simplify on the new expressions.</p></li>
+<li><p><strong>Trim Cells:</strong> This removes the leading and trailing whitespace characters from each cell.</p></li>
+<li><p><strong>Undo:</strong> Undoes the last edit.</p></li>
+<li><p><strong>Redo:</strong> Redoes the last edit.</p></li>
+<li><p><strong>Clear All:</strong> This clears the grid contents.</p></li>
+</ul>
+</section>
+<section id="view-menu">
+<h4>View Menu<a class="headerlink" href="#view-menu" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Adjust Column Widths:</strong> This will set the column widths to a size that fits the data in the table.</p></li>
+<li><p><strong>Adjust Row Heights:</strong> This will set the row heights to a size that fits the data in the table.</p></li>
+<li><p><strong>Adjust Row and Column Sizes:</strong> This will set the column widths and row heights to a size that fits the data in the table.</p></li>
+<li><p><strong>Reset Row and Column Sizes:</strong> This resets the column widths and row heights to the original width and height.</p></li>
+<li><p><strong>Increase Font Size:</strong> This increases the font size of the table.</p></li>
+<li><p><strong>Decrease Font Size:</strong> This decreases the font size of the table.</p></li>
+<li><p><strong>Reset Font Size:</strong> This resets the font size of the table.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Link to this heading">#</a></h2>
+<section id="line-width">
+<h3>Line Width<a class="headerlink" href="#line-width" title="Link to this heading">#</a></h3>
+<p>This is the width of each of the lines for the linear equations.</p>
+<p>The line width is simply the width of the line used for the plot.  The default value for most of the curves in this program is 2, which is good for viewing the curve in the program interface and for exporting to images.</p>
+<p>For example, if we graph</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cos(x)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cos(t)</span> <span class="pre">+</span> <span class="pre">t^2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a*sin(b*x</span> <span class="pre">+</span> <span class="pre">c)</span></code></p></li>
+</ul>
+<p>with line widths of 1, 2, and 5, respectively we get,</p>
+<figure class="align-default" id="id2">
+<img alt="Line Width Example" src="../../_images/Fct_Ex004.png" />
+<figcaption>
+<p><span class="caption-text">Line Width Example</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>If we insert the linear system from the examples above we get the image.</p>
+<figure class="align-default" id="id3">
+<img alt="Linear System Example" src="../../_images/LS001.png" />
+<figcaption>
+<p><span class="caption-text">Linear System Example</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Showing the solution of <span class="math notranslate nohighlight">\((-1, 2)\)</span>, and if we add in the equation <span class="math notranslate nohighlight">\(x + y = 2\)</span> we get,</p>
+<figure class="align-default" id="id4">
+<img alt="Linear System Example" src="../../_images/LS002.png" />
+<figcaption>
+<p><span class="caption-text">Linear System Example</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>showing no solution to the system.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="VectorSet.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vector Set</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="DirectionField.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Direction Field</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-edit-dialog">Insert/Edit Dialog</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dialog-use-options">Dialog Use &amp; Options</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menu-and-tool-options">Menu and Tool Options</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#file-menu">File Menu</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#view-menu">View Menu</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#options">Options</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#line-width">Line Width</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

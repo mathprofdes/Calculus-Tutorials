@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vectors in Two and Three Dimensions &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/vectors';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Dot Product and Cross Product" href="dotcross.html" />
+    <link rel="prev" title="Multivariable Calculus" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Vectors in Two and Three Dimensions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="vectors-in-two-and-three-dimensions">
+<h1><span class="target" id="index-0"></span>Vectors in Two and Three Dimensions<a class="headerlink" href="#vectors-in-two-and-three-dimensions" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>A vector in mathematics and the sciences is a quantity that has both magnitude and direction.  We tend to look at a vector in tow primary ways, graphically as an arrow tht starts at a point <em>A</em> (called the tail or initial point) and ends at a point <em>B</em> (called the head or terminal point), or algebraically as a set of coordinated in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> or <span class="math notranslate nohighlight">\(\mathbb{R}^3.\)</span>  We can consider vectors in higher dimensions but usually in a Calculus class we stick with <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> and <span class="math notranslate nohighlight">\(\mathbb{R}^3.\)</span>  If you take a course in Linear Algebra you will communally work in higher dimensions.  Since Calculus takes more of an analytical approach, working with vectors algebraically tends to be easier.</p>
+</section>
+<section id="component-form-of-a-vector">
+<h2>Component Form of a Vector<a class="headerlink" href="#component-form-of-a-vector" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-component-form-of-a-vector admonition">
+<p class="admonition-title">Definition: Component Form of a Vector</p>
+<p>The vector with initial point <span class="math notranslate nohighlight">\((0, 0)\)</span> and terminal point <span class="math notranslate nohighlight">\((x, y)\)</span> can be written in <strong>component form</strong> as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} = \left\langle x, y \right\rangle \qquad {\rm or } \qquad \mathbf{v} = \left\langle x, y, z \right\rangle\]</div>
+<p>The scalars <em>x</em>, <em>y</em>, and <em>z</em> are called the components of <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.</p>
+</div>
+<p>Vectors that have their initial point at the origin are said to be in <strong>standard position</strong>.  So the vector <span class="math notranslate nohighlight">\(\left\langle 1, 2 \right\rangle\)</span> can be represented as any of the following and the one that statrs at the origin is in standard position.</p>
+<figure class="align-default" id="id4">
+<img alt="Vector Example" src="../_images/vectors001.png" />
+<figcaption>
+<p><span class="caption-text">Vector Example</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If a vector is given as twp points, initial point of <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> and a terminal point of <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> then the standard position vector is <span class="math notranslate nohighlight">\(\mathbf{v} = \left\langle x_1-x_0, y_1-y_0 \right\rangle.\)</span>  We say that two vectors are equal if they have the same magnitude (length) and the same direction.  So if two vectors are in standard position they are equal if and only if their corresponding components are all equal.</p>
+<div class="admonition-notation-vector-notations admonition">
+<p class="admonition-title">Notation: Vector Notations</p>
+<p>The notations that textbooks use for vectors can vary widely.  Notations for vector names are usually written either in boldface or with a vector symbol above the name.  For example, <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> or <span class="math notranslate nohighlight">\(\vec{v}.\)</span> The boldface notation is more common in typewritten presentations, such as textbooks, but the vector symbol above the name is far easier to write by hand. We will use the boldfaced version in these tutorials.</p>
+<p>Writing the vector in component form usually takes one of three forms, the same as a point <span class="math notranslate nohighlight">\((x, y)\)</span>, like a point but with angled parentheses <span class="math notranslate nohighlight">\(\left\langle x, y \right\rangle\)</span> or as a column vector (matrix form)</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}x\\y\end{array}\right]\end{split}\]</div>
+<p>Most textbooks in Calculus will use either <span class="math notranslate nohighlight">\((x, y)\)</span> or <span class="math notranslate nohighlight">\(\left\langle x, y \right\rangle\)</span>.  When using the point notation <span class="math notranslate nohighlight">\((x, y)\)</span> the context usually makes it clear when you are looking at a vector or a point.  In many cases these are equated anyway.  Other books will use the <span class="math notranslate nohighlight">\(\left\langle x, y \right\rangle\)</span> notation to make it clear when you are considering it to be a vector.  Linear algebra textbooks will tend to use the column vector since it integrates better with matrices and the types of applications you see in linear algebra.</p>
+<p>In these tutorials we will primarily use the point notation <span class="math notranslate nohighlight">\((x, y).\)</span></p>
+</div>
+</section>
+<section id="vector-operations">
+<h2>Vector Operations<a class="headerlink" href="#vector-operations" title="Link to this heading">#</a></h2>
+<p>In this section we will look at some common operations that we need to preform on vectors.</p>
+<div class="admonition-definition-magnitude-or-length-of-a-vector admonition">
+<p class="admonition-title">Definition: Magnitude or Length of a Vector</p>
+<p>The <strong>magnitude</strong> or <strong>length</strong> of a vector is denoted as <span class="math notranslate nohighlight">\(|\mathbf{v}|\)</span> or  <span class="math notranslate nohighlight">\(\|\mathbf{v}\|\)</span>. In two dimensions if <span class="math notranslate nohighlight">\(\mathbf{v} = (x, y)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[|\mathbf{v}| = \sqrt{x^2+y^2}\]</div>
+<p>and in three dimensions if <span class="math notranslate nohighlight">\(\mathbf{v} = (x, y, z)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[|\mathbf{v}| = \sqrt{x^2+y^2+z^2}\]</div>
+</div>
+<p>In many applications we need to work with vectors that are length 1, we call these unit vectors. In addition, we can take any nonzero vector and create a unit vector that is in the same direction as the given vector, this process is called normalization.</p>
+<div class="admonition-definition-unit-vectors-and-normalization admonition">
+<p class="admonition-title">Definition: Unit Vectors and Normalization</p>
+<p>A <strong>unit vector</strong> is simply a vector of length 1. We can create a unit vector in the same direction as any nonzero vector by <strong>normalizing</strong> the vector. Specifically if we have any nonzero vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> the unit vector in the same direction as <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{u} = \frac{\mathbf{v}}{|\mathbf{v}|} = \frac{1}{|\mathbf{v}|} \mathbf{v}\]</div>
+</div>
+<p>Two (or three) unit vectors we will use extensively are the unit vectors on the coordinate axes, the set of these vectors is called the standard basis.  The term basis has a specific meaning that you will study if you take a course in linear algebra.</p>
+<div class="admonition-definition-standard-basis admonition">
+<p class="admonition-title">Definition: Standard Basis</p>
+<p>In two dimensions, the <strong>standard basis</strong> is the set of vectors,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{i} = (1, 0) \qquad \mathbf{j} = (0, 1)\]</div>
+<p>and in three dimensions the <strong>standard basis</strong> is the set of vectors,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{i} = (1, 0, 0) \qquad \mathbf{j} = (0, 1, 0) \qquad \mathbf{k} = (0, 0, 1)\]</div>
+</div>
+<p>Vector arithmetic can be defined geometrically but in Calculus we take a more analytic approach, so we define the arithmetic operations in component form.  There are only three arithmetic operations that we do on vectors, really two, these are addition, subtraction, and scalar multiplication.  We noted two since subtraction is just the combination of addition and scalar multiplication.  These operations are simply applied componentwise through the vector.</p>
+<div class="admonition-definition-vector-arithmetic admonition">
+<p class="admonition-title">Definition: Vector Arithmetic</p>
+<p>Arithmetically, we can add two vectors, subtract two vectors, and multiply a vector by a scalar.  In two dimensions, if <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, a_2)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b} = (b_1, b_2)\)</span> and <span class="math notranslate nohighlight">\(c\)</span> is a scalar then,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} + \mathbf{b} = (a_1+b_1, a_2+b_2) \qquad \mathbf{a} - \mathbf{b} = (a_1-b_1, a_2-b_2) \qquad c\mathbf{a} = (c a_1, c a_2)\]</div>
+<p>Similarly in three dimensions , if <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, a_2, a_3)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b} = (b_1, b_2, b_3)\)</span> and <span class="math notranslate nohighlight">\(c\)</span> is a scalar then,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} + \mathbf{b} = (a_1+b_1, a_2+b_2, a_3+b_3) \qquad \mathbf{a} - \mathbf{b} = (a_1-b_1, a_2-b_2, a_3-b_3) \qquad c\mathbf{a} = (c a_1, c a_2, c a_3)\]</div>
+</div>
+<p>Since the arithmetic operations are preformed componentwise, vectors share many of the same properties as real numbers.</p>
+<div class="admonition-properties-of-vector-arithmetic admonition">
+<p class="admonition-title">Properties of Vector Arithmetic</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{c}\)</span> are vectors and <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(d\)</span> are scalars, then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a}+ \mathbf{b} = \mathbf{b} + \mathbf{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a}+ (\mathbf{b}+ \mathbf{c}) = (\mathbf{a} + \mathbf{b})+ \mathbf{c}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a}+ \mathbf{0} = \mathbf{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a}+ (-\mathbf{a}) = \mathbf{0}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c(\mathbf{a}+ \mathbf{b}) = c\mathbf{a} + c\mathbf{b}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((c + d) \mathbf{a} = c\mathbf{a} + d\mathbf{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((c d) \mathbf{a} = c(d\mathbf{a})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(1 \mathbf{a} = \mathbf{a}\)</span></p></li>
+</ol>
+</div>
+</section>
+<section id="example-vectors-and-vector-arithmetic">
+<h2>Example: Vectors and Vector Arithmetic<a class="headerlink" href="#example-vectors-and-vector-arithmetic" title="Link to this heading">#</a></h2>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<section id="inputting-a-vector">
+<h4>Inputting a Vector<a class="headerlink" href="#inputting-a-vector" title="Link to this heading">#</a></h4>
+<p>GeoGebra makes a distinction between points and vectors.  There are two main ways to input a vector in GeoGebra.</p>
+<ol class="arabic simple">
+<li><p>Input the command <code class="docutils literal notranslate"><span class="pre">Vector((a,</span> <span class="pre">b))</span></code> where <code class="docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b)</span></code> is the endpoint of the vector.  This will create a vector from the origin to the endpoint <code class="docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b)</span></code>.</p></li>
+<li><p>First input the point <code class="docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b)</span></code> and then (assuming this point is named A) input the command <code class="docutils literal notranslate"><span class="pre">Vector(A)</span></code>.</p></li>
+</ol>
+<p>For example if input <code class="docutils literal notranslate"><span class="pre">Vector(1,</span> <span class="pre">2)</span></code>, then the point <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">3)</span></code>, and then <code class="docutils literal notranslate"><span class="pre">Vector(A)</span></code> we get 2 vectors and a point in the workspace, and an image of,</p>
+<figure class="align-default" id="id5">
+<img alt="Vector Example" src="../_images/vectors002.png" />
+<figcaption>
+<p><span class="caption-text">Vector Example</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The vectors are written as columns, specifically column vectors which are matrices.  If you take a course in linear algebra this is a standard way to write vectors as it integrates well with the operations done in that area of mathematics.</p></li>
+<li><p>Although the above example was with two-dimensional vectors the same can be done in three-dimensions.</p></li>
+<li><p>You can also specify a starting point and ending point for a vector, we will use this option later on in the tutorials.</p></li>
+</ul>
+</div>
+</section>
+<section id="length-and-normalization">
+<h4>Length and Normalization<a class="headerlink" href="#length-and-normalization" title="Link to this heading">#</a></h4>
+<p>We will assume that the vectors from the above example are input into GeoGebra, as <em>u</em> and <em>v</em> respectively.  You can find the length of the vector in two primary ways,</p>
+<ol class="arabic simple">
+<li><p>Use the command <code class="docutils literal notranslate"><span class="pre">Length(u)</span></code>.</p></li>
+<li><p>Use the command <code class="docutils literal notranslate"><span class="pre">|u|</span></code>.</p></li>
+</ol>
+<p>In either case you will get the length of <em>u</em> as 2.23607 and the length of <em>v</em> as 3.60555.</p>
+<p>To normalize a vector we simply divide a vector by its (scalar) length, so in GeoGebra this can be done with, <code class="docutils literal notranslate"><span class="pre">u/|u|</span></code>.  The normalization of <em>u</em> gives us</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}0.44721\\0.89443\end{array}\right]\end{split}\]</div>
+<p>and the normalization of <em>v</em> gives us</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}-0.5547\\0.83205\end{array}\right]\end{split}\]</div>
+</section>
+<section id="arithmetic">
+<h4>Arithmetic<a class="headerlink" href="#arithmetic" title="Link to this heading">#</a></h4>
+<p>To do arithmetic with vectors in GeoGebra simply use the vector names in the expression for the vectors that are already input into the system.  For example, the expression <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">u</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">v</span></code> results in,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}-5\\18\end{array}\right]\end{split}\]</div>
+</section>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Inputting a Vector<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>In CLAE there are three main ways to input a vector,</p>
+<ol class="arabic simple">
+<li><p>Probably the easiest method is to select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Input</span> <span class="pre">Vector</span></code> or click the corresponding toolbar button.  A dialog box will appear with a single input field.  Input the vector components as a list separated by commas.  For example, <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code> or <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b]</span></code> will input the vector,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}a\\b\end{array}\right]\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the CAS has a list as one of the entries, for example <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b]</span></code> and we will assume that this is in R1, then the input of <code class="docutils literal notranslate"><span class="pre">R1</span></code> into the input field of this dialog will produce the same vector.</p>
+</div>
+<ol class="arabic" start="2">
+<li><p>You can also use the matrix editor, this gives you more options but requires more steps.  The matrix editor is designed to input general sized matrices for linear algebra which is why we created a vector input option for faster and easier input.  To use the matrix editor</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Open the matrix editor with <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Input</span> <span class="pre">Matrix/Vector</span></code> or click the corresponding toolbar button.</p></li>
+<li><p>Set the number of rows to the dimension of the vector (probably 2 or 3 for this course).</p></li>
+<li><p>Set the number of columns to 1.</p></li>
+<li><p>Input the vector as a column in the grid.</p></li>
+<li><p>When finished, click OK.</p></li>
+</ol>
+</div></blockquote>
+</li>
+<li><p>If the vector is in the CAS as a list or you input it as a list you can convert it to a vector by <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">COnvert</span> <span class="pre">List</span> <span class="pre">&gt;</span> <span class="pre">Convert</span> <span class="pre">List</span> <span class="pre">of</span> <span class="pre">Lists</span> <span class="pre">to</span> <span class="pre">Matrix</span> <span class="pre">by</span> <span class="pre">Row</span></code>.</p></li>
+</ol>
+<p>For example if we input the vectors,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-2\\3\end{array}\right]\end{split}\]</div>
+<p>Click and drag these over to the 2-D Graphics window, and change their type from point sets to vector sets.  You should see the following.</p>
+<figure class="align-default" id="id6">
+<img alt="Vector Example" src="../_images/vectors003.png" />
+<figcaption>
+<p><span class="caption-text">Vector Example</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The vectors are written as columns, specifically column vectors which are matrices.  If you take a course in linear algebra this is a standard way to write vectors as it integrates well with the operations done in that area of mathematics.</p></li>
+<li><p>Although the above example was with two-dimensional vectors the same can be done in three-dimensions.</p></li>
+</ul>
+</div>
+</section>
+<section id="id2">
+<h4>Length and Normalization<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>To find the length of a vector simply input the vector into the CAS, select it, then select <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Length</span></code>.  The lengths of the two vectors from the previous example are, <span class="math notranslate nohighlight">\(\sqrt{5}\)</span> and <span class="math notranslate nohighlight">\(\sqrt{13}\)</span> respectively.  To normalize a vector, select <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Normalize</span></code>.  If we apply this to our two vector examples we get,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{\sqrt{5}}{5}\\\frac{2 \sqrt{5}}{5}\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}- \frac{2 \sqrt{13}}{13}\\\frac{3 \sqrt{13}}{13}\end{array}\right]\end{split}\]</div>
+<p>If you prefer to use approximations, you can approximate all of the entries in a vector with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span></code>.</p>
+</section>
+<section id="id3">
+<h4>Arithmetic<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>To do arithmetic with vectors use the CAS designations in the expression for the vectors that are already input into the system.  For example, the expression <code class="docutils literal notranslate"><span class="pre">3*R1</span> <span class="pre">+</span> <span class="pre">4*R2</span></code> results in,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}-5\\18\end{array}\right]\end{split}\]</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Multivariable Calculus</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="dotcross.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Dot Product and Cross Product</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#component-form-of-a-vector">Component Form of a Vector</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-operations">Vector Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-vectors-and-vector-arithmetic">Example: Vectors and Vector Arithmetic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#inputting-a-vector">Inputting a Vector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#length-and-normalization">Length and Normalization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic">Arithmetic</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Inputting a Vector</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Length and Normalization</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Arithmetic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

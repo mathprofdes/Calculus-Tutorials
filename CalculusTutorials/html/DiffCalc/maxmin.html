@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Extreme Values &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/maxmin';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mean Value Theorem" href="meanvalue.html" />
+    <link rel="prev" title="Linear Approximations and Differentials" href="linearapprox.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Extreme Values</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="extreme-values">
+<h1><span class="target" id="index-0"></span>Extreme Values<a class="headerlink" href="#extreme-values" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Finding the largest and smallest values of a function is critical to solving optimization problems, such as, minimizing the materials in construction or maximizing profit.</p>
+<p>We will start with absolute extremum.</p>
+<div class="admonition-definition-absolute-extremes admonition">
+<p class="admonition-title">Definition: Absolute Extremes</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a function defined over an interval <span class="math notranslate nohighlight">\(I\)</span> and let <span class="math notranslate nohighlight">\(c \in I\)</span>. We say <span class="math notranslate nohighlight">\(f\)</span> has an <strong>absolute maximum</strong> on <span class="math notranslate nohighlight">\(I\)</span> at <span class="math notranslate nohighlight">\(c\)</span> if <span class="math notranslate nohighlight">\(f(c) \geq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in I\)</span>. We say <span class="math notranslate nohighlight">\(f\)</span> has an <strong>absolute minimum</strong> on <span class="math notranslate nohighlight">\(I\)</span> at <span class="math notranslate nohighlight">\(c\)</span> if <span class="math notranslate nohighlight">\(f(c) \leq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in I\)</span>. If <span class="math notranslate nohighlight">\(f\)</span> has an absolute maximum on <span class="math notranslate nohighlight">\(I\)</span> at <span class="math notranslate nohighlight">\(c\)</span> or an absolute minimum on <span class="math notranslate nohighlight">\(I\)</span> at <span class="math notranslate nohighlight">\(c\)</span>, we say <span class="math notranslate nohighlight">\(f\)</span> has an <strong>absolute extremum</strong> on <span class="math notranslate nohighlight">\(I\)</span> at <span class="math notranslate nohighlight">\(c\)</span>.</p>
+</div>
+<p>A couple things to note before we proceed,</p>
+<ul class="simple">
+<li><p>A quick note about the language here.  If a function <span class="math notranslate nohighlight">\(f\)</span> has an absolute extremum over an interval <span class="math notranslate nohighlight">\(I\)</span> at <span class="math notranslate nohighlight">\(c\)</span>, the absolute extremum is <span class="math notranslate nohighlight">\(f(c)\)</span>. The real number <span class="math notranslate nohighlight">\(c\)</span> is a point in the domain at which the absolute extremum occurs.</p></li>
+<li><p>Another thing to note is that an absolute extremum not only relies on the function but also the interval <span class="math notranslate nohighlight">\(I\)</span>.  So a function could have an absolute extremum on one interval but not on another.</p></li>
+<li><p>There could be several places where the function attains an absolute maximum and/or its absolute minimum.</p></li>
+</ul>
+<p>Let’s look at a few examples to get a feel for the possibilities.</p>
+<p>Take the function, <span class="math notranslate nohighlight">\(f(x) = \frac{x}{x^{2} + 1}\)</span>, graph is below.</p>
+<figure class="align-default" id="id10">
+<img alt="y = x/(x^2+1)" src="../_images/ExtVal001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x}{x^{2} + 1}\)</span></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>On the interval <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>, the function has an absolute maximum of <span class="math notranslate nohighlight">\(1/2\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(-1/2\)</span> at <span class="math notranslate nohighlight">\(x = -1\)</span>.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\([-10, 10]\)</span>, the function has an absolute maximum of <span class="math notranslate nohighlight">\(1/2\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(-1/2\)</span> at <span class="math notranslate nohighlight">\(x = -1\)</span>.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\([0, \infty)\)</span>, the function has an absolute maximum of <span class="math notranslate nohighlight">\(1/2\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(0\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\((0, \infty)\)</span>, the function has an absolute maximum of <span class="math notranslate nohighlight">\(1/2\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> and no absolute minimum.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\([1, 5]\)</span>, the function has an absolute maximum of <span class="math notranslate nohighlight">\(1/2\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(5/26\)</span> at <span class="math notranslate nohighlight">\(x = 5\)</span>.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\((1, 5]\)</span>, the function has no absolute maximum and an absolute minimum of <span class="math notranslate nohighlight">\(5/26\)</span> at <span class="math notranslate nohighlight">\(x = 5\)</span>.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\((1, 5)\)</span>, the function has no absolute maximum and no absolute minimum.</p></li>
+</ul>
+<p>Take the function, <span class="math notranslate nohighlight">\(f(x) = x^3\)</span>, graph is below.</p>
+<figure class="align-default" id="id11">
+<img alt="y = x^3" src="../_images/ExtVal002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3\)</span></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>On the interval <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>, the function has no absolute maximum and no absolute minimum.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\((0, \infty)\)</span>, the function has no absolute maximum and no absolute minimum.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\([0, \infty)\)</span>, the function has no absolute maximum and an absolute minimum of 0 at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p></li>
+</ul>
+<p>Take the function, <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>, graph is below.</p>
+<figure class="align-default" id="id12">
+<img alt="y = sin(x)" src="../_images/ExtVal003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>On the interval <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>, the function has an absolute maximum of 1 at <span class="math notranslate nohighlight">\(\frac{\pi}{2} + 2\pi k\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(-1\)</span> at <span class="math notranslate nohighlight">\(\frac{3\pi}{2} + 2\pi k\)</span>.  So there are an infinite number of places where the function attains its absolute maximum and its absolute minimum.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\([0, 4\pi]\)</span>, the function has an absolute maximum of 1 at <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> and <span class="math notranslate nohighlight">\(\frac{5\pi}{2}\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(-1\)</span> at <span class="math notranslate nohighlight">\(\frac{3\pi}{2}\)</span> and <span class="math notranslate nohighlight">\(\frac{7\pi}{2}\)</span>.</p></li>
+</ul>
+<p>With all of these possibilities it is nice to have some general results that guarantee the existence of an absolute maximum and minimum, the <strong>Extreme Value Theorem</strong> does just that.</p>
+<div class="admonition-theorem-extreme-value-theorem admonition">
+<p class="admonition-title">Theorem: Extreme Value Theorem</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is a continuous function over the closed, bounded interval <span class="math notranslate nohighlight">\([a, b]\)</span>, then there is a point in <span class="math notranslate nohighlight">\([a, b]\)</span> at which <span class="math notranslate nohighlight">\(f\)</span> has an absolute maximum over <span class="math notranslate nohighlight">\([a, b]\)</span> and there is a point in <span class="math notranslate nohighlight">\([a, b]\)</span> at which <span class="math notranslate nohighlight">\(f\)</span> has an absolute minimum over <span class="math notranslate nohighlight">\([a, b]\)</span>.</p>
+</div>
+<p>For example, with <span class="math notranslate nohighlight">\(f(x) = \frac{x}{x^{2} + 1}\)</span>,</p>
+<ul class="simple">
+<li><p>On the interval <span class="math notranslate nohighlight">\([-10, 10]\)</span>, the function has an absolute maximum of <span class="math notranslate nohighlight">\(1/2\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(-1/2\)</span> at <span class="math notranslate nohighlight">\(x = -1\)</span>.</p></li>
+<li><p>On the interval <span class="math notranslate nohighlight">\([1, 5]\)</span>, the function has an absolute maximum of <span class="math notranslate nohighlight">\(1/2\)</span> at <span class="math notranslate nohighlight">\(x = 1\)</span> and an absolute minimum of <span class="math notranslate nohighlight">\(5/26\)</span> at <span class="math notranslate nohighlight">\(x = 5\)</span>.</p></li>
+</ul>
+<div class="admonition-definition-local-extremes admonition">
+<p class="admonition-title">Definition: Local Extremes</p>
+<p>A function <span class="math notranslate nohighlight">\(f\)</span> has a <strong>local maximum</strong> at <span class="math notranslate nohighlight">\(c\)</span> if there exists an open interval <span class="math notranslate nohighlight">\(I\)</span> containing <span class="math notranslate nohighlight">\(c\)</span> such that <span class="math notranslate nohighlight">\(I\)</span> is contained in the domain of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(f(c) \geq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in I\)</span>. A function <span class="math notranslate nohighlight">\(f\)</span> has a <strong>local minimum</strong> at <span class="math notranslate nohighlight">\(c\)</span> if there exists an open interval <span class="math notranslate nohighlight">\(I\)</span> containing <span class="math notranslate nohighlight">\(c\)</span> such that <span class="math notranslate nohighlight">\(I\)</span> is contained in the domain of <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(f(c) \leq f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in I\)</span>. A function <span class="math notranslate nohighlight">\(f\)</span> has a <strong>local extremum</strong> at <span class="math notranslate nohighlight">\(c\)</span> if <span class="math notranslate nohighlight">\(f\)</span> has a local maximum at <span class="math notranslate nohighlight">\(c\)</span> or <span class="math notranslate nohighlight">\(f\)</span> has a local minimum at <span class="math notranslate nohighlight">\(c\)</span>.</p>
+</div>
+<p>For example, take <span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span>, graph below,</p>
+<figure class="align-default" id="id13">
+<img alt="y = x^3 - x" src="../_images/ExtVal004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3 - x\)</span></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>On <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span> the function has no absolute maximum and no absolute minimum.  But it does have a local maximum of <span class="math notranslate nohighlight">\(\frac{2 \sqrt{3}}{9}\)</span> at <span class="math notranslate nohighlight">\(x = - \frac{\sqrt{3}}{3}\)</span> and a local minimum of <span class="math notranslate nohighlight">\(-\frac{2 \sqrt{3}}{9}\)</span> at <span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{3}\)</span>.  Although we can simply see this, if we follow the definition to the letter we need to come up with a couple intervals.  For the local maximum we can use <span class="math notranslate nohighlight">\((-1, 0)\)</span> (or <span class="math notranslate nohighlight">\((-0.75, -0.25)\)</span> or <span class="math notranslate nohighlight">\((-0.6, -0.5)\)</span>).  For the local minimum we can use <span class="math notranslate nohighlight">\((0, 1)\)</span>, amongst others.</p>
+<p>As another example, <span class="math notranslate nohighlight">\(f(x) = x^{5} - 3 x^{3} + x\)</span>, graph below,</p>
+<figure class="align-default" id="id14">
+<img alt="y = x^5 - x^3 + x" src="../_images/ExtVal005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{5} - 3 x^{3} + x\)</span></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This function has two local maximums and two local minimums.  The local maximums are</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(7 \sqrt{10} + 3 \sqrt{610}\right) \sqrt{\sqrt{61} + 9}}{250} \approx 1.57819155662093 \quad {\rm at} \quad x = - \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}} \approx -1.29654346922526\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{9 - \sqrt{61}} \left(- 7 \sqrt{10} + 3 \sqrt{610}\right)}{250} \approx 0.226696737096979 \quad {\rm at} \quad x = \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}} \approx 0.344927575600059\]</div>
+<p>The local minimums are</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{9 - \sqrt{61}} \left(- 3 \sqrt{610} + 7 \sqrt{10}\right)}{250} \approx -0.226696737096979 \quad {\rm at} \quad x = - \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}} \approx -0.344927575600059\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{\sqrt{61} + 9} \left(- 3 \sqrt{610} - 7 \sqrt{10}\right)}{250} \approx -1.57819155662093  \quad {\rm at} \quad x = \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}} \approx 1.29654346922526\]</div>
+<p>One more example, consider the following function,</p>
+<figure class="align-default" id="id15">
+<img alt="Critical Point Example" src="../_images/ExtVal006.png" />
+<figcaption>
+<p><span class="caption-text">Critical Point Example</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It has a local maximum of about 1.4 around <span class="math notranslate nohighlight">\(x = -0.6\)</span>, a local minimum of about 0.6 around  <span class="math notranslate nohighlight">\(x = 0.6\)</span>, and another local maximum of 3 at <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<p>It should be fairly clear that we are gearing up to find these local maximums and local minimums and of course it will relate to the derivative of the function.  Take the above example, informally speaking, the local maximums and minimums occur at spots where the function “turns around”.  There are essentially two ways that a continuous function can turn around, either smoothly were the derivative will exist or at a sharp corner where the derivative will not exist. If the derivative exists at the turnaround point the transition is smooth and if we think about tangent lines to the curve at that point the slope must be 0.  Hence the derivative is 0.  This observation gives us the following definition of a <strong>critical point</strong> or <strong>critical number</strong> as well as Fermat’s Theorem.</p>
+<div class="admonition-definition-critical-point admonition">
+<p class="admonition-title">Definition: Critical Point</p>
+<p>Let <span class="math notranslate nohighlight">\(c\)</span> be an interior point in the domain of <span class="math notranslate nohighlight">\(f\)</span>. We say that <span class="math notranslate nohighlight">\(c\)</span> is a <strong>critical point</strong> or <strong>critical number</strong> of <span class="math notranslate nohighlight">\(f\)</span> if <span class="math notranslate nohighlight">\(f'(c) = 0\)</span> or <span class="math notranslate nohighlight">\(f'(c)\)</span> is undefined.</p>
+</div>
+<div class="admonition-theorem-fermat-s-theorem admonition">
+<p class="admonition-title">Theorem: Fermat’s Theorem</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> has a local extremum at <span class="math notranslate nohighlight">\(c\)</span> and <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(c\)</span>, then <span class="math notranslate nohighlight">\(f'(c) = 0\)</span>.</p>
+</div>
+<p>As we have seen before with theorems, we need to be a little careful about how we read them.  This is saying that if we have a local extreme then it must be at a critical number.  It does not say that we must have an extreme at every critical number.  Two very quick examples to illustrate this, first <span class="math notranslate nohighlight">\(f(x) = x^3\)</span>, there is a critical value at <span class="math notranslate nohighlight">\(x = 0\)</span>, since <span class="math notranslate nohighlight">\(f'(x) = 3x^2\)</span>, and hence <span class="math notranslate nohighlight">\(f'(0) = 0\)</span>, but there is no local maximum or minimum at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<figure class="align-default" id="id16">
+<img alt="y = x^3" src="../_images/ExtVal007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3\)</span></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another example is  <span class="math notranslate nohighlight">\(f(x) = \sqrt[3]{x}\)</span>, there is a critical value at <span class="math notranslate nohighlight">\(x = 0\)</span>, since <span class="math notranslate nohighlight">\(f'(x)\)</span> does not exist there. <span class="math notranslate nohighlight">\(f'(x) = \frac{1}{3 x^{\frac{2}{3}}}\)</span> and hence <span class="math notranslate nohighlight">\(f'(0)\)</span> is undefined, but there is no local maximum or minimum at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<figure class="align-default" id="id17">
+<img alt="y = x^(1/3)" src="../_images/ExtVal008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sqrt[3]{x}\)</span></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Putting all of this together we have the following theorem about absolute extrema.</p>
+<div class="admonition-theorem-location-of-absolute-extrema admonition">
+<p class="admonition-title">Theorem: Location of Absolute Extrema</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a continuous function over a closed, bounded interval <span class="math notranslate nohighlight">\(I\)</span>. The absolute maximum of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(I\)</span> and the absolute minimum of <span class="math notranslate nohighlight">\(f\)</span> over <span class="math notranslate nohighlight">\(I\)</span> must occur at endpoints of <span class="math notranslate nohighlight">\(I\)</span> or at critical points of <span class="math notranslate nohighlight">\(f\)</span> in <span class="math notranslate nohighlight">\(I\)</span>.</p>
+</div>
+<p>This theorem can be rewritten into an algorithm for finding absolute extrema.</p>
+<div class="admonition-problem-solving-locating-absolute-extrema-over-a-closed-interval admonition">
+<p class="admonition-title">Problem Solving: Locating Absolute Extrema over a Closed Interval</p>
+<p>Consider a continuous function <span class="math notranslate nohighlight">\(f\)</span> defined over the closed interval <span class="math notranslate nohighlight">\([a, b]\)</span>.</p>
+<ol class="arabic simple">
+<li><p>Evaluate <span class="math notranslate nohighlight">\(f\)</span> at the endpoints <span class="math notranslate nohighlight">\(x = a\)</span> and <span class="math notranslate nohighlight">\(x = b\)</span>.</p></li>
+<li><p>Find all critical points of <span class="math notranslate nohighlight">\(f\)</span> that are in the interval <span class="math notranslate nohighlight">\((a, b)\)</span> and evaluate <span class="math notranslate nohighlight">\(f\)</span> at those critical points.</p></li>
+<li><p>Compare all the functional values found in the previous steps, the largest is the absolute maximum of <span class="math notranslate nohighlight">\(f\)</span> and the smallest is the absolute minimum of <span class="math notranslate nohighlight">\(f\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="example-f-x-x-3-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span><a class="headerlink" href="#example-f-x-x-3-x" title="Link to this heading">#</a></h2>
+<p>In this example we are going to find all the local maximums and minimums of the function <span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span>.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-x</span>
+</pre></div>
+</div>
+<p>The quick way to get approximations to the local maximums and minimums, as well as roots and the y intercept, is to select Special Points from the objects menu.</p>
+<figure class="align-default" id="id18">
+<img alt="GeoGebra Special Points" src="../_images/ExtVal009.png" />
+<figcaption>
+<p><span class="caption-text">GeoGebra Special Points</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You will note that the option ran three functions, Root, Extremum, and Intersect.  You could have run these separately as well.  One downside to this is that the displayed values are approximations.  If you want exact values you can find the roots of the derivative, that is, solve <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>.  To do so, in a new cell type in <code class="docutils literal notranslate"><span class="pre">Solve</span></code>, select <code class="docutils literal notranslate"><span class="pre">Solve</span></code>, the solve function asks for an equation you can input just <code class="docutils literal notranslate"><span class="pre">f'</span></code> or <code class="docutils literal notranslate"><span class="pre">f'(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">f'(x)</span> <span class="pre">=</span> <span class="pre">0</span></code>.  The output will be the exact answers, if they can be calculated.  You may also have noted that there is a Solutions function.  This is the same as the Solve command but returns approximate values.  Also, from the solve command the resulting cell has a button that will toggle between exact and approximate mode.  This also shows you that the <code class="docutils literal notranslate"><span class="pre">NSolve</span></code> command could have been used in place of <code class="docutils literal notranslate"><span class="pre">Solve</span></code> which would start in approximate mode and toggle to exact mode.</p>
+<p>Another note here is that the Solve command will return the solutions but will not graph them.  The solutions are in list form, lets say they are <code class="docutils literal notranslate"><span class="pre">l1</span></code>.  In a new cell input <code class="docutils literal notranslate"><span class="pre">l1</span></code> and it will approximate the solutions as well as graph these as vertical lines.  If you had use the Solutions command instead of the Solve command you would not need to do the approximation step.</p>
+<figure class="align-default" id="id19">
+<img alt="GeoGebra using Solve" src="../_images/ExtVal010.png" />
+<figcaption>
+<p><span class="caption-text">GeoGebra using Solve</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One advantage ot using Solutions in stead of Solve is that you can find the corresponding y-values from the list result of Solutions but not from the list solutions from Solve.  Had you used Solutions and say the list name was <code class="docutils literal notranslate"><span class="pre">l2</span></code> then the y-values could be calculated using <code class="docutils literal notranslate"><span class="pre">f(l2)</span></code>.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input and graph the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-x</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id20">
+<img alt="y = x^3-x" src="../_images/ExtVal011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the critical numbers first find the derivative, select the expression, select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em>, order 1.  The result is <span class="math notranslate nohighlight">\(3 x^{2} - 1\)</span>.  Then solve the equation <span class="math notranslate nohighlight">\(f'(x) = 3 x^{2} - 1 = 0\)</span> by selecting <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, variable <em>x</em> and the result will be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \frac{\sqrt{3}}{3}, \  \frac{\sqrt{3}}{3}\right]\]</div>
+<p>Click and drag these over to the graph and change the type to vertical lines.</p>
+<figure class="align-default" id="id21">
+<img alt="y = x^3-x with Critical Values" src="../_images/ExtVal012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> with Critical Values</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To get the corresponding y-values there are two options,</p>
+<p><strong>Option 1:</strong> Select the original function, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable is <em>x</em>, for the expression input <code class="docutils literal notranslate"><span class="pre">R3[0]</span></code>.  This assumes that the solutions to the derivative equaling 0 are in the <code class="docutils literal notranslate"><span class="pre">R3</span></code> result.  What <code class="docutils literal notranslate"><span class="pre">R3[0]</span></code> will do is extract the first entry of the list stored in R3.  Hence it will evaluate the function at the first solution.  Then do the same thing again but this time use <code class="docutils literal notranslate"><span class="pre">R3[1]</span></code> to evaluate the second solution.  Your results will be <span class="math notranslate nohighlight">\(\frac{2 \sqrt{3}}{9}\)</span> and <span class="math notranslate nohighlight">\(-\frac{2 \sqrt{3}}{9}\)</span> respectively.</p>
+<p><strong>Option 2:</strong> First extract all the solutions to their own output cells by selecting the solution list output, then select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">from</span> <span class="pre">List</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">All</span> <span class="pre">List</span> <span class="pre">Entries</span></code>.  Now evaluate each one by selecting the original function, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable is <em>x</em>, for the expression input <code class="docutils literal notranslate"><span class="pre">R4</span></code> (assuming that the first entry went into R4).  Then do the same but use <code class="docutils literal notranslate"><span class="pre">R5</span></code> instead of <code class="docutils literal notranslate"><span class="pre">R4</span></code>.  Your results will be <span class="math notranslate nohighlight">\(\frac{2 \sqrt{3}}{9}\)</span> and <span class="math notranslate nohighlight">\(-\frac{2 \sqrt{3}}{9}\)</span> respectively.</p>
+<p>CLAE does have a feature to find both absolute and local maximums and minimums on finite intervals.  Although this is quicker to a solution, the above methods help you understand the process a bit better.  Nonetheless, once you understand the process and can do these calculations by hand, the machine can help you out with more difficult situations.</p>
+<p>Select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Maximums</span> <span class="pre">and</span> <span class="pre">Minimums</span></code>, a dialog box will appear with numerous options.  From the graph it looks like all of our local extrema are between <span class="math notranslate nohighlight">\(-1\)</span> and 1.  So input <span class="math notranslate nohighlight">\(-1\)</span> and 1 for the lower and upper bounds.  For this exercise we want local extrema so select Local.  We also want both the maximums and minimums, so select Both.  For the next option we could have the program just output the y-values of the extremes or the points, we will want the points here so select Point.  The options below this are to choose between exact numeric output or approximations.  We will leave it as exact but if the program cannot produce exact solutions we will redo it with approximations.  Click OK and we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ - \frac{\sqrt{3}}{3}, \  \frac{2 \sqrt{3}}{9}\right], \  \left[ \frac{\sqrt{3}}{3}, \  - \frac{2 \sqrt{3}}{9}\right]\right]\]</div>
+<p>If we click and drag this over to the graph it will come in as a point set and along with the curve we see,</p>
+<figure class="align-default" id="id22">
+<img alt="y = x^3-x with Extreme Points" src="../_images/ExtVal024.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> with Extreme Points</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input and graph the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=x^3-x</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d(f(x),[x,-1.5,1.5])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id23">
+<img alt="y = x^3-x" src="../_images/ExtVal013.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span></span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>Solve <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sl:solve(df=0,x)</span>
+</pre></div>
+</div>
+<p>The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ x=-\frac{1}{\sqrt{3}}\operatorname{,}x=\frac{1}{\sqrt{3}}\right] \mbox{}\]</div>
+<p>To get the corresponding y-values we can evaluate each of the two solutions by extracting the values from the list of solutions.  To evaluate the function at the first solution can be done with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(rhs(sl[1]))</span>
+</pre></div>
+</div>
+<p>and the second can be done with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(rhs(sl[2]))</span>
+</pre></div>
+</div>
+<p>What is happening here is that the solution list was stored in <code class="docutils literal notranslate"><span class="pre">sl</span></code> from our solve command.  Then <code class="docutils literal notranslate"><span class="pre">sl[1]</span></code> is the first entry, <code class="docutils literal notranslate"><span class="pre">sl[2]</span></code> is the second entry, and so on if the list was longer.  Each entry is an equation and we want the right hand side of the equation, which is what the <code class="docutils literal notranslate"><span class="pre">rhs</span></code> function extracts.  Once extracted we simple evaluate the function at that number. Your results should be the following, respectively.</p>
+<div class="math notranslate nohighlight">
+\[\frac{2}{{{3}^{\frac{3}{2}}}}\mbox{}  \quad {\rm and } \quad -\frac{2}{{{3}^{\frac{3}{2}}}}\mbox{}\]</div>
+</section>
+</section>
+<section id="example-f-x-x-3-x-on-1-2">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> on <span class="math notranslate nohighlight">\([-1, 2]\)</span><a class="headerlink" href="#example-f-x-x-3-x-on-1-2" title="Link to this heading">#</a></h2>
+<p>In this example we are going to find the absolute maximums and minimums of the function <span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> on the interval <span class="math notranslate nohighlight">\([-1, 2]\)</span>.</p>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-x</span>
+</pre></div>
+</div>
+<p>The quick way to get approximations to the local maximums and minimums, as well as roots and the y intercept, is to select Special Points from the objects menu.</p>
+<figure class="align-default" id="id24">
+<img alt="y = x^3-x with Special Points" src="../_images/ExtVal009.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> with Special Points</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You will note that the option ran three functions, Root, Extremum, and Intersect.  You could have run these separately as well.  One downside to this is that the displayed values are approximations.  If you want exact values you can find the roots of the derivative, that is, solve <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>.  To do so, in a new cell type in <code class="docutils literal notranslate"><span class="pre">Solve</span></code>, select <code class="docutils literal notranslate"><span class="pre">Solve</span></code>, the solve function asks for an equation you can input just <code class="docutils literal notranslate"><span class="pre">f'</span></code> or <code class="docutils literal notranslate"><span class="pre">f'(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">f'(x)</span> <span class="pre">=</span> <span class="pre">0</span></code>.  The output will be the exact answers, if they can be calculated.  You may also have noted that there is a Solutions function.  This is the same as the Solve command but returns approximate values.  Also, from the solve command the resulting cell has a button that will toggle between exact and approximate mode.  This also shows you that the <code class="docutils literal notranslate"><span class="pre">NSolve</span></code> command could have been used in place of <code class="docutils literal notranslate"><span class="pre">Solve</span></code> which would start in approximate mode and toggle to exact mode.</p>
+<p>Another note here is that the Solve command will return the solutions but will not graph them.  The solutions are in list form, lets say they are <code class="docutils literal notranslate"><span class="pre">l1</span></code>.  In a new cell input <code class="docutils literal notranslate"><span class="pre">l1</span></code> and it will approximate the solutions as well as graph these as vertical lines.  If you had use the Solutions command instead of the Solve command you would not need to do the approximation step.</p>
+<figure class="align-default" id="id25">
+<img alt="y = x^3-x using Solve" src="../_images/ExtVal010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> using Solve</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One advantage ot using Solutions in stead of Solve is that you can find the corresponding y-values from the list result of Solutions but not from the list solutions from Solve.  Had you used Solutions and say the list name was <code class="docutils literal notranslate"><span class="pre">l2</span></code> then the y-values could be calculated using <code class="docutils literal notranslate"><span class="pre">f(l2)</span></code>.</p>
+<p>Continuing with the determination of the absolute maximums and minimums we first take all the critical numbers in our interval of interest, <span class="math notranslate nohighlight">\([-1, 2]\)</span>.  The approximate critical numbers are <span class="math notranslate nohighlight">\(\{-0.57735, 0.57735\}\)</span> both are in the interval and have functional values <span class="math notranslate nohighlight">\(\{0.3849, -0.3849\}\)</span> respectively.  Also, check the endpoints by evaluating the function at <span class="math notranslate nohighlight">\(-1\)</span> and 2, which are 0 and 6 respectively.</p>
+<p>So the function has an absolute minimum of <span class="math notranslate nohighlight">\(-0.3849\)</span> at <span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{3} \approx 0.57735\)</span> and an absolute maximum of 6 at <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<figure class="align-default" id="id26">
+<img alt="y = x^3-x Restricted to [-1, 2]" src="../_images/ExtVal016.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> Restricted to <span class="math notranslate nohighlight">\([-1, 2]\)</span></span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you want to restrict the domain of the function to <span class="math notranslate nohighlight">\([-1, 2]\)</span> for a better visualization (as above) you can do it by first inputting the region and then attaching the region to the function.  In a new cell, input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-1 &lt;= x &lt;= 2</span>
+</pre></div>
+</div>
+<p>This will graph the region and assign it to a variable, we will assume that the variable is <code class="docutils literal notranslate"><span class="pre">a</span></code>.  Then you can attach it to the function with <code class="docutils literal notranslate"><span class="pre">f,a</span></code>.  This will make an automatic if statement.  Deselect the original function and the graph of the domain and you will get an image like the one above.</p>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Input and graph the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-x</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id27">
+<img alt="y = x^3-x" src="../_images/ExtVal011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span></span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the critical numbers first find the derivative, select the expression, select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em>, order 1.  The result is <span class="math notranslate nohighlight">\(3 x^{2} - 1\)</span>.  Then solve the equation <span class="math notranslate nohighlight">\(f'(x) = 3 x^{2} - 1 = 0\)</span> by selecting <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, variable <em>x</em> and the result will be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \frac{\sqrt{3}}{3}, \  \frac{\sqrt{3}}{3}\right]\]</div>
+<p>Click and drag these over to the graph and change the type to vertical lines.</p>
+<figure class="align-default" id="id28">
+<img alt="y = x^3-x with Critical Numbers" src="../_images/ExtVal012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> with Critical Numbers</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To get the corresponding y-values there are two options,</p>
+<p><strong>Option 1:</strong> Select the original function, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable is <em>x</em>, for the expression input <code class="docutils literal notranslate"><span class="pre">R3[0]</span></code>.  This assumes that the solutions to the derivative equaling 0 are in the <code class="docutils literal notranslate"><span class="pre">R3</span></code> result.  What <code class="docutils literal notranslate"><span class="pre">R3[0]</span></code> will do is extract the first entry of the list stored in R3.  Hence it will evaluate the function at the first solution.  Then do the same thing again but this time use <code class="docutils literal notranslate"><span class="pre">R3[1]</span></code> to evaluate the second solution.  Your results will be <span class="math notranslate nohighlight">\(\frac{2 \sqrt{3}}{9} \approx 0.384900179459751\)</span> and <span class="math notranslate nohighlight">\(-\frac{2 \sqrt{3}}{9} \approx -0.384900179459751\)</span> respectively.</p>
+<p><strong>Option 2:</strong> First extract all the solutions to their own output cells by selecting the solution list output, then select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">from</span> <span class="pre">List</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">All</span> <span class="pre">List</span> <span class="pre">Entries</span></code>.  Now evaluate each one by selecting the original function, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable is <em>x</em>, for the expression input <code class="docutils literal notranslate"><span class="pre">R4</span></code> (assuming that the first entry went into R4).  Then do the same but use <code class="docutils literal notranslate"><span class="pre">R5</span></code> instead of <code class="docutils literal notranslate"><span class="pre">R4</span></code>.  Your results will be <span class="math notranslate nohighlight">\(\frac{2 \sqrt{3}}{9} \approx 0.384900179459751\)</span> and <span class="math notranslate nohighlight">\(-\frac{2 \sqrt{3}}{9} \approx -0.384900179459751\)</span> respectively.</p>
+<p>Now evaluate the expression at the endpoints by select the original function, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable is <em>x</em>, and <span class="math notranslate nohighlight">\(-1\)</span> for the expression, then do the same with 2.  The results should be 0 and 6 respectively.</p>
+<p>So the function has an absolute minimum of <span class="math notranslate nohighlight">\(-\frac{2 \sqrt{3}}{9} \approx -0.384900179459751\)</span> at <span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{3} \approx 0.577350269189626\)</span> and an absolute maximum of 6 at <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+<figure class="align-default" id="id29">
+<img alt="y = x^3-x Restricted to [-1, 2]" src="../_images/ExtVal015.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> Restricted to <span class="math notranslate nohighlight">\([-1, 2]\)</span></span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you want to restrict the domain to <span class="math notranslate nohighlight">\([-1, 2]\)</span> for better visualization you can do it with a piecewise defined function.  If we assume that the original function is in the R1 result then all you need to do is select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Input</span> <span class="pre">Piecewise</span> <span class="pre">Defined</span> <span class="pre">Function</span></code> or the corresponding toolbar button. Change the expressions to 1, in the expression cell input <code class="docutils literal notranslate"><span class="pre">R1</span></code> and in the domain cell input <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">&gt;=</span> <span class="pre">-1)</span> <span class="pre">&amp;</span> <span class="pre">(x</span> <span class="pre">&lt;=</span> <span class="pre">2)</span></code>.  Select OK and the restricted domain function will be loaded into the CAS,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x^{3} - x &amp; \text{for}\: x \geq -1 \wedge x \leq 2 \\\text{NaN} &amp; \text{for}\: x &gt; 2 \vee x &lt; -1 \end{cases}\end{split}\]</div>
+<p>Click and drag this over to the graph and deselect the original expression.</p>
+<p>Again, we could use the maximum and minimum finder in CLAE to do this.  Select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;&gt;</span> <span class="pre">Maximums</span> <span class="pre">and</span> <span class="pre">Minimums</span></code>, the bounds are <span class="math notranslate nohighlight">\(-1\)</span> and 2, we want Absolute, Both, Point, and Exact.  Click OK and we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ 2, \  6\right], \  \left[ \frac{\sqrt{3}}{3}, \  - \frac{2 \sqrt{3}}{9}\right]\right]\]</div>
+<p>Plotting these and the original function gives us the image,</p>
+<figure class="align-default" id="id30">
+<img alt="y = x^3-x with Maximum and Minimum" src="../_images/ExtVal025.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> with Maximum and Minimum</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Input and graph the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=x^3-x</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d(f(x),[x,-1,2])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id31">
+<img alt="y = x^3-x" src="../_images/ExtVal017.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span></span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>Solve <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sl:solve(df=0,x)</span>
+</pre></div>
+</div>
+<p>The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ x=-\frac{1}{\sqrt{3}}\operatorname{,}x=\frac{1}{\sqrt{3}}\right] \mbox{}\]</div>
+<p>To get the corresponding y-values we can evaluate each of the two solutions by extracting the values from the list of solutions.  To evaluate the function at the first solution can be done with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(rhs(sl[1]))</span>
+</pre></div>
+</div>
+<p>and the second can be done with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(rhs(sl[2]))</span>
+</pre></div>
+</div>
+<p>What is happening here is that the solution list was stored in <code class="docutils literal notranslate"><span class="pre">sl</span></code> from our solve command.  Then <code class="docutils literal notranslate"><span class="pre">sl[1]</span></code> is the first entry, <code class="docutils literal notranslate"><span class="pre">sl[2]</span></code> is the second entry, and so on if the list was longer.  Each entry is an equation and we want the right hand side of the equation, which is what the <code class="docutils literal notranslate"><span class="pre">rhs</span></code> function extracts.  Once extracted we simple evaluate the function at that number. Your results should be the following, respectively.</p>
+<div class="math notranslate nohighlight">
+\[\frac{2}{{{3}^{\frac{3}{2}}}}\mbox{}  \quad {\rm and } \quad -\frac{2}{{{3}^{\frac{3}{2}}}}\mbox{}\]</div>
+<p>To finish this up we evaluate the function at the endpoints,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(-1);</span>
+<span class="go">f(2)</span>
+</pre></div>
+</div>
+<p>getting 0 and 6 respectively.  So the function has an absolute minimum of <span class="math notranslate nohighlight">\(-\frac{2 \sqrt{3}}{9} \approx -0.384900179459751\)</span> at <span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{3} \approx 0.577350269189626\)</span> and an absolute maximum of 6 at <span class="math notranslate nohighlight">\(x = 2\)</span>.</p>
+</section>
+</section>
+<section id="example-f-x-x-5-3-x-3-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^5-3 x^3+x\)</span><a class="headerlink" href="#example-f-x-x-5-3-x-3-x" title="Link to this heading">#</a></h2>
+<p>In this example we are going to find all the local maximums and minimums of the function <span class="math notranslate nohighlight">\(f(x) = x^5-3x^3+x\)</span>.</p>
+<section id="id4">
+<h3>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^5 - 3 x^3 + x</span>
+</pre></div>
+</div>
+<p>Use the methods from the first example to find the local maximums and minimums.</p>
+<figure class="align-default" id="id32">
+<img alt="y = x^5 - 3 x^3 + x" src="../_images/ExtVal018.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^5-3 x^3+x\)</span></span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
+<h3>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Input and graph the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^5 - 3*x^3 + x</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id33">
+<img alt="y = x^5 - 3 x^3 + x" src="../_images/ExtVal019.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^5-3 x^3+x\)</span></span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Follow the procedures in the first example to find the local maximums and minimums, the critical numbers are,</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}}, \  \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}}, \  - \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}}, \  \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}}\right]\]</div>
+<p>Evaluating the function at each of these we see that this function has two local maximums and two local minimums.  The local maximums are</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(7 \sqrt{10} + 3 \sqrt{610}\right) \sqrt{\sqrt{61} + 9}}{250} \approx 1.57819155662093 \quad {\rm at} \quad x = - \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}} \approx -1.29654346922526\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{9 - \sqrt{61}} \left(- 7 \sqrt{10} + 3 \sqrt{610}\right)}{250} \approx 0.226696737096979 \quad {\rm at} \quad x = \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}} \approx 0.344927575600059\]</div>
+<p>The local minimums are</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{9 - \sqrt{61}} \left(- 3 \sqrt{610} + 7 \sqrt{10}\right)}{250} \approx -0.226696737096979 \quad {\rm at} \quad x = - \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}} \approx -0.344927575600059\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{\sqrt{61} + 9} \left(- 3 \sqrt{610} - 7 \sqrt{10}\right)}{250} \approx -1.57819155662093  \quad {\rm at} \quad x = \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}} \approx 1.29654346922526\]</div>
+<p>Using CLAEs maximum and minimum finder, select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Maximums</span> <span class="pre">and</span> <span class="pre">Minimums</span></code>, Local, Both, Point, Exact, will return,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ - \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}}, \  - \left(\frac{\sqrt{61}}{10} + \frac{9}{10}\right)^{\frac{5}{2}} - \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}} + 3 \left(\frac{\sqrt{61}}{10} + \frac{9}{10}\right)^{\frac{3}{2}}\right], \  \left[ - \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}}, \  - \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}} - \left(\frac{9}{10} - \frac{\sqrt{61}}{10}\right)^{\frac{5}{2}} + 3 \left(\frac{9}{10} - \frac{\sqrt{61}}{10}\right)^{\frac{3}{2}}\right], \  \left[ \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}}, \  - 3 \left(\frac{9}{10} - \frac{\sqrt{61}}{10}\right)^{\frac{3}{2}} + \left(\frac{9}{10} - \frac{\sqrt{61}}{10}\right)^{\frac{5}{2}} + \sqrt{\frac{9}{10} - \frac{\sqrt{61}}{10}}\right], \  \left[ \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}}, \  - 3 \left(\frac{\sqrt{61}}{10} + \frac{9}{10}\right)^{\frac{3}{2}} + \sqrt{\frac{\sqrt{61}}{10} + \frac{9}{10}} + \left(\frac{\sqrt{61}}{10} + \frac{9}{10}\right)^{\frac{5}{2}}\right]\right]\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ - \frac{\sqrt{10 \sqrt{61} + 90}}{10}, \  \frac{\left(7 \sqrt{10} + 3 \sqrt{610}\right) \sqrt{\sqrt{61} + 9}}{250}\right], \  \left[ - \frac{\sqrt{90 - 10 \sqrt{61}}}{10}, \  \frac{\sqrt{9 - \sqrt{61}} \left(- 3 \sqrt{610} + 7 \sqrt{10}\right)}{250}\right], \  \left[ \frac{\sqrt{90 - 10 \sqrt{61}}}{10}, \  \frac{\sqrt{9 - \sqrt{61}} \left(- 7 \sqrt{10} + 3 \sqrt{610}\right)}{250}\right], \  \left[ \frac{\sqrt{10 \sqrt{61} + 90}}{10}, \  \frac{\sqrt{\sqrt{61} + 9} \left(- 3 \sqrt{610} - 7 \sqrt{10}\right)}{250}\right]\right]\]</div>
+<p>and approximates to</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ -1.29654346922526, \  1.57819155662093\right], \  \left[ -0.344927575600059, \  -0.226696737096979\right], \  \left[ 0.344927575600059, \  0.226696737096979\right], \  \left[ 1.29654346922526, \  -1.57819155662093\right]\right]\]</div>
+<p>Plotting gives us,</p>
+<figure class="align-default" id="id34">
+<img alt="y = x^5 - 3 x^3 + x with Extreme Points" src="../_images/ExtVal026.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^5-3 x^3+x\)</span> with Extreme Points</span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id6">
+<h3>Maxima<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Input and graph the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=x^5-3*x^3+x</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d(f(x),[x,-2,2])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id35">
+<img alt="y = x^5 - 3 x^3 + x" src="../_images/ExtVal020.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^5-3 x^3+x\)</span></span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>Solve <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sl:solve(df=0,x)</span>
+</pre></div>
+</div>
+<p>The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ x=-\frac{\sqrt{\sqrt{61}+9}}{\sqrt{10}}\operatorname{,}x=\frac{\sqrt{\sqrt{61}+9}}{\sqrt{10}}\operatorname{,}x=-\frac{\sqrt{9-\sqrt{61}}}{\sqrt{10}}\operatorname{,}x=\frac{\sqrt{9-\sqrt{61}}}{\sqrt{10}}\right] \mbox{}\]</div>
+<p>approximately</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{[}x=-1.296543469225257\operatorname{,}x=1.296543469225257\operatorname{,}x=-0.3449275756000593\operatorname{,}x=0.3449275756000593\operatorname{]}\mbox{}\]</div>
+<p>Evaluating the original function at these points gives, respectively,</p>
+<div class="math notranslate nohighlight">
+\[-\frac{{{\left( \sqrt{61}+9\right) }^{\frac{5}{2}}}}{{{10}^{\frac{5}{2}}}}+\frac{3 {{\left( \sqrt{61}+9\right) }^{\frac{3}{2}}}}{{{10}^{\frac{3}{2}}}}-\frac{\sqrt{\sqrt{61}+9}}{\sqrt{10}}\mbox{} \approx 1.578191556620925\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{{{\left( \sqrt{61}+9\right) }^{\frac{5}{2}}}}{{{10}^{\frac{5}{2}}}}-\frac{3 {{\left( \sqrt{61}+9\right) }^{\frac{3}{2}}}}{{{10}^{\frac{3}{2}}}}+\frac{\sqrt{\sqrt{61}+9}}{\sqrt{10}}\mbox{} \approx -1.578191556620925\]</div>
+<div class="math notranslate nohighlight">
+\[-\frac{{{\left( 9-\sqrt{61}\right) }^{\frac{5}{2}}}}{{{10}^{\frac{5}{2}}}}+\frac{3 {{\left( 9-\sqrt{61}\right) }^{\frac{3}{2}}}}{{{10}^{\frac{3}{2}}}}-\frac{\sqrt{9-\sqrt{61}}}{\sqrt{10}}\mbox{} \approx -0.2266967370969792\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{{{\left( 9-\sqrt{61}\right) }^{\frac{5}{2}}}}{{{10}^{\frac{5}{2}}}}-\frac{3 {{\left( 9-\sqrt{61}\right) }^{\frac{3}{2}}}}{{{10}^{\frac{3}{2}}}}+\frac{\sqrt{9-\sqrt{61}}}{\sqrt{10}}\mbox{} \approx 0.2266967370969792\]</div>
+</section>
+</section>
+<section id="example-f-x-frac-x-3-3-x-2-x-1-x-2-4">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} - 4}\)</span><a class="headerlink" href="#example-f-x-frac-x-3-3-x-2-x-1-x-2-4" title="Link to this heading">#</a></h2>
+<p>For this example we will just find the critical numbers to <span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} - 4}\)</span>.</p>
+<section id="id7">
+<h3>GeoGebra<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^3 - 3 x^2 + x - 1)</span><span class="go">/(x^2 - 4)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id36">
+<img alt="y = (x^3-3x^2+x-1)/(x^2-4)" src="../_images/ExtVal021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} - 4}\)</span></span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Following the procedures from the first example, solving <span class="math notranslate nohighlight">\(f'(x) = 0\)</span>, the Solve command reverts to approximation mode giving <span class="math notranslate nohighlight">\(x = -4.3761\)</span> and <span class="math notranslate nohighlight">\(x = 0.16791\)</span>.  In the previous examples we never needed to worry about the critical numbers from the derivative not existing.  Since the derivative is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^{4} - 13 x^{2} + 26 x - 4}{x^{4} - 8 x^{2} + 16}\]</div>
+<p>there is the possibility of division by 0.  To extract the denominator go to a new cell, type in and select <code class="docutils literal notranslate"><span class="pre">Denominator</span></code>, then type in <code class="docutils literal notranslate"><span class="pre">f'</span></code>.  It will extract, <span class="math notranslate nohighlight">\(x^{4} - 8 x^{2} + 16\)</span>.  Now use the Solve command and the results are <span class="math notranslate nohighlight">\(-2\)</span> and 2.  These are where the derivative does not exist but we would not consider then critical numbers since the original function does not exist at these points either.</p>
+</section>
+<section id="id8">
+<h3>CLAE<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^3 - 3*x^2 + x - 1)</span><span class="go">/(x^2 - 4)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id37">
+<img alt="y = (x^3-3x^2+x-1)/(x^2-4)" src="../_images/ExtVal022.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} - 4}\)</span></span><a class="headerlink" href="#id37" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Following the procedures from the first example, the derivative is,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{2 x \left(x^{3} - 3 x^{2} + x - 1\right)}{\left(x^{2} - 4\right)^{2}} + \frac{3 x^{2} - 6 x + 1}{x^{2} - 4} = \frac{x^{4} - 13 x^{2} + 26 x - 4}{x^{4} - 8 x^{2} + 16}\]</div>
+<p>Selecting <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> returns the following solutions.</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \frac{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}}{2} + \frac{\sqrt{- 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} - \frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + \frac{52}{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}} + \frac{52}{3}}}{2}, \  \frac{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}}{2} - \frac{\sqrt{- \frac{52}{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}} - 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} - \frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + \frac{52}{3}}}{2}, \  \frac{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}}{2} + \frac{\sqrt{- \frac{52}{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}} - 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} - \frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + \frac{52}{3}}}{2}, \  - \frac{\sqrt{- 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} - \frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + \frac{52}{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}} + \frac{52}{3}}}{2} - \frac{\sqrt{\frac{121}{18 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}}} + 2 \sqrt[3]{\frac{\sqrt{73462}}{12} + \frac{5057}{216}} + \frac{26}{3}}}{2}\right]\]</div>
+<p>Approximating these gives,</p>
+<div class="math notranslate nohighlight">
+\[\left[ 0.167912960145734, \  2.10409286580631 - 1.00817857993217 i, \  2.10409286580631 + 1.00817857993217 i, \  -4.37609869175835\right]\]</div>
+<p>So the first and last are real and the middle two are complex.  In the previous examples we never needed to worry about the critical numbers from the derivative not existing.  Since the derivative is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^{4} - 13 x^{2} + 26 x - 4}{x^{4} - 8 x^{2} + 16}\]</div>
+<p>there is the possibility of division by 0.  To extract the denominator select the derivative expression, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Rational</span> <span class="pre">Expressions</span> <span class="pre">&gt;</span> <span class="pre">Denominator</span></code>.  If you selected the simplified version then the result is <span class="math notranslate nohighlight">\(x^{4} - 8 x^{2} + 16\)</span> and if you had selected the unsimplified version the result would be <span class="math notranslate nohighlight">\(\left(x^{2} - 4\right)^{3}\)</span>.  If you apply <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> to either of these the results are <span class="math notranslate nohighlight">\(-2\)</span> and 2.  These are where the derivative does not exist but we would not consider then critical numbers since the original function does not exist at these points either.</p>
+</section>
+<section id="id9">
+<h3>Maxima<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Input and graph the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=(x^3 - 3*x^2 + x - 1)/(x^2 - 4)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d(f(x),[x,-5,5],[y,-15,15])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id38">
+<img alt="y = (x^3-3x^2+x-1)/(x^2-4)" src="../_images/ExtVal023.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} - 4}\)</span></span><a class="headerlink" href="#id38" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Following the procedures from the first example, the derivative is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x)</span>
+<span class="go">dfs:ratsimp(df)</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\frac{3 {{x}^{2}}-6 x+1}{{{x}^{2}}-4}-\frac{2 x\, \left( {{x}^{3}}-3 {{x}^{2}}+x-1\right) }{{{\left( {{x}^{2}}-4\right) }^{2}}}\mbox{} = \frac{{{x}^{4}}-13 {{x}^{2}}+26 x-4}{{{x}^{4}}-8 {{x}^{2}}+16}\mbox{}\]</div>
+<p>The solutions to <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> give,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sl:solve(df=0,x)</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\operatorname{[}x=-\frac{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}{6 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}-\operatorname{sqrt(}-{{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+
+\frac{156 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}-\frac{121}{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}}+\frac{52}{3}\operatorname{)}/2\operatorname{,}x=\operatorname{sqrt(}-
+{{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+\frac{156 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}-\frac{121}{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}}+\frac{52}{3}\operatorname{)}/2-
+\frac{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}{6 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}\operatorname{,}x=\frac{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}{6 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}-\operatorname{sqrt(}-{{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}-\frac{156 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}-\frac{121}{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}}+\frac{52}{3}\operatorname{)}/2\operatorname{,}x=\frac{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}{6 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}+\operatorname{sqrt(}-{{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}-
+\frac{156 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{6}}}}{\sqrt{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{2}{3}}}+78 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}+121}}-\frac{121}{9 {{\left( \frac{2 \sqrt{73462}}{3}+\frac{5057}{27}\right) }^{\frac{1}{3}}}}+\frac{52}{3}\operatorname{)}/2\operatorname{]}\mbox{}\]</div>
+<p>which approximates to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">float(sl), numer;</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\operatorname{[}x=-4.376098691758354\operatorname{,}x=0.1679129601457334\operatorname{,}x=2.104092865806311-1.008178579932175 {{\left( -1\right) }^{0.5}}\operatorname{,}x=1.008178579932175 {{\left( -1\right) }^{0.5}}+2.104092865806311\operatorname{]}\mbox{}\]</div>
+<p>In the previous examples we never needed to worry about the critical numbers from the derivative not existing.  Since the derivative is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^{4} - 13 x^{2} + 26 x - 4}{x^{4} - 8 x^{2} + 16}\]</div>
+<p>there is the possibility of division by 0.  To extract the denominator,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dfsd:denom(dfs)</span>
+</pre></div>
+</div>
+<p>which returns <span class="math notranslate nohighlight">\(x^{4} - 8 x^{2} + 16\)</span>.  Note we are using the simplified version that already simplified the rational expression.  Note, do not use the unsimplified version, the denom function just returns 1.  Solving this expression for 0,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(dfsd)</span>
+</pre></div>
+</div>
+<p>the results are <span class="math notranslate nohighlight">\(-2\)</span> and 2.  These are where the derivative does not exist but we would not consider then critical numbers since the original function does not exist at these points either.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="linearapprox.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear Approximations and Differentials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="meanvalue.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mean Value Theorem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-3-x">Example: <span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-3-x-on-1-2">Example: <span class="math notranslate nohighlight">\(f(x) = x^3-x\)</span> on <span class="math notranslate nohighlight">\([-1, 2]\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-5-3-x-3-x">Example: <span class="math notranslate nohighlight">\(f(x) = x^5-3 x^3+x\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-x-3-3-x-2-x-1-x-2-4">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} - 4}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

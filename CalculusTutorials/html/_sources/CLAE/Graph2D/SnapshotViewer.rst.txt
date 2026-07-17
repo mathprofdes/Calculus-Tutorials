@@ -1,0 +1,2 @@
+.. include:: ../Gen/SnapshotViewer.md
+

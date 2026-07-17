@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ordinary Differential Equations &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/CalOde';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Multiple Integrals" href="CalMultInt.html" />
+    <link rel="prev" title="Sequences and Series" href="CalSeries.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casCopySpecialCopy.html">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseConvert.html">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSimplify.html">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSolving.html">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalLimitsDerivatives.html">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecProj.html">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Ordinary Differential Equations</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ordinary-differential-equations">
+<h1><span class="target" id="index-0"></span>Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Link to this heading">#</a></h1>
+<p>A quick jaunt into Differential Equations is usually done in most Calculus sequences at some point.  This tool is for solving Ordinary Differential Equations (ODE) for those that are normally encountered in Calculus.  Although it can also be used for an introductory Differential Equations class it was not designed to accommodate all the topics seen in one of those courses.</p>
+<section id="inputting-a-differential-equation-into-the-cas">
+<h2>Inputting a Differential Equation into the CAS<a class="headerlink" href="#inputting-a-differential-equation-into-the-cas" title="Link to this heading">#</a></h2>
+<p>The hardest part about using this tool is inputting a differential equation into the CAS.  The syntax here is a cumbersome.</p>
+<p>To input the derivative of a function you need to designate a “variable” as a function and then use the <code class="docutils literal notranslate"><span class="pre">diff</span></code> syntax to denote a derivative.  The easiest way to designate a “variable” as a function is to use functional notation.  For example, <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> will designate <code class="docutils literal notranslate"><span class="pre">f</span></code> as a function with independent variable <code class="docutils literal notranslate"><span class="pre">x</span></code>.  As in mathematics, the name of the function and the independent variable are irrelevant, so <code class="docutils literal notranslate"><span class="pre">g(x)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(t)</span></code>, <code class="docutils literal notranslate"><span class="pre">g(t)</span></code>, and <code class="docutils literal notranslate"><span class="pre">george(john)</span></code> are all legitimate functional expressions.  To designate the derivative we add <code class="docutils literal notranslate"><span class="pre">.diff(x,</span> <span class="pre">n)</span></code> at then end of the expression, where <code class="docutils literal notranslate"><span class="pre">x</span></code> is the independent variable and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the order of the derivative.  So for example, if we wanted the second derivative of <code class="docutils literal notranslate"><span class="pre">f</span></code> with respect to <code class="docutils literal notranslate"><span class="pre">x</span></code> we would use the syntax <code class="docutils literal notranslate"><span class="pre">f(x).diff(x,</span> <span class="pre">2)</span></code>.  The program (really SymPy) also accepts another notation <code class="docutils literal notranslate"><span class="pre">Derivative(fct,</span> <span class="pre">(var,</span> <span class="pre">n))</span></code> where <code class="docutils literal notranslate"><span class="pre">fct</span></code> is the function, <code class="docutils literal notranslate"><span class="pre">var</span></code> is your independent variable, and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the order of the derivative.  So for example, if we wanted the second derivative of <code class="docutils literal notranslate"><span class="pre">f</span></code> with respect to <code class="docutils literal notranslate"><span class="pre">x</span></code> we could also use the syntax <code class="docutils literal notranslate"><span class="pre">Derivative(f(x),</span> <span class="pre">(x,</span> <span class="pre">2))</span></code>. They are not much different in length and complexity, use whichever you prefer.</p>
+<p>As with all equations in this program we assume the equation is equal to 0.  So if we wanted the differential equation <span class="math notranslate nohighlight">\(\frac{d^{2}}{d x^{2}} f{\left(x \right)} = f{\left(x \right)}\)</span> we would input it as <span class="math notranslate nohighlight">\(\frac{d^{2}}{d x^{2}} f{\left(x \right)}- f{\left(x \right)}\)</span>, that is, <code class="docutils literal notranslate"><span class="pre">f(x).diff(x,</span> <span class="pre">2)</span> <span class="pre">-</span> <span class="pre">f(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">Derivative(f(x),</span> <span class="pre">(x,</span> <span class="pre">2))</span> <span class="pre">-</span> <span class="pre">f(x)</span></code>.</p>
+<p>A few examples,</p>
+<p><strong>Exponential Growth Equation</strong>: <span class="math notranslate nohighlight">\(\frac{d}{d x} f{\left(x \right)} = k f{\left(x \right)}\)</span> should be altered to <span class="math notranslate nohighlight">\(- k f{\left(x \right)} + \frac{d}{d x} f{\left(x \right)}\)</span> and can be input as either <code class="docutils literal notranslate"><span class="pre">f(x).diff(x)-k*f(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">-k*f(x)</span> <span class="pre">+</span> <span class="pre">Derivative(f(x),</span> <span class="pre">x)</span></code>.  Note that you can drop the derivative order if it is just the first derivative.</p>
+<p><strong>The Logistic Differential Equation</strong>: <span class="math notranslate nohighlight">\(\frac{d}{d t} f{\left(t \right)} = k \left(1 - \frac{f{\left(t \right)}}{M}\right) f{\left(t \right)}\)</span>, manipulated to <span class="math notranslate nohighlight">\(- k \left(1 - \frac{f{\left(t \right)}}{M}\right) f{\left(t \right)} + \frac{d}{d t} f{\left(t \right)}\)</span> can be input with <code class="docutils literal notranslate"><span class="pre">f(t).diff(t)-k*f(t)*(1-f(t)/M)</span></code>.</p>
+<p><strong>Oscillatory Motion</strong>: <span class="math notranslate nohighlight">\(\frac{d^{2}}{d x^{2}} f{\left(x \right)} = -k f{\left(x \right)}\)</span> manipulated to <span class="math notranslate nohighlight">\(k f{\left(x \right)} + \frac{d^{2}}{d x^{2}} f{\left(x \right)}\)</span> can be input as <code class="docutils literal notranslate"><span class="pre">k*f(x)</span> <span class="pre">+</span> <span class="pre">f(x).diff(x,</span> <span class="pre">2)</span></code>.</p>
+</section>
+<section id="using-the-ode-solver">
+<h2>Using the ODE Solver<a class="headerlink" href="#using-the-ode-solver" title="Link to this heading">#</a></h2>
+<p>The ODE solver can solve single differential equations as well as systems of differential equations.  Although systems of differential equations are usually not studied in an introductory Calculus sequence this option allows you to solve these systems.</p>
+<section id="solving-single-differential-equations">
+<h3>Solving Single Differential Equations<a class="headerlink" href="#solving-single-differential-equations" title="Link to this heading">#</a></h3>
+<p>Once the ODE is input into the CAS the use of the solver is fairly easy.  When you select this option a dialog box will appear asking the user to specify the function to be solved for, usually this is automatically filled in.  There is also a variable assumptions selection at the bottom.  For more about variable assumptions see the discussion at the bottom of this page.  In most cases you will leave the assumptions alone (everything real) but sometimes you may need to change these.</p>
+<p>The output is in the form of an equation, for example, <span class="math notranslate nohighlight">\(f{\left(x \right)} = C_{1} e^{- x} + C_{2} e^{x}\)</span>.  Most of the time you will want the right hand side of the equation to work with.  To extract the right hand side select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Equations</span> <span class="pre">&gt;</span> <span class="pre">Right</span> <span class="pre">Hand</span> <span class="pre">Side</span></code></p>
+<p>We will look at several examples.</p>
+<p><strong>Exponential Growth Equation</strong>: <span class="math notranslate nohighlight">\(\frac{d}{d x} f{\left(x \right)} = k f{\left(x \right)}\)</span> should be altered to <span class="math notranslate nohighlight">\(- k f{\left(x \right)} + \frac{d}{d x} f{\left(x \right)}\)</span> and can be input as either <code class="docutils literal notranslate"><span class="pre">f(x).diff(x)-k*f(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">-k*f(x)</span> <span class="pre">+</span> <span class="pre">Derivative(f(x),</span> <span class="pre">x)</span></code>.  Note that you can drop the derivative order if it is just the first derivative.  Solving this with the ODE Solver we get the exponential growth equation, <span class="math notranslate nohighlight">\(f{\left(x \right)} = C_{1} e^{k x}\)</span>.  If we extract the right hand side and then graph the expression we get</p>
+<figure class="align-default" id="id1">
+<img alt="f(x) = C1 e^(kx)" src="../../_images/DE001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f{\left(x \right)} = C_{1} e^{k x}\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>as well as a slider for the <code class="docutils literal notranslate"><span class="pre">C1</span></code> constant that allows the user to see the family of solutions to the differential equation.</p>
+<p><strong>The Logistic Differential Equation</strong>: <span class="math notranslate nohighlight">\(\frac{d}{d t} f{\left(t \right)} = k \left(1 - \frac{f{\left(t \right)}}{M}\right) f{\left(t \right)}\)</span>, manipulated to <span class="math notranslate nohighlight">\(- k \left(1 - \frac{f{\left(t \right)}}{M}\right) f{\left(t \right)} + \frac{d}{d t} f{\left(t \right)}\)</span> can be input with <code class="docutils literal notranslate"><span class="pre">f(t).diff(t)-k*f(t)*(1-f(t)/M)</span></code>.  If we solve this we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{M e^{C_{1} M + k t}}{e^{C_{1} M + k t} - 1}\]</div>
+<p>This is not the standard form for the logistic equation.  If you studied logistic growth you are probably expecting something like</p>
+<div class="math notranslate nohighlight">
+\[\frac{M}{1 + Ae^{-k t}}\]</div>
+<p>Computer Algebra Systems do not always give us expressions in the form we want them in.  We can get closer to what we expect by doing the substitution that we would have done by hand, almost.  If you work through solving the differential equation by hand there is point where you make the substitution <span class="math notranslate nohighlight">\(A = -e^{-C_1M}\)</span>.  We can do an equivalent substitution here to simplify the expression the program gave us.  Do <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, in the variable input we will input the expression <span class="math notranslate nohighlight">\(e^{-C_1M}\)</span> which can be done with <code class="docutils literal notranslate"><span class="pre">E^(-C1*M)</span></code> or <code class="docutils literal notranslate"><span class="pre">exp(-C1*M)</span></code> and in the expression input we will put in <code class="docutils literal notranslate"><span class="pre">-A</span></code>, this returns</p>
+<div class="math notranslate nohighlight">
+\[- \frac{M e^{k t}}{A \left(-1 - \frac{e^{k t}}{A}\right)}\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\frac{M e^{k t}}{A + e^{k t}}\]</div>
+<p>This is not exactly the form we were aiming for but it is close.  This form also graphs nicely and allows the user to manipulate the graph with sliders for <code class="docutils literal notranslate"><span class="pre">M</span></code>, <code class="docutils literal notranslate"><span class="pre">A</span></code>, and <code class="docutils literal notranslate"><span class="pre">k</span></code>.</p>
+<figure class="align-default" id="id2">
+<img alt="Logistic Curve" src="../../_images/DE002.png" />
+<figcaption>
+<p><span class="caption-text">Logistic Curve</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It would be better not to have to do some fancy substitutions but it does show that the evaluator is much more powerful than just substituting values into variables.</p>
+<p><strong>Oscillatory Motion</strong>: <span class="math notranslate nohighlight">\(\frac{d^{2}}{d x^{2}} f{\left(x \right)} = -k f{\left(x \right)}\)</span> manipulated to <span class="math notranslate nohighlight">\(k f{\left(x \right)} + \frac{d^{2}}{d x^{2}} f{\left(x \right)}\)</span> can be input as <code class="docutils literal notranslate"><span class="pre">k*f(x)</span> <span class="pre">+</span> <span class="pre">f(x).diff(x,</span> <span class="pre">2)</span></code>. Solving this differential equation gives us the expected,</p>
+<div class="math notranslate nohighlight">
+\[f{\left(x \right)} = C_{1} e^{- x \sqrt{- k}} + C_{2} e^{x \sqrt{- k}}\]</div>
+<p><strong>A First Order Linear Equation</strong>: Say we wish to solve the first order linear equation  <span class="math notranslate nohighlight">\(\frac{d}{d x} f{\left(x \right)} - 3 x^{2} f{\left(x \right)} = x^{2}\)</span>.  Manipulate this to <span class="math notranslate nohighlight">\(- 3 x^{2} f{\left(x \right)} - x^{2} + \frac{d}{d x} f{\left(x \right)}\)</span>, which can be input as <code class="docutils literal notranslate"><span class="pre">f(x).diff(x)</span> <span class="pre">-</span> <span class="pre">3*x^2*f(x)</span> <span class="pre">-</span> <span class="pre">x^2</span></code>.  The ODE solver returns</p>
+<div class="math notranslate nohighlight">
+\[f{\left(x \right)} = C_{1} e^{x^{3}} - \frac{1}{3}\]</div>
+</section>
+<section id="solving-systems-of-differential-equations">
+<h3>Solving Systems of Differential Equations<a class="headerlink" href="#solving-systems-of-differential-equations" title="Link to this heading">#</a></h3>
+<p>To solve a simultaneous system of differential equations place the differential equations into a list and then invoke the solver.  Each of the differential equations in the list follow the same syntax as is given above for single differential equations.  When the option is invoked the ODE dialog box will appear with a list of functions that were found in the system.  In most cases you will not need to alter this list and simply click OK to solve the system.</p>
+<p>When you input a system into the CAS you can input it in one statement or do it in a piecemeal fashion.  For example, say we wanted to solve the system,</p>
+<div class="math notranslate nohighlight">
+\[\left[ g{\left(x \right)} + \frac{d}{d x} f{\left(x \right)}, \  f{\left(x \right)} + \frac{d}{d x} g{\left(x \right)}\right]\]</div>
+<p>We could input, <code class="docutils literal notranslate"><span class="pre">[g(x)</span> <span class="pre">+</span> <span class="pre">f(x).diff(x),</span> <span class="pre">f(x)</span> <span class="pre">+</span> <span class="pre">g(x).diff(x)]</span></code> or we could input the two differential equations separately,  <code class="docutils literal notranslate"><span class="pre">g(x)</span> <span class="pre">+</span> <span class="pre">f(x).diff(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">+</span> <span class="pre">g(x).diff(x)</span></code> and then create a list from these with an expression like <code class="docutils literal notranslate"><span class="pre">[R1,</span> <span class="pre">R2]</span></code>.  As long as the system is in a list before we try to solve it.</p>
+<p>When we select the <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Solve</span> <span class="pre">ODE</span></code> option the function list will look like <code class="docutils literal notranslate"><span class="pre">[f(x),</span> <span class="pre">g(x)]</span></code> which is good and does not need to be altered.  Clicking OK gives us the result,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ f{\left(x \right)} = C_{1} e^{- x} - C_{2} e^{x}, \  g{\left(x \right)} = C_{1} e^{- x} + C_{2} e^{x}\right]\right]\]</div>
+<p>Note that it is a list of lists of equations.  If you need to extract the expressions you can use a combination of options from the Edit menu (list manipulation section) to do so.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will also work on systems of differential equations that are in an <span class="math notranslate nohighlight">\(n \times 1\)</span> matrix.  For example, the example above could be input as a matrix,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}g{\left(x \right)} + \frac{d}{d x} f{\left(x \right)}\\f{\left(x \right)} + \frac{d}{d x} g{\left(x \right)}\end{array}\right]\end{split}\]</div>
+<p>then the solver will return,</p>
+<div class="math notranslate nohighlight">
+\[\left[ f{\left(x \right)} = C_{1} e^{- x} - C_{2} e^{x}, \  g{\left(x \right)} = C_{1} e^{- x} + C_{2} e^{x}\right]\]</div>
+</div>
+</section>
+</section>
+<section id="using-the-ode-solution-checker">
+<h2>Using the ODE Solution Checker<a class="headerlink" href="#using-the-ode-solution-checker" title="Link to this heading">#</a></h2>
+<p>The ODE solutions checker is a convenient tool for checking if an expression or equation satisfies a differential equation.  You can use the evaluation tool from the Algebra menu to do that same thing but the ODE solution checker  uses a stronger set of simplification methods and will, in general, return a better solution.</p>
+<section id="checking-solutions-to-single-differential-equations">
+<h3>Checking Solutions to Single Differential Equations<a class="headerlink" href="#checking-solutions-to-single-differential-equations" title="Link to this heading">#</a></h3>
+<p>For a single ODE solution you simply select the differential equation and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Check</span> <span class="pre">ODE</span> <span class="pre">Solution</span></code>, a dialog box will appear asking for the function or list of functions and an expression or list or expressions.  Since we are dealing with a single ODE there should only be one function and one expression or equation. When dealing with systems od ODEs there will be lists of them.</p>
+<p>The function should be automatically detected and filled in, if not input the function that is being checked, for example, <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>, <code class="docutils literal notranslate"><span class="pre">g(x)</span></code>, etc.  For the expression either input the expression you wish to check or more often the CAS designation of the solution you wish to check.  The expression can be either an expression or an equation.</p>
+<p>For example, say we input the differential equation <code class="docutils literal notranslate"><span class="pre">2*x*f(x)*(2*f(x)</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">-</span> <span class="pre">f(x).diff(x)</span></code>, which is,</p>
+<div class="math notranslate nohighlight">
+\[2 x \left(2 f{\left(x \right)} + 1\right) f{\left(x \right)} - \frac{d}{d x} f{\left(x \right)}\]</div>
+<p>If we do <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Solve</span> <span class="pre">ODE</span></code> we get the solution, in equation form,</p>
+<div class="math notranslate nohighlight">
+\[f{\left(x \right)} = \frac{e^{C_{1} + x^{2}}}{2 - 2 e^{C_{1} + x^{2}}}\]</div>
+<p>If we assume that the differential equation came in as <code class="docutils literal notranslate"><span class="pre">R1</span></code> and the above solution was <code class="docutils literal notranslate"><span class="pre">R2</span></code>, to check the solution, select <code class="docutils literal notranslate"><span class="pre">R1</span></code> and in the expression input of the checking dialog box input <code class="docutils literal notranslate"><span class="pre">R2</span></code> the result is, <span class="math notranslate nohighlight">\(\left( \text{True}, \  0\right)\)</span>.  The first entry is true or false, true meaning that the solution checks and if it were false that would have meant that the solution did not check.  The second entry in the tuple is the result of the expression after the function has been substituted into the differential equation and simplified.</p>
+<p>We could have also just input the expression on the right hand side of the solution equation.  If we select the solution equation then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Equations</span> <span class="pre">&gt;</span> <span class="pre">Right</span> <span class="pre">Hand</span> <span class="pre">Side</span></code> it will extract the right hand side expression, assume it came in as <code class="docutils literal notranslate"><span class="pre">R4</span></code>.  If we select the differential equation and then <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Check</span> <span class="pre">ODE</span> <span class="pre">Solution</span></code>, and then input <code class="docutils literal notranslate"><span class="pre">R4</span></code> into the expression input we get the same result.</p>
+<p>You do not need to use a CAS result in this option, you can also simply input the expression.  For example,  if we gave the same differential equation to GeoGebra the result would be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{e^{x^{2}}}{C_{1} - 2 e^{x^{2}}}\]</div>
+<p>If we wished to check this solution we could select the differential equation and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Check</span> <span class="pre">ODE</span> <span class="pre">Solution</span></code>, and then input <code class="docutils literal notranslate"><span class="pre">exp(x^2)/(C1</span> <span class="pre">-</span> <span class="pre">2*exp(x^2))</span></code>, we get the same result <span class="math notranslate nohighlight">\(\left( \text{True}, \  0\right)\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Several notes about the ODE solution checker.</p>
+<ul class="simple">
+<li><p>First, it may return false even if the solution is a solution to the ODE, it depends if the simplification is powerful enough to return exactly 0 for the check.  In these cases you can also check the solution graphically.  Extract the second expression using options from the Edit manu, and graph it, if it is equivalently 0, that is, graphs as the <em>x</em>-axis then the expression should have reduced to 0 and returned true.</p></li>
+<li><p>We could have checked the solution using the evaluation option from the Algebra menu.  Select the differential equation, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, input the function <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> and the expression for the solution.  Note here we cannot use the equation.  We can still use CAS results.  Then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code> to simplify the expression.  You may need to simplify the expression several times.  If the result is 0 then the solution checks.  As with the checker it is possible that the solution is valid but the simplification does not return 0 bt an expression that is equivalently 0.  The above example is a good example of this.  If we use the evaluation if the Algebra menu for this equation and solution we get,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{2 x \left(1 + \frac{2 e^{C_{1} + x^{2}}}{2 - 2 e^{C_{1} + x^{2}}}\right) e^{C_{1} + x^{2}}}{2 - 2 e^{C_{1} + x^{2}}} - \frac{\partial}{\partial x} \frac{e^{C_{1} + x^{2}}}{2 - 2 e^{C_{1} + x^{2}}}\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\frac{x}{4 \sinh^{2}{\left(\frac{C_{1}}{2} + \frac{x^{2}}{2} \right)}} + \frac{x e^{C_{1} + x^{2}}}{e^{C_{1} + x^{2}} - 1} - \frac{x e^{2 C_{1} + 2 x^{2}}}{\left(e^{C_{1} + x^{2}} - 1\right)^{2}}\]</div>
+<p>and then</p>
+<div class="math notranslate nohighlight">
+\[- \frac{x \left(4 e^{C_{1} + x^{2}} \sinh^{2}{\left(\frac{C_{1}}{2} + \frac{x^{2}}{2} \right)} + 2 e^{C_{1} + x^{2}} - e^{2 C_{1} + 2 x^{2}} - 1\right)}{\left(2 \cosh{\left(C_{1} + x^{2} \right)} - 2\right) \left(- 2 e^{C_{1} + x^{2}} + e^{2 C_{1} + 2 x^{2}} + 1\right)}\]</div>
+<p>if we graph this we get,</p>
+<figure class="align-default" id="id3">
+<img alt="Graphic Solution Check" src="../../_images/DE003.png" />
+<figcaption>
+<p><span class="caption-text">Graphic Solution Check</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Which appears to be equivalently 0 (for any value of <span class="math notranslate nohighlight">\(C_1\)</span>) so we would graphically conclude that we have a solution.</p>
+<p>Clearly the algebraic methods in the solution checker are stronger than those of the simplify methods.</p>
+</div>
+</section>
+<section id="checking-solutions-to-systems-of-differential-equations">
+<h3>Checking Solutions to Systems of Differential Equations<a class="headerlink" href="#checking-solutions-to-systems-of-differential-equations" title="Link to this heading">#</a></h3>
+<p>Checking the solutions to a system of differential equations is the same as checking a single solution except that we now have lists of functions and expressions.   So in the functions input we have a list of functions and in the expressions input we have a list of expressions or solution equations.</p>
+<p>For example, take the system of differential equations we used above, <code class="docutils literal notranslate"><span class="pre">[g(x)</span> <span class="pre">+</span> <span class="pre">f(x).diff(x),</span> <span class="pre">f(x)</span> <span class="pre">+</span> <span class="pre">g(x).diff(x)]</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\left[ g{\left(x \right)} + \frac{d}{d x} f{\left(x \right)}, \  f{\left(x \right)} + \frac{d}{d x} g{\left(x \right)}\right]\]</div>
+<p>The ODE solver gives us,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ f{\left(x \right)} = C_{1} e^{- x} - C_{2} e^{x}, \  g{\left(x \right)} = C_{1} e^{- x} + C_{2} e^{x}\right]\right]\]</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">from</span> <span class="pre">List</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">All</span> <span class="pre">List</span> <span class="pre">Entries</span></code> it givs us,</p>
+<div class="math notranslate nohighlight">
+\[\left[ f{\left(x \right)} = C_{1} e^{- x} - C_{2} e^{x}, \  g{\left(x \right)} = C_{1} e^{- x} + C_{2} e^{x}\right]\]</div>
+<p>Assume this is <code class="docutils literal notranslate"><span class="pre">R3</span></code>.  Select the differential equation, and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Check</span> <span class="pre">ODE</span> <span class="pre">Solution</span></code>, the functions input should already have <code class="docutils literal notranslate"><span class="pre">[f(x),</span> <span class="pre">g(x)]</span></code> in it, which is what we want.  Input <code class="docutils literal notranslate"><span class="pre">R3</span></code> for the expressions and click OK.  The result is <span class="math notranslate nohighlight">\(\left( \text{True}, \  \left[ 0, \  0\right]\right)\)</span>.  As with the single solution output the True means that the equations checked and the two 0s are the results from evaluation and simplification.  We could have also used a list of expressions and not equations.  For example, if we do <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Equations</span> <span class="pre">&gt;</span> <span class="pre">Right</span> <span class="pre">Hand</span> <span class="pre">Side</span></code> on the solution we will get just the list of expressions,</p>
+<div class="math notranslate nohighlight">
+\[\left[ C_{1} e^{- x} - C_{2} e^{x}, \  C_{1} e^{- x} + C_{2} e^{x}\right]\]</div>
+<p>Assume this is <code class="docutils literal notranslate"><span class="pre">R5</span></code>.  If we redo our check using <code class="docutils literal notranslate"><span class="pre">R5</span></code> in place of <code class="docutils literal notranslate"><span class="pre">R3</span></code> above we get the same result. In this case the program assigns expressions to functions by position.  That is, the function list was <code class="docutils literal notranslate"><span class="pre">[f(x),</span> <span class="pre">g(x)]</span></code> and the expression list was <span class="math notranslate nohighlight">\(\left[ C_{1} e^{- x} - C_{2} e^{x}, \  C_{1} e^{- x} + C_{2} e^{x}\right]\)</span> so the program assigns the first expression to <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> and the second to <code class="docutils literal notranslate"><span class="pre">g(x)</span></code>.  That is, it checks the solutions,</p>
+<div class="math notranslate nohighlight">
+\[\left[ f(x) = C_{1} e^{- x} - C_{2} e^{x}, \  g(x) =  C_{1} e^{- x} + C_{2} e^{x}\right]\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As with checking single expressions the program may return false even if the solution is a solution to the ODE system, it again depends if the simplification is powerful enough to return exactly 0 for the check.  In these cases you can also check the solution graphically.  Extract the second expressions using options from the Edit manu, and graph them, if they are equivalently 0, that is, graphs as the <em>x</em>-axis then the expressions should have reduced to exactly 0 and the check returned true.</p>
+</div>
+</section>
+</section>
+<section id="variable-assumptions">
+<h2>Variable Assumptions<a class="headerlink" href="#variable-assumptions" title="Link to this heading">#</a></h2>
+<section id="assumptions">
+<h3><span class="target" id="index-1"></span>Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h3>
+<p>Assumptions about variables are essentially what type of number does the variable represent.  In most cases in an introductory Calculus sequence you simply assume that all variables represent real numbers, and sometimes complex numbers.  The default setting for variables is as a real number except for solving equations where we use complex numbers.</p>
+<p>As a classic example, say we input <code class="docutils literal notranslate"><span class="pre">sqrt(x^2)</span></code> into the CAS, the entry would be displayed as,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>If we select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>, a simplification that makes no assumptions about the variables, the result is still,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>But if we use <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Special</span> <span class="pre">Simplifications</span></code>, leave the settings as is, and click OK the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left|{x}\right|\]</div>
+<p>The difference is that the default domain for <code class="docutils literal notranslate"><span class="pre">x</span></code> in the Special Simplifications dialog was a real number.  In the real number system, <span class="math notranslate nohighlight">\(\sqrt{x^{2}} = \left|{x}\right|\)</span> but in the complex number system it is not.  For example, <span class="math notranslate nohighlight">\(\sqrt{i^{2}} = -1 \neq \left|{i}\right| = 1\)</span>.</p>
+<p>Another classic example is in the study of l’Hospital’s Rule.  Marquis de l’Hospital published the very first Calculus textbook in 1696, where l’Hospital’s Rule is first seen in print. l’Hospital did not discover this rule, the Swiss mathematician John Bernoulli (1667–1748) is the one who discovered the method.  l’Hospital and Bernoulli had an interesting business relationship where l’Hospital purchased the rights to this method, which is why it is named after him and not Bernoulli.  In his book l’Hospital wanted to calculate,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} \frac{\sqrt{2a^3x-x^4} - a \sqrt[3]{a^2x} }{a - \sqrt[4]{ax^3}}\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span> indeterminate form and hence can be attacked using l’Hospital’s Rule.  This expression also assumed that <span class="math notranslate nohighlight">\(a &gt; 0\)</span>.</p>
+<p>If we put this expression into our CAS <code class="docutils literal notranslate"><span class="pre">(-a*(a^2*x)^(1/3)</span> <span class="pre">+</span> <span class="pre">sqrt(2*a^3*x</span> <span class="pre">-</span> <span class="pre">x^4))/(a</span> <span class="pre">-</span> <span class="pre">(a*x^3)^(1/4))</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, when the limit dialog comes up input <code class="docutils literal notranslate"><span class="pre">x</span></code> for the variable and <code class="docutils literal notranslate"><span class="pre">a</span></code> for the limit point, and click OK.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- a^{\frac{4}{3}} \left|{a}\right|^{\frac{2}{3}} + a^{2}}{a - \left|{a}\right|}\]</div>
+<p>It should be fairly obvious that this does not work for <code class="docutils literal notranslate"><span class="pre">a</span></code> being a positive real number since the denominator is clearly 0 in this case.  This time when we select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> we will change the data type of <code class="docutils literal notranslate"><span class="pre">a</span></code> to be a positive real, and leave <code class="docutils literal notranslate"><span class="pre">x</span></code> alone.  This time the result is the correct answer for these assumptions of,</p>
+<div class="math notranslate nohighlight">
+\[\frac{16 a}{9}\]</div>
+<p>In the vast majority of cases you will not need to do anything with variable assumptions. The reason we incorporated the ability to specify assumptions about the variable data type is that in a few instances (like in the above examples) you may need to tell the program that variable belongs to a more restrictive domain.</p>
+</section>
+<section id="assumptions-user-interface">
+<h3><span class="target" id="index-2"></span>Assumptions User Interface<a class="headerlink" href="#assumptions-user-interface" title="Link to this heading">#</a></h3>
+<p>The variable assumptions user interface will look like one of the two following layouts.</p>
+<figure class="align-default" id="id4">
+<img alt="Variable Properties User Interface" src="../../_images/Assump001.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties User Interface</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>or</p>
+<figure class="align-default" id="id5">
+<img alt="Variable Properties Editor User Interface" src="../../_images/Assump002.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties Editor User Interface</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If it is the first of these then clicking the <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Variable</span> <span class="pre">Properties</span></code> button will open a dialog box with the second interface.  The second is where the changes are made.  In either of these each variable in the expression is listed with the data type we are assuming it belongs.  In the second interface you can edit the domain by first selecting the variable from the list and then selecting its type by clicking on it.</p>
+<p>The reason we included the first interface was that it was less intimidating and easier to accept as is,which is what the user will do in most cases. As noted above these assumptions do not need to be changed very often.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="CalSeries.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sequences and Series</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CalMultInt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Multiple Integrals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputting-a-differential-equation-into-the-cas">Inputting a Differential Equation into the CAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-ode-solver">Using the ODE Solver</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-single-differential-equations">Solving Single Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-systems-of-differential-equations">Solving Systems of Differential Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-ode-solution-checker">Using the ODE Solution Checker</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-solutions-to-single-differential-equations">Checking Solutions to Single Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-solutions-to-systems-of-differential-equations">Checking Solutions to Systems of Differential Equations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assumptions">Variable Assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-user-interface">Assumptions User Interface</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

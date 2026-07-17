@@ -1,0 +1,948 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>String Conversion Options &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/TextEditor/StringOps';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Character Conversion Options" href="CharOps.html" />
+    <link rel="prev" title="Edit Options" href="EditOps.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Text Editor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOps.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOps.html">Edit Options</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">String Conversion Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CharOps.html">Character Conversion Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NumOps.html">Number Conversion Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomOps.html">Random Number Generation Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOps.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Text Editor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">String Conversion Options</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="string-conversion-options">
+<h1>String Conversion Options<a class="headerlink" href="#string-conversion-options" title="Link to this heading">#</a></h1>
+<section id="uppercase">
+<h2>UPPERCASE<a class="headerlink" href="#uppercase" title="Link to this heading">#</a></h2>
+<p>Converts the selected text to uppercase.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">THE TEXT EDITOR IS A SIMPLE TEXT AND NUMERIC MANIPULATION TOOL.</span>
+</pre></div>
+</div>
+</section>
+<section id="lowercase">
+<h2>lowercase<a class="headerlink" href="#lowercase" title="Link to this heading">#</a></h2>
+<p>Converts the selected text to lowercase.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">the text editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="capitalize">
+<h2>Capitalize<a class="headerlink" href="#capitalize" title="Link to this heading">#</a></h2>
+<p>Capitalizes each word in the selected text. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor Is A Simple Text And Numeric Manipulation Tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-all-whitespace">
+<h2>Remove All Whitespace<a class="headerlink" href="#remove-all-whitespace" title="Link to this heading">#</a></h2>
+<p>Removes all whitespace characters from the selected text, including whitespace between non-whitespace characters.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text    Editor is a simple</span>
+
+<span class="go">text and             numeric</span>
+
+
+<span class="go">manipulation   tool           .</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">TheTextEditorisasimpletextandnumericmanipulationtool.</span>
+</pre></div>
+</div>
+</section>
+<section id="whitespace-to-single-spaces">
+<h2>Whitespace to Single Spaces<a class="headerlink" href="#whitespace-to-single-spaces" title="Link to this heading">#</a></h2>
+<p>Replaces all whitespace character sequences with a single space character. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text    Editor is a simple</span>
+
+<span class="go">text and             numeric</span>
+
+
+<span class="go">manipulation   tool           .</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool .</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-whitespace-per-line">
+<h2>Remove Whitespace Per Line<a class="headerlink" href="#remove-whitespace-per-line" title="Link to this heading">#</a></h2>
+<p>Removes all whitespace characters from the selected text, including whitespace between non-whitespace characters line by line. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text    Editor is a simple</span>
+
+<span class="go">text and             numeric</span>
+
+
+<span class="go">manipulation   tool           .</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">TheTextEditorisasimple</span>
+
+<span class="go">textandnumeric</span>
+
+
+<span class="go">manipulationtool.</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-punctuation">
+<h2>Remove Punctuation<a class="headerlink" href="#remove-punctuation" title="Link to this heading">#</a></h2>
+<p>Removes all punctuation characters from the editor text. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor, is a simple text, and numeric manipulation tool!</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-numbers">
+<h2>Remove Numbers<a class="headerlink" href="#remove-numbers" title="Link to this heading">#</a></h2>
+<p>Removes all numeric characters from the editor text. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Most computer programming languages treat integers such as 4 as</span>
+<span class="go">being different from real numbers such as 4.000000004.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Most computer programming languages treat integers such as  as</span>
+<span class="go">being different from real numbers such as ..</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-all-non-letters">
+<h2>Remove All Non-Letters<a class="headerlink" href="#remove-all-non-letters" title="Link to this heading">#</a></h2>
+<p>Removes all characters that are not alphabetic characters. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Written using engineering notation the imaginary part is written</span>
+<span class="go">with a j suffix, e.g. 3 + 1j.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Written using engineering notation the imaginary part is written</span>
+<span class="go">with a j suffix eg   j</span>
+</pre></div>
+</div>
+</section>
+<section id="split-spaces-to-line-breaks">
+<h2>Split (Spaces to Line Breaks)<a class="headerlink" href="#split-spaces-to-line-breaks" title="Link to this heading">#</a></h2>
+<p>Converts each space to a line break. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor   is a simple text   and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The</span>
+<span class="go">Text</span>
+<span class="go">Editor</span>
+
+
+<span class="go">is</span>
+<span class="go">a</span>
+<span class="go">simple</span>
+<span class="go">text</span>
+
+
+<span class="go">and</span>
+<span class="go">numeric</span>
+<span class="go">manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="join-line-breaks-to-spaces">
+<h2>Join (Line Breaks to Spaces)<a class="headerlink" href="#join-line-breaks-to-spaces" title="Link to this heading">#</a></h2>
+<p>Converts each line break to a space. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The</span>
+<span class="go">Text</span>
+<span class="go">Editor</span>
+
+
+<span class="go">is</span>
+<span class="go">a</span>
+<span class="go">simple</span>
+<span class="go">text</span>
+
+
+<span class="go">and</span>
+<span class="go">numeric</span>
+<span class="go">manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor   is a simple text   and numeric manipulation tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-blank-lines">
+<h2>Remove Blank Lines<a class="headerlink" href="#remove-blank-lines" title="Link to this heading">#</a></h2>
+<p>Removes all blank lines from the editor text. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The</span>
+
+<span class="go">Text</span>
+<span class="go">Editor</span>
+
+
+<span class="go">is</span>
+<span class="go">a</span>
+<span class="go">simple</span>
+<span class="go">text</span>
+
+
+<span class="go">and</span>
+<span class="go">numeric</span>
+
+<span class="go">manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The</span>
+<span class="go">Text</span>
+<span class="go">Editor</span>
+<span class="go">is</span>
+<span class="go">a</span>
+<span class="go">simple</span>
+<span class="go">text</span>
+<span class="go">and</span>
+<span class="go">numeric</span>
+<span class="go">manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-multiple-blank-lines">
+<h2>Remove Multiple Blank Lines<a class="headerlink" href="#remove-multiple-blank-lines" title="Link to this heading">#</a></h2>
+<p>Converts multiple blank lines to a single blank line. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The</span>
+
+<span class="go">Text</span>
+<span class="go">Editor</span>
+
+
+<span class="go">is</span>
+<span class="go">a</span>
+<span class="go">simple</span>
+<span class="go">text</span>
+
+
+<span class="go">and</span>
+<span class="go">numeric</span>
+
+<span class="go">manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The</span>
+
+<span class="go">Text</span>
+<span class="go">Editor</span>
+
+<span class="go">is</span>
+<span class="go">a</span>
+<span class="go">simple</span>
+<span class="go">text</span>
+
+<span class="go">and</span>
+<span class="go">numeric</span>
+
+<span class="go">manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-front-whitespace">
+<h2>Remove Front Whitespace<a class="headerlink" href="#remove-front-whitespace" title="Link to this heading">#</a></h2>
+<p>Removes whitespace characters from the beginning of each line. Any whitespace characters at the end of the line or between non-whitespace characters are not removed. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">       simple text and numeric</span>
+<span class="go">   manipulation tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">simple text and numeric</span>
+<span class="go">manipulation tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-end-whitespace">
+<h2>Remove End Whitespace<a class="headerlink" href="#remove-end-whitespace" title="Link to this heading">#</a></h2>
+<p>Removes whitespace characters from the end of each line. Any whitespace characters at the beginning of the line or between non-whitespace characters are not removed.  For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">simple text and numeric</span>
+<span class="go">manipulation tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">simple text and numeric</span>
+<span class="go">manipulation tool.</span>
+</pre></div>
+</div>
+<p>There was trialing whitespace on each line of the original and none on the result.</p>
+</section>
+<section id="trim-lines">
+<h2>Trim Lines<a class="headerlink" href="#trim-lines" title="Link to this heading">#</a></h2>
+<p>Removes whitespace characters from the beginning and end of each line. Any whitespace characters between non-whitespace characters are not removed. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">       simple text and numeric</span>
+<span class="go">   manipulation tool.</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">simple text and numeric</span>
+<span class="go">manipulation tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="convert-tabs-to-spaces">
+<h2>Convert Tabs to Spaces<a class="headerlink" href="#convert-tabs-to-spaces" title="Link to this heading">#</a></h2>
+<p>Replaces all tab characters with the desired (selected in the submenu) number of spaces (1-5).</p>
+</section>
+<section id="convert-spaces-to-tabs">
+<h2>Convert Spaces to Tabs<a class="headerlink" href="#convert-spaces-to-tabs" title="Link to this heading">#</a></h2>
+<p>Replaces all space characters with a tab character.</p>
+</section>
+<section id="replace-all">
+<h2>Replace All<a class="headerlink" href="#replace-all" title="Link to this heading">#</a></h2>
+<p>Brings up a dialog box allowing the user to input target and replacement strings and will replace all occurrences of the target with the replacement. The replacement is done in a case sensitive manner.</p>
+</section>
+<section id="split-at">
+<h2>Split At<a class="headerlink" href="#split-at" title="Link to this heading">#</a></h2>
+<p>Brings up a dialog box allowing the user to input a string that will be used for splitting the selected text. The string that is split over is removed from the text and replaced with line breaks. For example, if we take the text,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>and split it at the character <code class="docutils literal notranslate"><span class="pre">a</span></code> we get,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is</span>
+<span class="go"> simple text</span>
+<span class="go">nd numeric m</span>
+<span class="go">nipul</span>
+<span class="go">tion tool.</span>
+</pre></div>
+</div>
+<p>If we take the text,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>and split it at the string <code class="docutils literal notranslate"><span class="pre">and</span></code> we get,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text</span>
+<span class="go"> numeric manipulation tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="break-character-stream">
+<h2>Break Character Stream<a class="headerlink" href="#break-character-stream" title="Link to this heading">#</a></h2>
+<p>Brings up a dialog box allowing the user to select the number of characters for each line and places a line break after each block of characters of this length. There is also an option for preserving words that will put the break after the word the fills the block. So in if this option is selected there may be lines longer than the block size selected. For example, if we take the text,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>and split it at 20 characters without preserving words we get,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">simple text and nume</span>
+<span class="go">ric manipulation too</span>
+<span class="go">l.</span>
+</pre></div>
+</div>
+<p>If we had split it at 20 characters with preserving words we get,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">simple text and</span>
+<span class="go">numeric manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="reformat-text">
+<h2>Reformat Text<a class="headerlink" href="#reformat-text" title="Link to this heading">#</a></h2>
+<p>Brings up a dialog box allowing the user to select the maximum number of characters for each line and places a line break after each block of characters of this length. This automatically preserves words when possible.</p>
+<p>For example, if we take the text,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a simple text and numeric manipulation tool.</span>
+</pre></div>
+</div>
+<p>and reformat to 20 characters we get,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">The Text Editor is a</span>
+<span class="go">simple text and</span>
+<span class="go">numeric manipulation</span>
+<span class="go">tool.</span>
+</pre></div>
+</div>
+</section>
+<section id="remove-double-characters">
+<h2>Remove Double Characters<a class="headerlink" href="#remove-double-characters" title="Link to this heading">#</a></h2>
+<p>Replaces double characters with an X between the characters.  If the double characters are XX then a Z is placed between them. This is probably not very useful in general but it does come in handy when studying classical cryptography. For example,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">This is a test of the tool for removing double</span>
+<span class="go">characters, committee, XXXX, ZZZ...</span>
+</pre></div>
+</div>
+<p>is converted to</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">This is a test of the toXol for removing double</span>
+<span class="go">characters, comXmitXteXe, XZXZXZX, ZXZXZ.X.X.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="EditOps.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Edit Options</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CharOps.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Character Conversion Options</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uppercase">UPPERCASE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lowercase">lowercase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#capitalize">Capitalize</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-all-whitespace">Remove All Whitespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whitespace-to-single-spaces">Whitespace to Single Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-whitespace-per-line">Remove Whitespace Per Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-punctuation">Remove Punctuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-numbers">Remove Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-all-non-letters">Remove All Non-Letters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-spaces-to-line-breaks">Split (Spaces to Line Breaks)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#join-line-breaks-to-spaces">Join (Line Breaks to Spaces)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-blank-lines">Remove Blank Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-multiple-blank-lines">Remove Multiple Blank Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-front-whitespace">Remove Front Whitespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-end-whitespace">Remove End Whitespace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trim-lines">Trim Lines</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-tabs-to-spaces">Convert Tabs to Spaces</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-spaces-to-tabs">Convert Spaces to Tabs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replace-all">Replace All</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-at">Split At</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break-character-stream">Break Character Stream</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reformat-text">Reformat Text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-double-characters">Remove Double Characters</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

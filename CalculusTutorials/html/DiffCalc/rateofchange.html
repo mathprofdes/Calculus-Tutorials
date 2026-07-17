@@ -1,0 +1,943 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Rates of Change &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/rateofchange';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Related Rates" href="relatedrates.html" />
+    <link rel="prev" title="Logarithmic Differentiation" href="logdiff.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Rates of Change</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="rates-of-change">
+<h1><span class="target" id="index-0"></span>Rates of Change<a class="headerlink" href="#rates-of-change" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>As we stated in the introduction, Calculus is the study and quantification of change.  In particular, Differential Calculus was developed around the solution to the Tangent Problem.  The Tangent Problem was simply a geometrical interpretation for the more general and diverse concept of rates of change.  Recapping the derivations,</p>
+<p>Say we have a function <span class="math notranslate nohighlight">\(f(x)\)</span> that is defined on the interval <span class="math notranslate nohighlight">\([a, a+h]\)</span>. The <strong>amount of change</strong> or <strong>total change</strong> of <span class="math notranslate nohighlight">\(f(x)\)</span> over the interval <span class="math notranslate nohighlight">\([a, a+h]\)</span> is <span class="math notranslate nohighlight">\(f(a+h) - f(a)\)</span>.  This is sometimes described as the change in <em>y</em> over the interval, and denoted as <span class="math notranslate nohighlight">\(\Delta y = f(a+h) - f(a)\)</span>.  Similarly, the length of the interval (which is <em>h</em>) is denoted as <span class="math notranslate nohighlight">\(\Delta x\)</span>.</p>
+<div class="admonition-definition-the-average-rate-of-change admonition">
+<p class="admonition-title">Definition: The Average Rate of Change</p>
+<p>The <strong>average rate of change</strong> of the function <span class="math notranslate nohighlight">\(f(x)\)</span> over the interval <span class="math notranslate nohighlight">\([a, a+h]\)</span> is the ratio of the <em>y</em> change over the <em>x</em> change, specifically,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\Delta y}{\Delta x} = \frac{f(a+h) - f(a)}{h}\]</div>
+</div>
+<div class="admonition-definition-the-instantaneous-rate-of-change admonition">
+<p class="admonition-title">Definition: The Instantaneous Rate of Change</p>
+<p>The <strong>instantaneous rate of change</strong> of <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x = a\)</span> is the derivative at <em>a</em>, in other words, the limit as <span class="math notranslate nohighlight">\(h = \Delta x\)</span> approaches 0,</p>
+<div class="math notranslate nohighlight">
+\[f'(a) = \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]</div>
+</div>
+<p>Let’s take this one step further.  If the function does have a derivative at <span class="math notranslate nohighlight">\(x = a\)</span> then the limit</p>
+<div class="math notranslate nohighlight">
+\[\lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]</div>
+<p>must exist.  If this limit exists then as <em>h</em> gets smaller the value of</p>
+<div class="math notranslate nohighlight">
+\[\frac{f(a+h) - f(a)}{h}\]</div>
+<p>gets closer to <span class="math notranslate nohighlight">\(f'(a)\)</span>. So for small <em>h</em> we have,</p>
+<div class="math notranslate nohighlight">
+\[f'(a) \approx \frac{f(a+h) - f(a)}{h}\]</div>
+<p>and as a result,</p>
+<div class="math notranslate nohighlight">
+\[f(a+h) \approx f(a) + h f'(a)\]</div>
+<p>We will exploit this several times in the derivative applications.</p>
+</section>
+<section id="velocity-speed-acceleration-and-jerks">
+<h2>Velocity, Speed, Acceleration, and Jerks<a class="headerlink" href="#velocity-speed-acceleration-and-jerks" title="Link to this heading">#</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(s(t)\)</span> be a function giving the position of an object at time <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<ul class="simple">
+<li><p>The Velocity of the object at time <em>t</em> is the derivative of the position function, <span class="math notranslate nohighlight">\(v(t) = s'(t)\)</span>.</p></li>
+<li><p>The Speed of the object at time <em>t</em> is the absolute value of the velocity function, <span class="math notranslate nohighlight">\(|v(t)|\)</span>.</p></li>
+<li><p>The Acceleration of the object at <em>t</em> is the derivative of the velocity function and hence the second derivative of the position function, <span class="math notranslate nohighlight">\(a(t) = v'(t) = s''(t)\)</span>.</p></li>
+<li><p>The Jerk of the object at <em>t</em> is the derivative of the acceleration function, <span class="math notranslate nohighlight">\(j(t) = a'(t) = v''(t) = s'''(t)\)</span>:</p></li>
+</ul>
+<section id="example-s-t-t-3-7-t-2-5-t-3">
+<h3>Example: <span class="math notranslate nohighlight">\(s(t) = - t^{3} + 7 t^{2} - 5 t + 3\)</span><a class="headerlink" href="#example-s-t-t-3-7-t-2-5-t-3" title="Link to this heading">#</a></h3>
+<p>For example, say the position of a particle at time <em>t</em> was <span class="math notranslate nohighlight">\(s(t) = - t^{3} + 7 t^{2} - 5 t + 3\)</span>. We will assume that time <em>t</em> is in seconds and the distance is in meters.  The graph of this function is below.</p>
+<figure class="align-default" id="id9">
+<img alt="s(t) = - t^3 + 7 t^2 - 5 t + 3" src="../_images/ROT001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(s(t) = - t^{3} + 7 t^{2} - 5 t + 3\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So the particle starts out at <span class="math notranslate nohighlight">\(t = 0\)</span> at a position of 3 meters, it travels in a straight line backwards for about 0.5 seconds to about 2 meters, then forward until about 4.25 seconds at about 31 meters and then starts traveling backward again. Find the velocity, speed, acceleration, and jerk functions for this particle.</p>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>Input the function, GeoGebra likes to have the independent variable to be <em>x</em> so we will input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- x^3 + 7 x^2 - 5 x + 3</span>
+</pre></div>
+</div>
+<p>We will assume that the function cam in as <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>In a new cell input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f&#39;</span>
+</pre></div>
+</div>
+<p>This is the velocity function.  Now input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">|f&#39;|</span>
+</pre></div>
+</div>
+<p>This is the speed function.  Now input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f&#39;&#39;</span>
+</pre></div>
+</div>
+<p>This is the acceleration function.  Now input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>This is the jerk function.  The graphs of all of them are below.  The orange line is the position, the blue line is the velocity, the purple line is the speed, the red line is the acceleration, and the green line is the jerk.</p>
+<figure class="align-default" id="id10">
+<img alt="s(t) = - t^3 + 7 t^2 - 5 t + 3 with Derivatives" src="../_images/ROT002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(s(t) = - t^{3} + 7 t^{2} - 5 t + 3\)</span> with Derivatives</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">- t^3 + 7*t^2 - 5*t + 3</span>
+</pre></div>
+</div>
+<p>Select this expression and select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>t</em>, order 1. The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- 3 t^{2} + 14 t - 5\]</div>
+<p>This is the velocity function, assume it came in as R2.  In the CAS input bar type in,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">abs(R2)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left|{3 t^{2} - 14 t + 5}\right|\]</div>
+<p>This is the speed function.  Select the velocity function and  select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>t</em>, order 1. The result should be,</p>
+<div class="math notranslate nohighlight">
+\[14 - 6 t\]</div>
+<p>This is the acceleration function.  Select the acceleration function and  select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>t</em>, order 1. The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- 6\]</div>
+<p>The graphs of all of them are below.  The black line is the position, the purple line is the velocity, the blue line is the speed, the orange line is the acceleration, and the red line is the jerk.</p>
+<figure class="align-default" id="id11">
+<img alt="s(t) = - t^3 + 7 t^2 - 5 t + 3 with Derivatives" src="../_images/ROT003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(s(t) = - t^{3} + 7 t^{2} - 5 t + 3\)</span> with Derivatives</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="maxima">
+<h4>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s(t):=- t^3 + 7*t^2 - 5*t + 3</span>
+</pre></div>
+</div>
+<p>Now input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">v:diff(s(t),t,1)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- 3 t^{2} + 14 t - 5\]</div>
+<p>This is the velocity function.  Now input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sp:abs(v);</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left|{3 t^{2} - 14 t + 5}\right|\]</div>
+<p>This is the speed function.  Now input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a:diff(v,t,1);</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[14 - 6 t\]</div>
+<p>This is the acceleration function.  Now input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">j:diff(a,t,1);</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- 6\]</div>
+<p>This is the jerk function.  We can graph all of these on the same plot with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([s(t), v, sp, a, j], [t,-1,7])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id12">
+<img alt="s(t) = - t^3 + 7 t^2 - 5 t + 3 with Derivatives" src="../_images/ROT004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(s(t) = - t^{3} + 7 t^{2} - 5 t + 3\)</span> with Derivatives</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Maxima the expressions <code class="docutils literal notranslate"><span class="pre">v:</span></code>, <code class="docutils literal notranslate"><span class="pre">sp:</span></code>, <code class="docutils literal notranslate"><span class="pre">a:</span></code>, and <code class="docutils literal notranslate"><span class="pre">j:</span></code> are assignment statements that are simply assigning the expression to the variables <em>v</em>, <em>sp</em>, <em>a</em>, and <em>j</em>.  This makes it easier to include in other commands like the plot command.  Note that this does not define <em>v</em>, <em>sp</em>, <em>a</em>, and <em>j</em> as function, so <code class="docutils literal notranslate"><span class="pre">v(3)</span></code> is not the velocity at 3 seconds.  To create a function out of an expression we can use the <code class="docutils literal notranslate"><span class="pre">''</span></code> operator, that is two single quotes next to each other.  For example, once we have <em>v</em> as the derivative expression we can use,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vf(t):=&#39;&#39;v</span>
+</pre></div>
+</div>
+<p>to define <span class="math notranslate nohighlight">\(vf(t)\)</span> as the velocity function.  Then <code class="docutils literal notranslate"><span class="pre">vf(3)</span></code> returns 10, the velocity at 3 seconds.</p>
+<p>Another note along these lines, you do not want to input <code class="docutils literal notranslate"><span class="pre">vf(t):=''diff(s(t),t,1)</span></code>.  It will not evaluate the derivative before assigning it to <span class="math notranslate nohighlight">\(vf(t)\)</span>, do the expression first and then the assignment to the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">v:diff(s(t),t,1);</span>
+<span class="go">vf(t):=&#39;&#39;v</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="example-s-t-3-sin-left-2-t-right-4-cos-left-7-t-right">
+<h3>Example: <span class="math notranslate nohighlight">\(s(t) = 3 \sin{\left(2 t \right)} + 4 \cos{\left(7 t \right)}\)</span><a class="headerlink" href="#example-s-t-3-sin-left-2-t-right-4-cos-left-7-t-right" title="Link to this heading">#</a></h3>
+<p>Oscillatory motion is when the position of an object repeats itself.  For example, a weight that is attached to a spring, the motion of an engine piston, etc.  This example examines the motion defined by the function,</p>
+<div class="math notranslate nohighlight">
+\[s(t) = 3 \sin{\left(2 t \right)} + 4 \cos{\left(7 t \right)}\]</div>
+<p>A graph of the position of the object is below.</p>
+<figure class="align-default" id="id13">
+<img alt="y = 3 sin(2t) + 4 cos(7t)" src="../_images/ROT005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(s(t) = 3 \sin{\left(2 t \right)} + 4 \cos{\left(7 t \right)}\)</span></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Use the procedures from the first example to find the velocity, speed, acceleration, and jerk functions for this object.  Your results should be, respectively,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v(t) &amp; = - 28 \sin{\left(7 t \right)} + 6 \cos{\left(2 t \right)} \\
+sp(t) &amp; = \left|{28 \sin{\left(7 t \right)} - 6 \cos{\left(2 t \right)}}\right| \\
+a(t) &amp; = - 12 \sin{\left(2 t \right)} - 196 \cos{\left(7 t \right)} \\
+j(t) &amp; = 1372 \sin{\left(7 t \right)} - 24 \cos{\left(2 t \right)}\end{split}\]</div>
+</section>
+</section>
+<section id="marginal-cost-revenue-and-profit">
+<h2>Marginal Cost, Revenue and Profit<a class="headerlink" href="#marginal-cost-revenue-and-profit" title="Link to this heading">#</a></h2>
+<p>Derivatives are also useful in business and economics for analyzing changes in cost, revenue, and profit.</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(C(x)\)</span> is the cost of producing <em>x</em> items, then the marginal cost <span class="math notranslate nohighlight">\(MC(x)\)</span> is <span class="math notranslate nohighlight">\(MC(x) = C'(x)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(R(x)\)</span> is the revenue obtained from selling <em>x</em> items, then the marginal revenue <span class="math notranslate nohighlight">\(MR(x)\)</span> is <span class="math notranslate nohighlight">\(MR(x) = R'(x)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(P(x) = R(x) - C(x)\)</span> is the profit obtained from selling <em>x</em> items, then the marginal profit <span class="math notranslate nohighlight">\(MP(x)\)</span> is defined to be <span class="math notranslate nohighlight">\(MP(x) = P'(x) = MR(x) - MC(x) = R'(x) - C'(x)\)</span>.</p></li>
+</ul>
+<p>Marginal cost, revenue, and profit are thought of as the cost, revenue, and profit that is obtained by the production and sell of one more item.  Here is how we arrive at that interpretation. We will look at the marginal cost, the revenue and profit are similar.  The marginal cost is,</p>
+<div class="math notranslate nohighlight">
+\[MC(x) = C'(x) = \lim_{h \to 0} \frac{C(x+h) - C(x)}{h}\]</div>
+<p>We also know that if <em>h</em> is small then</p>
+<div class="math notranslate nohighlight">
+\[MC(x) = C'(x) \approx \frac{C(x+h) - C(x)}{h}\]</div>
+<p>Although <span class="math notranslate nohighlight">\(h = 1\)</span> is not very small it is reasonably small, substituting gives us,</p>
+<div class="math notranslate nohighlight">
+\[MC(x) = C'(x) \approx C(x+1) - C(x)\]</div>
+<p>which is the cost of producing one more item.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>Suppose that the profit obtained from the sale of <em>x</em> items is given by <span class="math notranslate nohighlight">\(P(x) = -0.03x^2 + 8x - 50\)</span>. Use the marginal profit function to estimate the profit from the sale of the 101st item.</p>
+<section id="id1">
+<h4>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-0.03x^2 + 8x - 50</span>
+</pre></div>
+</div>
+<p>to find the marginal profet function input <code class="docutils literal notranslate"><span class="pre">f'</span></code>, the result should be <span class="math notranslate nohighlight">\(-0.06x+8\)</span>.  The estimate of the profit for the 101st item is <code class="docutils literal notranslate"><span class="pre">f'(100)</span></code> which should return 2.</p>
+</section>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-0.03*x^2+8*x-50</span>
+</pre></div>
+</div>
+<p>To find the marginal profit function take the derivative with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em> and order 1. The result should be, <span class="math notranslate nohighlight">\(8 - 0.06 x\)</span>.  So for the 101st item, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, variable <em>x</em> and expression 100, resulting in 2.</p>
+</section>
+<section id="id3">
+<h4>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">p(x):=-0.03*x^2+8*x-50</span>
+</pre></div>
+</div>
+<p>To find the marginal profit function take the derivative with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mp:diff(p(x),x)</span>
+</pre></div>
+</div>
+<p>The result should be, <span class="math notranslate nohighlight">\(8 - 0.06 x\)</span>. Turn the expression into a function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpf(x):=&#39;&#39;mp</span>
+</pre></div>
+</div>
+<p>Evaluate the function at 100,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">mpf(100)</span>
+</pre></div>
+</div>
+<p>The result should be 2.0.</p>
+</section>
+</section>
+</section>
+<section id="laminar-flow">
+<h2>Laminar Flow<a class="headerlink" href="#laminar-flow" title="Link to this heading">#</a></h2>
+<p>The flow of water (or any liquid) through a pipe is not all at the same velocity.  Due to friction with the pipe the water along the central axis of the pipe flows faster than the water close to the walls of the pipe.</p>
+<figure class="align-default" id="id14">
+<img alt="Laminar Flow Visualization" src="../_images/ROT006.png" />
+<figcaption>
+<p><span class="caption-text">Laminar Flow Visualization</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we have a length of pipe <em>l</em> with radius <em>R</em> then the <em>law of laminar flow</em> states,</p>
+<div class="math notranslate nohighlight">
+\[v = \frac{P}{4  \eta  l}(R^2-r^2)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\eta\)</span> is the viscosity of the liquid and <em>P</em> is the pressure difference between the two ends of the pipe. If <em>P</em> and <em>l</em> are constant, as would be <em>R</em> and <span class="math notranslate nohighlight">\(\eta\)</span>, then the velocity <em>v</em> is a function of the distance <em>r</em> the stream is away from the central axis of the pipe.  The domain of the function would be <span class="math notranslate nohighlight">\([0, R]\)</span>.</p>
+<p>The <strong>velocity gradient</strong> is the instantaneous rate of change of velocity with respect to <em>r</em>, <span class="math notranslate nohighlight">\(v'(r)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[v'(r) = -\frac{rP}{2  \eta  l}\]</div>
+<section id="id4">
+<h3>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">P/(4*n*l)*(R^2-r^2)</span>
+</pre></div>
+</div>
+<p>Then for the velocity gradient function select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, <em>r</em> is the variable and order 1 gives the expression.</p>
+</section>
+<section id="id5">
+<h3>Maxima<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">v(r):=P/(4*n*l)*(R^2-r^2)</span>
+</pre></div>
+</div>
+<p>Then for the velocity gradient function input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(v(r),r)</span>
+</pre></div>
+</div>
+<p>and the result is the expression.</p>
+</section>
+</section>
+<section id="sensitivity-to-change">
+<h2>Sensitivity to Change<a class="headerlink" href="#sensitivity-to-change" title="Link to this heading">#</a></h2>
+<p>When a small change in <em>x</em> produces a large change in the value of a function <span class="math notranslate nohighlight">\(f(x)\)</span>, we say that the function is relatively <strong>sensitive</strong> to changes in <em>x</em>. The derivative <span class="math notranslate nohighlight">\(f'(x)\)</span> is a measure of sensitivity.  If a function is sensitivity then small <em>x</em> changed will create large <em>y</em> changes, which means that the a tangent line will have a large slope, either positively of negatively.  Hence the derivative will have a large absolute value if the function is sensitive at that point.</p>
+<section id="example-f-x-e-x-x-3">
+<h3>Example: <span class="math notranslate nohighlight">\(f(x) = e^x - x^3\)</span><a class="headerlink" href="#example-f-x-e-x-x-3" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>GeoGebra<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">e^x - x^3</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id15">
+<img alt="y = e^x - x^3" src="../_images/ROT007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = e^x - x^3\)</span></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The sensitivity of this function at 2 is <code class="docutils literal notranslate"><span class="pre">f'(2)</span></code> which returns <span class="math notranslate nohighlight">\(-4.61094\)</span> and the sensitivity of this function at 5 is <code class="docutils literal notranslate"><span class="pre">f'(5)</span></code> which returns <span class="math notranslate nohighlight">\(73.41316\)</span>.  So the function is more sensitive at 5 than at 2.</p>
+</section>
+<section id="id7">
+<h4>CLAE<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">E^x - x^3</span>
+</pre></div>
+</div>
+<p>Take its derivative with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em>, order 1, result is, <span class="math notranslate nohighlight">\(- 3 x^{2} + e^{x}\)</span>. Now evaluate it at both 2 and 5, results are <span class="math notranslate nohighlight">\(-12 + e^{2} \approx -4.61094390106935\)</span> and <span class="math notranslate nohighlight">\(-75 + e^{5} \approx 73.4131591025766\)</span>, respectively.   So the function is more sensitive at 5 than at 2.</p>
+<figure class="align-default" id="id16">
+<img alt="y = e^x - x^3" src="../_images/ROT008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = e^x - x^3\)</span></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id8">
+<h4>Maxima<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="gp">f(x):=%</span>e^x<span class="w"> </span>-<span class="w"> </span>x^3
+</pre></div>
+</div>
+<p>Take the derivative, we will store the result as <em>s</em>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s:diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>Turn it into a function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sen(x):=&#39;&#39;s</span>
+</pre></div>
+</div>
+<p>Calculate the sensitivity at 2 (and approximate it as well) with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sen(2);</span>
+<span class="go">float(%), numer;</span>
+</pre></div>
+</div>
+<p>The result is <span class="math notranslate nohighlight">\(-12 + e^{2} \approx -4.61094390106935\)</span>.  Doing the same at 5,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sen(5);</span>
+<span class="go">float(%), numer;</span>
+</pre></div>
+</div>
+<p>results in <span class="math notranslate nohighlight">\(-75 + e^{5} \approx 73.4131591025766\)</span>. So the function is more sensitive at 5 than at 2.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These examples are only scratching the surface. In addition to our examples above, rates of reactions in chemistry, current, linear density, rate of the spread of fires, rate of heat flow,  rate of improvement of performance in psychology, rate of spread of a rumor in sociology, and the list goes on.  These are all specific examples of the general concept of a derivative.</p>
+<p>The French mathematician Joseph Fourier (1768-1830) once said: “Mathematics compares the most diverse phenomena and discovers the secret analogies that unite them.”</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="logdiff.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Logarithmic Differentiation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="relatedrates.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Related Rates</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#velocity-speed-acceleration-and-jerks">Velocity, Speed, Acceleration, and Jerks</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-s-t-t-3-7-t-2-5-t-3">Example: <span class="math notranslate nohighlight">\(s(t) = - t^{3} + 7 t^{2} - 5 t + 3\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-s-t-3-sin-left-2-t-right-4-cos-left-7-t-right">Example: <span class="math notranslate nohighlight">\(s(t) = 3 \sin{\left(2 t \right)} + 4 \cos{\left(7 t \right)}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#marginal-cost-revenue-and-profit">Marginal Cost, Revenue and Profit</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laminar-flow">Laminar Flow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-change">Sensitivity to Change</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-e-x-x-3">Example: <span class="math notranslate nohighlight">\(f(x) = e^x - x^3\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Maxima</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

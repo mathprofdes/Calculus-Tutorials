@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Mouse Mode Options &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/Graph3D/MouseModeOpts';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Axes/Grid Options" href="AxesOpts.html" />
+    <link rel="prev" title="Snapshot Viewer" href="SnapshotViewer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">3D Graphs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Function z = f(x, y)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceRev.html">Surface of Revolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parametric.html">Parametric Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cylindrical.html">Cylindrical Coordinate Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spherical.html">Spherical Coordinate Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Implicit.html">Implicit Relationship f(x, y, z) = 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSheet.html">Function Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolarFunctionSheet.html">Polar Function Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpaceCurve.html">Space Curve (x, y, z) = (f(t), g(t), h(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSpaceCurve2D.html">2-D Function Space Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSpaceCurve2DPolar.html">2-D Polar Space Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearSystem.html">Linear System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOpts.html">Editing Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotViewer.html">Snapshot Viewer</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Mouse Mode Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AxesOpts.html">Axes/Grid Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CameraOpts.html">Camera Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">3D Graphs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Mouse Mode Options</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="mouse-mode-options">
+<h1>Mouse Mode Options<a class="headerlink" href="#mouse-mode-options" title="Link to this heading">#</a></h1>
+<p>The following are options for how the mouse actions can change the viewing area.  The menu options are “radio buttons” so the current mouse mode is marked in the menu.</p>
+<section id="camera-rotation-and-zoom">
+<h2>Camera Rotation and Zoom<a class="headerlink" href="#camera-rotation-and-zoom" title="Link to this heading">#</a></h2>
+<p>This is the default mouse mode, the mouse functions reposition the camera.  The camera is a spherical camera, that is, its position is on a sphere and the direction it is pointed is to the center of the viewing cube.  Note that these options do not change the axes lengths or center position of the view, they simply move around the view.</p>
+<ul class="simple">
+<li><p>Left click and drag will change the spherical angles of the camera position but not the distance the camera is from the center of the viewing cube.  Horizontal movements change the XY-plane angle and vertical movements change the angle with the Z-axis.</p></li>
+<li><p>Mouse scrolling will change the distance the camera is from the origin, that is, the radius of the sphere the camera is on.</p></li>
+<li><p>The left and right arrow keys change the XY-plane angle.</p></li>
+<li><p>The up and down arrow keys change the angle with the Z-axis.</p></li>
+<li><p>Ctrl+Up Arrow decreases the sphere radius and hence zooms in on the view.</p></li>
+<li><p>Ctrl+Down Arrow increases the sphere radius and hence zooms out on the view.</p></li>
+</ul>
+</section>
+<section id="scale-x-axis">
+<h2>Scale X-Axis<a class="headerlink" href="#scale-x-axis" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag will scale the x-axis while leaving the y-axis and z-axis unchanged.</p>
+</section>
+<section id="scale-y-axis">
+<h2>Scale Y-Axis<a class="headerlink" href="#scale-y-axis" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag will scale the y-axis while leaving the x-axis and z-axis unchanged.</p>
+</section>
+<section id="scale-z-axis">
+<h2>Scale Z-Axis<a class="headerlink" href="#scale-z-axis" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag will scale the z-axis while leaving the x-axis and y-axis unchanged.</p>
+</section>
+<section id="scale-xy-plane">
+<h2>Scale XY-Plane<a class="headerlink" href="#scale-xy-plane" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag will scale the x-axis and y-axis evenly while leaving the z-axis unchanged.</p>
+</section>
+<section id="scale-all-axes">
+<h2>Scale All Axes<a class="headerlink" href="#scale-all-axes" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag will scale all the axes evenly, leaving the aspect ratio of the plot unchanged.</p>
+</section>
+<section id="translate-along-x-axis">
+<h2>Translate Along X-Axis<a class="headerlink" href="#translate-along-x-axis" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag horizontally will translate along the x-axis.</p>
+</section>
+<section id="translate-along-y-axis">
+<h2>Translate Along Y-Axis<a class="headerlink" href="#translate-along-y-axis" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag vertically will translate along the y-axis.</p>
+</section>
+<section id="translate-along-z-axis">
+<h2>Translate Along Z-Axis<a class="headerlink" href="#translate-along-z-axis" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag vertically will translate along the z-axis.</p>
+</section>
+<section id="translate-along-xy-plane">
+<h2>Translate Along XY-Plane<a class="headerlink" href="#translate-along-xy-plane" title="Link to this heading">#</a></h2>
+<p>In this mode a click and drag will translate along the xy-plane.  Horizontal movements will translate in the x direction and vertical movements will translate in the y direction. Note that the translations are not altered by the camera position, so if the camera is in the “back” of the view the translations will be backward with respect to the mouse movement.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="SnapshotViewer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Snapshot Viewer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AxesOpts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Axes/Grid Options</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#camera-rotation-and-zoom">Camera Rotation and Zoom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-x-axis">Scale X-Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-y-axis">Scale Y-Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-z-axis">Scale Z-Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-xy-plane">Scale XY-Plane</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-all-axes">Scale All Axes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translate-along-x-axis">Translate Along X-Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translate-along-y-axis">Translate Along Y-Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translate-along-z-axis">Translate Along Z-Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#translate-along-xy-plane">Translate Along XY-Plane</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

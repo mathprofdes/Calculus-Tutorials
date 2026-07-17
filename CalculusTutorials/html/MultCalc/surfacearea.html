@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Surface Area &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/surfacearea';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Triple Integrals" href="tripleintegrals.html" />
+    <link rel="prev" title="Double Integrals in Polar Coordinates" href="doubleintegralspolar.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Surface Area</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="surface-area">
+<h1><span class="target" id="index-0"></span>Surface Area<a class="headerlink" href="#surface-area" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>The formula for the area of a surface over a domain <em>D</em> is not difficult to derive and it is very similar to the derivation of the arc-length of a curve, as is the result.  We will leave the derivation to your textbook.</p>
+<div class="admonition-theorem-surface-area admonition">
+<p class="admonition-title">Theorem: Surface Area</p>
+<p>The area of a surface <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> over a region <em>R</em> where both partial derivatives <span class="math notranslate nohighlight">\(f_x\)</span> and <span class="math notranslate nohighlight">\(f_y\)</span> are continuous is,</p>
+<div class="math notranslate nohighlight">
+\[A(S) = \iint_R \sqrt{(f_x(x, y))^2 + (f_y(x, y))^2 + 1} \; dA = \iint_R \sqrt{ 1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} \; dA\]</div>
+</div>
+</section>
+<section id="example-surface-area-of-a-portion-of-a-sphere">
+<h2>Example: Surface Area of a Portion of a Sphere<a class="headerlink" href="#example-surface-area-of-a-portion-of-a-sphere" title="Link to this heading">#</a></h2>
+<p>In this exercise we will find the surface area of the portion of the sphere <span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 4\)</span> that lies above the plane <span class="math notranslate nohighlight">\(z = 1.\)</span></p>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the expression for the surface, equal to 0,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 + z^2 - 4</span>
+</pre></div>
+</div>
+<p>Also input <code class="docutils literal notranslate"><span class="pre">1</span></code>. Graph both of these in the 3D graphics window.</p>
+<figure class="align-default" id="id1">
+<img alt=":math:`x^2 + y^2 + z^2 = 4` and :math:`z = 1`" src="../_images/DoublePolar012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 4\)</span> and <span class="math notranslate nohighlight">\(z = 1\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So the surface area we want is the cap on the top of the sphere.   To get the bounds on this surface we need to find the intersection of the two surfaces.  Substituting <span class="math notranslate nohighlight">\(z = 1\)</span> into <span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 4\)</span> gives us <span class="math notranslate nohighlight">\(x^2 + y^2 = 3\)</span> which is a circle of radius <span class="math notranslate nohighlight">\(\sqrt{3}\)</span> centered at the origin.  Input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 - 3</span>
+</pre></div>
+</div>
+<p>Graph this in the 3D window, change its type to Implicit Relationship and its plot to grid.</p>
+<figure class="align-default" id="id2">
+<img alt=":math:`x^2 + y^2 + z^2 = 4` and :math:`z = 1`" src="../_images/DoublePolar013.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 4\)</span> and <span class="math notranslate nohighlight">\(z = 1\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we proceed with the calculations.  Since we are looking at the top half of the sphere we can rewrite the implicit relationship as,</p>
+<div class="math notranslate nohighlight">
+\[z = \sqrt{- x^{2} - y^{2} + 4}\]</div>
+<p>then using the derivative option,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial z}{\partial x} = - \frac{x}{\sqrt{- x^{2} - y^{2} + 4}} \qquad {\rm and } \qquad \frac{\partial z}{\partial y} = - \frac{y}{\sqrt{- x^{2} - y^{2} + 4}}\]</div>
+<p>So our integrand is,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{ 1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} = \sqrt{\frac{x^{2}}{- x^{2} - y^{2} + 4} + \frac{y^{2}}{- x^{2} - y^{2} + 4} + 1} = 2 \sqrt{- \frac{1}{x^{2} + y^{2} - 4}}\]</div>
+<p>The region that we are integrating over is a circle (disk) which would suggest using polar coordinates.  We will first try rectangular coordinates.  Approaching this as a Type I region, the <em>y</em> bounds would be <span class="math notranslate nohighlight">\(- \sqrt{3 - x^{2}}\)</span> to <span class="math notranslate nohighlight">\(\sqrt{3 - x^{2}}\)</span> and the <em>x</em> bounds would be <span class="math notranslate nohighlight">\(- \sqrt{3}\)</span> to <span class="math notranslate nohighlight">\(\sqrt{3}.\)</span>  So the integral would be,</p>
+<div class="math notranslate nohighlight">
+\[2 \int\limits_{- \sqrt{3}}^{\sqrt{3}}\int\limits_{- \sqrt{3 - x^{2}}}^{\sqrt{3 - x^{2}}} \sqrt{- \frac{1}{x^{2} + y^{2} - 4}}\, dy\, dx\]</div>
+<p>If we try this in CLAE it will return the integral, unsolved.  If we take the time to convert this to polar coordinates, as we thought above, we get an integrand of,</p>
+<div class="math notranslate nohighlight">
+\[2 \sqrt{\frac{1}{4 - r^{2}}}\]</div>
+<p>and a polar integral of,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{2\pi} \int_0^{\sqrt{3}} 2 r \sqrt{\frac{1}{4 - r^{2}}} \; dr \; d\theta\]</div>
+<p>This is an easy substitution that we could do by hand but inputting this into CLAE and taking the double integral gives us the result of <span class="math notranslate nohighlight">\(4\pi.\)</span></p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>We can also solve the polar integral in Maxima but additionally, Maxima is powerful enough to calculate the double integral given in rectangular coordinates.  Inputting,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(2*sqrt(-1/(x**2 + y**2 - 4)), y, -sqrt(3 - x**2), sqrt(3 - x**2)), x, -sqrt(3), sqrt(3));</span>
+</pre></div>
+</div>
+<p>will return the value of <span class="math notranslate nohighlight">\(4\pi.\)</span></p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="doubleintegralspolar.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Double Integrals in Polar Coordinates</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tripleintegrals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Triple Integrals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-surface-area-of-a-portion-of-a-sphere">Example: Surface Area of a Portion of a Sphere</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

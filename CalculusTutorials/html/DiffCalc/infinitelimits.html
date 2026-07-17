@@ -1,0 +1,1560 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Infinite Limits &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/infinitelimits';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Limits at Infinity" href="limitatinfinity.html" />
+    <link rel="prev" title="One-Sided Limits" href="limitonesidedatapoint.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Infinite Limits</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="infinite-limits">
+<h1><span class="target" id="index-0"></span>Infinite Limits<a class="headerlink" href="#infinite-limits" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>It is possible that when <em>x</em> gets close to <em>a</em> the functional values of <span class="math notranslate nohighlight">\(f(x)\)</span> either increase without bound or decrease without bound.  That is, the graph of the function goes straight up or straight down.  These limits do not exist either but we denote them a little differently to give the reader more information about the behavior of the function close to the value <em>a</em>.  These definitions are still intuitive but are sufficient for most casess.</p>
+<div class="admonition-definition-infinite-limits admonition">
+<p class="admonition-title">Definition: Infinite Limits</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((c, a)\)</span> with <span class="math notranslate nohighlight">\(c &lt; a\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>increase without bound</em> as <em>x</em> approaches <em>a</em>, with <span class="math notranslate nohighlight">\(x &lt; a\)</span>, we say that <em>the limit as x approaches a from the left is positive infinity</em>.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^-} f(x) = \infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((a, c)\)</span> with <span class="math notranslate nohighlight">\(c &gt; a\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>increase without bound</em> as <em>x</em> approaches <em>a</em>, with <span class="math notranslate nohighlight">\(x &gt; a\)</span>, we say that <em>the limit as x approaches a from the right is positive infinity</em>.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^+} f(x) = \infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((c, a)\)</span> with <span class="math notranslate nohighlight">\(c &lt; a\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>decrease without bound</em> as <em>x</em> approaches <em>a</em>, with <span class="math notranslate nohighlight">\(x &lt; a\)</span>, we say that <em>the limit as x approaches a from the left is negative infinity</em>.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^-} f(x) = -\infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((a, c)\)</span> with <span class="math notranslate nohighlight">\(c &gt; a\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>decrease without bound</em> as <em>x</em> approaches <em>a</em>, with <span class="math notranslate nohighlight">\(x &gt; a\)</span>, we say that <em>the limit as x approaches a from the right is negative infinity</em>.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^+} f(x) = -\infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval containing the number <em>a</em>, except for <em>a</em> itself. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>increase without bound</em> as <em>x</em> approaches <em>a</em> from either side, we say that <em>the limit as x approaches a is positive infinity</em>.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} f(x) = \infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval containing the number <em>a</em>, except for <em>a</em> itself. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>decrease without bound</em> as <em>x</em> approaches <em>a</em> from either side, we say that <em>the limit as x approaches a is negative infinity</em>.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} f(x) = -\infty\]</div>
+</div>
+<p>Positive infinity (<span class="math notranslate nohighlight">\(\infty\)</span>) and negative infinity (<span class="math notranslate nohighlight">\(-\infty\)</span>) are <strong>not</strong> real numbers.  So in all the cases above, the limit does not exist.  We write <span class="math notranslate nohighlight">\(\lim_{x \to a} f(x) = \infty\)</span> and <span class="math notranslate nohighlight">\(\lim_{x \to a} f(x) = -\infty\)</span> (instead of DNE) to indicate how the limit does not exist and subsequently give us more information about the behavior of the function.</p>
+<div class="admonition-definition-vertical-asymptote admonition">
+<p class="admonition-title">Definition: Vertical Asymptote</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function.  If any of the following conditions hold, then the line <span class="math notranslate nohighlight">\(x = a\)</span> is a <span class="target" id="index-1"></span>vertical asymptote of <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^+} f(x) = \pm\infty, \quad \lim_{x \to a^-} f(x) = \pm\infty, \quad {\rm or} \quad  \lim_{x \to a} f(x) = \pm\infty\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pm\infty\)</span> means either <span class="math notranslate nohighlight">\(\infty\)</span> or <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
+</div>
+</section>
+<section id="example-f-x-frac-1-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span><a class="headerlink" href="#example-f-x-frac-1-x" title="Link to this heading">#</a></h2>
+<p>For this example we are interested in what is happening close to <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<section id="numeric-approach">
+<h3>Numeric Approach<a class="headerlink" href="#numeric-approach" title="Link to this heading">#</a></h3>
+<p>If we attack this numerically we can see that the functional values get very large (positively and negatively) as <span class="math notranslate nohighlight">\(x \to 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{1}{x} \\ \hline
+1 &amp; 1 \\
+0.1 &amp; 10.0 \\
+0.01 &amp; 100.0 \\
+0.001 &amp; 1000.0 \\
+0.0001 &amp; 10000.0 \\
+1.0 \cdot 10^{-5} &amp; 100000.0 \\
+1.0 \cdot 10^{-6} &amp; 1000000.0 \\
+1.0 \cdot 10^{-7} &amp; 10000000.0 \\
+1.0 \cdot 10^{-8} &amp; 100000000.0 \\
+1.0 \cdot 10^{-9} &amp; 1000000000.0 \\
+\end{array}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{1}{x} \\ \hline
+-1 &amp; -1 \\
+-0.1 &amp; -10.0 \\
+-0.01 &amp; -100.0 \\
+-0.001 &amp; -1000.0 \\
+-0.0001 &amp; -10000.0 \\
+-1.0 \cdot 10^{-5} &amp; -100000.0 \\
+-1.0 \cdot 10^{-6} &amp; -1000000.0 \\
+-1.0 \cdot 10^{-7} &amp; -10000000.0 \\
+-1.0 \cdot 10^{-8} &amp; -100000000.0 \\
+-1.0 \cdot 10^{-9} &amp; -1000000000.0 \\
+\end{array}\end{split}\]</div>
+<p>From the definitions above we would say,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>Since the one-sided limits are “going to” different infinities we cannot use this notation for the two-sided limit, all we can write here is,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>We would also say that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote <span class="math notranslate nohighlight">\(x = 0\)</span>, or that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="graphical-approach">
+<h3>Graphical Approach<a class="headerlink" href="#graphical-approach" title="Link to this heading">#</a></h3>
+<p>Graphing the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> shows the same behavior as we saw with the numeric approach.  As we approach 0 from the right the corresponding functional values get larger and larger, and as we approach 0 from the left the corresponding functional values get larger and larger negatively.</p>
+<figure class="align-default" id="id25">
+<img alt="y = 1/x" src="../_images/Inf001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This gives us the same conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>Since the one-sided limits are “going to” different infinities we cannot use this notation for the two-sided limit, all we can write here is,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>We would also say that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote <span class="math notranslate nohighlight">\(x = 0\)</span>, or that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<section id="numerical-approach">
+<h4>Numerical Approach<a class="headerlink" href="#numerical-approach" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, this should come into GeoGebra as <code class="docutils literal notranslate"><span class="pre">f(x)</span></code></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Open the spreadsheet tool, <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span> <span class="pre">&gt;</span> <span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Spreadsheet</span></code>.</p></li>
+<li><p>Input the <em>x</em> values in the <em>A</em> column.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">B1</span></code> cell input <code class="docutils literal notranslate"><span class="pre">f(A1)</span></code>.  This will substitute the <code class="docutils literal notranslate"><span class="pre">A1</span></code> value into the function and evaluate it.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B1</span></code>, copy it either with a right click and the popup menu or keyboard shortcut.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B2</span></code> down to the last row of <em>x</em> values.</p></li>
+<li><p>Paste either with a right click and the popup menu or keyboard shortcut.  This will evaluate the function at each of the values in column <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
+</ol>
+<figure class="align-default" id="id26">
+<img alt="y = 1/x" src="../_images/Inf002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the values we come to the conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>Since the one-sided limits are “going to” different infinities we cannot use this notation for the two-sided limit, all we can write here is,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>We would also say that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote <span class="math notranslate nohighlight">\(x = 0\)</span>, or that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id1">
+<h4>Graphical Approach<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, this should come into GeoGebra as <code class="docutils literal notranslate"><span class="pre">f(x)</span></code></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>GeoGebra will automatically graph the function.</p></li>
+<li><p>Using the Shift-Click and Drag on the axes and repositioning, zoom to a view that still contains <span class="math notranslate nohighlight">\(x = 0\)</span> and is nicely readable.</p></li>
+</ol>
+<figure class="align-default" id="id27">
+<img alt="y = 1/x" src="../_images/Inf001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph we come to the same conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>Since the one-sided limits are “going to” different infinities we cannot use this notation for the two-sided limit, all we can write here is,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>We would also say that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote <span class="math notranslate nohighlight">\(x = 0\)</span>, or that <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> has a vertical asymptote at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="algebraic-approach">
+<h4>Algebraic Approach<a class="headerlink" href="#algebraic-approach" title="Link to this heading">#</a></h4>
+<p>Although we have not yet discussed limit laws and methods we can let the software do that work for us.  GeoGebra has a built in computer algebra system that does exact mathematics.</p>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, this should come into GeoGebra as <code class="docutils literal notranslate"><span class="pre">f(x)</span></code></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>In the next input cell start typing <code class="docutils literal notranslate"><span class="pre">limit</span></code>, after three characters or so an autocompletion menu will appear with <code class="docutils literal notranslate"><span class="pre">LimitBelow</span></code> as one of the options, select it, the parameters for this function are a function and a value, input <code class="docutils literal notranslate"><span class="pre">f</span></code> for the function, hit tab, then input 0 for the value.  The cell will display the limit command and the value of <span class="math notranslate nohighlight">\(-\infty\)</span>.  Hence,</p></li>
+<li><p>In the next input cell start typing <code class="docutils literal notranslate"><span class="pre">limit</span></code>, after three characters or so an autocompletion menu will appear with <code class="docutils literal notranslate"><span class="pre">LimitAbove</span></code> as one of the options, select it, the parameters for this function are a function and a value, input <code class="docutils literal notranslate"><span class="pre">f</span></code> for the function, hit tab, then input 0 for the value.  The cell will display the limit command and the value of <span class="math notranslate nohighlight">\(\infty\)</span>.  Hence,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+</section>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4>Numerical Approach<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, you can copy this and paste it into the CAS input bar with a right click popup menu or keyboard shortcut.  Note that CLAE does not automatically assign function names to inputs.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Click the Spreadsheet tab.</p></li>
+<li><p>Input the <em>x</em> values in the <em>A</em> column.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">B1</span></code> cell input <code class="docutils literal notranslate"><span class="pre">f(A1)</span></code>.  This will substitute <code class="docutils literal notranslate"><span class="pre">A1</span></code> into the function and evaluate it.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B1</span></code>, copy its formula with <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Copy</span> <span class="pre">Formulas</span></code> or the corresponding toolbar button.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B2</span></code> down to the last row of <em>x</em> values.</p></li>
+<li><p>Paste with either <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Paste</span></code> or the corresponding toolbar button.</p></li>
+</ol>
+<figure class="align-default" id="id28">
+<img alt="y = 1/x" src="../_images/Inf003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph we come to the conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id3">
+<h4>Graphical Approach<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, you can copy this and paste it into the CAS input bar with a right click popup menu or keyboard shortcut.  Note that CLAE does not automatically assign function names to inputs.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Click the 2-D Graphs tab.</p></li>
+<li><p>Click and drag the expression from the CAS workspace to the graph, or graphics manager.  This will plot the function.  Use the right-click and drag on the axes and repositioning, zoom to a view that still contains <span class="math notranslate nohighlight">\(x = 0\)</span> and is nicely readable.</p></li>
+</ol>
+<figure class="align-default" id="id29">
+<img alt="y = 1/x" src="../_images/Inf004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph we come to the same conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id4">
+<h4>Algebraic Approach<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Although we have not yet discussed limit laws and methods we can let the software do that work for us.  CLAE has a built in computer algebra system that does exact mathematics.</p>
+<ol class="arabic">
+<li><p>Input the function, syntax is below. Note we do not need the <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> here but it will work equally well if we include it.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Select the expression and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Limit Point: 0.</p></li>
+<li><p>Direction: Left</p></li>
+<li><p>Leave the variable properties as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The CAS workspace will show the limit in the description and <span class="math notranslate nohighlight">\(-\infty\)</span> as the value.</p></li>
+<li><dl class="simple">
+<dt>Select the expression and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Limit Point: 0.</p></li>
+<li><p>Direction: Right</p></li>
+<li><p>Leave the variable properties as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The CAS workspace will show the limit in the description and <span class="math notranslate nohighlight">\(\infty\)</span> as the value.</p></li>
+</ol>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h4>Numerical Approach<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Creating tables in Maxima is not the easiest thing to do and requires a little programming.  You can simply evaluate the function at each <em>x</em> value one at a time to obtain the same information or try using a Maxima for loop.</p>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Now either evaluate <code class="docutils literal notranslate"><span class="pre">f(0.1)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(0.01)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(0.001)</span></code>, and so on or do the following loop.</p>
+<blockquote>
+<div><div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f&quot;</span><span class="p">),</span>
+<span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="o">:</span><span class="mi">1</span><span class="w"> </span><span class="k">thru</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">do</span>
+<span class="p">(</span><span class="nv">x</span><span class="o">:</span><span class="w"> </span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="nv">i</span><span class="p">),</span>
+<span class="nv">L</span><span class="o">:</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="nf">print</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="nv">L</span><span class="p">))</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nv">x</span><span class="w"> </span><span class="nv">f</span>
+<span class="mf">0.1</span><span class="w"> </span><span class="mf">10.0</span>
+<span class="mf">0.01</span><span class="w"> </span><span class="mf">100.0</span>
+<span class="mf">0.001</span><span class="w"> </span><span class="mf">1000.0</span>
+<span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">4</span><span class="w"> </span><span class="mf">10000.0</span>
+<span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">5</span><span class="w"> </span><span class="mf">100000.0</span>
+<span class="mf">9.999999999999999</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">7</span><span class="w"> </span><span class="mf">1000000.0</span>
+<span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">7</span><span class="w"> </span><span class="mf">10000000.0</span>
+<span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">8</span><span class="w"> </span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span>
+<span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">9</span><span class="w"> </span><span class="mf">9.999999999999999</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span>
+<span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">10</span><span class="w"> </span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Now either evaluate <code class="docutils literal notranslate"><span class="pre">f(-0.1)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(-0.01)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(-0.001)</span></code>, and so on or do the following loop.</p>
+<blockquote>
+<div><div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f&quot;</span><span class="p">),</span>
+<span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="o">:</span><span class="mi">1</span><span class="w"> </span><span class="k">thru</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">do</span>
+<span class="p">(</span><span class="nv">x</span><span class="o">:</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="nv">i</span><span class="p">),</span>
+<span class="nv">L</span><span class="o">:</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="nf">print</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="nv">L</span><span class="p">))</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nv">x</span><span class="w"> </span><span class="nv">f</span>
+<span class="o">-</span><span class="mf">0.1</span><span class="w"> </span><span class="o">-</span><span class="mf">10.0</span>
+<span class="o">-</span><span class="mf">0.01</span><span class="w"> </span><span class="o">-</span><span class="mf">100.0</span>
+<span class="o">-</span><span class="mf">0.001</span><span class="w"> </span><span class="o">-</span><span class="mf">1000.0</span>
+<span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="mf">10000.0</span>
+<span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">5</span><span class="w"> </span><span class="o">-</span><span class="mf">100000.0</span>
+<span class="o">-</span><span class="mf">9.999999999999999</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="mf">1000000.0</span>
+<span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="mf">10000000.0</span>
+<span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">8</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span>
+<span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">9</span><span class="w"> </span><span class="o">-</span><span class="mf">9.999999999999999</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">8</span>
+<span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^-</span><span class="mi">10</span><span class="w"> </span><span class="o">-</span><span class="mf">1.0</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id6">
+<h4>Graphical Approach<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Select <code class="docutils literal notranslate"><span class="pre">Plot</span> <span class="pre">&gt;</span> <span class="pre">Plot</span> <span class="pre">2D</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Expression: <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code> from <span class="math notranslate nohighlight">\(-5\)</span> to 5.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">y</span></code> from <span class="math notranslate nohighlight">\(-5\)</span> to 5.</p></li>
+<li><p>Leave the rest of the options as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<figure class="align-default" id="id30">
+<img alt="y = 1/x" src="../_images/Inf006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we did not specify a <code class="docutils literal notranslate"><span class="pre">y</span></code> range Maxima would select on for us, giving us the following image.  Although it is still good enough to make our conclusions specifying the <code class="docutils literal notranslate"><span class="pre">y</span></code> range gives a much better plot.</p>
+<figure class="align-default" id="id31">
+<img alt="y = 1/x" src="../_images/Inf005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="id7">
+<h4>Algebraic Approach<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Find</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Expression: <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>Point: 0.</p></li>
+<li><p>Direction: left</p></li>
+<li><p>Leave the rest of the options as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The result will be <span class="math notranslate nohighlight">\(-\infty\)</span>.</p></li>
+<li><dl class="simple">
+<dt>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Find</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Expression: <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>Point: 0.</p></li>
+<li><p>Direction: right</p></li>
+<li><p>Leave the rest of the options as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The result will be <span class="math notranslate nohighlight">\(\infty\)</span>.</p></li>
+</ol>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x} = -\infty\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x} \quad DNE\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+</section>
+</section>
+<section id="example-f-x-frac-1-x-2">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span><a class="headerlink" href="#example-f-x-frac-1-x-2" title="Link to this heading">#</a></h2>
+<p>For this example we are interested in what is happening close to <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<section id="id8">
+<h3>Numerical Approach<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{1}{x^2} \\ \hline
+1 &amp; 1 \\
+0.1 &amp; 100.0 \\
+0.01 &amp; 10000.0 \\
+0.001 &amp; 1000000.0 \\
+0.0001 &amp; 100000000.0 \\
+1.0 \cdot 10^{-5} &amp; 10000000000.0 \\
+1.0 \cdot 10^{-6} &amp; 1000000000000.0 \\
+1.0 \cdot 10^{-7} &amp; 100000000000000.0 \\
+1.0 \cdot 10^{-8} &amp; 1.0 \cdot 10^{16} \\
+1.0 \cdot 10^{-9} &amp; 1.0 \cdot 10^{18} \\
+\end{array}\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{1}{x^2} \\ \hline
+-1 &amp; 1 \\
+-0.1 &amp; 100.0 \\
+-0.01 &amp; 10000.0 \\
+-0.001 &amp; 1000000.0 \\
+-0.0001 &amp; 100000000.0 \\
+-1.0 \cdot 10^{-5} &amp; 10000000000.0 \\
+-1.0 \cdot 10^{-6} &amp; 1000000000000.0 \\
+-1.0 \cdot 10^{-7} &amp; 100000000000000.0 \\
+-1.0 \cdot 10^{-8} &amp; 1.0 \cdot 10^{16} \\
+-1.0 \cdot 10^{-9} &amp; 1.0 \cdot 10^{18} \\
+\end{array}\end{split}\]</div>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x^2} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x^2} = \infty\]</div>
+<p>and hence we can write,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x^2} = \infty\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id9">
+<h3>Graphical Approach<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Plotting the function gives us the following image,</p>
+<figure class="align-default" id="id32">
+<img alt="y = 1/x^2" src="../_images/Inf007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span></span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the image it appears that as the <em>x</em> values get closer to 0 from either side the corresponding <em>y</em> values are increasing without bound.  This would lead us to the same conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x^2} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x^2} = \infty\]</div>
+<p>and hence we can write,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x^2} = \infty\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id10">
+<h3>GeoGebra<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x^2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function as <span class="math notranslate nohighlight">\(x \to 0^-\)</span> and <span class="math notranslate nohighlight">\(x \to 0^+\)</span>.  The spreadsheet should produce values close to the tables above, the image should look like the following, and the above and below limit commands should both produce <span class="math notranslate nohighlight">\(\infty\)</span>.  In fact, we can ask GeoGebra for the two-sided limit of this function as <span class="math notranslate nohighlight">\(x \to 0\)</span>, it too will result in <span class="math notranslate nohighlight">\(\infty\)</span>.</p></li>
+</ol>
+<figure class="align-default" id="id33">
+<img alt="y = 1/x^2" src="../_images/Inf007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span></span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x^2} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x^2} = \infty\]</div>
+<p>and hence we can write,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x^2} = \infty\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id11">
+<h3>CLAE<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x^2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function as <span class="math notranslate nohighlight">\(x \to 0^-\)</span> and <span class="math notranslate nohighlight">\(x \to 0^+\)</span>.  The spreadsheet should produce values close to the tables above, the image should look like the following, and the left and right limit commands should both produce <span class="math notranslate nohighlight">\(\infty\)</span>.  In fact, we can ask CLAE for the two-sided limit of this function as <span class="math notranslate nohighlight">\(x \to 0\)</span>, it too will result in <span class="math notranslate nohighlight">\(\infty\)</span>.</p></li>
+</ol>
+<figure class="align-default" id="id34">
+<img alt="y = 1/x^2" src="../_images/Inf008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span></span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x^2} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x^2} = \infty\]</div>
+<p>and hence we can write,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x^2} = \infty\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id12">
+<h3>Maxima<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x^2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function as <span class="math notranslate nohighlight">\(x \to 0^-\)</span> and <span class="math notranslate nohighlight">\(x \to 0^+\)</span>.  The spreadsheet should produce values close to the tables above, the image should look like the following, and the left and right limit commands should both produce <span class="math notranslate nohighlight">\(\infty\)</span>.  In fact, we can ask Maxima for the two-sided limit of this function as <span class="math notranslate nohighlight">\(x \to 0\)</span>, it too will result in <span class="math notranslate nohighlight">\(\infty\)</span>.</p></li>
+</ol>
+<figure class="align-default" id="id35">
+<img alt="y = 1/x^2" src="../_images/Inf009.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span></span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{1}{x^2} = \infty  \quad {\rm and} \quad  \lim_{x \to 0^-} \frac{1}{x^2} = \infty\]</div>
+<p>and hence we can write,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{1}{x^2} = \infty\]</div>
+<p>So there is a vertical asymptote to <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+</section>
+<section id="example-f-x-frac-1-x-2-2-x-3">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} + 2 x - 3}\)</span><a class="headerlink" href="#example-f-x-frac-1-x-2-2-x-3" title="Link to this heading">#</a></h2>
+<p>For this example we will simply look at a graphical approach.  If we plot this function we get,</p>
+<figure class="align-default" id="id36">
+<img alt="y = 1/(x^2+2x-3)" src="../_images/Inf010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} + 2 x - 3}\)</span></span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the image it appears that we have two vertical asymptotes, one at <span class="math notranslate nohighlight">\(x = -3\)</span> and one at <span class="math notranslate nohighlight">\(x = 1\)</span>. Also from the graph we can conclude the following,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to -3^+} \frac{1}{x^{2} + 2 x - 3} = -\infty  \quad {\rm and} \quad  \lim_{x \to -3^-} \frac{1}{x^{2} + 2 x - 3} = \infty\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 1^+} \frac{1}{x^{2} + 2 x - 3} = \infty  \quad {\rm and} \quad  \lim_{x \to 1^-} \frac{1}{x^{2} + 2 x - 3} = -\infty\]</div>
+<section id="id13">
+<h3>GeoGebra<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<p>To get this image in GeoGebra the syntax for the function is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(x^2+2 x-3)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id37">
+<img alt="y = 1/(x^2+2x-3)" src="../_images/Inf010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} + 2 x - 3}\)</span></span><a class="headerlink" href="#id37" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id14">
+<h3>CLAE<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>To get this image in CLAE the syntax for the function is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(x^2 + 2*x - 3)</span>
+</pre></div>
+</div>
+<p>Note that we do not need the <code class="docutils literal notranslate"><span class="pre">f(x):=</span></code> definition since this was just to make the spreadsheet calculations easier.</p>
+<figure class="align-default" id="id38">
+<img alt="y = 1/(x^2+2x-3)" src="../_images/Inf011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} + 2 x - 3}\)</span></span><a class="headerlink" href="#id38" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we select the function in the CAS and then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Factor</span></code> the result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\left(x - 1\right) \left(x + 3\right)}\]</div>
+<p>Since from this it is clear that the denominator is 0 at <span class="math notranslate nohighlight">\(x = -3\)</span> and <span class="math notranslate nohighlight">\(x = 1\)</span> we know something interesting is happening to the function at these points.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that in this image the software graphs vertical lines at the two asymptotes.  The asymptotes are not part of the graph only a property of the graph and hence function.</p>
+</div>
+</section>
+<section id="id15">
+<h3>Maxima<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>To get this image in Maxima the syntax for the function is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/(x^2 + 2*x - 3)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id39">
+<img alt="y = 1/(x^2+2x-3)" src="../_images/Inf012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} + 2 x - 3}\)</span></span><a class="headerlink" href="#id39" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can factor this expression in Maxima as well using the command <code class="docutils literal notranslate"><span class="pre">factor(f(x))</span></code>, which produces,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\left(x - 1\right) \left(x + 3\right)}\]</div>
+<p>Since from this it is clear that the denominator is 0 at <span class="math notranslate nohighlight">\(x = -3\)</span> and <span class="math notranslate nohighlight">\(x = 1\)</span> we know something interesting is happening to the function at these points.</p>
+</section>
+</section>
+<section id="example-einsteins-equation">
+<h2>Example: Einstein’s Equation<a class="headerlink" href="#example-einsteins-equation" title="Link to this heading">#</a></h2>
+<p>Einstein’s equation for the mass of a moving object is</p>
+<div class="math notranslate nohighlight">
+\[m = \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(m_0\)</span> is the object’s mass at rest, <span class="math notranslate nohighlight">\(v\)</span> is its speed, and <span class="math notranslate nohighlight">\(c\)</span> is the speed of light.  From the equation it is clear that as <em>v</em> increases the denominator decreases and hence (if <span class="math notranslate nohighlight">\(m_0 &gt; 0\)</span>) the mass of the object increases.</p>
+<p>We will look at the situation of <span class="math notranslate nohighlight">\(v \to c^-\)</span> graphically and algebraically.</p>
+<section id="id16">
+<h3>GeoGebra<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<p>In GeoGebra the independent variable needs to be <em>x</em> and not <em>v</em> so we will use the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">m0/sqrt(1-x^2/c^2)</span>
+</pre></div>
+</div>
+<p>When you paste this into GeoGebra, it automatically creates sliders for m0 and c, with default values of 1.  Although <em>c</em> is not 1 it is a constant so for our purposes 1 is fine.  The image is,</p>
+<figure class="align-default" id="id40">
+<img alt="Einstein’s Equation" src="../_images/Inf013.png" />
+<figcaption>
+<p><span class="caption-text">Einstein’s Equation</span><a class="headerlink" href="#id40" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From this we can see that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{v \to c^-} m = \lim_{v \to c^-} \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}} = \infty\]</div>
+</section>
+<section id="id17">
+<h3>CLAE<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>In CLAE the syntax for Einstein’s equation is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">m0/sqrt(1-v^2/c^2)</span>
+</pre></div>
+</div>
+<p>If we wish to graph this we first need to change the variable <em>v</em> to <em>x</em>.  This can be done with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, change the Variable to <code class="docutils literal notranslate"><span class="pre">v</span></code> and the Expression to <code class="docutils literal notranslate"><span class="pre">x</span></code> and hit OK.  This will result in,</p>
+<div class="math notranslate nohighlight">
+\[\frac{m_{0}}{\sqrt{1 - \frac{x^{2}}{c^{2}}}}\]</div>
+<p>If we plot this CLAE will automatically create sliders for m0 and c, with default values of 1.  Although <em>c</em> is not 1 it is a constant so for our purposes 1 is fine.  The image is,</p>
+<figure class="align-default" id="id41">
+<img alt="Einstein’s Equation" src="../_images/Inf014.png" />
+<figcaption>
+<p><span class="caption-text">Einstein’s Equation</span><a class="headerlink" href="#id41" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From this we can see that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{v \to c^-} m = \lim_{v \to c^-} \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}} = \infty\]</div>
+<p>We can also attack this algebraically in CLAE.  Select the first input</p>
+<div class="math notranslate nohighlight">
+\[\frac{m_{0}}{\sqrt{1 - \frac{v^{2}}{c^{2}}}}\]</div>
+<p>Then <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, use the variable <em>v</em>, limit point <em>c</em>, and a direction of Left. The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\infty \operatorname{sign}{\left(\frac{m_{0}}{\sqrt{\frac{1}{c}}} \right)}\]</div>
+<p>The sign function is simply a function that is 1 if the argument is positive, <span class="math notranslate nohighlight">\(-1\)</span> if the argument is negative, and 0 if the argument is 0. So the result depends on the values of <span class="math notranslate nohighlight">\(m_0\)</span> and <span class="math notranslate nohighlight">\(c\)</span>.  The computer algebra system in CLAE does not make any assumptions about the variables unless we tell it to.  Since we know that both <span class="math notranslate nohighlight">\(m_0\)</span> and <span class="math notranslate nohighlight">\(c\)</span> are positive it is clear that this sign function is 1 and the result is <span class="math notranslate nohighlight">\(\infty\)</span>.  We could have told CLAE this in the limit calculation by doing the following.</p>
+<p>Select the first input</p>
+<div class="math notranslate nohighlight">
+\[\frac{m_{0}}{\sqrt{1 - \frac{v^{2}}{c^{2}}}}\]</div>
+<p>Then <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, use the variable <em>v</em>, limit point <em>c</em>, and a direction of Left. Before we click OK, click on the button at the bottom, <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Variable</span> <span class="pre">Properties</span></code>.  Another dialog box will appear with a list of variables on the left and a bunch of selections on the right.  Click <em>c</em> and then select Positive, then select m0 and again select Positive.  Click OK and the dialog will close taking you back to the first one and the types for <em>c</em> and <em>m0</em> have changed.  Now click OK and the CAS will display a result of <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+</section>
+<section id="id18">
+<h3>Maxima<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<p>In Maxima the syntax for Einstein’s equation is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(v):=m0/sqrt(1 - v^2/c^2)</span>
+</pre></div>
+</div>
+<p>Since <em>m0</em> and <em>c</em> are constants and Maxima does not create sliders for constants in graphs, like GeoGebra and CLAE, we cannot graph this unless we substitute values for <em>m0</em> and <em>c</em>.  So if we let <span class="math notranslate nohighlight">\(m_0 = 1\)</span> and <span class="math notranslate nohighlight">\(c = 4\)</span> we get,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(v):=1/sqrt(1 - v^2/4^2)</span>
+</pre></div>
+</div>
+<p>which we can graph.  When you do make sure that the independent variable is <em>v</em>, let <em>v</em> go from 0 to 7 and <em>y</em> from 0 to 10.</p>
+<figure class="align-default" id="id42">
+<img alt="Einstein’s Equation" src="../_images/Inf015.png" />
+<figcaption>
+<p><span class="caption-text">Einstein’s Equation</span><a class="headerlink" href="#id42" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Showing the infinite limit.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{v \to c^-} m = \lim_{v \to c^-} \frac{m_0}{\sqrt{1-\frac{v^2}{c^2}}} = \infty\]</div>
+</section>
+</section>
+<section id="example-f-x-ln-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span><a class="headerlink" href="#example-f-x-ln-x" title="Link to this heading">#</a></h2>
+<p>Thus far, all the vertical asymptotes were when the denominator of a function was 0.  While this is frequent we can asymptotes to functions that are not fractions ot rational expressions.  Furthermore we can have rational expressions where the denominator is 0 and not have a vertical asymptote there.  For the first situation consider the function, <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span>.  Again, we will concentrate on this graphically.</p>
+<section id="id19">
+<h3>GeoGebra<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p>To graph this in GeoGebra we use the syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ln(x)</span>
+</pre></div>
+</div>
+<p>which gives the image,</p>
+<figure class="align-default" id="id43">
+<img alt="y = ln(x)" src="../_images/Inf016.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span></span><a class="headerlink" href="#id43" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \ln(x) = -\infty\]</div>
+<p>and hence there is a vertical asymptote at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id20">
+<h3>CLAE<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>To graph this in CLAE we can use the syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ln(x)</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">log(x)</span>
+</pre></div>
+</div>
+<p>In CLAE and several other computer algebra systems <code class="docutils literal notranslate"><span class="pre">log(x)</span></code> represents <code class="docutils literal notranslate"><span class="pre">ln(x)</span></code>.  Also note that the CAS workspace displays <code class="docutils literal notranslate"><span class="pre">log(x)</span></code>.  We get the image,</p>
+<figure class="align-default" id="id44">
+<img alt="y = ln(x)" src="../_images/Inf017.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span></span><a class="headerlink" href="#id44" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \ln(x) = -\infty\]</div>
+<p>and hence there is a vertical asymptote at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+<section id="id21">
+<h3>Maxima<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>To graph this in CLAE we can use the syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">log(x)</span>
+</pre></div>
+</div>
+<p>In Maxima and several other computer algebra systems <code class="docutils literal notranslate"><span class="pre">log(x)</span></code> represents <code class="docutils literal notranslate"><span class="pre">ln(x)</span></code>.  We get the image,</p>
+<figure class="align-default" id="id45">
+<img alt="y = ln(x)" src="../_images/Inf018.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span></span><a class="headerlink" href="#id45" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \ln(x) = -\infty\]</div>
+<p>and hence there is a vertical asymptote at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+</section>
+</section>
+<section id="example-f-x-frac-x-2-2-x-1-x-2-2-x-3">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span><a class="headerlink" href="#example-f-x-frac-x-2-2-x-1-x-2-2-x-3" title="Link to this heading">#</a></h2>
+<p>We can have rational expressions where the denominator is 0 and not have a vertical asymptote there.  Again, we will concentrate on this graphically.  We will examine the function,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\]</div>
+<section id="id22">
+<h3>GeoGebra<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<p>To graph this in GeoGebra we use the syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^2 + 2 x + 1)</span><span class="go">/(x^2 - 2 x - 3)</span>
+</pre></div>
+</div>
+<p>which gives the image,</p>
+<figure class="align-default" id="id46">
+<img alt="(x^2+2x+1)/(x^2-2x-3)" src="../_images/Inf019.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span></span><a class="headerlink" href="#id46" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^+} \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3} = \infty  \quad {\rm and} \quad \lim_{x \to 3^-} \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3} = -\infty\]</div>
+<p>and hence there is a vertical asymptote at <span class="math notranslate nohighlight">\(x = 3\)</span>.  It also appears that there are no other vertical asymptotes, and there are not.  It is easy to see that the denominator <span class="math notranslate nohighlight">\(x^{2} - 2 x - 3 = \left(x - 3\right) \left(x + 1\right)\)</span> and hence is zero at <span class="math notranslate nohighlight">\(x = 3\)</span> and <span class="math notranslate nohighlight">\(x = -1\)</span> but there is no vertical asymptote at <span class="math notranslate nohighlight">\(x = -1\)</span>.</p>
+<p>Although we can factor this denominator in our heads, if we could not here is how you can use GeoGebra to do so.  Select a new cell, run the command <code class="docutils literal notranslate"><span class="pre">Denominator(f)</span></code>, this will extract the denominator and plot it, you should see the following.  GeoGebra will also give the denominator a function name, say it was g(x).  Now select a new cell and run the command <code class="docutils literal notranslate"><span class="pre">Factor(g)</span></code> and it will be factored into <span class="math notranslate nohighlight">\(\left(x - 3\right) \left(x + 1\right)\)</span>.</p>
+<figure class="align-default" id="id47">
+<img alt="(x^2+2x+1)/(x^2-2x-3) and x^2-2x-3" src="../_images/Inf020.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span> and <span class="math notranslate nohighlight">\(y = x^{2} - 2 x - 3\)</span></span><a class="headerlink" href="#id47" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The reason that <span class="math notranslate nohighlight">\(x = -1\)</span> is not an asymptote is because there is no infinite limit at <span class="math notranslate nohighlight">\(x = -1\)</span>, which is caused by the numerator also having <span class="math notranslate nohighlight">\(x = -1\)</span> as a root.  If we select a new cell and run <code class="docutils literal notranslate"><span class="pre">Simplify(f)</span></code> we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x + 1}{x - 3}\]</div>
+<p>which does not have a root of <span class="math notranslate nohighlight">\(x = -1\)</span> in the denominator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The original function</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\]</div>
+<p>and its simplification</p>
+<div class="math notranslate nohighlight">
+\[g(x) = \frac{x + 1}{x - 3}\]</div>
+<p>are not equal.  For two functions to be equal they must be equal at all values of the variable.  These two are except at <span class="math notranslate nohighlight">\(x = -1\)</span> since <span class="math notranslate nohighlight">\(g(-1) = 0\)</span> and  <span class="math notranslate nohighlight">\(f(-1)\)</span> is undefined.  In reality there is a hole in the graph of <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x = -1\)</span>, like,</p>
+<figure class="align-default" id="id48">
+<img alt="(x^2+2x+1)/(x^2-2x-3)" src="../_images/Inf021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span></span><a class="headerlink" href="#id48" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="id23">
+<h3>CLAE<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<p>To graph this in CLAE we use the syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^2 + 2*x + 1)</span><span class="go">/(x^2 - 2*x - 3)</span>
+</pre></div>
+</div>
+<p>which gives the image,</p>
+<figure class="align-default" id="id49">
+<img alt="(x^2+2x+1)/(x^2-2x-3)" src="../_images/Inf022.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span></span><a class="headerlink" href="#id49" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^+} \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3} = \infty  \quad {\rm and} \quad \lim_{x \to 3^-} \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3} = -\infty\]</div>
+<p>and hence there is a vertical asymptote at <span class="math notranslate nohighlight">\(x = 3\)</span>.  It also appears that there are no other vertical asymptotes, and there are not.  It is easy to see that the denominator <span class="math notranslate nohighlight">\(x^{2} - 2 x - 3 = \left(x - 3\right) \left(x + 1\right)\)</span> and hence is zero at <span class="math notranslate nohighlight">\(x = 3\)</span> and <span class="math notranslate nohighlight">\(x = -1\)</span> but there is no vertical asymptote at <span class="math notranslate nohighlight">\(x = -1\)</span>.</p>
+<p>Although we can factor this denominator in our heads, if we could not here is how you can use CLAE to do so.  Select the expression and then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Rational</span> <span class="pre">Expressions</span> <span class="pre">&gt;</span> <span class="pre">Denominator</span></code>, this will extract the denominator, now with the denominator  selected select, <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Factor</span></code>, the result will be <span class="math notranslate nohighlight">\(\left(x - 3\right) \left(x + 1\right)\)</span>.</p>
+<p>The reason that <span class="math notranslate nohighlight">\(x = -1\)</span> is not an asymptote is because there is no infinite limit at <span class="math notranslate nohighlight">\(x = -1\)</span>, which is caused by the numerator also having <span class="math notranslate nohighlight">\(x = -1\)</span> as a root.  If we select the original expression and then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>, we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x + 1}{x - 3}\]</div>
+<p>which does not have a root of <span class="math notranslate nohighlight">\(x = -1\)</span> in the denominator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The original function</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\]</div>
+<p>and its simplification</p>
+<div class="math notranslate nohighlight">
+\[g(x) = \frac{x + 1}{x - 3}\]</div>
+<p>are not equal.  For two functions to be equal they must be equal at all values of the variable.  These two are except at <span class="math notranslate nohighlight">\(x = -1\)</span> since <span class="math notranslate nohighlight">\(g(-1) = 0\)</span> and  <span class="math notranslate nohighlight">\(f(-1)\)</span> is undefined.  In reality there is a hole in the graph of <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x = -1\)</span>, like,</p>
+<figure class="align-default" id="id50">
+<img alt="(x^2+2x+1)/(x^2-2x-3)" src="../_images/Inf021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span></span><a class="headerlink" href="#id50" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="id24">
+<h3>Maxima<a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<p>To graph this in Maxima we use the syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=(x^2 + 2*x + 1)/(x^2 - 2*x - 3)</span>
+</pre></div>
+</div>
+<p>which gives the image,</p>
+<figure class="align-default" id="id51">
+<img alt="(x^2+2x+1)/(x^2-2x-3)" src="../_images/Inf023.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span></span><a class="headerlink" href="#id51" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^+} \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3} = \infty  \quad {\rm and} \quad \lim_{x \to 3^-} \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3} = -\infty\]</div>
+<p>and hence there is a vertical asymptote at <span class="math notranslate nohighlight">\(x = 3\)</span>.  It also appears that there are no other vertical asymptotes, and there are not.  It is easy to see that the denominator <span class="math notranslate nohighlight">\(x^{2} - 2 x - 3 = \left(x - 3\right) \left(x + 1\right)\)</span> and hence is zero at <span class="math notranslate nohighlight">\(x = 3\)</span> and <span class="math notranslate nohighlight">\(x = -1\)</span> but there is no vertical asymptote at <span class="math notranslate nohighlight">\(x = -1\)</span>.</p>
+<p>Although we can factor this denominator in our heads, if we could not here is how you can use Maxima to do so.  Run the command <code class="docutils literal notranslate"><span class="pre">factor(denom(f(x)))</span></code> and the result will be <span class="math notranslate nohighlight">\(\left(x - 3\right) \left(x + 1\right)\)</span>.</p>
+<p>The reason that <span class="math notranslate nohighlight">\(x = -1\)</span> is not an asymptote is because there is no infinite limit at <span class="math notranslate nohighlight">\(x = -1\)</span>, which is caused by the numerator also having <span class="math notranslate nohighlight">\(x = -1\)</span> as a root.  If we select the original expression and then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>, we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x + 1}{x - 3}\]</div>
+<p>which does not have a root of <span class="math notranslate nohighlight">\(x = -1\)</span> in the denominator.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The original function</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\]</div>
+<p>and its simplification</p>
+<div class="math notranslate nohighlight">
+\[g(x) = \frac{x + 1}{x - 3}\]</div>
+<p>are not equal.  For two functions to be equal they must be equal at all values of the variable.  These two are except at <span class="math notranslate nohighlight">\(x = -1\)</span> since <span class="math notranslate nohighlight">\(g(-1) = 0\)</span> and  <span class="math notranslate nohighlight">\(f(-1)\)</span> is undefined.  In reality there is a hole in the graph of <span class="math notranslate nohighlight">\(f(x)\)</span> at <span class="math notranslate nohighlight">\(x = -1\)</span>, like,</p>
+<figure class="align-default" id="id52">
+<img alt="(x^2+2x+1)/(x^2-2x-3)" src="../_images/Inf021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span></span><a class="headerlink" href="#id52" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="limitonesidedatapoint.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">One-Sided Limits</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="limitatinfinity.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Limits at Infinity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-1-x">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-approach">Numeric Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-approach">Graphical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approach">Numerical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Graphical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-approach">Algebraic Approach</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Numerical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Graphical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Algebraic Approach</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Numerical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Graphical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Algebraic Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-1-x-2">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Numerical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Graphical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-1-x-2-2-x-3">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} + 2 x - 3}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-einsteins-equation">Example: Einstein’s Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-ln-x">Example: <span class="math notranslate nohighlight">\(f(x) = \ln(x)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-x-2-2-x-1-x-2-2-x-3">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{2} + 2 x + 1}{x^{2} - 2 x - 3}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

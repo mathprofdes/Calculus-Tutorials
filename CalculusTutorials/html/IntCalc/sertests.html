@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Convergence and Divergence Tests for Series &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/sertests';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Power Series" href="powerseries.html" />
+    <link rel="prev" title="Series" href="series.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Convergence and Divergence Tests for Series</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="convergence-and-divergence-tests-for-series">
+<h1><span class="target" id="index-0"></span>Convergence and Divergence Tests for Series<a class="headerlink" href="#convergence-and-divergence-tests-for-series" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Most Calculus textbooks will devote several sections to tests of convergence and divergence.  Some computer algebra systems have series testing built into them which use these techniques as well as some more sophisticated techniques.  While most of the time these techniques are for by-hand calculations they do result in some useful results in both theory and application.  We will not go through the details in the derivations of these tests, your textbook should have plenty of those details.  In this section all of our examples will be using the CLAE software package.</p>
+</section>
+<section id="the-divergence-test">
+<h2><span class="target" id="index-1"></span>The Divergence Test<a class="headerlink" href="#the-divergence-test" title="Link to this heading">#</a></h2>
+<div class="admonition-theorem-convergent-series-math-n-th-term admonition">
+<p class="admonition-title">Theorem: Convergent Series <span class="math notranslate nohighlight">\(n^{th}\)</span> Term</p>
+<p>If <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> converges then <span class="math notranslate nohighlight">\(\displaystyle \lim_{n = \infty} a_n = 0\)</span>.</p>
+</div>
+<p>Note that the converse of this statement is not true, it is possible for <span class="math notranslate nohighlight">\(\displaystyle \lim_{n = \infty} a_n = 0\)</span> and have <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> diverge, just consider the harmonic series from the last section.  On the other hand, the contrapositive of this statement is true,</p>
+<div class="admonition-theorem-the-divergence-test admonition">
+<p class="admonition-title">Theorem: The Divergence Test</p>
+<p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n = \infty} a_n \neq 0\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> diverges.</p>
+</div>
+<section id="example-sum-n-1-infty-frac-left-n-1-right-left-2-n-1-right-left-n-1-right-2">
+<h3>Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{\left(n - 1\right) \left(2 n + 1\right)}{\left(n + 1\right)^{2}}\)</span><a class="headerlink" href="#example-sum-n-1-infty-frac-left-n-1-right-left-2-n-1-right-left-n-1-right-2" title="Link to this heading">#</a></h3>
+<p>We can tell by inspection that this series will diverge since the limit of the nth term will be 2.  Using CLAE, input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(n - 1)</span><span class="go">*(2*n + 1)/(n + 1)^2</span>
+</pre></div>
+</div>
+<p>Then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Test</span> <span class="pre">Sum</span> <span class="pre">Convergence</span></code>, the variable is <em>n</em>, beginning index is 1 and the ending index is <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is False.  With CLAE, which uses SymPy under the hood, the result of this option is True if the series converges, False if it diverges, and an error if it is not able to determine convergence or divergence.  Hence we know that this series diverges.</p>
+</section>
+</section>
+<section id="the-integral-test">
+<h2><span class="target" id="index-2"></span>The Integral Test<a class="headerlink" href="#the-integral-test" title="Link to this heading">#</a></h2>
+<p>The integral test is derived by comparing the series sum represented as rectangle areas (a Riemann Sum) and the area under the curve of <span class="math notranslate nohighlight">\(f(x)\)</span> where <span class="math notranslate nohighlight">\(f(n) = a_n\)</span>.  It has a number of interesting results including a method for establishing error bounds on a series approximation.</p>
+<div class="admonition-theorem-the-integral-test admonition">
+<p class="admonition-title">Theorem: The Integral Test</p>
+<p>Given a series <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> of positive terms and a function <span class="math notranslate nohighlight">\(f(x)\)</span> with <span class="math notranslate nohighlight">\(f(n) = a_n\)</span> for all <span class="math notranslate nohighlight">\(n \geq N\)</span>. If <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous and decreasing (for <span class="math notranslate nohighlight">\(x \geq N\)</span>), we have that both <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \int_N^\infty f(x) \; dx\)</span> either both converge or both diverge.</p>
+</div>
+<section id="example-sum-n-1-infty-frac-1-n-3">
+<h3>Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{1}{n^3}\)</span><a class="headerlink" href="#example-sum-n-1-infty-frac-1-n-3" title="Link to this heading">#</a></h3>
+<p>Input the nth term expression into the CAS,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/n^3</span>
+</pre></div>
+</div>
+<p>Then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Test</span> <span class="pre">Sum</span> <span class="pre">Convergence</span></code>, variable <em>n</em>, beginning index 1, ending index <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is True indicating that the series converges.  If we tried to find the actual sum and selected <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Sum</span></code>, variable <em>n</em>, beginning index 1, ending index <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is <span class="math notranslate nohighlight">\(\zeta\left(3\right)\)</span>, which is the zeta function and beyond our discussion focus here, its approximation is 1.2020569031595942854.</p>
+<p>A small generalization og this example is that <em>of a *p-series*</em></p>
+<div class="admonition-definition-p-series admonition">
+<p class="admonition-title">Definition: P-Series</p>
+<p>For any real number <em>p</em>,the series</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty \frac{1}{n^p}\]</div>
+<p>is called a <strong>p-series</strong>.  From the integral test is is easy to deduce that a p-series converges if <span class="math notranslate nohighlight">\(p &gt; 1\)</span> and diverges if <span class="math notranslate nohighlight">\(p \leq 1.\)</span></p>
+</div>
+</section>
+<section id="example-there-is-a-fine-line-between-convergence-and-divergence">
+<h3>Example: There is a Fine Line Between Convergence and Divergence<a class="headerlink" href="#example-there-is-a-fine-line-between-convergence-and-divergence" title="Link to this heading">#</a></h3>
+<p>Looking at the p-series above we know that <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n}\)</span> diverges whereas <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^{1.1}}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^{1.001}}\)</span>, and even <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^{1.00000000000000000001}}\)</span> converges.</p>
+<p>To get a feel of how close these can be input <code class="docutils literal notranslate"><span class="pre">1/x</span></code>, <code class="docutils literal notranslate"><span class="pre">1/x^1.1</span></code> and <code class="docutils literal notranslate"><span class="pre">1/x^1.01</span></code> into the CLAE CAS.  If you test the sum convergence on the last two you will get True.  Graph all three of these, in each case first change the type to Sequence/Series, then go into the properties of each and change Sequence to Series.  Zooming out a little gives you the following picture.</p>
+<figure class="align-default" id="id1">
+<img alt="Plot of several series to show the closeness of convergent and divergent series." src="../_images/series001.png" />
+<figcaption>
+<p><span class="caption-text">Plot of <span class="math notranslate nohighlight">\(1/x, 1/x^{1.1},\)</span> and <span class="math notranslate nohighlight">\(1/x^{1.01}.\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As you can see the series partial sums between the convergent <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^{1.01}}\)</span> and the divergent <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n}\)</span> are extremely close.  If we go further to  the convergent series <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^{1.001}}\)</span> we see no difference between the graph of this and that of the harmonic series in the first 100 partial sums.</p>
+<figure class="align-default" id="id2">
+<img alt="Plot of several series to show the closeness of convergent and divergent series." src="../_images/series002.png" />
+<figcaption>
+<p><span class="caption-text">Plot of <span class="math notranslate nohighlight">\(1/x, 1/x^{1.1}, 1/x^{1.01},\)</span> and <span class="math notranslate nohighlight">\(1/x^{1.001}.\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another very nice consequence of the integral test is that if the integral test can be applied to a function then we can place bounds on the error of the partial sum estimations of the series.  This comes in handy when we cannot find the exact sum of the series.</p>
+<div class="admonition-theorem-remainder-estimate-from-the-integral-test admonition">
+<p class="admonition-title">Theorem: Remainder Estimate from the Integral Test</p>
+<p>Given a series <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> of positive terms and a function <span class="math notranslate nohighlight">\(f(x)\)</span> with <span class="math notranslate nohighlight">\(f(n) = a_n\)</span> for all <span class="math notranslate nohighlight">\(n \geq N\)</span>. If <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous and decreasing (for <span class="math notranslate nohighlight">\(x \geq N\)</span>), and we let <span class="math notranslate nohighlight">\(s_n = \displaystyle \sum_{k = 1}^n a_k\)</span> be the nth partial sum, then the remainder estimate (that is the error in the <span class="math notranslate nohighlight">\(s_n\)</span> approximation) of the sum is,</p>
+<div class="math notranslate nohighlight">
+\[\int_{n+1}^\infty f(x) \; dx &lt; R_n &lt; \int_n^\infty f(x) \; dx\]</div>
+<p>Furthermore since  <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n = s_n + R_n\)</span> we have,</p>
+<div class="math notranslate nohighlight">
+\[s_n+ \int_{n+1}^\infty f(x) \; dx &lt; \sum_{n = 1}^\infty a_n &lt; s_n+ \int_n^\infty f(x) \; dx\]</div>
+</div>
+</section>
+<section id="example-bounds-for-sum-n-1-infty-frac-1-n-3">
+<h3>Example: Bounds for <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{1}{n^3}\)</span><a class="headerlink" href="#example-bounds-for-sum-n-1-infty-frac-1-n-3" title="Link to this heading">#</a></h3>
+<p>As we saw in a previous example we cannot get an exact value to the series <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{1}{n^3}\)</span>.  We will use the integral test bounds to estimate the error in using the first 10 terms of this series as an estimate.</p>
+<p>Input the expression into CLAE,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/n^3</span>
+</pre></div>
+</div>
+<p>Find the estimate <span class="math notranslate nohighlight">\(s_{10}\)</span> with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span> <span class="pre">Sum</span></code>, variable, <em>n</em>, beginning index of 1 and ending index of 10, the result is 1.197531985674193.  Now select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>n</em>, lower bound of 10, and upper bound of <code class="docutils literal notranslate"><span class="pre">oo</span></code>, the result is 1/200.  Do the same with a lower bound of 11 to get 1/242.  So we know the error is in the range,</p>
+<div class="math notranslate nohighlight">
+\[0.0041322314049586776859 &lt; R_{10} &lt; 1/200 = 0.005\]</div>
+<p>So the sum is in the range,</p>
+<div class="math notranslate nohighlight">
+\[1.2016642170791516779 &lt; \sum_{n = 1}^\infty \frac{1}{n^3} &lt; 1.202531985674193\]</div>
+</section>
+</section>
+<section id="comparison-tests">
+<h2><span class="target" id="index-3"></span>Comparison Tests<a class="headerlink" href="#comparison-tests" title="Link to this heading">#</a></h2>
+<p>A comparison test is just like it says, we will take a series we know and compare it to a series we do not know to determine the convergence or divergence of the unknown series.  There are two types of comparison tests, a direct comparison test and a limit comparison test.  Both of these take an unknown series and compare it to a known series, in both cases you need to select the known series.</p>
+<div class="admonition-theorem-direct-comparison-test admonition">
+<p class="admonition-title">Theorem: Direct Comparison Test</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(0 \leq a_n \leq b_n\)</span> for all <span class="math notranslate nohighlight">\(n \geq N\)</span> and if <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> converges so does <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty a_n.\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(0 \leq a_n \leq b_n\)</span> for all <span class="math notranslate nohighlight">\(n \geq N\)</span> and if <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> diverges so does <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty b_n.\)</span></p></li>
+</ul>
+</div>
+<div class="admonition-theorem-limit-comparison-test admonition">
+<p class="admonition-title">Theorem: Limit Comparison Test</p>
+<p>If <span class="math notranslate nohighlight">\(a_n, b_n \geq 0\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> then</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = L \neq 0\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> both converge or both diverge.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = 0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> converges then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> also converges.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = \infty\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> diverges then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty a_n\)</span> also diverges.</p></li>
+</ol>
+</div>
+<p>One thing to note about the limit comparison test is that there are cases where the test fails.  For example, if <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = 0\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> diverges then we can say nothing about <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty a_n\)</span>. Similarly, if <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = \infty\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty b_n\)</span> converges then we can say nothing about <span class="math notranslate nohighlight">\(\displaystyle \sum_{n=1}^\infty a_n.\)</span></p>
+<section id="example-sum-n-1-infty-frac-1-n-2-n-sin-left-n-right">
+<h3>Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{1}{n^{2} - n \sin{\left(n \right)}}\)</span><a class="headerlink" href="#example-sum-n-1-infty-frac-1-n-2-n-sin-left-n-right" title="Link to this heading">#</a></h3>
+<p>Input the expression into CLAE,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(n^2 - n*sin(n))</span>
+</pre></div>
+</div>
+<p>select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Test</span> <span class="pre">Sum</span> <span class="pre">Convergence</span></code>, variable <em>n</em>, beginning index is 1, and ending index is <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is True, so we know the series converges.  If we try to find the actual sum  we just get the sum back.  We will apply the comparison test and the limit comparison test to this sum.  We will start with the comparison test. Note that</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{n^{2} - n \sin{\left(n \right)}} = \frac{1}{n \left(n - \sin{\left(n \right)}\right)} \leq \frac{1}{n \left(n - 1 \right)} = \frac{1}{n^2 - n} &lt; \frac{1}{\frac{1}{2} n^2} = \frac{2}{n^2}\]</div>
+<p>as long as <span class="math notranslate nohighlight">\(n &gt; 2\)</span>.  Since <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 3}^\infty \frac{2}{n^2} = 2 \sum_{n = 3}^\infty \frac{1}{n^2}\)</span> converges so does <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 3}^\infty \frac{1}{n^{2} - n \sin{\left(n \right)}}\)</span> and hence <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^{2} - n \sin{\left(n \right)}}\)</span>.</p>
+<p>Although we did this without a computer algebra system we could get a visualization to help with the inequalities by graphing the denominators.</p>
+<p>For the limit comparison test we will use <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^2}\)</span> which we know converges by the p-series test.  Input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/n^2</span>
+</pre></div>
+</div>
+<p>then take the ratio, since these are in the CAS you only need to input something like <code class="docutils literal notranslate"><span class="pre">R1/R2</span></code>, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{n^{2}}{n^{2} - n \sin{\left(n \right)}}\]</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, the variable is <em>n</em> and the limit point is <code class="docutils literal notranslate"><span class="pre">oo</span></code>. The result is 1 which implies that <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty \frac{1}{n^{2} - n \sin{\left(n \right)}}\)</span> converges.</p>
+</section>
+</section>
+<section id="alternating-series-test">
+<h2><span class="target" id="index-4"></span>Alternating Series Test<a class="headerlink" href="#alternating-series-test" title="Link to this heading">#</a></h2>
+<p>An alternating series is simpl one where each term in the series alternates between positive and negative. More specifically,</p>
+<div class="admonition-definition-alternating-series admonition">
+<p class="admonition-title">Definition: Alternating Series</p>
+<p>An alternating series can be written in the form</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty (-1)^n a_n \qquad {\rm or } \qquad \sum_{n = 1}^\infty (-1)^{n+1} a_n\]</div>
+<p>where <span class="math notranslate nohighlight">\(a_n &gt; 0.\)</span></p>
+</div>
+<p>Alternating series have a very easy way to verify their convergence.</p>
+<div class="admonition-theorem-alternating-series-test admonition">
+<p class="admonition-title">Theorem: Alternating Series Test</p>
+<p>Given an alternating series of either form,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty (-1)^n a_n \qquad {\rm or } \qquad \sum_{n = 1}^\infty (-1)^{n+1} a_n\]</div>
+<p>If <span class="math notranslate nohighlight">\(0 &lt; a_{n+1} \leq a_{n}\)</span> for <span class="math notranslate nohighlight">\(n \leq N\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} a_n = 0\)</span> then the series converges.</p>
+</div>
+<p>In addition, it has a very easy way to calculate an error bound on a partial sum approximation, it is simply the first term that is omitted from the partial sum.</p>
+<div class="admonition-theorem-alternating-series-remainder admonition">
+<p class="admonition-title">Theorem: Alternating Series Remainder</p>
+<p>Given a convergent alternating series of either form,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty (-1)^n a_n \qquad {\rm or } \qquad \sum_{n = 1}^\infty (-1)^{n+1} a_n\]</div>
+<p>The error, <span class="math notranslate nohighlight">\(R_n,\)</span> in using <span class="math notranslate nohighlight">\(s_n\)</span> as an approximation for the sum is <span class="math notranslate nohighlight">\(|R_n| \leq a_{n+1}.\)</span></p>
+</div>
+<section id="example-sum-n-1-infty-frac-1-n-1-n-2">
+<h3>Example: <span class="math notranslate nohighlight">\(\sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n^2}\)</span><a class="headerlink" href="#example-sum-n-1-infty-frac-1-n-1-n-2" title="Link to this heading">#</a></h3>
+<p>First we will show that this series converges by the alternating series test and then calculate an error bound. It is a bit beyond the scope of a Calculus class but the actual value of this sum is <span class="math notranslate nohighlight">\(\frac{\pi^{2}}{12} \approx 0.82246703342411321824\)</span>.</p>
+<p>To apply the alternating series test first input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-1)</span><span class="go">^(n + 1)/n^2</span>
+</pre></div>
+</div>
+<p>You can take the sum of the series to see that we get the claimed result above.  For the alternating series test we really do not need the <span class="math notranslate nohighlight">\((-1)^{n + 1}\)</span> so also input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/n^2</span>
+</pre></div>
+</div>
+<p>We first need to verify that the sequence of terms is decreasing, it is easy to see that,</p>
+<div class="math notranslate nohighlight">
+\[1/(n+1)^2 &lt; 1/n^2\]</div>
+<p>for all positive <em>n</em>.  Another way we commonly verify this is to take the derivative, <span class="math notranslate nohighlight">\(- \frac{2}{n^{3}}\)</span> which is negative for all positive values of <em>n</em> hence the sequence is decreasing.</p>
+<p>The second part of the alternating series test is to take the limit, again here is it easy to see that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} \frac{1}{n^2} = 0\]</div>
+<p>which verifies that the series converges.  Although we did not use the CAS limit option we can do so on more complicated expressions.</p>
+<p>Now say we wanted to estimate the sum using 1,000,000 terms.  Select the original expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span> <span class="pre">Sum</span></code>, variable <em>n</em>, beginning index of 1, and ending index of 1000000.  The result is 0.8224670334235836.  The error is at most,</p>
+<div class="math notranslate nohighlight">
+\[|R_{1000000}| \leq \frac{1}{1000001^2} = \frac{1}{1000002000001} \approx 9.99998000002999996 \cdot 10^{-13}\]</div>
+<p>so the actual value is in <span class="math notranslate nohighlight">\([s_n - R_n, s_n + R_n]\)</span>, that is,</p>
+<div class="math notranslate nohighlight">
+\[0.82246703342258360089 \leq  \sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n^2} \leq 0.82246703342458359689\]</div>
+<p>Another two concepts that are usually studied when discussing alternating series are those of absolute convergence and conditional convergence.</p>
+<div class="admonition-definition-absolute-and-conditional-convergence admonition">
+<p class="admonition-title">Definition: Absolute and Conditional Convergence</p>
+<ul class="simple">
+<li><p>A series <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> is said to be Absolutely Convergent if <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty |a_n|\)</span> converges.</p></li>
+<li><p>A series <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> is said to be Conditionally Convergent if <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> converges. but <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty |a_n|\)</span> diverges.</p></li>
+</ul>
+</div>
+<p>For example, if we take the series from the last example, <span class="math notranslate nohighlight">\(\displaystyle \sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n^2}\)</span>, since <span class="math notranslate nohighlight">\(\displaystyle \sum_{n= 1}^\infty \frac{1}{n^2}\)</span> converges then the original series is absolutely convergent.</p>
+<p>As another example, if we take the series, <span class="math notranslate nohighlight">\(\displaystyle \sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n}\)</span>, this series converges by an easy application of the alternating series test but we know that <span class="math notranslate nohighlight">\(\displaystyle \sum_{n= 1}^\infty \frac{1}{n}\)</span> diverges (harmonic series) so the original series is conditionally convergent.</p>
+<p>One theorem that comes in handy is,</p>
+<div class="admonition-theorem-absolute-convergence-implies-convergence admonition">
+<p class="admonition-title">Theorem: Absolute Convergence Implies Convergence</p>
+<p>If <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty |a_n|\)</span> converges then so does <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n.\)</span></p>
+</div>
+<p>This gives us another proof that <span class="math notranslate nohighlight">\(\displaystyle \sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n^2}\)</span> converges.</p>
+<p>One interesting difference between absolute and conditional convergence is in rearrangements.  You know that <span class="math notranslate nohighlight">\(a + b = b + a\)</span>, and in fact you can rearrange the order of any finite sum and get the same answer.  The same is not true for infinite rearrangements.  If you have a series that is absolutely convergent then you can rearrange it into whatever order you would like and you will get the same sum.  On the other hand, if the series is conditionally convergent then you can rearrange it to converge to any real number you would like or you can rearrange it to diverge.</p>
+<p>For example, from above we know that <span class="math notranslate nohighlight">\(\displaystyle \sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n}\)</span> is conditionally convergent.  In the order given it can be shown that <span class="math notranslate nohighlight">\(\displaystyle \sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n} = \ln(2).\)</span> But there is a rearrangement of this series that sums to <span class="math notranslate nohighlight">\(\pi\)</span> and another that sums to <span class="math notranslate nohighlight">\(e\)</span> and another that sums to 2, and yet another that diverges.  Infinity can be a slippery concept.</p>
+</section>
+</section>
+<section id="ratio-and-root-tests">
+<h2><span class="target" id="index-5"></span>Ratio and Root Tests<a class="headerlink" href="#ratio-and-root-tests" title="Link to this heading">#</a></h2>
+<p>The ratio and root tests are compare (in the limit) ratios of consecutive terms or the nth root of the nth term to see if the terms are going to 0 “fast enough” for the series to converge.</p>
+<div class="admonition-theorem-the-ratio-test admonition">
+<p class="admonition-title">Theorem: The Ratio Test</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = L &lt; 1\)</span>, then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> is absolutely convergent and hence convergent.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = L &gt; 1\)</span> or if <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = \infty\)</span>, then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> is divergent.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = 1\)</span> then the ratio test is inconclusive, meaning that we cannot say anything about  <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n.\)</span></p></li>
+</ol>
+</div>
+<p>The root test has a very similar structure.</p>
+<div class="admonition-theorem-the-root-test admonition">
+<p class="admonition-title">Theorem: The Root Test</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \sqrt[n]{\left| a_n \right|} = L &lt; 1\)</span>, then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> is absolutely convergent and hence convergent.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \sqrt[n]{\left| a_n \right|} = L &gt; 1\)</span> or if <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \sqrt[n]{\left| a_n \right|} = \infty\)</span>, then <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> is divergent.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \sqrt[n]{\left| a_n \right|} = 1\)</span> then the root test is inconclusive, meaning that we cannot say anything about  <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n.\)</span></p></li>
+</ol>
+</div>
+<p>Note that if the limit is 1 in either test then the test fails, which means you need to do a different test on the series.  Also note that if the ratio test fails then so will the root test, and vice versa.  So if you try one of these tests and it fails do not bother trying the other test.</p>
+<section id="example-sum-n-1-infty-frac-n-3-left-3-n-right">
+<h3>Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{n!^{3}}{\left(3 n\right)!}\)</span><a class="headerlink" href="#example-sum-n-1-infty-frac-n-3-left-3-n-right" title="Link to this heading">#</a></h3>
+<p>Input the expression into CLAE, we will do this as a function definition to make setting up the ratio easier,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(k):=(k!)^3/(3*k)!</span>
+</pre></div>
+</div>
+<p>We will try the ratio test, so create the ratio, note that we do not need an absolute value since the expression is positive.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(n+1)/f(n)</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(3 n\right)! \left(n + 1\right)!^{3}}{n!^{3} \left(3 n + 3\right)!}\]</div>
+<p>If we simplify this expression we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(n + 1\right)^{2}}{27 n^{2} + 27 n + 6}\]</div>
+<p>At this point we could do this in our head but selecting <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, variable <em>n</em> and limit point <code class="docutils literal notranslate"><span class="pre">oo</span></code> gives us, <span class="math notranslate nohighlight">\(\frac{1}{27}\)</span>, so the series converges.  Note that the convergence test returns True as well.</p>
+</section>
+<section id="example-sum-n-1-infty-frac-n-left-n-e-right-n">
+<h3>Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{n!}{\left(n/e\right)^n}\)</span><a class="headerlink" href="#example-sum-n-1-infty-frac-n-left-n-e-right-n" title="Link to this heading">#</a></h3>
+<p>Input the expression into CLAE, we will do this as a function definition to make setting up the ratio easier,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(k):=k!/(k/E)^k</span>
+</pre></div>
+</div>
+<p>We will try the ratio test, so create the ratio, note that we do not need an absolute value since the expression is positive.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(n+1)/g(n)</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(\frac{n}{e}\right)^{n} \left(\frac{n + 1}{e}\right)^{- n - 1} \left(n + 1\right)!}{n!}\]</div>
+<p>If we simplify this expression we get,</p>
+<div class="math notranslate nohighlight">
+\[e n^{n} \left(n + 1\right)^{- n}\]</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, variable <em>n</em> and limit point <code class="docutils literal notranslate"><span class="pre">oo</span></code> gives us, 1, so we cannot conclude anything from the ratio test (nor the root test).  Note that the convergence test returns False, hence a divergent series. If we take the limit of the nth term as <span class="math notranslate nohighlight">\(n \to \infty\)</span> we get <span class="math notranslate nohighlight">\(\infty\)</span>, hence by the divergence test the series diverges.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="series.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Series</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="powerseries.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Power Series</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-divergence-test">The Divergence Test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sum-n-1-infty-frac-left-n-1-right-left-2-n-1-right-left-n-1-right-2">Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{\left(n - 1\right) \left(2 n + 1\right)}{\left(n + 1\right)^{2}}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-integral-test">The Integral Test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sum-n-1-infty-frac-1-n-3">Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{1}{n^3}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-there-is-a-fine-line-between-convergence-and-divergence">Example: There is a Fine Line Between Convergence and Divergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-bounds-for-sum-n-1-infty-frac-1-n-3">Example: Bounds for <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{1}{n^3}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-tests">Comparison Tests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sum-n-1-infty-frac-1-n-2-n-sin-left-n-right">Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{1}{n^{2} - n \sin{\left(n \right)}}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#alternating-series-test">Alternating Series Test</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sum-n-1-infty-frac-1-n-1-n-2">Example: <span class="math notranslate nohighlight">\(\sum_{n= 1}^\infty \frac{(-1)^{n+1}}{n^2}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ratio-and-root-tests">Ratio and Root Tests</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sum-n-1-infty-frac-n-3-left-3-n-right">Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{n!^{3}}{\left(3 n\right)!}\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sum-n-1-infty-frac-n-left-n-e-right-n">Example: <span class="math notranslate nohighlight">\(\sum_{n = 1}^\infty \frac{n!}{\left(n/e\right)^n}\)</span></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

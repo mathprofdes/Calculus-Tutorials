@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Gen/index';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User’s Guides" href="../guides.html" />
+    <link rel="prev" title="Calculus Tutorials" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Sunday, July 12, 2026  -  06:22 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Introduction</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction">
+<h1><span class="target" id="index-0"></span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<section id="to-the-reader">
+<h2>To the Reader<a class="headerlink" href="#to-the-reader" title="Link to this heading">#</a></h2>
+<p>Welcome, whether you are using these tutorials as part of a course or just using them on your own to learn Calculus, I hope you find them beneficial.</p>
+<section id="about-these-tutorials">
+<h3>About these Tutorials<a class="headerlink" href="#about-these-tutorials" title="Link to this heading">#</a></h3>
+<p>This set of tutorials and examples was developed as a supplement to a STEM college-level sequence in Calculus to use computer algebra system and graphing technology to visualize and explore concepts in these courses.  Although these tutorials are geared toward a STEM Calculus sequence they are certainly useful for a course or sequence in applied calculus, the instructor and student will simply need to pick and choose the sections they utilize.  The tutorials were not designed to accompany any particular textbook but be general enough to use with a multitude of texts.  With that said, I would highly recommend Calculus Volume 1, 2, and 3 by Gilbert Strang and Edwin “Jed” Herman from OpenStax, <a class="reference external" href="https://openstax.org">https://openstax.org</a>.  This is an excellent series of books for a STEM college-level sequence in Calculus and has inspired much of the content and organization of this set of tutorials. Even if you are taking a course at a university and have a course text these textbooks are a great supplementary reference.</p>
+<ul class="simple">
+<li><p>There are many different styles of Calculus textbooks on the market, the layout of these tutorials is fairly traditional and loosely follow the style of Anton, Stewart, Thomas, and Strang, as well as a host of others too numerous to list.  Even if you are not using a traditional style textbook you can still use these tutorials, you just may need to jump around the sections a little more.</p></li>
+<li><p>These tutorials focus on the use of technology to help with the calculations and visualizations of the topics in Calculus.  The tutorials do discuss the mathematics of the topic but were written more as a summary of the mathematics.  For a detailed discussion of these topics and proofs of the results you should consult your textbook.</p></li>
+<li><p>These tutorials utilize three open-source software packages, GeoGebra, Maxima, and CLAE (Calculus and Linear Algebra Explorer), the links to download these packages are below. Not all topics use each of these packages, but they use at least one of them. There are quick start guides for GeoGebra and Maxima in these tutorials as well as the entire help system for CLAE.  More information on GeoGebra and Maxima can be found easily online, both have extensive communities of educators using these packages.</p></li>
+<li><p>The tutorials themselves are distributed as a self-contained website that can be run from any web server and locally on your personal computer even without an internet connection.  Simply open the main page in your favorite browser.</p></li>
+<li><p>The images in these tutorials were mostly created by me with the software packages being utilized.  Those that were not created by me were taken primarily from the open-source textbooks by by Gilbert Strang and Edwin “Jed” Herman and a few were taken from the internet that appeared to be public domain.</p></li>
+<li><dl class="simple">
+<dt>The goals of these tutorials are:</dt><dd><ul>
+<li><p>Provide a technology guide for the user to better understand Calculus concepts.</p></li>
+<li><p>Give the user step-by-step instructions on how to use the software packages to lessen the learning curve and provide an example-oriented approach instead of a general functional approach.</p></li>
+<li><p>Give the user enough foundational skills with the technology so that they can use it for more advanced investigations and projects.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="tutorial-organization">
+<h3>Tutorial Organization<a class="headerlink" href="#tutorial-organization" title="Link to this heading">#</a></h3>
+<p>These tutorials are organized into three main parts, Differential Calculus, Integral Calculus, and Multivariable Calculus, which roughly corresponds to a Calculus I, II, and III sequence at most institutions.  This makes it easier to compartmentalize the topics and navigate the site. Each part is divided into specific topics that can be selected in the left hand window.  Once a topic is selected the tutorial will be in the center window and a page navigation for that topic is displayed on the right.</p>
+<div class="sphinx-features-three docutils container">
+<div class="sphinx-feature-three admonition">
+<p class="admonition-title"><a class="reference internal" href="../DiffCalc/index.html"><span class="doc">Differential Calculus</span></a></p>
+<p>In these tutorials and examples you will concentrate on the Tangent Problem.  Specifically you will be investigating limits, continuity, derivatives, and their applications.</p>
+</div>
+<div class="sphinx-feature-three admonition">
+<p class="admonition-title"><a class="reference internal" href="../IntCalc/index.html"><span class="doc">Integral Calculus</span></a></p>
+<p>In these tutorials and examples you will concentrate on the Area Problem.  Specifically you will be investigating integration, techniques of integration,  applications of the integral, infinite sequences and series, power series; Taylor and Maclaurin series, parametric curves, and polar coordinates.</p>
+</div>
+<div class="sphinx-feature-three admonition">
+<p class="admonition-title"><a class="reference internal" href="../MultCalc/index.html"><span class="doc">Multivariable Calculus</span></a></p>
+<p>In these tutorials and examples you will take the Tangent Problem and the Area Problem to a higher dimension.  Specifically you will be investigating calculus applied to functions of several variables.  Topics here include vectors and vector valued functions, multivariable functions and partial derivatives, multiple integrals, and concepts from vector calculus.</p>
+</div>
+</div>
+</section>
+<section id="how-to-use-these-tutorials">
+<h3>How to Use these Tutorials<a class="headerlink" href="#how-to-use-these-tutorials" title="Link to this heading">#</a></h3>
+<p>Here is my suggestion on how you use these tutorials.  First read your textbook on the topic, work through the textbook examples and try some of the exercises.  Then go into these tutorials and select the topic you are working on, read through the discussions, and then work through the examples using the technology you have chosen.  Then go back to the exercises in your text and use the technology to help visualize the conditions of the exercise and possibly help with the calculations of the more difficult exercises.  In addition, if your textbook does not give you graphs of the functions in an example, use the technology to do so.  It may make the example clearer.</p>
+</section>
+</section>
+<section id="software">
+<h2>Software<a class="headerlink" href="#software" title="Link to this heading">#</a></h2>
+<p>These tutorials were designed to use computer algebra system and graphing technology to help explore the concepts in Calculus.  There are many such systems that are available either online or for download and local installation.  We will using three that are all cross-platform, open-source, and freely available on the web, GeoGebra, Maxima (specifically wxMaxima), and CLAE (Calculus and Linear Algebra Explorer).  It is not assumed that the user is using all three of these, just one or more.  The examples in the tutorials have subsections on how to use each one (or a combination) for that example. Not all examples will use each of these packages, in some applications one or more may prove to be too cumbersome, and hence omitted.</p>
+<p>No single software package is perfect, if there was we would use it.  A software package is simply a tool.  Every tool has a set of things it is useful for and a set of things it is not useful for.  A hammer is very good at driving nails but not so great at cutting a piece of wood.  The same is true for software packages.  We selected GeoGebra, Maxima, and CLAE since they were all cross-platform, open-source (hence free), and they complement each other in facilities, ease of use, and strengths.  It is simply like having a toolbox of different tools.</p>
+<p>These tutorials will take the user step-by-step through the calculation and visualization commands and options in the software packages but they do not discuss the general features of the software.  There are some quick user’s guides included in these tutorials to get you started.  Both GeoGebra and wxMaxima have a long development history and there are numerous resources on the web on their commands and general use.  CLAE is a new package that has a fairly extensive help system that discusses the features of the software.</p>
+<div class="sphinx-features-three docutils container">
+<div class="sphinx-feature-three admonition">
+<p class="admonition-title"><a class="reference external" href="http://geogebra.org/">Download GeoGebra or use Online</a></p>
+<p>GeoGebra is a dynamic mathematics software for all levels of education that brings together geometry, algebra, spreadsheets, graphing, statistics and calculus in one engine. In addition, GeoGebra offers an online platform with over 1 million free classroom resources created by our multilingual community. These resources can be easily shared through our collaboration platform GeoGebra Classroom where student progress can be monitored in real time.</p>
+</div>
+<div class="sphinx-feature-three admonition">
+<p class="admonition-title"><a class="reference external" href="https://wxmaxima-developers.github.io/wxmaxima/download.html">Download wxMaxima</a></p>
+<p>wxMaxima is a document based interface for the computer algebra system Maxima. wxMaxima provides menus and dialogs for many common maxima commands, autocompletion, inline plots and simple animations. wxMaxima is distributed under the GPL license.</p>
+</div>
+<div class="sphinx-feature-three admonition">
+<p class="admonition-title"><a class="reference external" href="https://github.com/mathprofdes/clae">Download CLAE</a></p>
+<p>CLAE (Calculus and Linear Algebra Explorer) was developed for quick calculations and explorations in an introductory STEM mathematics classes, primarily single variable and multi-variable Calculus and Linear Algebra.  It combines the SymPy computer algebra system with the PyQtGraph two and three dimensional graphics interfaces in a primarily menu-driven user interface.  It keeps the syntax to a minimum in hopes of making the learning curve as shallow as possible while maintaining the power of more general computer algebra systems.</p>
+</div>
+</div>
+</section>
+<section id="calculus">
+<h2><span class="target" id="index-1"></span>Calculus<a class="headerlink" href="#calculus" title="Link to this heading">#</a></h2>
+<p>In a nutshell, Calculus is the study and quantifying of change.  If we have two quantities that are related in a way such that the change in one creates a change in the other, there are two main questions we can ask.  The first question is, what is the rate at which the dependent quantity changes as we change the independent quantity?  The second question is, what is the total change of the dependent quantity as we change the independent quantity over some interval of values?</p>
+<p>We tend to interpret this study and quantifying of change into two graphically oriented interpretations, the Tangent Problem and the Area Problem.  The Tangent Problem answers the first question, “What is the rate at which the dependent quantity changes as we change the independent quantity?” which is at the heart of Differential Calculus.  The Area Problem answers the second question, “What is the total change of the dependent quantity as we change the independent quantity over some interval of values?” which is at the heart of Integral Calculus.</p>
+</section>
+<section id="the-tangent-problem">
+<h2><span class="target" id="index-2"></span>The Tangent Problem<a class="headerlink" href="#the-tangent-problem" title="Link to this heading">#</a></h2>
+<section id="the-statement-of-the-tangent-problem">
+<h3><span class="target" id="index-3"></span>The Statement of The Tangent Problem<a class="headerlink" href="#the-statement-of-the-tangent-problem" title="Link to this heading">#</a></h3>
+<p>The statement of The Tangent Problem is very simple.  Given a curve and a point on the curve find the slope of the tangent line to the curve at the given point.  Graphically, in the image below find the slope of the red line.</p>
+<figure class="align-default" id="id1">
+<img alt="Tangent Problem Visualization" src="../_images/TLP009.png" />
+<figcaption>
+<p><span class="caption-text">Tangent Problem Visualization</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="solving-the-tangent-problem">
+<h3><span class="target" id="index-4"></span>Solving The Tangent Problem<a class="headerlink" href="#solving-the-tangent-problem" title="Link to this heading">#</a></h3>
+<p>Solving The Tangent Problem seems fairly easy as well, if we had the equation of the tangent line, say <span class="math notranslate nohighlight">\(y = mx+b\)</span> then the slope is just <span class="math notranslate nohighlight">\(m\)</span>.  If we had two points on the line, say <span class="math notranslate nohighlight">\((x_1, y_1)\)</span> and  <span class="math notranslate nohighlight">\((x_2, y_2)\)</span> then we could calculate the slope as <span class="math notranslate nohighlight">\(m = \frac{y_2-y_1}{x_2-x_1}\)</span>.  The problem is that we don’t have either, we have only one point on the line so the slope calculation is out, and we don’t have an equation for the line, so manipulating it into slope-intercept form and reading off the slope is out as well.  Another alternative is that we can calculate the equation of a line if we had a single point on the line (which we do) and the slope of the line (which we don’t), that is what we are looking for in the first place.  Hence, we need to take a different approach.</p>
+<p>The big problem here is that we only have one point on the line, if we had two points on the line we could calculate the slope of the line.  So as with many processes in mathematics we will approximate what we want with something we can calculate.  Take two points on the curve and draw a line between them.  This line will have two points and hence we can calculate the slope of the line.  For example,</p>
+<figure class="align-default" id="id2">
+<img alt="Tangent Line and Secant Line to the Curve" src="../_images/TLP010.png" />
+<figcaption>
+<p><span class="caption-text">Tangent Line and Secant Line to the Curve</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The green line is our approximation of the tangent line.  Since it is drawn between two points on the curve we call it a secant line to the curve.  This example is using the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 1\)</span> but that is not important here, the same would be done for any function.  The slope of this secant line is 4.04, as can be seen in the legend of the plot. Obviously the secant line here is not a very good approximation of the tangent line, so we will move the second point closer to the first point.  Now the slope of the secant line is 2.75 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id3">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP011.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.64 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id4">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP012.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.31 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id5">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP013.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.1525 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id6">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP014.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.0604 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id7">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP015.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.01503 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id8">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP016.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.006 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id9">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP017.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.003 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id10">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP018.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the second point closer to the first point.  Now the slope of the secant line is 1.0003 and the secant line is a closer approximation to the tangent line.</p>
+<figure class="align-default" id="id11">
+<img alt="Secant Line Approaching the Tangent Line" src="../_images/TLP019.png" />
+<figcaption>
+<p><span class="caption-text">Secant Line Approaching the Tangent Line</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The final secant line we used is very close to the tangent line and our sequence of secant line slopes, 2.75, 1,64, 1.31, 1.1525, 1.0604, 1.01503, 1.006, 1.003, 1.0003 seem to be converging to 1.  So we would say that the slope of this tangent line is 1.</p>
+<p>Now let’s look at this process in more generality, let’s say we have a generic function <span class="math notranslate nohighlight">\(f(x)\)</span> and a point on the curve.  The point on the curve is the red point, that is the point of interest, say it is at <span class="math notranslate nohighlight">\(x = a\)</span>, hence the coordinates of the red point are <span class="math notranslate nohighlight">\((a, f(a))\)</span>.  The green point is the second point on the curve to create the secant line so that we can calculate a slope, we will keep its general, <span class="math notranslate nohighlight">\((x, f(x))\)</span>.</p>
+<figure class="align-default" id="id12">
+<img alt="Tangent Line Slope Derivation" src="../_images/TLP020.png" />
+<figcaption>
+<p><span class="caption-text">Tangent Line Slope Derivation</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now the slope of the green secant line is,</p>
+<div class="math notranslate nohighlight">
+\[m_{sec} = \frac{y_2 - y_1}{x_2 - x_1} = \frac{f(x) - f(a)}{x - a}\]</div>
+<p>Since <em>a</em> is a constant we can take any value of <em>x</em> that is not equal to <em>a</em> and calculate a slope of the secant line.  What we did in the example above was to get better and better approximations to the slope of the tangent line by taking values of <em>x</em> closer and closer to <em>a</em>, that is, we let <em>x</em> approach <em>a</em>, written as <span class="math notranslate nohighlight">\(x \to a\)</span>.  In Calculus, when we let one quantity get closer to another without equaling it we call that a limit, which we will formally discuss in later sections.  Mathematically we write this as,</p>
+<div class="math notranslate nohighlight">
+\[m_{tan} = \lim_{x \to a} m_{sec} = \lim_{x \to a} \frac{f(x) - f(a)}{x - a}\]</div>
+<p>and it is how we define the slope of the tangent line to a function.  An equivalent formulation that is sometimes easier to calculate is if we let <span class="math notranslate nohighlight">\(h = x-a\)</span>  then <span class="math notranslate nohighlight">\(x = a + h\)</span> and letting <span class="math notranslate nohighlight">\(x \to a\)</span> is the same thing as letting <span class="math notranslate nohighlight">\(h \to 0\)</span>, our formula becomes,</p>
+<div class="math notranslate nohighlight">
+\[m_{tan} = \lim_{x \to a} \frac{f(x) - f(a)}{x - a} = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]</div>
+<p>So once we establish some details on the limit we can algebraically calculate the slope of a tangent line.</p>
+</section>
+<section id="an-example-of-the-tangent-problem">
+<h3><span class="target" id="index-5"></span>An Example of The Tangent Problem<a class="headerlink" href="#an-example-of-the-tangent-problem" title="Link to this heading">#</a></h3>
+<p>This is all well and good, but you know there is something missing here.  Finding the slope of a tangent line to  a curve is a nice academic exercise, but we would not center an entire area of mathematics around it if there were not numerous applications to this process.  We will start out with an example to help us move into a more general framework.  The graph below represents the distance a person riding a motor-scooter is from their starting point.  The horizontal axis is time in hours and the vertical axis is distance in tens of miles.</p>
+<figure class="align-default" id="id13">
+<img alt="Distance Verses Time Graph of the Position of a Person on a Motor-Scooter" src="../_images/TLP021.png" />
+<figcaption>
+<p><span class="caption-text">Distance Verses Time Graph of the Position of a Person on a Motor-Scooter</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So at time zero they get on their motor-scooter at home and the distance they are away from home is 0.  They travel for an hour and they are about 27 miles away from home.  Two hours into the trip they are about 38 miles away from home. A little over two hours into the trip they turn onto another road that circles back closer to home.  At about 4.25 hours that turn onto another road that again takes them further away from home, and so on.</p>
+<p>Let’s put in a tangent line at one hour and a secant line from one hour to about 2.25 hours.</p>
+<figure class="align-default" id="id14">
+<img alt="Average Velocity and Instantaneous Velocity" src="../_images/TLP022.png" />
+<figcaption>
+<p><span class="caption-text">Average Velocity and Instantaneous Velocity</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The slope of the secant line is</p>
+<div class="math notranslate nohighlight">
+\[m_{sec} = \frac{y_2 - y_1}{x_2 - x_1} = \frac{f(x) - f(a)}{x - a}\]</div>
+<p>The units for the <em>y</em> values are miles and the units for the <em>x</em> values are hours so the ratio is miles/hour and hence a velocity.  So the slope of a secant line is representing the <strong>average velocity</strong> of the motor-scooter from 1 hour to 2.25 hours into the trip.  As we let the second point approach the first we get average velocities of the motor-scooter on smaller time intervals.  In the limit, we get a velocity over an infinitesimal time period or better yet at an instance in time, this is the slope of the tangent line which is the <strong>instantaneous velocity</strong> of the motor-scooter at one hour into the trip.</p>
+</section>
+<section id="what-does-the-tangent-problem-mean-in-general">
+<h3><span class="target" id="index-6"></span>What Does The Tangent Problem Mean in General<a class="headerlink" href="#what-does-the-tangent-problem-mean-in-general" title="Link to this heading">#</a></h3>
+<p>Let’s take the previous example one step further.  In the previous example our slopes were velocities.  A velocity is a rate of change of distance with respect to time.  The distance was our <em>y</em> variable and our time was the <em>x</em> variable.  The <em>y</em> variable is our dependent variable and our <em>x</em> variable is our independent variable.  Variables represent quantities, in many cases physical quantities.  Obviously there is a relationship between the <em>x</em> and <em>y</em> variables, in the above example it was the motor-scooter.  So if we have a relationship between two quantities, one is an independent quantity and the other is a dependent quantity (dependent on the value of the independent quantity) then the slope of the slopes of the secant lines are <strong>average rates of change</strong> of the dependent quantity with respect to the dependent quantity and the slope of the tangent line is the <strong>instantaneous rate of change</strong> of the dependent quantity with respect to the independent quantity.</p>
+<p>Say we know the velocities of a rocket during its flight, then the slope of the tangent line represents the rate at which the velocities are changing, that is, its acceleration.</p>
+<p>Say we know the relationship between how many items a company produces and the revenue it gets from the sale of those items.  Then the slope of the tangent line represents the rate at which the revenue is changing (up or down) for a particular number of items created and sold.</p>
+<p>Say we know amount of water being pumped into a pool over time, then the slope of the tangent line would be the pumping capacity (gal/min) of the pump.</p>
+<p>The list goes on and on…</p>
+</section>
+</section>
+<section id="the-area-problem">
+<h2><span class="target" id="index-7"></span>The Area Problem<a class="headerlink" href="#the-area-problem" title="Link to this heading">#</a></h2>
+<section id="the-statement-of-the-area-problem">
+<h3><span class="target" id="index-8"></span>The Statement of The Area Problem<a class="headerlink" href="#the-statement-of-the-area-problem" title="Link to this heading">#</a></h3>
+<p>Just like the Tangent Problem, the Area Problem is easy to state.  The goal here is to calculate the area under a curve between two <em>x</em> values.  For example, say we wanted to calculate the area under the curve <span class="math notranslate nohighlight">\(y = x^2\)</span> with <em>x</em> ranging over the interval <span class="math notranslate nohighlight">\([0, 1]\)</span>.  A graph of this is below with the area of interest shaded.</p>
+<figure class="align-default" id="id15">
+<img alt="Area Problem Visualization" src="../_images/AP001.png" />
+<figcaption>
+<p><span class="caption-text">Area Problem Visualization</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="solving-the-area-problem">
+<h3><span class="target" id="index-9"></span>Solving The Area Problem<a class="headerlink" href="#solving-the-area-problem" title="Link to this heading">#</a></h3>
+<p>For example, say we wanted to calculate the area under the curve <span class="math notranslate nohighlight">\(y = x^2\)</span> with <em>x</em> ranging over the interval <span class="math notranslate nohighlight">\([0, 1]\)</span>.  A graph of this is below with the area of interest shaded.</p>
+<figure class="align-default" id="id16">
+<img alt="Area Under y = x^2 ob [0, 1]" src="../_images/AP001.png" />
+<figcaption>
+<p><span class="caption-text">Area Under the Curve <span class="math notranslate nohighlight">\(y = x^2\)</span> on <span class="math notranslate nohighlight">\([0, 1]\)</span></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although we will be using a specific example here the general situation is exactly the same. If this were a nice geometric object like a rectangle, triangle, trapezoid, or even a regular polygon we could apply a formula to it and have our area.  Since it is not a nice geometric object we will take a similar approach as we did with the Tangent Problem.  With the tangent problem we approximated what we wanted using objects (secant lines) that we could calculate the slope of then we let the secant lines approach the tangent line thus having the slopes of the secant lines approach the slope of the tangent line, which was our goal.  Here we will approximate the area under the curve using nice geometric objects, rectangles.  We will first use 10 rectangles to approximate this area.</p>
+<figure class="align-default" id="id17">
+<img alt="Area Approximation Using 10 Rectangles" src="../_images/AP002.png" />
+<figcaption>
+<p><span class="caption-text">Area Approximation Using 10 Rectangles</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we add up the areas of each of these rectangles we get, 0.3325 (as you can see on the image).  Obviously this is not the exact area.  If we look at the graph it is clear that there is some area above the curve overestimating the area and there is area under the curve that is missed and hence underestimating the area.  If we increase the number of rectangles to 50 we get,</p>
+<figure class="align-default" id="id18">
+<img alt="Area Approximation Using 50 Rectangles" src="../_images/AP003.png" />
+<figcaption>
+<p><span class="caption-text">Area Approximation Using 50 Rectangles</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Adding up the areas here we get approximately 0.3333.  Although this is not the exact area either, there are still extra portions above the curve and missing portions below the curve, it appears to be getting closer to the area under the curve.  Finally, if we up the number of rectangles to 100, we get,</p>
+<figure class="align-default" id="id19">
+<img alt="Area Approximation Using 100 Rectangles" src="../_images/AP004.png" />
+<figcaption>
+<p><span class="caption-text">Area Approximation Using 100 Rectangles</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Giving us an approximation of 0.33333, and the appearance of a better approximation.  Noticing that these approximate areas are tending to 0.33333333… we would probably take a leap of faith and say that the exact area under the curve is <span class="math notranslate nohighlight">\(A = \frac{1}{3}\)</span>, which is correct.  What is more important is that we followed the same path as we did with the tangent problem.  We needed a value we could not calculate, we used an approximation to that value we could calculate, then we took the limit of the approximations to obtain the desired value. Hence, both of these problems are solved with this concept of a limit.</p>
+<p>Let’s put a few more details in here.  Start with a general function <span class="math notranslate nohighlight">\(f(x)\)</span> and some rectangles.</p>
+<figure class="align-default" id="id20">
+<img alt="Area Derivation Visualization" src="../_images/AP005.png" />
+<figcaption>
+<p><span class="caption-text">Area Derivation Visualization</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although there are 10 rectangles in this image we will imagine a more general situation with <em>n</em> rectangles.  We will also forget that this is on the interval <span class="math notranslate nohighlight">\([1, 5]\)</span> and think about it being on a general interval, <span class="math notranslate nohighlight">\([a, b]\)</span>.  We first calculate the area of a single rectangle.  The width of the rectangle is the length of the interval divided by the number of rectangles, specifically the width is <span class="math notranslate nohighlight">\(\Delta x = \frac{b-a}{n}\)</span>, since all the rectangles have the same width.  The height of the rectangle is the functional value at the midpoint of each sub-interval we will call this <em>x</em> value <span class="math notranslate nohighlight">\(x_i\)</span> for the <em>i</em> th sub-interval. So the height is <span class="math notranslate nohighlight">\(f(x_i)\)</span>.  Hence, the area of the <em>i</em> th rectangle is <span class="math notranslate nohighlight">\(f(x_i) \cdot \Delta x\)</span>.  So our approximation to the area under the curve is the sum of all the rectangles, specifically,</p>
+<div class="math notranslate nohighlight">
+\[A \approx \sum_{i = 1}^n f(x_i) \cdot \Delta x\]</div>
+<p>Following our example, we got better approximations by increasing the number of rectangles, <span class="math notranslate nohighlight">\(n\)</span>. We can do this with an infinite limit.</p>
+<div class="math notranslate nohighlight">
+\[A = \lim_{n \to \infty} \sum_{i = 1}^n f(x_i) \cdot \Delta x\]</div>
+<p>A couple terms before we move on.  The sums of rectangle areas are called <strong>Riemann Sums</strong> and the limit of a Riemann sum is called the <strong>Definite Integral</strong>.</p>
+</section>
+<section id="an-example-of-the-area-problem">
+<h3><span class="target" id="index-10"></span>An Example of The Area Problem<a class="headerlink" href="#an-example-of-the-area-problem" title="Link to this heading">#</a></h3>
+<p>As an example we will go back to the familiar velocity problem, with a twist.  As a visual, we will look at our example graph from above.  In this case, let’s consider the vertical axis as velocity, so in miles/hour units, and we will consider the horizontal axis to be time, in hours.  So the curve is representing the velocity of the car or motor-scooter or particle (doesn’t matter)  at each moment during the trip.  So this is essentially logging the speedometer values constantly while you are driving.</p>
+<figure class="align-default" id="id21">
+<img alt="Velocity Verses Time Graph" src="../_images/AP005.png" />
+<figcaption>
+<p><span class="caption-text">Velocity Verses Time Graph</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each rectangle area is the height times the width, so miles/hour times hours which gives us miles.  So each rectangle represents an approximation of how far the car went during the time of the sub-interval. Consequently, the Riemann sum of all the rectangles gives an approximation of the total distance traveled between times <em>a</em> and <em>b</em>.</p>
+<div class="math notranslate nohighlight">
+\[D \approx \sum_{i = 1}^n f(x_i) \cdot \Delta x\]</div>
+<p>So in the limit, we get the exact distance traveled between times <em>a</em> and <em>b</em>, that is, the change in the odometer during the trip.</p>
+<div class="math notranslate nohighlight">
+\[D = \lim_{n \to \infty} \sum_{i = 1}^n f(x_i) \cdot \Delta x\]</div>
+</section>
+<section id="what-does-the-area-problem-mean-in-general">
+<h3><span class="target" id="index-11"></span>What Does The Area Problem Mean in General<a class="headerlink" href="#what-does-the-area-problem-mean-in-general" title="Link to this heading">#</a></h3>
+<p>Let’s take the previous example one step further.  In the previous example our areas were distances.  A distances is a total change of velocity with respect to time.  The velocity was our <em>y</em> variable and our time was the <em>x</em> variable.  The <em>y</em> variable is our dependent variable and our <em>x</em> variable is our independent variable.  Variables represent quantities, in many cases physical quantities.  Obviously there is a relationship between the <em>x</em> and <em>y</em> variables, in the above example it was the car or motor-scooter or whatever.  So if we have a relationship between two quantities, one is an independent quantity and the other is a dependent rate quantity (dependent on the value of the independent quantity) then the Riemann sum represents an <strong>approximate total change</strong> and the limit of the Riemann sum represents the <strong>total change</strong>.</p>
+</section>
+</section>
+<section id="development-tools">
+<h2>Development Tools<a class="headerlink" href="#development-tools" title="Link to this heading">#</a></h2>
+<p>This tutorial set was created using the Sphinx documentation package built with the PyData Sphinx Theme.  The mathematical expressions were created with the MathJax extension to Sphinx.  MathJax is included in the distribution of this tutorial so that the tutorials can be viewed completely off-line.  In addition, the entire website can be run on any web server, there is no need for any server-side functionality.</p>
+<ul class="simple">
+<li><p><strong>Sphinx:</strong> <a class="reference external" href="https://www.sphinx-doc.org/">https://www.sphinx-doc.org/</a></p></li>
+<li><p><strong>PyData Sphinx Theme:</strong> <a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html</a></p></li>
+<li><p><strong>MathJax:</strong> <a class="reference external" href="https://www.mathjax.org/">https://www.mathjax.org/</a></p></li>
+</ul>
+</section>
+<section id="copyright">
+<h2>Copyright<a class="headerlink" href="#copyright" title="Link to this heading">#</a></h2>
+<div class="line-block">
+<div class="line">Copyright © 2026 Don Spickler</div>
+<div class="line">Licensed to the public under Creative Commons</div>
+<div class="line">Attribution-NonCommercial 4.0 International License</div>
+</div>
+<img alt="../_images/CCL_Large.png" src="../_images/CCL_Large.png" />
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Calculus Tutorials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../guides.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">User’s Guides</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#to-the-reader">To the Reader</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#about-these-tutorials">About these Tutorials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-organization">Tutorial Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-use-these-tutorials">How to Use these Tutorials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#software">Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculus">Calculus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tangent-problem">The Tangent Problem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-statement-of-the-tangent-problem">The Statement of The Tangent Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-tangent-problem">Solving The Tangent Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-the-tangent-problem">An Example of The Tangent Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-tangent-problem-mean-in-general">What Does The Tangent Problem Mean in General</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-area-problem">The Area Problem</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-statement-of-the-area-problem">The Statement of The Area Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-area-problem">Solving The Area Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#an-example-of-the-area-problem">An Example of The Area Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-does-the-area-problem-mean-in-general">What Does The Area Problem Mean in General</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-tools">Development Tools</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copyright">Copyright</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Sunday, July 12, 2026  -  06:22 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

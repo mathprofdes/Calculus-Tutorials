@@ -1,0 +1,1521 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>One-Sided Limits &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/limitonesidedatapoint';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Infinite Limits" href="infinitelimits.html" />
+    <link rel="prev" title="Limit at a Point" href="limitatapoint.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">One-Sided Limits</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="one-sided-limits">
+<h1><span class="target" id="index-0"></span>One-Sided Limits<a class="headerlink" href="#one-sided-limits" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>One-Sided Limits are the same as limits except that we only care about approaching the limit point from one side, either the left or the right.  As with most definitions in the precise language of mathematics the set up is sometimes a bit lengthy.  All we are saying here is that if we are taking the limit from the left at <span class="math notranslate nohighlight">\(x = a\)</span> then the function needs to be defined to the left of <em>a</em>.  Similarly with the limit from the right.  For example, we would not talk about the limit from the left of <span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span> at <span class="math notranslate nohighlight">\(x = 0\)</span> since the function is undefined (not real in this case) to the left of <span class="math notranslate nohighlight">\(x = 0\)</span>.  This is still an intuitive definition of a one-sided limit since we are using some vague terms.</p>
+<div class="admonition-definition-limit-from-the-left admonition">
+<p class="admonition-title">Definition: Limit from the Left</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((c, a)\)</span> where <span class="math notranslate nohighlight">\(c &lt; a\)</span>.  If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> approach the real number <em>L</em> as the values of <em>x</em> approach the number <em>a</em>, with <span class="math notranslate nohighlight">\(x &lt; a\)</span>, then we say that <em>the limit of f(x) as x approaches a from the left is L</em>.  That is, as <em>x</em> gets closer to <em>a</em> and <span class="math notranslate nohighlight">\(x &lt; a\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span> gets closer to <em>L</em>.  Symbolically we write</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^-} f(x) = L\]</div>
+</div>
+<div class="admonition-definition-limit-from-the-right admonition">
+<p class="admonition-title">Definition: Limit from the Right</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((a, c)\)</span> where <span class="math notranslate nohighlight">\(c &gt; a\)</span>.  If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> approach the real number <em>L</em> as the values of <em>x</em> approach the number <em>a</em>, with <span class="math notranslate nohighlight">\(x &gt; a\)</span>, then we say that <em>the limit of f(x) as x approaches a from the right is L</em>.  That is, as <em>x</em> gets closer to <em>a</em> and <span class="math notranslate nohighlight">\(x &gt; a\)</span>, <span class="math notranslate nohighlight">\(f(x)\)</span> gets closer to <em>L</em>.  Symbolically we write</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a^+} f(x) = L\]</div>
+</div>
+<p>Another way to say <em>the limit from the left</em> is <em>the limit from below</em> and another way to say <em>the limit from the right</em> is <em>the limit from above</em>.</p>
+<p>Comparing the definitions of one-sided limits and the definition of the limit we get a relative obvious theorem.</p>
+<div class="admonition-theorem-one-sided-to-two-sided-limits admonition">
+<p class="admonition-title">Theorem: One-Sided to Two-Sided Limits</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval containing <em>a</em>, with the possible exception of <em>a</em> itself, and let <em>L</em> be a real number. Then,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} f(x) = L \text{ if and only if }  \lim_{x \to a^-} f(x) = L \text{ and }  \lim_{x \to a^+} f(x) = L\]</div>
+</div>
+<p>Another consequence of this theorem is that if either of the one-sided limits does not exist then the two-sided limit does not exist either.</p>
+</section>
+<section id="example-lim-x-to-2-x-3-5-x-2-x-3">
+<h2>Example: <span class="math notranslate nohighlight">\(\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3\)</span><a class="headerlink" href="#example-lim-x-to-2-x-3-5-x-2-x-3" title="Link to this heading">#</a></h2>
+<section id="numerical-approach">
+<h3>Numerical Approach<a class="headerlink" href="#numerical-approach" title="Link to this heading">#</a></h3>
+<p>For a numerical approach we take values for <em>x</em> that get closer to 2, from each side separately, evaluate the function at all these using a calculator or computer, and see if the corresponding functional values are tending toward a single value.  Making a chart of these values is below,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; x^{3} - 5 x^{2} + x + 3 \\ \hline
+1 &amp; 0 \\
+1.5 &amp; -3.375 \\
+1.75 &amp; -5.203125 \\
+1.9 &amp; -6.291 \\
+1.99 &amp; -6.929901 \\
+1.999 &amp; -6.992999001 \\
+1.9999 &amp; -6.999299990001 \\
+1.99999 &amp; -6.9999299999 \\
+1.999999 &amp; -6.999992999999 \\
+1.9999999 &amp; -6.99999929999999 \\
+\end{array}\end{split}\]</div>
+<p>From the second column of values it appears that the functional values are getting closer to <span class="math notranslate nohighlight">\(-7\)</span>, so we would say,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; x^{3} - 5 x^{2} + x + 3 \\ \hline
+3 &amp; -12 \\
+2.5 &amp; -10.125 \\
+2.25 &amp; -8.671875 \\
+2.1 &amp; -7.689 \\
+2.01 &amp; -7.069899 \\
+2.001 &amp; -7.006998999 \\
+2.0001 &amp; -7.000699989999 \\
+2.00001 &amp; -7.0000699999 \\
+2.000001 &amp; -7.000006999999 \\
+2.0000001 &amp; -7.00000069999999 \\
+\end{array}\end{split}\]</div>
+<p>From the second column of values it appears that the functional values are getting closer to <span class="math notranslate nohighlight">\(-7\)</span>, so we would say,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>Applying our theorem, since</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>we can say that the two-sided limit exists and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+<section id="graphical-approach">
+<h3>Graphical Approach<a class="headerlink" href="#graphical-approach" title="Link to this heading">#</a></h3>
+<p>For a graphical approach we plot the function using a calculator or computer making sure the limit point of 2 is visible in the domain.</p>
+<figure class="align-default" id="id24">
+<img alt="y = x^3 -5x^2+x+3" src="../_images/Point0021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x^{2} + x + 3 = -7\)</span></span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Following the curve around the <em>x</em> value of 2, concentrating on each side of <span class="math notranslate nohighlight">\(x = 2\)</span> respectively, we notice that the corresponding <em>y</em> values appear to be close to <span class="math notranslate nohighlight">\(-7\)</span> we would again say,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and hence by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Numerical Approach<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, this should come into GeoGebra as <code class="docutils literal notranslate"><span class="pre">f(x)</span></code></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-5 x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Open the spreadsheet tool, <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span> <span class="pre">&gt;</span> <span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Spreadsheet</span></code>.</p></li>
+<li><p>Input the <em>x</em> values in the <em>A</em> column.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">B1</span></code> cell input <code class="docutils literal notranslate"><span class="pre">f(A1)</span></code>.  This will substitute the <code class="docutils literal notranslate"><span class="pre">A1</span></code> value into the function and evaluate it.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B1</span></code>, copy it either with a right click and the popup menu or keyboard shortcut.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B2</span></code> down to the last row of <em>x</em> values.</p></li>
+<li><p>Paste either with a right click and the popup menu or keyboard shortcut.  This will evaluate the function at each of the values in column <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
+</ol>
+<figure class="align-default" id="id25">
+<img alt="Spreadsheet values for y = x^3 -5x^2+x+3" src="../_images/Point0051.png" />
+<figcaption>
+<p><span class="caption-text">Spreadsheet values for <span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x^{2} + x + 3 = -7\)</span></span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the values we come to the conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+<section id="id2">
+<h4>Graphical Approach<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, this should come into GeoGebra as <code class="docutils literal notranslate"><span class="pre">f(x)</span></code></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-5 x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>GeoGebra will automatically graph the function.</p></li>
+<li><p>Using the Shift-Click and Drag on the axes and repositioning, zoom to a view that still contains <span class="math notranslate nohighlight">\(x = 2\)</span> and is nicely readable.</p></li>
+</ol>
+<figure class="align-default" id="id26">
+<img alt="y = x^3 -5x^2+x+3" src="../_images/Point0061.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x^{2} + x + 3 = -7\)</span></span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph we come to the conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+<section id="algebraic-approach">
+<h4>Algebraic Approach<a class="headerlink" href="#algebraic-approach" title="Link to this heading">#</a></h4>
+<p>Although we have not yet discussed limit laws and methods we can let the software do that work for us.  GeoGebra has a built in computer algebra system that does exact mathematics.</p>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, this should come into GeoGebra as <code class="docutils literal notranslate"><span class="pre">f(x)</span></code></p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-5 x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>In the next input cell start typing <code class="docutils literal notranslate"><span class="pre">limit</span></code>, after three characters or so an autocompletion menu will appear with <code class="docutils literal notranslate"><span class="pre">LimitBelow</span></code> as one of the options, select it, the parameters for this function are a function and a value, input <code class="docutils literal notranslate"><span class="pre">f</span></code> for the function, hit tab, then input 2 for the value.  The cell will display the limit command and the value of <span class="math notranslate nohighlight">\(-7\)</span>.  Hence,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<ol class="arabic simple" start="3">
+<li><p>In the next input cell start typing <code class="docutils literal notranslate"><span class="pre">limit</span></code>, after three characters or so an autocompletion menu will appear with <code class="docutils literal notranslate"><span class="pre">LimitAbove</span></code> as one of the options, select it, the parameters for this function are a function and a value, input <code class="docutils literal notranslate"><span class="pre">f</span></code> for the function, hit tab, then input 2 for the value.  The cell will display the limit command and the value of <span class="math notranslate nohighlight">\(-7\)</span>.  Hence,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and again by our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>Numerical Approach<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, you can copy this and paste it into the CAS input bar with a right click popup menu or keyboard shortcut.  Note that CLAE does not automatically assign function names to inputs.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-5*x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Click the Spreadsheet tab.</p></li>
+<li><p>Input the <em>x</em> values in the <em>A</em> column.</p></li>
+<li><p>In the <code class="docutils literal notranslate"><span class="pre">B1</span></code> cell input <code class="docutils literal notranslate"><span class="pre">f(A1)</span></code>.  This will substitute <code class="docutils literal notranslate"><span class="pre">A1</span></code> into the function and evaluate it.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B1</span></code>, copy its formula with <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Copy</span> <span class="pre">Formulas</span></code> or the corresponding toolbar button.</p></li>
+<li><p>Select <code class="docutils literal notranslate"><span class="pre">B2</span></code> down to the last row of <em>x</em> values.</p></li>
+<li><p>Paste with either <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Paste</span></code> or the corresponding toolbar button.</p></li>
+</ol>
+<figure class="align-default" id="id27">
+<img alt="Spreadsheet values for y = x^3 -5x^2+x+3" src="../_images/Point0071.png" />
+<figcaption>
+<p><span class="caption-text">Spreadsheet values for <span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x^{2} + x + 3 = -7\)</span></span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph we come to the conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+<section id="id4">
+<h4>Graphical Approach<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Input the function, syntax is below, you can copy this and paste it into the CAS input bar with a right click popup menu or keyboard shortcut.  Note that CLAE does not automatically assign function names to inputs.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-5*x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Click the 2-D Graphs tab.</p></li>
+<li><p>Click and drag the expression from the CAS workspace to the graph, or graphics manager.  This will plot the function.  Use the right-click and drag on the axes and repositioning, zoom to a view that still contains <span class="math notranslate nohighlight">\(x = 2\)</span> and is nicely readable.</p></li>
+</ol>
+<figure class="align-default" id="id28">
+<img alt="y = x^3 -5x^2+x+3" src="../_images/Point0081.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x^{2} + x + 3 = -7\)</span></span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph we come to the conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+<section id="id5">
+<h4>Algebraic Approach<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Although we have not yet discussed limit laws and methods we can let the software do that work for us.  CLAE has a built in computer algebra system that does exact mathematics.</p>
+<ol class="arabic">
+<li><p>Input the function, syntax is below. Note we do not need the <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> here but it will work equally well if we include it.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-5*x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Select the expression and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Limit Point: 2.</p></li>
+<li><p>Direction: Left</p></li>
+<li><p>Leave the variable properties as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The CAS workspace will show the limit in the description and <span class="math notranslate nohighlight">\(-7\)</span> as the value.</p></li>
+<li><dl class="simple">
+<dt>Select the expression and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Limit Point: 2.</p></li>
+<li><p>Direction: Right</p></li>
+<li><p>Leave the variable properties as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The CAS workspace will show the limit in the description and <span class="math notranslate nohighlight">\(-7\)</span> as the value.</p></li>
+</ol>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>Numerical Approach<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Creating tables in Maxima is not the easiest thing to do and requires a little programming.  You can simply evaluate the function at each <em>x</em> value one at a time to obtain the same information or try using a Maxima for loop.</p>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-5*x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Now either evaluate <code class="docutils literal notranslate"><span class="pre">f(2.1)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(2.01)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(2.001)</span></code>, and so on or do the following loop.</p>
+<blockquote>
+<div><div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f&quot;</span><span class="p">),</span>
+<span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="o">:</span><span class="mi">1</span><span class="w"> </span><span class="k">thru</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">do</span>
+<span class="p">(</span><span class="nv">x</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="o">+</span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="nv">i</span><span class="p">),</span>
+<span class="nv">L</span><span class="o">:</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="nf">print</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="nv">L</span><span class="p">))</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nv">x</span><span class="w"> </span><span class="nv">f</span>
+<span class="mf">2.1</span><span class="w"> </span><span class="o">-</span><span class="mf">7.689</span>
+<span class="mf">2.01</span><span class="w"> </span><span class="o">-</span><span class="mf">7.069898999999998</span>
+<span class="mf">2.001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.006998999</span>
+<span class="mf">2.0001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.000699989999001</span>
+<span class="mf">2.00001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.000069999899999</span>
+<span class="mf">2.000001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.000006999998998</span>
+<span class="mf">2.0000001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.000000699999987</span>
+<span class="mf">2.00000001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.000000069999999</span>
+<span class="mf">2.000000001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.000000007000001</span>
+<span class="mf">2.0000000001</span><span class="w"> </span><span class="o">-</span><span class="mf">7.0000000007</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Now either evaluate <code class="docutils literal notranslate"><span class="pre">f(1.9)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(1.99)</span></code>, <code class="docutils literal notranslate"><span class="pre">f(1.999)</span></code>, and so on or do the following loop.</p>
+<blockquote>
+<div><div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;f&quot;</span><span class="p">),</span>
+<span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="o">:</span><span class="mi">1</span><span class="w"> </span><span class="k">thru</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">do</span>
+<span class="p">(</span><span class="nv">x</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="o">-</span><span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="mi">10</span><span class="o">^</span><span class="nv">i</span><span class="p">),</span>
+<span class="nv">L</span><span class="o">:</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">*</span><span class="mf">1.0</span><span class="p">,</span>
+<span class="nf">print</span><span class="p">(</span><span class="nv">x</span><span class="p">,</span><span class="nv">L</span><span class="p">))</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nv">x</span><span class="w"> </span><span class="nv">f</span>
+<span class="mf">1.9</span><span class="w"> </span><span class="o">-</span><span class="mf">6.291000000000002</span>
+<span class="mf">1.99</span><span class="w"> </span><span class="o">-</span><span class="mf">6.929900999999999</span>
+<span class="mf">1.999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.992999000999999</span>
+<span class="mf">1.9999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.999299990001001</span>
+<span class="mf">1.99999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.999929999900001</span>
+<span class="mf">1.999999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.999992999999002</span>
+<span class="mf">1.9999999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.99999929999999</span>
+<span class="mf">1.99999999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.999999930000001</span>
+<span class="mf">1.999999999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.999999992999999</span>
+<span class="mf">1.9999999999</span><span class="w"> </span><span class="o">-</span><span class="mf">6.9999999993</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+</section>
+<section id="id7">
+<h4>Graphical Approach<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-5*x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Select <code class="docutils literal notranslate"><span class="pre">Plot</span> <span class="pre">&gt;</span> <span class="pre">Plot</span> <span class="pre">2D</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Expression: <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code> from <span class="math notranslate nohighlight">\(-2\)</span> to 6.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">y</span></code> from <span class="math notranslate nohighlight">\(-15\)</span> to 5.</p></li>
+<li><p>Leave the rest of the options as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+<figure class="align-default" id="id29">
+<img alt="y = x^3 -5x^2+x+3" src="../_images/Point0091.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x^{2} + x + 3 = -7\)</span></span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the above graph we conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The menu options in wxMaxima help the user set up the Maxima command and loads the command into the workspace.  The user can equally type in the command into the workspace.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x)], [x,-2,6], [y,-15,5])</span>
+</pre></div>
+</div>
+<p>Here the <code class="docutils literal notranslate"><span class="pre">[f(x)]</span></code> is the list of functions to plot, <code class="docutils literal notranslate"><span class="pre">[x,-2,6]</span></code> is the bounds on <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">[y,-15,5]</span></code> is the bounds on <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<p>Graphs in Maxima are not as easy to manipulate as they are in GeoGebra or CLAE, so the options need to be specified in the command.  If the image is not what is desired the user can manipulate the options in the command line instead of redoing the full inputs from the dialog.</p>
+</div>
+</section>
+<section id="id8">
+<h4>Algebraic Approach<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-5*x^2+x+3</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><dl class="simple">
+<dt>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Find</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Expression: <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>Point: 2.</p></li>
+<li><p>Direction: left</p></li>
+<li><p>Leave the rest of the options as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The result will be <span class="math notranslate nohighlight">\(-7\)</span>.</p></li>
+<li><dl class="simple">
+<dt>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Find</span> <span class="pre">Limit</span></code>, a dialog box will appear, here are the settings.</dt><dd><ul class="simple">
+<li><p>Expression: <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Variable: <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>Point: 2.</p></li>
+<li><p>Direction: right</p></li>
+<li><p>Leave the rest of the options as they are.</p></li>
+<li><p>Select OK</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The result will be <span class="math notranslate nohighlight">\(-7\)</span>.</p></li>
+</ol>
+<p>Hence we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2^-} x^{3} - 5 x^{2} + x + 3 = -7 \quad  {\rm and} \quad \lim_{x \to 2^+} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<p>and by the theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3 = -7\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The command for a one-sided limit is fairly simple, the above limits would be,</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nf">limit</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">),</span><span class="w"> </span><span class="nv">x</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nv">minus</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nf">limit</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">),</span><span class="w"> </span><span class="nv">x</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nv">plus</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>respectively.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="example-lim-x-to-0-frac-sin-x-x">
+<h2>Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0} \frac{\sin(x)}{x}\)</span><a class="headerlink" href="#example-lim-x-to-0-frac-sin-x-x" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3>Numerical Approach<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>For a numerical approach we take values for <em>x</em> that get closer to 0, from each side independently, evaluate the function at all these using a calculator or computer, and see if the corresponding functional values are tending toward a single value.  Making  chart of these values is below,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{\sin(x)}{x} \\ \hline
+1.0 &amp; 0.841470984807897 \\
+0.1 &amp; 0.998334166468282 \\
+0.01 &amp; 0.999983333416666 \\
+0.001 &amp; 0.999999833333342 \\
+0.0001 &amp; 0.999999998333333 \\
+1.0 \cdot 10^{-5} &amp; 0.999999999983333 \\
+1.0 \cdot 10^{-6} &amp; 0.999999999999833 \\
+1.0 \cdot 10^{-7} &amp; 0.999999999999998 \\
+\end{array}\end{split}\]</div>
+<p>From the values we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{\sin(x)}{x} = 1\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{\sin(x)}{x} \\ \hline
+-1.0 &amp; 0.841470984807897 \\
+-0.1 &amp; 0.998334166468282 \\
+-0.01 &amp; 0.999983333416666 \\
+-0.001 &amp; 0.999999833333342 \\
+-0.0001 &amp; 0.999999998333333 \\
+-1.0 \cdot 10^{-5} &amp; 0.999999999983333 \\
+-1.0 \cdot 10^{-6} &amp; 0.999999999999833 \\
+-1.0 \cdot 10^{-7} &amp; 0.999999999999998 \\
+\end{array}\end{split}\]</div>
+<p>From the values we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x} = 1\]</div>
+<p>and hence from our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]</div>
+</section>
+<section id="id10">
+<h3>Graphical Approach<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>For a graphical approach we plot the function using a calculator or computer making sure the limit point of 0 is visible in the domain.</p>
+<figure class="align-default" id="id30">
+<img alt="y = sin(x)/x" src="../_images/Point0011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\sin(x)}{x}\)</span></span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Following the curve around the <em>x</em> value of 0 and noticing that the corresponding <em>y</em> values appear to be close to 1 we would again say,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x} = 1 \quad {\rm and } \quad \lim_{x \to 0^+} \frac{\sin(x)}{x} = 1\]</div>
+<p>and from our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this case the limit is not the same as substituting in the limit point, for <span class="math notranslate nohighlight">\(\frac{\sin(0)}{0}\)</span> is undefined.  Also note that graphs from calculators and computers can be misleading.   The curve, in reality, has a hole in it at <span class="math notranslate nohighlight">\(x = 0\)</span>, most software packages will not display this.  As far as the limits are concerned, remember we are considering the function close to <span class="math notranslate nohighlight">\(x = 0\)</span> and not at <span class="math notranslate nohighlight">\(x = 0\)</span>.</p>
+<figure class="align-default" id="id31">
+<img alt="y = sin(x)/x" src="../_images/Point003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\sin(x)}{x}\)</span></span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="id11">
+<h3>GeoGebra<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function as <span class="math notranslate nohighlight">\(x \to 0^-\)</span> and <span class="math notranslate nohighlight">\(x \to 0^+\)</span>.  The spreadsheet should produce values close to the tables above, the image should look like the following, and the above and below limit commands should both produce 1.</p></li>
+</ol>
+<figure class="align-default" id="id32">
+<img alt="y = sin(x)/x" src="../_images/Point0101.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\sin(x)}{x}\)</span></span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x} = 1 \quad {\rm and } \quad \lim_{x \to 0^+} \frac{\sin(x)}{x} = 1\]</div>
+<p>and from our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]</div>
+</section>
+<section id="id12">
+<h3>CLAE<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>If there are entries in the CAS workspace you may want to clear the workspace.  Note that CLAE does not allow you to redefine a function name, so either clear the workspace or change the name of the function in the next step.</p></li>
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function as <span class="math notranslate nohighlight">\(x \to 0^-\)</span> and <span class="math notranslate nohighlight">\(x \to 0^+\)</span>.  The spreadsheet should produce values close to the tables above, the image should look like the following, and the left and right limits should both produce 1.</p></li>
+</ol>
+<figure class="align-default" id="id33">
+<img alt="y = sin(x)/x" src="../_images/Point0011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\sin(x)}{x}\)</span></span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x} = 1 \quad {\rm and } \quad \lim_{x \to 0^+} \frac{\sin(x)}{x} = 1\]</div>
+<p>and from our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]</div>
+</section>
+<section id="id13">
+<h3>Maxima<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function as <span class="math notranslate nohighlight">\(x \to 0^-\)</span> and <span class="math notranslate nohighlight">\(x \to 0^+\)</span>.  The table from the for loop should produce values close to the tables above, the image should look like the following, and the left and right limit commands should produce 1.</p></li>
+</ol>
+<figure class="align-default" id="id34">
+<img alt="y = sin(x)/x" src="../_images/Point0111.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\sin(x)}{x}\)</span></span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x} = 1 \quad {\rm and } \quad \lim_{x \to 0^+} \frac{\sin(x)}{x} = 1\]</div>
+<p>and from our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]</div>
+</section>
+</section>
+<section id="example-lim-x-to-3-frac-left-x-2-9-right-x-3">
+<h2>Example: <span class="math notranslate nohighlight">\(\lim_{x \to 3} \frac{\left|{x^{2} - 9}\right|}{x - 3}\)</span><a class="headerlink" href="#example-lim-x-to-3-frac-left-x-2-9-right-x-3" title="Link to this heading">#</a></h2>
+<section id="id14">
+<h3>Numerical Approach<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p>Creating tables of values as we have done before, we get the following,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{\left|{x^{2} - 9}\right|}{x - 3} \\ \hline
+3.1 &amp; 6.10000000000001 \\
+3.01 &amp; 6.00999999999998 \\
+3.001 &amp; 6.00100000000014 \\
+3.0001 &amp; 6.00009999999939 \\
+3.00001 &amp; 6.00000999991201 \\
+3.000001 &amp; 6.0000010000889 \\
+\end{array}\end{split}\]</div>
+<p>From the functional values we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^+} \frac{\left|{x^{2} - 9}\right|}{x - 3} = 6\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \frac{\left|{x^{2} - 9}\right|}{x - 3} \\ \hline
+2.9 &amp; -5.89999999999999 \\
+2.99 &amp; -5.99000000000002 \\
+2.999 &amp; -5.99899999999986 \\
+2.9999 &amp; -5.99990000000061 \\
+2.99999 &amp; -5.99999000008799 \\
+2.999999 &amp; -5.9999989999111 \\
+\end{array}\end{split}\]</div>
+<p>From the functional values we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^-} \frac{\left|{x^{2} - 9}\right|}{x - 3} = -6\]</div>
+<p>In this case both one-sided limits exist but since they are not equal to the same value the contrapositive statement of the theorem implies that,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3} \frac{\left|{x^{2} - 9}\right|}{x - 3} \quad DNE\]</div>
+</section>
+<section id="id15">
+<h3>Graphical Approach<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>Graphing the function, we get with CLAE, and a similar image with Maxima,</p>
+<figure class="align-default" id="id35">
+<img alt="y = |x^2-9|/(x-3)" src="../_images/Point0121.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\left|{x^{2} - 9}\right|}{x - 3}\)</span></span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>and with GeoGebra,</p>
+<figure class="align-default" id="id36">
+<img alt="y = |x^2-9|/(x-3)" src="../_images/Point0131.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\left|{x^{2} - 9}\right|}{x - 3}\)</span></span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that GeoGebra detected the jump at <span class="math notranslate nohighlight">\(x = 3\)</span> and did not connect the two portions of the graph, whereas CLAE and Maxima connected them.  The “correct” graph is the one produced by GeoGebra.  Note that it is more common in mathematical software packages and graphing calculators for the two portions to be connected and leaves it to the user to realize that the vertical line does not belong there.  In general, with graphing software, always question vertical lines, sometimes they belong there and other times they are artifacts.</p>
+<p>From either image we get the same conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^-} \frac{\left|{x^{2} - 9}\right|}{x - 3} = -6 \quad {\rm and} \quad \lim_{x \to 3^+} \frac{\left|{x^{2} - 9}\right|}{x - 3} = 6\]</div>
+<p>and by our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3} \frac{\left|{x^{2} - 9}\right|}{x - 3} \quad DNE\]</div>
+</section>
+<section id="id16">
+<h3>GeoGebra<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Input the function, either of the following expressions will work,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">abs(x^2-9)/(x-3)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">|x^2-9|/(x-3)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function at <span class="math notranslate nohighlight">\(x \to 3\)</span>.  The spreadsheet should produce values close to the tables above and the image should look like the following.  The big difference is with the above and below limit commands we get 6 and <span class="math notranslate nohighlight">\(-6\)</span> respectively.</p></li>
+</ol>
+<figure class="align-default" id="id37">
+<img alt="y = |x^2-9|/(x-3)" src="../_images/Point0131.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\left|{x^{2} - 9}\right|}{x - 3}\)</span></span><a class="headerlink" href="#id37" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^-} \frac{\left|{x^{2} - 9}\right|}{x - 3} = -6 \quad {\rm and} \quad \lim_{x \to 3^+} \frac{\left|{x^{2} - 9}\right|}{x - 3} = 6\]</div>
+<p>and by our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3} \frac{\left|{x^{2} - 9}\right|}{x - 3} \quad DNE\]</div>
+</section>
+<section id="id17">
+<h3>CLAE<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>If there are entries in the CAS workspace you may want to clear the workspace.  Note that CLAE does not allow you to redefine a function name, so either clear the workspace or change the name of the function in the next step.</p></li>
+<li><p>Input the function, either of the two inputs will work.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=Abs(x^2 - 9)/(x - 3)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=abs(x^2 - 9)/(x - 3)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function at <span class="math notranslate nohighlight">\(x \to 3\)</span>.  The spreadsheet should produce values close to the tables above and the image should look like the following.  The left and right limit commands should produce <span class="math notranslate nohighlight">\(-6\)</span> and 6 respectively.</p></li>
+</ol>
+<figure class="align-default" id="id38">
+<img alt="y = |x^2-9|/(x-3)" src="../_images/Point0121.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\left|{x^{2} - 9}\right|}{x - 3}\)</span></span><a class="headerlink" href="#id38" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^-} \frac{\left|{x^{2} - 9}\right|}{x - 3} = -6 \quad {\rm and} \quad \lim_{x \to 3^+} \frac{\left|{x^{2} - 9}\right|}{x - 3} = 6\]</div>
+<p>and by our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3} \frac{\left|{x^{2} - 9}\right|}{x - 3} \quad DNE\]</div>
+</section>
+<section id="id18">
+<h3>Maxima<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=abs(x^2 - 9)/(x - 3)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function at <span class="math notranslate nohighlight">\(x \to 3\)</span>.  The table from the for loop should produce values close to the tables above and the image should look like the following.  When we use the left and right limit commands we get <span class="math notranslate nohighlight">\(-6\)</span> and 6 respectively.</p></li>
+</ol>
+<figure class="align-default" id="id39">
+<img alt="y = |x^2-9|/(x-3)" src="../_images/Point0141.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{\left|{x^{2} - 9}\right|}{x - 3}\)</span></span><a class="headerlink" href="#id39" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3^-} \frac{\left|{x^{2} - 9}\right|}{x - 3} = -6 \quad {\rm and} \quad \lim_{x \to 3^+} \frac{\left|{x^{2} - 9}\right|}{x - 3} = 6\]</div>
+<p>and by our theorem,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 3} \frac{\left|{x^{2} - 9}\right|}{x - 3} \quad DNE\]</div>
+</section>
+</section>
+<section id="example-lim-x-to-0-sin-left-frac-1-x-right">
+<h2>Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0} \sin\left( \frac{1}{x} \right)\)</span><a class="headerlink" href="#example-lim-x-to-0-sin-left-frac-1-x-right" title="Link to this heading">#</a></h2>
+<section id="id19">
+<h3>Numerical Approach<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<p>Creating the tables as we have done before.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \sin\left( \frac{1}{x} \right) \\ \hline
+1.0 &amp; 0.841470984807897 \\
+0.1 &amp; -0.54402111088937 \\
+0.01 &amp; -0.506365641109759 \\
+0.001 &amp; 0.826879540532003 \\
+0.0001 &amp; -0.305614388888252 \\
+1.0 \cdot 10^{-5} &amp; 0.0357487979865591 \\
+1.0 \cdot 10^{-6} &amp; -0.349993502171293 \\
+1.0 \cdot 10^{-7} &amp; 0.420547793190783 \\
+1.0 \cdot 10^{-8} &amp; 0.931639027109726 \\
+1.0 \cdot 10^{-9} &amp; 0.54584334956476 \\
+\end{array}\end{split}\]</div>
+<p>Since the functional values are jumping around and not appearing to be getting close to any single number we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{l|l}
+x &amp; \sin\left( \frac{1}{x} \right) \\ \hline
+-1.0 &amp; -0.841470984807897 \\
+-0.1 &amp; 0.54402111088937 \\
+-0.01 &amp; 0.506365641109759 \\
+-0.001 &amp; -0.826879540532003 \\
+-0.0001 &amp; 0.305614388888252 \\
+-1.0 \cdot 10^{-5} &amp; -0.0357487979865591 \\
+-1.0 \cdot 10^{-6} &amp; 0.349993502171293 \\
+-1.0 \cdot 10^{-7} &amp; -0.420547793190783 \\
+-1.0 \cdot 10^{-8} &amp; -0.931639027109726 \\
+-1.0 \cdot 10^{-9} &amp; -0.54584334956476 \\
+\end{array}\end{split}\]</div>
+<p>As with the right sided limit the functional values here are also jumping around and not appearing to be getting close to any single number we would conclude,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<p>Since the one-sided limits do not exist, really we only one not to exist, the two-sided limit does not exist,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<p>As noted before, there are cases where a function can act erratically in our numeric testing values and settle in if we get closer.  Although this does not happen here, it is possible.</p>
+</section>
+<section id="id20">
+<h3>Graphical Approach<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<p>Graphing the function gives us the following image.</p>
+<figure class="align-default" id="id40">
+<img alt="y = sin(1/x)" src="../_images/Point0041.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin\left( \frac{1}{x} \right)\)</span></span><a class="headerlink" href="#id40" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This matches our suspicions from the numeric approach but is more informative.  It appears that the functional values oscillate infinitely often as we get closer to 0.  As with the above example, this means that there is no single value <em>L</em> that the functional values are getting close to from either side and hence the limits do not exist.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<p>and hence,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<p>If we look at this logically we should come to the same conclusion.  As the values od <em>x</em> get small, the values of <span class="math notranslate nohighlight">\(\frac{1}{x}\)</span> get large, in fact grow without bound.  Taking the <span class="math notranslate nohighlight">\(\sin(x)\)</span> will periodically oscillate between <span class="math notranslate nohighlight">\(-1\)</span> and 1, hence infinitely often.</p>
+</section>
+<section id="id21">
+<h3>GeoGebra<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(1/x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function at <span class="math notranslate nohighlight">\(x \to 0\)</span>.  The spreadsheet should produce values close to the tables above and the image should look like the following.  The big difference is with the above and below limit commands will produce <code class="docutils literal notranslate"><span class="pre">?</span></code>.</p></li>
+</ol>
+<figure class="align-default" id="id41">
+<img alt="y = sin(1/x)" src="../_images/Point0151.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin\left( \frac{1}{x} \right)\)</span></span><a class="headerlink" href="#id41" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusions,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<p>and hence,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+</section>
+<section id="id22">
+<h3>CLAE<a class="headerlink" href="#id22" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>If there are entries in the CAS workspace you may want to clear the workspace.  Note that CLAE does not allow you to redefine a function name, so either clear the workspace or change the name of the function in the next step.</p></li>
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(1/x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function at <span class="math notranslate nohighlight">\(x \to 0\)</span>.  The spreadsheet should produce values close to the tables above and the image should look like the following, with the number of points plotted increased.  The left and right limit commands here produce the following output, <span class="math notranslate nohighlight">\(\left\langle -1, 1\right\rangle\)</span>.  This is its way of denoting the oscillation between <span class="math notranslate nohighlight">\(-1\)</span> and 1. This still shows that there is no <em>single</em> number <em>L</em>, hence the limits do not exist.</p></li>
+</ol>
+<figure class="align-default" id="id42">
+<img alt="y = sin(1/x)" src="../_images/Point0041.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin\left( \frac{1}{x} \right)\)</span></span><a class="headerlink" href="#id42" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<p>and hence,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+</section>
+<section id="id23">
+<h3>Maxima<a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Clear any variable names you are using.</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(f,x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the function, syntax is below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(1/x)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Follow the process outlined in the first example to determine the one-sided limits of this function at <span class="math notranslate nohighlight">\(x \to 0\)</span>.  The table from the for loop should produce values close to the tables above and the image should look like the following.  When we use the left and right limit commands we get the result <code class="docutils literal notranslate"><span class="pre">ind</span></code>, short for indeterminate.</p></li>
+</ol>
+<figure class="align-default" id="id43">
+<img alt="y = sin(1/x)" src="../_images/Point0161.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin\left( \frac{1}{x} \right)\)</span></span><a class="headerlink" href="#id43" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Each method should give us the conclusion,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+<p>and hence,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \sin\left( \frac{1}{x} \right) \quad DNE\]</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="limitatapoint.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Limit at a Point</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="infinitelimits.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Infinite Limits</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-to-2-x-3-5-x-2-x-3">Example: <span class="math notranslate nohighlight">\(\lim_{x \to 2} x^{3} - 5 x^{2} + x + 3\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approach">Numerical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graphical-approach">Graphical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Numerical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Graphical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algebraic-approach">Algebraic Approach</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Numerical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Graphical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Algebraic Approach</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Numerical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Graphical Approach</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Algebraic Approach</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-to-0-frac-sin-x-x">Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0} \frac{\sin(x)}{x}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Numerical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Graphical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-to-3-frac-left-x-2-9-right-x-3">Example: <span class="math notranslate nohighlight">\(\lim_{x \to 3} \frac{\left|{x^{2} - 9}\right|}{x - 3}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Numerical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Graphical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-to-0-sin-left-frac-1-x-right">Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0} \sin\left( \frac{1}{x} \right)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Numerical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Graphical Approach</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

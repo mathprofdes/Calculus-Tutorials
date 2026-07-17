@@ -1,0 +1,735 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Indeterminate Forms &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/indforms';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Optimization" href="optimization.html" />
+    <link rel="prev" title="Derivatives and the Shape of a Graph" href="derivativetests.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Indeterminate Forms</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="indeterminate-forms">
+<h1><span class="target" id="index-0"></span>Indeterminate Forms<a class="headerlink" href="#indeterminate-forms" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Indeterminate Forms are where most textbooks discuss l’Hospital’s Rule.  This is a nice technique for finding limits that are difficult and have a certain form to them.  It is also an application of the derivative, which is why it is here and not in the material on limits.</p>
+<p>As with derivative techniques this is primarily a by hand technique but is also incorporated into many computer algebra systems in the code for calculating limits.  Since these tutorials are focused on using computer algebra system technology we will not go into how to apply the rule in your by hand calculations.  Instead we will give a quick summary of the rule, the forms it can be used for, and then do some examples using our software systems.</p>
+<div class="admonition-theorem-l-hospitals-rule-0-0-case admonition">
+<p class="admonition-title">Theorem: l’Hospital’s Rule (0/0 Case)</p>
+<p>Suppose <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are differentiable functions over an open interval containing <span class="math notranslate nohighlight">\(a\)</span>, except possibly at <span class="math notranslate nohighlight">\(a\)</span>. If <span class="math notranslate nohighlight">\(\lim_{x \to a} f(x) = 0\)</span> and <span class="math notranslate nohighlight">\(\lim_{x \to a} g(x) = 0\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}\]</div>
+<p>assuming the limit on the right exists or is <span class="math notranslate nohighlight">\(\infty\)</span> or <span class="math notranslate nohighlight">\(-\infty\)</span>. This result also holds if we are considering one-sided limits, or if <span class="math notranslate nohighlight">\(a\)</span> is <span class="math notranslate nohighlight">\(-\infty\)</span> or <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+</div>
+<p>Here is why it is called an indeterminate form.  From the language it implies that limits of this form cannot be determined.  In other words, if all we know is that we have a 0/0 form the limit could be anything.  As some examples, where each of the limit is of the form 0/0.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{3\sin(x)}{x} = 3\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{- x^{2} + \tan{\left(x \right)}}{x^{2} \tan{\left(x \right)}} = \infty\]</div>
+<div class="admonition-theorem-l-hospitals-rule-math-infty-infty-case admonition">
+<p class="admonition-title">Theorem: l’Hospital’s Rule (<span class="math notranslate nohighlight">\(\infty/\infty\)</span> Case)</p>
+<p>Suppose <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are differentiable functions over an open interval containing <span class="math notranslate nohighlight">\(a\)</span>, except possibly at <span class="math notranslate nohighlight">\(a\)</span>. If <span class="math notranslate nohighlight">\(\lim_{x \to a} f(x) = \pm \infty\)</span> and <span class="math notranslate nohighlight">\(\lim_{x \to a} g(x) = \pm \infty\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)}\]</div>
+<p>assuming the limit on the right exists or is <span class="math notranslate nohighlight">\(\infty\)</span> or <span class="math notranslate nohighlight">\(-\infty\)</span>. This result also holds if we are considering one-sided limits, or if <span class="math notranslate nohighlight">\(a\)</span> is <span class="math notranslate nohighlight">\(-\infty\)</span> or <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+</div>
+<p>For other indeterminate forms are as follows, in each case the goal to calculate the limit is to manipulate the form into one of the two above and then complete the calculation.</p>
+<div class="admonition-other-indeterminate-forms admonition">
+<p class="admonition-title">Other Indeterminate Forms</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(f(x) \cdot g(x) \to 0 \cdot \infty\)</span> form, invert one of the functions to, <span class="math notranslate nohighlight">\(\frac{f(x)}{1/g(x)}\)</span> or <span class="math notranslate nohighlight">\(\frac{g(x)}{1/f(x)}\)</span> to obtain one of the above forms.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x) - g(x) \to \infty - \infty\)</span> form, no set process here, algebraically manipulate to obtain one of the above forms.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x)^{g(x)} \to 1^\infty {\; \rm or \; } \infty^0 {\; \rm or \; } 0^0\)</span> form, to solve these try the following procedure,</p>
+<blockquote>
+<div><ol class="lowerroman simple">
+<li><p>Take the natural logarithm of the expression, <span class="math notranslate nohighlight">\(\ln\left(f(x)^{g(x)}\right) = g(x) \cdot \ln\left(f(x)\right)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(g(x) \cdot \ln\left(f(x)\right)\)</span> will be of the <span class="math notranslate nohighlight">\(0 \cdot \infty\)</span> form.  Then use the technique from above to finish this limit.</p></li>
+<li><p>If the limit exists raise it as a power of <span class="math notranslate nohighlight">\(e\)</span> to obtain the limit of the original expression.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</section>
+<section id="example-lim-x-to-0-x-ln-left-x-right">
+<h2>Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0^+} x \ln{\left(x \right)}\)</span><a class="headerlink" href="#example-lim-x-to-0-x-ln-left-x-right" title="Link to this heading">#</a></h2>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*ln(x)</span>
+</pre></div>
+</div>
+<p>In a new cell input <code class="docutils literal notranslate"><span class="pre">LimitAbove</span></code>, function is <code class="docutils literal notranslate"><span class="pre">f</span></code> and value is 0.  Result is 0.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*ln(x)</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, variable is <em>x</em>, limit point is 0, the direction is right. Result is 0.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=x*log(x)</span>
+</pre></div>
+</div>
+<p>Then find the limit,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(f(x),x,0,plus)</span>
+</pre></div>
+</div>
+<p>Result is 0.</p>
+</section>
+</section>
+<section id="example-lim-x-to-0-frac-1-x-2-frac-1-tan-x">
+<h2>Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0^+} \frac{1}{x^2} - \frac{1}{\tan(x)}\)</span><a class="headerlink" href="#example-lim-x-to-0-frac-1-x-2-frac-1-tan-x" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x^2 - 1/tan(x)</span>
+</pre></div>
+</div>
+<p>In a new cell input <code class="docutils literal notranslate"><span class="pre">LimitAbove</span></code>, function is <code class="docutils literal notranslate"><span class="pre">f</span></code> and value is 0.  Result is <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x^2 - 1/tan(x)</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, variable is <em>x</em>, limit point is 0, the direction is right. Result is <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=1/x^2 - 1/tan(x)</span>
+</pre></div>
+</div>
+<p>Then find the limit,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(f(x),x,0,plus)</span>
+</pre></div>
+</div>
+<p>Result is <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+</section>
+</section>
+<section id="example-lim-x-to-a-frac-sqrt-2a-3x-x-4-a-sqrt-3-a-2x-a-sqrt-4-ax-3-with-a-0">
+<h2>Example: <span class="math notranslate nohighlight">\(\lim_{x \to a} \frac{\sqrt{2a^3x-x^4} - a \sqrt[3]{a^2x} }{a - \sqrt[4]{ax^3}}\)</span> with <span class="math notranslate nohighlight">\(a &gt; 0\)</span><a class="headerlink" href="#example-lim-x-to-a-frac-sqrt-2a-3x-x-4-a-sqrt-3-a-2x-a-sqrt-4-ax-3-with-a-0" title="Link to this heading">#</a></h2>
+<p>Another classic example is in the study of l’Hospital’s Rule.  Marquis de l’Hospital published the very first Calculus textbook in 1696, where l’Hospital’s Rule is first seen in print. l’Hospital did not discover this rule, the Swiss mathematician John Bernoulli (1667–1748) is the one who discovered the method.  l’Hospital and Bernoulli had an interesting business relationship where l’Hospital purchased the rights to this method, which is why it is named after him and not Bernoulli.  In his book l’Hospital wanted to calculate,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} \frac{\sqrt{2a^3x-x^4} - a \sqrt[3]{a^2x} }{a - \sqrt[4]{ax^3}}\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span> indeterminate form and hence can be attacked using l’Hospital’s Rule (really Bernoulli’s Rule).  This expression also assumed that <span class="math notranslate nohighlight">\(a &gt; 0\)</span>.</p>
+<section id="id4">
+<h3>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>With GeoGebra if we try to input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-a*(a^2*x)</span><span class="go">^(1/3) + sqrt(2*a^3*x - x^4))/(a - (a*x^3)^(1/4))</span>
+</pre></div>
+</div>
+<p>GeoGebra will not see <em>a</em> as an undefined variable, it will automatically create a slider for it and substitute the slider value into the expression.  This makes it difficult to establish the limit in general so we will not use GeoGebra for this example.</p>
+</section>
+<section id="id5">
+<h3>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-a*(a^2*x)</span><span class="go">^(1/3) + sqrt(2*a^3*x - x^4))/(a - (a*x^3)^(1/4))</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, variable is <em>x</em>, limit point is 0, the direction is Two Sided.  Now before clicking OK we have additional information that CLAE needs to know about, that is <span class="math notranslate nohighlight">\(a &gt; 0\)</span>.  Select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Variable</span> <span class="pre">Properties</span></code>, in the dialog box that comes up select the <em>a</em> entry in the left and then select positive on the right, clisk OK then click OK on the limit dialog.  The result is <span class="math notranslate nohighlight">\(\frac{16 a}{9}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we had not told CLAE that <em>a</em> was positive, the result would have been,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- a^{\frac{4}{3}} \left|{a}\right|^{\frac{2}{3}} + a^{2}}{a - \left|{a}\right|}\]</div>
+<p>It should be fairly obvious that this does not work for <code class="docutils literal notranslate"><span class="pre">a</span></code> being a positive real number since the denominator is clearly 0 in this case.  By telling CLAE that <em>a</em> was positive it could use different simplification routines to result in a better answer.</p>
+</div>
+</section>
+<section id="id6">
+<h3>Maxima<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=(-a*(a^2*x)^(1/3) + sqrt(2*a^3*x - x^4))/(a - (a*x^3)^(1/4))</span>
+</pre></div>
+</div>
+<p>Then find the limit,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(f(x),x,a)</span>
+</pre></div>
+</div>
+<p>When you run the limit command Maxima is smart enough to realize that the answer is dependent on the value of <em>a</em>.  Since we do not set this in advance, as in CLAE, Maxima comes back with a question, “Is “a” positive or negative?”.  The user then types in the response followed by Shift+Enter.  You can type in the words positive or negative or just the first letter is sufficient.  Here we typed in p for positive and hit Shift+Enter. Maxima then finished out the calculation. The result is <span class="math notranslate nohighlight">\(\frac{16 a}{9}\)</span>.</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="no">%i</span><span class="mi">1</span><span class="p">)</span><span class="w">   </span><span class="nf">kill</span><span class="p">(</span><span class="nv">all</span><span class="p">);</span>
+<span class="w">        </span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">:=</span><span class="p">(</span><span class="o">-</span><span class="nv">a</span><span class="o">*</span><span class="p">(</span><span class="nv">a</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="nv">x</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nv">a</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="nv">x</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="nv">a</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">));</span>
+<span class="p">(</span><span class="nv">%o0</span><span class="p">)</span><span class="w">   </span><span class="no">done</span>
+<span class="p">(</span><span class="nv">%o1</span><span class="p">)</span><span class="w">   </span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">)</span><span class="o">:=</span><span class="p">((</span><span class="o">-</span><span class="nv">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nv">a</span><span class="o">^</span><span class="mi">2</span><span class="o">*</span><span class="nv">x</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nv">a</span><span class="o">^</span><span class="mi">3</span><span class="o">*</span><span class="nv">x</span><span class="o">-</span><span class="nv">x</span><span class="o">^</span><span class="mi">4</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nv">a</span><span class="o">-</span><span class="p">(</span><span class="nv">a</span><span class="o">*</span><span class="nv">x</span><span class="o">^</span><span class="mi">3</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="p">(</span><span class="no">%i</span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="nf">limit</span><span class="p">(</span><span class="nf">f</span><span class="p">(</span><span class="nv">x</span><span class="p">),</span><span class="nv">x</span><span class="p">,</span><span class="nv">a</span><span class="p">);</span>
+<span class="w">        </span><span class="s">&quot;Is &quot;</span><span class="nv">a</span><span class="s">&quot; positive or negative?&quot;</span><span class="nv">p</span><span class="p">;</span>
+<span class="p">(</span><span class="nv">%o2</span><span class="p">)</span><span class="w">   </span><span class="p">(</span><span class="mi">16</span><span class="o">*</span><span class="nv">a</span><span class="p">)</span><span class="o">/</span><span class="mi">9</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="derivativetests.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Derivatives and the Shape of a Graph</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="optimization.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Optimization</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-to-0-x-ln-left-x-right">Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0^+} x \ln{\left(x \right)}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-to-0-frac-1-x-2-frac-1-tan-x">Example: <span class="math notranslate nohighlight">\(\lim_{x \to 0^+} \frac{1}{x^2} - \frac{1}{\tan(x)}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-to-a-frac-sqrt-2a-3x-x-4-a-sqrt-3-a-2x-a-sqrt-4-ax-3-with-a-0">Example: <span class="math notranslate nohighlight">\(\lim_{x \to a} \frac{\sqrt{2a^3x-x^4} - a \sqrt[3]{a^2x} }{a - \sqrt[4]{ax^3}}\)</span> with <span class="math notranslate nohighlight">\(a &gt; 0\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

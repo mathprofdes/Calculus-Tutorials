@@ -1,0 +1,949 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Maxima and Minima &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/maxmin';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Lagrange Multipliers" href="lagrange.html" />
+    <link rel="prev" title="Directional Derivatives and the Gradient" href="directionalder.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Maxima and Minima</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="maxima-and-minima">
+<h1><span class="target" id="index-0"></span>Maxima and Minima<a class="headerlink" href="#maxima-and-minima" title="Link to this heading">#</a></h1>
+<section id="local-maximum-and-minimum-values">
+<h2>Local Maximum and Minimum Values<a class="headerlink" href="#local-maximum-and-minimum-values" title="Link to this heading">#</a></h2>
+<p>The definitions of local maximums and minimums for functions of two variables are the same for those of a single variable.  In fact, the development of the theory and calculations for maximums and minimums for functions of two variables is very similar to the development done for functions of a single variable.</p>
+<div class="admonition-definition-local-maximum-and-minimum-values admonition">
+<p class="admonition-title">Definition: Local Maximum and Minimum Values</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x, y)\)</span> be a function of two variables.  The function has a local maximum at the point <span class="math notranslate nohighlight">\((a, b)\)</span> if <span class="math notranslate nohighlight">\(f(a, b) \geq f(x, y)\)</span> for all points <span class="math notranslate nohighlight">\((x, y)\)</span> near the point <span class="math notranslate nohighlight">\((a, b)\)</span> and the local maximum value is the value <span class="math notranslate nohighlight">\(f(a, b).\)</span>  Similarly, The function has a local minimum at the point <span class="math notranslate nohighlight">\((a, b)\)</span> if <span class="math notranslate nohighlight">\(f(a, b) \leq f(x, y)\)</span> for all points <span class="math notranslate nohighlight">\((x, y)\)</span> near the point <span class="math notranslate nohighlight">\((a, b)\)</span> and the local minimum value is the value <span class="math notranslate nohighlight">\(f(a, b).\)</span></p>
+</div>
+<p>In this definition we used a vague term “near”.  By near we mean if we draw a circle (that is small enough) with center <span class="math notranslate nohighlight">\((a, b)\)</span> then <span class="math notranslate nohighlight">\(f(a, b) \geq f(x, y)\)</span> for all points <span class="math notranslate nohighlight">\((x, y)\)</span> inside that circle.  The same is true for the minimum.  We could get more specific here and toss out a few more detailed mathematical terms but this should be sufficient for a technical understanding of the concept.</p>
+<div class="admonition-theorem-fermat-s-theorem-for-functions-of-two-variables admonition">
+<p class="admonition-title">Theorem: Fermat’s Theorem for Functions of Two Variables</p>
+<p>If <em>f</em> has either a local maximum or minimum at the point <span class="math notranslate nohighlight">\((a, b)\)</span> and the first-order partial derivatives of <em>f</em> exist at <span class="math notranslate nohighlight">\((a, b)\)</span>, then <span class="math notranslate nohighlight">\(f_x(a, b) = 0\)</span> and <span class="math notranslate nohighlight">\(f_y(a, b) = 0.\)</span>  Note that this is equivalent to saying <span class="math notranslate nohighlight">\(\nabla f(a, b) = \mathbf{0}.\)</span></p>
+</div>
+<p>Now we need to turn this around, how do we find these local maximums and minimums given a function of two variables.  As with functions of a single variable we define a critical point as one where the derivatives are 0 or do not exist.  By Fermat’s Theorem these points are the only possibilities for local extremes to occur.</p>
+<div class="admonition-definition-critical-point admonition">
+<p class="admonition-title">Definition: Critical Point</p>
+<p>A point <span class="math notranslate nohighlight">\((a, b)\)</span> is called a critical point of the function <em>f</em> if both <span class="math notranslate nohighlight">\(f_x(a, b) = 0\)</span> and <span class="math notranslate nohighlight">\(f_y(a, b) = 0\)</span> or if either one of these two partial derivatives do not exist.</p>
+</div>
+<p>Restating, Fermat’s Theorem implies that if a function has a local maximum or minimum it must occur at a critical point.  Note that, as in the single variable case, not all critical points give rise to local maximums or local minimums.</p>
+<section id="example-z-x-2-3-x-y-2-y-3">
+<h3>Example: <span class="math notranslate nohighlight">\(z = x^{2} + 3 x + y^{2} - y + 3\)</span><a class="headerlink" href="#example-z-x-2-3-x-y-2-y-3" title="Link to this heading">#</a></h3>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + 3x + y^2 - y + 3</span>
+</pre></div>
+</div>
+<p>Switch to the 3D perspective,</p>
+<figure class="align-default" id="id8">
+<img alt=":math:`z = x^{2} + 3 x + y^{2} - y + 3`" src="../_images/MaxMin001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^{2} + 3 x + y^{2} - y + 3\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although we have not verified this, it appears that this surface will have a single critical value and that there is a local minimum at that point.</p>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + 3*x + y^2 - y + 3</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id9">
+<img alt=":math:`z = x^2 + 3*x + y^2 - y + 3`" src="../_images/MaxMin002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2 + 3*x + y^2 - y + 3\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the critical points select the function then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code>, the dialog will have <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> for the variables, keep these and click OK.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 x + 3\\2 y - 1\end{array}\right]\end{split}\]</div>
+<p>Although we can solve this for the zero vector vector quite easily, selecting <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> will return the result <span class="math notranslate nohighlight">\(\left\{ x : - \frac{3}{2}, \  y : \frac{1}{2}\right\}\)</span> meaning the point <span class="math notranslate nohighlight">\(\left( - \frac{3}{2}, \frac{1}{2}\right).\)</span>  Note that the output <span class="math notranslate nohighlight">\(\left\{ x : - \frac{3}{2}, \  y : \frac{1}{2}\right\}\)</span> is a Python “dictionary”.  These occur frequently with the solvers.  You can turn this into a point by selecting <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Other</span> <span class="pre">Conversions</span> <span class="pre">/</span> <span class="pre">Extractions</span> <span class="pre">&gt;</span> <span class="pre">Convert</span> <span class="pre">Dictionary</span> <span class="pre">Values</span> <span class="pre">to</span> <span class="pre">List</span></code>, the result will be <span class="math notranslate nohighlight">\(\left[ - \frac{3}{2}, \  \frac{1}{2}\right].\)</span>  Although we have not mathematically verified that there is a minimum at this critical point we can evaluate the function at this critical point to get the minimum of the function.  Assuming that the critical point <span class="math notranslate nohighlight">\(\left[ - \frac{3}{2}, \  \frac{1}{2}\right]\)</span> is in <code class="docutils literal notranslate"><span class="pre">R4</span></code>, select the function, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> then input R4 into the expressions, the result is <span class="math notranslate nohighlight">\(1/2.\)</span></p>
+</section>
+</section>
+<section id="example-z-x-2-y-2">
+<h3>Example: <span class="math notranslate nohighlight">\(z = x^2-y^2\)</span><a class="headerlink" href="#example-z-x-2-y-2" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2-y^2</span>
+</pre></div>
+</div>
+<p>Switch to the 3D perspective,</p>
+<figure class="align-default" id="id10">
+<img alt=":math:`z = x^2-y^2`" src="../_images/MaxMin003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2-y^2\)</span></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although we have not verified this, it appears that there is a critical point at the origin.  This point does not appear to be a maximum or a minimum.  If you take any circle around the origin there will be points on that disk that are lower than the origin and there atr points that are higher then the origin.  This is called a saddle point.</p>
+</section>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2-y^2</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id11">
+<img alt=":math:`z = x^2-y^2`" src="../_images/MaxMin004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2-y^2\)</span></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the critical points select the function then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code>, the dialog will have <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> for the variables, keep these and click OK.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 x\\- 2 y\end{array}\right]\end{split}\]</div>
+<p>So the critical point is at the origin.  This point does not appear to be a maximum or a minimum.  If you take any circle around the origin there will be points on that disk that are lower than the origin and there atr points that are higher then the origin.  This is called a saddle point.</p>
+<p>In single variable Calculus we next defined the first and second derivative tests to test if a critical point represented a maximum, minimum, or neither.  With functions of two variables we do not have a counterpart for the first derivative test.  Intuitively this should not come as a surprise.  The first derivative test checked the derivative values to the left and to the right of the critical point.  In this case there were only two possible directions in which to approach the critical point.  With functions of two variables there are an infinite number of ways to approach the critical point so generalizing the first derivative test seems to be difficult if not impossible.  The second derivative test, on the other hand, simply checked the value of the second derivative at the critical point and used concavity to form a conclusion.  This seems like a good candidate for generalizing to functions of two variables, we only need second derivatives and to do an evaluation at the critical points.</p>
+<div class="admonition-theorem-second-derivatives-test admonition">
+<p class="admonition-title">Theorem: Second Derivatives Test</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x, y)\)</span> be a function of two variables and assume that the second partials of <em>f</em> exist and are continuous. Further, let <span class="math notranslate nohighlight">\((a, b)\)</span> be a critical point such that <span class="math notranslate nohighlight">\(f_x(a, b) = 0\)</span> and <span class="math notranslate nohighlight">\(f_y(a, b) = 0.\)</span>  Define,</p>
+<div class="math notranslate nohighlight">
+\[D(a, b) = f_{xx}(a, b) f_{yy}(a, b) - \left( f_{xy}(a, b) \right)^2\]</div>
+<p>Then,</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(D(a, b) &gt; 0\)</span> and <span class="math notranslate nohighlight">\(f_{xx}(a, b) &gt; 0\)</span>, then <span class="math notranslate nohighlight">\(f(a, b)\)</span> is a local minimum.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(D(a, b) &gt; 0\)</span> and <span class="math notranslate nohighlight">\(f_{xx}(a, b) &lt; 0\)</span>, then <span class="math notranslate nohighlight">\(f(a, b)\)</span> is a local maximum.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(D(a, b) &lt; 0\)</span> then <span class="math notranslate nohighlight">\((a, b)\)</span> is a saddle point of <em>f</em>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(D(a, b) = 0\)</span> then the test is inconclusive.  This means that in this case <span class="math notranslate nohighlight">\((a, b)\)</span> could be a place where there is a maximum, minimum, or saddle point, we cannot tell which one.</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="example-z-x-3-3-x-2-9-x-y-3-3-y-2">
+<h3>Example: <span class="math notranslate nohighlight">\(z = x^{3} - 3 x^{2} - 9 x + y^{3} - 3 y^{2}\)</span><a class="headerlink" href="#example-z-x-3-3-x-2-9-x-y-3-3-y-2" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3 - 3*x^2 - 9*x + y^3 - 3*y^2</span>
+</pre></div>
+</div>
+<p>CLick and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id12">
+<img alt=":math:`z = x^{3} - 3 x^{2} - 9 x + y^{3} - 3 y^{2}`" src="../_images/MaxMin005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^{3} - 3 x^{2} - 9 x + y^{3} - 3 y^{2}\)</span></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the plot around to get a better look at different perspectives. Note that in the image above we scaled the <em>z</em>-axis. It looks like there might be a local maximum, a local minimum and a couple of saddle points.  To find the critical points select the function then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code>, the dialog will have <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> for the variables, keep these and click OK.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}3 x^{2} - 6 x - 9\\3 y^{2} - 6 y\end{array}\right]\end{split}\]</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, again the default values should be fine, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left( -1, \  0\right), \  \left( -1, \  2\right), \  \left( 3, \  0\right), \  \left( 3, \  2\right)\right]\]</div>
+<p>So there are four critical points, as we expected from the graph of the surface.  Now we will construct the <em>D</em> function.  Select the function, now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, for the variables input <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">x]</span></code>, the result is <span class="math notranslate nohighlight">\(6 x - 6\)</span>.  Now do the same with <code class="docutils literal notranslate"><span class="pre">[y,</span> <span class="pre">y]</span></code> and <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> the results are <span class="math notranslate nohighlight">\(6 y - 6\)</span> and 0 respectively.  These should be in <code class="docutils literal notranslate"><span class="pre">R4</span></code>, <code class="docutils literal notranslate"><span class="pre">R5</span></code>, and <code class="docutils literal notranslate"><span class="pre">R6</span></code> respectively.  Now create the <em>D</em> function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">D(x, y):= R4*R5 - R6^2</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">R6</span></code> is 0 so including it above is not needed, we kept it here since you would include it in general.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left(6 x - 6\right) \left(6 y - 6\right)\]</div>
+<p>and it is defined as a function, note that you do not need to define it as a function, using the evaluate option will work just as well.  We will start with the critical point <span class="math notranslate nohighlight">\((-1, 0)\)</span>, input <code class="docutils literal notranslate"><span class="pre">D(-1,</span> <span class="pre">0)</span></code>, the result is 72, so there is either a maximum or a minimum here.  Select the <span class="math notranslate nohighlight">\(f_{xx}\)</span> function and then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, input <code class="docutils literal notranslate"><span class="pre">-1</span></code> and the result is <span class="math notranslate nohighlight">\(-12.\)</span> This implies that there is a local maximum at the point <span class="math notranslate nohighlight">\((-1, 0).\)</span>  You probably noted that we only input the <em>x</em> value of the point when evaluating <span class="math notranslate nohighlight">\(f_{xx}\)</span>.  In general you will substitute both <em>x</em> and <em>y</em> values but here the function <span class="math notranslate nohighlight">\(f_{xx}\)</span> has no <em>y</em> variable in it so we just needed the <em>x</em> value.  Now we do the same for the other three critical numbers. Input <code class="docutils literal notranslate"><span class="pre">D(-1,</span> <span class="pre">2)</span></code> and the result is <span class="math notranslate nohighlight">\(-72,\)</span> so there is a saddle point there.  Input <code class="docutils literal notranslate"><span class="pre">D(3,</span> <span class="pre">0)</span></code> and the result is <span class="math notranslate nohighlight">\(-72,\)</span> so there is a saddle point there as well. Finally input <code class="docutils literal notranslate"><span class="pre">D(3,</span> <span class="pre">2)</span></code> the result is <span class="math notranslate nohighlight">\(-72.\)</span> Evaluate  <span class="math notranslate nohighlight">\(f_{xx}\)</span> at <span class="math notranslate nohighlight">\((3, 2)\)</span> and the result is 12, so there is a local minimum at this point.</p>
+</section>
+</section>
+</section>
+<section id="absolute-maximum-and-minimum-values">
+<h2>Absolute Maximum and Minimum Values<a class="headerlink" href="#absolute-maximum-and-minimum-values" title="Link to this heading">#</a></h2>
+<p>The previous discussion centered around local maximums and minimums.  Recalling from one variable Calculus if we have a continuous function on a closed bounded interval then the function attains an absolute maximum and absolute minimum on that interval.  Our next step is to generalize this to functions of two variables.  Although it is fairly obvious, we will start with a definition of absolute maximums and minimums of a function of two variables.</p>
+<div class="admonition-definition-absolute-maximum-and-minimum admonition">
+<p class="admonition-title">Definition: Absolute Maximum and Minimum</p>
+<p>Definition Let <span class="math notranslate nohighlight">\((a, b)\)</span> be a point in the domain <em>D</em> of a function <em>f</em> of two variables. Then <span class="math notranslate nohighlight">\(f(a, b)\)</span> is the</p>
+<ul class="simple">
+<li><p>Absolute Maximum value of <em>f</em> on <em>D</em> if <span class="math notranslate nohighlight">\(f(a, b) \geq f(x, y)\)</span> for all <span class="math notranslate nohighlight">\((x, y)\)</span> in <em>D</em>.</p></li>
+<li><p>Absolute Minimum value of <em>f</em> on <em>D</em> if <span class="math notranslate nohighlight">\(f(a, b) \leq f(x, y)\)</span> for all <span class="math notranslate nohighlight">\((x, y)\)</span> in <em>D</em>.</p></li>
+</ul>
+</div>
+<p>Next we will generalize the concept of a closed bounded interval.  With functions of one variable the closed bounded interval was the domain of the function or a subset of the domain of the function.  The concept of a closed interval means that it contains the endpoints and being bounded mens that it is finite in length.  We now need to move all of this up one dimension.</p>
+<p>The domain of a function of two variables is a subset (or region) of <span class="math notranslate nohighlight">\(\mathbb{R}^2.\)</span>  For the set to be closed it must contain all of its boundary points and for the set to be bounded it must be able to be completely contained by a finite circle around the set.  Some examples of regions are below, note that do not need to be circles, they can be any subset of the plane.</p>
+<figure class="align-default" id="id13">
+<img alt="Closed and Not Closed Sets" src="../_images/MaxMin006.png" />
+<figcaption>
+<p><span class="caption-text">Closed and Not Closed Sets</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the top region the set is closed because it contains all the points on the boundary.  The two sets on the bottom are not closed because they are missing some points on the boundary of the set.  Note that all three of these regions are bounded since each can be contained in a finite circle.  As with several of our previous definitions we can be more precise and if you continue your study of mathematics you will see these definitions.  We are fine here with a more intuitive understanding and not complicate things with more technical jargon.</p>
+<div class="admonition-theorem-extreme-value-theorem-for-functions-of-two-variables admonition">
+<p class="admonition-title">Theorem: Extreme Value Theorem for Functions of Two Variables</p>
+<p>If <em>f</em> is continuous on a closed, bounded set <em>D</em> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, then <em>f</em> attains an absolute maximum value <span class="math notranslate nohighlight">\(f(a,b)\)</span> and an absolute minimum value <span class="math notranslate nohighlight">\(f(c, d)\)</span> at some points <span class="math notranslate nohighlight">\((a, b)\)</span> and <span class="math notranslate nohighlight">\((c, d)\)</span> in <em>D</em>.</p>
+</div>
+<p>Finding these extreme values is very similar to finding extreme values of functions of a single variable.  In the single variable case we found all of the local maximums and minimums on the interval, we then found the values at the endpoints of the interval, then we found the largest ans smallest of these values for our extremes.  The same is true for functions of two variables.</p>
+<p>To find the absolute maximum and minimum values of a continuous function <em>f</em> on a closed, bounded set <em>D</em>, we do the following,</p>
+<ol class="arabic simple">
+<li><p>Find the values of <em>f</em> at the critical points of <em>f</em> in the domain <em>D</em>.</p></li>
+<li><p>Find the extreme values of <em>f</em> on the boundary of <em>D</em>.</p></li>
+<li><p>The largest and smallest of the values from the above points.</p></li>
+</ol>
+<p>Note that this can be lengthy process, especially for step 2.  In the next section we will discuss Lagrange Multipliers which, in some cases, will make finding the extreme values on the boundary a little easier.</p>
+<section id="example-z-x-2-2xy-4y-2-4x-2y-24-on-0-4-times-0-2">
+<h3>Example: <span class="math notranslate nohighlight">\(z = x^2-2xy+4y^2-4x-2y+24\)</span> on <span class="math notranslate nohighlight">\([0, 4] \times [0, 2]\)</span><a class="headerlink" href="#example-z-x-2-2xy-4y-2-4x-2y-24-on-0-4-times-0-2" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>GeoGebra has some very nice visualizations for these types of situations.  It handles regions well and is particularly good at restricting a surface to a domain.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2-2xy+4y^2-4x-2y+24</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id14">
+<img alt=":math:`z = x^2-2xy+4y^2-4x-2y+24`" src="../_images/MaxMin007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2-2xy+4y^2-4x-2y+24\)</span></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that we did scale the axes in the above image.  Now we will input the domain we are interested in. It is a rectangle defined by the inequalities <span class="math notranslate nohighlight">\(0 \leq x \leq 4\)</span> and <span class="math notranslate nohighlight">\(0 \leq y \leq 2.\)</span>  To input this into GeoGebra we use,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(0 &lt;= x &lt;= 4)</span> <span class="go">&amp;&amp; (0 &lt;= y &lt;= 2)</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code> is for the less than or equal to and the <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> is for “and”.  Note that the “and” will be changed to its logical symbol.</p>
+<figure class="align-default" id="id15">
+<img alt=":math:`z = x^2-2xy+4y^2-4x-2y+24` and :math:`[0, 4] \times [0, 2]`" src="../_images/MaxMin008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2-2xy+4y^2-4x-2y+24\)</span> and <span class="math notranslate nohighlight">\([0, 4] \times [0, 2]\)</span></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Assuming that the surface was named <code class="docutils literal notranslate"><span class="pre">a</span></code> and the region was named <code class="docutils literal notranslate"><span class="pre">b</span></code> input, <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code> into a new entry.  This will restrict the surface to the domain.  If you then hide the surface you should see,</p>
+<figure class="align-default" id="id16">
+<img alt=":math:`z = x^2-2xy+4y^2-4x-2y+24` on :math:`[0, 4] \times [0, 2]`" src="../_images/MaxMin009.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2-2xy+4y^2-4x-2y+24\)</span> on <span class="math notranslate nohighlight">\([0, 4] \times [0, 2]\)</span></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the camera around to get a very nice visualization of the surface restricted to the domain and a feel for where the absolute maximums and minimums are.</p>
+</section>
+<section id="id5">
+<h4>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>In CLAE we can get a nice visualization as well, although there are a few more steps.  We will also be able to do the algebraic calculations. Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 - 2*x*y - 4*x + 4*y^2 - 2*y + 24</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id17">
+<img alt=":math:`z = x^2-2xy+4y^2-4x-2y+24`" src="../_images/MaxMin010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2-2xy+4y^2-4x-2y+24\)</span></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that we scaled the axes for this image.  Since the domain is rectangular we can do a domain restriction of the surface by converting the function to a parametrically defined surface, this only takes 2 steps.  First select the function and then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, keep the variables as <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> and input for the expressions <code class="docutils literal notranslate"><span class="pre">[u,</span> <span class="pre">v]</span></code>.  In CLAE, parametrically defined surfaces must be in the variables <em>u</em> and <em>v</em>.  Now assuming the <em>u</em> and <em>v</em> expression is in <code class="docutils literal notranslate"><span class="pre">R2</span></code> input the following into the CAS <code class="docutils literal notranslate"><span class="pre">[u,</span> <span class="pre">v,</span> <span class="pre">R2]</span></code> the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ u, \  v, \  u^{2} - 2 u v - 4 u + 4 v^{2} - 2 v + 24\right]\]</div>
+<p>CLick and drag this over to the 3D graphics window, it should come in as a parametric surface.  Go into the properties and set the <em>u</em> bounds to 0 to 4 and the <em>v</em> bounds to 0 to 2.  Finally, hide the surface,</p>
+<figure class="align-default" id="id18">
+<img alt=":math:`z = x^2-2xy+4y^2-4x-2y+24` on :math:`[0, 4] \times [0, 2]`" src="../_images/MaxMin011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2-2xy+4y^2-4x-2y+24\)</span> on <span class="math notranslate nohighlight">\([0, 4] \times [0, 2]\)</span></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move the camera around to get a visualization of the surface restricted to the domain and a feel for where the absolute maximums and minimums are.</p>
+<p>We will now go through the process for finding the absolute maximum and minimum.  First we will find the critical points in the region.  Select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code>, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 x - 2 y - 4\\- 2 x + 8 y - 2\end{array}\right]\end{split}\]</div>
+<p>This is a system of equations that is easy enough to solve by hand but using the software we would select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, the dialog will automatically fill in the variables to solve for, leave these as is and click OK.  The result is <span class="math notranslate nohighlight">\(\left\{ x : 3, \  y : 1\right\}\)</span> meaning the point <span class="math notranslate nohighlight">\((3, 1).\)</span> Evaluating the function at the point <span class="math notranslate nohighlight">\((3, 1)\)</span> gives us the value 17.  We will now attack the boundary. The region is the following rectangle that is bounded by the red and green lines.</p>
+<figure class="align-default" id="id19">
+<img alt=":math:`[0, 4] \times [0, 2]`" src="../_images/MaxMin012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\([0, 4] \times [0, 2]\)</span></span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>On the segment <code class="docutils literal notranslate"><span class="pre">L1</span></code> the <em>y</em> value is 0 and the <em>x</em> value goes from 0 to 4.  Select the original expression, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> as the variables and use <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">0]</span></code> as the expressions.  The result should be <span class="math notranslate nohighlight">\(x^{2} - 4 x + 24.\)</span>  Click and drag this over to the 2D graphics window,</p>
+<figure class="align-default" id="id20">
+<img alt=":math:`f_1(x) = x^{2} - 4 x + 24`" src="../_images/MaxMin013.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f_1(x) = x^{2} - 4 x + 24\)</span></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the maximum and minimum of this on the interval <span class="math notranslate nohighlight">\([0, 4]\)</span> we find the critical points, finding the derivative gives us, <span class="math notranslate nohighlight">\(2 x - 4\)</span> and a critical number of 2.  Evaluating <span class="math notranslate nohighlight">\(f_1(x) = x^{2} - 4 x + 24\)</span> at 0, 2, and 4 gives us,</p>
+<div class="math notranslate nohighlight">
+\[f_1(0) = 24 \qquad f_1(2) = 20 \qquad  f_1(4) = 24\]</div>
+<p>On the segment <code class="docutils literal notranslate"><span class="pre">L2</span></code> the <em>x</em> value is 4 and the <em>y</em> value goes from 0 to 2.  Select the original expression, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> as the variables and use <code class="docutils literal notranslate"><span class="pre">[4,</span> <span class="pre">x]</span></code> as the expressions.  The result should be <span class="math notranslate nohighlight">\(4 x^{2} - 10 x + 24.\)</span>  CLear the 2D graphics window, click and drag this over to the 2D graphics window,</p>
+<figure class="align-default" id="id21">
+<img alt=":math:`f_2(x) = x^{2} - 4 x + 24`" src="../_images/MaxMin014.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f_2(x) = x^{2} - 4 x + 24\)</span></span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the maximum and minimum of this on the interval <span class="math notranslate nohighlight">\([0, 2]\)</span> we find the critical points, finding the derivative gives us, <span class="math notranslate nohighlight">\(8 x - 10\)</span> and a critical number of 5/4.  Evaluating <span class="math notranslate nohighlight">\(f_2(x) = x^{2} - 4 x + 24\)</span> at 0, 5/4, and 2 gives us,</p>
+<div class="math notranslate nohighlight">
+\[f_2(0) = 24 \qquad f_2(5/4) = \frac{71}{4} \approx 17.75 \qquad  f_2(2) = 20\]</div>
+<p>On the segment <code class="docutils literal notranslate"><span class="pre">L3</span></code> the <em>y</em> value is 2 and the <em>x</em> value goes from 0 to 4.  Select the original expression, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> as the variables and use <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">2]</span></code> as the expressions.  The result should be <span class="math notranslate nohighlight">\(x^{2} - 8 x + 36.\)</span>  Clear the 2D graphics window and click and drag this over to the 2D graphics window,</p>
+<figure class="align-default" id="id22">
+<img alt=":math:`f_3(x) = x^{2} - 8 x + 36`" src="../_images/MaxMin015.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f_3(x) = x^{2} - 8 x + 36\)</span></span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the maximum and minimum of this on the interval <span class="math notranslate nohighlight">\([0, 4]\)</span> we find the critical points, finding the derivative gives us, <span class="math notranslate nohighlight">\(2 x - 8\)</span> and a critical number of 4.  Evaluating <span class="math notranslate nohighlight">\(f_3(x) = x^{2} - 8 x + 36\)</span> at 0 and 4 gives us,</p>
+<div class="math notranslate nohighlight">
+\[f_3(0) = 36 \qquad  f_3(4) = 20\]</div>
+<p>Finally for the last line segment <code class="docutils literal notranslate"><span class="pre">L4</span></code> the <em>x</em> value is 0 and the <em>y</em> value goes from 0 to 2.  Select the original expression, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> as the variables and use <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">x]</span></code> as the expressions.  The result should be <span class="math notranslate nohighlight">\(4 x^{2} - 2 x + 24.\)</span>  CLear the 2D graphics window, click and drag this over to the 2D graphics window,</p>
+<figure class="align-default" id="id23">
+<img alt=":math:`f_4(x) = 4 x^{2} - 2 x + 24`" src="../_images/MaxMin016.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f_4(x) = 4 x^{2} - 2 x + 24\)</span></span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the maximum and minimum of this on the interval <span class="math notranslate nohighlight">\([0, 2]\)</span> we find the critical points, finding the derivative gives us, <span class="math notranslate nohighlight">\(8 x - 2\)</span> and a critical number of 1/4.  Evaluating <span class="math notranslate nohighlight">\(f_4(x) = 4 x^{2} - 2 x + 24\)</span> at 0, 1/4, and 2 gives us,</p>
+<div class="math notranslate nohighlight">
+\[f_4(0) = 24 \qquad f_4(1/4) = \frac{95}{4} \approx 23.75 \qquad  f_4(2) = 36\]</div>
+<p>Taking all of these values, we see the largest is 36 at the boundary point <span class="math notranslate nohighlight">\((0, 2)\)</span> and the smallest is 17 at the point <span class="math notranslate nohighlight">\((3, 1).\)</span>  So the absolute maximum of this function on this region is 36 at the point <span class="math notranslate nohighlight">\((0, 2)\)</span> and the absolute minimum is 17 at the point <span class="math notranslate nohighlight">\((3, 1).\)</span></p>
+</section>
+</section>
+<section id="example-z-x-2-4-x-y-2-6-y-on-x-2-y-2-leq-16">
+<h3>Example: <span class="math notranslate nohighlight">\(z = x^{2} + 4 x + y^{2} - 6 y\)</span> on <span class="math notranslate nohighlight">\(x^2+y^2 \leq 16\)</span><a class="headerlink" href="#example-z-x-2-4-x-y-2-6-y-on-x-2-y-2-leq-16" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>GeoGebra<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>We will get a nice visualization of this surface, using the same process as we did above.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + 4 x + y^2 - 6 y</span>
+</pre></div>
+</div>
+<p>The graph should look like the following, note that we scaled the <em>z</em>-axis.</p>
+<figure class="align-default" id="id24">
+<img alt=":math:`z = x^2 + 4 x + y^2 - 6 y`" src="../_images/MaxMin017.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2 + 4 x + y^2 - 6 y\)</span></span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Input the region,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 &lt;= 16</span>
+</pre></div>
+</div>
+<p>and then restrict the surface to the region with <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code>. The result should look like,</p>
+<figure class="align-default" id="id25">
+<img alt=":math:`z = x^2 + 4 x + y^2 - 6 y` on :math:`x^2+y^2 \leq 16`" src="../_images/MaxMin018.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2 + 4 x + y^2 - 6 y\)</span> on <span class="math notranslate nohighlight">\(x^2+y^2 \leq 16\)</span></span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id7">
+<h4>CLAE<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Although CLAE does not have the domain restriction capability we can still get a good feel for the restricted surface with a little ingenuity.  In the last example we used the fact that the domain was a rectangle and shifted the surface to a parametric surface.  Here we can plot the boundary of the domain as an implicit surface and look at the intersection of the two surfaces. First plot the surface, input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + 4*x + y^2 - 6*y</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id26">
+<img alt=":math:`z = x^2 + 4 x + y^2 - 6 y`" src="../_images/MaxMin019.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2 + 4 x + y^2 - 6 y\)</span></span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we will input the boundary of the region implicitly, as always, we formulate this with the expression equal to 0.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 - 16</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.  It will probably come in as a function, change it to an Implicit Relationship.</p>
+<figure class="align-default" id="id27">
+<img alt=":math:`z = x^2 + 4 x + y^2 - 6 y` and :math:`x^2 + y^2 = 16`" src="../_images/MaxMin020.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2 + 4 x + y^2 - 6 y\)</span> and <span class="math notranslate nohighlight">\(x^2 + y^2 = 16\)</span></span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>For a better view of the intersection go into the properties of the cylinder and change the surface to grid, then move the camera around a bit.</p>
+<figure class="align-default" id="id28">
+<img alt=":math:`z = x^2 + 4 x + y^2 - 6 y` and :math:`x^2 + y^2 = 16`" src="../_images/MaxMin021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x^2 + 4 x + y^2 - 6 y\)</span> and <span class="math notranslate nohighlight">\(x^2 + y^2 = 16\)</span></span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we attack the calculations.  Select the original function and tke its gradiant, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 x + 4\\2 y - 6\end{array}\right]\end{split}\]</div>
+<p>This has only one solution <span class="math notranslate nohighlight">\((-2, 3)\)</span> which is inside the region since the length of this “vector” is <span class="math notranslate nohighlight">\(\sqrt{13} \approx 3.6055512754639892931 &lt; 4.\)</span>  Evaluating the function at <span class="math notranslate nohighlight">\((-2, 3)\)</span> gives a value of <span class="math notranslate nohighlight">\(-13.\)</span></p>
+<p>As for the boundary, in this case the boundary is a circle centered at the origin with radius 4.  A good way to deal with this is to rewrite the boundary parametrically, substitute it into the surface expression, and get a single curve.  Parametric equations for circles are easy, in our case it is, <span class="math notranslate nohighlight">\((4 \cos(t), 4\sin(t)).\)</span>  Select the original expression, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the variables as <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> and input for the expressions <code class="docutils literal notranslate"><span class="pre">[4*cos(t),</span> <span class="pre">4*sin(t)]</span></code>.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[16 \sin^{2}{\left(t \right)} - 24 \sin{\left(t \right)} + 16 \cos^{2}{\left(t \right)} + 16 \cos{\left(t \right)}\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[- 24 \sin{\left(t \right)} + 16 \cos{\left(t \right)} + 16\]</div>
+<p>We are, of course, only looking at this on the domain of <span class="math notranslate nohighlight">\([0, 2\pi].\)</span> If we graph this curve we get,</p>
+<figure class="align-default" id="id29">
+<img alt=":math:`y = - 24 \sin{\left(t \right)} + 16 \cos{\left(t \right)} + 16`" src="../_images/MaxMin022.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = - 24 \sin{\left(t \right)} + 16 \cos{\left(t \right)} + 16\)</span></span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Finding the critical numbers, take the derivative, <span class="math notranslate nohighlight">\(- 16 \sin{\left(t \right)} - 24 \cos{\left(t \right)},\)</span> solving this for 0 gives <span class="math notranslate nohighlight">\(- \operatorname{atan}{\left(\frac{3}{2} \right)} \approx -0.98279372324732906799.\)</span>  This is not in our domain.  We can see that this is the first critical value to the left of 0.  The function is clearly periodic with period <span class="math notranslate nohighlight">\(2\pi\)</span>, so our critical values are the one we got from solving plus  <span class="math notranslate nohighlight">\(\pi\)</span> and the other is plus <span class="math notranslate nohighlight">\(2\pi.\)</span>  Specifically, <span class="math notranslate nohighlight">\(- \operatorname{atan}{\left(\frac{3}{2} \right)} + \pi\)</span> and <span class="math notranslate nohighlight">\(- \operatorname{atan}{\left(\frac{3}{2} \right)} + 2\pi.\)</span> Input both of these into CLAE.  Now evaluate the function <span class="math notranslate nohighlight">\(- 24 \sin{\left(t \right)} + 16 \cos{\left(t \right)} + 16\)</span> at both of these values, we get <span class="math notranslate nohighlight">\(16 - 8 \sqrt{13} \approx -12.844410203711914345\)</span> and <span class="math notranslate nohighlight">\(16 + 8 \sqrt{13} \approx 44.844410203711914345\)</span> respectively. So the absolute minimum is <span class="math notranslate nohighlight">\(-13\)</span> at the point <span class="math notranslate nohighlight">\((-2, 3)\)</span> and the absolute maximum is <span class="math notranslate nohighlight">\(16 + 8 \sqrt{13} \approx 44.844410203711914345\)</span> at the point <span class="math notranslate nohighlight">\(\left[ \frac{8 \sqrt{13}}{13}, \  - \frac{12 \sqrt{13}}{13}\right].\)</span></p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="directionalder.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Directional Derivatives and the Gradient</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lagrange.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Lagrange Multipliers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-maximum-and-minimum-values">Local Maximum and Minimum Values</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-x-2-3-x-y-2-y-3">Example: <span class="math notranslate nohighlight">\(z = x^{2} + 3 x + y^{2} - y + 3\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-x-2-y-2">Example: <span class="math notranslate nohighlight">\(z = x^2-y^2\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-x-3-3-x-2-9-x-y-3-3-y-2">Example: <span class="math notranslate nohighlight">\(z = x^{3} - 3 x^{2} - 9 x + y^{3} - 3 y^{2}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-maximum-and-minimum-values">Absolute Maximum and Minimum Values</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-x-2-2xy-4y-2-4x-2y-24-on-0-4-times-0-2">Example: <span class="math notranslate nohighlight">\(z = x^2-2xy+4y^2-4x-2y+24\)</span> on <span class="math notranslate nohighlight">\([0, 4] \times [0, 2]\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-x-2-4-x-y-2-6-y-on-x-2-y-2-leq-16">Example: <span class="math notranslate nohighlight">\(z = x^{2} + 4 x + y^{2} - 6 y\)</span> on <span class="math notranslate nohighlight">\(x^2+y^2 \leq 16\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

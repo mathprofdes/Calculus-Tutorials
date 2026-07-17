@@ -1,0 +1,848 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Snapshot Viewer &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/Graph2D/SnapshotViewer';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Advanced Plot Creator" href="AdvPlotCreator.html" />
+    <link rel="prev" title="View Options" href="ViewOpts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2D Graphs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Function y = f(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewiseRect.html">Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricRect.html">Parametric Equations (x, y) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SeqSeries.html">Sequence / Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Implicit2D.html">Implicit Relationship f(x, y) = 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContourMap.html">Contour Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HorizontalLine.html">Horizontal Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VerticalLine.html">Vertical Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyPointSet.html">Empty Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearSystem.html">Linear System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DirectionField.html">Direction Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EulerCurve.html">Euler’s Method Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolarFunction.html">Polar Function r = f(t)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewisePolar.html">Polar Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricPolar.html">Polar Parametric Equations (r, theta) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOpts.html">Editing Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Snapshot Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AdvPlotCreator.html">Advanced Plot Creator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LegendOpts.html">Legend Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2D Graphs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Snapshot Viewer</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="snapshot-viewer">
+<h1><span class="target" id="index-0"></span>Snapshot Viewer<a class="headerlink" href="#snapshot-viewer" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This opens the current graph in the Snapshot Viewer tool.  The Snapshot Viewer tool is for incorporating simple annotations on the current graph.  When the tool is opened the current graph is loaded as an image into the image area.  The user can then select to add simple annotations to the image for use in course notes, presentations, and other documents.</p>
+<figure class="align-default" id="id2">
+<img alt="Snapshot Viewer" src="../../_images/Snapshot2.png" />
+<figcaption>
+<p><span class="caption-text">Snapshot Viewer</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="tool-layout">
+<h2>Tool Layout<a class="headerlink" href="#tool-layout" title="Link to this heading">#</a></h2>
+<p>The tool layout is fairly simple, a standard menu and toolbar at the top, the main graph on the right, a list of annotations that the user inserted in the upper left, and the properties of the selected annotation in the lower left.</p>
+<figure class="align-default" id="id3">
+<img alt="Snapshot Viewer Layout" src="../../_images/Snapshot.png" />
+<figcaption>
+<p><span class="caption-text">Snapshot Viewer Layout</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="annotations">
+<h2>Annotations<a class="headerlink" href="#annotations" title="Link to this heading">#</a></h2>
+<p>The tool allows the user to add several simple annotations to the image.  Each of the annotation objects have their own attributes.  If the user requires more annotation options they can use this tool for some of the easier annotations and then copy the image into a more sophisticated image editor to finish their work.</p>
+<p>The order that the annotations are drawn is not determined by the order that they are input (as with most graphical editors), the order is determined by the type of annotation that is being input.  The graphical order from top to bottom is,</p>
+<ul class="simple">
+<li><p>Text Boxes</p></li>
+<li><p>Mathematical Expressions</p></li>
+<li><p>Rectangles</p></li>
+<li><p>Ellipses</p></li>
+<li><p>Lines</p></li>
+<li><p>Arrows</p></li>
+<li><p>Images</p></li>
+</ul>
+<section id="text-boxes">
+<h3>Text Boxes<a class="headerlink" href="#text-boxes" title="Link to this heading">#</a></h3>
+<p>A text box annotation is just plain (unformatted) text that is included in the image.  This annotation allows the user to insert just the text or include a rectangular box around the text.</p>
+<figure class="align-default" id="id4">
+<img alt="Text Box" src="../../_images/Snapshot3.png" />
+<figcaption>
+<p><span class="caption-text">Text Box</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="text-box-options">
+<h4>Text Box Options<a class="headerlink" href="#text-box-options" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Show</strong>: This is a check box that allows the user to toggle the showing of the annotation.  You can also double-click the annotation item in the annotation lest to toggle the showing of the annotation.</p></li>
+<li><p><strong>Text</strong>: This is the text that is displayed.  It is simply plain text but can be multiline.</p></li>
+<li><p><strong>Text Color</strong>: This is the color of the displayed text.  The displayed text is unformatted so you cannot have different colors for different characters in the text.</p></li>
+<li><p><strong>Font</strong>: This is the font that is being used for the text.  You may select any font that is currently on your system for this option.</p></li>
+<li><p><strong>Font Size</strong>: This is the pixel size of the displayed text.  Although this can be set along with font we included it in the set of options since it requires less steps to change and will probably be used more often than changing the font.</p></li>
+<li><p><strong>Anchor X Position</strong>: This is the horizontal pixel position of the anchor point for the text box, which is the upper left corner of the text box.</p></li>
+<li><p><strong>Anchor Y Position</strong>: This is the vertical pixel position of the anchor point for the text box, which is the upper left corner of the text box.</p></li>
+<li><p><strong>Justify</strong>: This is the text justification within the text box.</p></li>
+<li><p><strong>Include Box</strong>: This is a check box that allows the user to include a box around the annotation.  The other options in that section adjust the appearance of the box if it is included.</p></li>
+<li><p><strong>Background Color</strong>: This is the color of the background for the box.</p></li>
+<li><p><strong>Border Color</strong>: This is the color of the box border.</p></li>
+<li><p><strong>Border Width</strong>: This is the pixel width of the border.</p></li>
+<li><p><strong>Horizontal Padding</strong>: This is the additional horizontal padding used for the text box.  This is included with the box option on or off but really is noticeable only when the box is selected.</p></li>
+<li><p><strong>Vertical Padding</strong>: This is the additional vertical padding used for the text box.  This is included with the box option on or off but really is noticeable only when the box is selected.</p></li>
+<li><p><strong>Rotation</strong>: This is the amount of rotation that is applied to the text box.</p></li>
+<li><p><strong>Transparency</strong>:  This is the amount of transparency that is applied to the text box.</p></li>
+</ul>
+</section>
+</section>
+<section id="mathematical-expressions">
+<h3>Mathematical Expressions<a class="headerlink" href="#mathematical-expressions" title="Link to this heading">#</a></h3>
+<p>A mathematical expression annotation is a formatted mathematical style expression like the mathematical expressions that are displayed in the CAS portion of this program.  This annotation allows the user to insert just the expression or include a rectangular box around the text.</p>
+<figure class="align-default" id="id5">
+<img alt="Mathematical Expression" src="../../_images/Snapshot4.png" />
+<figcaption>
+<p><span class="caption-text">Mathematical Expression</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="mathematical-expression-options">
+<h4>Mathematical Expression Options<a class="headerlink" href="#mathematical-expression-options" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Show</strong>: This is a check box that allows the user to toggle the showing of the annotation.  You can also double-click the annotation item in the annotation lest to toggle the showing of the annotation.</p></li>
+<li><p><strong>Formula</strong>: This is the formula that is displayed.  The syntax of the formulas is the same as the syntax used to input an expression into the CAS.  There are a couple exceptions to this rule.   First, the snapshot viewer tool is decoupled from the CAS, so the expression designations like <code class="docutils literal notranslate"><span class="pre">R1</span></code>, <code class="docutils literal notranslate"><span class="pre">R2</span></code>, … cannot be used.  The tool also does not have tools for inputting matrices or piecewise expressions.  On the other hand, this tool is not “modal”, meaning that you can click on the main window to go back to the CAS.  If there is an expression in the CAS that you want in an expression box you can click on the main window, select the expression you wish, copy the expression, switch back to the snapshot viewer, and finally paste it into the formula edit box.  These expressions will be in SymPy syntax and possible look a bit complicated, especially for matrices and piecewise expressions.  Note that if the input formula is not correct in syntax the expression will be “Error”.</p></li>
+<li><p><strong>Text Color</strong>: This is the color of the displayed formula.</p></li>
+<li><p><strong>Bold</strong>: A check box that toggles the formula in a boldfaced font.  The actual font that is used is automatically selected from your system’s mono-spaced fonts.  Just as with the CAS, the formulas need to use a mono-spaced font so that things like exponents and brackets line up.</p></li>
+<li><p><strong>Font Size</strong>: This is the pixel size of the displayed text.</p></li>
+<li><p><strong>Anchor X Position</strong>: This is the horizontal pixel position of the anchor point for the formula box, which is the upper left corner of the text box.</p></li>
+<li><p><strong>Anchor Y Position</strong>: This is the vertical pixel position of the anchor point for the formula box, which is the upper left corner of the text box.</p></li>
+<li><p><strong>Include Box</strong>: This is a check box that allows the user to include a box around the annotation.  The other options in that section adjust the appearance of the box if it is included.</p></li>
+<li><p><strong>Background Color</strong>: This is the color of the background for the box.</p></li>
+<li><p><strong>Border Color</strong>: This is the color of the box border.</p></li>
+<li><p><strong>Border Width</strong>: This is the pixel width of the border.</p></li>
+<li><p><strong>Horizontal Padding</strong>: This is the additional horizontal padding used for the formula box.  This is included with the box option on or off but really is noticeable only when the box is selected.</p></li>
+<li><p><strong>Vertical Padding</strong>: This is the additional vertical padding used for the formula box.  This is included with the box option on or off but really is noticeable only when the box is selected.</p></li>
+<li><p><strong>Wrap Column</strong>: This is where the mathematical format string is wrapped to the next line.</p></li>
+<li><p><strong>Rotation</strong>: This is the amount of rotation that is applied to the text box.</p></li>
+<li><p><strong>Transparency</strong>:  This is the amount of transparency that is applied to the text box.</p></li>
+</ul>
+</section>
+</section>
+<section id="rectangles">
+<h3>Rectangles<a class="headerlink" href="#rectangles" title="Link to this heading">#</a></h3>
+<p>A rectangle annotation is simply an open or closed rectangle that can have rounded corners. These are good for pointing out interesting aspects of a graph or for putting a fancier border around some text or mathematical expression.  If you do use it for a text or expression border note that these objects are not linked to text or expression boxes so they need to positioned independently.</p>
+<figure class="align-default" id="id6">
+<img alt="Rectangle Annotation" src="../../_images/Snapshot5.png" />
+<figcaption>
+<p><span class="caption-text">Rectangle Annotation</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="rectangle-options">
+<h4>Rectangle Options<a class="headerlink" href="#rectangle-options" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Show</strong>: This is a check box that allows the user to toggle the showing of the annotation.  You can also double-click the annotation item in the annotation lest to toggle the showing of the annotation.</p></li>
+<li><p><strong>Color</strong>: This is the color of the border of the rectangle.</p></li>
+<li><p><strong>Line Width</strong>: This is the pixel width of the border of the rectangle.</p></li>
+<li><p><strong>Anchor X Position</strong>: This is the horizontal pixel position of the anchor point for the rectangle, which is the upper left corner of the rectangle.</p></li>
+<li><p><strong>Anchor Y Position</strong>: This is the vertical pixel position of the anchor point for the rectangle, which is the upper left corner of the rectangle.</p></li>
+<li><p><strong>Width</strong>: This is the pixel width of the rectangle.</p></li>
+<li><p><strong>Height</strong>: This is the pixel height of the rectangle.</p></li>
+<li><p><strong>Fill Rectangle</strong>: This is a check box that controls if the inside of the rectangle is filled or transparent.</p></li>
+<li><p><strong>Fill Color</strong>: If the fill option is selected this is the color of the inside area.</p></li>
+<li><p><strong>Corner Radius</strong>: This is the radius of the curve used for the corners of the rectangle.  The rectangle is really a rounded rectangle.  If the corner radius is 0 then the rectangle has sharp corners and the larger this value the more circular the corners of the rectangle become.</p></li>
+</ul>
+</section>
+</section>
+<section id="ellipses">
+<h3>Ellipses<a class="headerlink" href="#ellipses" title="Link to this heading">#</a></h3>
+<p>An ellipse annotation is simply an open or closed ellipse. These are good for pointing out interesting aspects of a graph or for putting a fancier border around some text or mathematical expression.  If you do use it for a text or expression border note that these objects are not linked to text or expression boxes so they need to positioned independently.</p>
+<figure class="align-default" id="id7">
+<img alt="Ellipse Annotation" src="../../_images/Snapshot6.png" />
+<figcaption>
+<p><span class="caption-text">Ellipse Annotation</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="ellipse-options">
+<h4>Ellipse Options<a class="headerlink" href="#ellipse-options" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Show</strong>: This is a check box that allows the user to toggle the showing of the annotation.  You can also double-click the annotation item in the annotation lest to toggle the showing of the annotation.</p></li>
+<li><p><strong>Color</strong>: This is the color of the border of the ellipse.</p></li>
+<li><p><strong>Line Width</strong>: This is the pixel width of the border of the ellipse.</p></li>
+<li><p><strong>Anchor X Position</strong>: This is the horizontal pixel position of the anchor point for the ellipse, which is the upper left corner of the box containing the ellipse.</p></li>
+<li><p><strong>Anchor Y Position</strong>: This is the vertical pixel position of the anchor point for the ellipse, which is the upper left corner of the box containing the ellipse.</p></li>
+<li><p><strong>Width</strong>: This is the pixel width of the ellipse.</p></li>
+<li><p><strong>Height</strong>: This is the pixel height of the ellipse.</p></li>
+<li><p><strong>Fill Ellipse</strong>: This is a check box that controls if the inside of the ellipse is filled or transparent.</p></li>
+<li><p><strong>Fill Color</strong>: If the fill option is selected this is the color of the inside area.</p></li>
+</ul>
+</section>
+</section>
+<section id="lines">
+<h3>Lines<a class="headerlink" href="#lines" title="Link to this heading">#</a></h3>
+<p>An line annotation is simply a line segment from one position on the graph to another. These are good for pointing to places on the graph, especially combined with text or expression annotations.  If you do use it with a text or expression note that these objects are not linked to text or expression boxes so they need to positioned independently.</p>
+<figure class="align-default" id="id8">
+<img alt="Line Annotation" src="../../_images/Snapshot7.png" />
+<figcaption>
+<p><span class="caption-text">Line Annotation</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="line-options">
+<h4>Line Options<a class="headerlink" href="#line-options" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Show</strong>: This is a check box that allows the user to toggle the showing of the annotation.  You can also double-click the annotation item in the annotation lest to toggle the showing of the annotation.</p></li>
+<li><p><strong>Color</strong>: This is the color of the line.</p></li>
+<li><p><strong>Line Width</strong>: This is the pixel width of the line.</p></li>
+<li><p><strong>Start X Position</strong>: This is the horizontal pixel position of the starting point for the line.</p></li>
+<li><p><strong>Start Y Position</strong>: This is the vertical pixel position of the starting point for the line.</p></li>
+<li><p><strong>End X Position</strong>: This is the horizontal pixel position of the ending point for the line.</p></li>
+<li><p><strong>End Y Position</strong>: This is the vertical pixel position of the ending point for the line.</p></li>
+</ul>
+</section>
+</section>
+<section id="arrows">
+<h3>Arrows<a class="headerlink" href="#arrows" title="Link to this heading">#</a></h3>
+<p>An arrow annotation is simply a line segment from one position on the graph to another with the addition of an arrowhead at the ending position. These are good for pointing to places on the graph, especially combined with text or expression annotations.  If you do use it with a text or expression note that these objects are not linked to text or expression boxes so they need to positioned independently.</p>
+<figure class="align-default" id="id9">
+<img alt="Arrow Annotation" src="../../_images/Snapshot8.png" />
+<figcaption>
+<p><span class="caption-text">Arrow Annotation</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="arrow-options">
+<h4>Arrow Options<a class="headerlink" href="#arrow-options" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Show</strong>: This is a check box that allows the user to toggle the showing of the annotation.  You can also double-click the annotation item in the annotation lest to toggle the showing of the annotation.</p></li>
+<li><p><strong>Color</strong>: This is the color of the arrow.</p></li>
+<li><p><strong>Line Width</strong>: This is the pixel width of the arrow.</p></li>
+<li><p><strong>Start X Position</strong>: This is the horizontal pixel position of the starting point for the arrow.</p></li>
+<li><p><strong>Start Y Position</strong>: This is the vertical pixel position of the starting point for the arrow.</p></li>
+<li><p><strong>End X Position</strong>: This is the horizontal pixel position of the ending point for the arrow.</p></li>
+<li><p><strong>End Y Position</strong>: This is the vertical pixel position of the ending point for the arrow.</p></li>
+<li><p><strong>Arrow Size</strong>: This is a pixel size of the size of the arrowhead.</p></li>
+<li><p><strong>Arrow Angle</strong>: This is the angle used at the point for the angular width of the arrowhead.</p></li>
+</ul>
+</section>
+</section>
+<section id="images">
+<h3>Images<a class="headerlink" href="#images" title="Link to this heading">#</a></h3>
+<p>An image annotation is an image that is rendered inside the graph. This option is useful for including better mathematical renderings using an outside equation editor to create a mathematical expression as an image.  It can also be used to insert logos and images that cn be superimposed over the graph.  This option allows the user to make the image semitransparent so that the graph can be seen through the image.</p>
+<figure class="align-default" id="id10">
+<img alt="Image Annotation" src="../../_images/Snapshot9.png" />
+<figcaption>
+<p><span class="caption-text">Image Annotation</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="image-options">
+<h4>Image Options<a class="headerlink" href="#image-options" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Show</strong>: This is a check box that allows the user to toggle the showing of the annotation.  You can also double-click the annotation item in the annotation lest to toggle the showing of the annotation.</p></li>
+<li><p><strong>Image</strong>: This is the image that is displayed.  There is a small toolbar above the image that allows the user to past an image from the clipboard or load an image from an image file.  Note that large images can consume computer resources and be slow to process.  Keep these images reasonable in size, if you wish to load in a large image it may be better to scale the image down with image editing software before loading the image into the annotator.</p></li>
+<li><p><strong>Anchor X Position</strong>: This is the horizontal pixel position of the anchor point for the text box, which is the upper left corner of the text box.</p></li>
+<li><p><strong>Anchor Y Position</strong>: This is the vertical pixel position of the anchor point for the text box, which is the upper left corner of the text box.</p></li>
+<li><p><strong>Scaling</strong>: This sets the scaling factor of the image.</p></li>
+<li><p><strong>Aspect Ratio</strong>: This sets the aspect ratio of the image.</p></li>
+<li><p><strong>Flip Horizontally</strong>: This reflects the image horizontally.</p></li>
+<li><p><strong>Flip Vertically</strong>: This reflects the image vertically.</p></li>
+<li><p><strong>Rotation</strong>: This is the amount of rotation that is applied to the image.</p></li>
+<li><p><strong>Use Transparent Color</strong>: This enables a transparent color, every pixel in the image that matches the transparent color is set to transparent.</p></li>
+<li><p><strong>Transparent Color</strong>: This is the color to use as the transparent color if the option is enabled. Every pixel in the image that matches the transparent color is set to transparent.</p></li>
+<li><p><strong>Image Transparency</strong>:  This is the amount of transparency that is applied to the entire image.</p></li>
+<li><p><strong>Include Box</strong>: This is a check box that allows the user to include a box around the annotation.  The other options in that section adjust the appearance of the box if it is included.</p></li>
+<li><p><strong>Padding Color</strong>: This is the color of the background for the box.</p></li>
+<li><p><strong>Border Color</strong>: This is the color of the box border.</p></li>
+<li><p><strong>Border Width</strong>: This is the pixel width of the border.</p></li>
+<li><p><strong>Horizontal Padding</strong>: This is the additional horizontal padding used for the box.</p></li>
+<li><p><strong>Vertical Padding</strong>: This is the additional vertical padding used for the box.</p></li>
+</ul>
+</section>
+<section id="latex-formula-editor">
+<h4><span class="target" id="index-1"></span>Latex Formula Editor<a class="headerlink" href="#latex-formula-editor" title="Link to this heading">#</a></h4>
+<p>If you wish to inset LaTeX rendered images into the image annotations a very nice stand-alone tool has been embedded into this help system.  It is a (very slight) alternation of the Latex Formula Editor by moskensoap on GitHub.com  Copyright (c) 2025, downloaded (6/2026).</p>
+<p><a class="reference external" href="../_static/latexformulaeditor/index.html">Latex Formula Editor</a></p>
+</section>
+</section>
+</section>
+<section id="tool-options">
+<h2>Tool Options<a class="headerlink" href="#tool-options" title="Link to this heading">#</a></h2>
+<p>In addition to the annotations described above, the menu and toolbar options are,</p>
+<ul class="simple">
+<li><p><strong>Open Project</strong>: This opens a project file which contains the base image and all the annotations that were created with the image.</p></li>
+<li><p><strong>Save Project As</strong>: This saves a project file which contains the base image and all the annotations that were created with the image.</p></li>
+<li><p><strong>New Blank Base Image</strong>:  This will create a new blank image to use for the base image in the annotator.  In most cases you will be annotating the graph that was loaded from the 2D or 3D graphics window, or an already existing image, either from a file or from another program.  So usually, you will be opening or pasting a base image into the program but that may be some cases where you want a blank canvas to work with.</p></li>
+<li><p><strong>Open Base Image</strong>:  Opens an image file and loads it into the image area.  This tool is primarily used with the graph that it opens with, but the tool has the ability to load and annotate external images.</p></li>
+<li><p><strong>Paste Base Image</strong>:  Pastes an image from the clipboard into the image area.</p></li>
+<li><p><strong>Copy Image</strong>: Copies the current image to the system clipboard.</p></li>
+<li><p><strong>Save Image As</strong>:  Saves the current image to a file.  When invoked, a save as dialog box will appear asking the user for a filename.  The default will save the image as a PNG file (probably the best format for graphs), if the user includes a known extension (such as .jpg or .bmp) the program will save the image in that format.</p></li>
+<li><p><strong>Print</strong>: This will send the image to the printer. When invoked, a dialog box will appear allowing the use to set the printing options.</p></li>
+<li><p><strong>Print Preview</strong>: This will open the image in a print preview dialog box that will allow the user to view the printed image as well as set other printing attributes and print the image.</p></li>
+<li><p><strong>Delete Annotation</strong>: Deletes the currently selected annotation.</p></li>
+<li><p><strong>Clear Annotation List</strong>: This option deletes all of the annotations.</p></li>
+<li><p><strong>Toggle Border</strong>: Toggles the graphing of a border around the entire image.</p></li>
+<li><p><strong>Border Width</strong>: Sets the width of the border if the border is set to display.  This option is only available on the toolbar.</p></li>
+<li><p><strong>Border Color</strong>: Sets the color of the border if the border is set to display.  This option is only available on the toolbar.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ViewOpts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">View Options</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AdvPlotCreator.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Advanced Plot Creator</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-layout">Tool Layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#annotations">Annotations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#text-boxes">Text Boxes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#text-box-options">Text Box Options</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expressions">Mathematical Expressions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-expression-options">Mathematical Expression Options</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangles">Rectangles</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rectangle-options">Rectangle Options</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ellipses">Ellipses</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ellipse-options">Ellipse Options</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lines">Lines</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#line-options">Line Options</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arrows">Arrows</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#arrow-options">Arrow Options</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#images">Images</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-options">Image Options</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#latex-formula-editor">Latex Formula Editor</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-options">Tool Options</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

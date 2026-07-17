@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Projections &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/VecProj';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Gram-Schmidt" href="VecGramSchmidt.html" />
+    <link rel="prev" title="Norms and Normalization" href="VecNorms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casCopySpecialCopy.html">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseConvert.html">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSimplify.html">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSolving.html">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalLimitsDerivatives.html">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalOde.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Projections</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="projections">
+<h1><span class="target" id="index-0"></span>Projections<a class="headerlink" href="#projections" title="Link to this heading">#</a></h1>
+<p>This submenu of items is for the calculation of projections of a vector onto another vector or a vector onto a subspace spanned by a set of vectors.  These options can also calculate the orthogonal component of the projection.</p>
+<section id="projection">
+<h2><span class="target" id="index-1"></span>Projection<a class="headerlink" href="#projection" title="Link to this heading">#</a></h2>
+<p>This finds the projection of one vector onto another.  To find the projection, select the vector you wish to project, select this option, a dialog box will appear asking the user to input the vector to project onto using the CAS workspace designation, select this and click OK.  The program will then return the projection vector. For example, say we have the following two vectors in the CAS workspace,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{c}4\\5\\6\end{array}\right]\end{split}\]</div>
+<p>The projection of the first onto the second is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{128}{77}\\\frac{160}{77}\\\frac{192}{77}\end{array}\right]\end{split}\]</div>
+</section>
+<section id="orthogonal-component">
+<h2><span class="target" id="index-2"></span>Orthogonal Component<a class="headerlink" href="#orthogonal-component" title="Link to this heading">#</a></h2>
+<p>This finds the orthogonal component of the projection of one vector onto another.  To find the orthogonal component, select the vector you wish to project, select this option, a dialog box will appear asking the user to input the vector to project onto using the CAS workspace designation, select this and click OK.  The program will then return the orthogonal component vector. For example, say we have the following two vectors in the CAS workspace,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{c}4\\5\\6\end{array}\right]\end{split}\]</div>
+<p>The orthogonal component of the first onto the second is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \frac{51}{77}\\- \frac{6}{77}\\\frac{39}{77}\end{array}\right]\end{split}\]</div>
+</section>
+<section id="projection-and-component">
+<h2><span class="target" id="index-3"></span>Projection and Component<a class="headerlink" href="#projection-and-component" title="Link to this heading">#</a></h2>
+<p>This finds both the projection and orthogonal component vectors of the projection of one vector onto another.  To find the projection and orthogonal component, select the vector you wish to project, select this option, a dialog box will appear asking the user to input the vector to project onto using the CAS workspace designation, select this and click OK.  The program will then return the projection and orthogonal component vectors as separate entries in the CAS workspace. For example, say we have the following two vectors in the CAS workspace,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{c}4\\5\\6\end{array}\right]\end{split}\]</div>
+<p>The projection and orthogonal component of the first onto the second are,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{128}{77}\\\frac{160}{77}\\\frac{192}{77}\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{c}- \frac{51}{77}\\- \frac{6}{77}\\\frac{39}{77}\end{array}\right]\end{split}\]</div>
+</section>
+<section id="projection-onto-subspace">
+<h2><span class="target" id="index-4"></span>Projection onto Subspace<a class="headerlink" href="#projection-onto-subspace" title="Link to this heading">#</a></h2>
+<p>This finds the projection of one vector onto the subspace spanned by a set of vectors.  To find the projection, select the vector you wish to project, select this option, a dialog box will appear asking the user to input the set of vectors to project onto using the CAS workspace designation, select this and click OK.  The program will then return the projection vector along with the orthogonal basis used during the calculation (obtained from the Gram-Schmidt method). The vector set to project onto can be given as a matrix (in which case the columns are used as the vector set) or as a list of vectors.  For example, say we have the following in the CAS workspace,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{cc}3 &amp; 5\\2 &amp; -1\\7 &amp; 4\end{array}\right]\end{split}\]</div>
+<p>The projection of the first onto the space spanned by the columns of the second is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{593}{923}\\\frac{1340}{923}\\\frac{235}{71}\end{array}\right]\end{split}\]</div>
+<p>and the orthogonal basis used in the calculation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}3\\2\\7\end{array}\right], \  \left[\begin{array}{c}\frac{187}{62}\\- \frac{72}{31}\\- \frac{39}{62}\end{array}\right]\right]\end{split}\]</div>
+</section>
+<section id="orthogonal-component-to-subspace">
+<h2><span class="target" id="index-5"></span>Orthogonal Component to Subspace<a class="headerlink" href="#orthogonal-component-to-subspace" title="Link to this heading">#</a></h2>
+<p>This finds the orthogonal component of the projection of one vector onto the subspace spanned by a set of vectors.  To find the orthogonal component, select the vector you wish to project, select this option, a dialog box will appear asking the user to input the set of vectors to project onto using the CAS workspace designation, select this and click OK.  The program will then return the orthogonal component vector along with the orthogonal basis used during the calculation (obtained from the Gram-Schmidt method). The vector set to project onto can be given as a matrix (in which case the columns are used as the vector set) or as a list of vectors.  For example, say we have the following in the CAS workspace,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{cc}3 &amp; 5\\2 &amp; -1\\7 &amp; 4\end{array}\right]\end{split}\]</div>
+<p>The orthogonal component of the first onto the space spanned by the columns of the second is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{330}{923}\\\frac{506}{923}\\- \frac{22}{71}\end{array}\right]\end{split}\]</div>
+<p>and the orthogonal basis used in the calculation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}3\\2\\7\end{array}\right], \  \left[\begin{array}{c}\frac{187}{62}\\- \frac{72}{31}\\- \frac{39}{62}\end{array}\right]\right]\end{split}\]</div>
+</section>
+<section id="projection-and-component-to-subspace">
+<h2><span class="target" id="index-6"></span>Projection and Component to Subspace<a class="headerlink" href="#projection-and-component-to-subspace" title="Link to this heading">#</a></h2>
+<p>This finds both the projection and orthogonal component of the projection of one vector onto the subspace spanned by a set of vectors.  To find the projection and orthogonal component, select the vector you wish to project, select this option, a dialog box will appear asking the user to input the set of vectors to project onto using the CAS workspace designation, select this and click OK.  The program will then return the projection and orthogonal component vectors along with the orthogonal basis used during the calculation (obtained from the Gram-Schmidt method). The vector set to project onto can be given as a matrix (in which case the columns are used as the vector set) or as a list of vectors.  For example, say we have the following in the CAS workspace,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{cc}3 &amp; 5\\2 &amp; -1\\7 &amp; 4\end{array}\right]\end{split}\]</div>
+<p>The orthogonal component of the first onto the space spanned by the columns of the second is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{593}{923}\\\frac{1340}{923}\\\frac{235}{71}\end{array}\right]
+\qquad {\rm and } \qquad
+\left[\begin{array}{c}\frac{330}{923}\\\frac{506}{923}\\- \frac{22}{71}\end{array}\right]\end{split}\]</div>
+<p>and the orthogonal basis used in the calculation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}3\\2\\7\end{array}\right], \  \left[\begin{array}{c}\frac{187}{62}\\- \frac{72}{31}\\- \frac{39}{62}\end{array}\right]\right]\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above examples, the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{cc}3 &amp; 5\\2 &amp; -1\\7 &amp; 4\end{array}\right]\end{split}\]</div>
+<p>could be replaced with,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}3\\2\\7\end{array}\right], \  \left[\begin{array}{c}5\\-1\\4\end{array}\right]\right]\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ 3, \  2, \  7\right], \  \left[ 5, \  -1, \  4\right]\right]\]</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="VecNorms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Norms and Normalization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="VecGramSchmidt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Gram-Schmidt</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection">Projection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-component">Orthogonal Component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-and-component">Projection and Component</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-onto-subspace">Projection onto Subspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-component-to-subspace">Orthogonal Component to Subspace</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projection-and-component-to-subspace">Projection and Component to Subspace</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

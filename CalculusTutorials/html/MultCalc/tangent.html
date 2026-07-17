@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tangent Planes and Linear Approximations &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/tangent';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Chain Rule" href="chain.html" />
+    <link rel="prev" title="Partial Derivatives" href="partial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Tangent Planes and Linear Approximations</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="tangent-planes-and-linear-approximations">
+<h1><span class="target" id="index-0"></span>Tangent Planes and Linear Approximations<a class="headerlink" href="#tangent-planes-and-linear-approximations" title="Link to this heading">#</a></h1>
+<p>With functions of one variable we studied tangent lines and used these to establish linear approximations to a function.  We can, of course, move this up a dimension and consider tangent planes to a surface and use these to establish linear approximations to functions of two variables.</p>
+<section id="tangent-planes">
+<h2>Tangent Planes<a class="headerlink" href="#tangent-planes" title="Link to this heading">#</a></h2>
+<p>Before we get into the equations we will define a tangent plane geometrically.</p>
+<div class="admonition-definition-tangent-plane-to-a-surface admonition">
+<p class="admonition-title">Definition: Tangent Plane to a Surface</p>
+<p>Let <em>P</em> be a point on a surface <em>S</em> and let <em>C</em> be any curve that passes through <em>P</em> and is on <em>S</em>.   If the tangent lines to all such curves <em>C</em> at <em>P</em> lie in the same plane, then this plane is called the tangent plane to <em>S</em> at <em>P</em>.</p>
+</div>
+<figure class="align-default" id="id2">
+<img alt="Tangent Plane" src="../_images/TangentPlane001.png" />
+<figcaption>
+<p><span class="caption-text">Tangent Plane</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-definition-tangent-plane-to-a-surface-defined-by-math-z-f-x-y admonition">
+<p class="admonition-title">Definition: Tangent Plane to a Surface Defined by <span class="math notranslate nohighlight">\(z = f(x, y)\)</span></p>
+<p>Let <em>S</em> be a surface defined by a differentiable function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span>, and let <span class="math notranslate nohighlight">\(P = (a, b)\)</span> be a point in the domain of <em>f</em>. Then, the equation of the tangent plane to <em>S</em> at <em>P</em> is given by</p>
+<div class="math notranslate nohighlight">
+\[z = f (a, b) + f_x(a, b)(x − a) + f_y(a, b)(y − b)\]</div>
+</div>
+<p>To be precise, the above definition is really a theorem.  Given our geometric definition above we can derive this formula by taking the cross product of tangent lines (really tangent vectors) to the surface at the point <span class="math notranslate nohighlight">\((a, b, f(a, b))\)</span> which can be found from the first partials.  We leave the details to the reader, or their textbook.</p>
+<section id="example-tangent-plane-to-z-x-cos-left-y-right-y-sin-left-x-right-at-pi-pi-3">
+<h3>Example: Tangent Plane to <span class="math notranslate nohighlight">\(z = x \cos{\left(y \right)} + y \sin{\left(x \right)}\)</span> at <span class="math notranslate nohighlight">\((\pi, \pi/3)\)</span><a class="headerlink" href="#example-tangent-plane-to-z-x-cos-left-y-right-y-sin-left-x-right-at-pi-pi-3" title="Link to this heading">#</a></h3>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*cos(y) + y*sin(x)</span>
+</pre></div>
+</div>
+<p>Graphing this and zooming in a little,</p>
+<figure class="align-default" id="id3">
+<img alt=":math:`z = x \cos{\left(y \right)} + y \sin{\left(x \right)}`" src="../_images/TangentPlane003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = x \cos{\left(y \right)} + y \sin{\left(x \right)}\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Assume this is in <code class="docutils literal notranslate"><span class="pre">R1</span></code>.  Find <span class="math notranslate nohighlight">\(f_x\)</span> with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code> variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, the result is <code class="docutils literal notranslate"><span class="pre">R2</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[y \cos{\left(x \right)} + \cos{\left(y \right)}\]</div>
+<p>Find <span class="math notranslate nohighlight">\(f_y\)</span> with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code> variable <code class="docutils literal notranslate"><span class="pre">y</span></code>, the result is <code class="docutils literal notranslate"><span class="pre">R3</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[- x \sin{\left(y \right)} + \sin{\left(x \right)}\]</div>
+<p>Find <span class="math notranslate nohighlight">\(f_x(\pi, \pi/3)\)</span> by selecting <code class="docutils literal notranslate"><span class="pre">R2</span></code> then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> expressions <code class="docutils literal notranslate"><span class="pre">[pi,</span> <span class="pre">pi/3]</span></code>, the result is <code class="docutils literal notranslate"><span class="pre">R4</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} - \frac{\pi}{3}\]</div>
+<p>Find <span class="math notranslate nohighlight">\(f_y(\pi, \pi/3)\)</span> by selecting <code class="docutils literal notranslate"><span class="pre">R3</span></code> then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> expressions <code class="docutils literal notranslate"><span class="pre">[pi,</span> <span class="pre">pi/3]</span></code>, the result is <code class="docutils literal notranslate"><span class="pre">R5</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{\sqrt{3} \pi}{2}\]</div>
+<p>Find <span class="math notranslate nohighlight">\(f(\pi, \pi/3)\)</span> by selecting <code class="docutils literal notranslate"><span class="pre">R1</span></code> then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> expressions <code class="docutils literal notranslate"><span class="pre">[pi,</span> <span class="pre">pi/3]</span></code>, the result is <code class="docutils literal notranslate"><span class="pre">R6</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\pi}{2}\]</div>
+<p>Create the tangent plane with, <code class="docutils literal notranslate"><span class="pre">R6</span> <span class="pre">+</span> <span class="pre">R4*(x-pi)</span> <span class="pre">+</span> <span class="pre">R5*(y-pi/3)</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left(\frac{1}{2} - \frac{\pi}{3}\right) \left(x - \pi\right) - \frac{\sqrt{3} \pi \left(y - \frac{\pi}{3}\right)}{2} + \frac{\pi}{2}\]</div>
+<p>Which simplifies to,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(3 - 2 \pi\right) \left(x - \pi\right)}{6} - \frac{\sqrt{3} \pi \left(3 y - \pi\right)}{6} + \frac{\pi}{2}\]</div>
+<p>Graphing the plane and the point of tangency <code class="docutils literal notranslate"><span class="pre">[pi,</span> <span class="pre">pi/3,</span> <span class="pre">R6]</span></code> gives us the following image.</p>
+<figure class="align-default" id="id4">
+<img alt="Tangent Plane" src="../_images/TangentPlane002.png" />
+<figcaption>
+<p><span class="caption-text">Tangent Plane</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="linear-approximations">
+<h2>Linear Approximations<a class="headerlink" href="#linear-approximations" title="Link to this heading">#</a></h2>
+<p>If we revisit tangent lines and linear approximations we know that if we have a differentiable function (that is, smooth) then close to the point of tangency the functional value of the tangent line is close to the functional value of the curve.  This extends in a natural way to functions of two variables and their tangent planes.  If a surface is smooth at a point <em>P</em> then the tangent plane is close to the surface for points close to <em>P</em>.</p>
+<div class="admonition-definition-linear-approximation admonition">
+<p class="admonition-title">Definition: Linear Approximation</p>
+<p>Given a function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> with continuous partial derivatives at <span class="math notranslate nohighlight">\((a, b),\)</span> the linear approximation of <em>f</em> at <span class="math notranslate nohighlight">\((a, b)\)</span> is the tangent plane,</p>
+<div class="math notranslate nohighlight">
+\[L(x, y) = f (a, b) + f_x(a, b)(x − a) + f_y(a, b)(y − b)\]</div>
+</div>
+<p>As with the one variable case, for points close to <span class="math notranslate nohighlight">\((a, b),\)</span> we have <span class="math notranslate nohighlight">\(L(x, y) \approx f(x, y).\)</span></p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>From our example above with <span class="math notranslate nohighlight">\(f(x, y) = x \cos{\left(y \right)} + y \sin{\left(x \right)}\)</span> and the tangent plane at <span class="math notranslate nohighlight">\((\pi, \pi/3)\)</span> of <span class="math notranslate nohighlight">\(L(x, y) = \frac{\left(3 - 2 \pi\right) \left(x - \pi\right)}{6} - \frac{\sqrt{3} \pi \left(3 y - \pi\right)}{6} + \frac{\pi}{2}.\)</span>  If we evaluate both at the point <span class="math notranslate nohighlight">\((3, 1)\)</span> we get 1.7620269256642863743 and 1.7766858126373610444 respectively.</p>
+</section>
+</section>
+<section id="differentiability">
+<h2>Differentiability<a class="headerlink" href="#differentiability" title="Link to this heading">#</a></h2>
+<p>Differentiability for functions of two variables is a little more complicated then with one variable.  Here is a definition.</p>
+<div class="admonition-definition-differentiability admonition">
+<p class="admonition-title">Definition: Differentiability</p>
+<p>A function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> is differentiable at a point <span class="math notranslate nohighlight">\((a, b)\)</span> if we can write</p>
+<div class="math notranslate nohighlight">
+\[\Delta z = f(x + \Delta x, y + \Delta y) - f(a, b) = f_x(a, b)\Delta x + f_y(a, b)\Delta y + \epsilon_1 \Delta x + \epsilon_2 \Delta y\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon_1\)</span> is a function of <span class="math notranslate nohighlight">\(\Delta x\)</span> and <span class="math notranslate nohighlight">\(\epsilon_2\)</span> is a function of <span class="math notranslate nohighlight">\(\Delta y\)</span> such that <span class="math notranslate nohighlight">\(\epsilon_1 \to 0\)</span> and <span class="math notranslate nohighlight">\(\epsilon_2 \to 0\)</span> as <span class="math notranslate nohighlight">\((\Delta x, \Delta y) \to (0, 0).\)</span></p>
+</div>
+<p>This is yet another definition that has many theoretical uses but is not easy to apply in practice.  As one would expect, as in the one variable case, a differentiable function is continuous.</p>
+<div class="admonition-theorem-differentiability-implies-continuity admonition">
+<p class="admonition-title">Theorem: Differentiability Implies Continuity</p>
+<p>If <span class="math notranslate nohighlight">\(f(x, y)\)</span> is differentiable at <span class="math notranslate nohighlight">\((a, b)\)</span> then it is continuous at <span class="math notranslate nohighlight">\((a, b).\)</span></p>
+</div>
+<p>Fortunately, differentiability can be determined without resorting to the definition.</p>
+<div class="admonition-theorem-differentiability admonition">
+<p class="admonition-title">Theorem: Differentiability</p>
+<p>A function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> whose partial derivatives <span class="math notranslate nohighlight">\(f_x\)</span> and <span class="math notranslate nohighlight">\(f_y\)</span> exist near <span class="math notranslate nohighlight">\((a, b)\)</span> and are continuous at <span class="math notranslate nohighlight">\((a, b)\)</span> is differentiable at <span class="math notranslate nohighlight">\((a, b).\)</span></p>
+</div>
+</section>
+<section id="differentials">
+<h2>Differentials<a class="headerlink" href="#differentials" title="Link to this heading">#</a></h2>
+<p>As in the one variable case, we can reformulate the concept of the linear approximation as differentials.</p>
+<div class="admonition-definition-the-total-differential admonition">
+<p class="admonition-title">Definition: The Total Differential</p>
+<p>Let <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> be a function of two variables and the point <span class="math notranslate nohighlight">\((a, b)\)</span> is in the domain of <em>f</em>.  Let <span class="math notranslate nohighlight">\(\Delta x\)</span> and <span class="math notranslate nohighlight">\(\Delta y\)</span> be such that the point <span class="math notranslate nohighlight">\((a + \Delta x, b + \Delta y)\)</span> is also in the domain of <em>f</em>.  If <em>f</em> is differentiable at <span class="math notranslate nohighlight">\((a, b)\)</span> then the differentials are <span class="math notranslate nohighlight">\(dx = \Delta x\)</span> and <span class="math notranslate nohighlight">\(dy = \Delta y\)</span>, and the <strong>total differential</strong> <span class="math notranslate nohighlight">\(dz\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[dz = f_x(a, b)dx + f_y(a, b)dy\]</div>
+</div>
+<p>As with the one variable case, for small <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> the value of <span class="math notranslate nohighlight">\(dz \approx \Delta z.\)</span></p>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Returning to our example we did above with <span class="math notranslate nohighlight">\(f(x, y) = x \cos{\left(y \right)} + y \sin{\left(x \right)}\)</span>, the tangent plane at <span class="math notranslate nohighlight">\((\pi, \pi/3)\)</span>, and the point <span class="math notranslate nohighlight">\((3, 1).\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Delta z = f(3, 1) - f(\pi, \pi/3) = \left(\sin{\left(3 \right)} + 3 \cos{\left(1 \right)}\right) - \left(\frac{\pi}{2}\right) = 0.19123059886938975507\)</span></p>
+<p><span class="math notranslate nohighlight">\(dz = f_x(a, b)dx + f_y(a, b)dy = \left(\frac{1}{2} - \frac{\pi}{3}\right) \left(3 - \pi \right) + \left(-1 - \frac{\sqrt{3}}{2}\right) \left(1 - \pi/3\right) = 0.16555098284103103994\)</span></p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="partial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Partial Derivatives</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chain.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Chain Rule</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-planes">Tangent Planes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tangent-plane-to-z-x-cos-left-y-right-y-sin-left-x-right-at-pi-pi-3">Example: Tangent Plane to <span class="math notranslate nohighlight">\(z = x \cos{\left(y \right)} + y \sin{\left(x \right)}\)</span> at <span class="math notranslate nohighlight">\((\pi, \pi/3)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-approximations">Linear Approximations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentiability">Differentiability</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#differentials">Differentials</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Series &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/series';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Convergence and Divergence Tests for Series" href="sertests.html" />
+    <link rel="prev" title="Sequences" href="sequences.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Series</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="series">
+<h1><span class="target" id="index-0"></span>Series<a class="headerlink" href="#series" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>In this section we will be taking a sequence <span class="math notranslate nohighlight">\(\{ a_n \}\)</span> and adding up all the (infinite number of) terms in the sequence, that is,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty a_n = a_1 + a_2  + a_3 + a_4 + \cdots\]</div>
+<p>This is called an infinite series.  The first question is, how do we attack such a problem?  One approach is to change the series into a sequence and then use what we discussed in the previous section.  The way we will alter this series into a sequence is to take the sum of the first <em>n</em> terms for each <em>n</em>, these are called partial sums.  Specifically,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_1 &amp; = a_1 \\
+s_2 &amp; = a_1 + a_2 \\
+s_3 &amp; = a_1 + a_2 + a_3 \\
+s_4 &amp; = a_1 + a_2 + a_3 + a_4 \\
+&amp; \vdots \\
+s_n &amp; = a_1 + a_2 + a_3 + a_4 + \cdots + a_n = \sum_{k = 1}^n a_k \\
+&amp; \vdots \\\end{split}\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\{ s_n \}\)</span> is a sequence (of partial sums) and it seems reasonable that if this sequence converges it would converge to the same value as the series.  So if <span class="math notranslate nohighlight">\(\{ s_n \}\)</span> converges to <span class="math notranslate nohighlight">\(S\)</span> then we say,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty a_n = a_1 + a_2  + a_3 + a_4 + \cdots = S\]</div>
+<p>If the sequence <span class="math notranslate nohighlight">\(\{ s_n \}\)</span> diverges then we say that the series <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> diverges.</p>
+<p>In general these can be difficult to calculate, the main problem is getting a closed form for the nth partial sum, <span class="math notranslate nohighlight">\(s_n.\)</span>  If we can do that then the limit of the function should be relatively easy.  In many cases we simply need to know if the series converges or diverges.  If it does converge then sometimes just having a good estimate on the sum is sufficient.  Even if we cannot find the actual value of a convergent series we can use approximation techniques and algebraic manipulations to extract information about the series.</p>
+<div class="admonition-theorem-algebraic-properties-of-convergent-series admonition">
+<p class="admonition-title">Theorem: Algebraic Properties of Convergent Series</p>
+<p>If we have two convergent series <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n\)</span> and <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty b_n\)</span>, then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n + b_n\)</span> converges to <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n + \sum_{n = 1}^\infty  b_n\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n - b_n\)</span> converges to <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty a_n - \sum_{n = 1}^\infty  b_n\)</span>.</p></li>
+<li><p>For any real number <span class="math notranslate nohighlight">\(c\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 1}^\infty ca_n\)</span> converges to <span class="math notranslate nohighlight">\(\displaystyle c \sum_{n = 1}^\infty a_n\)</span>.</p></li>
+</ul>
+</div>
+</section>
+<section id="example-geometric-series">
+<h2>Example: Geometric Series<a class="headerlink" href="#example-geometric-series" title="Link to this heading">#</a></h2>
+<p>A <span class="target" id="index-1"></span>geometric series is any series that we can write in the form</p>
+<div class="math notranslate nohighlight">
+\[a + ar + ar^2 + ar^3 + \cdots = \sum_{n = 1}^\infty ar^{n-1}\]</div>
+<p>These series are ones where we can find a nice expression for the nth partial sum.  We will not go through the derivation here, and leave it to your textbook for the details.</p>
+<div class="math notranslate nohighlight">
+\[s_n = a + ar + ar^2 + ar^3 + \cdots ar^(n-1) = \frac{a \left(r^{n} - 1\right)}{r - 1} = \frac{a \left(1 - r^{n} \right)}{1 - r}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r \neq 1\)</span>. Then</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} s_n = \lim_{n \to \infty} \frac{a \left(1 - r^{n} \right)}{1 - r} = \frac{a }{1 - r}\]</div>
+<p>as long as <span class="math notranslate nohighlight">\(-1 &lt; r &lt; 1\)</span>. The sequence (and hence series) diverges otherwise.</p>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>We will start out with the general solution, input the  expression for the nth term.  We will use <span class="math notranslate nohighlight">\(ar^k\)</span> and then let <em>k</em> go from 0 to <span class="math notranslate nohighlight">\(n-1\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a*r^k</span>
+</pre></div>
+</div>
+<p>Now we will find both the nth partial sum and the infinite sum.  For the nth partial sum select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Sum</span></code>, the variable is <em>k</em>, the beginning index is 0 and the ending index is <span class="math notranslate nohighlight">\(n-1\)</span>.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a \left(\begin{cases} n &amp; \text{for}\: r = 1 \\\frac{1 - r^{n}}{1 - r} &amp; \text{otherwise} \end{cases}\right)\end{split}\]</div>
+<p>If we simplify this expression we get,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} a n &amp; \text{for}\: r = 1 \\\frac{a \left(r^{n} - 1\right)}{r - 1} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>We know that for convergence we need <span class="math notranslate nohighlight">\(|r| &lt; 1\)</span>, so the second expression is what we would use.  Although we will not need to do this, if we wanted to extract this expression we could select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Piecewise</span> <span class="pre">Conversions</span> <span class="pre">/</span> <span class="pre">Extractions</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">Expression</span> <span class="pre">from</span> <span class="pre">Piecewise</span> <span class="pre">Function</span></code> then set the number of the expression to 2 and the result will be <span class="math notranslate nohighlight">\(\frac{a \left(r^{n} - 1\right)}{r - 1}\)</span>.</p>
+<p>To find the sum of the first 10 terms of <span class="math notranslate nohighlight">\(3 \cdot 0.5^n\)</span>, select the expression for the nth partial sum, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the dialog box that appears should have the following in the variables box, <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">n,</span> <span class="pre">r]</span></code>.  Input the values for the variables in the same order they appear in the variables list, separated by commas and the brackets are optional, specifically <code class="docutils literal notranslate"><span class="pre">3,</span> <span class="pre">10,</span> <span class="pre">0.5</span></code>, the result is 5.994140625.</p>
+<p>To find the sum of the infinite series we can select the original expression <span class="math notranslate nohighlight">\(a r^{k}\)</span>, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Sum</span></code>,  The variable is <em>k</em>, beginning index is 0 and the ending index is <code class="docutils literal notranslate"><span class="pre">oo</span></code> (our symbol for <span class="math notranslate nohighlight">\(\infty\)</span>).  The result is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}a \left(\begin{cases} \frac{1}{1 - r} &amp; \text{for}\: \left|{r}\right| &lt; 1 \\\sum_{k=0}^{\infty} r^{k} &amp; \text{otherwise} \end{cases}\right)\end{split}\]</div>
+<p>simplified becomes,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} - \frac{a}{r - 1} &amp; \text{for}\: r &gt; -1 \wedge r &lt; 1 \\a \sum_{k=0}^{\infty} r^{k} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>Again we could extract the first expression since this one corresponds to the convergence criteria.  Or we can simply select the above expression, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, use 3 for <em>a</em>, 1/2 for <em>r</em>, and 1 for <em>k</em> (which is simply needed for input but is not used in the evaluation), the result is 6.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>For the general nth partial sum, input</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ps</span><span class="p">:</span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">r</span><span class="o">^</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="n">simpsum</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\frac{a\, \left( {{r}^{n}}-1\right) }{r-1}\mbox{}\]</div>
+<p>We can change this into a function with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span><span class="o">:=</span><span class="s1">&#39;&#39;</span><span class="n">ps</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then we can find the sum of the first 10 terms of <span class="math notranslate nohighlight">\(3 \cdot 0.5^n\)</span> with,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The result is 5.994140625.</p>
+<p>For the infinite sum we can evaluate,</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sm</span><span class="p">:</span><span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">r</span><span class="o">^</span><span class="n">k</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inf</span><span class="p">),</span> <span class="n">simpsum</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Maxima will ask you if <span class="math notranslate nohighlight">\(|r| - 1\)</span> is positive, negative, or zero, input <em>n</em> and then Shift+Enter.</p>
+<div class="math notranslate nohighlight">
+\[\frac{a}{1-r}\mbox{}\]</div>
+<p>Change this into a function with</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(a, r):=&#39;&#39;sm;</span>
+</pre></div>
+</div>
+<p>Then the infinite sum for the example above is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(3, 1/2);</span>
+</pre></div>
+</div>
+<p>which returns 6.</p>
+</section>
+</section>
+<section id="example-harmonic-series">
+<h2>Example: Harmonic Series<a class="headerlink" href="#example-harmonic-series" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-the-harmonic-series admonition">
+<p class="admonition-title">Definition: The Harmonic Series</p>
+<p>A series that comes up frequently both in theory and practice is the <span class="target" id="index-2"></span>harmonic series. The harmonic series is defined as</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty \frac{1}{n} = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \cdots\]</div>
+</div>
+<p>As we will see below, the harmonic series diverges.</p>
+<section id="id1">
+<h3>CLAE<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the expression for the nth term,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/n</span>
+</pre></div>
+</div>
+<p>Then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Sum</span></code>, for the variable use <em>n</em>, beginning index is 1 and the ending index is <code class="docutils literal notranslate"><span class="pre">oo</span></code> (our symbol for <span class="math notranslate nohighlight">\(\infty\)</span>).  The result is <span class="math notranslate nohighlight">\(\infty\)</span>.</p>
+<p>One interesting fact about this series is that is grows very slowly.  To see this select the <code class="docutils literal notranslate"><span class="pre">1/n</span></code> expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span> <span class="pre">Sum</span></code>, <em>n</em> is the variable, beginning index is 1 and set the ending index to 1000000.  The result is only 14.392726722864989, and the sum of the first 10,000,000 terms is only 16.695311365857272.</p>
+</section>
+<section id="id2">
+<h3>Maxima<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>To show the divergence of the harmonic series input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sum(1/n, n, 0, inf), simpsum;</span>
+</pre></div>
+</div>
+<p>The result is an error that tells you that the series diverges.  To see the slow convergence we can change the infinity to <em>k</em></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">hs:sum(1.0/n, n, 1, k), simpsum;</span>
+</pre></div>
+</div>
+<p>then turn this into a function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">hsf(k):=&#39;&#39;hs;</span>
+</pre></div>
+</div>
+<p>then find the sum of the first 100,000 entries,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">hsf(100000), simpsum;</span>
+</pre></div>
+</div>
+<p>The result is 12.09014612986343.</p>
+</section>
+</section>
+<section id="example-telescoping-series">
+<h2>Example: Telescoping Series<a class="headerlink" href="#example-telescoping-series" title="Link to this heading">#</a></h2>
+<p>Another series of interest is a telescoping series. This is a series where the majority of the middle terms of a partial sum cancel each other out.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty \frac{1}{n(n+1)}\]</div>
+<p>If we use partial fractions on the nth tern expression we get,</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty \frac{1}{n(n+1)} = \sum_{n = 1}^\infty \frac{1}{n} - \frac{1}{n + 1}\]</div>
+<p>so the nth partial sum is</p>
+<div class="math notranslate nohighlight">
+\[s_n = 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{2} - \frac{1}{3} + \cdots + \frac{1}{n} - \frac{1}{n+1} = 1 - \frac{1}{n+1}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 1}^\infty \frac{1}{n(n+1)} = \lim_{n \to \infty} s_n = \lim_{n \to \infty} 1 - \frac{1}{n+1} = 1\]</div>
+<p>Although we are primarily interested in how to use the computer algebra systems to investigate these concepts this is a nice method for some by-hand calculations.  In addition, this is built into some computer systems when evaluating infinite sums.</p>
+<section id="id3">
+<h3>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(n*(n + 1))</span>
+</pre></div>
+</div>
+<p>then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Sum</span></code>, the variable is <em>n</em>, beginning index is 1 and ending index is <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is 1 as expected.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sequences.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Sequences</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="sertests.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Convergence and Divergence Tests for Series</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-geometric-series">Example: Geometric Series</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-harmonic-series">Example: Harmonic Series</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-telescoping-series">Example: Telescoping Series</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

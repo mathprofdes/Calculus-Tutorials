@@ -1,0 +1,672 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GeoGebra Expression Syntax &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CASGenIntro/GeoGebraSyntax';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Calculus and Support Functions" href="GeoGebraCalculus.html" />
+    <link rel="prev" title="Inputting Expressions" href="GeoGebraInput.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="GeoGebra.html">GeoGebra User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GeoGebraIntro.html">Introduction to GeoGebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebraInput.html">Inputting Expressions</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">GeoGebra Expression Syntax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebraCalculus.html">Calculus and Support Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebra2DGraphs.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebra3DGraphs.html">3D Graphs</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CLAE/index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="GeoGebra.html" class="nav-link">GeoGebra User’s Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">GeoGebra Expression Syntax</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="geogebra-expression-syntax">
+<h1>GeoGebra Expression Syntax<a class="headerlink" href="#geogebra-expression-syntax" title="Link to this heading">#</a></h1>
+<p>The following sections outline the syntax for GeoGebra expressions.  GeoGebra has an expression formatter in each of its input cells so much of the syntax is taken care of “under the hood” with this system but you still need to know some basic syntax.</p>
+<p>If you click in an input box in the input panel on the left, an editing panel appears that has several modes.  The toolbar above the keypad will allow you switch between numbers, functions, qwerty keyboard, and special symbols. Also the three dots icon on the far right of this toolbar will open up the function quick help system that shows you all of the functions you have available for input.  Clicking on any if these will load the function syntax into the input box, you can also type in the function name from the keyboard.</p>
+<figure class="align-default" id="id1">
+<img alt="Command List" src="../_images/GeoGebraLayoutMenu006.png" />
+<figcaption>
+<p><span class="caption-text">Command List</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="arithmetic-operations">
+<h2>Arithmetic Operations<a class="headerlink" href="#arithmetic-operations" title="Link to this heading">#</a></h2>
+<p>The basic arithmetic operations are <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">\</span></code>, and <code class="docutils literal notranslate"><span class="pre">^</span></code>. All of which do what you would expect.  The <code class="docutils literal notranslate"><span class="pre">^</span></code> is exponentiation which will move the cursor into the exponent, ti get out of the exponent click the right arrow key.  Note that <code class="docutils literal notranslate"><span class="pre">*</span></code> can be used for multiplication but GeoGebra does understand juxtaposition as multiplication, so for <span class="math notranslate nohighlight">\(2x\)</span> you can use the syntax <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">2x</span></code>.</p>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p>The GeoGebra workspace on the left is closely linked to the graphs view on the right.  In so doing, GeoGebra is a bit more restrictive on variables.  In GeoGebra, <em>x</em>, <em>y</em>, <em>z</em>, and <em>t</em> are seen as independent variables and all other names are considered constants.  When GeoGebra encounters a constant it will automatically make a slider for the constant and substitute the slider value in for the constant in the expression.  For example, if you input <code class="docutils literal notranslate"><span class="pre">theta</span></code> GeoGebra will see this as <code class="docutils literal notranslate"><span class="pre">t*heta</span></code> and make a slider for <code class="docutils literal notranslate"><span class="pre">heta</span></code>.  While this is a nice feature for the graphics facilities it does put some restrictions on what you can do as far as general CAS operations.</p>
+</section>
+<section id="previous-entries">
+<h2>Previous Entries<a class="headerlink" href="#previous-entries" title="Link to this heading">#</a></h2>
+<p>GeoGebra gives a name or label to all of the entries in the CAS listing on the left.  To use any previous entry simply use the name that was given.  For example, in the image below for the lest entry we input <code class="docutils literal notranslate"><span class="pre">f^2</span></code> and the entry was complete.</p>
+<figure class="align-default" id="id2">
+<img alt="Entry List" src="../_images/Syntax001.png" />
+<figcaption>
+<p><span class="caption-text">Entry List</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="infinity">
+<h2>Infinity<a class="headerlink" href="#infinity" title="Link to this heading">#</a></h2>
+<p>Infinity, <span class="math notranslate nohighlight">\(\infty\)</span>, is represented as either <code class="docutils literal notranslate"><span class="pre">inf</span></code> or <code class="docutils literal notranslate"><span class="pre">infinity</span></code> and <span class="math notranslate nohighlight">\(-\infty\)</span> is represented as either <code class="docutils literal notranslate"><span class="pre">-inf</span></code> or <code class="docutils literal notranslate"><span class="pre">-infinity</span></code>.</p>
+</section>
+<section id="special-constants">
+<h2>Special Constants<a class="headerlink" href="#special-constants" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pi</span></code> represents <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">e</span></code> represents <span class="math notranslate nohighlight">\(e\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">i</span></code> represents <span class="math notranslate nohighlight">\(i\)</span> the imaginary unit.</p></li>
+</ul>
+</section>
+<section id="absolute-value">
+<h2>Absolute Value<a class="headerlink" href="#absolute-value" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Either <code class="docutils literal notranslate"><span class="pre">abs(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">|x|</span></code> represents <span class="math notranslate nohighlight">\(|x|\)</span>.</p></li>
+</ul>
+</section>
+<section id="root-functions">
+<h2>Root Functions<a class="headerlink" href="#root-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sqrt(x)</span></code> represents <span class="math notranslate nohighlight">\(\sqrt{x}\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cbrt(x)</span></code> represents <span class="math notranslate nohighlight">\(\sqrt[3]{x}\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nroot(x,</span> <span class="pre">n)</span></code> represents <span class="math notranslate nohighlight">\(\sqrt[n]{x}\)</span>.</p></li>
+<li><p>Roots can also be written exponentially, for example, <code class="docutils literal notranslate"><span class="pre">x^(1/3)</span></code> for <span class="math notranslate nohighlight">\(\sqrt[3]{x}\)</span>.</p></li>
+</ul>
+</section>
+<section id="trigonometric-functions">
+<h2>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Link to this heading">#</a></h2>
+<p>The trigonometric functions are as you would expect,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sin(x)</span></code> for <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cos(x)</span></code> for <span class="math notranslate nohighlight">\(\cos(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tan(x)</span></code> for <span class="math notranslate nohighlight">\(\tan(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cot(x)</span></code> for <span class="math notranslate nohighlight">\(\cot(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sec(x)</span></code> for <span class="math notranslate nohighlight">\(\sec(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosec(x)</span></code> for <span class="math notranslate nohighlight">\(\csc(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="inverse-trigonometric-functions">
+<h2>Inverse Trigonometric Functions<a class="headerlink" href="#inverse-trigonometric-functions" title="Link to this heading">#</a></h2>
+<p>The inverse trigonometric functions simply have an <code class="docutils literal notranslate"><span class="pre">a</span></code> in front of them,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">asin(x)</span></code> for <span class="math notranslate nohighlight">\(\sin^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acos(x)</span></code> for <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atan(x)</span></code> for <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="exponential-logarithmic-functions">
+<h2>Exponential &amp; Logarithmic Functions<a class="headerlink" href="#exponential-logarithmic-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exp(x)</span></code> represents <span class="math notranslate nohighlight">\(e^x\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">e^x</span></code> represents <span class="math notranslate nohighlight">\(e^x\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ln(x)</span></code> represents <span class="math notranslate nohighlight">\(\ln(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lg(x)</span></code> represents <span class="math notranslate nohighlight">\(\log_{10}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log10(x)</span></code> represents <span class="math notranslate nohighlight">\(\log_{10}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log(x)</span></code> represents <span class="math notranslate nohighlight">\(\log_{10}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log2(x)</span></code> represents <span class="math notranslate nohighlight">\(\log_{2}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ld(x)</span></code> represents <span class="math notranslate nohighlight">\(\log_{2}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log(b,</span> <span class="pre">x)</span></code> represents <span class="math notranslate nohighlight">\(\log_{b}(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="hyperbolic-functions">
+<h2>Hyperbolic Functions<a class="headerlink" href="#hyperbolic-functions" title="Link to this heading">#</a></h2>
+<p>The hyperbolic functions are as you would expect,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sinh(x)</span></code> for <span class="math notranslate nohighlight">\(\sinh(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosh(x)</span></code> for <span class="math notranslate nohighlight">\(\cosh(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tanh(x)</span></code> for <span class="math notranslate nohighlight">\(\tanh(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coth(x)</span></code> for <span class="math notranslate nohighlight">\(\coth(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sech(x)</span></code> for <span class="math notranslate nohighlight">\({\rm sech}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosech(x)</span></code> for <span class="math notranslate nohighlight">\({\rm csch}(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="inverse-hyperbolic-functions">
+<h2>Inverse Hyperbolic Functions<a class="headerlink" href="#inverse-hyperbolic-functions" title="Link to this heading">#</a></h2>
+<p>The inverse hyperbolic functions simply have an <code class="docutils literal notranslate"><span class="pre">a</span></code> in front of them,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">asinh(x)</span></code> for <span class="math notranslate nohighlight">\(\sinh^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acosh(x)</span></code> for <span class="math notranslate nohighlight">\(\cosh^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atanh(x)</span></code> for <span class="math notranslate nohighlight">\(\tanh^{-1}(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="integer-functions">
+<h2>Integer Functions<a class="headerlink" href="#integer-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">floor(x)</span></code> returns the largest integer value not greater than <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ceil(x)</span></code> returns the smallest integer value not less than <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+</ul>
+</section>
+<section id="miscellaneous-functions">
+<h2>Miscellaneous Functions<a class="headerlink" href="#miscellaneous-functions" title="Link to this heading">#</a></h2>
+<p>Some miscellaneous functions that may be of interest.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sgn(x)</span></code> returns the sign of <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code> if <span class="math notranslate nohighlight">\(x&gt;0\)</span>, <code class="docutils literal notranslate"><span class="pre">0</span></code> if <span class="math notranslate nohighlight">\(x = 0\)</span>, and <code class="docutils literal notranslate"><span class="pre">-1</span></code> if <span class="math notranslate nohighlight">\(x&lt;0\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n!</span></code> returns <cite>n factorial</cite> which is defined for non-negative integers with  <span class="math notranslate nohighlight">\(0! = 1\)</span> and <span class="math notranslate nohighlight">\(n! = n(n-1)(n-2) \cdots 1\)</span> for <span class="math notranslate nohighlight">\(n &gt; 0\)</span>.</p></li>
+</ul>
+</section>
+<section id="other-function-syntax">
+<h2>Other Function Syntax<a class="headerlink" href="#other-function-syntax" title="Link to this heading">#</a></h2>
+<p>GeoGebra has many more functions at the user’s disposal, many are beyond scope of a STEM Calculus class.  Nonetheless, they can be used in expressions.  Above we covered the ones that are most pertinent for Calculus classes.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="GeoGebraInput.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Inputting Expressions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="GeoGebraCalculus.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Calculus and Support Functions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-entries">Previous Entries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinity">Infinity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-constants">Special Constants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">Absolute Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root-functions">Root Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-logarithmic-functions">Exponential &amp; Logarithmic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-functions">Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-functions">Integer Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-functions">Miscellaneous Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-function-syntax">Other Function Syntax</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

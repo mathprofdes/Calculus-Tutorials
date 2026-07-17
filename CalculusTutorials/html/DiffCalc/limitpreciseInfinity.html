@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Precise Definition of a Limit at Infinity &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/limitpreciseInfinity';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Continuity" href="continuity.html" />
+    <link rel="prev" title="The Precise Definition of a Limit at a Point" href="limitprecise.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The Precise Definition of a Limit at Infinity</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-precise-definition-of-a-limit-at-infinity">
+<h1><span class="target" id="index-0"></span>The Precise Definition of a Limit at Infinity<a class="headerlink" href="#the-precise-definition-of-a-limit-at-infinity" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>In most cases having a good intuitive understanding of the limit will be sufficient and serve you well.  If you intend to go further in mathematics and take courses in analysis the intuitive understanding will serve as a good basis but will not be sufficient. In this case you will need a formal definition.  Below we give formal or precise  definitions of the limit at infinity.  Applying these algebraically can be tricky and we will not do any of these examples.  We will use dynamic software to visualize the definition to put some meaning to all the mathematics.  The big step here is to make the terms “approach” and “gets close to” precise, in essence, quantify these intuitive concepts.</p>
+<div class="admonition-definition-precise-definition-of-a-limit-at-infinity admonition">
+<p class="admonition-title">Definition: Precise Definition of a Limit at Infinity</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined on the interval <span class="math notranslate nohighlight">\((c, \infty)\)</span>.  Then <em>the limit of f(x) as x approaches</em> <span class="math notranslate nohighlight">\(\infty\)</span> <em>is L</em>, denoted,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} f(x) = L\]</div>
+<p>If for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\)</span>, such that if <span class="math notranslate nohighlight">\(x &gt; N\)</span>, then <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span>.</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined on the interval <span class="math notranslate nohighlight">\((-\infty, c)\)</span>.  Then <em>the limit of f(x) as x approaches</em> <span class="math notranslate nohighlight">\(-\infty\)</span> <em>is L</em>, denoted,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to -\infty} f(x) = L\]</div>
+<p>If for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\)</span>, such that if <span class="math notranslate nohighlight">\(x &lt; N\)</span>, then <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span>.</p>
+</div>
+</section>
+<section id="example-visualizing-the-limit-at-infinitydefinition">
+<h2>Example: Visualizing the Limit at InfinityDefinition<a class="headerlink" href="#example-visualizing-the-limit-at-infinitydefinition" title="Link to this heading">#</a></h2>
+<p>We will concentrate on the definition of the limit at infinity, the limit at minus infinity is similar.  Since these visualize better with dynamic software packages we will be using just GeoGebra and CLAE.  For these examples we will use the function, <span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span>.  The limit will be assumed to be 1.  So we will go through the definition to show, or visualize,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} 1+\frac{\sin(x)}{x} = 1\]</div>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>The hardest part is the understanding of this portion of the definition.</p>
+<p>If for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\)</span>, such that if <span class="math notranslate nohighlight">\(x &gt; N\)</span>, then <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span>.</p>
+<p>Taking this step by step starting at the beginning, given an <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, we need to find an <span class="math notranslate nohighlight">\(N\)</span> so that for <em>x</em> values larger than this <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span>.  The statement <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span> means <span class="math notranslate nohighlight">\(-\epsilon &lt; f(x) - L &lt; \epsilon\)</span> which in turn means <span class="math notranslate nohighlight">\(L-\epsilon &lt; f(x) &lt; L + \epsilon\)</span>.  So if we put this all together, if we put an <span class="math notranslate nohighlight">\(\epsilon\)</span> interval around our limit <em>L</em> then we can go out far enough along the <em>x</em> axis so that all the <em>y</em> values are within this interval.  We need to do this for all possible <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>.  Let’s set up the visualization.</p>
+<ol class="arabic">
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1 + sin(x)/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Set up a slider for <span class="math notranslate nohighlight">\(\epsilon\)</span>, call it <em>p</em> since <em>e</em> is the Euler constant (2.718281828…).  Type <code class="docutils literal notranslate"><span class="pre">p</span></code> in a cell and hit Enter.</p></li>
+<li><p>Input the <span class="math notranslate nohighlight">\(L-\epsilon &lt; f(x) &lt; L + \epsilon\)</span> by inputting the two formulas below,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1 - p</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1 + p</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<figure class="align-default" id="id1">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Change the slider settings to go from 0 to 0.1 with an increment of 0.001.  Zoom in a bit and set the slider to 0.06, you should see,</p>
+<figure class="align-default" id="id2">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the picture it appears that from 20 on the function is between the two horizontal lines, so our <em>N</em> for <span class="math notranslate nohighlight">\(\epsilon = 0.06\)</span> is 20.  We are not done yet, this has to be possible for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>.  Although we cannot show this for every case we will go a couple more steps to get the feel that it is possible.  Move the slider down to 0.03, we see the following,</p>
+<figure class="align-default" id="id3">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So an <em>N</em> of 20 no longer works since some of the function is outside the horizontal line bounds.  If we move the graph off to the right and zoom in a little we see that an <em>N</em> of 34 looks like it will do the job.</p>
+<figure class="align-default" id="id4">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One more step just to solidify the concept.  Move the slider down to 0.005.</p>
+<figure class="align-default" id="id5">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move further off to the right, an <em>N</em> of 235 looks like it will work.</p>
+<figure class="align-default" id="id6">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is certainly not a proof or an algebraic justification but hopefully it gives you a feel for how we gave quantified the terms “approach”, “gets close to”, and “increases without bound” precisely.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>The hardest part is the understanding of this portion of the definition.</p>
+<p>If for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, there exists an <span class="math notranslate nohighlight">\(N\)</span>, such that if <span class="math notranslate nohighlight">\(x &gt; N\)</span>, then <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span>.</p>
+<p>Taking this step by step starting at the beginning, given an <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>, we need to find an <span class="math notranslate nohighlight">\(N\)</span> so that for <em>x</em> values larger than this <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span>.  The statement <span class="math notranslate nohighlight">\(|f(x) - L| &lt; \epsilon\)</span> means <span class="math notranslate nohighlight">\(-\epsilon &lt; f(x) - L &lt; \epsilon\)</span> which in turn means <span class="math notranslate nohighlight">\(L-\epsilon &lt; f(x) &lt; L + \epsilon\)</span>.  So if we put this all together, if we put an <span class="math notranslate nohighlight">\(\epsilon\)</span> interval around our limit <em>L</em> then we can go out far enough along the <em>x</em> axis so that all the <em>y</em> values are within this interval.  We need to do this for all possible <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>.  Let’s set up the visualization.</p>
+<ol class="arabic">
+<li><p>Input the function,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1 + sin(x)/x</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Input the <span class="math notranslate nohighlight">\(L-\epsilon &lt; f(x) &lt; L + \epsilon\)</span> by inputting the list,</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1 - e, 1 + e]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Drag this over to the graph, it will come in as horizontal lines which is what we want.</p></li>
+</ol>
+<figure class="align-default" id="id7">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Change the slider settings to go from 0 to 0.1 with 1000 steps.  Zoom in a bit and set the slider to 0.06, you should see,</p>
+<figure class="align-default" id="id8">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the picture it appears that from 20 on the function is between the two horizontal lines, so our <em>N</em> for <span class="math notranslate nohighlight">\(\epsilon = 0.06\)</span> is 20.  We are not done yet, this has to be possible for all <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>.  Although we cannot show this for every case we will go a couple more steps to get the feel that it is possible.  Move the slider down to 0.03, we see the following,</p>
+<figure class="align-default" id="id9">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf009.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So an <em>N</em> of 20 no longer works since some of the function is outside the horizontal line bounds.  If we move the graph off to the right and zoom in a little we see that an <em>N</em> of 34 looks like it will do the job.</p>
+<figure class="align-default" id="id10">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One more step just to solidify the concept.  Move the slider down to 0.005.</p>
+<figure class="align-default" id="id11">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Move further off to the right, an <em>N</em> of 220 looks like it will work.</p>
+<figure class="align-default" id="id12">
+<img alt="y = 1+ sin(x)/x with epsilon bound lines." src="../_images/PDInf012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = 1+\frac{\sin(x)}{x}\)</span> with <span class="math notranslate nohighlight">\(\epsilon\)</span> bound lines.</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is certainly not a proof or an algebraic justification but hopefully it gives you a feel for how we gave quantified the terms “approach”, “gets close to”, and “increases without bound” precisely.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="limitprecise.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Precise Definition of a Limit at a Point</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="continuity.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Continuity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-the-limit-at-infinitydefinition">Example: Visualizing the Limit at InfinityDefinition</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

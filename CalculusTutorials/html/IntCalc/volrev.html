@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Volumes of Revolution: Disk and Washer Methods &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/volrev';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Volumes of Revolution by Cylindrical Shells" href="shells.html" />
+    <link rel="prev" title="Volumes by Slicing" href="volslice.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Volumes of Revolution: Disk and Washer Methods</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="volumes-of-revolution-disk-and-washer-methods">
+<h1><span class="target" id="index-0"></span>Volumes of Revolution: Disk and Washer Methods<a class="headerlink" href="#volumes-of-revolution-disk-and-washer-methods" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>A solid of revolution is when you take a curve (and the area under it) in two dimensions and then revolve it around a straight line (called its axis) to produce a three-dimensional solid.</p>
+<p>For example, take the curve <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> on the interval <span class="math notranslate nohighlight">\([0, 3]\)</span> and then revolve it around the <em>x</em>-axis.</p>
+<figure class="align-default" id="id1">
+<img alt="y = x^2 on the interval [0, 3]" src="../_images/RevSur001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^2\)</span> on the interval <span class="math notranslate nohighlight">\([0, 3]\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Several views of the surface produced by this curve are below.</p>
+<figure class="align-default" id="id2">
+<img alt="y = x^2 on the interval [0, 3] Revolved About the *x*-Axis" src="../_images/RevSur002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^2\)</span> on the interval <span class="math notranslate nohighlight">\([0, 3]\)</span> Revolved About the <em>x</em>-Axis</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="y = x^2 on the interval [0, 3] Revolved About the *x*-Axis" src="../_images/RevSur003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^2\)</span> on the interval <span class="math notranslate nohighlight">\([0, 3]\)</span> Revolved About the <em>x</em>-Axis</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="y = x^2 on the interval [0, 3] Revolved About the *x*-Axis" src="../_images/RevSur004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^2\)</span> on the interval <span class="math notranslate nohighlight">\([0, 3]\)</span> Revolved About the <em>x</em>-Axis</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this section we are interested in finding the volume contained inside this surface.  Solids of revolution are common in mechanical applications, such as machine parts produced by a lathe.  Finding the volume of a solid of revolution is just a special case of the slicing method from the last section.</p>
+<div class="admonition-theorem-finding-the-volume-of-an-object-by-cross-sections admonition">
+<p class="admonition-title">Theorem: Finding the Volume of an Object by Cross Sections</p>
+<p>If <span class="math notranslate nohighlight">\(A(x)\)</span> represents the cross sectional area of an object that extends from <span class="math notranslate nohighlight">\(x = a\)</span> to <span class="math notranslate nohighlight">\(x = b\)</span> then the volume of the object is given by</p>
+<div class="math notranslate nohighlight">
+\[V = \int_a^b A(x) \; dx\]</div>
+</div>
+<p>If we look at the cross section it is clearly a circle, and when filled in, a disk.  The process we are about to go through is called the <strong>disk and washer method</strong>.</p>
+<p>Looking at the images above, if we take a cross section perpendicular to the <em>x</em>-axis it is a circle, or disk.  The area of a circle is <span class="math notranslate nohighlight">\(\pi r^2\)</span>.  The radius of the circle is just the functional value at <em>x</em>.  So in our example above the area function is <span class="math notranslate nohighlight">\(A(x) = \pi r^2 = \pi (x^2)^2 = \pi x^4\)</span>.  Hence the volume is,</p>
+<div class="math notranslate nohighlight">
+\[V = \int_0^3 \pi x^4 \; dx = \frac{243 \pi}{5}\]</div>
+<p>We can generalize this to any function since all we did was substitute the function in for the <em>r</em> in <span class="math notranslate nohighlight">\(\pi r^2\)</span>.</p>
+<div class="admonition-the-disk-method admonition">
+<p class="admonition-title">The Disk Method</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be continuous and nonnegative. Define <span class="math notranslate nohighlight">\(R\)</span> as the region bounded above by the graph of <span class="math notranslate nohighlight">\(f(x)\)</span>, below by the <em>x</em>-axis, on the left by the line <span class="math notranslate nohighlight">\(x = a\)</span>, and on the right by the line <span class="math notranslate nohighlight">\(x = b\)</span>. Then, the volume of the solid of revolution formed by revolving <span class="math notranslate nohighlight">\(R\)</span> around the <em>x</em>-axis is given by</p>
+<div class="math notranslate nohighlight">
+\[V = \int_a^b \pi (f(x))^2 \; dx\]</div>
+</div>
+<p>The reason we force the function to be nonnegative is so that we do not add in any “negative” volume.</p>
+<p>Now let’s consider a slightly more complicated volume.  Let’s take the region bounded by <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis.  An image of the region is below.</p>
+<figure class="align-default" id="id5">
+<img alt="The region bounded by y=sin(x), y=cos(x) and the y-axis." src="../_images/RevSur005.png" />
+<figcaption>
+<p><span class="caption-text">The region bounded by <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Several views of the surfaces revolved around the <em>x</em>-axis follow,</p>
+<figure class="align-default" id="id6">
+<img alt="The region bounded by y=sin(x), y=cos(x) and the y-axis, revolved about the x-axis." src="../_images/RevSur006.png" />
+<figcaption>
+<p><span class="caption-text">The region bounded by <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis, revolved about the <em>x</em>-axis.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
+<img alt="The region bounded by y=sin(x), y=cos(x) and the y-axis, revolved about the x-axis." src="../_images/RevSur007.png" />
+<figcaption>
+<p><span class="caption-text">The region bounded by <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis, revolved about the <em>x</em>-axis.</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id8">
+<img alt="The region bounded by y=sin(x), y=cos(x) and the y-axis, revolved about the x-axis." src="../_images/RevSur008.png" />
+<figcaption>
+<p><span class="caption-text">The region bounded by <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis, revolved about the <em>x</em>-axis.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we take a slice perpendicular to the <em>x</em>-axis we see,</p>
+<figure class="align-default" id="id9">
+<img alt="The region bounded by y=sin(x), y=cos(x) and the y-axis, revolved about the x-axis." src="../_images/RevSur009.png" />
+<figcaption>
+<p><span class="caption-text">The region bounded by <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis, revolved about the <em>x</em>-axis.</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The cut-out region is the slice which makes a washer.  The area of a washer is, <span class="math notranslate nohighlight">\(A = \pi r_o^2 - \pi r_i^2 = \pi(r_o^2 - r_i^2)\)</span>, where <span class="math notranslate nohighlight">\(r_o\)</span> is the outside radius and <span class="math notranslate nohighlight">\(r_i\)</span> is the inside radius.  Again the radii are functional values of the function on top and the one on the bottom respectively. Thus our area is,</p>
+<div class="math notranslate nohighlight">
+\[A(x) = \pi (r_o^2 - r_i^2) = \pi \left( \cos^2(x) - \sin^2(x) \right)\]</div>
+<p>since they intersect at <span class="math notranslate nohighlight">\(\pi/4\)</span> we get,</p>
+<div class="math notranslate nohighlight">
+\[V = \int_a^b A(x) \; dx = \int_0^{\pi/4} \pi \left( \cos^2(x) - \sin^2(x) \right) \; dx = \frac{\pi}{2} \approx 1.5707963267949\]</div>
+<p>The process we just went through is called the <strong>washer method</strong>.</p>
+<div class="admonition-the-washer-method admonition">
+<p class="admonition-title">The Washer Method</p>
+<p>If <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> are continuous, nonnegative functions such that <span class="math notranslate nohighlight">\(f(x) \geq g(x)\)</span> over <span class="math notranslate nohighlight">\([a, b]\)</span>. Let <span class="math notranslate nohighlight">\(R\)</span> denote the region bounded above by the graph of <span class="math notranslate nohighlight">\(f(x)\)</span>, below by the graph of <span class="math notranslate nohighlight">\(g(x)\)</span>, on the left by the line <span class="math notranslate nohighlight">\(x = a\)</span>, and on the right by the line <span class="math notranslate nohighlight">\(x = b\)</span>. Then, the volume of the solid of revolution formed by revolving <span class="math notranslate nohighlight">\(R\)</span> around the <em>x</em>-axis is given by</p>
+<div class="math notranslate nohighlight">
+\[V = \int_a^b \pi \left( (f(x))^2 - (g(x))^2 \right) \; dx\]</div>
+</div>
+<p>Although we have looked at rotating around the <em>x</em>-axis we can rotate these curves around any axis.  For example, to rotate about the <em>y</em>-axis all we need to do is interchange the roles of <em>x</em> and <em>y</em>. For example, take the two curves <span class="math notranslate nohighlight">\(y=x^2\)</span> and  <span class="math notranslate nohighlight">\(y=x\)</span> revolved around the <em>y</em>-axis.</p>
+<figure class="align-default" id="id10">
+<img alt="y=x^2 and  y=x" src="../_images/RevSur010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y=x^2\)</span> and  <span class="math notranslate nohighlight">\(y=x\)</span></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<img alt="y=x^2 and  y=x revolved around the y-axis." src="../_images/RevSur011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y=x^2\)</span> and  <span class="math notranslate nohighlight">\(y=x\)</span> revolved around the <em>y</em>-axis.</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id12">
+<img alt="y=x^2 and  y=x revolved around the y-axis." src="../_images/RevSur012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y=x^2\)</span> and  <span class="math notranslate nohighlight">\(y=x\)</span> revolved around the <em>y</em>-axis.</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we take cross sections perpendicular to the <em>y</em>-axis we again get washers, the outside radius is <span class="math notranslate nohighlight">\(x=\sqrt{y}\)</span> and the inside radius is <span class="math notranslate nohighlight">\(x=y\)</span>.  So our volume would be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}V &amp; = \int_c^d \pi \left( (f(y))^2 - (g(y))^2 \right) \; dy \\
+&amp; = \int_0^1 \pi \left( (\sqrt{y})^2 - (y)^2 \right) \; dy \\
+&amp; = \int_0^1 \pi \left( y - y^2 \right) \; dy \\
+&amp; = \frac{\pi}{6} \\\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can also revolve curves and regions around axes that are not the coordinate axes.  For example, around the line <span class="math notranslate nohighlight">\(y = 3\)</span>, or <span class="math notranslate nohighlight">\(x = -5\)</span>.  In these cases it is best not to use the formulas above since these assumed the rotation about a coordinate axis.  The way you should approach these is to,</p>
+<ol class="arabic simple">
+<li><p>Draw a picture of the curves, region, and the rotational axis on the plane, as we have done above.</p></li>
+<li><p>Then draw in the inside and outside radii and determine formulas for these in terms of you independent variable.</p></li>
+<li><p>Finally, put these into either <span class="math notranslate nohighlight">\(A = \pi r^2\)</span> or <span class="math notranslate nohighlight">\(A = \pi(r_o^2 - r_i^2)\)</span> and then integrate the result.</p></li>
+</ol>
+</div>
+</section>
+<section id="example-f-x-sin-x-g-x-cos-x-and-the-y-axis">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis.<a class="headerlink" href="#example-f-x-sin-x-g-x-cos-x-and-the-y-axis" title="Link to this heading">#</a></h2>
+<p>We will go through our example we did above with the curves <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>First we will go through the proces of getting a nice image of the revolved surfaces.  This process does have a few steps but compared to creating the parametric equations for the surfaces the process is quite simple.</p>
+<p>First change the perspective to 3D Graphics, <code class="docutils literal notranslate"><span class="pre">Main</span> <span class="pre">Menu</span> <span class="pre">&gt;</span> <span class="pre">Perspectives</span> <span class="pre">&gt;</span> <span class="pre">3D</span> <span class="pre">Graphics</span></code>.  This will change the graphics area from 2D to 3D.  There is some general information about the 3D graphics view in the GeoGebra users guide included in these tutorials.</p>
+<p>Now enter <code class="docutils literal notranslate"><span class="pre">sin(x)</span></code> and <code class="docutils literal notranslate"><span class="pre">cos(x)</span></code> into the workspace.  These will come in as curves in the xy-plane.</p>
+<figure class="align-default" id="id13">
+<img alt="GeoGebra Volume of Revolution Step 1" src="../_images/RevSur013.png" />
+<figcaption>
+<p><span class="caption-text">GeoGebra Volume of Revolution Step 1</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Before we make surfaces out of these we want to restrict their domains to <span class="math notranslate nohighlight">\([0, \pi/4]\)</span>.  GeoGebra does a very nice job with regions and projecting functions onto them.  In a new cell, input <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">x</span> <span class="pre">&lt;=</span> <span class="pre">pi/4</span></code>.  Your graphics view should now look like,</p>
+<figure class="align-default" id="id14">
+<img alt="GeoGebra Volume of Revolution Step 2" src="../_images/RevSur014.png" />
+<figcaption>
+<p><span class="caption-text">GeoGebra Volume of Revolution Step 2</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Zoom in a bit until you get an image like the following.</p>
+<figure class="align-default" id="id15">
+<img alt="GeoGebra Volume of Revolution Step 3" src="../_images/RevSur015.png" />
+<figcaption>
+<p><span class="caption-text">GeoGebra Volume of Revolution Step 3</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will assume that the sine function came in as <em>f</em>, the cosine function came in as <em>g</em> and the region came in as <em>c</em>.  In a new cell input <code class="docutils literal notranslate"><span class="pre">f,c</span></code>, assume this came in as <em>h</em>.  This is the restriction of the function <em>f</em> to the domain <em>c</em>.  Now do the same with the cosine function, <code class="docutils literal notranslate"><span class="pre">g,c</span></code>, assume this came in as <em>p</em>. Turn off the <em>f</em>, <em>g</em>, and <em>c</em> plots.  You should see the following,</p>
+<figure class="align-default" id="id16">
+<img alt="GeoGebra Volume of Revolution Step 4" src="../_images/RevSur016.png" />
+<figcaption>
+<p><span class="caption-text">GeoGebra Volume of Revolution Step 4</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is the region we want to rotate.  Now we will rotate each curve into a surface.  In a new cell type in, <code class="docutils literal notranslate"><span class="pre">Surface(h,2pi)</span></code>, and do the same for the other curve, <code class="docutils literal notranslate"><span class="pre">Surface(p,2pi)</span></code>.  Now we have the image we want. Rotate this around to get a feel for the volume being calculated.</p>
+<figure class="align-default" id="id17">
+<img alt="GeoGebra Volume of Revolution Step 5" src="../_images/RevSur017.png" />
+<figcaption>
+<p><span class="caption-text">GeoGebra Volume of Revolution Step 5</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To calculate the volume we proceed with finding an integral, input <code class="docutils literal notranslate"><span class="pre">pi(g^(2)-f^(2))</span></code>, assume this is <em>q</em>, then integrate with <code class="docutils literal notranslate"><span class="pre">Integral(q,0,pi/4)</span></code> and the result is 1.5708, the approximation to <span class="math notranslate nohighlight">\(\pi/2\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>GeoGebra’s surface plotting uses a semitransparent graphing algorithm that produces some very nice images that you can see through to internal objects, with a wireframe grid to give it a more 3D feel. Graphics algorithms for plotting semitransparent surfaces tend to require an enormous amount of computations and hence the response on rotating and scaling can be a little sluggish.  “Local” graphing algorithms are much faster but do not give the nice semitransparent look.</p>
+</div>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>First we will go through the proces of getting a nice image of the revolved surfaces.</p>
+<p>Input the two functions,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cos(x)</span>
+</pre></div>
+</div>
+<p>Click on the 3D graphics tab to show the 3D plotter.</p>
+<p>Click and drag on each into the graphics view.  They will come in as surfaces, change the type of each to Surface of Revolution. You will get something like the following.</p>
+<figure class="align-default" id="id18">
+<img alt="CLAE Volume of Revolution Step 1" src="../_images/RevSur018.png" />
+<figcaption>
+<p><span class="caption-text">CLAE Volume of Revolution Step 1</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now go into the properties of each and set the Function Start value to <code class="docutils literal notranslate"><span class="pre">0</span></code> and the Function End value to <code class="docutils literal notranslate"><span class="pre">pi/4</span></code>.  Now the image is,</p>
+<figure class="align-default" id="id19">
+<img alt="CLAE Volume of Revolution Step 2" src="../_images/RevSur019.png" />
+<figcaption>
+<p><span class="caption-text">CLAE Volume of Revolution Step 2</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Mouse</span> <span class="pre">Mode</span> <span class="pre">&gt;</span> <span class="pre">Scale</span> <span class="pre">All</span> <span class="pre">Axes</span></code> then click and drag (or use the mouse wheel) to zoom in on the object then select <code class="docutils literal notranslate"><span class="pre">Mouse</span> <span class="pre">Mode</span> <span class="pre">&gt;</span> <span class="pre">Camera</span> <span class="pre">Rotation</span> <span class="pre">and</span> <span class="pre">Zoom</span></code> to get back to the standard mode.  At this point it should look like the following.  Click and drag will rotate the image around so you can get a good view of the surfaces.</p>
+<figure class="align-default" id="id20">
+<img alt="CLAE Volume of Revolution Step 3" src="../_images/RevSur020.png" />
+<figcaption>
+<p><span class="caption-text">CLAE Volume of Revolution Step 3</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>CLAE does not offer surface semitransparent graphing like GeoGebra.  You can read above about GeoGebra’s semitransparent graphing.  CLAE uses only “local” graphing methods which is why it responds to changes very quickly.  CLAE does offer a wireframe mode that will give an approximation to a semitransparent mode and allow the user to see inside the surface.  If we click on the properties of the cosine function and change the Plot from Surface to Grid we will see,</p>
+<figure class="align-default" id="id21">
+<img alt="CLAE Volume of Revolution Step 4" src="../_images/RevSur021.png" />
+<figcaption>
+<p><span class="caption-text">CLAE Volume of Revolution Step 4</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In most cases, having one surface in grid mode and another in surface mode will provide sufficient visual information about the structure of the surfaces.  In some cases having more than one surface in grid mode is helpful too but too many of them in grid mode can become difficult to see.</p>
+<p>You can also plot the 2D curve along with the surfaces if you would like.  CLick and drag the sine and cosine functions to the graphics view again.  Change the type of both of these to 2-D Function Space Curve and you should see something like,</p>
+<figure class="align-default" id="id22">
+<img alt="CLAE Volume of Revolution Step 5" src="../_images/RevSur022.png" />
+<figcaption>
+<p><span class="caption-text">CLAE Volume of Revolution Step 5</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The volume calculation is simply an integral.  Assuming that the sine function came in as R1 and the cosine function came in as R2, input <code class="docutils literal notranslate"><span class="pre">pi*(R2^2-R1^2)</span></code>.  Then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound <code class="docutils literal notranslate"><span class="pre">0</span></code> and upper bound <code class="docutils literal notranslate"><span class="pre">pi/4</span></code>.  The result will be <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In CLAE, the surfaces of revolution is set by default to rotate a curve about the <em>x</em>-axis, since this is usually the first thing you do.  CLAE has facilities to rotate a curve around any line of the form <span class="math notranslate nohighlight">\(x = c\)</span>, <span class="math notranslate nohighlight">\(y = c\)</span>, or <span class="math notranslate nohighlight">\(z = c\)</span>.  In addition, it can change the dependent variable to the equation.  A complete description of the functionality of the surfaces of revolution can be found in the CLAE user’s guide that is in the help system of the software and included in these tutorials.</p>
+</div>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Maxima can graph surfaces of revolution but the procedure is a bit cumbersome. We would suggest using GeoGebra or CLAE if you want a nice dynamic visual.  As for the calculation of the volume, it is again a simple integral,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(%pi*(cos(x)^2-sin(x)^2),x,0,%pi/4);</span>
+</pre></div>
+</div>
+<p>Returning <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="volslice.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Volumes by Slicing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="shells.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Volumes of Revolution by Cylindrical Shells</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-sin-x-g-x-cos-x-and-the-y-axis">Example: <span class="math notranslate nohighlight">\(f(x)=\sin(x)\)</span>, <span class="math notranslate nohighlight">\(g(x)=\cos(x)\)</span> and the <em>y</em>-axis.</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

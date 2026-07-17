@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Infinite Limits at Infinity &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/infinitelimitatinfinity';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Precise Definition of a Limit at a Point" href="limitprecise.html" />
+    <link rel="prev" title="Limits at Infinity" href="limitatinfinity.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Infinite Limits at Infinity</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="infinite-limits-at-infinity">
+<h1><span class="target" id="index-0"></span>Infinite Limits at Infinity<a class="headerlink" href="#infinite-limits-at-infinity" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Another examination of the end behavior of a function could be that the function increases or decreases without bound as <em>x</em> increases or decreases without bound.  If this is the case we have infinite limits at infinity.  More precisely,</p>
+<div class="admonition-definition-infinite-limits-at-infinity admonition">
+<p class="admonition-title">Definition: Infinite Limits at Infinity</p>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((c, \infty)\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>increase without bound</em> as the values of <em>x</em> <em>increase without bound</em>, then we say that <em>the limit of f(x) as x approaches</em> <span class="math notranslate nohighlight">\(\infty\)</span> <em>is</em> <span class="math notranslate nohighlight">\(\infty\)</span>.  That is, as <em>x</em> gets arbitrarily large, <span class="math notranslate nohighlight">\(f(x)\)</span> gets arbitrarily large.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} f(x) = \infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((c, \infty)\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>decrease without bound</em> as the values of <em>x</em> <em>increase without bound</em>, then we say that <em>the limit of f(x) as x approaches</em> <span class="math notranslate nohighlight">\(\infty\)</span> <em>is</em> <span class="math notranslate nohighlight">\(-\infty\)</span>.  That is, as <em>x</em> gets arbitrarily large, <span class="math notranslate nohighlight">\(f(x)\)</span> gets arbitrarily small (that is, large negatively).  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} f(x) = -\infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((-\infty, c)\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>increase without bound</em> as the values of <em>x</em> <em>decrease without bound</em>, then we say that <em>the limit of f(x) as x approaches</em> <span class="math notranslate nohighlight">\(-\infty\)</span> <em>is</em> <span class="math notranslate nohighlight">\(\infty\)</span>.  That is, as <em>x</em> gets arbitrarily small, <span class="math notranslate nohighlight">\(f(x)\)</span> gets arbitrarily large.  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to -\infty} f(x) = \infty\]</div>
+<ul class="simple">
+<li><p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function defined at all values in an open interval <span class="math notranslate nohighlight">\((-\infty, c)\)</span>. If the values of the function <span class="math notranslate nohighlight">\(f(x)\)</span> <em>decrease without bound</em> as the values of <em>x</em> <em>decrease without bound</em>, then we say that <em>the limit of f(x) as x approaches</em> <span class="math notranslate nohighlight">\(-\infty\)</span> <em>is</em> <span class="math notranslate nohighlight">\(-\infty\)</span>.  That is, as <em>x</em> gets arbitrarily small, <span class="math notranslate nohighlight">\(f(x)\)</span> gets arbitrarily small (that is, large negatively).  Symbolically we write,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to -\infty} f(x) = -\infty\]</div>
+</div>
+<p>Just as with infinite limits these limits do not exist.  We use the <span class="math notranslate nohighlight">\(\pm\infty\)</span> notation to portray more information about the function than simply DNE.</p>
+</section>
+<section id="example-f-x-x-3-3-x-2-x-1">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x - 1\)</span><a class="headerlink" href="#example-f-x-x-3-3-x-2-x-1" title="Link to this heading">#</a></h2>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-3 x^2 + x -1</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id10">
+<img alt="y = x^3-3x^2+x-1" src="../_images/InfLimInf001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x - 1\)</span></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} x^3-3 x^2 + x -1 = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} x^3-3 x^2 + x -1 = -\infty\]</div>
+<p>We can also attack this algebraically.  Select a new cell and type in <code class="docutils literal notranslate"><span class="pre">limit</span></code> select the limit option, put in <code class="docutils literal notranslate"><span class="pre">f</span></code> as your function and <code class="docutils literal notranslate"><span class="pre">inf</span></code> as the point (<code class="docutils literal notranslate"><span class="pre">inf</span></code> in GeoGebra is <span class="math notranslate nohighlight">\(\infty\)</span>) the result will be <span class="math notranslate nohighlight">\(\infty\)</span>.  Do the same in the next cell except use <code class="docutils literal notranslate"><span class="pre">-inf</span></code> as the limit point and again the result is <span class="math notranslate nohighlight">\(-\infty\)</span>.  This algebraically confirms our conclusions above.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-3*x^2 + x -1</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id11">
+<img alt="y = x^3-3x^2+x-1" src="../_images/InfLimInf002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x - 1\)</span></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} x^3-3 x^2 + x -1 = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} x^3-3 x^2 + x -1 = -\infty\]</div>
+<p>We can also attack this algebraically.  Select the expression then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, variable is <em>x</em> and the limit point is <code class="docutils literal notranslate"><span class="pre">oo</span></code>, the result is <span class="math notranslate nohighlight">\(\infty\)</span>.  Now do the same but with a limit point of <code class="docutils literal notranslate"><span class="pre">-oo</span></code>, the result is <span class="math notranslate nohighlight">\(-\infty\)</span>. This algebraically confirms our conclusions above.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-3*x^2 + x -1</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x)], [x,-3,5], [y,-60,60])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id12">
+<img alt="y = x^3-3x^2+x-1" src="../_images/InfLimInf003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x - 1\)</span></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} x^3-3 x^2 + x -1 = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} x^3-3 x^2 + x -1 = -\infty\]</div>
+<p>We can also attack this algebraically by running the following two commands.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(f(x),x,inf)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(f(x),x,-inf)</span>
+</pre></div>
+</div>
+<p>This algebraically confirms our conclusions above.</p>
+</section>
+</section>
+<section id="example-f-x-frac-x-3-3-x-2-x-1-x-2-1">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span><a class="headerlink" href="#example-f-x-frac-x-3-3-x-2-x-1-x-2-1" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^3-3 x^2 + x -1)</span><span class="go">/(x^2+1)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id13">
+<img alt="y = (x^3-3 x^2 + x -1)/(x^2+1)" src="../_images/InfLimInf004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1} = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1} = -\infty\]</div>
+<p>Using the commands outlined in the first example, verify these algebraically.  Note that with this function there is no horizontal asymptote but the curve does straighten out at the ends to what looks like a straight line.  Since this function is a rational function we can do long division on it using the partial fractions function.  In a new cell start typing <code class="docutils literal notranslate"><span class="pre">PartialFractions</span></code>, select the <code class="docutils literal notranslate"><span class="pre">PartialFractions</span></code> from the popup menu and input <code class="docutils literal notranslate"><span class="pre">f</span></code> as the function.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[x - 3 + \frac{2}{x^{2} + 1}\]</div>
+<p>Plot <span class="math notranslate nohighlight">\(x-3\)</span> along with the original function and you see that the original function has this straight line as an asymptote.  We would call this a <span class="target" id="index-1"></span>slanted asymptote, <span class="target" id="index-2"></span>tilted asymptote, or in general an <span class="target" id="index-3"></span>asymptotic function.</p>
+<figure class="align-default" id="id14">
+<img alt="y = (x^3-3 x^2 + x -1)/(x^2+1) with slanted asymptote." src="../_images/InfLimInf005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span> with slanted asymptote.</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^3-3*x^2+x-1)</span><span class="go">/(x^2+1)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id15">
+<img alt="y = (x^3-3 x^2 + x -1)/(x^2+1)" src="../_images/InfLimInf006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1} = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1} = -\infty\]</div>
+<p>Using the commands outlined in the first example, verify these algebraically.  Note that with this function there is no horizontal asymptote but the curve does straighten out at the ends to what looks like a straight line.  Since this function is a rational function we can do long division on it using the partial fractions function.  Select the function, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Partial</span> <span class="pre">Fractions</span></code>.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[x - 3 + \frac{2}{x^{2} + 1}\]</div>
+<p>Plot <span class="math notranslate nohighlight">\(x-3\)</span> along with the original function and you see that the original function has this straight line as an asymptote.  We would call this a <span class="target" id="index-4"></span>slanted asymptote, <span class="target" id="index-5"></span>tilted asymptote, or in general an <span class="target" id="index-6"></span>asymptotic function.</p>
+<figure class="align-default" id="id16">
+<img alt="y = (x^3-3 x^2 + x -1)/(x^2+1) with slanted asymptote." src="../_images/InfLimInf007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span> with slanted asymptote.</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=(x^3-3*x^2+x-1)/(x^2+1)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x)], [x,-8,12], [y,-10,10])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id17">
+<img alt="y = (x^3-3 x^2 + x -1)/(x^2+1)" src="../_images/InfLimInf008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1} = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1} = -\infty\]</div>
+<p>Using the commands outlined in the first example, verify these algebraically.  Note that with this function there is no horizontal asymptote but the curve does straighten out at the ends to what looks like a straight line.  Since this function is a rational function we can do long division on it using the partial fractions function.  Run the command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">partfrac(f(x),x)</span>
+</pre></div>
+</div>
+<p>The result will be,</p>
+<div class="math notranslate nohighlight">
+\[x - 3 + \frac{2}{x^{2} + 1}\]</div>
+<p>Plot <span class="math notranslate nohighlight">\(x-3\)</span> along with the original function and you see that the original function has this straight line as an asymptote.  We would call this a <span class="target" id="index-7"></span>slanted asymptote, <span class="target" id="index-8"></span>tilted asymptote, or in general an <span class="target" id="index-9"></span>asymptotic function.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x), x-3], [x,-8,12], [y,-10,10])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id18">
+<img alt="y = (x^3-3 x^2 + x -1)/(x^2+1) with slanted asymptote." src="../_images/InfLimInf009.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span> with slanted asymptote.</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-f-x-frac-x-3-3-x-2-x-1-x-2">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span><a class="headerlink" href="#example-f-x-frac-x-3-3-x-2-x-1-x-2" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^3-3 x^2 + x -1)</span><span class="go">/(x-2)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id19">
+<img alt="y = (x^3-3 x^2 + x -1)/(x-2)" src="../_images/InfLimInf010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span></span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{x^{3} - 3 x^{2} + x - 1}{x - 2} = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} \frac{x^{3} - 3 x^{2} + x - 1}{x - 2} = \infty\]</div>
+<p>Using the commands outlined in the first example, verify these algebraically.  Unlike the last example, the function does not appear to be forming a straight line at the ends, but it does appear to be almost parabolic at the ends.  Using the partial fractions command from the previous example, apply it to this function and we get,</p>
+<div class="math notranslate nohighlight">
+\[x^{2} - x - 1 - \frac{3}{x - 2}\]</div>
+<p>Graph <span class="math notranslate nohighlight">\(y = x^{2} - x - 1\)</span> along with the original function and we get,</p>
+<figure class="align-default" id="id20">
+<img alt="y = (x^3-3 x^2 + x -1)/(x-2) with asymptotic function." src="../_images/InfLimInf011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span> with asymptotic function.</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So <span class="math notranslate nohighlight">\(y = x^{2} - x - 1\)</span> is the <span class="target" id="index-10"></span>asymptotic function for our original function.</p>
+</section>
+<section id="id5">
+<h3>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x^3-3*x^2+x-1)</span><span class="go">/(x-2)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id21">
+<img alt="y = (x^3-3 x^2 + x -1)/(x-2)" src="../_images/InfLimInf012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span></span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{x^{3} - 3 x^{2} + x - 1}{x - 2} = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} \frac{x^{3} - 3 x^{2} + x - 1}{x - 2} = \infty\]</div>
+<p>Using the commands outlined in the first example, verify these algebraically.  Unlike the last example, the function does not appear to be forming a straight line at the ends, but it does appear to be almost parabolic at the ends.  Using the partial fractions command from the previous example, apply it to this function and we get,</p>
+<div class="math notranslate nohighlight">
+\[x^{2} - x - 1 - \frac{3}{x - 2}\]</div>
+<p>Graph <span class="math notranslate nohighlight">\(y = x^{2} - x - 1\)</span> along with the original function and we get,</p>
+<figure class="align-default" id="id22">
+<img alt="y = (x^3-3 x^2 + x -1)/(x-2) with asymptotic function." src="../_images/InfLimInf013.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span> with asymptotic function.</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So <span class="math notranslate nohighlight">\(y = x^{2} - x - 1\)</span> is the <span class="target" id="index-11"></span>asymptotic function for our original function.</p>
+</section>
+<section id="id6">
+<h3>Maxima<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=(x^3-3*x^2+x-1)/(x-2)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x)], [x,-6,6], [y,-10,30])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id23">
+<img alt="y = (x^3-3 x^2 + x -1)/(x-2)" src="../_images/InfLimInf014.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span></span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it appears that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{x^{3} - 3 x^{2} + x - 1}{x - 2} = \infty \quad {\rm and } \quad  \lim_{x \to -\infty} \frac{x^{3} - 3 x^{2} + x - 1}{x - 2} = \infty\]</div>
+<p>Using the commands outlined in the first example, verify these algebraically.  Unlike the last example, the function does not appear to be forming a straight line at the ends, but it does appear to be almost parabolic at the ends.  Using the partial fractions command from the previous example, apply it to this function and we get,</p>
+<div class="math notranslate nohighlight">
+\[x^{2} - x - 1 - \frac{3}{x - 2}\]</div>
+<p>Graph <span class="math notranslate nohighlight">\(y = x^{2} - x - 1\)</span> along with the original function and we get,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x),x^2-x-1], [x,-6,6], [y,-10,30])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id24">
+<img alt="y = (x^3-3 x^2 + x -1)/(x-2) with asymptotic function." src="../_images/InfLimInf015.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span> with asymptotic function.</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So <span class="math notranslate nohighlight">\(y = x^{2} - x - 1\)</span> is the <span class="target" id="index-12"></span>asymptotic function for our original function.</p>
+</section>
+</section>
+<section id="example-f-x-x-tan-1-left-x-right-2">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span><a class="headerlink" href="#example-f-x-x-tan-1-left-x-right-2" title="Link to this heading">#</a></h2>
+<p>The above method of partial fractions (really just long division) works well for rational expressions since it rewrites the function as <span class="math notranslate nohighlight">\(f(x) = g(x) + h(x)\)</span> where the function <span class="math notranslate nohighlight">\(h(x)\)</span> has a horizontal asymptote of <span class="math notranslate nohighlight">\(y = 0\)</span>.  So as <em>x</em> grows the value of <span class="math notranslate nohighlight">\(h(x)\)</span> gets very small and then the difference between <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> becomes negligible.</p>
+<p>As you can guess, there are many more possibilities out there.  For example, the function <span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span>.</p>
+<section id="id7">
+<h3>GeoGebra<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x-2+atan(x)</span>
+</pre></div>
+</div>
+<p>Graphing this gives us,</p>
+<figure class="align-default" id="id25">
+<img alt="y = x-2+atan(x)" src="../_images/InfLimInf016.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span></span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although the function does appear to be straighting out at the ends it is not straighting to the same function.  We know from a previous section that the horizontal asymptotes of <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span> are <span class="math notranslate nohighlight">\(\pi/2\)</span> and <span class="math notranslate nohighlight">\(-\pi/2\)</span>.  So if we add <span class="math notranslate nohighlight">\(x-2\)</span> to these we get <span class="math notranslate nohighlight">\(y = x-2+\pi/2\)</span> and <span class="math notranslate nohighlight">\(y = x-2-\pi/2\)</span> as our two asymptotic functions.  Graphing all three of these shows,</p>
+<figure class="align-default" id="id26">
+<img alt="y = x-2+atan(x) with asymptotic functions." src="../_images/InfLimInf017.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span> with asymptotic functions.</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id8">
+<h3>CLAE<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x-2+atan(x)</span>
+</pre></div>
+</div>
+<p>Graphing this gives us,</p>
+<figure class="align-default" id="id27">
+<img alt="y = x-2+atan(x)" src="../_images/InfLimInf018.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span></span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although the function does appear to be straighting out at the ends it is not straighting to the same function.  We know from a previous section that the horizontal asymptotes of <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span> are <span class="math notranslate nohighlight">\(\pi/2\)</span> and <span class="math notranslate nohighlight">\(-\pi/2\)</span>.  So if we add <span class="math notranslate nohighlight">\(x-2\)</span> to these we get <span class="math notranslate nohighlight">\(y = x-2+\pi/2\)</span> and <span class="math notranslate nohighlight">\(y = x-2-\pi/2\)</span> as our two asymptotic functions.  Graphing all three of these shows,</p>
+<figure class="align-default" id="id28">
+<img alt="y = x-2+atan(x) with asymptotic functions." src="../_images/InfLimInf019.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span> with asymptotic functions.</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id9">
+<h3>Maxima<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>To graph the function you can use the following syntax,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x-2+atan(x)</span>
+</pre></div>
+</div>
+<p>Graphing this gives us,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x)], [x,-10,10], [y,-10,10])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id29">
+<img alt="y = x-2+atan(x)" src="../_images/InfLimInf020.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span></span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although the function does appear to be straighting out at the ends it is not straighting to the same function.  We know from a previous section that the horizontal asymptotes of <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span> are <span class="math notranslate nohighlight">\(\pi/2\)</span> and <span class="math notranslate nohighlight">\(-\pi/2\)</span>.  So if we add <span class="math notranslate nohighlight">\(x-2\)</span> to these we get <span class="math notranslate nohighlight">\(y = x-2+\pi/2\)</span> and <span class="math notranslate nohighlight">\(y = x-2-\pi/2\)</span> as our two asymptotic functions.  Graphing all three of these shows,</p>
+<figure class="align-default" id="id30">
+<img alt="y = x-2+atan(x) with asymptotic functions." src="../_images/InfLimInf021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span> with asymptotic functions.</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="limitatinfinity.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Limits at Infinity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="limitprecise.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Precise Definition of a Limit at a Point</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-3-3-x-2-x-1">Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x - 1\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-x-3-3-x-2-x-1-x-2-1">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x^{2} + 1}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-x-3-3-x-2-x-1-x-2">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{x^{3} - 3 x^{2} + x - 1}{x - 2}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-tan-1-left-x-right-2">Example: <span class="math notranslate nohighlight">\(f(x) = x + \tan^{-1}{\left(x \right)} - 2\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,698 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Direction Fields and Numerical Methods &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/nummeth';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Separable Equations" href="separable.html" />
+    <link rel="prev" title="Differential Equations" href="diffeq.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Direction Fields and Numerical Methods</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="direction-fields-and-numerical-methods">
+<h1><span class="target" id="index-0"></span>Direction Fields and Numerical Methods<a class="headerlink" href="#direction-fields-and-numerical-methods" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>In the vast majority of cases it is impossible to find an explicit formula for a solution to a differential equation.  We can, however, take a graphical and numerical approach to analyse a differential equation to obtain information about the solution.  The graphical approach is with direction fields, also called slope fields, and the numerical approach is to build s solution curve using Euler’s method.</p>
+<p>Both of these methods are for (numerically) solving first-order differential equations of the form <span class="math notranslate nohighlight">\(y' = f(x, y).\)</span></p>
+<section id="direction-slope-fields">
+<h3>Direction/Slope Fields<a class="headerlink" href="#direction-slope-fields" title="Link to this heading">#</a></h3>
+<div class="admonition-definition-direction-field admonition">
+<p class="admonition-title">Definition: Direction Field</p>
+<p>A <strong>direction field (slope field)</strong> is a mathematical object used to graphically represent solutions to a first-order differential equation. At each point in a direction field, a line segment appears whose slope is equal to the slope of a solution to the differential equation passing through that point.</p>
+</div>
+<p>To crete a direction field we would choose a grid of <span class="math notranslate nohighlight">\((x, y)\)</span> points in the plane, at each point we substitute the values into the function <span class="math notranslate nohighlight">\(f(x, y)\)</span> and evaluate.  This gives us a value for <span class="math notranslate nohighlight">\(y'\)</span> at each of the grid points.  Now at each of the grid points we draw a short line that has the calculated slope <span class="math notranslate nohighlight">\(y'.\)</span>  The result is a field of short line segments that represents the flow of the solution to the differential equation.</p>
+<p>For example, if we have the differential equation</p>
+<div class="math notranslate nohighlight">
+\[y' = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\]</div>
+<p>then <span class="math notranslate nohighlight">\(f(x, y) = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span>, and a direction field for this function would look like the following,</p>
+<figure class="align-default" id="id1">
+<img alt="Direction Field" src="../_images/DirField001.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field for <span class="math notranslate nohighlight">\(f(x, y) = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To see how we use the graph to produce a solution curve we will use a simpler example.  Consider the differential equation, <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)}.\)</span> Graphing the direction field here gives us,</p>
+<figure class="align-default" id="id2">
+<img alt="Direction Field" src="../_images/DirField002.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field for <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)}\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can solve this differential equation exactly anf the general solution is <span class="math notranslate nohighlight">\(y = C_{1} e^{- \cos{\left(x \right)}}.\)</span> If we graph several of the curves in this family along with the direction field we see the following.</p>
+<figure class="align-default" id="id3">
+<img alt="Direction Field with Solution Curves" src="../_images/DirField003.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field with Solution Curves</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note how at each point on the curve the slope of the tangent line matches the direction of the segment in the field, which was how we created the field in the first place.  We do this process in reverse.  Given a direction field we can select a starting point on the graph.  Then move a little ways along the line segment at that point, then move along the segment we land on, and again and again.  This gives us a rough curve that displays a solution to the differential equation.  For example, lets take the differential equation <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span> and we will use the starting point <span class="math notranslate nohighlight">\((0, 1).\)</span> Following the field from that point both forward and backward gives us the following curve.</p>
+<figure class="align-default" id="id4">
+<img alt="Direction Field with Solution Curve" src="../_images/DirField004.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field with Solution Curve</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that whe we started at the point <span class="math notranslate nohighlight">\((0, 1)\)</span> we actually turned this into an initial-value problem, solving the differential equation <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span> under the condition that <span class="math notranslate nohighlight">\(y(0) = 1.\)</span>  Although we do not have an exact solution the plotted curve gives us a graphical solution to the initial-value problem.</p>
+</section>
+<section id="euler-s-method">
+<h3>Euler’s Method<a class="headerlink" href="#euler-s-method" title="Link to this heading">#</a></h3>
+<p>Euler’s Method is really just a numerical method that does the same thing we did with the last direction field example above.  Specifically,</p>
+<div class="admonition-theorem-euler-s-method admonition">
+<p class="admonition-title">Theorem: Euler’s Method</p>
+<p>Given the initial-value problem,</p>
+<div class="math notranslate nohighlight">
+\[y' = f(x, y) \qquad {\rm and } \qquad y(x_0) = y_0\]</div>
+<p>To approximate a solution to this problem using Euler’s method, define</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x_n &amp; = x_0 + nh \\
+y_n &amp; = y_{n − 1} + h f (x_{n − 1}, y_{n − 1})\end{split}\]</div>
+<p>Here <span class="math notranslate nohighlight">\(h &gt; 0\)</span> represents the step size and <span class="math notranslate nohighlight">\(n\)</span> is an integer, starting with 1. The number of steps taken is counted by the variable <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+<p>This is really all we were doing with the direction field approach, the big difference is that we are quantifying the step size here and when using the direction field we just guessed on a good amount to move.</p>
+<p>In the example we did above, solving the differential equation <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span> under the condition that <span class="math notranslate nohighlight">\(y(0) = 1,\)</span> we used a step size of 0.05 and applied Euler’s method to the differential equation, obtaining the graph.</p>
+<figure class="align-default" id="id5">
+<img alt="Direction Field with Solution Curve" src="../_images/DirField004.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field with Solution Curve</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One note about Euler’s method, the smaller the step size the better approximation we will get to the curve.  On the other hand, we then need to go through more steps to draw the same portion of the curve and hence this takes more computations.  As an example, we plotted the Euler’s method curve for the same initial-value problem above using a step size of 0.01, so the red line is a step of 0.05 and the blue line is a step of 0.01.  Note that the curves are close to each other but there are some differences in spots.  In general, the blue line would be the better approximation of the solution to the initial-value problem.</p>
+<figure class="align-default" id="id6">
+<img alt="Direction Field with Solution Curve with Smaller Step Size" src="../_images/DirField005.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field with Solution Curve with Smaller Step Size</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-y-y-sin-left-x-right-cos-left-x-y-right">
+<h2>Example: <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span><a class="headerlink" href="#example-y-y-sin-left-x-right-cos-left-x-y-right" title="Link to this heading">#</a></h2>
+<p>In this example we will use direction fields and Euler’s method to graphically and numerically solve the differential equation <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span> under the condition that <span class="math notranslate nohighlight">\(y(0) = 1.\)</span></p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the right hand side of the differential equation,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">y sin(x) - cos(x+y)</span>
+</pre></div>
+</div>
+<p>We will assume that this came in as <span class="math notranslate nohighlight">\(a(x, y)\)</span>. In a new cell input <code class="docutils literal notranslate"><span class="pre">SlopeField(a)</span></code>.  Zoom in a little and pan to primarily the first quadrant and we get.</p>
+<figure class="align-default" id="id7">
+<img alt="Slope Field for y sin(x) - cos(x+y)" src="../_images/DirField006.png" />
+<figcaption>
+<p><span class="caption-text">Slope Field for <span class="math notranslate nohighlight">\(y \sin(x) - \cos(x+y)\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now to get the curve we will first put in the initial condition.  In a new cell, input <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1)</span></code>.  This will create a point <em>A</em> at <span class="math notranslate nohighlight">\((0, 1)\)</span>.  Now in a new cell, input, <code class="docutils literal notranslate"><span class="pre">SolveODE(a,0,1,15,0.05)</span></code>.  This will use the expression from <span class="math notranslate nohighlight">\(a(x, y)\)</span>, starting at <span class="math notranslate nohighlight">\((0, 1)\)</span>, going right until <span class="math notranslate nohighlight">\(x = 15\)</span>, with steps of 0.05 each.  The resulting curve is below.</p>
+<figure class="align-default" id="id8">
+<img alt="Slope Field for y sin(x) - cos(x+y) with Solution Curve" src="../_images/DirField007.png" />
+<figcaption>
+<p><span class="caption-text">Slope Field for <span class="math notranslate nohighlight">\(y \sin(x) - \cos(x+y)\)</span> with Solution Curve</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can make this dynamic.  Keep the expression <span class="math notranslate nohighlight">\(a(x, y)\)</span> and the slope field but delete all the other entries. Select the point tool and click on the graph to plot a single point, which should be <em>A</em>.  Now input <code class="docutils literal notranslate"><span class="pre">SolveODE(a,x(A),y(A),15,0.05)</span></code> in a new cell.  The <code class="docutils literal notranslate"><span class="pre">x(A)</span></code> will extract the <em>x</em> coordinate from the point <em>A</em> and <code class="docutils literal notranslate"><span class="pre">y(A)</span></code> will extract the <em>y</em> coordinate from the point <em>A</em>.  Now if you click and drag the point <em>A</em> around you will see the curve change with the movement of the point.</p>
+<figure class="align-default" id="id9">
+<img alt="Slope Field for y sin(x) - cos(x+y) with Solution Curve" src="../_images/DirField008.png" />
+<figcaption>
+<p><span class="caption-text">Slope Field for <span class="math notranslate nohighlight">\(y \sin(x) - \cos(x+y)\)</span> with Solution Curve</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the right hand side of the differential equation,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">y*sin(x) - cos(x+y)</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the graph, it will come in as an implicit curve, change the type to Direction Field.  You can click and drag the expression again from the CAS or just duplicate the object in the graphics menu.  Change the type of the new object to Euler’s Method Curve, and change the color to red. Go into the properties of the Euler’s Method Curve and change the initial point to <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>.  You should get the image below, note we also increased the number of <em>x</em> and <em>y</em> divisions in the direction field to 50 each.</p>
+<figure class="align-default" id="id10">
+<img alt="Direction Field for y sin(x) - cos(x+y) with Solution Curve" src="../_images/DirField009.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field for <span class="math notranslate nohighlight">\(y \sin(x) - \cos(x+y)\)</span> with Solution Curve</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can make this dynamic as well.  Go back into the properties of the Euler’s Method Curve, change the initial point to <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b</span></code> and in the Include Points set this to Initial Point.  This will create sliders for <em>a</em> and <em>b</em> that will allow you to move the point around and see the curve change dynamically.</p>
+<figure class="align-default" id="id11">
+<img alt="Direction Field for y sin(x) - cos(x+y) with Solution Curve" src="../_images/DirField010.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field for <span class="math notranslate nohighlight">\(y \sin(x) - \cos(x+y)\)</span> with Solution Curve</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="diffeq.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Differential Equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="separable.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Separable Equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-slope-fields">Direction/Slope Fields</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-method">Euler’s Method</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-y-y-sin-left-x-right-cos-left-x-y-right">Example: <span class="math notranslate nohighlight">\(y' = y \sin{\left(x \right)} - \cos{\left(x + y \right)}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Functions as Power Series &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/FctRepPower';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Taylor Series" href="taylor.html" />
+    <link rel="prev" title="Power Series" href="powerseries.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Functions as Power Series</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="functions-as-power-series">
+<h1><span class="target" id="index-0"></span>Functions as Power Series<a class="headerlink" href="#functions-as-power-series" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>We can think of a power series as an infinite degree polynomial, of course, we are not sure what that means.  We can consider it as a function,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \sum_{n = 0}^\infty c_n (x - a)^n = c_0 + c_1 (x - a) + c_2 (x - a)^2 + c_3 (x - a)^3 + \cdots\]</div>
+<p>The domain of the function <span class="math notranslate nohighlight">\(f(x)\)</span> would be all values that can be substituted into <em>x</em> and we obtain a real number.  That is, the domain of <span class="math notranslate nohighlight">\(f(x)\)</span> is the interval of convergence of the power series.  To evaluate the function we simply substitute the value for <em>x</em> and evaluate the series.  So,</p>
+<div class="math notranslate nohighlight">
+\[f(b) = \sum_{n = 0}^\infty c_n (b - a)^n = c_0 + c_1 (b - a) + c_2 (b - a)^2 + c_3 (b - a)^3 + \cdots\]</div>
+<p>One question is that since these power series look like (very) long polynomials, how much can we treat them as polynomials? The short answer is just about everything.  We can differentiate and integrate them term bu term, we can add them, multiply them, and even divide them.  All we need to do is be careful about the interval of convergence of the resulting series.</p>
+<div class="admonition-theorem-term-by-term-differentiation-and-integration-for-power-series admonition">
+<p class="admonition-title">Theorem: Term-by-Term Differentiation and Integration for Power Series</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be defined as a power series,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \sum_{n = 0}^\infty c_n (x - a)^n = c_0 + c_1 (x - a) + c_2 (x - a)^2 + c_3 (x - a)^3 + \cdots\]</div>
+<p>with radius of convergence <span class="math notranslate nohighlight">\(R &gt; 0\)</span>.  Then <span class="math notranslate nohighlight">\(f(x)\)</span> is differentiable (and thus continuous) on the interval <span class="math notranslate nohighlight">\((a - R, a + R)\)</span> and we can differentiate and integrate the power series term-by-term, specifically,</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = \sum_{n = 1}^\infty n c_n (x - a)^{n-1} = c_1 + 2 c_2 (x - a) + 3 c_3 (x - a)^2 + \cdots\]</div>
+<div class="math notranslate nohighlight">
+\[\int f(x) \; dx = C + \sum_{n = 0}^\infty \frac{c_n (x - a)^{n+1}}{n+1} = C + c_0(x-a) + c_1 \frac{(x - a)^2}{2} + c_2 \frac{(x - a)^3}{3} + c_3 \frac{(x - a)^4}{4} + \cdots\]</div>
+<p>The radii of convergence of the derivative and integral power series are both <span class="math notranslate nohighlight">\(R\)</span>.</p>
+</div>
+<div class="admonition-theorem-combining-power-series admonition">
+<p class="admonition-title">Theorem: Combining Power Series</p>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \sum_{n = 0}^\infty c_n x^n \qquad {\rm and } \qquad g(x) = \sum_{n = 0}^\infty d_n x^n\]</div>
+<p>and let <em>I</em> be the common interval of convergence between the two series.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle f(x) \pm g(x) = \sum_{n = 0}^\infty (c_n \pm d_n) x^n\)</span> on <em>I</em>.</p></li>
+<li><p>For any integer <span class="math notranslate nohighlight">\(m \geq 0\)</span> and any real number <span class="math notranslate nohighlight">\(b\)</span>,  <span class="math notranslate nohighlight">\(\displaystyle bx^m f(x) = \sum_{n = 0}^\infty bx^m c_n x^n = \sum_{n = 0}^\infty b c_n x^{n+m}\)</span> with the same interval of convergence as <em>f</em>.</p></li>
+<li><p>For any integer <span class="math notranslate nohighlight">\(m \geq 0\)</span> and any real number <span class="math notranslate nohighlight">\(b\)</span>,  <span class="math notranslate nohighlight">\(\displaystyle f(bx^m) = \sum_{n = 0}^\infty c_n \left(bx^m\right)^n\)</span>, in this case the radius of convergence will change depending on <span class="math notranslate nohighlight">\(bx^m.\)</span> Specifically, the convergence is for all <em>x</em> such that <span class="math notranslate nohighlight">\(bx^m\)</span> is in the interval of convergence of <em>f</em>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle f(x) g(x) = \left( \sum_{n = 0}^\infty c_n x^n \right) \left( \sum_{n = 0}^\infty d_n x^n \right) = \left( \sum_{n = 0}^\infty e_n x^n \right)\)</span> where <span class="math notranslate nohighlight">\(\displaystyle e_n = \sum_{k = 0}^n c_n d_{n-k}\)</span> on <em>I</em>.</p></li>
+</ol>
+<p>Similar results hold for power series centered at <span class="math notranslate nohighlight">\(x = a.\)</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can also divide two power series using a variant of the long division process.  Usually we only want the first few terms of the series since this can be a lengthy process.  For this ew require that the constant term in the denominator is not 0 and state, without proof, that the quotient converges for sufficiently small radius.</p>
+</div>
+<p>Another similarity between power series and polynomials is in the uniqueness of the coefficients.  For polynomials, we know that two polynomials are equal if their degrees are the same and their corresponding coefficients are equal.  The same is true for power series.</p>
+<div class="admonition-theorem-uniqueness-of-power-series admonition">
+<p class="admonition-title">Theorem: Uniqueness of Power Series</p>
+<p>If</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n = 0}^\infty c_n (x - a)^n = \sum_{n = 0}^\infty d_n (x - a)^n\]</div>
+<p>for all values of <em>x</em> in an open interval containing <span class="math notranslate nohighlight">\(a\)</span> then <span class="math notranslate nohighlight">\(c_n = d_n\)</span> for all <span class="math notranslate nohighlight">\(n \geq 0\)</span>.</p>
+</div>
+<p>One of our goals in ths section and the section on Taylor Series is to represent functions we know, like <span class="math notranslate nohighlight">\(\sin(x), \cos(x), e^x, \ldots\)</span> as power series.  There are many uses for using a power series representation of a function, for example,  approximating values, solving differential equations, and evaluating non-elementary integrals.</p>
+<p>In most textbooks in this type of section will go back to the geometric series.  Recall that if <span class="math notranslate nohighlight">\(|r| &lt; 1\)</span>, we have,</p>
+<div class="math notranslate nohighlight">
+\[a + ar + ar^2 + ar^3 + \cdots = \sum_{n = 1}^\infty ar^{n-1} = \frac{a }{1 - r}\]</div>
+<p>If we substitute, 1 for <em>a</em> and <em>x</em> for <em>r</em> we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1 - x} = \sum_{n = 1}^\infty x^{n-1} = \sum_{n = 0}^\infty x^n = 1 + x + x^2 + x^3 + \cdots\]</div>
+<p>So on the interval <span class="math notranslate nohighlight">\((-1, 1)\)</span> we have a power series representation of the function <span class="math notranslate nohighlight">\(\displaystyle \frac{1}{1 - x}\)</span>. Of course, the domain of the function is much larger than the interval of convergence of the series but the two only coincide when <span class="math notranslate nohighlight">\(x \in (-1, 1).\)</span></p>
+<p>From here we can use the results above to derive power series for other functions.  For example, we can take,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1 - x} = \sum_{n = 0}^\infty x^n = 1 + x + x^2 + x^3 + x^4 + \cdots\]</div>
+<p>and differentiate both sides to get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\left(1 - x\right)^{2}} = \sum_{n = 1}^\infty n x^n = 1 + 2x + 3x^2 + 4x^3 + \cdots\]</div>
+<p>We can also take the original equation and substitute <span class="math notranslate nohighlight">\(-x\)</span> for <span class="math notranslate nohighlight">\(x\)</span> to get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1 + x} = \sum_{n = 0}^\infty (-1)^n x^n = 1 - x + x^2 - x^3 + x^4 + \cdots\]</div>
+<p>We can then take this equation and integrate both sides to get,</p>
+<div class="math notranslate nohighlight">
+\[\ln(1+x) + C = \sum_{n = 0}^\infty (-1)^n \frac{x^{n+1}}{n+1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \frac{x^5}{5} + \cdots\]</div>
+<p>Then in this expression we can substitute <span class="math notranslate nohighlight">\(x = 0\)</span> to get</p>
+<div class="math notranslate nohighlight">
+\[\ln(1) + C = \sum_{n = 0}^\infty (-1)^n \frac{0^{n+1}}{n+1} = 0\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\ln(1) = 0\)</span> we get <span class="math notranslate nohighlight">\(C = 0\)</span> giving us,</p>
+<div class="math notranslate nohighlight">
+\[\ln(1+x) = \sum_{n = 0}^\infty (-1)^n \frac{x^{n+1}}{n+1} = \sum_{n = 1}^\infty (-1)^{n+1} \frac{x^n}{n}\]</div>
+<p>For another, take the original equation and substitute <span class="math notranslate nohighlight">\(-x^2\)</span> for <span class="math notranslate nohighlight">\(x\)</span> to get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{1 + x^2} = \sum_{n = 0}^\infty (-1)^n x^{2n} = 1 - x^2 + x^4 - x^6 + x^8 + \cdots\]</div>
+<p>Integrate both sides,</p>
+<div class="math notranslate nohighlight">
+\[\tan^{-1}(x) + C = \sum_{n = 0}^\infty (-1)^n \frac{x^{2n+1}}{2n+1}\]</div>
+<p>Again we will substitute <span class="math notranslate nohighlight">\(x = 0\)</span> to get</p>
+<div class="math notranslate nohighlight">
+\[\tan^{-1}(0) + C = \sum_{n = 0}^\infty (-1)^n \frac{0^{2n+1}}{2n+1} = 0\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\tan^{-1}(0) = 0\)</span> we get <span class="math notranslate nohighlight">\(C = 0\)</span> giving us,</p>
+<div class="math notranslate nohighlight">
+\[\tan^{-1}(x) = \sum_{n = 0}^\infty (-1)^n \frac{x^{2n+1}}{2n+1}\]</div>
+<p>There are many others you can derive from this same process.</p>
+</section>
+<section id="example-visualizing-frac-1-1-x-sum-n-0-infty-x-n-on-1-1">
+<h2>Example: Visualizing <span class="math notranslate nohighlight">\(\frac{1}{1 - x} = \sum_{n = 0}^\infty x^n\)</span> on <span class="math notranslate nohighlight">\((-1, 1)\)</span><a class="headerlink" href="#example-visualizing-frac-1-1-x-sum-n-0-infty-x-n-on-1-1" title="Link to this heading">#</a></h2>
+<p>In this example we will graph the function <span class="math notranslate nohighlight">\(\frac{1}{1 - x}\)</span> along with partial sums of <span class="math notranslate nohighlight">\(\displaystyle \sum_{n = 0}^\infty x^n\)</span> to see the convergence of the series to the curve on the interval <span class="math notranslate nohighlight">\((-1, 1).\)</span></p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function itself,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(1-x)</span>
+</pre></div>
+</div>
+<p>Now we will graph some partial sums.  Input the following three expressions in three new cells,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sum(x^n,n,0,10)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sum(x^n,n,0,20)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Sum(x^n,n,0,50)</span>
+</pre></div>
+</div>
+<p>We get the following graph,</p>
+<figure class="align-default" id="id1">
+<img alt="Convergence of power series to function." src="../_images/series003.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of <span class="math notranslate nohighlight">\(\sum_{n = 0}^\infty x^n\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The blue curve is the degree 10 approximation, the purple curve is the degree 20 curve, and the orange curve is the degree 50 curve.  As you can see the curves are approaching the curve of the function, the dark grey curve on the interval <span class="math notranslate nohighlight">\((-1, 1).\)</span></p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(1 - x)</span>
+</pre></div>
+</div>
+<p>To do the partial sums first input the general nth term</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^n</span>
+</pre></div>
+</div>
+<p>Now select the nth term expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Sum</span></code>, variable <em>n</em>, beginning index 0, ending index 10.  This will produce the degree 10 approximation.  Do the same for the degree 20 and 50 by replacing the 10 with 20 and 50 respectively.  Graph the function along with the three approximations to get the following plot.</p>
+<figure class="align-default" id="id2">
+<img alt="Convergence of power series to function." src="../_images/series004.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of <span class="math notranslate nohighlight">\(\sum_{n = 0}^\infty x^n\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The blue curve is the degree 10 approximation, the purple curve is the degree 20 curve, and the orange curve is the degree 50 curve.  As you can see the curves are approaching the curve of the function, the black curve on the interval <span class="math notranslate nohighlight">\((-1, 1).\)</span></p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>In Maxima, we can create the approximating polynomials with the sum command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">c1:sum(x^n,n,0,10);</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">c2:sum(x^n,n,0,20);</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">c3:sum(x^n,n,0,50);</span>
+</pre></div>
+</div>
+<p>Then graph the three curves and the function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([1/(1-x), c1, c2, c3], [x,-1.5, 1.5], [y, -1, 5]);</span>
+</pre></div>
+</div>
+<p>The result is the following graph,</p>
+<figure class="align-default" id="id3">
+<img alt="Convergence of power series to function." src="../_images/series005.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of <span class="math notranslate nohighlight">\(\sum_{n = 0}^\infty x^n\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The orange curve is the degree 10 approximation, the green curve is the degree 20 curve, and the purple curve is the degree 50 curve.  As you can see the curves are approaching the curve of the function, the blue curve on the interval <span class="math notranslate nohighlight">\((-1, 1).\)</span></p>
+</section>
+</section>
+<section id="example-power-series-in-clae">
+<h2>Example: Power Series in CLAE<a class="headerlink" href="#example-power-series-in-clae" title="Link to this heading">#</a></h2>
+<p>The underlying computer algebra system in CLAE, SymPy, has some facilities for determining functions from power series expansions.  For example, input the general nth term,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^n</span>
+</pre></div>
+</div>
+<p>Now select, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sums</span> <span class="pre">&gt;</span> <span class="pre">Sum</span></code>, input <em>n</em> for the variable, beginning index of 0, and an ending index of <code class="docutils literal notranslate"><span class="pre">oo</span></code> (our symbol for <span class="math notranslate nohighlight">\(\infty\)</span>).</p>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} \frac{1}{1 - x} &amp; \text{for}\: \left|{x}\right| &lt; 1 \\\sum_{n=0}^{\infty} x^{n} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>which shows that on <span class="math notranslate nohighlight">\((-1, 1)\)</span> the series converges to <span class="math notranslate nohighlight">\(\frac{1}{1 - x}\)</span> and outside that it cannot determine the sum (since it diverges).</p>
+<p>If we do the same with <code class="docutils literal notranslate"><span class="pre">x^n/n!</span></code> we get the result <span class="math notranslate nohighlight">\(e^x\)</span>.  Also, if we do the same with <code class="docutils literal notranslate"><span class="pre">(-1)^n*n*x^(n</span> <span class="pre">-</span> <span class="pre">1)</span></code> the result is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} - \frac{1}{\left(x + 1\right)^{2}} &amp; \text{for}\: \left|{x}\right| &lt; 1 \\\sum_{n=0}^{\infty} \left(-1\right)^{n} n x^{n - 1} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>SymPy cannot recognize all series expansions but is still very powerful in this respect.  Pedagogically, this may be giving the user a little too much, use this functionality as works best for you.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="powerseries.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Power Series</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="taylor.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Taylor Series</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-frac-1-1-x-sum-n-0-infty-x-n-on-1-1">Example: Visualizing <span class="math notranslate nohighlight">\(\frac{1}{1 - x} = \sum_{n = 0}^\infty x^n\)</span> on <span class="math notranslate nohighlight">\((-1, 1)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-power-series-in-clae">Example: Power Series in CLAE</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

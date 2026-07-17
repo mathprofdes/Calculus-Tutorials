@@ -1,0 +1,760 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Conservative Vector Fields &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/conservativevf';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Green’s Theorem" href="greenstheorem.html" />
+    <link rel="prev" title="Line Integrals" href="lineint.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Conservative Vector Fields</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="conservative-vector-fields">
+<h1><span class="target" id="index-0"></span>Conservative Vector Fields<a class="headerlink" href="#conservative-vector-fields" title="Link to this heading">#</a></h1>
+<section id="curves-and-regions">
+<h2>Curves and Regions<a class="headerlink" href="#curves-and-regions" title="Link to this heading">#</a></h2>
+<p>To understand the definitions and conditions of the theorems in ths section we need to define some terms concerning curves and regions.</p>
+<div class="admonition-definition-simple-and-closed-curves admonition">
+<p class="admonition-title">Definition: Simple and Closed Curves</p>
+<p>A closed curve <span class="math notranslate nohighlight">\(C = \mathbf{r}(t)\)</span> for <span class="math notranslate nohighlight">\(a \leq t \leq b\)</span> is where the parameterization traverses the curve only one time and <span class="math notranslate nohighlight">\(\mathbf{r}(a) = \mathbf{r}(b)\)</span>, in other words, the endpoints match.  A simple curve is one that does not cross itself.</p>
+<figure class="align-default" id="id3">
+<img alt="Simple and Closed Curves" src="../_images/ConsVecFields001.png" />
+<figcaption>
+<p><span class="caption-text">Simple and Closed Curves</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<div class="admonition-definition-connected-and-simply-connected-regions admonition">
+<p class="admonition-title">Definition: Connected and Simply Connected Regions</p>
+<p>A region <em>D</em> is a connected region if, for any two points <span class="math notranslate nohighlight">\(P_1\)</span> and <span class="math notranslate nohighlight">\(P_2\)</span>, there is a path from <span class="math notranslate nohighlight">\(P_1\)</span> to <span class="math notranslate nohighlight">\(P_2\)</span>  contained entirely inside <em>D</em>. A region <em>D</em> is a simply connected region if <em>D</em> is connected and for any simple closed curve <em>C</em> that lies inside <em>D</em>, and curve <em>C</em> can be shrunk continuously to a point while staying entirely inside <em>D</em>. In two dimensions, a region is simply connected if it is connected and has no holes.</p>
+<figure class="align-default" id="id4">
+<img alt="Connected and Simply Connected Regions" src="../_images/ConsVecFields002.png" />
+<figcaption>
+<p><span class="caption-text">Connected and Simply Connected Regions</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="the-fundamental-theorem-for-line-integrals">
+<h2><span class="target" id="index-1"></span>The Fundamental Theorem for Line Integrals<a class="headerlink" href="#the-fundamental-theorem-for-line-integrals" title="Link to this heading">#</a></h2>
+<div class="admonition-theorem-the-fundamental-theorem-for-line-integrals admonition">
+<p class="admonition-title">Theorem: The Fundamental Theorem for Line Integrals</p>
+<p>Let <span class="math notranslate nohighlight">\(C = \mathbf{r}(t)\)</span> for <span class="math notranslate nohighlight">\(a \leq t \leq b\)</span> be a piecewise smooth curve, and let <span class="math notranslate nohighlight">\(f\)</span> be a function in two or three dimension with continuous first partial derivatives on <em>C</em>.  Then,</p>
+<div class="math notranslate nohighlight">
+\[\int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a))\]</div>
+</div>
+<p>Another way to say this is,</p>
+<div class="admonition-theorem-the-fundamental-theorem-for-line-integrals admonition">
+<p class="admonition-title">Theorem: The Fundamental Theorem for Line Integrals</p>
+<p>Let <span class="math notranslate nohighlight">\(C = \mathbf{r}(t)\)</span> for <span class="math notranslate nohighlight">\(a \leq t \leq b\)</span> be a piecewise smooth curve, and let <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> be a conservative vector field with potential function <span class="math notranslate nohighlight">\(f\)</span>, then,</p>
+<div class="math notranslate nohighlight">
+\[\int_C \mathbf{F} \cdot d\mathbf{r} = \int_C \nabla f \cdot d\mathbf{r} = f(\mathbf{r}(b)) - f(\mathbf{r}(a))\]</div>
+</div>
+<p>One direct consequence of the Fundamental Theorem for Line Integrals is that if we have a conservative vector field then the integral of any closed curve is 0.</p>
+<div class="admonition-theorem-integrals-of-closed-curves admonition">
+<p class="admonition-title">Theorem: Integrals of Closed Curves</p>
+<p>Let <span class="math notranslate nohighlight">\(C\)</span> be a piecewise smooth closed curve, and let <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> be a conservative vector field, then,</p>
+<div class="math notranslate nohighlight">
+\[\int_C \mathbf{F} \cdot d\mathbf{r} = 0\]</div>
+</div>
+<p>Let’s take this a little further. Say we have two smooth curves between the same two points, that is, same initial point and the same ending point, as in the image below.</p>
+<figure class="align-default" id="id5">
+<img alt="Two Paths between the Same Points" src="../_images/ConsVecFields003.png" />
+<figcaption>
+<p><span class="caption-text">Two Paths between the Same Points</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We know from the Fundamental Theorem for Line Integrals that if we integrated a conservative vector field along either of these we would get the same result, <span class="math notranslate nohighlight">\(f(B) - f(A).\)</span>  So with a conservative vector field it does not matter what path we take between two points we will get the same value.  This is called path independence.</p>
+<div class="admonition-definition-path-independence admonition">
+<p class="admonition-title">Definition: Path Independence</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a vector field with domain <em>D</em> then <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is independent of path (or path independent) if</p>
+<div class="math notranslate nohighlight">
+\[\int_{C_1} \mathbf{F} \cdot d\mathbf{r} = \int_{C_2} \mathbf{F} \cdot d\mathbf{r}\]</div>
+<p>for any paths <span class="math notranslate nohighlight">\(C_1\)</span> and <span class="math notranslate nohighlight">\(C_2\)</span> in <em>D</em> with the same initial and terminal points.</p>
+</div>
+<p>Our discussion above gives us the following theorem,</p>
+<div class="admonition-theorem-path-independence-of-conservative-fields admonition">
+<p class="admonition-title">Theorem: Path Independence of Conservative Fields</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a conservative vector field, then <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is path independent.</p>
+</div>
+<p>There is a converse to this theorem if the domain of the vector field is “nice”.</p>
+<div class="admonition-theorem-the-path-independence-test-for-conservative-fields admonition">
+<p class="admonition-title">Theorem:  The Path Independence Test for Conservative Fields</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a continuous vector field that is independent of path and the domain <em>D</em> of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is open and connected, then <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is conservative.</p>
+</div>
+</section>
+<section id="finding-a-potential-function">
+<h2>Finding a Potential Function<a class="headerlink" href="#finding-a-potential-function" title="Link to this heading">#</a></h2>
+<p>Conservative vector fields are very important in applications and even if we know that we have a conservative vector field we need its potential function to use the The Fundamental Theorem for Line Integrals.  So given a conservative vector field how do we find its potential function?</p>
+<p>The basic method is to set the gradiant of an unknown function <span class="math notranslate nohighlight">\(f\)</span> equal to the vector field and then using integration and partial differentiation build the function.  If we get stuck along the way then it is possible that there is not a potential function to the field and hence the field is not conservative.  We will go through an example to see how this process works.</p>
+<p>Consider the vector field</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y, z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\]</div>
+<p>If this is conservative, then there is a potential function <span class="math notranslate nohighlight">\(f\)</span> then we have</p>
+<div class="math notranslate nohighlight">
+\[\nabla f = (f_x, f_y, f_z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\]</div>
+<p>so we get three equations,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f_x &amp;= 2 x y \\
+f_y &amp;=  x^{2} + 2 y z^{3} \\
+f_z &amp;= 3 y^{2} z^{2} + 2 z \\\end{split}\]</div>
+<p>If we start with the first equation and integrate both sides with respect to <em>x</em> we get,</p>
+<div class="math notranslate nohighlight">
+\[f(x, y, z) =  x^2 y + g(y, z)\]</div>
+<p>Note that we usually get a constant of integration but here any function in just <em>y</em> and <em>z</em> will derive (with respect to <em>x</em>) to 0, hence our constant is some function of <em>y</em> and <em>z</em>. If we now take the partial of this with respect to <em>y</em> we get,</p>
+<div class="math notranslate nohighlight">
+\[f_y(x, y, z) =  x^2 + g_y(y, z)\]</div>
+<p>but from the gradiant we know that <span class="math notranslate nohighlight">\(f_y =  x^{2} + 2 y z^{3}.\)</span> So</p>
+<div class="math notranslate nohighlight">
+\[f_y(x, y, z) =  x^2 + g_y(y, z) = x^{2} + 2 y z^{3}\]</div>
+<p>and hence</p>
+<div class="math notranslate nohighlight">
+\[g_y(y, z) = 2 y z^{3}\]</div>
+<p>Now we continue the same process with <em>g</em>.  Integrating both sides with respect to <em>y</em> gives us,</p>
+<div class="math notranslate nohighlight">
+\[g(y, z) = y^2 z^{3} + h(z)\]</div>
+<p>Again, a constant here would be any function of <em>z</em>.  Thus,</p>
+<div class="math notranslate nohighlight">
+\[f(x, y, z) =  x^2 y + y^2 z^{3} + h(z)\]</div>
+<p>Taking this derivative with respect to <em>z</em> gives us,</p>
+<div class="math notranslate nohighlight">
+\[f_z(x, y, z) =  3y^2 z^{2} + h'(z) = 3 y^{2} z^{2} + 2 z\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[h'(z) = 2 z\]</div>
+<p>and thus,</p>
+<div class="math notranslate nohighlight">
+\[h(z) = z^2 + C\]</div>
+<p>Therefore, the family of potential functions is,</p>
+<div class="math notranslate nohighlight">
+\[f(x, y, z) =  x^2 y + y^2 z^{3} + z^2 + C\]</div>
+<p>If we were calculating a line integral through this vector field then we could use any member of this family to do the computation.  For example, <span class="math notranslate nohighlight">\(f(x, y, z) =  x^2 y + y^2 z^{3} + z^2.\)</span></p>
+<p>We could have used CLAE or Maxima to help with the integration or partial differentiation but the example above was chosen to be able to be done easily by hand.  If the computations were more difficult we could have resorted to the CAS software.</p>
+<section id="example-mathbf-f-x-y-z-left-2-x-y-x-2-2-y-z-3-3-y-2-z-2-2-z-right">
+<h3>Example: <span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\)</span><a class="headerlink" href="#example-mathbf-f-x-y-z-left-2-x-y-x-2-2-y-z-3-3-y-2-z-2-2-z-right" title="Link to this heading">#</a></h3>
+<p>Let</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y, z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\]</div>
+<p>find</p>
+<div class="math notranslate nohighlight">
+\[\int_{C} \mathbf{F} \cdot d\mathbf{r}\]</div>
+<p>where <em>C</em> is any curve from <span class="math notranslate nohighlight">\((1, 2, 3)\)</span> to <span class="math notranslate nohighlight">\((5, -4, 13).\)</span></p>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Normally we would need to find the potential function of this field which would follow the process above, with or without the CAS.  Since we already have the potential function we will use the CAS to do the substitutions and final difference. Input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2*y + y^2*z^3 + z^2</span>
+</pre></div>
+</div>
+<p>Also input the two points,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[1, 2, 3]</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[5, -4, 13]</span>
+</pre></div>
+</div>
+<p>Select the function then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, use the point <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">-4,</span> <span class="pre">13]</span></code> for the expressions, or the point’s CAS designation <code class="docutils literal notranslate"><span class="pre">R3</span></code>, the result is 35221.  Now do the same with <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> anf the result is, 119.  Finally take the difference, 35102.</p>
+</section>
+</section>
+</section>
+<section id="testing-a-vector-field">
+<h2>Testing a Vector Field<a class="headerlink" href="#testing-a-vector-field" title="Link to this heading">#</a></h2>
+<p>A couple sections ago we saw the The Cross-Partial Property of Conservative Vector Fields which gave us a way to determine if a vector field was not conservative. One might ask the same question here as we did with independence of path.  Is there a converse to this theorem that allows us to determine if a vector field is conservative?  The answer is similar to the independence of path case.</p>
+<div class="admonition-theorem-the-cross-partial-test-for-conservative-fields-in-two-variables admonition">
+<p class="admonition-title">Theorem:  The Cross-Partial Test for Conservative Fields in Two Variables</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q)\)</span> is a vector field on an open, simply connected region <em>D</em>, and if <span class="math notranslate nohighlight">\(P_y = Q_x\)</span>, then  <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is conservative.</p>
+</div>
+<div class="admonition-theorem-the-cross-partial-test-for-conservative-fields-in-three-variables admonition">
+<p class="admonition-title">Theorem:  The Cross-Partial Test for Conservative Fields in Three Variables</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q, R)\)</span> is a vector field on an open, simply connected region <em>D</em>, and if <span class="math notranslate nohighlight">\(P_y = Q_x\)</span>, <span class="math notranslate nohighlight">\(P_z = R_x\)</span>, and <span class="math notranslate nohighlight">\(Q_z = R_y\)</span>, then  <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is conservative.</p>
+</div>
+<section id="id1">
+<h3>Example: <span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\)</span><a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>We have already proven that the vector field,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y, z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\]</div>
+<p>is conservative by finding a potential function for the field.  Here we will use the Cross-Partial Test for Conservative Fields test to verify the same conclusion.</p>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the three coordinate functions,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2*x*y</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + 2*y*z^3</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">3*y^2*z^2 + 2*z</span>
+</pre></div>
+</div>
+<p>Use the derivative option in the Calculus menu to take the partial derivatives, we find that,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}P_y &amp; = Q_x = 2x \\
+P_z &amp; = R_x = 0 \\
+Q_z &amp; = R_y = 6yz^2\end{split}\]</div>
+<p>Hence the vector field is conservative.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lineint.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Line Integrals</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="greenstheorem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Green’s Theorem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#curves-and-regions">Curves and Regions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fundamental-theorem-for-line-integrals">The Fundamental Theorem for Line Integrals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-potential-function">Finding a Potential Function</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-mathbf-f-x-y-z-left-2-x-y-x-2-2-y-z-3-3-y-2-z-2-2-z-right">Example: <span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-a-vector-field">Testing a Vector Field</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example: <span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = \left( 2 x y, \  x^{2} + 2 y z^{3}, \  3 y^{2} z^{2} + 2 z\right)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

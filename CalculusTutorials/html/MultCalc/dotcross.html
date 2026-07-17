@@ -1,0 +1,831 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Dot Product and Cross Product &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/dotcross';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Equations of Lines and Planes in Space" href="lineplaneeq.html" />
+    <link rel="prev" title="Vectors in Two and Three Dimensions" href="vectors.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Dot Product and Cross Product</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="dot-product-and-cross-product">
+<h1><span class="target" id="index-0"></span>Dot Product and Cross Product<a class="headerlink" href="#dot-product-and-cross-product" title="Link to this heading">#</a></h1>
+<p>One operation that you probably noticed that was missing in the last section was multiplication.  There are two types of products we can define on vectors.  One is called the dot product (or the scalar product or inner product) of two vectors and the other is called the cross product (or vector product).  The dot product takes two vectors and returns a scalar value and the cross product takes two three-dimensional vector and produces a third three dimensional vector.  The dot product can be defined in any dimension while the cross product is defined for three-dimensional vectors.</p>
+<section id="dot-product">
+<h2>Dot Product<a class="headerlink" href="#dot-product" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-dot-product-of-two-vectors admonition">
+<p class="admonition-title">Definition: Dot Product of Two Vectors</p>
+<p>The <strong>dot product</strong>, also called the <strong>scalar product</strong> or <strong>inner product</strong>, is the sum of the products of the corresponding components of the two vectors.  The two vectors must be the same dimension for this operation to be defined. Specifically, if <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, a_2)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b} = (b_1, b_2)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2\]</div>
+<p>Similarly in three-dimensions, if <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, a_2, a_3)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b} = (b_1, b_2, b_3)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3\]</div>
+<p>Note that the result of this computation is a number (scalar) and hence the alternative name for the operation.  Also note that this can be extended in the obvious way to higher dimensions but most of our work will be in two and three dimensions.</p>
+</div>
+<section id="example-dot-product-calculations">
+<h3>Example: Dot Product Calculations<a class="headerlink" href="#example-dot-product-calculations" title="Link to this heading">#</a></h3>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>Calculating the dot product in GeoGebra is fairly simple.  Say we input two vectors <em>u</em> and <em>v</em> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-3\\5\end{array}\right]\end{split}\]</div>
+<p>to calculate the dot product either input <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">v</span></code> (note a space between them) or <code class="docutils literal notranslate"><span class="pre">u*v</span></code> and the result is 9.</p>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Calculating the dot product in CLAE is fairly simple.  Say we input two vectors <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-3\\5\end{array}\right]\end{split}\]</div>
+<p>to calculate the dot product select <code class="docutils literal notranslate"><span class="pre">R1</span></code> then select <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Dot</span> <span class="pre">Product</span></code>, a dialog will appear asking for the second vector, select <code class="docutils literal notranslate"><span class="pre">R2</span></code> from the list and click OK, the result will be 9.</p>
+<div class="admonition-theorem-properties-of-the-dot-product admonition">
+<p class="admonition-title">Theorem: Properties of the Dot Product</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{a} = |\mathbf{a}|^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \cdot (\mathbf{b} + \mathbf{c}) = \mathbf{a} \cdot \mathbf{b} + \mathbf{a} \cdot \mathbf{c}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} = \mathbf{b} \cdot \mathbf{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((c \mathbf{a}) \cdot \mathbf{b} = c(\mathbf{a} \cdot \mathbf{b}) = \mathbf{a} \cdot (c \mathbf{b})\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{0} \cdot \mathbf{a} = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} = |\mathbf{a}| |\mathbf{b}| \cos(\theta)\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is tha angle between the two vectors.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \theta = \cos^{-1}\left(\frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}| |\mathbf{b}|}\right)\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is tha angle between the two vectors.</p></li>
+<li><p>The two vectors <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> are perpendicular (orthogonal) to each other if and only if <span class="math notranslate nohighlight">\(\mathbf{a} \cdot \mathbf{b} = 0\)</span>.</p></li>
+</ol>
+</div>
+<p>Most of these are fairly obvious to prove, the angle calculation drops out of the law of cosines.  We will do an example of this.</p>
+</section>
+</section>
+<section id="example-angle-between-two-vectors">
+<h3>Example: Angle Between two Vectors<a class="headerlink" href="#example-angle-between-two-vectors" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Say we have the same two vectors as we used above,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-3\\5\end{array}\right]\end{split}\]</div>
+<p>to calculate the angle between the two vectors input <code class="docutils literal notranslate"><span class="pre">Angle(u,</span> <span class="pre">v)</span></code> and the result will be 64.65382, note that this is in degrees.</p>
+</section>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Calculating the angle between two vectors in CLAE is fairly simple.  Say we input two vectors <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-3\\5\end{array}\right]\end{split}\]</div>
+<p>to calculate the angle between them select <code class="docutils literal notranslate"><span class="pre">R1</span></code> then select <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Angle</span></code>, a dialog will appear asking for the second vector, select <code class="docutils literal notranslate"><span class="pre">R2</span></code> from the list and click OK, the result will be,</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{acos}{\left(\frac{9 \sqrt{442}}{442} \right)}\]</div>
+<p>which approximates to 1.1284221038181517067, note that this is in radians.</p>
+<div class="admonition-theorem-vector-projections admonition">
+<p class="admonition-title">Theorem: Vector Projections</p>
+<p>Given two vectors vectors <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> the projection of the vector <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> onto the vector <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[{\rm proj}_{\mathbf{a}} \mathbf{b} = \left( \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}|} \right) \frac{\mathbf{a}}{|\mathbf{a}|} =\frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}|^2} \mathbf{a}\]</div>
+<p>Note that the length of this vector is <span class="math notranslate nohighlight">\(\displaystyle \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}|}\)</span> since it is the multiple of a unit vector, we call this value the component of <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> on <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[{\rm comp}_{\mathbf{a}} \mathbf{b} = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}|}\]</div>
+</div>
+</section>
+</section>
+<section id="example-projections">
+<h3>Example: Projections<a class="headerlink" href="#example-projections" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>GeoGebra<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>To do a vector projection in GeoGebra we simply use the above formula.  Say we have the same two vectors as we used above,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-3\\5\end{array}\right]\end{split}\]</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(u v)</span><span class="go">/|u|^2 u</span>
+</pre></div>
+</div>
+<p>The result is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1.38462\\2.07692\end{array}\right]\end{split}\]</div>
+<figure class="align-default" id="id7">
+<img alt="Vector Projection Example" src="../_images/vectors004.png" />
+<figcaption>
+<p><span class="caption-text">Vector Projection Example</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>In CLAE we can go through the formula in a few steps but we can also use a menu option to do the calculation.  Say we input two vectors <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-3\\5\end{array}\right]\end{split}\]</div>
+<p>to calculate the projection select <code class="docutils literal notranslate"><span class="pre">R2</span></code> then select <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Projections</span> <span class="pre">&gt;</span> <span class="pre">Projection</span></code>, a dialog will appear asking for the vector to project onto, select <code class="docutils literal notranslate"><span class="pre">R1</span></code> from the list and click OK, the result will be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{18}{13}\\\frac{27}{13}\end{array}\right]\end{split}\]</div>
+<p>which approximates to,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1.3846153846153846154\\2.0769230769230769231\end{array}\right]\end{split}\]</div>
+<p>Graphing the original vectors along with the projection gives us the following image. Make sure that you are in 1-1 mode or the projection will not “look” correct.</p>
+<figure class="align-default" id="id8">
+<img alt="Vector Projection Example" src="../_images/vectors005.png" />
+<figcaption>
+<p><span class="caption-text">Vector Projection Example</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="cross-product">
+<h2>Cross Product<a class="headerlink" href="#cross-product" title="Link to this heading">#</a></h2>
+<p>The second product is called the cross product, or vector product, of two vectors.  Here we only look at two vectors that are in three-dimensions.</p>
+<div class="admonition-definition-cross-product-of-two-vectors admonition">
+<p class="admonition-title">Definition: Cross Product of Two Vectors</p>
+<p>The <strong>cross product</strong>, also called the <strong>vector product</strong> is defined as follows, if <span class="math notranslate nohighlight">\(\mathbf{a} = (a_1, a_2, a_3)\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b} = (b_1, b_2, b_3)\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{a} \times \mathbf{b} = (a_2 b_3 - a_3 b_2, a_3 b_1 - a_1 b_3, a_1 b_2 - a_2 b_1)\]</div>
+<p>Note that the result of this computation is a vector and hence the alternative name for the operation.</p>
+</div>
+<p>We do not need to memorize this formula, the calculation can be done using a determinant calculation.  The determinant is a calculation that is usually studied in a linear algebra course.  We do not need to discuss the determinant in general, we simply need to know the calculation for size 2 and 3 matrices.  For a <span class="math notranslate nohighlight">\(2 \times 2\)</span> matrix the determinant is defined and calculated as,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left|\begin{array}{cc}a &amp; b\\c &amp; d\end{array}\right| = a d - b c\end{split}\]</div>
+<p>For a <span class="math notranslate nohighlight">\(3 \times 3\)</span> matrix the determinant is defined and calculated (recursively) as,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left|\begin{array}{ccc}a_{1} &amp; a_{2} &amp; a_{3}\\b_{1} &amp; b_{2} &amp; b_{3}\\c_{1} &amp; c_{2} &amp; c_{3}\end{array}\right| = a_1 \left|\begin{array}{cc}b_2 &amp; b_3\\c_2 &amp; c_3\end{array}\right| - a_2 \left|\begin{array}{cc}b_1 &amp; b_3\\c_1 &amp; c_3\end{array}\right| + a_3 \left|\begin{array}{cc}b_1 &amp; b_2\\c_1 &amp; c_2\end{array}\right|\end{split}\]</div>
+<p>With this definition we can calculate the cross product as,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{a} \times \mathbf{b} = \left|\begin{array}{ccc} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k}  \\ a_{1} &amp; a_{2} &amp; a_{3}\\b_{1} &amp; b_{2} &amp; b_{3}\end{array}\right|\end{split}\]</div>
+<p>We will look at properties of the cross product shortly, but one well used property is that the cross product vector is perpendicular (orthogonal) to each of the two vectors used for the cross product.</p>
+<section id="example-cross-product">
+<h3>Example: Cross Product<a class="headerlink" href="#example-cross-product" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h4>GeoGebra<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Input the vectors,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-2\\3\\-1\end{array}\right]\end{split}\]</div>
+<p>Assuming these came in as <em>u</em> and <em>v</em> respectively, we can take the cross product of these with the command, <code class="docutils literal notranslate"><span class="pre">Cross(u,</span> <span class="pre">v)</span></code>, the result will be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}-11\\-5\\7\end{array}\right]\end{split}\]</div>
+<p>If we switch to 3D perspective we see the image,</p>
+<figure class="align-default" id="id9">
+<img alt="Vector Cross Product Example" src="../_images/vectors006.png" />
+<figcaption>
+<p><span class="caption-text">Vector Cross Product Example</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id6">
+<h4>CLAE<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Input the vectors,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-2\\3\\-1\end{array}\right]\end{split}\]</div>
+<p>Assuming these came in as <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> respectively, we can take the cross product by selecting <code class="docutils literal notranslate"><span class="pre">R1</span></code> then selecting <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Cross</span> <span class="pre">Product</span></code>, then selecting <code class="docutils literal notranslate"><span class="pre">R2</span></code> in the dialog that appears and finally clicking OK, the result will be</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}-11\\-5\\7\end{array}\right]\end{split}\]</div>
+<p>Graphing these three vectors produces,</p>
+<figure class="align-default" id="id10">
+<img alt="Vector Cross Product Example" src="../_images/vectors007.png" />
+<figcaption>
+<p><span class="caption-text">Vector Cross Product Example</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-definition-properties-of-the-cross-product admonition">
+<p class="admonition-title">Definition: Properties of the Cross Product</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \times \mathbf{b}\)</span> is a vector that is orthogonal to both <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(|\mathbf{a} \times \mathbf{b}| = |\mathbf{a}| |\mathbf{b}| \sin(\theta)\)</span> where <span class="math notranslate nohighlight">\(\theta\)</span> is the angle between <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}.\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \times \mathbf{b} = \mathbf{0}\)</span> if and only if <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> are parallel.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \times \mathbf{b} = - \mathbf{b} \times \mathbf{a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \times (\mathbf{b} + \mathbf{c}) = \mathbf{a} \times \mathbf{b} + \mathbf{a} \times \mathbf{c}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((\mathbf{a} + \mathbf{b}) \times \mathbf{c} = \mathbf{a} \times \mathbf{c} + \mathbf{b} \times \mathbf{c}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = (\mathbf{a} \times \mathbf{b}) \cdot \mathbf{c}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbf{a} \times (\mathbf{b} \times \mathbf{c}) = (\mathbf{a} \cdot \mathbf{c}) \mathbf{b} - (\mathbf{a} \cdot \mathbf{b}) \mathbf{c}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((c\mathbf{a}) \times \mathbf{b} = c(\mathbf{a} \times \mathbf{b}) = \mathbf{a} \times (c \mathbf{b})\)</span></p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="parallelograms-and-parallelepipeds">
+<h3>Parallelograms and Parallelepipeds<a class="headerlink" href="#parallelograms-and-parallelepipeds" title="Link to this heading">#</a></h3>
+<p>There are numerous applications of the cross product, many center around the fact that the cross product creates a vector orthogonal to both crossed vectors.  For example, this is used to create normal vectors to a surface which are needed for lighting calculations in computer graphics which is the primary operation to produce three-dimensional looking images on a two-dimensional computer screen. In addition, we can use cross products to calculate areas and volumes of parallelograms and parallelepipeds.</p>
+<div class="admonition-theorem-parallelogram-area-and-parallelepiped-volume admonition">
+<p class="admonition-title">Theorem: Parallelogram Area and Parallelepiped Volume</p>
+<p>The length of the cross product <span class="math notranslate nohighlight">\(\mathbf{a} \times \mathbf{b}\)</span> is equal to the area of the parallelogram determined by <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{b}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[A = |\mathbf{a} \times \mathbf{b}|\]</div>
+<p>The volume of the parallelepiped determined by the vectors <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{c}\)</span>. is the magnitude of their scalar triple product,</p>
+<div class="math notranslate nohighlight">
+\[V = |\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})|\]</div>
+</div>
+<p>One consequence of the above theorem is that if the scalar triple product <span class="math notranslate nohighlight">\(\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c}) = 0\)</span> then the vectors <span class="math notranslate nohighlight">\(\mathbf{a}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{b}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{c}\)</span> are coplanar.</p>
+</section>
+<section id="example-parallelogram-area">
+<h3>Example: Parallelogram Area<a class="headerlink" href="#example-parallelogram-area" title="Link to this heading">#</a></h3>
+<p>If we take the vectors,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-2\\3\\4\end{array}\right]\end{split}\]</div>
+<p>and we form the parallelogram from them we get,</p>
+<figure class="align-default" id="id11">
+<img alt="Parallelogram Example" src="../_images/vectors008.png" />
+<figcaption>
+<p><span class="caption-text">Parallelogram Example</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The area of this parallelogram is the length of the cross product,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right] \times \left[\begin{array}{c}-2\\3\\4\end{array}\right] = \left[\begin{array}{c}-1\\-10\\7\end{array}\right]\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left|\left[\begin{array}{c}-1\\-10\\7\end{array}\right]\right| = 5 \sqrt{6} \approx 12.247448713915890491\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may be wondering if we can divide two vectors, or if there are multiple ways to divide two vectors, that is calculating</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathbf{u}}{\mathbf{v}}\]</div>
+<p>If we think about what it means to divide two numbers <span class="math notranslate nohighlight">\(\frac{2}{3} = 2 \cdot 3^{-1}.\)</span> For vectors this would mean,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathbf{u}}{\mathbf{v}} = \mathbf{u} \cdot \mathbf{v}^{-1}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\frac{\mathbf{u}}{\mathbf{v}} = \mathbf{u} \times \mathbf{v}^{-1}\]</div>
+<p>So of we can define the division of two vectors we would first need to define what the inverse of a vector is, in a way that is consistent with our other definitions.  If we can define an inverse of a vector then</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} \cdot \mathbf{v}^{-1} = \mathbf{1}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} \times \mathbf{v}^{-1} = \mathbf{1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{1}\)</span> is a multiplicative identity vector, just like <span class="math notranslate nohighlight">\(3 \cdot 3^{-1} = 1\)</span>.  So what is the multiplicative identity vector <span class="math notranslate nohighlight">\(\mathbf{1}\)</span>?  This would need be a single vector such that</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} \cdot \mathbf{1} = \mathbf{v}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{v} \times \mathbf{1} = \mathbf{v}\]</div>
+<p>for all vectors <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>.  This is clearly not going to work for the dot product since the dot product is a scalar and not a vector, so the above equation makes no sense.  For the cross product, this is saying that <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is orthogonal to <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> which is absurd if <span class="math notranslate nohighlight">\(\mathbf{v} \neq \mathbf{0}.\)</span> So we cannot define a multiplicative identity, hence we cannot define vector inverses, and consequently we cannot define vector division.</p>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="vectors.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vectors in Two and Three Dimensions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lineplaneeq.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Equations of Lines and Planes in Space</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dot-product">Dot Product</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-dot-product-calculations">Example: Dot Product Calculations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-angle-between-two-vectors">Example: Angle Between two Vectors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-projections">Example: Projections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-product">Cross Product</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-cross-product">Example: Cross Product</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallelograms-and-parallelepipeds">Parallelograms and Parallelepipeds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-parallelogram-area">Example: Parallelogram Area</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

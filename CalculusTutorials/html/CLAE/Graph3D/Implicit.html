@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Implicit Relationship f(x, y, z) = 0 &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/Graph3D/Implicit';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Function Sheet" href="FunctionSheet.html" />
+    <link rel="prev" title="Spherical Coordinate Surface" href="Spherical.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">3D Graphs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Function z = f(x, y)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceRev.html">Surface of Revolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parametric.html">Parametric Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cylindrical.html">Cylindrical Coordinate Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spherical.html">Spherical Coordinate Surface</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Implicit Relationship f(x, y, z) = 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSheet.html">Function Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolarFunctionSheet.html">Polar Function Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpaceCurve.html">Space Curve (x, y, z) = (f(t), g(t), h(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSpaceCurve2D.html">2-D Function Space Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSpaceCurve2DPolar.html">2-D Polar Space Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearSystem.html">Linear System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOpts.html">Editing Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotViewer.html">Snapshot Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MouseModeOpts.html">Mouse Mode Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AxesOpts.html">Axes/Grid Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CameraOpts.html">Camera Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">3D Graphs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Implicit Relationship f(x, y, z) = 0</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="implicit-relationship-f-x-y-z-0">
+<h1><span class="target" id="index-0"></span>Implicit Relationship f(x, y, z) = 0<a class="headerlink" href="#implicit-relationship-f-x-y-z-0" title="Link to this heading">#</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h2>
+<p>This type is for graphing implicitly defined expressions of the form <span class="math notranslate nohighlight">\(f(x, y, z) = 0\)</span>.  The expression must be in the variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> and it is assumed that the expression is set to 0 for the relationship.</p>
+</section>
+<section id="insert-edit-dialog">
+<h2>Insert/Edit Dialog<a class="headerlink" href="#insert-edit-dialog" title="Link to this heading">#</a></h2>
+<p>The Insert/Edit Dialog for this type is shown below.</p>
+<figure class="align-default" id="id1">
+<img alt="Implicit Relationship Dialog Box" src="../../_images/Imp_dialog1.png" />
+<figcaption>
+<p><span class="caption-text">Implicit Relationship Dialog Box</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The first input is for the expression, after that there are options for the number of grid divisions in the x, y, and z directions, plot object, mesh color, shading mode and smooth shading.</p>
+<p>The program first evaluates the expression over the cubic grid formed by the coordinate axes ranges, then uses a cube-marching algorithm to interpolate and form a mesh that will be used to plot the surface.</p>
+</section>
+<section id="options">
+<h2>Options<a class="headerlink" href="#options" title="Link to this heading">#</a></h2>
+<section id="x-y-and-z-grid-divisions">
+<h3>X, Y, and Z Grid Divisions<a class="headerlink" href="#x-y-and-z-grid-divisions" title="Link to this heading">#</a></h3>
+<p>The variables these set depend on the selection of the function type, the labels will change when the function type selector is changed.  As with implicitly defined curves in 2D, the more gird divisions the better the interpolation but also the more calculations to be completed, and hence slower for animations, panning, and scaling.</p>
+</section>
+<section id="plot">
+<h3>Plot<a class="headerlink" href="#plot" title="Link to this heading">#</a></h3>
+<p>Surfaces have three options to what is viewed, the filled in surface, a wire-frame grid, or both the surface and the grid.</p>
+<section id="surface">
+<h4>Surface<a class="headerlink" href="#surface" title="Link to this heading">#</a></h4>
+<p>This option plots the filled-in surface defined by the expression and selected surface options.  For example, the surface defined by the function <span class="math notranslate nohighlight">\(z = f(x, y) = x^{2} - y^{2}\)</span> with just the surface plot option is pictured below.</p>
+<figure class="align-default" id="id2">
+<img alt="Surface Plot" src="../../_images/PlotSurface.png" />
+<figcaption>
+<p><span class="caption-text">Surface Plot</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="grid">
+<h4>Grid<a class="headerlink" href="#grid" title="Link to this heading">#</a></h4>
+<p>This option plots the wire-frame of the surface defined by the expression and selected surface options.  For example, the surface defined by the function <span class="math notranslate nohighlight">\(z = f(x, y) = x^{2} - y^{2}\)</span> with just the grid plot option is pictured below.</p>
+<figure class="align-default" id="id3">
+<img alt="Grid Plot" src="../../_images/PlotGrid.png" />
+<figcaption>
+<p><span class="caption-text">Grid Plot</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This program does not have a transparent surface feature that allows the user to see through the surface to other surfaces and lines.  The reason we did incorporate this ability is that to do transparency well you need to use global image rendering techniques that require many more calculations and hence slow the system down considerably. We are sticking with strictly local graphing techniques which are very fast.  In some applications you may want to view through one or more surfaces, the grid option is a nice and quick way to do that.</p>
+</section>
+<section id="surface-grid">
+<h4>Surface &amp; Grid<a class="headerlink" href="#surface-grid" title="Link to this heading">#</a></h4>
+<p>This option plots the filled-in surface along with the wire-frame of the surface defined by the expression and selected surface options.  For example, the surface defined by the function <span class="math notranslate nohighlight">\(z = f(x, y) = x^{2} - y^{2}\)</span> with the surface and grid plot option is pictured below.</p>
+<figure class="align-default" id="id4">
+<img alt="Surface and Grid Plot" src="../../_images/PlotSurfaceGrid.png" />
+<figcaption>
+<p><span class="caption-text">Surface and Grid Plot</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The color of the grid is defined by the mesh color option of the surface.  One artifact that is clear from the image is that the grid portion drops out at places.  This is called “stitching” and is a common problem when graphing two objects that are in the same position.  When graphing objects in 3D, as solid objects, the system determines which portions are closer to the camera, graphs these and hides objects that are behind them. So when two objects are in the same place one is in front of the other at times and at other times the second is in front of the first.  This swapping back and forth between the two is what produces the stitching.  In general, you probably will not use this mode too often, nonetheless it is here if you want it.</p>
+</section>
+</section>
+<section id="surface-mesh-color">
+<h3>Surface Mesh Color<a class="headerlink" href="#surface-mesh-color" title="Link to this heading">#</a></h3>
+<p>The surface mesh color is the color of the grid that is used if both the surface and grid are selected for plotting.  This color should complement the color of the surface.</p>
+</section>
+<section id="surface-shading">
+<h3>Surface Shading<a class="headerlink" href="#surface-shading" title="Link to this heading">#</a></h3>
+<p>Surface shading simply refers to how colors are being used to display the surface.  It is this color manipulation that gives the image a three-dimensional feel even though it is being viewed on a two-dimensional surface.  For different applications you may want to change the shading mode to better see the mathematical aspects of the surface. This program offers seven different shading modes or algorithms.</p>
+<section id="shade-by-camera-position">
+<h4>Shade by Camera Position<a class="headerlink" href="#shade-by-camera-position" title="Link to this heading">#</a></h4>
+<p>This mode shades the surface according to the position of the camera and the curve of the surface.  The surface base color is the one selected.  The surface is rendered with a non-shiny finish and two simulated light sources, a simplified Phong shading model. For example,</p>
+<figure class="align-default" id="id5">
+<img alt="Shade by Camera Position" src="../../_images/ShadeCamera.png" />
+<figcaption>
+<p><span class="caption-text">Shade by Camera Position</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="shade-by-surface-height">
+<h4>Shade by Surface Height<a class="headerlink" href="#shade-by-surface-height" title="Link to this heading">#</a></h4>
+<p>This mode shades the surface according to the height (z-value) of the surface.  In this mode the base color is not used.  The colors used are the standard rainbow ROYGBIV from top to bottom.  So the red portions are at the top and the violet portions are at the bottom.  For example,</p>
+<figure class="align-default" id="id6">
+<img alt="Shade by Surface Height" src="../../_images/ShadeSurfaceHeight.png" />
+<figcaption>
+<p><span class="caption-text">Shade by Surface Height</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This mode would be useful if you wanted to produce a color contour map of the surface.  For example,</p>
+<figure class="align-default" id="id7">
+<img alt="Shade by Surface Height for a Color Contour Map" src="../../_images/ViewOpts008.png" />
+<figcaption>
+<p><span class="caption-text">Shade by Surface Height for a Color Contour Map</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="shade-by-camera-and-surface-height">
+<h4>Shade by Camera and Surface Height<a class="headerlink" href="#shade-by-camera-and-surface-height" title="Link to this heading">#</a></h4>
+<p>This mode combines the surface height algorithm with the camera position algorithm.  In this mode the base color is not used.  The colors used are the standard rainbow ROYGBIV from top to bottom and then these colors are changed in intensity to simulate two additional light sources.  For example,</p>
+<figure class="align-default" id="id8">
+<img alt="Shade by Camera and Surface Height" src="../../_images/ShadeSurfaceHeightCamera.png" />
+<figcaption>
+<p><span class="caption-text">Shade by Camera and Surface Height</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="shade-by-view-height">
+<h4>Shade by View Height<a class="headerlink" href="#shade-by-view-height" title="Link to this heading">#</a></h4>
+<p>This mode shades the surface according to the height (z-value) of the surface within the viewing cube.  In this mode the base color is not used.  The colors used are the standard rainbow ROYGBIV from top to bottom but instead of this color map being applied to the minimum and maximum z-values of the surface the map is applied to the minimum and maximum z-values of the viewing cube.  For example,</p>
+<figure class="align-default" id="id9">
+<img alt="Shade by View Height" src="../../_images/ShadeViewHeight.png" />
+<figcaption>
+<p><span class="caption-text">Shade by View Height</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that in this mode if we translate the image vertically the surface is at a different part of the color map and hence is shaded differently.  In surface height mode this would not happen.</p>
+<figure class="align-default" id="id10">
+<img alt="Shade by View Height Translated" src="../../_images/ShadeViewHeight2.png" />
+<figcaption>
+<p><span class="caption-text">Shade by View Height Translated</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<img alt="Shade by View Height Translated" src="../../_images/ShadeViewHeight3.png" />
+<figcaption>
+<p><span class="caption-text">Shade by View Height Translated</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This mode would be useful if there are several surfaces using this mode in the view, then the colors can be used to compare the heights between the surfaces.</p>
+</section>
+<section id="shade-by-camera-and-view-height">
+<h4>Shade by Camera and View Height<a class="headerlink" href="#shade-by-camera-and-view-height" title="Link to this heading">#</a></h4>
+<p>This mode combines the view height algorithm with the camera position algorithm.  In this mode the base color is not used.  The colors used are the standard rainbow ROYGBIV from top to bottom of the view and then these colors are changed in intensity to simulate two additional light sources.  For example,</p>
+<figure class="align-default" id="id12">
+<img alt="Shade by Camera and View Height" src="../../_images/ShadeViewHeightCamera.png" />
+<figcaption>
+<p><span class="caption-text">Shade by Camera and View Height</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="shade-by-surface-normals">
+<h4>Shade by Surface Normals<a class="headerlink" href="#shade-by-surface-normals" title="Link to this heading">#</a></h4>
+<p>This mode shades the surface by the surface normals, vectors that are perpendicular to the surface.   In this mode the base color is not used.</p>
+<figure class="align-default" id="id13">
+<img alt="Shade by Surface Normals" src="../../_images/ShadeNormals.png" />
+<figcaption>
+<p><span class="caption-text">Shade by Surface Normals</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This mode is useful to view aspects of surface curvature using the color changes.  It is also useful when plotting the planes defined by a linear system, it tends to make the planes easier to distinguish even when the planes are close to each other.</p>
+</section>
+<section id="shade-by-camera-and-normals">
+<h4>Shade by Camera and Normals<a class="headerlink" href="#shade-by-camera-and-normals" title="Link to this heading">#</a></h4>
+<p>This mode combines the surface normal algorithm with the camera position algorithm.   In this mode the base color is not used. The colors are first determined by the surface normal algorithm and then changed in intensity to simulate two additional light sources.  For example,</p>
+<figure class="align-default" id="id14">
+<img alt="Shade by Camera and Normals" src="../../_images/ShadeNormalsCamera.png" />
+<figcaption>
+<p><span class="caption-text">Shade by Camera and Normals</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="smooth-shading">
+<h3>Smooth Shading<a class="headerlink" href="#smooth-shading" title="Link to this heading">#</a></h3>
+<p>Smooth shading is when each triangle that defines a surface is colored in a way that makes the surface seem smooth.  This mode does look better, but it requires between three and eight times the calculations as non-smooth shading.  For example, the surface defined by the function <span class="math notranslate nohighlight">\(z = f(x, y) = x^{2} - y^{2}\)</span> with smooth shading on is pictured below,</p>
+<figure class="align-default" id="id15">
+<img alt="Smooth Shading On" src="../../_images/SmoothShade001.png" />
+<figcaption>
+<p><span class="caption-text">Smooth Shading On</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>and the same surface with smooth shading off is pictured below.</p>
+<figure class="align-default" id="id16">
+<img alt="Smooth Shading Off" src="../../_images/SmoothShade002.png" />
+<figcaption>
+<p><span class="caption-text">Smooth Shading Off</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In general, you will want to keep smooth shading on unless you are doing some animations of the surface that are attached to sliders.  In this case turning smooth shading off will significantly increase the animation speed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since the implicit grid is only defined inside the viewing cube there is no clipping option with this type as there is with other surface types.</p>
+</div>
+</section>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
+<p>As a quick example, if we plot the expression in the dialog box above, <span class="math notranslate nohighlight">\(\sin{\left(x \right)} + \sin{\left(y \right)} - \cos{\left(z \right)} = 0\)</span> we get,</p>
+<figure class="align-default" id="id17">
+<img alt="Implicit Relationship Example" src="../../_images/Imp0011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\sin{\left(x \right)} + \sin{\left(y \right)} - \cos{\left(z \right)} = 0\)</span></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we increase the divisions to 50 in each direction we get a smoother surface.</p>
+<figure class="align-default" id="id18">
+<img alt="Implicit Relationship Example" src="../../_images/Imp002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\sin{\left(x \right)} + \sin{\left(y \right)} - \cos{\left(z \right)} = 0\)</span></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As another example, this type of graph can be used to examine quadratic surfaces, even dynamically.  If we input the expression, <span class="math notranslate nohighlight">\(-1 + \frac{z^{2}}{c} + \frac{y^{2}}{b} + \frac{x^{2}}{a}\)</span> we get sliders for <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>, moving them we can dynamically see the shifting between the following surfaces.</p>
+<figure class="align-default" id="id19">
+<img alt="Quadratic Surface Example" src="../../_images/Imp003.png" />
+<figcaption>
+<p><span class="caption-text">Quadratic Surface Example</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id20">
+<img alt="Quadratic Surface Example" src="../../_images/Imp004.png" />
+<figcaption>
+<p><span class="caption-text">Quadratic Surface Example</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id21">
+<img alt="Quadratic Surface Example" src="../../_images/Imp005.png" />
+<figcaption>
+<p><span class="caption-text">Quadratic Surface Example</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Spherical.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Spherical Coordinate Surface</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="FunctionSheet.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Function Sheet</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#description">Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insert-edit-dialog">Insert/Edit Dialog</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#options">Options</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#x-y-and-z-grid-divisions">X, Y, and Z Grid Divisions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot">Plot</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surface">Surface</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#grid">Grid</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-grid">Surface &amp; Grid</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-mesh-color">Surface Mesh Color</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#surface-shading">Surface Shading</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shade-by-camera-position">Shade by Camera Position</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shade-by-surface-height">Shade by Surface Height</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shade-by-camera-and-surface-height">Shade by Camera and Surface Height</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shade-by-view-height">Shade by View Height</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shade-by-camera-and-view-height">Shade by Camera and View Height</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shade-by-surface-normals">Shade by Surface Normals</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shade-by-camera-and-normals">Shade by Camera and Normals</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#smooth-shading">Smooth Shading</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

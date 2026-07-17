@@ -1,0 +1,776 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Piecewise Conversions/Extractions &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/casPiecewiseConvert';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Other Conversions/Extractions" href="casOtherConvert.html" />
+    <link rel="prev" title="Convert List" href="casListConvert.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casCopySpecialCopy.html">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSimplify.html">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSolving.html">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalLimitsDerivatives.html">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalOde.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecProj.html">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Piecewise Conversions/Extractions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="piecewise-conversions-extractions">
+<h1><span class="target" id="index-0"></span>Piecewise Conversions/Extractions<a class="headerlink" href="#piecewise-conversions-extractions" title="Link to this heading">#</a></h1>
+<p>This set of options is for converting and manipulating piecewise defined expressions.</p>
+<section id="extract-expression-from-piecewise-function">
+<h2>Extract Expression from Piecewise Function<a class="headerlink" href="#extract-expression-from-piecewise-function" title="Link to this heading">#</a></h2>
+<p>This option allows the user to extract an expression from a piecewise defined function.  The extraction is a single expression from the piecewise defined function with no conditions accompanying it. When selected a dialog box will appear asking for the position of the expression, simply input the line number the expression is on.  For example, if the piecewise defined function is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x &amp; \text{for}\: x &lt; 0 \\x^{2} &amp; \text{for}\: x &lt; 4 \\\sin{\left(x \right)} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>then extracting the second expression is <span class="math notranslate nohighlight">\(x^{2}\)</span> and then extracting the third expression is <span class="math notranslate nohighlight">\(\sin{\left(x \right)}\)</span>.</p>
+</section>
+<section id="extract-piece-from-piecewise-function">
+<h2>Extract Piece from Piecewise Function<a class="headerlink" href="#extract-piece-from-piecewise-function" title="Link to this heading">#</a></h2>
+<p>This option allows the user to extract an expression from a piecewise defined function along with its domain conditions.  The extraction is a single expression from the piecewise defined function with its conditions accompanying it. When selected a dialog box will appear asking for the position of the expression, simply input the line number the expression is on.  For example, if the piecewise defined function is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x &amp; \text{for}\: x &lt; 0 \\x^{2} &amp; \text{for}\: x &lt; 4 \\\sin{\left(x \right)} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>then extracting the second expression returns,</p>
+<div class="math notranslate nohighlight">
+\[\begin{cases} x^{2} &amp; \text{for}\: x \geq 0 \wedge x &lt; 4 \end{cases}\]</div>
+<p>One thing to note here is that although a piecewise defined function is usually displayed in condensed form for the conditions when extracting a piece the function is first rewritten in a mutually exclusive manner before the piece is extracted.</p>
+</section>
+<section id="extract-pattern-from-piecewise-function">
+<h2>Extract Pattern from Piecewise Function<a class="headerlink" href="#extract-pattern-from-piecewise-function" title="Link to this heading">#</a></h2>
+<p>This option allows the user to extract a set of expressions from a piecewise defined function along with their domains.  The result is another piecewise defined function that is made up of the pieces in the input pattern. When selected a dialog box will appear asking for the position pattern, input the row numbers of the functions you wish to extract with at least one space between them.  For example, if the piecewise defined function is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x &amp; \text{for}\: x &lt; 0 \\x^{2} &amp; \text{for}\: x &lt; 4 \\\sin{\left(x \right)} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>then a pattern of, <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">3</span></code> returns,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x^{2} &amp; \text{for}\: x \geq 0 \wedge x &lt; 4 \\\sin{\left(x \right)} &amp; \text{for}\: x \geq 4 \end{cases}\end{split}\]</div>
+<p>and a pattern of <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span></code> returns</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x &amp; \text{for}\: x &lt; 0 \\\sin{\left(x \right)} &amp; \text{for}\: x \geq 4 \end{cases}\end{split}\]</div>
+<p>and a pattern of <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">1</span></code> returns</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} \sin{\left(x \right)} &amp; \text{for}\: x \geq 4 \\x &amp; \text{for}\: x &lt; 0 \end{cases}\end{split}\]</div>
+<p>One thing to note here is that although a piecewise defined function is usually displayed in condensed form for the conditions when extracting a piece the function is first rewritten in a mutually exclusive manner before the piece is extracted.  Also, you can put in duplicate positions, such as, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">3</span> <span class="pre">1</span></code> but the simplification process will remove the duplications.</p>
+</section>
+<section id="extract-all-expressions-from-piecewise-function">
+<h2>Extract All Expressions from Piecewise Function<a class="headerlink" href="#extract-all-expressions-from-piecewise-function" title="Link to this heading">#</a></h2>
+<p>This option will extract all the expressions from a piecewise defined function and load them separately into the CAS workspace.  The extraction is just the expressions from the piecewise defined function with no conditions accompanying them.  For example, the piecewise defined function,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} \frac{65 x}{44} - \frac{21 \left(x - 1\right)^{3}}{44} + \frac{23}{44} &amp; \text{for}\: x \geq 1 \wedge x \leq 2 \\\frac{5 x^{3}}{11} - \frac{183 x^{2}}{44} + \frac{247 x}{22} - \frac{71}{11} &amp; \text{for}\: x \geq 2 \wedge x \leq 4 \\- \frac{19 x^{3}}{88} + \frac{171 x^{2}}{44} - \frac{461 x}{22} + \frac{401}{11} &amp; \text{for}\: x \geq 4 \wedge x \leq 6 \end{cases}\end{split}\]</div>
+<p>would extract to the following three expressions, each loaded separately into the CAS.</p>
+<div class="math notranslate nohighlight">
+\[\frac{65 x}{44} - \frac{21 \left(x - 1\right)^{3}}{44} + \frac{23}{44}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{5 x^{3}}{11} - \frac{183 x^{2}}{44} + \frac{247 x}{22} - \frac{71}{11}\]</div>
+<div class="math notranslate nohighlight">
+\[- \frac{19 x^{3}}{88} + \frac{171 x^{2}}{44} - \frac{461 x}{22} + \frac{401}{11}\]</div>
+</section>
+<section id="extract-all-pieces-from-piecewise-function">
+<h2>Extract All Pieces from Piecewise Function<a class="headerlink" href="#extract-all-pieces-from-piecewise-function" title="Link to this heading">#</a></h2>
+<p>This option will extract each expression from a piecewise defined function along with its domain conditions and load them separately into the CAS workspace. Note that this operation may take a couple seconds to run, especially if there are a lot of pieces to the definition.  The reason for this is that with a piecewise defined function the condition list is not necessarily mutually exclusive, but if we extract one piece of the expression the conditions need to be in a mutually exclusive form or the domain of the single piece will not match the implied domain of the original function.  This conversion of conditions can take some time when there are a lot of pieces or the domains are complicated.  For example, if the piecewise defined function is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} \frac{65 x}{44} - \frac{21 \left(x - 1\right)^{3}}{44} + \frac{23}{44} &amp; \text{for}\: x \geq 1 \wedge x \leq 2 \\\frac{5 x^{3}}{11} - \frac{183 x^{2}}{44} + \frac{247 x}{22} - \frac{71}{11} &amp; \text{for}\: x \geq 2 \wedge x \leq 4 \\- \frac{19 x^{3}}{88} + \frac{171 x^{2}}{44} - \frac{461 x}{22} + \frac{401}{11} &amp; \text{for}\: x \geq 4 \wedge x \leq 6 \end{cases}\end{split}\]</div>
+<p>it would extract to the following four pieces, each loaded separately into the CAS.</p>
+<div class="math notranslate nohighlight">
+\[\begin{cases} \frac{65 x}{44} - \frac{21 \left(x - 1\right)^{3}}{44} + \frac{23}{44} &amp; \text{for}\: x \geq 1 \wedge x \leq 2 \end{cases}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{cases} \frac{5 x^{3}}{11} - \frac{183 x^{2}}{44} + \frac{247 x}{22} - \frac{71}{11} &amp; \text{for}\: x \geq 2 \wedge x \leq 4 \wedge \left(x &gt; 2 \vee x &lt; 1\right) \end{cases}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{cases} - \frac{19 x^{3}}{88} + \frac{171 x^{2}}{44} - \frac{461 x}{22} + \frac{401}{11} &amp; \text{for}\: x \geq 4 \wedge x \leq 6 \wedge \left(x &gt; 4 \vee x &lt; 1\right) \end{cases}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{cases} \text{NaN} &amp; \text{for}\: x &gt; 6 \vee x &lt; 1 \end{cases}\]</div>
+<p>Note that this will possibly produce an “otherwise” piece.</p>
+</section>
+<section id="convert-to-unnested-piecewise-expression">
+<h2>Convert to Unnested Piecewise Expression<a class="headerlink" href="#convert-to-unnested-piecewise-expression" title="Link to this heading">#</a></h2>
+<p>This option will take a nested piecewise expression and convert it into an equivalent nested piecewise expression.  For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} \begin{cases} x &amp; \text{for}\: x &lt; 0 \\x^{2} &amp; \text{for}\: x &lt; 4 \\16 &amp; \text{for}\: x &lt; 6 \\\sin{\left(x \right)} &amp; \text{otherwise} \end{cases} &amp; \text{for}\: x \geq -3 \wedge x &lt; 8 \\\cos{\left(x \right)} &amp; \text{for}\: x \geq 8 \vee x &lt; -3 \end{cases}\end{split}\]</div>
+<p>would be converted into</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x &amp; \text{for}\: x \geq -3 \wedge x &lt; 0 \\x^{2} &amp; \text{for}\: x \geq 0 \wedge x &lt; 4 \\16 &amp; \text{for}\: x \geq 4 \wedge x &lt; 6 \\\sin{\left(x \right)} &amp; \text{for}\: x \geq 6 \wedge x &lt; 8 \\\cos{\left(x \right)} &amp; \text{for}\: x \geq 8 \vee x &lt; -3 \end{cases}\end{split}\]</div>
+</section>
+<section id="view-mutually-exclusive">
+<h2>View Mutually Exclusive<a class="headerlink" href="#view-mutually-exclusive" title="Link to this heading">#</a></h2>
+<p>This option opens up another dialog box that displays the current piecewise expression that has been converted into mutually exclusive form. The dialog box has options to export the expression to several forms, LaTeX, text, and images. For example, the following</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} \begin{cases} x &amp; \text{for}\: x &lt; 0 \\x^{2} &amp; \text{for}\: x &lt; 4 \\\sin{\left(x \right)} &amp; \text{otherwise} \end{cases} &amp; \text{for}\: x \geq -3 \wedge x &lt; 8 \\\cos{\left(x \right)} &amp; \text{for}\: x \geq 8 \vee x &lt; -3 \end{cases}\end{split}\]</div>
+<p>will be displayed as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} \begin{cases} x &amp; \text{for}\: x &lt; 0 \\x^{2} &amp; \text{for}\: x \geq 0 \wedge x &lt; 4 \\\sin{\left(x \right)} &amp; \text{for}\: x \geq 4 \end{cases} &amp; \text{for}\: x \geq -3 \wedge x &lt; 8 \\\cos{\left(x \right)} &amp; \text{for}\: x \geq 8 \vee x &lt; -3 \end{cases}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The underlying computer algebra system, SymPy, writes piecewise expressions in a more programmatic form, it works much like an if-elseif type statement in a modern programming language.  If the first condition is satisfied it evaluates the first function.  If not, then the second condition is tested and if it is satisfied the second function is evaluated, and so on.  SymPy also writes the conditions in a condensed form so when viewing a piecewise defined expression the intervals defining the pieces will in most cases overlap.</p>
+<p>The reason we have the mutually exclusive form come up in a separate dialog box is because SymPy will convert it back to programmatic form if it is in the CAS workspace.</p>
+</div>
+</section>
+<section id="create-endpoint-sets-from-piecewise-expression">
+<h2>Create Endpoint Sets from Piecewise Expression<a class="headerlink" href="#create-endpoint-sets-from-piecewise-expression" title="Link to this heading">#</a></h2>
+<p>This option will attempt to create the open and closed endpoint sets from a piecewise expression.  This option has limited functionality since conditions in a piecewise expression can become complex.  For straight forward conditions this option works well.</p>
+<p>Simply select a piecewise expression then select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Piecewise</span> <span class="pre">Conversions</span> <span class="pre">/</span> <span class="pre">Extractions</span> <span class="pre">&gt;</span> <span class="pre">Create</span> <span class="pre">Endpoint</span> <span class="pre">Sets</span> <span class="pre">from</span> <span class="pre">Piecewise</span> <span class="pre">Expression</span></code>.  A dialog box will appear asking the user if the expression is to be viewed in rectangular coordinates or in polar coordinates, make this selection and click OK.  The result will be two sets, an open endpoint set and a closed endpoint set.</p>
+<p>The program will attempt to remove open points if there is the same point in the closed endpoint set, that is, when the pieces match up at that point. If approximations are being used the program may report the same point in both sets due to small round-off errors.  In general, if you are graphing these points with the function it is best to plot the open points first and then the closed, so that the closed will overwrite the open if they are the same.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you select polar coordinates for the coordinate system the points that are given will be in rectangular coordinates.</p>
+</div>
+<p>For example, take the following piecewise defined function.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x &amp; \text{for}\: x \geq -3 \wedge x &lt; 0 \\x^{2} &amp; \text{for}\: x \geq 0 \wedge x &lt; 4 \\16 &amp; \text{for}\: x \geq 4 \wedge x &lt; 6 \\\sin{\left(x \right)} &amp; \text{for}\: x \geq 6 \wedge x &lt; 8 \\\cos{\left(x \right)} &amp; \text{for}\: x \geq 8 \vee x &lt; -3 \end{cases}\end{split}\]</div>
+<p>Plotting this give us the following image.</p>
+<figure class="align-default" id="id1">
+<img alt="Piecewise Expression" src="../../_images/Piecewise007.png" />
+<figcaption>
+<p><span class="caption-text">Simple Piecewise Expression</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If invoke this option we get the following two sets.  The open endpoint set is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ 6, \  16\right], \  \left[ 8, \  \sin{\left(8 \right)}\right], \  \left[ -3, \  \cos{\left(3 \right)}\right]\right]\]</div>
+<p>and the closed endpoint set is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ -3, \  -3\right], \  \left[ 0, \  0\right], \  \left[ 4, \  16\right], \  \left[ 6, \  \sin{\left(6 \right)}\right], \  \left[ 8, \  \cos{\left(8 \right)}\right]\right]\]</div>
+<p>Note that the point <span class="math notranslate nohighlight">\((0, 0)\)</span> was included in the closed set but not in the open set, even though there is an open endpoint at the origin in another piece.  Graphing these sets along with the original function gives,</p>
+<figure class="align-default" id="id2">
+<img alt="Piecewise Expression with Endpoint Sets" src="../../_images/Piecewise008.png" />
+<figcaption>
+<p><span class="caption-text">Piecewise Expression with Endpoint Sets</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>While you probably would not take the time to do this in a classroom setting or even while just examining a piecewise function, it will save you some time if you are creating images for a report or handout.</p>
+<p>As was noted above, conditions for a piecewise expression can become very complex.  This option relies on Sympy being able to convert the defining conditions to intervals, which cannot always be done.  We will look at two more examples, one where the program can find the points but need to be approximated first and the other where we do not get a result.</p>
+<p>Take the following expression,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} 1 &amp; \text{for}\: x^{3} - 2 x^{2} + x &gt; 1 \\2 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>Finding the endpoints gives us,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ \operatorname{CRootOf} {\left(x^{3} - 2 x^{2} + x - 1, 0\right)}, \  1\right]\right]\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ \operatorname{CRootOf} {\left(x^{3} - 2 x^{2} + x - 1, 0\right)}, \  2\right]\right]\]</div>
+<p>for the open and closed sets respectively.  If you try to plot these you will get an error, but if we approximate them to</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ 1.75487766624669276, \  1.0\right]\right]\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ 1.75487766624669276, \  2.0\right]\right]\]</div>
+<p>we can plot these,</p>
+<figure class="align-default" id="id3">
+<img alt="Piecewise Expression with Endpoint Sets" src="../../_images/Piecewise009.png" />
+<figcaption>
+<p><span class="caption-text">Piecewise Expression with Endpoint Sets</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Finally, if we change the above expression a little,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} 1 &amp; \text{for}\: x^{3} - 5 x^{2} + x &gt; -2 \\2 &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+<p>we get two empty sets for the points sets, despite that the function looks like,</p>
+<figure class="align-default" id="id4">
+<img alt="Piecewise Expression" src="../../_images/Piecewise010.png" />
+<figcaption>
+<p><span class="caption-text">Piecewise Expression</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although the option fails on this expression it is not too difficult to get the endpoints by approximating the roots to the polynomial <span class="math notranslate nohighlight">\(x^{3} - 5 x^{2} + x + 2\)</span> and then evaluating.</p>
+<figure class="align-default" id="id5">
+<img alt="Piecewise Expression with Endpoint Sets" src="../../_images/Piecewise011.png" />
+<figcaption>
+<p><span class="caption-text">Piecewise Expression with Endpoint Sets</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="casListConvert.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Convert List</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="casOtherConvert.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Other Conversions/Extractions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-expression-from-piecewise-function">Extract Expression from Piecewise Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-piece-from-piecewise-function">Extract Piece from Piecewise Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-pattern-from-piecewise-function">Extract Pattern from Piecewise Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-all-expressions-from-piecewise-function">Extract All Expressions from Piecewise Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-all-pieces-from-piecewise-function">Extract All Pieces from Piecewise Function</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-to-unnested-piecewise-expression">Convert to Unnested Piecewise Expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#view-mutually-exclusive">View Mutually Exclusive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-endpoint-sets-from-piecewise-expression">Create Endpoint Sets from Piecewise Expression</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1078 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Equations of Lines and Planes in Space &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/lineplaneeq';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quadric Surfaces" href="quadsurfaces.html" />
+    <link rel="prev" title="Dot Product and Cross Product" href="dotcross.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Equations of Lines and Planes in Space</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="equations-of-lines-and-planes-in-space">
+<h1><span class="target" id="index-0"></span>Equations of Lines and Planes in Space<a class="headerlink" href="#equations-of-lines-and-planes-in-space" title="Link to this heading">#</a></h1>
+<section id="lines-in-space">
+<h2>Lines in Space<a class="headerlink" href="#lines-in-space" title="Link to this heading">#</a></h2>
+<p>A line in three-dimensions can be constructed by setting a starting point and then moving from that point any multiple of a fixed direction vector.  For example, in the image below we constructed a line by starting at the blue point and then moved all multiples of the red vector.</p>
+<figure class="align-default" id="id11">
+<img alt="Lines in Space" src="../_images/vectors009.png" />
+<figcaption>
+<p><span class="caption-text">Lines in Space</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Specifically, we chose a starting point (which can be thought of as a vector) <span class="math notranslate nohighlight">\(\mathbf{r}_0 = (x_0, y_0, z_0)\)</span> and a direction vector <span class="math notranslate nohighlight">\(\mathbf{v} = (a, b, c)\)</span>, then every point on the line is <span class="math notranslate nohighlight">\(\mathbf{r} = (x, y, z)\)</span> where <span class="math notranslate nohighlight">\(\mathbf{r} = \mathbf{r}_0 + t \mathbf{v}\)</span> for all values of <span class="math notranslate nohighlight">\(t.\)</span></p>
+<div class="admonition-definition-vector-equation-of-a-line admonition">
+<p class="admonition-title">Definition: Vector Equation of a Line</p>
+<p>Given a starting point <span class="math notranslate nohighlight">\(\mathbf{r}_0 = (x_0, y_0, z_0)\)</span> and a direction vector <span class="math notranslate nohighlight">\(\mathbf{v} = (a, b, c)\)</span>, the vector equation of a line through <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r} = \mathbf{r}_0 + t \mathbf{v}\]</div>
+</div>
+<p>Continuing this derivation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{r} &amp; = \mathbf{r}_0 + t \mathbf{v} \\
+(x, y, z) &amp; = (x_0, y_0, z_0) + t (a, b, c) \\
+(x, y, z) &amp; = (x_0 + t a, y_0 + t b, z_0 + t c) \\\end{split}\]</div>
+<p>This produces the three equations,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= x_0 + t a \\
+y &amp;= y_0 + t b \\
+z &amp;= z_0 + t c \\\end{split}\]</div>
+<p>These equations are the parametric form for the equation of a line.</p>
+<div class="admonition-definition-parametric-equations-of-a-line admonition">
+<p class="admonition-title">Definition: Parametric Equations of a Line</p>
+<p>Given a starting point <span class="math notranslate nohighlight">\(\mathbf{r}_0 = (x_0, y_0, z_0)\)</span> and a direction vector <span class="math notranslate nohighlight">\(\mathbf{v} = (a, b, c)\)</span>, the parametric equations of a line through <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp;= x_0 + t a \\
+y &amp;= y_0 + t b \\
+z &amp;= z_0 + t c \\\end{split}\]</div>
+</div>
+<p>One final form for the equation of a line in space is the symmetric equation which is derived by solving the parametric equation for <em>t</em>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}t &amp;= \frac{x - x_0}{a} \\
+t &amp;= \frac{y - y_0}{b} \\
+t &amp;= \frac{z - z_0}{c} \\\end{split}\]</div>
+<p>Then setting these equal to each other,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x - x_0}{a} = \frac{y - y_0}{b} = \frac{z - z_0}{c}\]</div>
+<div class="admonition-definition-symmetric-equation-of-a-line admonition">
+<p class="admonition-title">Definition: Symmetric Equation of a Line</p>
+<p>Given a starting point <span class="math notranslate nohighlight">\(\mathbf{r}_0 = (x_0, y_0, z_0)\)</span> and a direction vector <span class="math notranslate nohighlight">\(\mathbf{v} = (a, b, c)\)</span>, the symmetric equation of a line through <span class="math notranslate nohighlight">\(\mathbf{r}_0\)</span> in the direction of <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\frac{x - x_0}{a} = \frac{y - y_0}{b} = \frac{z - z_0}{c}\]</div>
+</div>
+<section id="example-lines-in-3-d">
+<h3>Example: Lines in 3-D<a class="headerlink" href="#example-lines-in-3-d" title="Link to this heading">#</a></h3>
+<p>In this example we will construct a line through the point <span class="math notranslate nohighlight">\((1, 2, 3)\)</span> in the direction of <span class="math notranslate nohighlight">\((1, 1, 1).\)</span></p>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>Make sure that the perspective is 3D graphics. Input the point with <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> this should come in as <em>A</em>.  Now input the vector <code class="docutils literal notranslate"><span class="pre">Vector(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>, this should come in as <em>u</em>.  To crate the line simply input <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">+</span> <span class="pre">t</span> <span class="pre">u</span></code>.  The result should look like,</p>
+<figure class="align-default" id="id12">
+<img alt="Lines in Space" src="../_images/vectors010.png" />
+<figcaption>
+<p><span class="caption-text">Lines in Space</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>In CLAE there are a number of ways to create a line in three-dimensions. Using the definition, input the two vectors <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> and <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code>, assuming that these come in as <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> respectively, input <code class="docutils literal notranslate"><span class="pre">R1</span> <span class="pre">+</span> <span class="pre">t*R2</span></code>.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}t + 1\\t + 2\\t + 3\end{array}\right]\end{split}\]</div>
+<p>If we click and drag this over to tbe 3D graphics tab we get.</p>
+<figure class="align-default" id="id13">
+<img alt="Lines in Space" src="../_images/vectors011.png" />
+<figcaption>
+<p><span class="caption-text">Lines in Space</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-lines-between-two-points">
+<h3>Example: Lines Between Two Points<a class="headerlink" href="#example-lines-between-two-points" title="Link to this heading">#</a></h3>
+<p>Creating a line between two points is fairly straightforward.  To create a line <em>segment</em> between two points <span class="math notranslate nohighlight">\(\mathbf{p}_1\)</span> and <span class="math notranslate nohighlight">\(\mathbf{p}_2\)</span> we can create the expression,</p>
+<div class="math notranslate nohighlight">
+\[(1-t)\mathbf{p}_1 + t \mathbf{p}_2\]</div>
+<p>as <span class="math notranslate nohighlight">\(0 \leq t \leq 1.\)</span> We can also create the entire line by allowing <em>t</em> to range over all the real numbers.</p>
+<section id="id1">
+<h4>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the two points <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> and <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">3,</span> <span class="pre">1)</span></code>, we will assume these came in as <em>A</em> and <em>B</em> respectively. Now input the expression <code class="docutils literal notranslate"><span class="pre">(1-t)</span> <span class="pre">A</span> <span class="pre">+</span> <span class="pre">t</span> <span class="pre">B</span></code> the result should look like,</p>
+<figure class="align-default" id="id14">
+<img alt="Line Between Two Points" src="../_images/vectors012.png" />
+<figcaption>
+<p><span class="caption-text">Line Between Two Points</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the two vectors (points) <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> and <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">3,</span> <span class="pre">1)</span></code>, we will assume these came in as <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> respectively.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2\\3\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}-2\\3\\1\end{array}\right]\end{split}\]</div>
+<p>Now input the expression <code class="docutils literal notranslate"><span class="pre">(1-t)</span> <span class="pre">*</span> <span class="pre">R1</span> <span class="pre">+</span> <span class="pre">t</span> <span class="pre">*</span> <span class="pre">R2</span></code> the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1 - 3 t\\t + 2\\3 - 2 t\end{array}\right]\end{split}\]</div>
+<p>If we click and drag these three expressions to the 3D graphics window we get,</p>
+<figure class="align-default" id="id15">
+<img alt="Line Between Two Points" src="../_images/vectors013.png" />
+<figcaption>
+<p><span class="caption-text">Line Between Two Points</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="planes">
+<h2>Planes<a class="headerlink" href="#planes" title="Link to this heading">#</a></h2>
+<p>As with lines, we can create a plane in space in a number of ways.  One possibility is to take three non-collinear points.  We will look at this later but there is a better way for constructing equations that represent a plane.  One is to define a plane as the set of all points such that the vector between any two distinct points is orthogonal  to a fixed vector <span class="math notranslate nohighlight">\(\mathbf{n}.\)</span>  The vector <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> is called the normal vector for the plane.</p>
+<figure class="align-default" id="id16">
+<img alt="Plane with Normal Vector" src="../_images/vectors014.png" />
+<figcaption>
+<p><span class="caption-text">Plane with Normal Vector</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-definition-equations-of-a-plane admonition">
+<p class="admonition-title">Definition: Equations of a Plane</p>
+<p>Given a point <em>P</em> on the plane and a normal vector <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> to the plane then the plane is the set of all points <em>Q</em> such that,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{n} \cdot \overrightarrow{PQ} = 0\]</div>
+<p>This is the <strong>vector equation</strong> to a plane. If we let   <span class="math notranslate nohighlight">\(\mathbf{n} = (a, b, c)\)</span>, <span class="math notranslate nohighlight">\(P = (x_0, y_0, z_0)\)</span>, and <span class="math notranslate nohighlight">\(Q = (x, y, z)\)</span> then this equation becomes,</p>
+<div class="math notranslate nohighlight">
+\[0 = \mathbf{n} \cdot \overrightarrow{PQ} = \mathbf{n} \cdot (x - x_0, y - y_0, z - z_0) = a(x - x_0) + b(y - y_0) + c(z - z_0)\]</div>
+<p>This is called the <strong>scalar equation of a plane</strong>.  Finally if we expand this equation we get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}0 &amp;= a x - a x_0 + b y - b y_0 + c z - c z_0 \\
+&amp; = ax + by +cz - (ax_0 + by_0 +cz_0) \\
+&amp; = ax + by +cz+d\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(d = - (ax_0 + by_0 +cz_0).\)</span>  This is called the <strong>general form</strong> of the equation of a plane.</p>
+</div>
+<section id="example-planes">
+<h3>Example: Planes<a class="headerlink" href="#example-planes" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>We will create the plane with normal vector <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> and through the point <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">3,</span> <span class="pre">1)</span></code>.  Input the two vectors (points) <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code> and <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">3,</span> <span class="pre">1)</span></code>, we will assume these came in as <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> respectively.  Also input a general point (vector) <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span></code>, we will assume this is <code class="docutils literal notranslate"><span class="pre">R3</span></code>.  Input <code class="docutils literal notranslate"><span class="pre">R3-R2</span></code>, this should return,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}x + 2\\y - 3\\z - 1\end{array}\right]\end{split}\]</div>
+<p>Now select this vector, select <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Dot</span> <span class="pre">Product</span></code> then select <code class="docutils literal notranslate"><span class="pre">R1</span></code> from the list.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[x + 2 y + 3 z - 7\]</div>
+<p>meaning the general form equation,</p>
+<div class="math notranslate nohighlight">
+\[x + 2 y + 3 z - 7 = 0\]</div>
+<p>or equivalently,</p>
+<div class="math notranslate nohighlight">
+\[x + 2 y + 3 z = 7\]</div>
+<p>If we click and drag this expression to the 3D graphics window we get,</p>
+<figure class="align-default" id="id17">
+<img alt="Plane Example" src="../_images/vectors015.png" />
+<figcaption>
+<p><span class="caption-text">Plane Example</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Graphing it along with the normal vector produces,</p>
+<figure class="align-default" id="id18">
+<img alt="Plane Example with Normal Vector" src="../_images/vectors016.png" />
+<figcaption>
+<p><span class="caption-text">Plane Example with Normal Vector</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-plane-through-three-points">
+<h3>Example: Plane Through Three Points<a class="headerlink" href="#example-plane-through-three-points" title="Link to this heading">#</a></h3>
+<p>To find the equation of a plane through three non-collinear points,</p>
+<figure class="align-default" id="id19">
+<img alt="Three Points" src="../_images/vectors017.png" />
+<figcaption>
+<p><span class="caption-text">Three Points</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple">
+<li><p>Form two vectors from the three points.</p></li>
+</ol>
+<figure class="align-default" id="id20">
+<img alt="Three Points to Two Vectors" src="../_images/vectors018.png" />
+<figcaption>
+<p><span class="caption-text">Three Points to Two Vectors</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="2">
+<li><p>Take the cross product of these two vectors to get a normal vector.</p></li>
+</ol>
+<figure class="align-default" id="id21">
+<img alt="Cross Product" src="../_images/vectors019.png" />
+<figcaption>
+<p><span class="caption-text">Cross Product</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ol class="arabic simple" start="3">
+<li><p>Use any of the three points and the normal vector to produce the equation of the plane.</p></li>
+</ol>
+<figure class="align-default" id="id22">
+<img alt="Plane Through Three Points" src="../_images/vectors020.png" />
+<figcaption>
+<p><span class="caption-text">Plane Through Three Points</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id4">
+<h4>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>GeoGebra does not allow us to follow this entire process through but it has a command that will do the entire process and produce the resulting plane.  First input the points, <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">3,</span> <span class="pre">1)</span></code>, and <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">5,</span> <span class="pre">5)</span></code>.  We will assume that these came in as <em>A</em>, <em>B</em>, and <em>C</em> respectively.  The result is below,</p>
+<div class="math notranslate nohighlight">
+\[8x - 2y - 13z = -35\]</div>
+<figure class="align-default" id="id23">
+<img alt="Plane Through Three Points" src="../_images/vectors021.png" />
+<figcaption>
+<p><span class="caption-text">Plane Through Three Points</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
+<h4>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>CLAE also has a built-in tool for this but we can also follow the process through as we would do it by hand.  We will use both methods in this example.</p>
+<p>First we will do the entire process, input the points (vectors), <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>, <code class="docutils literal notranslate"><span class="pre">(-2,</span> <span class="pre">3,</span> <span class="pre">1)</span></code>, and <code class="docutils literal notranslate"><span class="pre">(5,</span> <span class="pre">5,</span> <span class="pre">5)</span></code>.  We will assume that these came in as <code class="docutils literal notranslate"><span class="pre">R1</span></code>, <code class="docutils literal notranslate"><span class="pre">R2</span></code>, and <code class="docutils literal notranslate"><span class="pre">R3</span></code> respectively.</p>
+<ol class="arabic simple">
+<li><p>Form the two vectors by inputting <code class="docutils literal notranslate"><span class="pre">R2-R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R3-R1</span></code> into the CAS, the results are <code class="docutils literal notranslate"><span class="pre">R4</span></code> and <code class="docutils literal notranslate"><span class="pre">R5</span></code>,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}-3\\1\\-2\end{array}\right] \qquad {\rm and } \qquad \left[\begin{array}{c}4\\3\\2\end{array}\right]\end{split}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Take the cross product of these two vectors to get a normal vector, <code class="docutils literal notranslate"><span class="pre">R6</span></code>.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}8\\-2\\-13\end{array}\right]\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Input a generic vector <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code>, <code class="docutils literal notranslate"><span class="pre">R7</span></code>.  Input <code class="docutils literal notranslate"><span class="pre">R7-R1</span></code> and then take the dot product of this with <code class="docutils literal notranslate"><span class="pre">R6</span></code>.  The final result is</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[8 x - 2 y - 13 z + 35\]</div>
+<p>Plotting this along with the original three points gives us,</p>
+<figure class="align-default" id="id24">
+<img alt="Plane Through Three Points" src="../_images/vectors022.png" />
+<figcaption>
+<p><span class="caption-text">Plane Through Three Points</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>CLAE also has this built into its menu system.  First we need to construct a matrix that has the points <code class="docutils literal notranslate"><span class="pre">R1</span></code>, <code class="docutils literal notranslate"><span class="pre">R2</span></code>, and <code class="docutils literal notranslate"><span class="pre">R3</span></code> as columns.  There are a number of ways we can do this, here is one of them.  Select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Join</span> <span class="pre">Matrices</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Row</span> <span class="pre">Join</span></code>, in the input box of the dialog that appears input <code class="docutils literal notranslate"><span class="pre">R1</span> <span class="pre">R2</span> <span class="pre">R3</span></code> and click OK.  The result is the matrix,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}1 &amp; -2 &amp; 5\\2 &amp; 3 &amp; 5\\3 &amp; 1 &amp; 5\end{array}\right]\end{split}\]</div>
+<p>Now select, <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Lines</span> <span class="pre">and</span> <span class="pre">Planes</span> <span class="pre">&gt;</span> <span class="pre">Plane</span> <span class="pre">Containing</span> <span class="pre">Three</span> <span class="pre">Points</span></code>.  A dialog box will appear asking you what form of output you would like, keep this set to the general form and click OK.  The result is</p>
+<div class="math notranslate nohighlight">
+\[8 x - 2 y - 13 z + 35\]</div>
+</section>
+</section>
+</section>
+<section id="intersections">
+<h2>Intersections<a class="headerlink" href="#intersections" title="Link to this heading">#</a></h2>
+<section id="lines">
+<h3>Lines<a class="headerlink" href="#lines" title="Link to this heading">#</a></h3>
+<p>In two dimensions, two straight lines are either parallel or they intersect.  If they intersect then it can be at a single point or they could coincide.  In three dimensions the lines could be parallel, coincide, intersect at a single point, or be skew, that is, not intersecting and not parallel.</p>
+<p>These four possibilities can be characterized as follows.</p>
+<ol class="arabic simple">
+<li><p>The lines have the same direction vector and share at least one point, implies that the lines coincide.</p></li>
+<li><p>The lines have the same direction vector and share no points, implies that the lines are parallel.</p></li>
+<li><p>The lines have different direction vectors and share at least one point, implies that the lines intersect in a single point.</p></li>
+<li><p>The lines have different direction vectors and share no points, implies that the lines are skew.</p></li>
+</ol>
+</section>
+<section id="example-lines-in-space">
+<h3>Example: Lines in Space<a class="headerlink" href="#example-lines-in-space" title="Link to this heading">#</a></h3>
+<p>In this example we will classify the following three sets of lines,</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\((2t-1, t-1, t-4)\)</span> and <span class="math notranslate nohighlight">\((t-3, 3t+8, 5-2t)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((t, -t, t)\)</span> and <span class="math notranslate nohighlight">\((2t+3, t, t+2)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\((6t-1, -2t, 3t+1)\)</span> and <span class="math notranslate nohighlight">\((6t+4, -2t-3, 3t+1)\)</span>.</p></li>
+</ol>
+<section id="id6">
+<h4>GeoGebra<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Input the two lines,</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(2t-1, t-1, t-4)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(t-3, 3t+8, 5-2t)</span>
+</pre></div>
+</div>
+<p>Graphing these it appears that the lines are skew.</p>
+<figure class="align-default" id="id25">
+<img alt="Line Classification #1" src="../_images/vectors023.png" />
+<figcaption>
+<p><span class="caption-text">Line Classification #1</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Looking at this algebraically, the first line has direction vector <span class="math notranslate nohighlight">\((2, 1, 1)\)</span> and the second line has direction vector <span class="math notranslate nohighlight">\((1, 3, -2).\)</span> So the lines are not parallel nor do they coincide, they are either intersecting or they are skew.  To determine if they intersect, select the intersect tool in the point menu.  Then click on each of the two lines, one at a time. GeoGebra will create am intersect command for the intersection but the result should be <code class="docutils literal notranslate"><span class="pre">?</span></code>.  This means that either there is no intersection or GeoGebra cannot do the calculation.  Since this is a fairly simpple computation we can safely assume that there is no intersection point and the lines are skew.</p>
+<ol class="arabic simple" start="2">
+<li><p>Input the two lines,</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(t, -t, t)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(2t+3, t, t+2)</span>
+</pre></div>
+</div>
+<p>Graphing these it appears that the lines intersect.</p>
+<figure class="align-default" id="id26">
+<img alt="Line Classification #2" src="../_images/vectors024.png" />
+<figcaption>
+<p><span class="caption-text">Line Classification #2</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Looking at this algebraically, the first line has direction vector <span class="math notranslate nohighlight">\((1, -1, 1)\)</span> and the second line has direction vector <span class="math notranslate nohighlight">\((2, 1, 1).\)</span> So the lines are not parallel nor do they coincide, they are either intersecting or they are skew.  To determine if they intersect, select the intersect tool in the point menu.  Then click on each of the two lines, one at a time. GeoGebra will create am intersect command for the intersection and the result is <span class="math notranslate nohighlight">\((1, -1, 1)\)</span>.  Thus the lines intersect in a singe point, <span class="math notranslate nohighlight">\((1, -1, 1)\)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p>Input the two lines,</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(6t-1, -2t, 3t+1)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(6t+4, -2t-3, 3t+1)</span>
+</pre></div>
+</div>
+<p>Graphing these it appears that the lines are parallel.</p>
+<figure class="align-default" id="id27">
+<img alt="Line Classification #3" src="../_images/vectors025.png" />
+<figcaption>
+<p><span class="caption-text">Line Classification #3</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Looking at this algebraically, the they both have the same direction vector <span class="math notranslate nohighlight">\((6, -2, 3)\)</span>, so the lines are either  parallel or they coincide. Graphically it is clear that they do not coincide, nonetheless, taking an algebraic approach to this select the intersect tool in the point menu.  Then click on each of the two lines, one at a time. GeoGebra will create am intersect command for the intersection and the result is <code class="docutils literal notranslate"><span class="pre">?</span></code>.  Thus the lines are parallel.</p>
+</section>
+<section id="id7">
+<h4>CLAE<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Input the two lines, input these in the vector input dialog,</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(2*t-1, t-1, t-4)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(t-3, 3*t+8, 5-2*t)</span>
+</pre></div>
+</div>
+<p>Graphing these it appears that the lines are skew.</p>
+<figure class="align-default" id="id28">
+<img alt="Line Classification #1" src="../_images/vectors026.png" />
+<figcaption>
+<p><span class="caption-text">Line Classification #1</span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Looking at this algebraically, the first line has direction vector <span class="math notranslate nohighlight">\((2, 1, 1)\)</span> and the second line has direction vector <span class="math notranslate nohighlight">\((1, 3, -2).\)</span> So the lines are not parallel nor do they coincide, they are either intersecting or they are skew.  To determine if they intersect, we need to solve a set of equations for <em>x</em>, <em>y</em>, and <em>z</em>.  To do this we need to change the variable of one of the two lines.  Select the second line, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the <em>t</em> as the variable and input <code class="docutils literal notranslate"><span class="pre">s</span></code> for the expression. This will create a new vector with <em>s</em> replacing <em>t</em>.  Now subtract the first vector from this new one, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}s - 2 t - 2\\3 s - t + 9\\- 2 s - t + 9\end{array}\right]\end{split}\]</div>
+<p>If there are values for <em>s</em> and <em>t</em> that make all three of these 0 at the same time then we have a point of intersection.  Select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, a dialog box will come up asking what to solve for and the program should already have this populated with <code class="docutils literal notranslate"><span class="pre">[s,</span> <span class="pre">t]</span></code>, just click OK.  The result is <code class="docutils literal notranslate"><span class="pre">[]</span></code> which means that there are no solutions and hence there are no points of intersection, thus the lines are skew.</p>
+<ol class="arabic simple" start="2">
+<li><p>Input the two lines, input these in the vector input dialog,</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(t, -t, t)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(2*t+3, t, t+2)</span>
+</pre></div>
+</div>
+<p>Graphing these it appears that the lines intersect.</p>
+<figure class="align-default" id="id29">
+<img alt="Line Classification #2" src="../_images/vectors027.png" />
+<figcaption>
+<p><span class="caption-text">Line Classification #2</span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Looking at this algebraically, the first line has direction vector <span class="math notranslate nohighlight">\((1, -1, 1)\)</span> and the second line has direction vector <span class="math notranslate nohighlight">\((2, 1, 1).\)</span> So the lines are not parallel nor do they coincide, they are either intersecting or they are skew.  To determine if they intersect, we need to solve a set of equations for <em>x</em>, <em>y</em>, and <em>z</em>.  To do this we need to change the variable of one of the two lines.  Select the second line, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the <em>t</em> as the variable and input <code class="docutils literal notranslate"><span class="pre">s</span></code> for the expression. This will create a new vector with <em>s</em> replacing <em>t</em>.  Now subtract the first vector from this new one, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 s - t + 3\\s + t\\s - t + 2\end{array}\right]\end{split}\]</div>
+<p>If there are values for <em>s</em> and <em>t</em> that make all three of these 0 at the same time then we have a point of intersection.  Select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, a dialog box will come up asking what to solve for and the program should already have this populated with <code class="docutils literal notranslate"><span class="pre">[s,</span> <span class="pre">t]</span></code>, just click OK.  The result is <code class="docutils literal notranslate"><span class="pre">{s:</span> <span class="pre">-1,</span> <span class="pre">t:</span> <span class="pre">1}</span></code> which means that there is a solution <span class="math notranslate nohighlight">\(s = -1\)</span> and <span class="math notranslate nohighlight">\(t = 1\)</span>.  Substituting <span class="math notranslate nohighlight">\(t = 1\)</span> into the first vector gives us the point  <span class="math notranslate nohighlight">\((1, -1, 1)\)</span>.  Thus the lines intersect in a singe point, <span class="math notranslate nohighlight">\((1, -1, 1)\)</span>.</p>
+<ol class="arabic simple" start="3">
+<li><p>Input the two lines, input these in the vector input dialog,</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(6*t-1, -2*t, 3*t+1)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(6*t+4, -2*t-3, 3*t+1)</span>
+</pre></div>
+</div>
+<p>Graphing these it appears that the lines are parallel.</p>
+<figure class="align-default" id="id30">
+<img alt="Line Classification #3" src="../_images/vectors028.png" />
+<figcaption>
+<p><span class="caption-text">Line Classification #3</span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Looking at this algebraically, the they both have the same direction vector <span class="math notranslate nohighlight">\((6, -2, 3)\)</span>, so the lines are either  parallel or they coincide. Graphically it is clear that they do not coincide, nonetheless, taking an algebraic approach to this.  Follow the same process as we did above and the solutions will again be empty <code class="docutils literal notranslate"><span class="pre">[]</span></code>.  Thus the lines are parallel.</p>
+</section>
+</section>
+<section id="id8">
+<h3>Planes<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Planes can be parallel, coincide, or intersect in a line.  To be parallel or coincide the normal vectors between the two planes must be equal.  If the normal vectors are not equal (or scalar multiples of each other) then the planes intersect. We also define the angle of intersection of two planes as the angle between their normal vectors.</p>
+</section>
+<section id="example-plane-intersection">
+<h3>Example: Plane Intersection<a class="headerlink" href="#example-plane-intersection" title="Link to this heading">#</a></h3>
+<p>For this example we will find the intersection of the two planes,</p>
+<div class="math notranslate nohighlight">
+\[x + y + z = 0 \qquad {\rm and } \qquad 2 x - y + z = 3\]</div>
+<p>These will obviously intersect since the normal vector of the first is <span class="math notranslate nohighlight">\((1, 1, 1)\)</span> and the normal vector of the second is <span class="math notranslate nohighlight">\((2, -1, 1)\)</span>.</p>
+<section id="id9">
+<h4>GeoGebra<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p>Input the two planes,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x + y + z = 0</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2 x - y + z = 3</span>
+</pre></div>
+</div>
+<p>Select the surface intersection tool and then click on each of the planes, one at a time.  GeoGebra will create an intersection command and display the equation of the line of intersection.</p>
+<figure class="align-default" id="id31">
+<img alt="Plane Intersection" src="../_images/vectors029.png" />
+<figcaption>
+<p><span class="caption-text">Plane Intersection</span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id10">
+<h4>CLAE<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<p>Input the two planes,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x + y + z</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2*x - y + z - 3</span>
+</pre></div>
+</div>
+<p>We will assume that these come in as <code class="docutils literal notranslate"><span class="pre">R1</span></code> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> respectively.  CLAE does not have a tool to automatically find the line of intersection but it cn solve simultaneous equations which is what we need to do. First make a list of the two equations by inputting <code class="docutils literal notranslate"><span class="pre">[R1,</span> <span class="pre">R2]</span></code>.  Now select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, the variables will populate as <code class="docutils literal notranslate"><span class="pre">{x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> which is wat we want, click OK.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left\{ x : 1 - \frac{2 z}{3}, \  y : - \frac{z}{3} - 1\right\}\]</div>
+<p>This means,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp; = 1 - \frac{2 z}{3} \\
+y &amp; =  - \frac{z}{3} - 1 \\
+z &amp; = z\end{split}\]</div>
+<p>or a better representation for the line,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp; = 1 - \frac{2 t}{3} \\
+y &amp; =  - \frac{t}{3} - 1 \\
+z &amp; = t\end{split}\]</div>
+<p>To manipulate our result takes only a couple steps.  The output from the solve command is something called a “dictionary” which is a common way that solvers display their results.  First select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Other</span> <span class="pre">Conversions</span> <span class="pre">/</span> <span class="pre">Extractions</span> <span class="pre">&gt;</span> <span class="pre">Convert</span> <span class="pre">Dictionary</span> <span class="pre">Values</span> <span class="pre">to</span> <span class="pre">List</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ 1 - \frac{2 z}{3}, \  - \frac{z}{3} - 1\right]\]</div>
+<p>Double-click this last result to load it into the CAS input bar and add a <code class="docutils literal notranslate"><span class="pre">,</span> <span class="pre">z</span></code> at the end of the list (but before the <code class="docutils literal notranslate"><span class="pre">]</span></code>).  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ 1 - \frac{2 z}{3}, \  - \frac{z}{3} - 1, \  z\right]\]</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable will be <code class="docutils literal notranslate"><span class="pre">z</span></code> and in the expression input <code class="docutils literal notranslate"><span class="pre">t</span></code> and click OK. The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ 1 - \frac{2 t}{3}, \  - \frac{t}{3} - 1, \  t\right]\]</div>
+<p>If we graph the two plane equations and the last vector we will see,</p>
+<figure class="align-default" id="id32">
+<img alt="Plane Intersection" src="../_images/vectors030.png" />
+<figcaption>
+<p><span class="caption-text">Plane Intersection</span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are other methods for solving simultaneous (linear) equations in several variables that you will study if you take a course in linear algebra.  These methods are also built into CLAE.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="distances">
+<h2>Distances<a class="headerlink" href="#distances" title="Link to this heading">#</a></h2>
+<p>In many applications we need to find the distance from a point to a line or a point to a plane.  That is, the shortest distance from a point to a line or plane.  We will not go through these derivations here, they are simply applications of projections.</p>
+<div class="admonition-theorem-distance-from-a-point-to-a-line admonition">
+<p class="admonition-title">Theorem: Distance from a Point to a Line</p>
+<p>Given a line with direction vector <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> and containing a point <em>P</em>.  If the point <em>Q</em> is not on the line then the distance from <em>Q</em> to the line is,</p>
+<div class="math notranslate nohighlight">
+\[D = \frac{|\overrightarrow{PQ} \times \mathbf{v} |}{|\mathbf{v}|}\]</div>
+</div>
+<div class="admonition-theorem-distance-from-a-point-to-a-plane admonition">
+<p class="admonition-title">Theorem: Distance from a Point to a Plane</p>
+<p>Given a plane with normal vector <span class="math notranslate nohighlight">\(\mathbf{n}\)</span> and containing a point <em>P</em>.  If the point <em>Q</em> is not on the plane then the distance from <em>Q</em> to the plane is,</p>
+<div class="math notranslate nohighlight">
+\[D = \frac{|\overrightarrow{PQ} \cdot \mathbf{n} |}{|\mathbf{n}|}\]</div>
+<p>If the plane is defined by the equation <span class="math notranslate nohighlight">\(ax+by+cz+d = 0\)</span> and <span class="math notranslate nohighlight">\(Q = (x_0, y_0, z_0)\)</span>. The distance from <em>Q</em> to the plane is,</p>
+<div class="math notranslate nohighlight">
+\[D = \frac{|ax_0+by_0+cz_0+d|}{\sqrt{a^2 + b^2 + c^2}}\]</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="dotcross.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Dot Product and Cross Product</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="quadsurfaces.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Quadric Surfaces</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lines-in-space">Lines in Space</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lines-in-3-d">Example: Lines in 3-D</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lines-between-two-points">Example: Lines Between Two Points</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#planes">Planes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-planes">Example: Planes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-plane-through-three-points">Example: Plane Through Three Points</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intersections">Intersections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lines">Lines</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lines-in-space">Example: Lines in Space</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Planes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-plane-intersection">Example: Plane Intersection</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distances">Distances</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

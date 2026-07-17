@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Vector Fields &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/vecfields';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Line Integrals" href="lineint.html" />
+    <link rel="prev" title="Change of Variables in Multiple Integrals" href="changeofvar.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Vector Fields</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="vector-fields">
+<h1><span class="target" id="index-0"></span>Vector Fields<a class="headerlink" href="#vector-fields" title="Link to this heading">#</a></h1>
+<p>You see vector fields almost every day.  If you turn on a weather report on the television or look it up on a web site you may see graphs that have a grid of arrows that represent wind direction, storm fronts, jet stream, etc. These are examples of vector fields.  Below is an image of a vector field showing wind direction at a set of weather stations in the eastern half of the US along with a vector field of ocean currents in the Atlantic at 1:32 PM EST on July 4, 2026.</p>
+<figure class="align-default" id="id5">
+<img alt="1:32 PM EST on July 4, 2026" src="../_images/VecField001.png" />
+<figcaption>
+<p><span class="caption-text">1:32 PM EST on July 4, 2026</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h2>Vector Fields<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-vector-fields-in-math-mathbb-r-2-and-math-mathbb-r-3 admonition">
+<p class="admonition-title">Definition: Vector Fields in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> and <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></p>
+<p>A vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> is a function</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y) = P(x, y) \mathbf{i} + Q(x, y) \mathbf{j} = (P(x, y), Q(x, y))\]</div>
+<p>that assigns each point in a region <em>D</em> in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> a vector in <span class="math notranslate nohighlight">\(\mathbb{R}^2.\)</span></p>
+<p>A vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> is a function</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y, z) = P(x, y, z) \mathbf{i} + Q(x, y, z) \mathbf{j} + R(x, y, z) \mathbf{k} = (P(x, y, z), Q(x, y, z), R(x, y, z))\]</div>
+<p>that assigns each point in a region <em>D</em> in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> a vector in <span class="math notranslate nohighlight">\(\mathbb{R}^3.\)</span></p>
+<p>The functions <em>P</em>, <em>Q</em>, and <em>R</em> are called component functions for the vector field.</p>
+</div>
+<section id="example-vector-fields-in-mathbb-r-2">
+<h3>Example: Vector Fields in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span><a class="headerlink" href="#example-vector-fields-in-mathbb-r-2" title="Link to this heading">#</a></h3>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>In this example we will look at the vector field, <span class="math notranslate nohighlight">\(\mathbf{F}(x, y) = \sin(x) \mathbf{i} + \cos(y) \mathbf{j} = (\sin(x), \cos(y)).\)</span></p>
+<p>Input the expression for the vector field,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[sin(x),cos(y)]</span>
+</pre></div>
+</div>
+<p>Note that you can also put this into the vector input for a column vector representation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\sin{\left(x \right)}\\\cos{\left(y \right)}\end{array}\right]\end{split}\]</div>
+<p>Either will work fine here.  Click and drag this to the 2D graphics window and zoom in a bit, you should see,</p>
+<figure class="align-default" id="id6">
+<img alt=":math:`\mathbf{F}(x, y) = \sin(x) \mathbf{i} + \cos(y) \mathbf{j}`" src="../_images/VecField002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\mathbf{F}(x, y) = \sin(x) \mathbf{i} + \cos(y) \mathbf{j}\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this image the arrowhead is a small diamond at the end of the vector which shows the direction of the vector at each point on the vector grid.  CLAE has many options for viewing the field in its properties.  You can increase or decrease the number of divisions in the grid as well as choose between four scaling types.  The default scaling type is the scale to window, seen above, which renders each vector as equal lengths.  This shows the directions but does not show the relative lengths (or speeds) of the field.  If you change the mode to scale to maximum vector you will see,</p>
+<figure class="align-default" id="id7">
+<img alt=":math:`\mathbf{F}(x, y) = \sin(x) \mathbf{i} + \cos(y) \mathbf{j}`" src="../_images/VecField003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\mathbf{F}(x, y) = \sin(x) \mathbf{i} + \cos(y) \mathbf{j}\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this image all of the vectors are scaled relative to the longest vector in the field.  This shows the directions and relative lengths or speeds of the vectors.  The difficulty with this scaling mode is that if there is a vector in the field that overwhelms the others then most of the vectors in the field show up as just dots.  It is always good to view the field in these two modes to get a feel for the field.  The other two modes can also give some visual information for the field depending on the field and the viewing window.</p>
+</section>
+</section>
+<section id="example-vector-fields-in-mathbb-r-3">
+<h3>Example: Vector Fields in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span><a class="headerlink" href="#example-vector-fields-in-mathbb-r-3" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>In this example we will look at the vector field, <span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = y \mathbf{i} + z \mathbf{j} + x \mathbf{k} = (y, z, x).\)</span></p>
+<p>Input the expression for the vector field,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[y,z,x]</span>
+</pre></div>
+</div>
+<p>Note that you can also put this into the vector input for a column vector representation,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}y\\z\\x\end{array}\right]\end{split}\]</div>
+<p>Either will work fine here.  Click and drag this to the 3D graphics window, you should see,</p>
+<figure class="align-default" id="id8">
+<img alt=":math:`\mathbf{F}(x, y, z) = y \mathbf{i} + z \mathbf{j} + x \mathbf{k}`" src="../_images/VecField004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = y \mathbf{i} + z \mathbf{j} + x \mathbf{k}\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this image the arrowhead is a small circle at the end of the vector which shows the direction of the vector at each point on the vector grid.  CLAE has many options for viewing the field in its properties.  You can increase or decrease the number of divisions in the grid as well as choose between four scaling types.  The default scaling type is the scale to window, seen above, which renders each vector as equal lengths.  This shows the directions but does not show the relative lengths (or speeds) of the field.  If you change the mode to scale to maximum vector you will see,</p>
+<figure class="align-default" id="id9">
+<img alt=":math:`\mathbf{F}(x, y, z) = y \mathbf{i} + z \mathbf{j} + x \mathbf{k}`" src="../_images/VecField005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = y \mathbf{i} + z \mathbf{j} + x \mathbf{k}\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this image all of the vectors are scaled relative to the longest vector in the field.  This shows the directions and relative lengths or speeds of the vectors.  The difficulty with this scaling mode is that if there is a vector in the field that overwhelms the others then most of the vectors in the field show up as just dots.  It is always good to view the field in these two modes to get a feel for the field.  The other two modes can also give some visual information for the field depending on the field and the viewing window.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For vector fields in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> there is an option to display vectors, nicer vector images in the options.  This will produce a graph like the one below.</p>
+<figure class="align-default" id="id10">
+<img alt="Vector Option" src="../_images/VecField006.png" />
+<figcaption>
+<p><span class="caption-text">Vector Option</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The reason we default the head of the vector to a small diamond is so that the program has a better response in animations and slider changes.  The vector graphing option may produce some sluggish response when using sliders.  The vector fields in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> do not have a vector rendering option and always use the circle to represent the head of the vector.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="gradient-fields">
+<h2>Gradient Fields<a class="headerlink" href="#gradient-fields" title="Link to this heading">#</a></h2>
+<p>A type of vector field that is very useful is a gradiant field.  This is simply the vector field produced by the gradiant of a multivariable function.</p>
+<div class="admonition-definition-gradient-fields admonition">
+<p class="admonition-title">Definition: Gradient Fields</p>
+<p>A gradiant field is the vector field produced by the gradiant of a multivariable function. Specifically,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y) = \nabla f(x, y) =  f_x(x, y) \mathbf{i} + f_y(x, y) \mathbf{j}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}(x, y, z) = \nabla f(x, y, z) =  f_x(x, y, z) \mathbf{i} + f_y(x, y, z) \mathbf{j}  + f_z(x, y, z) \mathbf{k}\]</div>
+</div>
+<p>Not all vector fields are gradiant fields, in fact most are not.  If they are then the field will have some nice properties. Hence we will give a name to them.</p>
+<div class="admonition-definition-conservative-vector-fields admonition">
+<p class="admonition-title">Definition: Conservative Vector Fields</p>
+<p>A vector field <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a conservative vector field if there exists a multivariable function <span class="math notranslate nohighlight">\(f\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{F} = \nabla f.\)</span>  If this is the case then the function <span class="math notranslate nohighlight">\(f\)</span> is called the potential function for the vector field <span class="math notranslate nohighlight">\(\mathbf{F}.\)</span>  In addition, the potential function for a conservative vector field is unique in the sense that if <span class="math notranslate nohighlight">\(f\)</span> and <span class="math notranslate nohighlight">\(g\)</span> are two potential functions for the vector field <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> then there is a constant <span class="math notranslate nohighlight">\(C\)</span> such that <span class="math notranslate nohighlight">\(f = g+C.\)</span></p>
+</div>
+<section id="example-gradient-field-of-f-x-y-y-2-cos-left-x-y-right">
+<h3>Example: Gradient Field of <span class="math notranslate nohighlight">\(f(x, y) = y^{2} \cos{\left(x + y \right)}\)</span><a class="headerlink" href="#example-gradient-field-of-f-x-y-y-2-cos-left-x-y-right" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">y^2*cos(x + y)</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code>, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- y^{2} \sin{\left(x + y \right)}\\- y^{2} \sin{\left(x + y \right)} + 2 y \cos{\left(x + y \right)}\end{array}\right]\end{split}\]</div>
+<p>Click and drag this over to the 2D graphics window and you will see,</p>
+<figure class="align-default" id="id11">
+<img alt="Gradient Field of :math:`f(x, y) = y^{2} \cos{\left(x + y \right)}`" src="../_images/VecField007.png" />
+<figcaption>
+<p><span class="caption-text">Gradient Field of <span class="math notranslate nohighlight">\(f(x, y) = y^{2} \cos{\left(x + y \right)}\)</span></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As we mentioned above, most vector fields are not conservative.  To determine if a vector field is conservative we need to find a function <span class="math notranslate nohighlight">\(f\)</span> such that <span class="math notranslate nohighlight">\(\mathbf{F} = \nabla f.\)</span>  If such a function exists then the field is conservative and if we can show that no function exists then the field is not conservative.  We can, however, show that a vector field is not conservative in an easier manner.</p>
+<div class="admonition-theorem-the-cross-partial-property-of-conservative-vector-fields admonition">
+<p class="admonition-title">Theorem: The Cross-Partial Property of Conservative Vector Fields</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{F}(x, y) = (P(x, y), Q(x, y))\)</span> is a conservative vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{F}(x, y, z) = (P(x, y, z), Q(x, y, z), R(x, y, z))\)</span> is a conservative vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> then</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \qquad \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y} \qquad {\rm and } \qquad \frac{\partial R}{\partial x} = \frac{\partial P}{\partial z}\]</div>
+</div>
+<p>From this theorem if we have a field where any of the cross-partials are not equal we know that the field is not conservative.</p>
+</section>
+</section>
+<section id="example-left-x-y-2-y-cos-left-x-right-right">
+<h3>Example: <span class="math notranslate nohighlight">\(\left( x + y^{2}, \  y \cos{\left(x \right)}\right)\)</span><a class="headerlink" href="#example-left-x-y-2-y-cos-left-x-right-right" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Input the two component functions,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x+y^2</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">y*cos(x)</span>
+</pre></div>
+</div>
+<p>Takin the partial of the first with respect to <em>y</em> and the second with respect to <em>x</em> we get</p>
+<div class="math notranslate nohighlight">
+\[2 y \qquad {\rm and } \qquad - y \sin{\left(x \right)}\]</div>
+<p>these are clearly not equal and hence the vector field is not conservative.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="changeofvar.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Change of Variables in Multiple Integrals</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lineint.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Line Integrals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Vector Fields</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-vector-fields-in-mathbb-r-2">Example: Vector Fields in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-vector-fields-in-mathbb-r-3">Example: Vector Fields in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradient-fields">Gradient Fields</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-gradient-field-of-f-x-y-y-2-cos-left-x-y-right">Example: Gradient Field of <span class="math notranslate nohighlight">\(f(x, y) = y^{2} \cos{\left(x + y \right)}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-left-x-y-2-y-cos-left-x-right-right">Example: <span class="math notranslate nohighlight">\(\left( x + y^{2}, \  y \cos{\left(x \right)}\right)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

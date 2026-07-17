@@ -1,0 +1,977 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Limits and Derivatives &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/CalLimitsDerivatives';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Integration" href="CalIntegration.html" />
+    <link rel="prev" title="Force Operation" href="AlgForceOp.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casCopySpecialCopy.html">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseConvert.html">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSimplify.html">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSolving.html">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalOde.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecProj.html">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Limits and Derivatives</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="limits-and-derivatives">
+<h1><span class="target" id="index-0"></span>Limits and Derivatives<a class="headerlink" href="#limits-and-derivatives" title="Link to this heading">#</a></h1>
+<p>Limits, derivatives, and integration are at the heart of an introductory Calculus sequence.  Here we will look at limits and derivatives, integration is covered in the <a class="reference internal" href="CalIntegration.html"><span class="doc">Integration</span></a> section.  These options allow the user to find limits of single variable expressions, take derivatives and higher-order derivatives (including partial derivatives), find derivatives and higher-order derivatives of implicitly defined relations, and a quick tangent line calculator that is helpful when examining these concepts graphically.</p>
+<section id="limit">
+<h2><span class="target" id="index-1"></span>Limit<a class="headerlink" href="#limit" title="Link to this heading">#</a></h2>
+<p>This option will take the limit of a single variable function.  When invoked a dialog will appear asking the user to input the variable to take the limit with respect to,  the limit point for the limit, and what direction to take the limit (or two-sided).  There is also a variable assumptions selection at the bottom.  For more about variable assumptions see the discussion at the bottom of this page.  In most cases you will leave the assumptions alone (everything real) but sometimes you may need to change these.</p>
+<p>The limit point can be any valid expression, including workspace entries (R1, R2, …) as well as expressions that incorporate them.  Also remember that the infinities are denoted as <code class="docutils literal notranslate"><span class="pre">oo</span></code> and <code class="docutils literal notranslate"><span class="pre">-oo</span></code>.  For a refresher on syntax look over the <a class="reference internal" href="../CLAE/syntax.html"><span class="doc">CLAE Expression Syntax</span></a> materials.</p>
+<p>We will go over a couple examples,</p>
+<p>Say we have the expression, <span class="math notranslate nohighlight">\(\displaystyle \frac{- x^{4} + \left(h + x\right)^{4}}{h}\)</span>, which is the difference quotient for <span class="math notranslate nohighlight">\(f(x) = x^4\)</span>.  If we take the limit, use <code class="docutils literal notranslate"><span class="pre">h</span></code> for the variable, 0 for the limit point, and two-side, we get <span class="math notranslate nohighlight">\(4 x^{3}\)</span>.</p>
+<p>Along the same lines, say we have the expression, <span class="math notranslate nohighlight">\(\displaystyle \frac{- \sin{\left(x \right)} + \sin{\left(h + x \right)}}{h}\)</span>, which is the difference quotient for <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.  If we take the limit, use <code class="docutils literal notranslate"><span class="pre">h</span></code> for the variable, 0 for the limit point, and two-side, we get <span class="math notranslate nohighlight">\(\cos{\left(x \right)}\)</span>.  This tool may have its limitations but it does handle some fairly impressive algebraic manipulations.</p>
+<p>Say we have the expression, <span class="math notranslate nohighlight">\(\frac{1}{x}\)</span>,</p>
+<figure class="align-default" id="id1">
+<img alt="y = 1/x" src="../../_images/Limit001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = \frac{1}{x}\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>the limit as <span class="math notranslate nohighlight">\(x \to 0\)</span> from the left gives us <span class="math notranslate nohighlight">\(-\infty\)</span>, from the right gives us <span class="math notranslate nohighlight">\(\infty\)</span>, and if we try a two-sided limit we get <span class="math notranslate nohighlight">\(\tilde{\infty}\)</span>, which displays as zoo.  From the SymPy documentation: <cite>zoo represents complex infinity, i.e., the north pole of the Riemann sphere. The reason it is spelled this way is that it is “z-oo”, where “z” is the symbol commonly used for complex variables, and oo is the symbol SymPy uses for real positive infinity.</cite></p>
+<p>Another interesting output you may get can be seen with <span class="math notranslate nohighlight">\(\sin{\left(\frac{1}{x} \right)}\)</span>,</p>
+<figure class="align-default" id="id2">
+<img alt="y = sin(1/x)" src="../../_images/Limit002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = \sin{\left(\frac{1}{x}\right)}\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>if we take the limit of this as <span class="math notranslate nohighlight">\(x \to 0\)</span> we get the result, <span class="math notranslate nohighlight">\(\left\langle -1, 1\right\rangle\)</span>, indicating the infinite oscillation between <span class="math notranslate nohighlight">\(-1\)</span> and 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not try to find the limit of a sequence using this option, instead use the <code class="docutils literal notranslate"><span class="pre">Sequence</span> <span class="pre">Limit</span></code> option under the Calculus menu.  The algorithms are different between this and the sequence limit code since the sequence limit can assume that the domain is integers.</p>
+</div>
+</section>
+<section id="derivative">
+<h2><span class="target" id="index-2"></span>Derivative<a class="headerlink" href="#derivative" title="Link to this heading">#</a></h2>
+<p>This option will find the derivative or partial derivative of an expression with respect to the chosen variable and to the order specified.  When this option is selected a dialog box will appear asking the user for the variable (or list of variables) to take the derivative with respect to and the order of the derivative to calculate.  There is also a variable assumptions selection at the bottom.  For more about variable assumptions see the discussion at the bottom of this page.  In most cases you will leave the assumptions alone (everything real) but sometimes you may need to change these.</p>
+<p>For example, say we input the expression <code class="docutils literal notranslate"><span class="pre">sin(x^3)^2</span></code>, that is, <span class="math notranslate nohighlight">\(\sin^{2}{\left(x^{3} \right)}\)</span>.  If we take the first derivative with respect to <code class="docutils literal notranslate"><span class="pre">x</span></code> of this we get,</p>
+<div class="math notranslate nohighlight">
+\[6 x^{2} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\]</div>
+<p>and if we take the third derivative of this we get,</p>
+<div class="math notranslate nohighlight">
+\[- 216 x^{6} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} - 108 x^{3} \sin^{2}{\left(x^{3} \right)} + 108 x^{3} \cos^{2}{\left(x^{3} \right)} + 12 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\]</div>
+<p>Now lets say we have something a little more complicated,</p>
+<div class="math notranslate nohighlight">
+\[\frac{y \sin^{2}{\left(x^{3} \right)}}{x^{2} + y^{2}}\]</div>
+<p>If we take the derivative with respect to <code class="docutils literal notranslate"><span class="pre">x</span></code>, that is, the partial derivative with respect to <code class="docutils literal notranslate"><span class="pre">x</span></code> we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{6 x^{2} y \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} - \frac{2 x y \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}}\]</div>
+<p>If we take the derivative with respect to <code class="docutils literal notranslate"><span class="pre">y</span></code>, that is, the partial derivative with respect to <code class="docutils literal notranslate"><span class="pre">y</span></code> we get,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{2 y^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{\sin^{2}{\left(x^{3} \right)}}{x^{2} + y^{2}}\]</div>
+<p>With this tool we can take several partial derivatives at one time by listing the variables we wish to differentiate with respect to in order separated by commas.  So to take the partial derivative with respect to <code class="docutils literal notranslate"><span class="pre">x</span></code> first and then with respect to <code class="docutils literal notranslate"><span class="pre">y</span></code> we would enter <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y</span></code> into the variables text box.  This will produce,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{12 x^{2} y^{2} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{6 x^{2} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} + \frac{8 x y^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{3}} - \frac{2 x \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}}\]</div>
+<p>If you then do the derivatives in reverse order, <code class="docutils literal notranslate"><span class="pre">y,</span> <span class="pre">x</span></code>, you of course get the same result, which is a nice illustration of Clairaut’s Theorem.</p>
+<p>Taking this s little further, if we list several variables and increase the order of the derivative it is the same as listing the variable list the order number of times.  For example, say we input a variable list <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y</span></code> and changed the order to 3, then this is the same as a variable list of <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">x,</span> <span class="pre">y</span></code>, a sixth order derivative.</p>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{144 x y^{2} \left(\frac{4 y^{2}}{x^{2} + y^{2}} - 1\right) \left(- \frac{12 x^{3} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} + \frac{4 x^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} - 3 x \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} + 3 x \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right) + \frac{\left(\frac{8 x^{2}}{x^{2} + y^{2}} - 4\right) \sin^{2}{\left(x^{3} \right)}}{x^{2} + y^{2}}\right)}{\left(x^{2} + y^{2}\right)^{2}} - \frac{288 x y^{2} \left(- \frac{12 x^{3} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} + \frac{4 x^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} - 3 x \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} + 3 x \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right) + \frac{\left(\frac{8 x^{2}}{x^{2} + y^{2}} - 4\right) \sin^{2}{\left(x^{3} \right)}}{x^{2} + y^{2}}\right)}{\left(x^{2} + y^{2}\right)^{2}} - \frac{288 x y^{2} \left(\frac{72 x^{3} y^{2} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} - \frac{24 x^{3} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} - \frac{48 x^{2} y^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{3}} + \frac{12 x^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{6 x y^{2} \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} - \frac{6 x y^{2} \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right)}{x^{2} + y^{2}} - 3 x \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} + 3 x \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right) - \frac{16 y^{2} \left(\frac{2 x^{2}}{x^{2} + y^{2}} - 1\right) \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{\left(\frac{12 x^{2}}{x^{2} + y^{2}} - 6\right) \sin^{2}{\left(x^{3} \right)}}{x^{2} + y^{2}}\right)}{\left(x^{2} + y^{2}\right)^{2}} - \frac{144 x y^{2} \left(\frac{96 x^{3} y^{2} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} - \frac{12 x^{3} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} - \frac{48 x^{2} y^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{3}} + \frac{4 x^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{12 x y^{2} \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} - \frac{12 x y^{2} \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right)}{x^{2} + y^{2}} - 3 x \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} + 3 x \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right) - \frac{24 y^{2} \left(\frac{2 x^{2}}{x^{2} + y^{2}} - 1\right) \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{\left(\frac{8 x^{2}}{x^{2} + y^{2}} - 4\right) \sin^{2}{\left(x^{3} \right)}}{x^{2} + y^{2}}\right)}{\left(x^{2} + y^{2}\right)^{2}} + \frac{72 x \left(\frac{96 x^{3} y^{2} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} - \frac{12 x^{3} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} - \frac{48 x^{2} y^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{3}} + \frac{4 x^{2} \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{12 x y^{2} \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} - \frac{12 x y^{2} \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right)}{x^{2} + y^{2}} - 3 x \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} + 3 x \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right) - \frac{24 y^{2} \left(\frac{2 x^{2}}{x^{2} + y^{2}} - 1\right) \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} + \frac{\left(\frac{8 x^{2}}{x^{2} + y^{2}} - 4\right) \sin^{2}{\left(x^{3} \right)}}{x^{2} + y^{2}}\right)}{x^{2} + y^{2}} + \frac{288 y^{2} \left(\frac{2 y^{2}}{x^{2} + y^{2}} - 1\right) \left(18 x^{6} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} + 9 x^{3} \sin^{2}{\left(x^{3} \right)} - 9 x^{3} \cos^{2}{\left(x^{3} \right)} - \frac{3 x^{2} \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} + \frac{3 x^{2} \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right)}{x^{2} + y^{2}} + \frac{2 x \left(\frac{2 x^{2}}{x^{2} + y^{2}} - 1\right) \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} - \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right)}{x^{2} + y^{2}} - \left(\frac{288 y^{2}}{x^{2} + y^{2}} - 72\right) \left(18 x^{6} \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)} + 9 x^{3} \sin^{2}{\left(x^{3} \right)} - 9 x^{3} \cos^{2}{\left(x^{3} \right)} - \frac{3 x^{2} \left(\frac{4 x^{2}}{x^{2} + y^{2}} - 1\right) \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}}{x^{2} + y^{2}} + \frac{3 x^{2} \left(- 3 x^{3} \sin^{2}{\left(x^{3} \right)} + 3 x^{3} \cos^{2}{\left(x^{3} \right)} + 2 \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right)}{x^{2} + y^{2}} + \frac{2 x \left(\frac{2 x^{2}}{x^{2} + y^{2}} - 1\right) \sin^{2}{\left(x^{3} \right)}}{\left(x^{2} + y^{2}\right)^{2}} - \sin{\left(x^{3} \right)} \cos{\left(x^{3} \right)}\right)}{\left(x^{2} + y^{2}\right)^{2}}\]</div>
+<p>Which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\frac{648 x^{16} \sin{\left(2 x^{3} \right)} - 1944 x^{14} y^{2} \sin{\left(2 x^{3} \right)} + 648 x^{13} \cos{\left(2 x^{3} \right)} - 9072 x^{12} y^{4} \sin{\left(2 x^{3} \right)} - 8424 x^{11} y^{2} \cos{\left(2 x^{3} \right)} - 9072 x^{10} y^{6} \sin{\left(2 x^{3} \right)} - 684 x^{10} \sin{\left(2 x^{3} \right)} - 9072 x^{9} y^{4} \cos{\left(2 x^{3} \right)} - 1944 x^{8} y^{8} \sin{\left(2 x^{3} \right)} + 11772 x^{8} y^{2} \sin{\left(2 x^{3} \right)} + 9072 x^{7} y^{6} \cos{\left(2 x^{3} \right)} - 360 x^{7} \cos{\left(2 x^{3} \right)} + 360 x^{7} + 648 x^{6} y^{10} \sin{\left(2 x^{3} \right)} - 5544 x^{6} y^{4} \sin{\left(2 x^{3} \right)} + 8424 x^{5} y^{8} \cos{\left(2 x^{3} \right)} + 7560 x^{5} y^{2} \cos{\left(2 x^{3} \right)} - 7560 x^{5} y^{2} - 14616 x^{4} y^{6} \sin{\left(2 x^{3} \right)} - 648 x^{3} y^{10} \cos{\left(2 x^{3} \right)} - 12600 x^{3} y^{4} \cos{\left(2 x^{3} \right)} + 12600 x^{3} y^{4} + 3348 x^{2} y^{8} \sin{\left(2 x^{3} \right)} + 2520 x y^{6} \cos{\left(2 x^{3} \right)} - 2520 x y^{6} - 36 y^{10} \sin{\left(2 x^{3} \right)}}{x^{14} + 7 x^{12} y^{2} + 21 x^{10} y^{4} + 35 x^{8} y^{6} + 35 x^{6} y^{8} + 21 x^{4} y^{10} + 7 x^{2} y^{12} + y^{14}}\]</div>
+</section>
+<section id="implicit-differentiation">
+<h2><span class="target" id="index-3"></span>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Link to this heading">#</a></h2>
+<p>This option will calculate an implicit derivative to the specified order.  When invoked a dialog box will appear asking the user for the dependent and independent variables, and the order of the derivative.  There is also a variable assumptions selection at the bottom.  For more about variable assumptions see the discussion at the bottom of this page.  In most cases you will leave the assumptions alone (everything real) but sometimes you may need to change these.</p>
+<p>If our dependent variable is <code class="docutils literal notranslate"><span class="pre">y</span></code> and our independent variable is <code class="docutils literal notranslate"><span class="pre">x</span></code> then the derivative would be <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span>.  If we instead our dependent variable is <code class="docutils literal notranslate"><span class="pre">x</span></code> and our independent variable is <code class="docutils literal notranslate"><span class="pre">y</span></code> then the derivative would be <span class="math notranslate nohighlight">\(\frac{dx}{dy}\)</span>.</p>
+<p>For example, say we input the expression <code class="docutils literal notranslate"><span class="pre">(x^2-1)*(x^2-4)*(x^2-9)-(y^2*(y^2-4)*(y^2-9))</span></code>, that is,</p>
+<div class="math notranslate nohighlight">
+\[- y^{2} \left(y^{2} - 9\right) \left(y^{2} - 4\right) + \left(x^{2} - 9\right) \left(x^{2} - 4\right) \left(x^{2} - 1\right)\]</div>
+<p>As an implicitly defined expression we assume (as with solving) that this expression is equal to 0, specifically,</p>
+<div class="math notranslate nohighlight">
+\[- y^{2} \left(y^{2} - 9\right) \left(y^{2} - 4\right) + \left(x^{2} - 9\right) \left(x^{2} - 4\right) \left(x^{2} - 1\right) = 0\]</div>
+<figure class="align-default" id="id3">
+<img alt="Implicit Expression" src="../../_images/Der001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(- y^{2} \left(y^{2} - 9\right) \left(y^{2} - 4\right) + \left(x^{2} - 9\right) \left(x^{2} - 4\right) \left(x^{2} - 1\right) = 0\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we find <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span> with <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">x</span></code> we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x \left(3 x^{4} - 28 x^{2} + 49\right)}{y \left(3 y^{4} - 26 y^{2} + 36\right)}\]</div>
+<p>and <span class="math notranslate nohighlight">\(\frac{dx}{dy}\)</span> with <code class="docutils literal notranslate"><span class="pre">x</span></code> and  <code class="docutils literal notranslate"><span class="pre">y</span></code> we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{y \left(3 y^{4} - 26 y^{2} + 36\right)}{x \left(3 x^{4} - 28 x^{2} + 49\right)}\]</div>
+<p>We can find higher order derivatives here as well, if we find <span class="math notranslate nohighlight">\(\frac{d^2y}{dx^2}\)</span> with <code class="docutils literal notranslate"><span class="pre">y</span></code> and  <code class="docutils literal notranslate"><span class="pre">x</span></code> and an order of 2 we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- 135 x^{10} y + \frac{702 x^{10}}{y} - \frac{324 x^{10}}{y^{3}} + 2520 x^{8} y - \frac{13104 x^{8}}{y} + \frac{6048 x^{8}}{y^{3}} - 16170 x^{6} y + \frac{84084 x^{6}}{y} - \frac{38808 x^{6}}{y^{3}} + 135 x^{4} y^{7} - 2340 x^{4} y^{5} + 13380 x^{4} y^{3} + 13080 x^{4} y - \frac{194592 x^{4}}{y} + \frac{98784 x^{4}}{y^{3}} - 756 x^{2} y^{7} + 13104 x^{2} y^{5} - 74928 x^{2} y^{3} + 121233 x^{2} y + \frac{78414 x^{2}}{y} - \frac{86436 x^{2}}{y^{3}} + 441 y^{7} - 7644 y^{5} + 43708 y^{3} - 91728 y + \frac{63504}{y}}{27 y^{12} - 702 y^{10} + 7056 y^{8} - 34424 y^{6} + 84672 y^{4} - 101088 y^{2} + 46656}\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^{2} \left(- 324 x^{8} + 6048 x^{6} - 38808 x^{4} + 98784 x^{2} - 86436\right) + y^{4} \left(- 135 x^{10} + 2520 x^{8} - 16170 x^{6} + 135 x^{4} y^{6} - 2340 x^{4} y^{4} + 13380 x^{4} y^{2} + 13080 x^{4} - 756 x^{2} y^{6} + 13104 x^{2} y^{4} - 74928 x^{2} y^{2} + 121233 x^{2} + 441 y^{6} - 7644 y^{4} + 43708 y^{2} - 91728\right) + y^{2} \left(702 x^{10} - 13104 x^{8} + 84084 x^{6} - 194592 x^{4} + 78414 x^{2} + 63504\right)}{y^{3} \left(27 y^{12} - 702 y^{10} + 7056 y^{8} - 34424 y^{6} + 84672 y^{4} - 101088 y^{2} + 46656\right)}\]</div>
+<p>Taking this example a little further, if we evaluate the original expression at <span class="math notranslate nohighlight">\(x = 1\)</span> we get</p>
+<div class="math notranslate nohighlight">
+\[- y^{2} \left(y^{2} - 9\right) \left(y^{2} - 4\right) = 0\]</div>
+<p>which gives the solutions <span class="math notranslate nohighlight">\(\left[ -3, \  -2, \  0, \  2, \  3\right]\)</span>, then evaluating <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span> at the point <span class="math notranslate nohighlight">\((1, -2)\)</span> gives us <span class="math notranslate nohighlight">\(3/5\)</span>.  Hence the slope of the tangent line to this implicit curve at the point <span class="math notranslate nohighlight">\((1, -2)\)</span> is <span class="math notranslate nohighlight">\(3/5\)</span>.  Hence the tangent line equation is <span class="math notranslate nohighlight">\(y = \frac{3 x}{5} - \frac{13}{5}\)</span> and if we graph this with the curve we see,</p>
+<figure class="align-default" id="id4">
+<img alt="Implicit Expression and Tangent Line" src="../../_images/Der002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(- y^{2} \left(y^{2} - 9\right) \left(y^{2} - 4\right) + \left(x^{2} - 9\right) \left(x^{2} - 4\right) \left(x^{2} - 1\right) = 0\)</span> and <span class="math notranslate nohighlight">\(y = \frac{3 x}{5} - \frac{13}{5}\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="tangent-line">
+<h2><span class="target" id="index-4"></span>Tangent Line<a class="headerlink" href="#tangent-line" title="Link to this heading">#</a></h2>
+<p>This option will allow you to create a tangent line equation to an explicitly defined curve quickly.  When this option is invoked a dialog box will appear asking the user to input the variable that will be differentiated with respect to, the point of tangency, if we are working in rectangular or polar coordinates and the form of the output of the tangent line.  There is also a variable assumptions selection at the bottom.  For more about variable assumptions see the discussion at the bottom of this page.  In most cases you will leave the assumptions alone (everything real) but sometimes you may need to change these.</p>
+<p>The output type has three options,</p>
+<ul class="simple">
+<li><p>Function <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code>:  This will give the tangent line as <code class="docutils literal notranslate"><span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code>.</p></li>
+<li><p>General <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">+</span> <span class="pre">by</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">0</span></code>:  This will give the tangent line as <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">+</span> <span class="pre">by</span> <span class="pre">+</span> <span class="pre">c</span></code>.</p></li>
+<li><p>Matrix/Linear System:  This will give the tangent line as the 1 X 3 matrix <code class="docutils literal notranslate"><span class="pre">[a</span> <span class="pre">b</span> <span class="pre">c]</span></code> which represents the expression <code class="docutils literal notranslate"><span class="pre">ax</span> <span class="pre">+</span> <span class="pre">by</span> <span class="pre">=</span> <span class="pre">c</span></code>.</p></li>
+</ul>
+<p>The form of the output is up to you.  Some pros and cons.  If you are graphing these then either function or matrix form would be best.  The general form uses the implicit expression graphing system which requires many more calculations.  If the curve has several places where there are vertical tangents then either the general or matrix forms would be better since at these spots the slope is undefined and hence the m in mx + b is undefined.  So for graphing the matrix form is probably the best but it is the least human readable of the three.</p>
+<p>We will look at a couple examples.</p>
+<p>Input the expression, <code class="docutils literal notranslate"><span class="pre">x^3</span> <span class="pre">-</span> <span class="pre">5*x^2</span> <span class="pre">+</span> <span class="pre">4*x</span> <span class="pre">+</span> <span class="pre">1</span></code>, that is, <span class="math notranslate nohighlight">\(x^{3} - 5 x^{2} + 4 x + 1\)</span>.  Click and drag it over to the 2-D graph and we get (with a little zooming and moving),</p>
+<figure class="align-default" id="id5">
+<img alt="x^3 - 5*x^2 + 4*x + 1" src="../../_images/Der003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = x^{3} - 5 x^{2} + 4 x + 1\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Tangent</span> <span class="pre">Line</span></code>, use 1 for the point of tangency, rectangular coordinates, and Function <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">mx</span> <span class="pre">+</span> <span class="pre">b</span></code> for the output type.  This gives us <span class="math notranslate nohighlight">\(4 - 3 x\)</span>, graph this as well by clicking and dragging it to the graph and   see.</p>
+<figure class="align-default" id="id6">
+<img alt="x^3 - 5*x^2 + 4*x + 1 and y = 4 - 3*x" src="../../_images/Der004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = x^{3} - 5 x^{2} + 4 x + 1\)</span> and <span class="math notranslate nohighlight">\(y = 4 - 3 x\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>I we had selected the general form output we would have gotten, <span class="math notranslate nohighlight">\(3 x + y - 4\)</span> and if we would have selected the matrix form output we would have gotten, <span class="math notranslate nohighlight">\(\left[\begin{array}{ccc}-3 &amp; -1 &amp; -4\end{array}\right]\)</span>.  As you can see these are all equivalent.  Furthermore, you can click and drag them to the 2-D graphics view and you will get the same lines.</p>
+<p>Lets take this a little further.  Do another tangent line but this time put in <code class="docutils literal notranslate"><span class="pre">a</span></code> for the point of tangency.  If we use function output we get, <span class="math notranslate nohighlight">\(a^{3} - 5 a^{2} + 4 a + \left(- a + x\right) \left(3 a^{2} - 10 a + 4\right) + 1\)</span>. If we click and drag this over to the graph we get the tangent line and we get a slider attached to the constant <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<figure class="align-default" id="id7">
+<img alt="x^3 - 5*x^2 + 4*x + 1 and general tangent line" src="../../_images/Der005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = x^{3} - 5 x^{2} + 4 x + 1\)</span> and General Tangent Line</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you move the slider you will see the tangent line moving along the curve.</p>
+<p>We will do an example of a tangent line to a polar coordinate curve.  Input the expression <span class="math notranslate nohighlight">\(\sin{\left(3 t \right)}\)</span>, graph it and change the graph type to polar coordinates. Now select tangent line, put the point of tangency as 2 and change to polar coordinates.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(t - \sin{\left(6 \right)} \cos{\left(2 \right)}\right) \left(\sin{\left(6 \right)} \cos{\left(2 \right)} + 3 \sin{\left(2 \right)} \cos{\left(6 \right)}\right)}{3 \cos{\left(2 \right)} \cos{\left(6 \right)} - \sin{\left(2 \right)} \sin{\left(6 \right)}} + \sin{\left(2 \right)} \sin{\left(6 \right)}\]</div>
+<p>Graphing this along with the curve gives,</p>
+<figure class="align-default" id="id8">
+<img alt="Polar Coordinate Curve and Tangent Line" src="../../_images/Der006.png" />
+<figcaption>
+<p><span class="caption-text">Polar Coordinate Curve and Tangent Line</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Doing the same but using <code class="docutils literal notranslate"><span class="pre">a</span></code> as the point of tangency we get an equation that will link to the <code class="docutils literal notranslate"><span class="pre">a</span></code> slider and give a tangent line on the polar curve at the position of the <code class="docutils literal notranslate"><span class="pre">a</span></code> slider.</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(t - \sin{\left(3 a \right)} \cos{\left(a \right)}\right) \left(3 \sin{\left(a \right)} \cos{\left(3 a \right)} + \sin{\left(3 a \right)} \cos{\left(a \right)}\right)}{- \sin{\left(a \right)} \sin{\left(3 a \right)} + 3 \cos{\left(a \right)} \cos{\left(3 a \right)}} + \sin{\left(a \right)} \sin{\left(3 a \right)}\]</div>
+<p>Since this curve has several places where there are vertical tangent lines using the matrix form would be better for the graph.  This option gives us,</p>
+<div class="math notranslate nohighlight">
+\[\left[\begin{array}{ccc}\sin{\left(2 a \right)} - 2 \sin{\left(4 a \right)} &amp; \cos{\left(2 a \right)} + 2 \cos{\left(4 a \right)} &amp; - \sin^{2}{\left(3 a \right)}\end{array}\right]\]</div>
+<p>The tangent line calculation also works with parametrically defined curves in both rectangular and polar coordinates.</p>
+<p>Input the parametric expression <span class="math notranslate nohighlight">\(\left[ \sin{\left(x \right)}, \  \cos{\left(3 x \right)}\right]\)</span>, with the syntax, <code class="docutils literal notranslate"><span class="pre">[sin(x),</span> <span class="pre">cos(3*x)]</span></code>.  Graph this in rectangular coordinates and you will see,</p>
+<figure class="align-default" id="id9">
+<img alt="Parametric Curve" src="../../_images/Der007.png" />
+<figcaption>
+<p><span class="caption-text">Parametric Curve</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we create the rectangular coordinate tangent line at 3 we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(- 3 x + 3 \sin{\left(3 \right)}\right) \sin{\left(9 \right)}}{\cos{\left(3 \right)}} + \cos{\left(9 \right)}\]</div>
+<p>and a visualization of,</p>
+<figure class="align-default" id="id10">
+<img alt="Parametric Curve and Tangent Line" src="../../_images/Der008.png" />
+<figcaption>
+<p><span class="caption-text">Parametric Curve and Tangent Line</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To do an example of polar coordinate parametric equations we will use the same parametric equations and simply shift to polar coordinates.  On the graph hide the tangent line and for the curve select parametric equations in polar coordinates and the graph should change to this,</p>
+<figure class="align-default" id="id11">
+<img alt="Polar Parametric Curve" src="../../_images/Der009.png" />
+<figcaption>
+<p><span class="caption-text">Polar Parametric Curve</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Do a tangent line at 3 again but select polar coordinates this time.  The formula will be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\left(x - \sin{\left(3 \right)} \cos{\left(\cos{\left(9 \right)} \right)}\right) \left(- 3 \sin{\left(3 \right)} \sin{\left(9 \right)} \cos{\left(\cos{\left(9 \right)} \right)} + \sin{\left(\cos{\left(9 \right)} \right)} \cos{\left(3 \right)}\right)}{\cos{\left(3 \right)} \cos{\left(\cos{\left(9 \right)} \right)} + 3 \sin{\left(3 \right)} \sin{\left(9 \right)} \sin{\left(\cos{\left(9 \right)} \right)}} + \sin{\left(3 \right)} \sin{\left(\cos{\left(9 \right)} \right)}\]</div>
+<p>and graphing it with the curve gives us,</p>
+<figure class="align-default" id="id12">
+<img alt="Polar Parametric Curve and Tangent Line" src="../../_images/Der010.png" />
+<figcaption>
+<p><span class="caption-text">Polar Parametric Curve and Tangent Line</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We can, of course, do the same with a variable point of tangency, like <code class="docutils literal notranslate"><span class="pre">a</span></code>, to get a tangent line that will follow the curve as the slider is moved.</p>
+</section>
+<section id="maximums-and-minimums">
+<h2><span class="target" id="index-5"></span>Maximums and Minimums<a class="headerlink" href="#maximums-and-minimums" title="Link to this heading">#</a></h2>
+<p>This option will allow you to find absolute or local maximums and minimums of a single variable function on a finite interval.  When this option is invoked the following dialog box will appear.</p>
+<figure class="align-default" id="id13">
+<img alt="Maximums and Minimums Dialog Box" src="../../_images/Der011.png" />
+<figcaption>
+<p><span class="caption-text">Maximums and Minimums Dialog Box</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The program will automatically find the independent variable and if you try to invoke this on a multi-variable function you will get an error.</p>
+<ul class="simple">
+<li><p>The first two inputs are for the lower and upper bounds of the interval of interest.  This must be a finite interval and the values must evaluate to real numbers.  They can be expressions, such as <code class="docutils literal notranslate"><span class="pre">pi/3</span></code> but must evaluate to a number.</p></li>
+<li><p>The Type is simply absolute or local.</p></li>
+<li><p>The Extremes allow you to select minimums, maximums, or both.</p></li>
+<li><p>The Result is a selector between values and points.  If values are selected then the output is either a single value or list of values for the extremes that are requested.  If points are selected, the output will be a list of lists where each of the inner lists is an (x, y) point specifying where the extremes occur.</p></li>
+<li><p>Numerics is a selection between calculating exact values or approximate values.  If the approximate option is selected the test points and tolerance options will be enabled. If exact mode is being used the test points and tolerance are not needed nor are they used.</p></li>
+<li><p>The Test Points is the number of points the interval is broken up into in order to approximate where the derivative of the function is 0.  Hence to find some of the critical points.</p></li>
+<li><p>The Tolerance is the minimal amount of space between the critical numbers.  So if two critical numbers are found that are within the tolerance of each other they are considered the same point.  The selector here is the exponent, so an input of 8 means the tolerance is <span class="math notranslate nohighlight">\(10^{-8}\)</span>.</p></li>
+</ul>
+<p>There is also a variable assumptions selection at the bottom.  For more about variable assumptions see the discussion at the bottom of this page.  In most cases you will leave the assumptions alone (everything real) but sometimes you may need to change these.  The methods that are involved in calculating maximums and minimums make an overarching assumption that you are working with real numbers in the interval you specified.</p>
+<p>For example, say we have the function, <span class="math notranslate nohighlight">\(f(x) = x + 2 \sin{\left(x \right)}\)</span>.</p>
+<figure class="align-default" id="id14">
+<img alt="x 2 sin(x)" src="../../_images/Der012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + 2 \sin{\left(x \right)}\)</span></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>And we find the value of the absolute maximum of this function on <span class="math notranslate nohighlight">\([-10, 10]\)</span>.  The lower bound is <span class="math notranslate nohighlight">\(-10\)</span>, the upper bound is 10, the type is Absolute, Extremes is Maximum, Result is Value, and Numerics is Exact.  The result is <span class="math notranslate nohighlight">\(\sqrt{3} + \frac{8 \pi}{3}\)</span> and if we graph this value it comes in as a horizontal line,</p>
+<figure class="align-default" id="id15">
+<img alt="x 2 sin(x) and Absolute Maximum" src="../../_images/Der013.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + 2 \sin{\left(x \right)}\)</span>  and Absolute Maximum</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we instead find the points of the absolute maximum and minimum of this function on <span class="math notranslate nohighlight">\([-10, 10]\)</span>.  The lower bound is <span class="math notranslate nohighlight">\(-10\)</span>, the upper bound is 10, the type is Absolute, Extremes are Both, Result is Point, and Numerics is Exact.  The result is</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ - \frac{8 \pi}{3}, \  - \frac{8 \pi}{3} - \sqrt{3}\right], \  \left[ \frac{8 \pi}{3}, \  \sqrt{3} + \frac{8 \pi}{3}\right]\right]\]</div>
+<p>and if we graph these points we get,</p>
+<figure class="align-default" id="id16">
+<img alt="x 2 sin(x) and Absolute Maximum Point" src="../../_images/Der014.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + 2 \sin{\left(x \right)}\)</span>  and Absolute Maximum Point</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we instead find the points of the local maximums and minimums of this function on <span class="math notranslate nohighlight">\([-10, 10]\)</span>.  The lower bound is <span class="math notranslate nohighlight">\(-10\)</span>, the upper bound is 10, the type is Local, Extremes are Both, Result is Point, and Numerics is Exact.  The result is</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ - \frac{8 \pi}{3}, \  - \frac{8 \pi}{3} - \sqrt{3}\right], \  \left[ - \frac{4 \pi}{3}, \  - \frac{4 \pi}{3} + \sqrt{3}\right], \  \left[ - \frac{2 \pi}{3}, \  - \frac{2 \pi}{3} - \sqrt{3}\right], \  \left[ \frac{2 \pi}{3}, \  \sqrt{3} + \frac{2 \pi}{3}\right], \  \left[ \frac{4 \pi}{3}, \  - \sqrt{3} + \frac{4 \pi}{3}\right], \  \left[ \frac{8 \pi}{3}, \  \sqrt{3} + \frac{8 \pi}{3}\right]\right]\]</div>
+<p>and if we graph these points we get,</p>
+<figure class="align-default" id="id17">
+<img alt="x 2 sin(x) and Local Extremes" src="../../_images/Der015.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x + 2 \sin{\left(x \right)}\)</span>  and Local Extremes</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you each of the above examples using approximate mode you will get the same solutions except in approximate form.</p>
+<p>Let’s do another example that is a little more complex. Consider the function, <span class="math notranslate nohighlight">\(f(x) = x^{2} + 5 x \sin{\left(x \right)}\)</span>.</p>
+<figure class="align-default" id="id18">
+<img alt="x^2 + 5x sin(x)" src="../../_images/Der016.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{2} + 5 x \sin{\left(x \right)}\)</span></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we try to find all the local maximums and minimums on the interval <span class="math notranslate nohighlight">\([-12, 12]\)</span> we will get an error, which simply means that the program could not find the exact solutions.  In the process it would need to find exact solutions to <span class="math notranslate nohighlight">\(5 x \cos{\left(x \right)} + 2 x + 5 \sin{\left(x \right)} = 0\)</span> and as you know, when polynomials and trigonometric functions are combined it is in general a difficult equation to solve exactly.  So in these cases you can switch to approximation mode for numerical approximations to the extremes.</p>
+<p>As for the settings, the lower bound is <span class="math notranslate nohighlight">\(-12\)</span>, the upper bound is 12, the type is Local, Extremes are Both, Result is Point, and Numerics is Approximate.  The result is</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ -10.6793241824911, \  63.2993715288081\right], \  \left[ -8.38118028622317, \  106.460095169846\right], \  \left[ -4.52845452339979, \  -1.75343549817341\right], \  \left[ -2.35003646166806, \  13.8823119041911\right], \  \left[ 0, \  0\right], \  \left[ 2.35003646166806, \  13.8823119041911\right], \  \left[ 4.52845452339979, \  -1.75343549817341\right], \  \left[ 8.38118028622317, \  106.460095169846\right], \  \left[ 10.6793241824911, \  63.2993715288081\right]\right]\]</div>
+<p>Graphing these along with the curve gives,</p>
+<figure class="align-default" id="id19">
+<img alt="x^2 + 5x sin(x) and Local Extremes" src="../../_images/Der017.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{2} + 5 x \sin{\left(x \right)}\)</span> and Local Extremes</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A few notes about the maximum and minimum calculations.</p>
+<ul class="simple">
+<li><p>Exact mode will, of course, produce exact solutions but the methods involved are more difficult and will take more time.  In addition, if the program cannot produce exact solutions it will return an error.</p></li>
+<li><p>If exact mode does fail there is a good chance that the approximate mode will be successful.</p></li>
+<li><p>Approximate mode does use numeric approximations and, in any case, when using numeric methods there is a possibility that solutions may be missed.</p></li>
+<li><p>This option works fairly well at skipping isolated singularities.  For example, with</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{x^{4} + 1}{x^{2} - 1}\]</div>
+<p>on the interval <span class="math notranslate nohighlight">\([-3, 3]\)</span>, looking for exact local extrema, it handles <span class="math notranslate nohighlight">\(x = -1\)</span> and <span class="math notranslate nohighlight">\(x = 1\)</span> as it should and returns,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ - \sqrt{1 + \sqrt{2}}, \  \frac{\sqrt{2} \left(1 + \left(1 + \sqrt{2}\right)^{2}\right)}{2}\right], \  \left[ 0, \  -1\right], \  \left[ \sqrt{1 + \sqrt{2}}, \  \frac{\sqrt{2} \left(1 + \left(1 + \sqrt{2}\right)^{2}\right)}{2}\right]\right]\]</div>
+<figure class="align-default" id="id20">
+<img alt="Exact Local Extremes" src="../../_images/Der018.png" />
+<figcaption>
+<p><span class="caption-text">Exact Local Extremes</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>For functions that do not have isolated singularities, for example, <span class="math notranslate nohighlight">\(f(x) = \ln(\sin(x))\)</span> it is better to restrict the intervals to sections that are continuous.</p></li>
+<li><p>In exact mode there are times that the output may look a bit messy, in many cases you can select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span></code> to get an approximation to the values and not need to redo the maximum/minimum process in approximate mode.  For example, with the function,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{x^{4} + x + 1}{x^{2} - 1}\]</div>
+<p>on the interval <span class="math notranslate nohighlight">\([-3, 3]\)</span>, looking for exact local extrema, we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 0\right)}, \  \frac{\operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 0\right)} + 1 + \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 0\right)}^{4}}{-1 + \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 0\right)}^{2}}\right], \  \left[ \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 1\right)}, \  \frac{\operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 1\right)} + \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 1\right)}^{4} + 1}{-1 + \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 1\right)}^{2}}\right], \  \left[ \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 2\right)}, \  \frac{1 + \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 2\right)} + \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 2\right)}^{4}}{-1 + \operatorname{CRootOf} {\left(2 x^{5} - 4 x^{3} - x^{2} - 2 x - 1, 2\right)}^{2}}\right]\right]\]</div>
+<p>which approximates to</p>
+<div class="math notranslate nohighlight">
+\[\left[ \left[ -1.4037567900355, \  3.58487919398945\right], \  \left[ -0.441902599484908, \  -0.740915239126713\right], \  \left[ 1.66430437054306, \  5.84024389246302\right]\right]\]</div>
+<figure class="align-default" id="id21">
+<img alt="Approximate Local Extremes" src="../../_images/Der019.png" />
+<figcaption>
+<p><span class="caption-text">Approximate Local Extremes</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="continuous-domain">
+<h2><span class="target" id="index-6"></span>Continuous Domain<a class="headerlink" href="#continuous-domain" title="Link to this heading">#</a></h2>
+<p>This option will open a dialog box asking for the independent variable to use, if the program is to use the entire real line or an interval as the encompassing domain and the bounds for the interval if that is selected.  The result is a union of intervals inside the encompassing domain where the function is continuous.  While this is not technically the domain of the function, with most functions studied in Calculus the domain and the continuous domain are the same.</p>
+<p>For example, if we take the function <span class="math notranslate nohighlight">\(\tan(x)\)</span> on the entire real line the result is,</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{R} \setminus \left(\left\{2 \pi k + \frac{\pi}{2}\; \middle|\; k \in \mathbb{Z}\right\} \cup \left\{2 \pi k + \frac{3 \pi}{2}\; \middle|\; k \in \mathbb{Z}\right\}\right)\]</div>
+<p>which is <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> minus the singularities. If we used the same function on the interval <span class="math notranslate nohighlight">\([0, 10]\)</span> we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[0, \frac{\pi}{2}\right) \cup \left(\frac{\pi}{2}, \frac{3 \pi}{2}\right) \cup \left(\frac{3 \pi}{2}, \frac{5 \pi}{2}\right) \cup \left(\frac{5 \pi}{2}, 10\right]\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In cases where there are a lot of singularities, such as <span class="math notranslate nohighlight">\(\tan(x)\)</span>, it is better to use the entire real line and not a large interval.  If there are a lot of intervals in the union the process can be lengthy.</p>
+</div>
+</section>
+<section id="variable-assumptions">
+<h2>Variable Assumptions<a class="headerlink" href="#variable-assumptions" title="Link to this heading">#</a></h2>
+<section id="assumptions">
+<h3><span class="target" id="index-7"></span>Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h3>
+<p>Assumptions about variables are essentially what type of number does the variable represent.  In most cases in an introductory Calculus sequence you simply assume that all variables represent real numbers, and sometimes complex numbers.  The default setting for variables is as a real number except for solving equations where we use complex numbers.</p>
+<p>As a classic example, say we input <code class="docutils literal notranslate"><span class="pre">sqrt(x^2)</span></code> into the CAS, the entry would be displayed as,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>If we select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>, a simplification that makes no assumptions about the variables, the result is still,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>But if we use <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Special</span> <span class="pre">Simplifications</span></code>, leave the settings as is, and click OK the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left|{x}\right|\]</div>
+<p>The difference is that the default domain for <code class="docutils literal notranslate"><span class="pre">x</span></code> in the Special Simplifications dialog was a real number.  In the real number system, <span class="math notranslate nohighlight">\(\sqrt{x^{2}} = \left|{x}\right|\)</span> but in the complex number system it is not.  For example, <span class="math notranslate nohighlight">\(\sqrt{i^{2}} = -1 \neq \left|{i}\right| = 1\)</span>.</p>
+<p>Another classic example is in the study of l’Hospital’s Rule.  Marquis de l’Hospital published the very first Calculus textbook in 1696, where l’Hospital’s Rule is first seen in print. l’Hospital did not discover this rule, the Swiss mathematician John Bernoulli (1667–1748) is the one who discovered the method.  l’Hospital and Bernoulli had an interesting business relationship where l’Hospital purchased the rights to this method, which is why it is named after him and not Bernoulli.  In his book l’Hospital wanted to calculate,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} \frac{\sqrt{2a^3x-x^4} - a \sqrt[3]{a^2x} }{a - \sqrt[4]{ax^3}}\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span> indeterminate form and hence can be attacked using l’Hospital’s Rule.  This expression also assumed that <span class="math notranslate nohighlight">\(a &gt; 0\)</span>.</p>
+<p>If we put this expression into our CAS <code class="docutils literal notranslate"><span class="pre">(-a*(a^2*x)^(1/3)</span> <span class="pre">+</span> <span class="pre">sqrt(2*a^3*x</span> <span class="pre">-</span> <span class="pre">x^4))/(a</span> <span class="pre">-</span> <span class="pre">(a*x^3)^(1/4))</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, when the limit dialog comes up input <code class="docutils literal notranslate"><span class="pre">x</span></code> for the variable and <code class="docutils literal notranslate"><span class="pre">a</span></code> for the limit point, and click OK.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- a^{\frac{4}{3}} \left|{a}\right|^{\frac{2}{3}} + a^{2}}{a - \left|{a}\right|}\]</div>
+<p>It should be fairly obvious that this does not work for <code class="docutils literal notranslate"><span class="pre">a</span></code> being a positive real number since the denominator is clearly 0 in this case.  This time when we select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> we will change the data type of <code class="docutils literal notranslate"><span class="pre">a</span></code> to be a positive real, and leave <code class="docutils literal notranslate"><span class="pre">x</span></code> alone.  This time the result is the correct answer for these assumptions of,</p>
+<div class="math notranslate nohighlight">
+\[\frac{16 a}{9}\]</div>
+<p>In the vast majority of cases you will not need to do anything with variable assumptions. The reason we incorporated the ability to specify assumptions about the variable data type is that in a few instances (like in the above examples) you may need to tell the program that variable belongs to a more restrictive domain.</p>
+</section>
+<section id="assumptions-user-interface">
+<h3><span class="target" id="index-8"></span>Assumptions User Interface<a class="headerlink" href="#assumptions-user-interface" title="Link to this heading">#</a></h3>
+<p>The variable assumptions user interface will look like one of the two following layouts.</p>
+<figure class="align-default" id="id22">
+<img alt="Variable Properties User Interface" src="../../_images/Assump001.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties User Interface</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>or</p>
+<figure class="align-default" id="id23">
+<img alt="Variable Properties Editor User Interface" src="../../_images/Assump002.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties Editor User Interface</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If it is the first of these then clicking the <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Variable</span> <span class="pre">Properties</span></code> button will open a dialog box with the second interface.  The second is where the changes are made.  In either of these each variable in the expression is listed with the data type we are assuming it belongs.  In the second interface you can edit the domain by first selecting the variable from the list and then selecting its type by clicking on it.</p>
+<p>The reason we included the first interface was that it was less intimidating and easier to accept as is,which is what the user will do in most cases. As noted above these assumptions do not need to be changed very often.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AlgForceOp.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Force Operation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="CalIntegration.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integration</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limit">Limit</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivative">Derivative</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit Differentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-line">Tangent Line</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#maximums-and-minimums">Maximums and Minimums</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuous-domain">Continuous Domain</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assumptions">Variable Assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-user-interface">Assumptions User Interface</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

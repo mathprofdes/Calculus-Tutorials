@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Double Integrals over Rectangular Regions &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/doubleintegralsrect';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Double Integrals over General Regions" href="doubleintegralsgen.html" />
+    <link rel="prev" title="Lagrange Multipliers" href="lagrange.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Double Integrals over Rectangular Regions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="double-integrals-over-rectangular-regions">
+<h1><span class="target" id="index-0"></span>Double Integrals over Rectangular Regions<a class="headerlink" href="#double-integrals-over-rectangular-regions" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Double integrals are constructed in a similar manner as we did with single integrals. When we defined the integral we started by considering the area under a curve over some interval.  We took the interval, subdivided it into <em>n</em> subintervals, took a sample point in each subinterval, used the sample point to create an approximating rectangle, add up all the approximating rectangle areas to get a Riemann sum, and finally take the limit of the Riemann sum as <em>n</em> went to infinity and we had the integral.</p>
+<p>Double integrals are formed in the same manner. We start with wanting the volume under a surface and over a rectangular region <span class="math notranslate nohighlight">\(R = [a, b] \times [c, d]\)</span> as in the figure below.</p>
+<figure class="align-default" id="id1">
+<img alt="Volume Under a Surface" src="../_images/DoubleInt001.png" />
+<figcaption>
+<p><span class="caption-text">Volume Under a Surface</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Take the region <em>R</em> and divide the <em>x</em> range into <em>m</em> subintervals and the <em>y</em> range into <em>n</em> subintervals.</p>
+<figure class="align-default" id="id2">
+<img alt="Region Subdivision" src="../_images/DoubleInt002.png" />
+<figcaption>
+<p><span class="caption-text">Region Subdivision</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This gives us <span class="math notranslate nohighlight">\(mn\)</span> subrectangles that make up the region <em>R</em>.  In addition, <span class="math notranslate nohighlight">\(\Delta x = \frac{b-a}{m}\)</span>, <span class="math notranslate nohighlight">\(\Delta y = \frac{d-c}{n}\)</span>, and <span class="math notranslate nohighlight">\(\Delta A = \Delta x \Delta y.\)</span>  In each rectangle choose a sample point <span class="math notranslate nohighlight">\((x_{ij}^*, y_{ij}^*).\)</span></p>
+<figure class="align-default" id="id3">
+<img alt="Approximating Volume" src="../_images/DoubleInt003.png" />
+<figcaption>
+<p><span class="caption-text">Approximating Volume</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now construct an approximating rectangular solid <span class="math notranslate nohighlight">\(R_{ij} = f(x_{ij}^*, y_{ij}^*) \Delta A.\)</span> Then we can approximate the volume under the surface as the double Riemann sum,</p>
+<div class="math notranslate nohighlight">
+\[V \approx \sum_{i = 1}^m \sum_{j = 1}^n R_{ij} = \sum_{i = 1}^m \sum_{j = 1}^n f(x_{ij}^*, y_{ij}^*) \Delta A\]</div>
+<p>Finally, take the limit, if it exists,</p>
+<div class="math notranslate nohighlight">
+\[V = \lim_{m, n \to \infty} \sum_{i = 1}^m \sum_{j = 1}^n f(x_{ij}^*, y_{ij}^*) \Delta A\]</div>
+<div class="admonition-definition-double-integral-over-a-rectangular-region admonition">
+<p class="admonition-title">Definition: Double Integral over a Rectangular Region</p>
+<p>The double integral of <span class="math notranslate nohighlight">\(f(x, y)\)</span> over a rectangular region <em>R</em> is,</p>
+<div class="math notranslate nohighlight">
+\[\iint_{R} f(x, y) \; dA = \lim_{m, n \to \infty} \sum_{i = 1}^m \sum_{j = 1}^n f(x_{ij}^*, y_{ij}^*) \Delta A\]</div>
+<p>If this limit exists.</p>
+</div>
+<p>As with single integrals, this represents a net volume, that is, the volume under the surface and above the region minus the volume below the region.</p>
+</section>
+<section id="calculating-double-integrals">
+<h2>Calculating Double Integrals<a class="headerlink" href="#calculating-double-integrals" title="Link to this heading">#</a></h2>
+<p>As with single integrals, using the definition is cumbersome to calculate.  We can formulate the calculations as an iterated integral, that is, a single integral inside another single integral.</p>
+<div class="admonition-theorem-fubinis-theorem admonition">
+<p class="admonition-title">Theorem: Fubini’s Theorem</p>
+<p>Given a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> that is continuous over a region <span class="math notranslate nohighlight">\(R = [a, b] \times [c, d]\)</span>, then,</p>
+<div class="math notranslate nohighlight">
+\[\iint_{R} f(x, y) \; dA = \iint_{R} f(x, y) \; dx \; dy = \int_a^b \int_c^d f(x, y) \; dy \; dx = \int_c^d \int_a^b f(x, y) \; dx \; dy\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that in the notation above the iterated integral really means,</p>
+<div class="math notranslate nohighlight">
+\[\int_a^b \int_c^d f(x, y) \; dy \; dx = \int_a^b \left( \int_c^d f(x, y) \; dy \right) \; dx\]</div>
+<p>In other words, we calculate the inside integral and then we integrate the result in the outer integral.</p>
+</div>
+<p>Fubini’s Theorem tells us that we can calculate the double integral by either taking the integral with respect to <em>x</em> first and then <em>y</em> or the other way around.  When doing these integrals by hand it can make a difference which order we use.  The results will be the same but it is possible that reversing the order may make the integrals easier to do.  Even when using the computer to do the integration one order may produce a better result than another.</p>
+<section id="example-f-x-y-x-y-sqrt-x-2-y-2-over-r-0-1-times-0-1">
+<h3>Example: <span class="math notranslate nohighlight">\(f(x, y) = x y \sqrt{x^{2} + y^{2}}\)</span> over <span class="math notranslate nohighlight">\(R = [0, 1] \times [0, 1]\)</span><a class="headerlink" href="#example-f-x-y-x-y-sqrt-x-2-y-2-over-r-0-1-times-0-1" title="Link to this heading">#</a></h3>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>GeoGebra will not do multiple integrals but we cn still use it to visualize the volume we are calculating.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x y sqrt(x^2 + y^2)</span>
+</pre></div>
+</div>
+<p>The graph should look like the following, note that we did scale the axes.</p>
+<figure class="align-default" id="id4">
+<img alt=":math:`f(x, y) = x y \sqrt{x^{2} + y^{2}}`" src="../_images/DoubleInt004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = x y \sqrt{x^{2} + y^{2}}\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now input the region,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(0 &lt;= x &lt;= 1)</span> <span class="go">&amp;&amp; (0 &lt;= y &lt;= 1)</span>
+</pre></div>
+</div>
+<p>Also input <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code> to get the portion of the surface restricted to the region.  The result should look like,</p>
+<figure class="align-default" id="id5">
+<img alt=":math:`f(x, y) = x y \sqrt{x^{2} + y^{2}}` on *R*" src="../_images/DoubleInt005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = x y \sqrt{x^{2} + y^{2}}\)</span> on <em>R</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>In CLAE, input the function and click and drag it over to the 3D graphics window.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*y*sqrt(x^2 + y^2)</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id6">
+<img alt=":math:`f(x, y) = x y \sqrt{x^{2} + y^{2}}`" src="../_images/DoubleInt006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = x y \sqrt{x^{2} + y^{2}}\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that we did scale the axes.  To find the double integral we select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, in the dialog box input <code class="docutils literal notranslate"><span class="pre">x</span></code> for the first variable, then <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> for the bounds, then input <code class="docutils literal notranslate"><span class="pre">y</span></code> for the second variable and <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> for its bounds.  Click OK and the result should be,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{2}{15} + \frac{4 \sqrt{2}}{15}\]</div>
+</section>
+<section id="maxima">
+<h4>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h4>
+<p>In Maxima we can find the double integral by using two integrate command together,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(x*y*sqrt(x^2 + y^2), x, 0, 1), y, 0, 1);</span>
+</pre></div>
+</div>
+<p>Maxima will ask you if <em>y</em> is positive or negative, not sure why it does since we gave the range for <em>y</em> but nonetheless input positive (or just p) and the result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{{{2}^{\frac{5}{2}}}-1}{15}-\frac{1}{15}\]</div>
+</section>
+</section>
+</section>
+<section id="double-integral-properties">
+<h2>Double Integral Properties<a class="headerlink" href="#double-integral-properties" title="Link to this heading">#</a></h2>
+<p>The double integral has similar properties to the single integral.</p>
+<div class="admonition-theorem-double-integral-properties admonition">
+<p class="admonition-title">Theorem: Double Integral Properties</p>
+<p>Assume that the functions <span class="math notranslate nohighlight">\(f(x, y)\)</span> and <span class="math notranslate nohighlight">\(g(x, y)\)</span> are integrable over the rectangular region <span class="math notranslate nohighlight">\(R\)</span> and that <span class="math notranslate nohighlight">\(S\)</span> and <span class="math notranslate nohighlight">\(T\)</span> are subregions of <span class="math notranslate nohighlight">\(R\)</span>, then,</p>
+<ol class="arabic simple">
+<li><p>The function <span class="math notranslate nohighlight">\(f(x, y) + g(x, y)\)</span> is integrable, and</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\iint_{R} f(x, y) + g(x, y) \; dA = \iint_{R} f(x, y) \; dA + \iint_{R} g(x, y) \; dA\]</div>
+<ol class="arabic simple" start="2">
+<li><p>For a constant <em>c</em>, the function <span class="math notranslate nohighlight">\(cf(x, y)\)</span> is integrable, and</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\iint_{R} c f(x, y) \; dA = c \iint_{R} f(x, y) \; dA\]</div>
+<ol class="arabic simple" start="3">
+<li><p>If <span class="math notranslate nohighlight">\(R = S \cup T\)</span> and <span class="math notranslate nohighlight">\(S \cap T = \emptyset\)</span> except for overlap on the boundaries, then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\iint_{R} f(x, y) \; dA = \iint_{S} f(x, y) \; dA + \iint_{T} f(x, y) \; dA\]</div>
+<ol class="arabic simple" start="4">
+<li><p>If <span class="math notranslate nohighlight">\(f(x, y) \geq g(x, y)\)</span> for all points in <em>R</em>, then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\iint_{R} f(x, y) \; dA \geq \iint_{R} g(x, y) \; dA\]</div>
+<ol class="arabic simple" start="5">
+<li><p>If <span class="math notranslate nohighlight">\(m \leq f(x, y) \leq M\)</span>, then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[m A(R) \leq  \iint_{R} f(x, y) \; dA \leq M A(R)\]</div>
+<ol class="arabic simple" start="6">
+<li><p>If <span class="math notranslate nohighlight">\(f(x, y) = g(x) h(y)\)</span>, then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\iint_{R} f(x, y) \; dA = \left( \int_a^b g(x) \; dx \right) \left( \int_c^d h(y) \; dy \right)\]</div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lagrange.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lagrange Multipliers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="doubleintegralsgen.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Double Integrals over General Regions</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-double-integrals">Calculating Double Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-y-x-y-sqrt-x-2-y-2-over-r-0-1-times-0-1">Example: <span class="math notranslate nohighlight">\(f(x, y) = x y \sqrt{x^{2} + y^{2}}\)</span> over <span class="math notranslate nohighlight">\(R = [0, 1] \times [0, 1]\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#double-integral-properties">Double Integral Properties</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

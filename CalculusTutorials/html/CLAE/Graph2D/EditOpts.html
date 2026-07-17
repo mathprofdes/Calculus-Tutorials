@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Editing Options &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/Graph2D/EditOpts';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="View Options" href="ViewOpts.html" />
+    <link rel="prev" title="Value" href="Value.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2D Graphs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Function y = f(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewiseRect.html">Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricRect.html">Parametric Equations (x, y) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SeqSeries.html">Sequence / Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Implicit2D.html">Implicit Relationship f(x, y) = 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContourMap.html">Contour Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HorizontalLine.html">Horizontal Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VerticalLine.html">Vertical Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyPointSet.html">Empty Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearSystem.html">Linear System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DirectionField.html">Direction Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EulerCurve.html">Euler’s Method Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolarFunction.html">Polar Function r = f(t)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewisePolar.html">Polar Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricPolar.html">Polar Parametric Equations (r, theta) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Value</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Editing Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotViewer.html">Snapshot Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AdvPlotCreator.html">Advanced Plot Creator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LegendOpts.html">Legend Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2D Graphs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Editing Options</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="editing-options">
+<h1>Editing Options<a class="headerlink" href="#editing-options" title="Link to this heading">#</a></h1>
+<section id="copy-expression">
+<h2>Copy Expression<a class="headerlink" href="#copy-expression" title="Link to this heading">#</a></h2>
+<p>Copies the expression to the clipboard in SymPy syntax.  You would use this option if you were going to copy and paste the expression back to the CAS or paste the expression into another instance of the program.   Note that a Drag-and-Drop from the graphics manager to the CAS or another instance of the program will do the same thing.</p>
+</section>
+<section id="copy-expression-with-slider-values">
+<h2>Copy Expression with Slider Values<a class="headerlink" href="#copy-expression-with-slider-values" title="Link to this heading">#</a></h2>
+<p>Copies the expression to the clipboard in SymPy syntax and loads the current slider values into the constants in the expression.  You would use this option if you were going to copy and paste the expression with slider values back to the CAS or paste the expression into another instance of the program.   For example, if you have the expression <span class="math notranslate nohighlight">\(a \sin{\left(b x + c \right)}\)</span> in the graphics manager and have the a slider set to 3, b slider to 4 and c slider to -2, this option will copy <code class="docutils literal notranslate"><span class="pre">3.0*sin(4.0*x</span> <span class="pre">-</span> <span class="pre">2.0)</span></code> to the clipboard.</p>
+</section>
+<section id="paste-expression">
+<h2>Paste Expression<a class="headerlink" href="#paste-expression" title="Link to this heading">#</a></h2>
+<p>This will paste the contents of the clipboard into the graphics manager.  It is assumed that the clipboard contains text that is SymPy syntax for a legitimate expression.  If the program cannot parse the clipboard expression into a graphics object you will get an error.</p>
+</section>
+<section id="duplicate-object">
+<h2>Duplicate Object<a class="headerlink" href="#duplicate-object" title="Link to this heading">#</a></h2>
+<p>This makes a copy of the object and creates a new graphics entry from this object.  Note that the graphics type and all the attributes of the original object are duplicated into this new object.</p>
+</section>
+<section id="duplicate-object-with-slider-values">
+<h2>Duplicate Object with Slider Values<a class="headerlink" href="#duplicate-object-with-slider-values" title="Link to this heading">#</a></h2>
+<p>This makes a copy of the object, substituting in the current slider values, and creates a new graphics entry from this object.  Note that the graphics type and all the attributes of the original object are duplicated into this new object.  The only difference is that the constants have been replaced with the values of the sliders.</p>
+</section>
+<section id="copy-selected-object-description">
+<h2>Copy Selected Object Description<a class="headerlink" href="#copy-selected-object-description" title="Link to this heading">#</a></h2>
+<p>This copies the description of the graphics object to the clipboard.  Note that when a description id too long it is truncated with … at the end.  This option copies the entire description even if the display of the description is truncated.</p>
+</section>
+<section id="copy-items-list-to-image">
+<h2>Copy Items List to Image<a class="headerlink" href="#copy-items-list-to-image" title="Link to this heading">#</a></h2>
+<p>This will copy the item list to an image that can be pasted into another application.  When this option is invoked a dialog box will appear asking the user to select the font for the description, the default is the font currently being used for the description, the extra padding to use for the image, and how many characters to trim the descriptions to.  When the user clicks OK the image of the item list will be sent to the clipboard.  This option would be useful to create an external legend of the graphics window.</p>
+</section>
+<section id="copy-items-list-to-text">
+<h2>Copy Items List to Text<a class="headerlink" href="#copy-items-list-to-text" title="Link to this heading">#</a></h2>
+<p>This will copy the item list to text that can be pasted into another application. Note that the color boxes for the objects are not copied as they are in the list to image option above.</p>
+</section>
+<section id="copy-slider-values-to-image">
+<h2>Copy Slider Values to Image<a class="headerlink" href="#copy-slider-values-to-image" title="Link to this heading">#</a></h2>
+<p>This will copy the slider list along with the current slider settings to an image that can be pasted into another application.  When this option is invoked a dialog box will appear asking the user to select the font for the text, the default is the font currently being used for the description, the extra padding to use for the image, and how many characters to trim the entries to.  When the user clicks OK the image of the slider value list will be sent to the clipboard.</p>
+</section>
+<section id="copy-slider-values-to-text">
+<h2>Copy Slider Values to Text<a class="headerlink" href="#copy-slider-values-to-text" title="Link to this heading">#</a></h2>
+<p>This will copy the slider value list to text that can be pasted into another application.</p>
+</section>
+<section id="delete-selected-object">
+<h2>Delete Selected Object<a class="headerlink" href="#delete-selected-object" title="Link to this heading">#</a></h2>
+<p>This removes the selected graphics object from the plot.</p>
+</section>
+<section id="undo">
+<h2>Undo<a class="headerlink" href="#undo" title="Link to this heading">#</a></h2>
+<p>Undoes the last edit of the graph.</p>
+</section>
+<section id="redo">
+<h2>Redo<a class="headerlink" href="#redo" title="Link to this heading">#</a></h2>
+<p>Redoes the last edit of the graph.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Value.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Value</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ViewOpts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">View Options</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-expression">Copy Expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-expression-with-slider-values">Copy Expression with Slider Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paste-expression">Paste Expression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duplicate-object">Duplicate Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#duplicate-object-with-slider-values">Duplicate Object with Slider Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-selected-object-description">Copy Selected Object Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-items-list-to-image">Copy Items List to Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-items-list-to-text">Copy Items List to Text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-slider-values-to-image">Copy Slider Values to Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copy-slider-values-to-text">Copy Slider Values to Text</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#delete-selected-object">Delete Selected Object</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#undo">Undo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#redo">Redo</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

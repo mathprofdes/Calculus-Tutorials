@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Divergence and Curl &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/divergencecurl';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parametric Surfaces" href="parasurface.html" />
+    <link rel="prev" title="Green’s Theorem" href="greenstheorem.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Divergence and Curl</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="divergence-and-curl">
+<h1><span class="target" id="index-0"></span>Divergence and Curl<a class="headerlink" href="#divergence-and-curl" title="Link to this heading">#</a></h1>
+<p>Divergence and curl are two very important operations we can do on a vector field that measure certain properties of the vector field, tendency for the field to repel or attract at a point and the tendency for the field to rotate around a point.  Curl and divergence have applications to many areas of physics and engineering, fluid mechanics, electromagnetism, and elasticity theory, to name a few.</p>
+<section id="curl">
+<h2>Curl<a class="headerlink" href="#curl" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-curl admonition">
+<p class="admonition-title">Definition: Curl</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q, R)\)</span> be a vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, then the curl of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[{\rm curl}(\mathbf{F}) = \left( \frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \mathbf{i} + \left( \frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) \mathbf{j} + \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathbf{k}\]</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The curl is easier to remember if we look at it as follows.  Define <span class="math notranslate nohighlight">\(\nabla\)</span> (“del”) as the operator,</p>
+<div class="math notranslate nohighlight">
+\[\nabla = \left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right)\]</div>
+<p>Then we can write the gradiant as,</p>
+<div class="math notranslate nohighlight">
+\[\nabla f = \left( \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} \right) f = \left( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)\]</div>
+<p>In addition, we can write the curl as the cross product of del and the field,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\rm curl}(\mathbf{F}) = \nabla \times \mathbf{F} = \left|  \begin{array}{ccc} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ \frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \\
+P &amp; Q &amp; R \end{array} \right|\end{split}\]</div>
+<p>Note that this is not really a cross product since <span class="math notranslate nohighlight">\(\nabla\)</span> is an operator and not a vector.  Nonetheless, if we relax the details here it does make for an easier way to generate the curl formula.</p>
+</div>
+<section id="example-curl-calculation-and-visualization">
+<h3>Example: Curl Calculation and Visualization<a class="headerlink" href="#example-curl-calculation-and-visualization" title="Link to this heading">#</a></h3>
+<p>In this example we will be looking at the vector field,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F} = (\sin{\left(y \right)}, \  \cos{\left(x \right)}, \  0)\]</div>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Input the field vector,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[sin(y),cos(x),0]</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Curl</span></code> a dialog box will appear asking for the variable list to use.  It will be populated with <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> automatically but not <code class="docutils literal notranslate"><span class="pre">z</span></code> since it does not appear as a variable in the vector.  Edit the variable list to <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code>.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}0\\0\\- \sin{\left(x \right)} - \cos{\left(y \right)}\end{array}\right]\end{split}\]</div>
+<p>Since this is not the zero vector we know that the vector field has some rotational properties.  If we view this field from above and zoom in a bit we can see the rotational properties of the field.</p>
+<figure class="align-default" id="id3">
+<img alt="Rotational Field" src="../_images/DivCurl001.png" />
+<figcaption>
+<p><span class="caption-text">Rotational Field</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-theorem-curl-of-a-conservative-vector-field admonition">
+<p class="admonition-title">Theorem: Curl of a Conservative Vector Field</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> is a function of three variables with continuous second partials then</p>
+<div class="math notranslate nohighlight">
+\[{\rm curl}(\nabla f) = \mathbf{0}\]</div>
+<p>Hence if <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a conservative vector field then</p>
+<div class="math notranslate nohighlight">
+\[{\rm curl}(\mathbf{F}) = \mathbf{0}\]</div>
+</div>
+</section>
+</section>
+<section id="example-f-x-y-z-sin-left-x-right-cos-left-y-z-right">
+<h3>Example: <span class="math notranslate nohighlight">\(f(x, y, z) = \sin{\left(x \right)} \cos{\left(y + z \right)}\)</span><a class="headerlink" href="#example-f-x-y-z-sin-left-x-right-cos-left-y-z-right" title="Link to this heading">#</a></h3>
+<p>In this example we will calculate <span class="math notranslate nohighlight">\({\rm curl}(\nabla f)\)</span> for the function, <span class="math notranslate nohighlight">\(f(x, y, z) = \sin{\left(x \right)} \cos{\left(y + z \right)}.\)</span></p>
+<section id="id1">
+<h4>CLAE<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)*cos(y + z)</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Gradiant</span></code> a dialog box will appear asking for the variable list to use.  It will be populated with <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,z]</span></code> automatically, click OK.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(x \right)} \cos{\left(y + z \right)}\\- \sin{\left(x \right)} \sin{\left(y + z \right)}\\- \sin{\left(x \right)} \sin{\left(y + z \right)}\end{array}\right]\end{split}\]</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Curl</span></code> a dialog box will appear asking for the variable list to use.  It will be populated with <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">z]</span></code> automatically, click OK.   The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}0\\0\\0\end{array}\right]\end{split}\]</div>
+<p>as expected.</p>
+<p>There is a converse to the above theorem, with the right conditions.</p>
+<div class="admonition-theorem-conservative-vector-field-test admonition">
+<p class="admonition-title">Theorem: Conservative Vector Field Test</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a vector field on a simply connected domain in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> whose component functions have continuous partial derivatives and <span class="math notranslate nohighlight">\({\rm curl}(\mathbf{F}) = \mathbf{0}\)</span>, then <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is a conservative vector field.</p>
+</div>
+<p>The curl of a vector field at a point is a measure of the field’s rotation around that point.  If the curl is zero at that point then the field is not rotating at all around that point and we say that the field is irrotational at that point.</p>
+</section>
+</section>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<p>In this example we will be looking at the vector field,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{F} = (\sin{\left(y \right)}, \  \cos{\left(x \right)}, \  0)\]</div>
+<p>We calculated the curl of this field above and got,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}0\\0\\- \sin{\left(x \right)} - \cos{\left(y \right)}\end{array}\right]\end{split}\]</div>
+<p>Since this is not the zero vector we know that the field is not conservative.</p>
+</section>
+</section>
+<section id="divergence">
+<h2>Divergence<a class="headerlink" href="#divergence" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-divergence admonition">
+<p class="admonition-title">Definition: Divergence</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q, R)\)</span> be a vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, then the divergence of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}(\mathbf{F}) = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\]</div>
+<p>Using our del operator we can think of this as,</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}(\mathbf{F}) = \nabla \cdot \mathbf{F}\]</div>
+</div>
+<div class="admonition-theorem-div-of-the-curl admonition">
+<p class="admonition-title">Theorem: Div of the Curl</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> be a vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}({\rm curl}(\mathbf{F})) = 0\]</div>
+</div>
+<p>Just as the curl is a measure of the rotation of the field the divergence is a measure of flow of the field from a point.  That is, the divergence at a point represents the net rate of change of the field flowing from the point. If the divergence is 0 at a point then the field is not flowing from that point and we say that the field is incompressible at that point.</p>
+<section id="example-left-sin-left-x-right-cos-left-y-right-sin-left-x-z-right-right">
+<h3>Example: <span class="math notranslate nohighlight">\(\left( \sin{\left(x \right)}, \  \cos{\left(y \right)}, \  \sin{\left(x + z \right)}\right)\)</span><a class="headerlink" href="#example-left-sin-left-x-right-cos-left-y-right-sin-left-x-z-right-right" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the field vector,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[sin(x),cos(y),sin(x + z)]</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Vector</span> <span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Divergence</span></code> a dialog box will appear asking for the variable list to use.  It will be populated with <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y,z]</span></code> automatically, click OK.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[- \sin{\left(y \right)} + \cos{\left(x \right)} + \cos{\left(x + z \right)}\]</div>
+<p>If we evaluate this at the origin we get 2, so there is a net rate of change of 2 of this field out of the origin.  If we evaluate this at <span class="math notranslate nohighlight">\((1, 2, 3)\)</span> we get,</p>
+<div class="math notranslate nohighlight">
+\[- \sin{\left(2 \right)} + \cos{\left(4 \right)} + \cos{\left(1 \right)} \approx -1.0226387418211538926\]</div>
+<p>so there is net rate of change of <span class="math notranslate nohighlight">\(-1.0226387418211538926\)</span> the field at the point <span class="math notranslate nohighlight">\((1, 2, 3).\)</span></p>
+</section>
+</section>
+</section>
+<section id="divergence-and-curl-in-two-variables">
+<h2>Divergence and Curl in Two Variables<a class="headerlink" href="#divergence-and-curl-in-two-variables" title="Link to this heading">#</a></h2>
+<p>In the above definitions we assumed that the vector field <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> was in three dimensions, we can define both the divergence and the curl for vector fields in two dimensions.</p>
+<div class="admonition-definition-divergence-and-curl-in-two-variables admonition">
+<p class="admonition-title">Definition: Divergence and Curl in Two Variables</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q)\)</span> be a vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, then the divergence of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}(\mathbf{F}) = \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y}\]</div>
+<p>and the curl of <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}{\rm curl}(\mathbf{F}) = \nabla \times \mathbf{F} = \left|  \begin{array}{ccc} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ \frac{\partial}{\partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \\
+P &amp; Q &amp; 0 \end{array} \right| = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathbf{k}\end{split}\]</div>
+</div>
+</section>
+<section id="vector-forms-of-green-s-theorem">
+<h2>Vector Forms of Green’s Theorem<a class="headerlink" href="#vector-forms-of-green-s-theorem" title="Link to this heading">#</a></h2>
+<p>Note that, if <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q)\)</span> be a vector field in <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[{\rm curl}(\mathbf{F}) = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathbf{k}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[{\rm curl}(\mathbf{F}) \cdot \mathbf{k} = \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \mathbf{k} \cdot \mathbf{k} = \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\]</div>
+<div class="admonition-theorem-tangential-form-of-green-s-theorem admonition">
+<p class="admonition-title">Theorem:  Tangential Form of Green’s Theorem</p>
+<p>If <em>C</em> is a positively oriented, piecewise-smooth, simple closed curve and <em>D</em> is the region bounded by the curve <em>C</em>. If <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q)\)</span> where <em>P</em> and <em>Q</em> have continuous partial derivatives on an open region containing <em>D</em>, then</p>
+<div class="math notranslate nohighlight">
+\[\oint_C \mathbf{F} \cdot d\mathbf{r} = \oint_C \mathbf{F} \cdot \mathbf{T} \; ds  =  \iint_D \left( \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \; dA  = \iint_D {\rm curl}(\mathbf{F}) \cdot \mathbf{k} \; dA\]</div>
+</div>
+<p>We can envision the <span class="math notranslate nohighlight">\(\displaystyle \oint_C \mathbf{F} \cdot \mathbf{T} \; ds\)</span> portion of this calculation as the dot product of the unit tangent with the field as we traverse the curve.  We can illustrate this in the following graph.</p>
+<figure class="align-default" id="id4">
+<img alt="Tangential Form of Green's Theorem" src="../_images/GreenVec001.png" />
+<figcaption>
+<p><span class="caption-text">Tangential Form of Green’s Theorem</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The other vector form of Green’s Theorem is when we do the same thing with the unit normal vector, <span class="math notranslate nohighlight">\(\displaystyle \oint_C \mathbf{F} \cdot \mathbf{N} \; ds.\)</span></p>
+<figure class="align-default" id="id5">
+<img alt="Normal (Flux) Form of Green's Theorem" src="../_images/GreenVec002.png" />
+<figcaption>
+<p><span class="caption-text">Normal (Flux) Form of Green’s Theorem</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is fairly easy to derive, let <span class="math notranslate nohighlight">\(\mathbf{r}(t) = x(t) \mathbf{i} + y(t) \mathbf{j}\)</span>, with <span class="math notranslate nohighlight">\(a \leq t \leq t,\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{T}(t) = \frac{x'(t)}{|\mathbf{r}'(t)|} \mathbf{i} + \frac{y'(t)}{|\mathbf{r}'(t)|} \mathbf{j}\]</div>
+<p>If we think about this and our simple rise over run definition for the slope, and the perpendicular vector has the negative reciprocal slope then we can write,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{N}(t) = \frac{y'(t)}{|\mathbf{r}'(t)|} \mathbf{i} - \frac{x'(t)}{|\mathbf{r}'(t)|} \mathbf{j}\]</div>
+<p>Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\oint_C \mathbf{F} \cdot \mathbf{N} \; ds &amp; = \int_a^b \left( \mathbf{F} \cdot \mathbf{N} \right)(t) |\mathbf{r}'(t)| \; dt \\
+&amp; = \int_a^b \left( \frac{P y'(t)}{|\mathbf{r}'(t)|} - \frac{Q x'(t)}{|\mathbf{r}'(t)|}  \right) |\mathbf{r}'(t)| \; dt \\
+&amp; = \int_a^b P y'(t) \; dt - Q x'(t) \; dt \\
+&amp; = \int_C P \; dy - Q \; dx \\
+&amp; = \iint_D \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \right) \; dA  = \iint_D {\rm div}(\mathbf{F}) \; dA\end{split}\]</div>
+<div class="admonition-theorem-normal-flux-form-of-green-s-theorem admonition">
+<p class="admonition-title">Theorem:  Normal (Flux) Form of Green’s Theorem</p>
+<p>If <em>C</em> is a positively oriented, piecewise-smooth, simple closed curve and <em>D</em> is the region bounded by the curve <em>C</em>. If <span class="math notranslate nohighlight">\(\mathbf{F} = (P, Q)\)</span> where <em>P</em> and <em>Q</em> have continuous partial derivatives on an open region containing <em>D</em>, then</p>
+<div class="math notranslate nohighlight">
+\[\oint_C \mathbf{F} \cdot \mathbf{N} \; ds = \iint_D \left( \frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} \right) \; dA  = \iint_D {\rm div}(\mathbf{F}) \; dA\]</div>
+</div>
+</section>
+<section id="laplace-operator">
+<h2>Laplace Operator<a class="headerlink" href="#laplace-operator" title="Link to this heading">#</a></h2>
+<p>We know that the curl of a gradiant is zero.</p>
+<div class="math notranslate nohighlight">
+\[{\rm curl}(\nabla f) = \mathbf{0}\]</div>
+<p>One question is what is the divergence of a gradiant.</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}(\nabla f) = \mathbf{0}\]</div>
+<p>So if <span class="math notranslate nohighlight">\(f\)</span> is a function of two variables then</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}(\nabla f) = \nabla \cdot (\nabla f) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}\]</div>
+<p>and if <span class="math notranslate nohighlight">\(f\)</span> is a function of three variables then</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}(\nabla f) = \nabla \cdot (\nabla f) = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial x^2}\]</div>
+<p>This operation is used extensively in mathematics so we have an abbreviation for the operator.</p>
+<div class="math notranslate nohighlight">
+\[{\rm div}(\nabla f) = \nabla \cdot (\nabla f) = \nabla^2 f\]</div>
+<p>this is called the Laplace operator do to its relation to Laplace’s equation.  Laplace’s equation is simply <span class="math notranslate nohighlight">\(\nabla^2 f = 0.\)</span>  Any function that satisfies Laplace’s equation is said to be harmonic, these have many applications in physics, engineering, and differential equations.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="greenstheorem.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Green’s Theorem</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="parasurface.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Parametric Surfaces</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#curl">Curl</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-curl-calculation-and-visualization">Example: Curl Calculation and Visualization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-y-z-sin-left-x-right-cos-left-y-z-right">Example: <span class="math notranslate nohighlight">\(f(x, y, z) = \sin{\left(x \right)} \cos{\left(y + z \right)}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence">Divergence</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-left-sin-left-x-right-cos-left-y-right-sin-left-x-z-right-right">Example: <span class="math notranslate nohighlight">\(\left( \sin{\left(x \right)}, \  \cos{\left(y \right)}, \  \sin{\left(x + z \right)}\right)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#divergence-and-curl-in-two-variables">Divergence and Curl in Two Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vector-forms-of-green-s-theorem">Vector Forms of Green’s Theorem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#laplace-operator">Laplace Operator</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

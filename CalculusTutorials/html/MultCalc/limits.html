@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Limits and Continuity &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/limits';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Partial Derivatives" href="partial.html" />
+    <link rel="prev" title="Functions of Several Variables" href="fctsevvars.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Limits and Continuity</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="limits-and-continuity">
+<h1><span class="target" id="index-0"></span>Limits and Continuity<a class="headerlink" href="#limits-and-continuity" title="Link to this heading">#</a></h1>
+<section id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h2>
+<p>Limits for functions of two variables are a little more difficult to prove then their one variable counterparts. The big difference is that the domain of a function in two variables is a portion of the plane and not an interval of the real line.  With one variable functions we can only approach the limit point in two directions, from above or from below, and if these match we have a limit.  With a function of two variables there are an infinite number of pathways we can approach a point, so it is not possible to examine all of these possibilities individually. We can, however, prove that a limit of a function in two variables exists.  The method here is similar to the precise definition of a limit of a function of one variable, that is, the <span class="math notranslate nohighlight">\(\delta \; \epsilon\)</span> definition of a limit.</p>
+<div class="admonition-definition-limit-of-functions-of-two-variables admonition">
+<p class="admonition-title">Definition: Limit of Functions of Two Variables</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x, y)\)</span> be a function of two variables whose domain <em>D</em> contains points close to the point <span class="math notranslate nohighlight">\((a, b).\)</span>  We say that the limit of <span class="math notranslate nohighlight">\(f(x, y)\)</span> as <span class="math notranslate nohighlight">\((x, y)\)</span> approaches <span class="math notranslate nohighlight">\((a, b)\)</span> is <em>L</em> if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> there exists a <span class="math notranslate nohighlight">\(\delta &gt; 0\)</span> such that if <span class="math notranslate nohighlight">\((x, y) \in D\)</span> and <span class="math notranslate nohighlight">\(0 &lt; \sqrt{(x-a)^2 + (y-b)^2} &lt; \delta\)</span> then <span class="math notranslate nohighlight">\(|f(x, y) - L| &lt; \epsilon.\)</span>  In this case we write,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{(x, y) \to (a, b)} f(x, y) = L\]</div>
+</div>
+<p>As with proving limits using the precise definition, proving that a limit exists using this definition can be algebraically complex.  The properties of limits for functions of two variables are similar to those for one variable.</p>
+<div class="admonition-theorem-limit-properties admonition">
+<p class="admonition-title">Theorem: Limit Properties</p>
+<p>Assume that <em>L</em> and <em>M</em> are real numbers, <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} f(x, y) = L,\)</span> <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} g(x, y) = M,\)</span> and <em>c</em> is a constant.  Then,</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} c = c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} x = a\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} y = b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} f(x, y) + g(x, y) = L + M\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} f(x, y) - g(x, y) = L - M\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} c f(x, y) = c L\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} f(x, y) g(x, y) = L M\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} \frac{f(x, y)}{g(x, y)} = \frac{L}{M}\)</span> as long as <span class="math notranslate nohighlight">\(M \neq 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} (f(x, y))^n = L^n\)</span> for any positive integer <em>n</em>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} \sqrt[n]{f(x, y)} = \sqrt[n]{L}\)</span>  for all <em>L</em> if <em>n</em> is odd and positive, and for <span class="math notranslate nohighlight">\(L \geq 0\)</span> if <em>n</em> is even and positive.</p></li>
+</ol>
+</div>
+<p>Although proving a limit exists is difficult, proving that a limit does not exist is almost the same as it is for one variable functions.  In the one variable case we look at the limits from the left and right and if they do not match we now that the limit does not exist.  In the two variable case we simply need two different pathways into the point <span class="math notranslate nohighlight">\((a, b)\)</span> that produce different results.  These are easy to calculate since once the path is substituted into the function it becomes a function of a single variable, and then the limit is usually easy to find.  The trick here is to find the paths.</p>
+<section id="example-lim-x-y-to-0-0-frac-2-x-y-x-2-y-2">
+<h3>Example: <span class="math notranslate nohighlight">\(\lim_{(x, y) \to (0, 0)} \frac{2 x y}{x^{2} + y^{2}}\)</span><a class="headerlink" href="#example-lim-x-y-to-0-0-frac-2-x-y-x-2-y-2" title="Link to this heading">#</a></h3>
+<p>In this example we will show that <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (0, 0)} \frac{2 x y}{x^{2} + y^{2}}\)</span> does not exist.</p>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2 x y/(x^2 + y^2)</span>
+</pre></div>
+</div>
+<p>Yhe image looks like the following,</p>
+<figure class="align-default" id="id2">
+<img alt=":math:`\frac{2 x y}{x^{2} + y^{2}}`" src="../_images/FctSevVars034.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\frac{2 x y}{x^{2} + y^{2}}\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Noticed that the surface is pinched at the origin. So if we approach the origin from the top of the ridge we will probably get 1 and if we approach the origin from the valley below we will probably get <span class="math notranslate nohighlight">\(-1\)</span>.  We need to verify this, so we need to find the equations of these two pathways.  The ridge seems to be along the line <span class="math notranslate nohighlight">\(y = x\)</span> and the valley seems to be along the line <span class="math notranslate nohighlight">\(y = -x.\)</span></p>
+<p>We will start with <span class="math notranslate nohighlight">\(y = x\)</span>, assuming that the surface was named <code class="docutils literal notranslate"><span class="pre">a</span></code> input <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">x)</span></code>. you will notice that GeoGebra did not simplify the result, if we now input <code class="docutils literal notranslate"><span class="pre">Simplify(f)</span></code> we get the result of 1.  Hence the limit as <em>x</em> approaches 0 is also 1.  Doing the same with <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">-x)</span></code> produces <span class="math notranslate nohighlight">\(-1\)</span>, and hence so is the limit.  We have found two different paths to the origin that produce different results, so the limit does not exist.</p>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2*x*y/(x^2 + y^2)</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window, note that we did zoom in and increased the grid divisions.  Since the function is undefined at the origin there is a break there and increasing the number of grid divisions produces a better image.</p>
+<figure class="align-default" id="id3">
+<img alt=":math:`\frac{2 x y}{x^{2} + y^{2}}`" src="../_images/FctSevVars033.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\frac{2 x y}{x^{2} + y^{2}}\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Noticed that the surface is pinched at the origin. So if we approach the origin from the top of the ridge we will probably get 1 and if we approach the origin from the valley below we will probably get <span class="math notranslate nohighlight">\(-1\)</span>.  We need to verify this, so we need to find the equations of these two pathways.  The ridge seems to be along the line <span class="math notranslate nohighlight">\(y = x\)</span> and the valley seems to be along the line <span class="math notranslate nohighlight">\(y = -x.\)</span></p>
+<p>We will start with <span class="math notranslate nohighlight">\(y = x\)</span>, select the function then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, set the variable to <code class="docutils literal notranslate"><span class="pre">y</span></code> and the expression to <code class="docutils literal notranslate"><span class="pre">x</span></code>, the result is 1.  Hence the limit as <em>x</em> approaches 0 is also 1.  Doing the same with <span class="math notranslate nohighlight">\(y = -x\)</span> produces <span class="math notranslate nohighlight">\(-1\)</span>, and hence so is the limit.  We have found two different paths to the origin that produce different results, so the limit does not exist.</p>
+</section>
+</section>
+<section id="example-lim-x-y-to-0-0-frac-x-y-4-x-2-y-8">
+<h3>Example: <span class="math notranslate nohighlight">\(\lim_{(x, y) \to (0, 0)} \frac{x y^{4}}{x^{2} + y^{8}}\)</span><a class="headerlink" href="#example-lim-x-y-to-0-0-frac-x-y-4-x-2-y-8" title="Link to this heading">#</a></h3>
+<p>In this example we will show that <span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (0, 0)} \frac{x y^{4}}{x^{2} + y^{8}}\)</span>
+does not exist.</p>
+<section id="id1">
+<h4>CLAE<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*y^4/(x^2 + y^8)</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window, note that we did zoom in and increased the grid divisions.  Since the function is undefined at the origin there is a break there and increasing the number of grid divisions produces a better image.</p>
+<figure class="align-default" id="id4">
+<img alt=":math:`\frac{x y^{4}}{x^{2} + y^{8}}`" src="../_images/FctSevVars035.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\frac{x y^{4}}{x^{2} + y^{8}}\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Noticed that this surface is also pinched at the origin and that there is a ridge and a valley both approacing the origin. The trick is to find the equations of the ridge and the valley.  A little examination, and playing around, of this gives us the possibility that <span class="math notranslate nohighlight">\(x = y^4\)</span> and <span class="math notranslate nohighlight">\(x = -y^4.\)</span>  If we play around with the function sheets we see that <span class="math notranslate nohighlight">\(x = y^4\)</span> gives us a sheet that follows the ridge.</p>
+<figure class="align-default" id="id5">
+<img alt=":math:`\frac{x y^{4}}{x^{2} + y^{8}}`" src="../_images/FctSevVars036.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\frac{x y^{4}}{x^{2} + y^{8}}\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will start with <span class="math notranslate nohighlight">\(x = y^4\)</span>, select the function then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, set the variable to <code class="docutils literal notranslate"><span class="pre">x</span></code> and the expression to <code class="docutils literal notranslate"><span class="pre">y^4</span></code>, the result is 1/2.  Hence the limit as <em>y</em> approaches 0 is also 1/2.  Doing the same with <span class="math notranslate nohighlight">\(x = -y^4\)</span> produces <span class="math notranslate nohighlight">\(-1/2\)</span>, and hence so is the limit.  We have found two different paths to the origin that produce different results, so the limit does not exist.</p>
+</section>
+</section>
+</section>
+<section id="continuity">
+<h2>Continuity<a class="headerlink" href="#continuity" title="Link to this heading">#</a></h2>
+<p>Continuity has the same definition for functions of two variables as it does for one variable functions.  Of course, the big difference here is that the limit is significantly different.</p>
+<div class="admonition-definition-continuity-of-functions-of-two-variables admonition">
+<p class="admonition-title">Definition: Continuity of Functions of Two Variables</p>
+<p>A function <span class="math notranslate nohighlight">\(f(x, y)\)</span> is continuous at a point <span class="math notranslate nohighlight">\((a, b)\)</span> in its domain if the following conditions are satisfied.</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(a, b)\)</span> exists.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} f(x, y)\)</span> exists.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{(x, y) \to (a, b)} f(x, y) = f(a, b)\)</span></p></li>
+</ol>
+</div>
+<p>Properties of continuity are also similar, although we need to be a little careful with composition.</p>
+<div class="admonition-theorem-properties-of-continuity admonition">
+<p class="admonition-title">Theorem: Properties of Continuity</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(f(x, y)\)</span> and  <span class="math notranslate nohighlight">\(g(x, y)\)</span> are continuous at <span class="math notranslate nohighlight">\((a, b)\)</span> then both <span class="math notranslate nohighlight">\(f(x, y) + g(x, y)\)</span> and <span class="math notranslate nohighlight">\(f(x, y) - g(x, y)\)</span> are continuous at <span class="math notranslate nohighlight">\((a, b).\)</span></p></li>
+<li><p>If <span class="math notranslate nohighlight">\(f(x, y)\)</span> is continuous at <span class="math notranslate nohighlight">\((a, b)\)</span>, <span class="math notranslate nohighlight">\(f(a, b) = c\)</span>, <span class="math notranslate nohighlight">\(g(x)\)</span> is continuous at <em>c</em>, then <span class="math notranslate nohighlight">\(g(f(x, y))\)</span> is continuous at <span class="math notranslate nohighlight">\((a, b).\)</span></p></li>
+</ul>
+</div>
+<p>Just as with functions of one variable we use the concept of continuity, along with knowing classes of continuous functions, to realize when we can use function evaluation to calculate a limit.  As with functions of one variable we know that polynomials, rational functions, trigonometric functions, hyperbolic functions, exponential functions, and logarithmic functions are continuous on their domains.  So for example, we know that the function <span class="math notranslate nohighlight">\(\displaystyle \cos\left( \frac{x^2-y}{x^3-xy+1} \right)\)</span> is continuous on its domain and hence we can evaluate,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{(x, y) \to (2, 4)} \cos\left( \frac{x^2-y}{x^3-xy+1} \right) = \cos\left( \frac{2^2-4}{2^3-2\cdot4+1} \right) = \cos(0) = 1\]</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="fctsevvars.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Functions of Several Variables</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="partial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Partial Derivatives</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-y-to-0-0-frac-2-x-y-x-2-y-2">Example: <span class="math notranslate nohighlight">\(\lim_{(x, y) \to (0, 0)} \frac{2 x y}{x^{2} + y^{2}}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-lim-x-y-to-0-0-frac-x-y-4-x-2-y-8">Example: <span class="math notranslate nohighlight">\(\lim_{(x, y) \to (0, 0)} \frac{x y^{4}}{x^{2} + y^{8}}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity">Continuity</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

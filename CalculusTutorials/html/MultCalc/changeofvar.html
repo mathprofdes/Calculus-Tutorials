@@ -1,0 +1,821 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Change of Variables in Multiple Integrals &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/changeofvar';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vector Fields" href="vecfields.html" />
+    <link rel="prev" title="Centers of Mass and Moments of Inertia" href="centermass.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Change of Variables in Multiple Integrals</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="change-of-variables-in-multiple-integrals">
+<h1><span class="target" id="index-0"></span>Change of Variables in Multiple Integrals<a class="headerlink" href="#change-of-variables-in-multiple-integrals" title="Link to this heading">#</a></h1>
+<p>When we converted a double integral to polar coordinates or a triple integral to cylindrical or spherical coordinates we found that <span class="math notranslate nohighlight">\(dA\)</span> or <span class="math notranslate nohighlight">\(dV\)</span> was altered since we were no longer integrating over a rectangle <span class="math notranslate nohighlight">\(dx \; dy\)</span> or rectangular solid <span class="math notranslate nohighlight">\(dx \; dy \; dz.\)</span> Although we have solutions to this for polar, cylindrical, and spherical coordinate systems, how can we make this change of coordinates in general?</p>
+<section id="transformations">
+<h2>Transformations<a class="headerlink" href="#transformations" title="Link to this heading">#</a></h2>
+<p>When we converted double integrals to polar coordinates we used the formulas,</p>
+<div class="math notranslate nohighlight">
+\[x = r \cos(\theta) \qquad y = r \sin(\theta)\]</div>
+<p>to make change our <em>x</em> and <em>y</em> coordinates to <em>r</em> and <span class="math notranslate nohighlight">\(\theta\)</span> coordinates.  These equations set up a transformation <em>T</em> that changed the <em>r</em><span class="math notranslate nohighlight">\(\theta\)</span> coordinates into <em>xy</em> coordinates.</p>
+<div class="math notranslate nohighlight">
+\[T(r, \theta) = (r \cos(\theta), r \sin(\theta)) = (x, y)\]</div>
+<p>So if we started with a rectangle in <em>r</em><span class="math notranslate nohighlight">\(\theta\)</span> coordinates <span class="math notranslate nohighlight">\(S = \{ (r, \theta) \; | \; 0 \leq r \leq 2\pi, 0 \leq \theta \leq 2\pi \}\)</span>, this transformation sent those values to <span class="math notranslate nohighlight">\((r \cos(\theta), r \sin(\theta)) = (x, y)\)</span> which mapped out the unit circle <span class="math notranslate nohighlight">\(R = \{ x^2 + y^2 \leq 1 \}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \iint_S f(r \cos(\theta), r \sin(\theta)) \; r \; dr \; d\theta\]</div>
+<figure class="align-default" id="id5">
+<img alt="The Transformation *T*" src="../_images/COV003.png" />
+<figcaption>
+<p><span class="caption-text">The Transformation <em>T</em></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You probably noticed that ths is a bit backwards from how we use it for the double integral.  When we covert the double from rectangular coordinates to polar coordinates we are converting <span class="math notranslate nohighlight">\((x, y)\)</span> to <span class="math notranslate nohighlight">\((r, \theta)\)</span> and not the other way around, the direction of <em>T</em>.</p>
+<p>Now we will generalize the above concept.</p>
+<div class="admonition-definition-planar-transformation admonition">
+<p class="admonition-title">Definition: Planar Transformation</p>
+<p>A planar transformation <em>T</em> is a function that transforms a region <em>S</em> in one plane (the <em>uv</em>-plane) into a region <em>R</em> in another plane (the <em>xy</em>-plane) by a change of variables. Both <em>S</em> and <em>R</em> are subsets of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[T(u, v) = (g(u, v), h(u, v)) = (x, y)\]</div>
+<p>That is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}x &amp; = g(u, v) = x(u, v) \\
+y &amp; = h(u, v) = y(u, v) \\\end{split}\]</div>
+</div>
+<div class="admonition-definition-one-to-one-transformation admonition">
+<p class="admonition-title">Definition: One-To-One Transformation</p>
+<p>A planar transformation <span class="math notranslate nohighlight">\(T : S \to R\)</span> defined as <span class="math notranslate nohighlight">\(T(u, v) = (x, y)\)</span> is said to be be a one-to-one transformation if no two points map to the same image point.</p>
+</div>
+<p>If a planar transformation is one-to-one then there is an inverse transformation, <span class="math notranslate nohighlight">\(T^{-1} : R \to S.\)</span></p>
+<section id="example-planar-transformation">
+<h3>Example: Planar Transformation<a class="headerlink" href="#example-planar-transformation" title="Link to this heading">#</a></h3>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Consider the transformation <span class="math notranslate nohighlight">\(T(u, v) = (u^2-v^2, uv) = (x, y)\)</span>, and the region <em>S</em> in the <em>uv</em>-plane that is bounded by the triangle with vertices <span class="math notranslate nohighlight">\((0, 0), (0, 1), (1, 1).\)</span> The region is pictured below.</p>
+<figure class="align-default" id="id6">
+<img alt="The Region *S* in the *uv*-Plane" src="../_images/COV004.png" />
+<figcaption>
+<p><span class="caption-text">The Region <em>S</em> in the <em>uv</em>-Plane</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will find the region <em>R</em> that <em>T</em> maps <em>S</em> to.  First we will consider the boundary line at <span class="math notranslate nohighlight">\(v = 1\)</span>.  If we substitute <span class="math notranslate nohighlight">\(v = 1\)</span> into the transformation we get,</p>
+<div class="math notranslate nohighlight">
+\[T(u, 1) = (u^2-1, u) = (x, y)\]</div>
+<p>To view this, input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[t^2-1, t]</span>
+</pre></div>
+</div>
+<p>Click and drag this to the 2D graphics window and we see,</p>
+<figure class="align-default" id="id7">
+<img alt="First Transformed Line" src="../_images/COV005.png" />
+<figcaption>
+<p><span class="caption-text">First Transformed Line</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Next we transform the boundary line of the <em>v</em>-axis, <span class="math notranslate nohighlight">\(u = 0.\)</span>  If we substitute <span class="math notranslate nohighlight">\(u = 0\)</span> into the transformation we get,</p>
+<div class="math notranslate nohighlight">
+\[T(0, v) = (-v^2, 0) = (x, y)\]</div>
+<p>This is simply the negative <em>x</em>-axis.</p>
+<p>Next we transform the boundary line of <span class="math notranslate nohighlight">\(u = v.\)</span>  If we substitute <span class="math notranslate nohighlight">\(u = v\)</span> into the transformation we get,</p>
+<div class="math notranslate nohighlight">
+\[T(v, v) = (0, v^2) = (x, y)\]</div>
+<p>This is simply the positive <em>y</em>-axis. So the region <em>R</em> is,</p>
+<figure class="align-default" id="id8">
+<img alt="Transformed Region" src="../_images/COV006.png" />
+<figcaption>
+<p><span class="caption-text">Transformed Region</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="change-of-variables-for-double-integrals">
+<h2>Change of Variables for Double Integrals<a class="headerlink" href="#change-of-variables-for-double-integrals" title="Link to this heading">#</a></h2>
+<p>Now lets move on to how we would use these transformations to convert double integrals.  We will be skipping many of the details here ans just summarize the results, your textbook should provide the details here.  For our transformations <span class="math notranslate nohighlight">\(T(u, v) = (g(u, v), h(u, v)) = (x, y)\)</span> we will be assuming that the <em>u</em> and <em>v</em> partial derivatives of both <em>g</em> and <em>h</em> exist and are continuous, (this is called a <span class="math notranslate nohighlight">\(C^1\)</span> transformation).</p>
+<div class="admonition-definition-jacobian admonition">
+<p class="admonition-title">Definition: Jacobian</p>
+<p>The Jacobian of the transformation <span class="math notranslate nohighlight">\(T(u, v) = (g(u, v), h(u, v)) = (x, y)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial(x, y)}{\partial(u, v)} = \left| \begin{array}{cc}  \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\ \frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} \end{array} \right| = \frac{\partial x}{\partial u}  \frac{\partial y}{\partial v}  - \frac{\partial x}{\partial v} \frac{\partial y}{\partial u}\end{split}\]</div>
+</div>
+<p>Again, we are skipping over the details here but it turns out that if we apply a transformation <em>T</em> to a double integral then,</p>
+<div class="math notranslate nohighlight">
+\[dA = \left| \frac{\partial(x, y)}{\partial(u, v)} \right| \; du \; dv\]</div>
+<p>Note that this is the absolute value of the Jacobian.</p>
+<div class="admonition-theorem-change-of-variables-in-a-double-integral admonition">
+<p class="admonition-title">Theorem:  Change of Variables in a Double Integral</p>
+<p>Suppose that <em>T</em> is a one-to-one <span class="math notranslate nohighlight">\(C^1\)</span> transformation with nonzero Jacobian, then,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \iint_S f(x(u, v), y(u, v)) \; \left| \frac{\partial(x, y)}{\partial(u, v)} \right| \; du \; dv\]</div>
+</div>
+<p>One thing to note is that although the above theorem states that <em>T</em> is one-to-one, we do not need this on the boundary of <em>S</em>.</p>
+<section id="example-jacobian-for-polar-coordinates">
+<h3>Example: Jacobian for Polar Coordinates<a class="headerlink" href="#example-jacobian-for-polar-coordinates" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>CLAE<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the transformation for Polar Coordinates,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[r*cos(t), r*sin(t)]</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Jacobian</span></code>, the variable list should be <code class="docutils literal notranslate"><span class="pre">[r,</span> <span class="pre">t]</span></code> which can be left as is.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[r \sin^{2}{\left(t \right)} + r \cos^{2}{\left(t \right)}\]</div>
+<p>and if we simplify this we get the expected <span class="math notranslate nohighlight">\(r.\)</span></p>
+</section>
+</section>
+<section id="example-jacobian-for-t-u-v-u-2-v-2-uv-x-y">
+<h3>Example: Jacobian for <span class="math notranslate nohighlight">\(T(u, v) = (u^2-v^2, uv) = (x, y)\)</span><a class="headerlink" href="#example-jacobian-for-t-u-v-u-2-v-2-uv-x-y" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the transformation,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[u^2-v^2, u*v]</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Jacobian</span></code>, the variable list should be <code class="docutils literal notranslate"><span class="pre">[u,</span> <span class="pre">v]</span></code> which can be left as is.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[2 u^{2} + 2 v^{2}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The order of the variables in finding the Jacobian makes a difference (at least a little).  If the order of the variables in finding the Jacobian is interchanged then the result is negative the result of the un-interchanged variables.  This is simply a property of determinants, if two rows or columns are interchanged then the determinant gets a factor of <span class="math notranslate nohighlight">\(-1.\)</span></p>
+</div>
+</section>
+</section>
+<section id="example-change-of-variables-for-double-integrals">
+<h3>Example: Change of Variables for Double Integrals<a class="headerlink" href="#example-change-of-variables-for-double-integrals" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>In this example we will find the integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R x^2+y^2 \; dA\]</div>
+<p>where <em>R</em> is the region,</p>
+<figure class="align-default" id="id9">
+<img alt="Region *R*" src="../_images/COV006.png" />
+<figcaption>
+<p><span class="caption-text">Region <em>R</em></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This region is both a Type I and Type II region.  We do not need to do a change of variable here but we will for the exercise.  We can evaluate this integral by,</p>
+<div class="math notranslate nohighlight">
+\[\int_{-1}^{0} \int_{0}^{\sqrt{x+1}} x^2+y^2 \; dy \; dx\]</div>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2+y^2</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, first variable is <em>y</em> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">sqrt(x+1)</span></code>, the second variable is <em>x</em> with bounds <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code>.  The result is <span class="math notranslate nohighlight">\(2/7.\)</span></p>
+<p>We will now do the same integral using the transformation <span class="math notranslate nohighlight">\(T(u, v) = (u^2-v^2, uv) = (x, y)\)</span> which transforms the region <em>R</em> to the following region <em>S</em>.</p>
+<figure class="align-default" id="id10">
+<img alt="Region *S*" src="../_images/COV004.png" />
+<figcaption>
+<p><span class="caption-text">Region <em>S</em></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Input the transformation,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[u^2-v^2, u*v]</span>
+</pre></div>
+</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Jacobian</span></code>, the variable list should be <code class="docutils literal notranslate"><span class="pre">[u,</span> <span class="pre">v]</span></code> which can be left as is.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[2 u^{2} + 2 v^{2}\]</div>
+<p>Select the function, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variables should be <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> which should not be edited.  For the expressions either input <code class="docutils literal notranslate"><span class="pre">[u^2-v^2,</span> <span class="pre">u*v]</span></code> or input the designation for this expression.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[u^{2} v^{2} + \left(u^{2} - v^{2}\right)^{2}\]</div>
+<p>Now multiply this by the Jacobian, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left(2 u^{2} + 2 v^{2}\right) \left(u^{2} v^{2} + \left(u^{2} - v^{2}\right)^{2}\right)\]</div>
+<p>Note that the Jacobian of this transformation is obviously positive so we do not need to take its absolute value.  In general, we would input <code class="docutils literal notranslate"><span class="pre">R3*abs(R4)</span></code> if <code class="docutils literal notranslate"><span class="pre">R3</span></code> was our integrand and <code class="docutils literal notranslate"><span class="pre">R4</span></code> was our Jacobian.</p>
+<p>So,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iint_R f(x, y) \; dA &amp; = \iint_S f(x(u, v), y(u, v)) \; \left| \frac{\partial(x, y)}{\partial(u, v)} \right| \; du \; dv \\
+&amp; = \iint_S \left(2 u^{2} + 2 v^{2}\right) \left(u^{2} v^{2} + \left(u^{2} - v^{2}\right)^{2}\right) \; du \; dv \\\end{split}\]</div>
+<p>At this point we need to be a little careful on how we construct the iterated integral out of this double integral. Note that in the transformation of the regions the line <span class="math notranslate nohighlight">\(v = 1\)</span> transforms to the parabola and the line <span class="math notranslate nohighlight">\(v = u\)</span> transforms to the <em>y</em>-axis.  If we did the original integral as a Type II region we would take the <em>y</em>-axis as the upper bound and the parabola as the lower bound.  This is the opposite of evaluating the region <em>S</em> as a Type I region.  To compensate, we will interchange the <em>v</em> bounds to match the order of the original region.  Hence,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iint_R f(x, y) \; dA &amp; = \iint_S f(x(u, v), y(u, v)) \; \left| \frac{\partial(x, y)}{\partial(u, v)} \right| \; du \; dv \\
+&amp; = \iint_S \left(2 u^{2} + 2 v^{2}\right) \left(u^{2} v^{2} + \left(u^{2} - v^{2}\right)^{2}\right) \; du \; dv \\
+&amp; = \int_{0}^{1} \int_{u}^{1} \left(2 u^{2} + 2 v^{2}\right) \left(u^{2} v^{2} + \left(u^{2} - v^{2}\right)^{2}\right) \; dv \; du = 2/7 \\\end{split}\]</div>
+<p>To do the integral, select the integrand expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, first variable is <em>v</em> with bounds <code class="docutils literal notranslate"><span class="pre">u</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>, the second variable is <em>u</em> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>.  The result is <span class="math notranslate nohighlight">\(2/7.\)</span></p>
+</section>
+</section>
+</section>
+<section id="change-of-variables-for-triple-integrals">
+<h2>Change of Variables for Triple Integrals<a class="headerlink" href="#change-of-variables-for-triple-integrals" title="Link to this heading">#</a></h2>
+<p>Changing the variables for triple integrals is the same as for double integrals.</p>
+<div class="admonition-definition-jacobian admonition">
+<p class="admonition-title">Definition: Jacobian</p>
+<p>The Jacobian of the transformation <span class="math notranslate nohighlight">\(T(u, v, w) = (g(u, v), h(u, v), k(u, v)) = (x, y, z)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial(x, y, z)}{\partial(u, v, w)} = \left| \begin{array}{ccc}  \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} &amp; \frac{\partial x}{\partial w} \\ \frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} &amp; \frac{\partial y}{\partial w} \\  \frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v} &amp; \frac{\partial z}{\partial w} \end{array} \right|\end{split}\]</div>
+</div>
+<div class="admonition-theorem-change-of-variables-in-a-triple-integral admonition">
+<p class="admonition-title">Theorem:  Change of Variables in a Triple Integral</p>
+<p>Suppose that <em>T</em> is a one-to-one <span class="math notranslate nohighlight">\(C^1\)</span> transformation with nonzero Jacobian, then,</p>
+<div class="math notranslate nohighlight">
+\[\iiint_R f(x, y, z) \; dA = \iiint_S f(x(u, v, w), y(u, v, w), z(u, v, w)) \; \left| \frac{\partial(x, y, z)}{\partial(u, v, w)} \right| \; du \; dv \; dw\]</div>
+</div>
+<section id="example-spherical-coordinates">
+<h3>Example: Spherical Coordinates<a class="headerlink" href="#example-spherical-coordinates" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Input the transformation for spherical coordinates,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[r*sin(p)*cos(t),r*sin(p)*sin(t),r*cos(p)]</span>
+</pre></div>
+</div>
+<p>Select this then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Jacobian</span></code>, the variable list should be <code class="docutils literal notranslate"><span class="pre">[p,</span> <span class="pre">r,</span> <span class="pre">t]</span></code> which is not the standard order we would normally use.  Change this to <code class="docutils literal notranslate"><span class="pre">[r,</span> <span class="pre">t,</span> <span class="pre">p]</span></code>.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[- r^{2} \sin^{3}{\left(p \right)} \sin^{2}{\left(t \right)} - r^{2} \sin^{3}{\left(p \right)} \cos^{2}{\left(t \right)} - r^{2} \sin{\left(p \right)} \sin^{2}{\left(t \right)} \cos^{2}{\left(p \right)} - r^{2} \sin{\left(p \right)} \cos^{2}{\left(p \right)} \cos^{2}{\left(t \right)}\]</div>
+<p>which simplifies to</p>
+<div class="math notranslate nohighlight">
+\[- r^{2} \sin{\left(p \right)}\]</div>
+<p>Since <span class="math notranslate nohighlight">\(0 \leq \varphi \leq \pi\)</span> we have <span class="math notranslate nohighlight">\(\sin{\left(\varphi \right)} \geq 0.\)</span>  Thus</p>
+<div class="math notranslate nohighlight">
+\[\left| \frac{\partial(x, y, z)}{\partial(u, v, w)} \right| = r^{2} \sin{\left(p \right)} = \rho^{2} \sin{\left(\varphi \right)}\]</div>
+<p>as we saw in the conversion to spherical coordinate section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As with double integral conversions, altering the order of the variables interchanges columns of the Jacobian matrix and hence could introduce a <span class="math notranslate nohighlight">\(-1\)</span> factor into the result.  Since in the conversion of the triple integral we are taking the absolute value of the Jacobian the final result is the same.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also get the Jacobian for a transformation by selecting  <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Jacobian</span> <span class="pre">Matrix</span></code>.  For the spherical coordinate example the Jacobian matrix is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{ccc}\sin{\left(p \right)} \cos{\left(t \right)} &amp; - r \sin{\left(p \right)} \sin{\left(t \right)} &amp; r \cos{\left(p \right)} \cos{\left(t \right)}\\\sin{\left(p \right)} \sin{\left(t \right)} &amp; r \sin{\left(p \right)} \cos{\left(t \right)} &amp; r \sin{\left(t \right)} \cos{\left(p \right)}\\\cos{\left(p \right)} &amp; 0 &amp; - r \sin{\left(p \right)}\end{array}\right]\end{split}\]</div>
+<p>You can then take its determinant with <code class="docutils literal notranslate"><span class="pre">Matrix</span> <span class="pre">&gt;</span> <span class="pre">Determinant</span></code> and you will get the same result as with the Jacobian option.</p>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="centermass.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Centers of Mass and Moments of Inertia</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="vecfields.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vector Fields</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transformations">Transformations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-planar-transformation">Example: Planar Transformation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-variables-for-double-integrals">Change of Variables for Double Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jacobian-for-polar-coordinates">Example: Jacobian for Polar Coordinates</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-jacobian-for-t-u-v-u-2-v-2-uv-x-y">Example: Jacobian for <span class="math notranslate nohighlight">\(T(u, v) = (u^2-v^2, uv) = (x, y)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-change-of-variables-for-double-integrals">Example: Change of Variables for Double Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-variables-for-triple-integrals">Change of Variables for Triple Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-spherical-coordinates">Example: Spherical Coordinates</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

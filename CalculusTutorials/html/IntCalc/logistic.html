@@ -1,0 +1,721 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Logistic Equation &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/logistic';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="First-Order Linear Equations" href="firstorderlinear.html" />
+    <link rel="prev" title="Exponential Growth and Decay" href="expgrowth.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The Logistic Equation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-logistic-equation">
+<h1><span class="target" id="index-0"></span>The Logistic Equation<a class="headerlink" href="#the-logistic-equation" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>One problem with exponential growth is that it does not take into consideration a limitation on the size of the quantity.  Population is a good example, while when a population is relatively small it will experience exponential growth, a population size is restricted by its environment. For example, food, water, living space, and other resources can limit the size of a population.  So as the population size grows and gets close to an environmental limit the growth rate will usually decrease.  So instead of using an exponential growth equation,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dt} = r P\]</div>
+<p>we will add in a factor that will decrease to 0 as the population size gets close to the environmental maximum for the population.</p>
+<div class="math notranslate nohighlight">
+\[\frac{dP}{dt} = r P \left( 1 - \frac{P}{M} \right)\]</div>
+<p>Here</p>
+<ul class="simple">
+<li><p><em>P</em> is the population size.</p></li>
+<li><p><em>r</em> is the growth rate of the population. The growth constant <em>r</em> usually takes into consideration the birth and death rates but none of the other factors, and it can be interpreted as a net (birth minus death) percent growth rate per unit time.</p></li>
+<li><p><em>M</em> is the maximum environmental size of the population, which is called the population <strong>carrying capacity</strong>.</p></li>
+</ul>
+<p>The solution to the logistic equation can take on several different forms, one form of the solution is,</p>
+<div class="math notranslate nohighlight">
+\[P(t) = \frac{M}{1+A e^{-kt}} \qquad {\rm with } \qquad A = \frac{M - P_0}{P_0}\]</div>
+<p>where <span class="math notranslate nohighlight">\(P_0\)</span> is the size of the population at time <span class="math notranslate nohighlight">\(t = 0.\)</span></p>
+</section>
+<section id="example-solving-the-logistic-equation">
+<h2>Example: Solving the Logistic Equation<a class="headerlink" href="#example-solving-the-logistic-equation" title="Link to this heading">#</a></h2>
+<p>In this example we will look at solving the logistic equation using both exact methods and numerical methods.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<section id="direction-fields-and-euler-s-method">
+<h4>Direction Fields and Euler’s Method<a class="headerlink" href="#direction-fields-and-euler-s-method" title="Link to this heading">#</a></h4>
+<p>Input the expression on the right hand side,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a(x, y) = r*y*(1-y/m)</span>
+</pre></div>
+</div>
+<p>Note that we must include the <code class="docutils literal notranslate"><span class="pre">a(x,y)</span></code> or GeoGebra will not know that this is an expression in two variables.  Also note that GeoGebra automatically put in sliders for <em>r</em> and <em>m</em>. Now in a new cell input <code class="docutils literal notranslate"><span class="pre">SlopeField(a)</span></code>.  Zoom in a bit and set m to about 4 and you will see,</p>
+<figure class="align-default" id="id3">
+<img alt="Slope Field" src="../_images/Logistic001.png" />
+<figcaption>
+<p><span class="caption-text">Slope Field of a(x, y) = r*y*(1-y/m)</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we will include the Euler curve starting at <span class="math notranslate nohighlight">\((0, 1).\)</span> In a new cell input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SolveODE(a,0,1,20,0.01)</span>
+</pre></div>
+</div>
+<p>This will give us,</p>
+<figure class="align-default" id="id4">
+<img alt="Slope Field and Euler Curve" src="../_images/Logistic002.png" />
+<figcaption>
+<p><span class="caption-text">Slope Field and Euler Curve of a(x, y) = r*y*(1-y/m)</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that this is the type of graph you will get when the population starts below the carrying capacity.  If the population starts above the carrying capacity, then our growth factor becomes a decay factor.</p>
+<p>Now we will include a second Euler curve starting at <span class="math notranslate nohighlight">\((0, 5).\)</span> In a new cell input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SolveODE(a,0,5,20,0.01)</span>
+</pre></div>
+</div>
+<p>This will give us,</p>
+<figure class="align-default" id="id5">
+<img alt="Slope Field and Euler Curves" src="../_images/Logistic003.png" />
+<figcaption>
+<p><span class="caption-text">Slope Field and Euler Curves of a(x, y) = r*y*(1-y/m)</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="exact-solution">
+<h4>Exact Solution<a class="headerlink" href="#exact-solution" title="Link to this heading">#</a></h4>
+<p>Input the expression on the right hand side,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a(x, y) = r*y*(1-y/m)</span>
+</pre></div>
+</div>
+<p>Note that we must include the <code class="docutils literal notranslate"><span class="pre">a(x,y)</span></code> or GeoGebra will not know that this is an expression in two variables.  Now in a new cell input <code class="docutils literal notranslate"><span class="pre">SolveODE(a)</span></code>.  This will create another slider that is linked to the constant in front of the exponential portion of the exact solution.  If that slider is set to a positive number then the graph looks like,</p>
+<figure class="align-default" id="id6">
+<img alt="ODE Solution" src="../_images/Logistic004.png" />
+<figcaption>
+<p><span class="caption-text">ODE Solution</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Which represents the situation when the population size starts above the carrying capacity. If that slider is set to a negative number then the graph looks like,</p>
+<figure class="align-default" id="id7">
+<img alt="ODE Solution" src="../_images/Logistic005.png" />
+<figcaption>
+<p><span class="caption-text">ODE Solution</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Which represents the situation when the population size starts below the carrying capacity.</p>
+</section>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Direction Fields and Euler’s Method<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the right hand side of the logistic differential equation,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">r*y*(1 - y/M)</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the graphics window and change the type to Direction Field.  Zoom in a bit and set M to about 4 and you will see,</p>
+<figure class="align-default" id="id8">
+<img alt="Direction Field" src="../_images/Logistic006.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field of <span class="math notranslate nohighlight">\(r y \left(1 - \frac{y}{M} \right)\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we will include the Euler curve starting at <span class="math notranslate nohighlight">\((0, 1).\)</span> Duplicate the direction field object with <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Duplicate</span> <span class="pre">Object</span></code> from the 2-D Graphics Menu.  Change type to Euler’s Method Curve, the color to red, and the initial point to <span class="math notranslate nohighlight">\((0, 1)\)</span>. At this point you should see,</p>
+<figure class="align-default" id="id9">
+<img alt="Direction Field with Euler's Method Curve" src="../_images/Logistic007.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field of <span class="math notranslate nohighlight">\(r y \left(1 - \frac{y}{M} \right)\)</span>  with Euler’s Method Curve</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that this is the type of graph you will get when the population starts below the carrying capacity.  If the population starts above the carrying capacity, then our growth factor becomes a decay factor.</p>
+<p>Now we will include a second Euler curve starting at <span class="math notranslate nohighlight">\((0, 5).\)</span> Duplicate the Euler Curve object with <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Duplicate</span> <span class="pre">Object</span></code> from the 2-D Graphics Menu.  Change the color and the initial point to <span class="math notranslate nohighlight">\((0, 5)\)</span>. At this point you should see,</p>
+<figure class="align-default" id="id10">
+<img alt="Direction Field with Euler's Method Curves" src="../_images/Logistic008.png" />
+<figcaption>
+<p><span class="caption-text">Direction Field of <span class="math notranslate nohighlight">\(r y \left(1 - \frac{y}{M} \right)\)</span>  with Euler’s Method Curves</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h4>Exact Solution<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the logistic differential equation,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(t).diff(t) - r*f(t)*(1 - f(t)/M)</span>
+</pre></div>
+</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Solve</span> <span class="pre">ODE</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[f{\left(t \right)} = \frac{M e^{C_{1} M + r t}}{e^{C_{1} M + r t} - 1}\]</div>
+<p>This is another for for the solution.  Extract the right hand side with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Equations</span> <span class="pre">&gt;</span> <span class="pre">Right</span> <span class="pre">Hand</span> <span class="pre">Side</span></code>.</p>
+<div class="math notranslate nohighlight">
+\[\frac{M e^{C_{1} M + r t}}{e^{C_{1} M + r t} - 1}\]</div>
+<p>We will manipulate this expression a little before graphing it.  Select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, in the variable put <code class="docutils literal notranslate"><span class="pre">E^(C1*M)</span></code> and in the expression input <code class="docutils literal notranslate"><span class="pre">A</span></code>.  Note that the evaluator is a bit more versatile than just evaluating variables but does more of a general substitution.</p>
+<div class="math notranslate nohighlight">
+\[\frac{A M e^{r t}}{A e^{r t} - 1}\]</div>
+<p>Click and drag this over to the graph and you will get a slider for <em>A</em>.  If <em>A</em> is positive we get,</p>
+<figure class="align-default" id="id11">
+<img alt="ODE Solution" src="../_images/Logistic009.png" />
+<figcaption>
+<p><span class="caption-text">ODE Solution</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>which is the situation when the initial population is above the carrying capacity and if <em>A</em> is negative we get the situation when the initial population is below the carrying capacity.</p>
+<figure class="align-default" id="id12">
+<img alt="ODE Solution" src="../_images/Logistic010.png" />
+<figcaption>
+<p><span class="caption-text">ODE Solution</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="expgrowth.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exponential Growth and Decay</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="firstorderlinear.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">First-Order Linear Equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-solving-the-logistic-equation">Example: Solving the Logistic Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#direction-fields-and-euler-s-method">Direction Fields and Euler’s Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solution">Exact Solution</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Direction Fields and Euler’s Method</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Exact Solution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

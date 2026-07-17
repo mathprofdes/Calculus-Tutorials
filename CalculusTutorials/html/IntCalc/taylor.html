@@ -1,0 +1,829 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Taylor Series &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/taylor';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parametric Equations" href="parametric.html" />
+    <link rel="prev" title="Functions as Power Series" href="FctRepPower.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Taylor Series</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="taylor-series">
+<h1><span class="target" id="index-0"></span>Taylor Series<a class="headerlink" href="#taylor-series" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>The Taylor and Maclaurin series derivations give us a method for starting with a function and then calculating the coefficients of the power series representation for that function. Unlike the previous section, we will not need to rely on the geometric series and series manipulations to represent functions with series.  Here is how it goes.</p>
+<section id="derivation">
+<h3>Derivation<a class="headerlink" href="#derivation" title="Link to this heading">#</a></h3>
+<p>Say we wish to represent a function <span class="math notranslate nohighlight">\(f(x)\)</span> as a series,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \sum_{n = 0}^\infty c_n (x - a)^n = c_0 + c_1 (x - a) + c_2 (x - a)^2 + c_3 (x - a)^3 + \cdots\]</div>
+<p>Finding <span class="math notranslate nohighlight">\(c_0\)</span> is easy, evaluate both sides of the equation at <span class="math notranslate nohighlight">\(x = a\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[f(a) = \sum_{n = 0}^\infty c_n (a - a)^n = c_0 + c_1 (a - a) + c_2 (a - a)^2 + c_3 (a - a)^3 + \cdots = c_0\]</div>
+<p>so <span class="math notranslate nohighlight">\(c_0 = f(a)\)</span>.  Now to get <span class="math notranslate nohighlight">\(c_1\)</span>, take the derivative of both sides,</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = c_1  + 2c_2 (x - a) + 3c_3 (x - a)^2 + 4c_4 (x - a)^3 + \cdots\]</div>
+<p>evaluating at <span class="math notranslate nohighlight">\(x = a\)</span> gives <span class="math notranslate nohighlight">\(c_1 = f'(a)\)</span>.  Taking the second derivative,</p>
+<div class="math notranslate nohighlight">
+\[f''(x) = 2c_2 + 3 \cdot 2 \cdot c_3 (x - a) + 4 \cdot 3 \cdot c_4 (x - a)^2 + \cdots\]</div>
+<p>evaluating at <span class="math notranslate nohighlight">\(x = a\)</span> gives <span class="math notranslate nohighlight">\(c_2 = \frac{f''(a)}{2}\)</span>.  Taking the third derivative,</p>
+<div class="math notranslate nohighlight">
+\[f'''(x) = 3 \cdot 2 \cdot c_3 + 4 \cdot 3 \cdot 2 \cdot c_4 (x - a) + \cdots\]</div>
+<p>evaluating at <span class="math notranslate nohighlight">\(x = a\)</span> gives <span class="math notranslate nohighlight">\(c_3 = \frac{f'''(a)}{2 \cdot 3}\)</span>.  Taking the fourth derivative,</p>
+<div class="math notranslate nohighlight">
+\[f^{(4)}(x) = 4 \cdot 3 \cdot 2 \cdot c_4  + 5 \cdot 4 \cdot 3 \cdot 2 \cdot c_5  (x - a) + \cdots\]</div>
+<p>evaluating at <span class="math notranslate nohighlight">\(x = a\)</span> gives <span class="math notranslate nohighlight">\(c_4 = \frac{f^{(4)}(a)}{2 \cdot 3 \cdot 4}\)</span>.  A this point we can see the pattern.  In general,</p>
+<div class="math notranslate nohighlight">
+\[c_n = \frac{f^{(n)}(a)}{n!}\]</div>
+<p>One thing this implies is that the function <span class="math notranslate nohighlight">\(f(x)\)</span> has derivatives of all orders.  Also, as in the last section, the series expansion may not converge to the function on the entire domain of the function.</p>
+<div class="admonition-definition-taylor-series admonition">
+<p class="admonition-title">Definition: Taylor Series</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> has derivatives of all orders at <span class="math notranslate nohighlight">\(x = a\)</span>, then the <strong>Taylor Series</strong> for the function <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(a\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n = f(a) + f'(a)(x-a) + \frac{f''(a)}{2} (x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!} (x-a)^n + \cdots\]</div>
+<p>The Taylor series for <span class="math notranslate nohighlight">\(f\)</span> at 0 is known as the <strong>Maclaurin Series</strong> for <span class="math notranslate nohighlight">\(f.\)</span></p>
+</div>
+<p>Frequently we need to work with the first several terms of the series so we give them a name as well.</p>
+<div class="admonition-definition-taylor-polynomial admonition">
+<p class="admonition-title">Definition: Taylor Polynomial</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> has <em>n</em> derivatives at <span class="math notranslate nohighlight">\(x = a\)</span>, then the nth <strong>Taylor Polynomial</strong> for the function <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(a\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[p_n(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2} (x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!} (x-a)^n\]</div>
+<p>The nth Taylor polynomial for <span class="math notranslate nohighlight">\(f\)</span> at 0 is known as the nth <strong>Maclaurin Polynomial</strong> for <span class="math notranslate nohighlight">\(f.\)</span></p>
+</div>
+<p>If you are finding Taylor series by hand you would take several derivatives and evaluate them at <span class="math notranslate nohighlight">\(x = a\)</span> to find a pattern for <span class="math notranslate nohighlight">\(f^{(n)}(a)\)</span>, then divide by <span class="math notranslate nohighlight">\(n!\)</span> to get the general nth coefficient.  For example, let <span class="math notranslate nohighlight">\(f(x) = e^x\)</span> and we will use <span class="math notranslate nohighlight">\(a = 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(0) &amp; = e^0 = 1 \\
+f'(0) &amp; = e^0 = 1 \\
+f''(0) &amp; = e^0 = 1 \\
+f'''(0) &amp; = e^0 = 1 \\
+f^{(4)}(0) &amp; = e^0 = 1 \\\end{split}\]</div>
+<p>So the pattern here is easy, 1, and our Taylor series is,</p>
+<div class="math notranslate nohighlight">
+\[e^x = \sum_{n=0}^\infty \frac{x^n}{n!}\]</div>
+<p>As another example take <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> and we will again use <span class="math notranslate nohighlight">\(a = 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(0) &amp; = \sin(0) = 0 \\
+f'(0) &amp; = \cos(0) = 1 \\
+f''(0) &amp; = -\sin(0) = 0 \\
+f'''(0) &amp; = -\cos(0) = -1 \\
+f^{(4)}(0) &amp; = \sin(0) = 0 \\
+f^{(5)}(0) &amp; = \cos(0) = 1 \\
+f^{(6)}(0) &amp; = -\sin(0) = 0 \\
+f^{(7)}(0) &amp; = -\cos(0) = -1 \\
+f^{(8)}(0) &amp; = \sin(0) = 0 \\
+&amp; \vdots\end{split}\]</div>
+<p>Obviously we get repetition every fourth derivative.  As for a pattern, all even derivatives are 0 and for all the odd derivatives we get 1 or <span class="math notranslate nohighlight">\(-1\)</span>.  It is easy to see that <span class="math notranslate nohighlight">\(f^{(2m+1)}(0) = (-1)^m\)</span>, so our series is,</p>
+<div class="math notranslate nohighlight">
+\[\sin(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!}\]</div>
+<p>We did not discuss the intervals of convergence for either of these examples.  You can find that interval of convergence the same way as with a general power series, use the ratio test (or the root test).  For example, with</p>
+<div class="math notranslate nohighlight">
+\[e^x = \sum_{n=0}^\infty \frac{x^n}{n!}\]</div>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} \left| \frac{\frac{x^{n+1}}{(n+1)!}}{\frac{x^n}{n!}} \right| = \lim_{n \to \infty} \frac{1}{n+1}|x| = 0\]</div>
+<p>Hence the radius of convergence is infinite and the interval of convergence is <span class="math notranslate nohighlight">\((-\infty, \infty).\)</span>  The same is true for <span class="math notranslate nohighlight">\(\sin(x)\)</span> but this does not happen for all functions.  The following is a list of some of the most used functions, their Taylor series (really Maclaurin series) expansions, and the radius of convergence of the series, we derived most of these in this section or the previous section.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{array}{lc}
+\displaystyle \frac{1}{1-x} = \sum_{n = 0}^\infty x^n = 1 + x + x^2 + x^3 + \cdots &amp; R = 1 \\
+\displaystyle e^x = \sum_{n = 0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{3!} + \frac{x^4}{4!} + \cdots &amp; R = \infty \\
+\displaystyle \sin(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{(2n+1)!} = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \cdots &amp; R = \infty \\
+\displaystyle \cos(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots &amp; R = \infty \\
+\displaystyle \tan^{-1}(x) = \sum_{n=0}^\infty (-1)^n \frac{x^{2n+1}}{2n+1} = x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots &amp; R = 1 \\
+\displaystyle \ln(1+x) = \sum_{n = 1}^\infty (-1)^{n+1} \frac{x^n}{n} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \cdots &amp; R = 1 \\
+\end{array}\end{split}\]</div>
+</section>
+<section id="convergence">
+<h3>Convergence<a class="headerlink" href="#convergence" title="Link to this heading">#</a></h3>
+<p>One concept we glossed over is that of convergence.  We simply did a few derivatives and some algebra to obtain expressions for the coefficients of the series.  We did not verify that the series approaches the function on its interval of convergence.  Algebraically, this can get a bit complex and we will not go into much detail here but we will outline the theory.  Your textbook should have more details on this.  We will visualize this convergence graphically to get a feel for the concept.</p>
+<div class="admonition-theorem-taylor-polynomial-remainder admonition">
+<p class="admonition-title">Theorem: Taylor Polynomial Remainder</p>
+<p>Let <span class="math notranslate nohighlight">\(f\)</span> be a function that can be differentiated <span class="math notranslate nohighlight">\(n + 1\)</span> times on an interval <span class="math notranslate nohighlight">\(I\)</span> containing the real number <span class="math notranslate nohighlight">\(a\)</span>. Let <span class="math notranslate nohighlight">\(p_n(x)\)</span> be the nth Taylor polynomial of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(a\)</span> and let</p>
+<div class="math notranslate nohighlight">
+\[R_n(x) = f(x) − p_n(x)\]</div>
+<p>be the nth remainder. Then for each <span class="math notranslate nohighlight">\(x\)</span> in the interval <span class="math notranslate nohighlight">\(I\)</span>. If there exists a real number <span class="math notranslate nohighlight">\(M\)</span> such that <span class="math notranslate nohighlight">\(\left| f^{(n+1)}(x) \right| \leq M\)</span>, for all <span class="math notranslate nohighlight">\(x \in I\)</span> then,</p>
+<div class="math notranslate nohighlight">
+\[\left| R_n(x) \right| \leq \frac{M}{(n+1)!} |x-a|^{n+1}\]</div>
+<p>for all <span class="math notranslate nohighlight">\(x \in I.\)</span></p>
+</div>
+<div class="admonition-theorem-convergence-of-taylor-series admonition">
+<p class="admonition-title">Theorem: Convergence of Taylor Series</p>
+<p>If <span class="math notranslate nohighlight">\(f\)</span> has derivatives of all orders on an interval <span class="math notranslate nohighlight">\(I\)</span> containing <span class="math notranslate nohighlight">\(a\)</span>. Then the Taylor series</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n\]</div>
+<p>converges to <span class="math notranslate nohighlight">\(f(x)\)</span> for all <span class="math notranslate nohighlight">\(x \in I\)</span> if and only if</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} R_n(x) = 0\]</div>
+<p>for all <span class="math notranslate nohighlight">\(x \in I.\)</span></p>
+</div>
+<p>So if we were verifying this algebraically we would need to take the remainder inequality and show that this expression goes to 0 as <span class="math notranslate nohighlight">\(n \to \infty.\)</span>  Since the bound <span class="math notranslate nohighlight">\(M\)</span> could change when <em>n</em> changes this can be a little tricky.</p>
+</section>
+</section>
+<section id="example-visualizing-the-convergence-of-the-series-for-sin-x">
+<h2>Example: Visualizing the Convergence of the Series for <span class="math notranslate nohighlight">\(\sin(x)\)</span><a class="headerlink" href="#example-visualizing-the-convergence-of-the-series-for-sin-x" title="Link to this heading">#</a></h2>
+<p>We will approach this in a similar manner as we did with <span class="math notranslate nohighlight">\(\frac{1}{1-x}\)</span> in the last section, except that we will use functions from the CAS to calculate the Taylor polynomials.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Now we will graph the degree 10, 20, and 30 Taylor polynomials along with the graph. To create the degree 10 Taylor polynomial use the following syntax, we assume that the function is <span class="math notranslate nohighlight">\(f(x).\)</span></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">TaylorPolynomial(f,0,10)</span>
+</pre></div>
+</div>
+<p>Repeat with <code class="docutils literal notranslate"><span class="pre">TaylorPolynomial(f,0,20)</span></code> and <code class="docutils literal notranslate"><span class="pre">TaylorPolynomial(f,0,30)</span></code>.  You should see the following image.</p>
+<figure class="align-default" id="id4">
+<img alt="Convergence of Taylor polynomials to the function sin(x)." src="../_images/series006.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of Taylor polynomials to the function <span class="math notranslate nohighlight">\(\sin(x)\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note how the higher degree polynomials hug the graph for a longer interval.  Although this is far from an algebraic proof it does give you the feel that as the degree increases the polynomials will get closer to the function on the entire real line.  It also shows that we can do some interesting things with polynomials.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Now we will graph the degree 10, 20, and 30 Taylor polynomials along with the graph. To create the degree 10 Taylor polynomial, select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Taylor</span> <span class="pre">Series</span></code>, variable is <em>x</em>, point is 0, and the order is 10.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^{9}}{362880} - \frac{x^{7}}{5040} + \frac{x^{5}}{120} - \frac{x^{3}}{6} + x\]</div>
+<p>Do the same with order 20 and 30, the results are,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{x^{19}}{121645100408832000} + \frac{x^{17}}{355687428096000} - \frac{x^{15}}{1307674368000} + \frac{x^{13}}{6227020800} - \frac{x^{11}}{39916800} + \frac{x^{9}}{362880} - \frac{x^{7}}{5040} + \frac{x^{5}}{120} - \frac{x^{3}}{6} + x\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{x^{29}}{8841761993739701954543616000000} - \frac{x^{27}}{10888869450418352160768000000} + \frac{x^{25}}{15511210043330985984000000} - \frac{x^{23}}{25852016738884976640000} + \frac{x^{21}}{51090942171709440000} - \frac{x^{19}}{121645100408832000} + \frac{x^{17}}{355687428096000} - \frac{x^{15}}{1307674368000} + \frac{x^{13}}{6227020800} - \frac{x^{11}}{39916800} + \frac{x^{9}}{362880} - \frac{x^{7}}{5040} + \frac{x^{5}}{120} - \frac{x^{3}}{6} + x\]</div>
+<p>Graph the three polynomials along with the function and you should have the following image.</p>
+<figure class="align-default" id="id5">
+<img alt="Convergence of Taylor polynomials to the function sin(x)." src="../_images/series007.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of Taylor polynomials to the function <span class="math notranslate nohighlight">\(\sin(x)\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note how the higher degree polynomials hug the graph for a longer interval.  Although this is far from an algebraic proof it does give you the feel that as the degree increases the polynomials will get closer to the function on the entire real line.  It also shows that we can do some interesting things with polynomials.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=sin(x)</span>
+</pre></div>
+</div>
+<p>To create the Taylor polynomials we can use the <code class="docutils literal notranslate"><span class="pre">taylor</span></code> function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">t10:taylor(f(x),x,0,10);</span>
+<span class="go">t20:taylor(f(x),x,0,20);</span>
+<span class="go">t30:taylor(f(x),x,0,30);</span>
+</pre></div>
+</div>
+<p>Then we can plot these along with the function by,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x), t10, t20, t30],[x,-15,15],[y,-10,10]);</span>
+</pre></div>
+</div>
+<p>The image should look something like the following,</p>
+<figure class="align-default" id="id6">
+<img alt="Convergence of Taylor polynomials to the function sin(x)." src="../_images/series008.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of Taylor polynomials to the function <span class="math notranslate nohighlight">\(\sin(x)\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note how the higher degree polynomials hug the graph for a longer interval.  Although this is far from an algebraic proof it does give you the feel that as the degree increases the polynomials will get closer to the function on the entire real line.  It also shows that we can do some interesting things with polynomials.</p>
+</section>
+</section>
+<section id="example-visualizing-the-convergence-of-the-series-for-sin-x-about-x-pi">
+<h2>Example: Visualizing the Convergence of the Series for <span class="math notranslate nohighlight">\(\sin(x)\)</span> about <span class="math notranslate nohighlight">\(x = \pi\)</span><a class="headerlink" href="#example-visualizing-the-convergence-of-the-series-for-sin-x-about-x-pi" title="Link to this heading">#</a></h2>
+<p>We will do the same process here as we did in the last example except that we will center the series at <span class="math notranslate nohighlight">\(x = \pi\)</span> instead of <span class="math notranslate nohighlight">\(x = 0.\)</span></p>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Now we will graph the degree 10, 20, and 30 Taylor polynomials along with the graph. To create the degree 10 Taylor polynomial use the following syntax, we assume that the function is <span class="math notranslate nohighlight">\(f(x).\)</span></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">TaylorPolynomial(f,pi,10)</span>
+</pre></div>
+</div>
+<p>Repeat with <code class="docutils literal notranslate"><span class="pre">TaylorPolynomial(f,pi,20)</span></code> and <code class="docutils literal notranslate"><span class="pre">TaylorPolynomial(f,pi,30)</span></code>.  You should see the following image.</p>
+<figure class="align-default" id="id7">
+<img alt="Convergence of Taylor polynomials to the function sin(x)." src="../_images/series009.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of Taylor polynomials to the function <span class="math notranslate nohighlight">\(\sin(x)\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Now we will graph the degree 10, 20, and 30 Taylor polynomials along with the graph. To create the degree 10 Taylor polynomial, select the function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Taylor</span> <span class="pre">Series</span></code>, variable is <em>x</em>, point is <code class="docutils literal notranslate"><span class="pre">pi</span></code>, and the order is 10.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[- x - \frac{\left(x - \pi\right)^{9}}{362880} + \frac{\left(x - \pi\right)^{7}}{5040} - \frac{\left(x - \pi\right)^{5}}{120} + \frac{\left(x - \pi\right)^{3}}{6} + \pi\]</div>
+<p>Do the same with order 20 and 30, the results are,</p>
+<div class="math notranslate nohighlight">
+\[- x + \frac{\left(x - \pi\right)^{19}}{121645100408832000} - \frac{\left(x - \pi\right)^{17}}{355687428096000} + \frac{\left(x - \pi\right)^{15}}{1307674368000} - \frac{\left(x - \pi\right)^{13}}{6227020800} + \frac{\left(x - \pi\right)^{11}}{39916800} - \frac{\left(x - \pi\right)^{9}}{362880} + \frac{\left(x - \pi\right)^{7}}{5040} - \frac{\left(x - \pi\right)^{5}}{120} + \frac{\left(x - \pi\right)^{3}}{6} + \pi\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[- x - \frac{\left(x - \pi\right)^{29}}{8841761993739701954543616000000} + \frac{\left(x - \pi\right)^{27}}{10888869450418352160768000000} - \frac{\left(x - \pi\right)^{25}}{15511210043330985984000000} + \frac{\left(x - \pi\right)^{23}}{25852016738884976640000} - \frac{\left(x - \pi\right)^{21}}{51090942171709440000} + \frac{\left(x - \pi\right)^{19}}{121645100408832000} - \frac{\left(x - \pi\right)^{17}}{355687428096000} + \frac{\left(x - \pi\right)^{15}}{1307674368000} - \frac{\left(x - \pi\right)^{13}}{6227020800} + \frac{\left(x - \pi\right)^{11}}{39916800} - \frac{\left(x - \pi\right)^{9}}{362880} + \frac{\left(x - \pi\right)^{7}}{5040} - \frac{\left(x - \pi\right)^{5}}{120} + \frac{\left(x - \pi\right)^{3}}{6} + \pi\]</div>
+<p>Graph the three polynomials along with the function and you should have the following image.</p>
+<figure class="align-default" id="id8">
+<img alt="Convergence of Taylor polynomials to the function sin(x)." src="../_images/series010.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of Taylor polynomials to the function <span class="math notranslate nohighlight">\(\sin(x)\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=sin(x)</span>
+</pre></div>
+</div>
+<p>To create the Taylor polynomials we can use the <code class="docutils literal notranslate"><span class="pre">taylor</span></code> function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">t10:taylor(f(x),x,%</span>pi,10<span class="o">)</span><span class="p">;</span>
+<span class="gp">t20:taylor(f(x),x,%</span>pi,20<span class="o">)</span><span class="p">;</span>
+<span class="gp">t30:taylor(f(x),x,%</span>pi,30<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Then we can plot these along with the function by,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x), t10, t20, t30],[x,-10,20],[y,-10,10]);</span>
+</pre></div>
+</div>
+<p>The image should look something like the following,</p>
+<figure class="align-default" id="id9">
+<img alt="Convergence of Taylor polynomials to the function sin(x)." src="../_images/series011.png" />
+<figcaption>
+<p><span class="caption-text">Convergence of Taylor polynomials to the function <span class="math notranslate nohighlight">\(\sin(x)\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="FctRepPower.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Functions as Power Series</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="parametric.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Parametric Equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation">Derivation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence">Convergence</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-the-convergence-of-the-series-for-sin-x">Example: Visualizing the Convergence of the Series for <span class="math notranslate nohighlight">\(\sin(x)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-the-convergence-of-the-series-for-sin-x-about-x-pi">Example: Visualizing the Convergence of the Series for <span class="math notranslate nohighlight">\(\sin(x)\)</span> about <span class="math notranslate nohighlight">\(x = \pi\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

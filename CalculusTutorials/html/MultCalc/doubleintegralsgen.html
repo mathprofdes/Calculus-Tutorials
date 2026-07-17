@@ -1,0 +1,879 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Double Integrals over General Regions &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/doubleintegralsgen';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Double Integrals in Polar Coordinates" href="doubleintegralspolar.html" />
+    <link rel="prev" title="Double Integrals over Rectangular Regions" href="doubleintegralsrect.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Double Integrals over General Regions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="double-integrals-over-general-regions">
+<h1><span class="target" id="index-0"></span>Double Integrals over General Regions<a class="headerlink" href="#double-integrals-over-general-regions" title="Link to this heading">#</a></h1>
+<p>In this section we are generalizing the region we are integrating over from a rectangle to any region in the plane.</p>
+<section id="general-regions">
+<h2>General Regions<a class="headerlink" href="#general-regions" title="Link to this heading">#</a></h2>
+<p>First we define some terminology and categorize types of regions.  Different textbooks may use different terminology for these but most break it down into Type I and Type II regions.</p>
+<div class="admonition-definition-type-i-region admonition">
+<p class="admonition-title">Definition: Type I Region</p>
+<p>A Type I Region is one that lies between two vertical lines and the graphs of two continuous functions <span class="math notranslate nohighlight">\(g_1(x)\)</span> and <span class="math notranslate nohighlight">\(g_2(x)\)</span>.</p>
+</div>
+<p>Some examples of Type I Regions are below.</p>
+<figure class="align-default" id="id6">
+<img alt="Type I Region" src="../_images/Type1001.png" />
+<figcaption>
+<p><span class="caption-text">Type I Region</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id7">
+<img alt="Type I Region" src="../_images/Type1002.png" />
+<figcaption>
+<p><span class="caption-text">Type I Region</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id8">
+<img alt="Type I Region" src="../_images/Type1003.png" />
+<figcaption>
+<p><span class="caption-text">Type I Region</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-definition-type-ii-region admonition">
+<p class="admonition-title">Definition: Type II Region</p>
+<p>A Type II Region is one that lies between two horizontal lines and the graphs of two continuous functions <span class="math notranslate nohighlight">\(h_1(y)\)</span> and <span class="math notranslate nohighlight">\(h_2(y)\)</span>.</p>
+</div>
+<p>Some examples of Type II Regions are below.</p>
+<figure class="align-default" id="id9">
+<img alt="Type II Region" src="../_images/Type2001.png" />
+<figcaption>
+<p><span class="caption-text">Type II Region</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id10">
+<img alt="Type II Region" src="../_images/Type2002.png" />
+<figcaption>
+<p><span class="caption-text">Type II Region</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id11">
+<img alt="Type II Region" src="../_images/Type2003.png" />
+<figcaption>
+<p><span class="caption-text">Type II Region</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some regions can be both Type I and Type II.  For example,</p>
+<figure class="align-default" id="id12">
+<img alt="Type I and Type II Region" src="../_images/Type12001.png" />
+<figcaption>
+<p><span class="caption-text">Type I and Type II Region</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="calculating-double-integrals-over-general-regions">
+<h2>Calculating Double Integrals over General Regions<a class="headerlink" href="#calculating-double-integrals-over-general-regions" title="Link to this heading">#</a></h2>
+<p>To calculate the integral of a function over a Type I or Type II region we can use iterated integrals as we did with rectangular regions.</p>
+<div class="admonition-theorem-integrating-over-a-type-i-region admonition">
+<p class="admonition-title">Theorem: Integrating Over a Type I Region</p>
+<p>Let <em>R</em> be a Type I Region that lies between two vertical lines and the graphs of two continuous functions <span class="math notranslate nohighlight">\(g_1(x)\)</span> and <span class="math notranslate nohighlight">\(g_2(x)\)</span>. Then the integral of a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> that is continuous on <em>R</em> is,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \int_a^b \int_{g_1(x)}^{g_2(x)} f(x, y) \; dy \; dx\]</div>
+</div>
+<section id="example-f-x-y-x-2-e-x-y">
+<h3>Example: <span class="math notranslate nohighlight">\(f(x, y) = x^{2} e^{x y}\)</span><a class="headerlink" href="#example-f-x-y-x-2-e-x-y" title="Link to this heading">#</a></h3>
+<p>In this example we will integrate the function <span class="math notranslate nohighlight">\(f(x, y) = x^{2} e^{x y}\)</span> over the region bounded by <span class="math notranslate nohighlight">\(x = 0\)</span>, <span class="math notranslate nohighlight">\(y = 1\)</span>, and  <span class="math notranslate nohighlight">\(y = x/2.\)</span>  The region is pictured below,</p>
+<figure class="align-default" id="id13">
+<img alt="Region" src="../_images/Type1Int.png" />
+<figcaption>
+<p><span class="caption-text">Region</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>As before we cannot calculate the integral but we can get a nice image of what volume we are calculating.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 exp(x y)</span>
+</pre></div>
+</div>
+<p>Also input the region,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(x/2 &lt;= y &lt;= 1)</span> <span class="go">&amp;&amp; (0 &lt;= x &lt;= 2)</span>
+</pre></div>
+</div>
+<p>Finally input <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code> to do the restriction, hide the original surface and zoom in a bit,</p>
+<figure class="align-default" id="id14">
+<img alt=":math:`f(x, y) = x^{2} e^{x y}` on *R*" src="../_images/Type1Int001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = x^{2} e^{x y}\)</span> on <em>R</em></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>In CLAE we will not get as nice of an image as with GeoGebra but we can still visualize the volume.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2*exp(x*y)</span>
+</pre></div>
+</div>
+<p>Also input the bounding functions, <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">x/2</span></code>.  CLick and drag all of these to the 3D Graphics window.  They will all come in as functions, change <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">1</span></code>, and <code class="docutils literal notranslate"><span class="pre">x/2</span></code> to function sheets, they should convert to <span class="math notranslate nohighlight">\(y = f(x)\)</span> types.  For 0, go into the properties and change the independent variable to <em>y</em> and dependent variable to <em>x</em>.  We get the following image, rotate the camera around to get a feel for the volume we are finding.</p>
+<figure class="align-default" id="id15">
+<img alt=":math:`f(x, y) = x^{2} e^{x y}` on *R*" src="../_images/Type1Int002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = x^{2} e^{x y}\)</span> on <em>R</em></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is a Type I region with <span class="math notranslate nohighlight">\(g_1(x) = x/2\)</span>, <span class="math notranslate nohighlight">\(g_2(x) = 1\)</span>, <span class="math notranslate nohighlight">\(a = 0\)</span>, and <span class="math notranslate nohighlight">\(b = 2.\)</span>  Hence we get the integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R x^{2} e^{x y} \; dA = \int_0^2 \int_{x/2}^{1} x^{2} e^{x y} \; dy \; dx\]</div>
+<p>To calculate this in CLAE, select the function, select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>.  For the first variable input <em>y</em>, lower bound is <code class="docutils literal notranslate"><span class="pre">x/2</span></code> and upper bound is <code class="docutils literal notranslate"><span class="pre">1</span></code>.  For the second variable input <em>x</em>, lower bound <code class="docutils literal notranslate"><span class="pre">0</span></code> and upper bound <code class="docutils literal notranslate"><span class="pre">2</span></code>.  The result is 2.</p>
+</section>
+<section id="maxima">
+<h4>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h4>
+<p>This is a Type I region with <span class="math notranslate nohighlight">\(g_1(x) = x/2\)</span>, <span class="math notranslate nohighlight">\(g_2(x) = 1\)</span>, <span class="math notranslate nohighlight">\(a = 0\)</span>, and <span class="math notranslate nohighlight">\(b = 2.\)</span>  Hence we get the integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R x^{2} e^{x y} \; dA = \int_0^2 \int_{x/2}^{1} x^{2} e^{x y} \; dy \; dx\]</div>
+<p>To calculate this in Maxima, input the following command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(x**2*exp(x*y), y, x/2, 1), x, 0, 2);</span>
+</pre></div>
+</div>
+<p>The result is 2.</p>
+<div class="admonition-theorem-integrating-over-a-type-ii-region admonition">
+<p class="admonition-title">Theorem: Integrating Over a Type II Region</p>
+<p>Let <em>R</em> be a Type II Region that lies between two horizontal lines and the graphs of two continuous functions <span class="math notranslate nohighlight">\(h_1(y)\)</span> and <span class="math notranslate nohighlight">\(h_2(y)\)</span>.  Then the integral of a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> that is continuous on <em>R</em> is,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \int_a^b \int_{h_1(y)}^{h_2(y)} f(x, y) \; dx \; dy\]</div>
+</div>
+</section>
+</section>
+<section id="example-f-x-y-3x-2-y-2">
+<h3>Example: <span class="math notranslate nohighlight">\(f(x, y) = 3x^2 + y^2\)</span><a class="headerlink" href="#example-f-x-y-3x-2-y-2" title="Link to this heading">#</a></h3>
+<p>In this example we will integrate the function <span class="math notranslate nohighlight">\(f(x, y) = 3x^2 + y^2\)</span> over the region bounded by the curves <span class="math notranslate nohighlight">\(x = y+3\)</span> and <span class="math notranslate nohighlight">\(x = y^2 - 3.\)</span>  The region is pictured below,</p>
+<figure class="align-default" id="id16">
+<img alt="Region" src="../_images/Type2Int001.png" />
+<figcaption>
+<p><span class="caption-text">Region</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h4>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>As before we cannot calculate the integral but we can get a nice image of what volume we are calculating.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">3x^2 + y^2</span>
+</pre></div>
+</div>
+<p>Also input the two curves defining the region,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = y^2 - 3</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x = y+3</span>
+</pre></div>
+</div>
+<p>go into the 2D graphics window, select the toolbar option to find intersection points, select the two equations and the result will be the points <span class="math notranslate nohighlight">\((1, -2)\)</span> and <span class="math notranslate nohighlight">\((6, 3).\)</span> This tells us that the range for <em>y</em> is <span class="math notranslate nohighlight">\([-2, 3].\)</span></p>
+<figure class="align-default" id="id17">
+<img alt="*y* Bounds" src="../_images/Type2Int002.png" />
+<figcaption>
+<p><span class="caption-text"><em>y</em> Bounds</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So we can input the region with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(-2 &lt;= y &lt;= 3)</span> <span class="go">&amp;&amp; (y^2-3 &lt;= x &lt;= y+3)</span>
+</pre></div>
+</div>
+<p>Finally input <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code> to do the restriction, hide the original surface and zoom out a bit,</p>
+<figure class="align-default" id="id18">
+<img alt=":math:`f(x, y) = 3x^2 + y^2` on *R*" src="../_images/Type2Int003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = 3x^2 + y^2\)</span> on <em>R</em></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the function and the bounding curves,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">3*x^2 + y^2</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">y^2 - 3</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">y+3</span>
+</pre></div>
+</div>
+<p>CLick and drag all of these to the 3D Graphics window.  They will all come in as functions, change <cite>the bounding curves to function sheets, they should convert to :math:`x = f(y)</cite> types. Making the bounding sheets graph the grid instead of the surface, we get the following image, rotate the camera around to get a feel for the volume we are finding.</p>
+<figure class="align-default" id="id19">
+<img alt=":math:`f(x, y) = 3x^2 + y^2` on *R*" src="../_images/Type2Int004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x, y) = 3x^2 + y^2\)</span> on <em>R</em></span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is a Type II region with <span class="math notranslate nohighlight">\(h_1(x) = y^2-3\)</span>, <span class="math notranslate nohighlight">\(h_2(x) = y+3\)</span>, <span class="math notranslate nohighlight">\(a = -2\)</span>, and <span class="math notranslate nohighlight">\(b = 3.\)</span>  Hence we get the integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R 3x^2 + y^2 \; dA = \int_{-2}^3 \int_{y^2-3}^{y+3} 3x^2 + y^2 \; dx \; dy\]</div>
+<p>To calculate this in CLAE, select the function, select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>.  For the first variable input <em>x</em>, lower bound is <code class="docutils literal notranslate"><span class="pre">y^2-3</span></code> and upper bound is <code class="docutils literal notranslate"><span class="pre">y+3</span></code>.  For the second variable input <em>y</em>, lower bound <code class="docutils literal notranslate"><span class="pre">-2</span></code> and upper bound <code class="docutils literal notranslate"><span class="pre">3</span></code>.  The result is <span class="math notranslate nohighlight">\(\frac{2375}{7}.\)</span></p>
+</section>
+<section id="id3">
+<h4>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>This is a Type II region with <span class="math notranslate nohighlight">\(h_1(x) = y^2-3\)</span>, <span class="math notranslate nohighlight">\(h_2(x) = y+3\)</span>, <span class="math notranslate nohighlight">\(a = -2\)</span>, and <span class="math notranslate nohighlight">\(b = 3.\)</span>  Hence we get the integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R 3x^2 + y^2 \; dA = \int_{-2}^3 \int_{y^2-3}^{y+3} 3x^2 + y^2 \; dx \; dy\]</div>
+<p>To calculate this in Maxima, input the following command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(3*x**2 + y**2, x, y**2 - 3, y + 3), y, -2, 3);</span>
+</pre></div>
+</div>
+<p>The result is <span class="math notranslate nohighlight">\(\frac{2375}{7}.\)</span></p>
+</section>
+</section>
+</section>
+<section id="using-multiple-regions">
+<h2>Using Multiple Regions<a class="headerlink" href="#using-multiple-regions" title="Link to this heading">#</a></h2>
+<p>Recall from the previous section.  If <span class="math notranslate nohighlight">\(R = S \cup T\)</span> and <span class="math notranslate nohighlight">\(S \cap T = \emptyset\)</span> except for overlap on the boundaries, then</p>
+<div class="math notranslate nohighlight">
+\[\iint_{R} f(x, y) \; dA = \iint_{S} f(x, y) \; dA + \iint_{T} f(x, y) \; dA\]</div>
+<p>So if we are integrating over a region like the following.</p>
+<figure class="align-default" id="id20">
+<img alt="Multiple Region" src="../_images/Type1Int003.png" />
+<figcaption>
+<p><span class="caption-text">Multiple Region</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is neither a Type I nor a Type II region, but using the above property we can split this integral up into two segments that are both Type I.  We would then integrate each separately and add the results.</p>
+<figure class="align-default" id="id21">
+<img alt="Multiple Region" src="../_images/Type1Int004.png" />
+<figcaption>
+<p><span class="caption-text">Multiple Region</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="changing-the-order-of-integration">
+<h2>Changing the Order of Integration<a class="headerlink" href="#changing-the-order-of-integration" title="Link to this heading">#</a></h2>
+<p>We mentioned above that some regions are both Type I and Type II.  In this case you can choose which order you set the iterated integrals up. By Fubini’s theorem we will get the same result either way.  The big difference is in the integration order.  In one order the integral can be easy and in the other very hard.  So if you have an integral that is difficult to do then possibly reversing the order may make the calculations easier to do.</p>
+<section id="example-int-0-1-int-x-1-sin-y-2-dy-dx">
+<h3>Example: <span class="math notranslate nohighlight">\(\int_0^1 \int_x^1 \sin(y^2) \; dy \; dx\)</span><a class="headerlink" href="#example-int-0-1-int-x-1-sin-y-2-dy-dx" title="Link to this heading">#</a></h3>
+<p>The goal here is to find,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \int_x^1 \sin(y^2) \; dy \; dx\]</div>
+<p>For this integral the region is the following,</p>
+<figure class="align-default" id="id22">
+<img alt="Region" src="../_images/TypeChange001.png" />
+<figcaption>
+<p><span class="caption-text">Region</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>and it is set up as a Type I region.  If we revise this to a Type II integral we get,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \int_0^y \sin(y^2) \; dx \; dy\]</div>
+<p>If you do both of these by hand you will see that the second is easier.  We will attack these with the machine.</p>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Doing this integral,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \int_x^1 \sin(y^2) \; dy \; dx\]</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{3 \sqrt{2} \sqrt{\pi} \left(\frac{3 \sqrt{2} \cos{\left(1 \right)} \Gamma\left(\frac{3}{4}\right)}{8 \sqrt{\pi} \Gamma\left(\frac{7}{4}\right)} + \frac{3 S\left(\frac{\sqrt{2}}{\sqrt{\pi}}\right) \Gamma\left(\frac{3}{4}\right)}{4 \Gamma\left(\frac{7}{4}\right)}\right) \Gamma\left(\frac{3}{4}\right)}{8 \Gamma\left(\frac{7}{4}\right)} + \frac{3 \sqrt{2} \sqrt{\pi} S\left(\frac{\sqrt{2}}{\sqrt{\pi}}\right) \Gamma\left(\frac{3}{4}\right)}{8 \Gamma\left(\frac{7}{4}\right)} + \frac{9 \Gamma^{2}\left(\frac{3}{4}\right)}{32 \Gamma^{2}\left(\frac{7}{4}\right)}\]</div>
+<p>which approximates to 0.2298488470659301413. Doing this integral,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \int_0^y \sin(y^2) \; dx \; dy\]</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} - \frac{\cos{\left(1 \right)}}{2}\]</div>
+<p>which also approximates to 0.2298488470659301413.</p>
+</section>
+<section id="id5">
+<h4>Maxima<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>For the integral,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \int_x^1 \sin(y^2) \; dy \; dx\]</div>
+<p>the command is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(sin(y**2), y, x, 1), x, 0, 1);</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[-\operatorname{(}{{\% e}^{-\% i}} \operatorname{(}\sqrt{-\% i} \left( \% i \left( {{\left( -1\right) }^{\frac{1}{4}}} \sqrt{2} {{\% e}^{2 \% i}}-{{\left( -1\right) }^{\frac{1}{4}}} \sqrt{2} {{\% e}^{\% i}}\right) +{{\left( -1\right) }^{\frac{1}{4}}} \sqrt{2} {{\% e}^{2 \% i}}-{{\left( -1\right) }^{\frac{1}{4}}} \sqrt{2} {{\% e}^{\% i}}\right) +2 {{\left( -1\right) }^{\frac{1}{4}}} {{\% e}^{2 \% i}}+\left( \sqrt{2}-\sqrt{2} {{\% e}^{\% i}}\right)  \% i +\left( -\sqrt{2}-4 {{\left( -1\right) }^{\frac{1}{4}}}\right)  {{\% e}^{\% i}}+\sqrt{2}+2 {{\left( -1\right) }^{\frac{1}{4}}}\operatorname{)}\operatorname{)}/\left( 16 {{\left( -1\right) }^{\frac{1}{4}}}\right) \mbox{}\]</div>
+<p>For the integral,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \int_0^y \sin(y^2) \; dx \; dy\]</div>
+<p>the command is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(sin(y**2), x, 0, y), y, 0, 1);</span>
+</pre></div>
+</div>
+<p>and the result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2} - \frac{\cos{\left(1 \right)}}{2}\]</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="doubleintegralsrect.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Double Integrals over Rectangular Regions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="doubleintegralspolar.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Double Integrals in Polar Coordinates</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-regions">General Regions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculating-double-integrals-over-general-regions">Calculating Double Integrals over General Regions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-y-x-2-e-x-y">Example: <span class="math notranslate nohighlight">\(f(x, y) = x^{2} e^{x y}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-y-3x-2-y-2">Example: <span class="math notranslate nohighlight">\(f(x, y) = 3x^2 + y^2\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-multiple-regions">Using Multiple Regions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changing-the-order-of-integration">Changing the Order of Integration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-0-1-int-x-1-sin-y-2-dy-dx">Example: <span class="math notranslate nohighlight">\(\int_0^1 \int_x^1 \sin(y^2) \; dy \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Maxima</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sequences &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/sequences';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Series" href="series.html" />
+    <link rel="prev" title="First-Order Linear Equations" href="firstorderlinear.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="impint.html">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Sequences</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="sequences">
+<h1><span class="target" id="index-0"></span>Sequences<a class="headerlink" href="#sequences" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-infinite-sequence admonition">
+<p class="admonition-title">Definition: Infinite Sequence</p>
+<p>An <strong>infinite sequence</strong> <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is an ordered list of numbers of the form</p>
+<div class="math notranslate nohighlight">
+\[a_1, a_2, \ldots , a_n, \ldots.\]</div>
+<p><em>n</em> is called the <strong>index</strong> variable of the sequence. Each number <span class="math notranslate nohighlight">\(a_n\)</span> is a <strong>term</strong> of the sequence.</p>
+</div>
+<p>In some cases we can find an explicit formula for each term in the sequence, <span class="math notranslate nohighlight">\(a_n = f(n)\)</span>, in this case we would write, <span class="math notranslate nohighlight">\(\left\{f(n)\right\}_{n=1}^\infty\)</span> or just <span class="math notranslate nohighlight">\(\left\{f(n)\right\}\)</span> if the starting index of the sequence was understood.  In addition, the starting point of a sequence is irrelevant, it can start at any value but is usually 1 or a positive integer.</p>
+<p>In some cases a sequence is defined by a formula that uses previous entries from the sequence itself, in this case a sequences is defined by a <strong>recurrence relation</strong>. The classical example here is the Fibonacci sequence,</p>
+<div class="math notranslate nohighlight">
+\[a_n = a_{n-1} + a_{n-2} \qquad {\rm with} \quad a_0 = 1  \quad {\rm and} \quad a_1 = 1\]</div>
+<p>With infinite sequences we frequently wish to know if the sequence converges to a number or not, the limit of a sequence is similar to the infinite limit of a function.  The limit definition below is an intuitive definition, these is a precise definition but we will not give it here.</p>
+<div class="admonition-definition-limit-of-a-sequence admonition">
+<p class="admonition-title">Definition: Limit of a Sequence</p>
+<p>Given a sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span>, if the terms <span class="math notranslate nohighlight">\(a_n\)</span> become arbitrarily close to a finite number <span class="math notranslate nohighlight">\(L\)</span> as <span class="math notranslate nohighlight">\(n\)</span> becomes sufficiently large, we say <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is a convergent sequence and <span class="math notranslate nohighlight">\(L\)</span> is the limit of the sequence. In this case, we write</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} a_n = L\]</div>
+<p>If a sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is not convergent, we say it is a divergent sequence.</p>
+</div>
+<p>One consequence of the sequence definition being so close to the function definition is that if we have a function that coincides with the sequence and the function converges then so does the sequence.</p>
+<div class="admonition-theorem-limit-of-a-sequence-defined-by-a-function admonition">
+<p class="admonition-title">Theorem: Limit of a Sequence Defined by a Function</p>
+<p>For a sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> such that <span class="math notranslate nohighlight">\(a_n = f(n)\)</span> for all <span class="math notranslate nohighlight">\(n \geq 1\)</span>. If there exists a real number <span class="math notranslate nohighlight">\(L\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} f(x) = L\]</div>
+<p>then <span class="math notranslate nohighlight">\(\{a_n\}\)</span> converges and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} a_n = L\]</div>
+</div>
+<p>One thing to note about the above theorem is that it is possible for sequence to converge but the function ot to have an infinite limit.  A classic example is the sequence <span class="math notranslate nohighlight">\(\{ \cos(2 \pi n) \}\)</span>.  The limit <span class="math notranslate nohighlight">\(\displaystyle \lim_{x \to \infty} \cos(2 \pi x)\)</span> does not exist but the sequence <span class="math notranslate nohighlight">\(\{ \cos(2 \pi n) \} = \{ 1, 1, 1, \ldots \}\)</span> converges to 1.  The above theorem is how most computer algebra systems calculate the limit of a sequence.  Most require you to input a function that defines the nth term and then the CAS takes the limit at infinity of the function.  Some other computer algebra systems will distinguish between a limit at infinity and the limit of a sequence, this is usually better since it can assume that <em>n</em> is an integer and hence catch situations like the example above.</p>
+<p>There are limit laws for sequences just as there are limit laws for function limits, and as expected, they are very similar.</p>
+<div class="admonition-theorem-limit-laws-for-sequences admonition">
+<p class="admonition-title">Theorem: Limit Laws for Sequences</p>
+<p>Given two convergent sequences <span class="math notranslate nohighlight">\(\{a_n\}\)</span> and <span class="math notranslate nohighlight">\(\{b_n\}\)</span> with <span class="math notranslate nohighlight">\(\lim_{n \to \infty} a_n = A\)</span> and <span class="math notranslate nohighlight">\(\lim_{n \to \infty} b_n = B\)</span>, and any real number <span class="math notranslate nohighlight">\(c\)</span>, then</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} c = c\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} ca_n = c \lim_{n \to \infty} a_n = cA\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} (a_n \pm b_n) = \lim_{n \to \infty} a_n \pm \lim_{n \to \infty} b_n = A \pm B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} (a_n \cdot b_n) = \left(\lim_{n \to \infty} a_n \right) \cdot \left( \lim_{n \to \infty} b_n \right) = A \cdot B\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} \frac{a_n}{b_n} = \frac{\displaystyle \lim_{n \to \infty} a_n}{\displaystyle \lim_{n \to \infty} b_n} = \frac{A}{B}\)</span>, as long as <span class="math notranslate nohighlight">\(B \neq 0\)</span> and each <span class="math notranslate nohighlight">\(b_n \neq 0\)</span>.</p></li>
+</ol>
+</div>
+<p>In addition,</p>
+<div class="admonition-theorem-continuous-functions-defined-on-convergent-sequences admonition">
+<p class="admonition-title">Theorem: Continuous Functions Defined on Convergent Sequences</p>
+<p>If a sequence <span class="math notranslate nohighlight">\({a_n}\)</span> converges to <span class="math notranslate nohighlight">\(L\)</span> and a function <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous at <span class="math notranslate nohighlight">\(L\)</span> then the sequence <span class="math notranslate nohighlight">\({f(a_n)}\)</span> converges to <span class="math notranslate nohighlight">\(f(L)\)</span>.</p>
+</div>
+<p>One thing to note about the above theorem is that the function may not be defined for the first finite number of <span class="math notranslate nohighlight">\(a_n\)</span> terms.  Since <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous at <span class="math notranslate nohighlight">\(L\)</span>, it will be defined for all terms from sme point on, we simply use that as our starting point for the <span class="math notranslate nohighlight">\({f(a_n)}\)</span> sequence.</p>
+<p>There is also a sequence counterpart for the Squeeze Theorem.</p>
+<div class="admonition-theorem-squeeze-theorem-for-sequences admonition">
+<p class="admonition-title">Theorem: Squeeze Theorem for Sequences</p>
+<p>If we have three sequences <span class="math notranslate nohighlight">\(\{a_n\}\)</span>, <span class="math notranslate nohighlight">\(\{b_n\}\)</span>, and <span class="math notranslate nohighlight">\(\{c_n\}\)</span> with <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} a_n = \lim_{n \to \infty} c_n = L\)</span> and from some point, <span class="math notranslate nohighlight">\(N\)</span>, on <span class="math notranslate nohighlight">\(a_n \leq b_n \leq c_n\)</span> for all <span class="math notranslate nohighlight">\(n \geq N\)</span>, then <span class="math notranslate nohighlight">\(\{b_n\}\)</span> converges with <span class="math notranslate nohighlight">\(\displaystyle \lim_{n \to \infty} b_n = L.\)</span></p>
+</div>
+<p>The final definitions and theorems are mainly for theoretical purposes but do come in handy from time to time.</p>
+<div class="admonition-definition-bounded-sequences admonition">
+<p class="admonition-title">Definition: Bounded Sequences</p>
+<ul class="simple">
+<li><p>A sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is bounded above if there exists a real number <em>M</em> such that <span class="math notranslate nohighlight">\(a_n \leq M\)</span> for all positive integers <em>n</em>.</p></li>
+<li><p>A sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is bounded below if there exists a real number <em>M</em> such that <span class="math notranslate nohighlight">\(a_n \geq M\)</span> for all positive integers <em>n</em>.</p></li>
+<li><p>A sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is a bounded sequence if it is bounded above and bounded below.  If the sequence is not bounded, it is called an unbounded sequence.</p></li>
+</ul>
+</div>
+<div class="admonition-theorem-bounded-convergent-sequences-are-bounded admonition">
+<p class="admonition-title">Theorem: Bounded Convergent Sequences are Bounded</p>
+<p>If the sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> converges, then it is bounded.</p>
+</div>
+<div class="admonition-definition-increasing-decreasing-and-monotone-sequences admonition">
+<p class="admonition-title">Definition: Increasing, Decreasing and Monotone Sequences</p>
+<ul class="simple">
+<li><p>A sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is increasing if <span class="math notranslate nohighlight">\(a_n \leq a_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n \geq N.\)</span></p></li>
+<li><p>A sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is decreasing if <span class="math notranslate nohighlight">\(a_n \geq a_{n + 1}\)</span> for all <span class="math notranslate nohighlight">\(n \geq N.\)</span></p></li>
+<li><p>A sequence <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is a monotone sequence it is increasing or decreasing.</p></li>
+</ul>
+</div>
+<p>Note that some textbooks use a strict inequality, that is, <span class="math notranslate nohighlight">\(a_n &lt; a_{n + 1}\)</span> instead of <span class="math notranslate nohighlight">\(a_n \leq a_{n + 1}\)</span>, similarly for decreasing sequences.  For those that use the definition we have above, they call the strict inequality <em>strictly increasing</em> and <em>strictly decreasing</em> respectively.</p>
+<div class="admonition-theorem-monotone-convergence-theorem admonition">
+<p class="admonition-title">Theorem: Monotone Convergence Theorem</p>
+<p>If <span class="math notranslate nohighlight">\(\{a_n\}\)</span> is a bounded monotone sequence then it converges.</p>
+</div>
+<p>In the examples we will be concentrating on visualizing and computing limits of sequences.</p>
+</section>
+<section id="example-left-left-2-3-n-1-right-frac-1-n-right">
+<h2>Example: <span class="math notranslate nohighlight">\(\left\{ \left(2^{3 n + 1}\right)^{\frac{1}{n}} \right\}\)</span><a class="headerlink" href="#example-left-left-2-3-n-1-right-frac-1-n-right" title="Link to this heading">#</a></h2>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>In GeoGebra, we need to define a sequence of <em>x</em> values, define the nth term function (with independent variable <em>x</em>), apply the function to the sequence for the <em>y</em> values and create points out of the two sequences.</p>
+<p>Input the nth term function (in terms of <em>x</em>),</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(2^(3 x+1)</span><span class="go">)^(1/x)</span>
+</pre></div>
+</div>
+<p>Create a sequence of <em>x</em> values with <code class="docutils literal notranslate"><span class="pre">Sequence(1,</span> <span class="pre">100)</span></code>, this should come in as a list <code class="docutils literal notranslate"><span class="pre">l1</span></code>. In a new cell input <code class="docutils literal notranslate"><span class="pre">f(l1)</span></code>, this will create a list <code class="docutils literal notranslate"><span class="pre">l2</span></code> of corresponding <em>y</em> values.  Finally input <code class="docutils literal notranslate"><span class="pre">(l1,</span> <span class="pre">l2)</span></code> and this will create a set of 100 points representing the sequence.</p>
+<figure class="align-default" id="id1">
+<img alt="Sequence Example" src="../_images/seq0011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left\{ \left(2^{3 n + 1}\right)^{\frac{1}{n}} \right\}\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To calculate the limit of the sequence just take the limit of the function <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> as <em>x</em> approaches infinity,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Limit(f,infinity)</span>
+</pre></div>
+</div>
+<p>The result should be 8.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the nth term function using <em>x</em> as the index.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(2^(3*x+1)</span><span class="go">)^(1/x)</span>
+</pre></div>
+</div>
+<p>Note that the CAS does not care when the variable is, the only reason we are using <em>x</em> here is because we will be graphing the sequence.  If all we wanted to do was find the limit we could have used <em>n</em> or any other variable for the index.</p>
+<p>Click and drag this over to the graph and change the type to sequence/series.</p>
+<figure class="align-default" id="id2">
+<img alt="Sequence Example" src="../_images/seq0021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left\{ \left(2^{3 n + 1}\right)^{\frac{1}{n}} \right\}\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To calculate the limit of the sequence just select the nth tern function and select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Sequence</span> <span class="pre">Limit</span></code>, a dialog will appear allowing the selection of the variable and properties.  The variable is <em>x</em> and you can leave the variable properties alone.  The sequence limit option automatically assumes that the index variable is a positive integer.  Note that you do not want to use the <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> option for sequences.  The sequence limit option uses different techniques and can report the sequence limit where the limit option may fail.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>You can graph a sequence in Maxima like we did in GeoGebra and CLAE above but it is a little cumbersome, we will do it here.</p>
+<p>First input the nth term function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(n):=(2^(3*n+1))^(1/n);</span>
+</pre></div>
+</div>
+<p>Now define the set of points,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">POINTS:makelist([n,f(n)],n,1,100)$</span>
+</pre></div>
+</div>
+<p>The $ at the end is to supress the lengthy output.  Now plot it with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxdraw2d(</span>
+<span class="go">grid=true,</span>
+<span class="go">xrange=[0,100],</span>
+<span class="go">yrange=[6,10],</span>
+<span class="go">color=black,</span>
+<span class="go">point_type=7,</span>
+<span class="go">points(POINTS)</span>
+<span class="go">);</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id3">
+<img alt="Sequence Example" src="../_images/seq003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left\{ \left(2^{3 n + 1}\right)^{\frac{1}{n}} \right\}\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Finding the limit of the sequence is the same as finding the infinite limit,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(f(n),n,inf);</span>
+</pre></div>
+</div>
+<p>The result is 8.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="firstorderlinear.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">First-Order Linear Equations</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="series.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Series</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-left-left-2-3-n-1-right-frac-1-n-right">Example: <span class="math notranslate nohighlight">\(\left\{ \left(2^{3 n + 1}\right)^{\frac{1}{n}} \right\}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

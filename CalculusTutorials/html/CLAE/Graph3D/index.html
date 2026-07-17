@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3D Graphs &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/Graph3D/index';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Program Layout and Use" href="LayoutUse.html" />
+    <link rel="prev" title="Legend Options" href="../Graph2D/LegendOpts.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">3D Graphs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Function z = f(x, y)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SurfaceRev.html">Surface of Revolution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Parametric.html">Parametric Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Cylindrical.html">Cylindrical Coordinate Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Spherical.html">Spherical Coordinate Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Implicit.html">Implicit Relationship f(x, y, z) = 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSheet.html">Function Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolarFunctionSheet.html">Polar Function Sheet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SpaceCurve.html">Space Curve (x, y, z) = (f(t), g(t), h(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSpaceCurve2D.html">2-D Function Space Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FunctionSpaceCurve2DPolar.html">2-D Polar Space Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearSystem.html">Linear System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOpts.html">Editing Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotViewer.html">Snapshot Viewer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MouseModeOpts.html">Mouse Mode Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AxesOpts.html">Axes/Grid Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CameraOpts.html">Camera Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">3D Graphs</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="d-graphs">
+<h1><span class="target" id="index-0"></span>3D Graphs<a class="headerlink" href="#d-graphs" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>The 2D and 3D graphics tabs are the ones you will be using the most.  For the first couple courses in Calculus you will be primarily, if not exclusively, using the 2D graphics system and for courses in Linear Algebra and Multi-variable Calculus you will primarily be using the 3D graphics system.  Both are set up in a similar manner but they are independent of each other.</p>
+<section id="d-graphics-system-layout">
+<h3><span class="target" id="index-1"></span>3D Graphics System Layout<a class="headerlink" href="#d-graphics-system-layout" title="Link to this heading">#</a></h3>
+<p>The 3D graphics system is pictured below.  The menu and toolbars are at the top of the view, the main graphics area for the plots is in the center and the graphics manager is at the bottom.  The graphics manager is divided into two sub-windows.  The left will contain the objects being graphed as well as tools for changing the display types and properties of the graphs. The currently selected object is the one that is highlighted, you can select only one object at a time.  The right contains the sliders for the objects.  Any variable name that is not the independent variable or variables in the expression are considered constants, that is, anything other than <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>, and <code class="docutils literal notranslate"><span class="pre">v</span></code>.  When an expression is graphed that has one or more constants in it a slider is created for each constant in the expression.  These sliders are global, so if two different expressions use the constant <code class="docutils literal notranslate"><span class="pre">a</span></code> both use the same slider value for <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<figure class="align-default" id="id1">
+<img alt="3D Graphics System Layout" src="../../_images/Layout0011.png" />
+<figcaption>
+<p><span class="caption-text">3D Graphics System Layout</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The image below shows the graphics system with several entries and slider values.  Note that the main graphics area shows the surfaces. The 3D graphics system does not include a legend like the 2D graphics system, the object list in the graphics manager is the legend for the 3D system. The graphics manager shows each object in the left screen and a set of sliders in the right screen.</p>
+<figure class="align-default" id="id2">
+<img alt="3D Graphics System Layout with Objects and Sliders" src="../../_images/Layout0021.png" />
+<figcaption>
+<p><span class="caption-text">3D Graphics System Layout with Objects and Sliders</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The divider between the graphs and the graphics manager is movable as is the divider between the object list and the slider list within the graphics manager.  In fact, they can be moved all the way to the margins of the view and collapsed.</p>
+</section>
+<section id="inserting-a-3d-graphs-item">
+<h3><span class="target" id="index-2"></span>Inserting a 3D Graphs Item<a class="headerlink" href="#inserting-a-3d-graphs-item" title="Link to this heading">#</a></h3>
+<p>Adding a plot to the 3D graphics system can be done in two ways, a drag and drop from the CAS to the graphics plot area or the graphics manager item list, and second by selecting the Insert option from the 3D graph menu and then the type of object you wish to plot.</p>
+<p>This program was built for using the CAS capabilities alongside the visualizations tools so in many cases you will already have an expression in the CAS workspace that you want to graph.  In this case simply drag it over to the graph.  The type of image will be automatically selected (see the discussion on types below), if this is not that way you want to visualize the expression use the type selector to change the rendering type to what you want.  Note that if you click and drag an expression that cannot be graphed by the program it will give you an error message.  Also, there may be some rare cases where you click and drag an expression over to the graph and the expression does not graph.  This is usually when the expression is legitimate but the numpy translation does not produce usable values, for example, complex numbered results.</p>
+<p>You do not need to first input the expression in the CAS.  The Insert menu contains all the graphics types that this program will recognize. When an expression is input in this manner the type will be the type selected from the menu but it will also produce the same type drop-down list as it would if the expression was dragged over from the CAS.</p>
+</section>
+<section id="navigating-the-3d-graphics-view">
+<h3><span class="target" id="index-3"></span>Navigating the 3D Graphics View<a class="headerlink" href="#navigating-the-3d-graphics-view" title="Link to this heading">#</a></h3>
+<p>Navigating the 3D graphics view is fairly simple and done primary using the mouse.  First make sure that the mouse mode is set to the default mode of <code class="docutils literal notranslate"><span class="pre">Camera</span> <span class="pre">Rotation</span> <span class="pre">and</span> <span class="pre">Zoom</span></code>.  The camera is a spherical camera, that is, its position is on a sphere and the direction it is pointed is to the center of the viewing cube.</p>
+<ul class="simple">
+<li><p>Left click and drag will change the spherical angles of the camera position but not the distance the camera is from the center of the viewing cube.  Horizontal movements change the XY-plane angle and vertical movements change the angle with the Z-axis.</p></li>
+<li><p>Mouse scrolling will change the distance the camera is from the origin, that is, the radius of the sphere the camera is on.</p></li>
+<li><p>The left and right arrow keys change the XY-plane angle.</p></li>
+<li><p>The up and down arrow keys change the angle with the Z-axis.</p></li>
+<li><p>Ctrl+Up Arrow decreases the sphere radius and hence zooms in on the view.</p></li>
+<li><p>Ctrl+Down Arrow increases the sphere radius and hence zooms out on the view.</p></li>
+<li><p>The menu option <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Reset</span> <span class="pre">View</span> <span class="pre">Window</span></code> (and its corresponding toolbar button) resets the view area to the default of <span class="math notranslate nohighlight">\([-10, 10] \times [-10, 10] \times [-10, 10]\)</span>.</p></li>
+<li><p>The menu option <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Center</span> <span class="pre">at</span> <span class="pre">Origin</span></code> (and its corresponding toolbar button) resets the center to the origin.  Note that this will simply move the center, it will not change the lengths of the axes or the viewing aspect ratio.</p></li>
+<li><p>The menu option <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Translate</span> <span class="pre">Center</span> <span class="pre">to</span> <span class="pre">(x,</span> <span class="pre">y,</span> <span class="pre">z)</span></code> (and its corresponding toolbar button) allows the user to set the center of the viewing area to any point <span class="math notranslate nohighlight">\((x, y, z)\)</span>.  When this option is selected a dialog box will appear allowing the user to select the x, y, and z values for the new center. Note that this will simply move the center, it will not change the lengths of the axes or the viewing aspect ratio.</p></li>
+<li><p>The menu option <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Set</span> <span class="pre">View</span> <span class="pre">Window</span> <span class="pre">to</span> <span class="pre">1-1</span></code> (and its corresponding toolbar button) will reset the lengths of the axes to give an aspect ratio of 1.  Note that this is not a locking 1-1, so after this option is selected the graphics view aspect ratio can be changed with the other navigation options.  If this is done then this option needs to be selected again to get back to a 1-1 aspect ratio.</p></li>
+</ul>
+</section>
+<section id="d-graphics-manager">
+<h3><span class="target" id="index-4"></span>3D Graphics Manager<a class="headerlink" href="#d-graphics-manager" title="Link to this heading">#</a></h3>
+<section id="d-graphics-item-tools">
+<h4>3D Graphics Item Tools<a class="headerlink" href="#d-graphics-item-tools" title="Link to this heading">#</a></h4>
+<p>Each entry in the graphics items list has the same set of options.  The first is a check box that toggles the view of the object, you can also toggle the view of the object by double-clicking the description.  The second is a drop-down box which lists all the ways that this program can view the expression, to change the type of rendering of the expression simply select it from this drop-down box. The next is the base color of the object, simply click on this color box to bring up a color selection dialog for you to select another color. The last tool before the description is the properties editing button.  Selecting this will bring up the properties dialog for that object type to allow you to edit any options for that plot.</p>
+<p>Each graphics type has its own set of properties, these will be discussed in each of the separate graphics object types.  The editing dialog and the insert dialog have the same properties for each type, the only difference is that when you edit properties for an object that already exists the expression and current properties are already loaded into the dialog whereas with the insert option the expressions are blank and the properties are set to their default values.</p>
+<figure class="align-default" id="id3">
+<img alt="3D Graphics Item Tools" src="../../_images/GM0011.png" />
+<figcaption>
+<p><span class="caption-text">3D Graphics Item Tools</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that you can drag and drop items from the graphics item list to the CAS.  This would be useful if you had input the expression from the insert menu and then decided you wanted to do some CAS functions on it.</p>
+</section>
+<section id="d-graphics-item-types">
+<h4>3D Graphics Item Types<a class="headerlink" href="#d-graphics-item-types" title="Link to this heading">#</a></h4>
+<p>The image below shows the graphics type selector.  This list will be different for different expressions, some may have a large number of types and others may have few or just one.</p>
+<figure class="align-default" id="id4">
+<img alt="3D Graphics Type Selector" src="../../_images/GM0021.png" />
+<figcaption>
+<p><span class="caption-text">3D Graphics Type Selector</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="d-graphics-item-toggle">
+<h4>3D Graphics Item Toggle<a class="headerlink" href="#d-graphics-item-toggle" title="Link to this heading">#</a></h4>
+<p>As mentioned above, the checkbox or double-clicking the description will toggle the view of the item but not remove the item from the item list.  If an item is deselected it will be grayed out in the list and not visible on the graph.  Below is an example of a deselected item.  Note that sliders for deselected items are not removed since the item is still in the manager list.</p>
+<figure class="align-default" id="id5">
+<img alt="3D Graphics Item Toggle" src="../../_images/GM0051.png" />
+<figcaption>
+<p><span class="caption-text">3D Graphics Item Toggle</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="d-graphics-sliders">
+<h4>3D Graphics Sliders<a class="headerlink" href="#d-graphics-sliders" title="Link to this heading">#</a></h4>
+<p>Each constant is automatically given a slider when the expression is put into the graph and is removed if an item is deleted and no other item uses that constant.  The constant sliders all have the same layout.  The top line starts with the constant name.  In the example pictured below the names are <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, and <code class="docutils literal notranslate"><span class="pre">c</span></code>.   Any variable that is not an independent variable or variables is considered to be a constant, that is, anything other than <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">z</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">t</span></code>, <code class="docutils literal notranslate"><span class="pre">u</span></code>, and <code class="docutils literal notranslate"><span class="pre">v</span></code>.  After the name is the minimum slider value, the slider itself, and then the maximum slider value.  The minimum and maximum can be changed using the slider properties, discussed below. Below the slider is the current value of the constant.</p>
+<figure class="align-default" id="id6">
+<img alt="3D Graphics Sliders" src="../../_images/GM0031.png" />
+<figcaption>
+<p><span class="caption-text">3D Graphics Sliders</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>On the far right of each slider are two tools, the first (play button) is the animator.  Clicking this will animate the slider from the minimum to maximum values and then reverse direction continually until the user clicks the stop button that will replace the play button when an animation is started.  The second tool is the properties button.  This will invoke the slider options dialog allowing the user to select the minimum, maximum, value, the number of steps in the slider (i.e. the granularity), the animation speed, and the precision of the display of the constant value.</p>
+<figure class="align-default" id="id7">
+<img alt="3D Graphics Slider Properties" src="../../_images/GM0041.png" />
+<figcaption>
+<p><span class="caption-text">3D Graphics Slider Properties</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="d-graphics-object-descriptions">
+<h2>3-D Graphics Object Descriptions<a class="headerlink" href="#d-graphics-object-descriptions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="Function.html"><span class="doc">Function z = f(x, y)</span></a>: Graph expressions of the form <span class="math notranslate nohighlight">\(z = f(x, y)\)</span>.</p></li>
+<li><p><a class="reference internal" href="SurfaceRev.html"><span class="doc">Surface of Revolution</span></a>: Graph a surface of revolution around an axis parallel to one of the coordinate axes.</p></li>
+<li><p><a class="reference internal" href="Parametric.html"><span class="doc">Parametric Surface</span></a>: Graph a parametric surface <span class="math notranslate nohighlight">\((x, y, z) = (f(u, v), g(u, v), h(u, v))\)</span>.</p></li>
+<li><p><a class="reference internal" href="Cylindrical.html"><span class="doc">Cylindrical Coordinate Surface</span></a>: Graph a Cylindrical Coordinate surface <span class="math notranslate nohighlight">\(z= f(r, \theta)\)</span>.</p></li>
+<li><p><a class="reference internal" href="Spherical.html"><span class="doc">Spherical Coordinate Surface</span></a>: Graph a Spherical Coordinate surface <span class="math notranslate nohighlight">\(r = f(\theta, \phi)\)</span>, <span class="math notranslate nohighlight">\(\theta = f(r, \phi)\)</span>, or <span class="math notranslate nohighlight">\(\phi = f(r, \theta)\)</span>.</p></li>
+<li><p><a class="reference internal" href="Implicit.html"><span class="doc">Implicit Relationship f(x, y, z) = 0</span></a>: Graph an implicitly defined relationship of the form <span class="math notranslate nohighlight">\(f(x, y, z) = 0\)</span>.</p></li>
+<li><p><a class="reference internal" href="FunctionSheet.html"><span class="doc">Function Sheet</span></a>: Graph a function sheet, or curtain, with respect to any of the coordinate planes.</p></li>
+<li><p><a class="reference internal" href="PolarFunctionSheet.html"><span class="doc">Polar Function Sheet</span></a>: Graph a function sheet, or curtain, in polar coordinates with respect to any of the coordinate planes.</p></li>
+<li><p><a class="reference internal" href="SpaceCurve.html"><span class="doc">Space Curve (x, y, z) = (f(t), g(t), h(t))</span></a>: Graph a space curve <span class="math notranslate nohighlight">\((x, y, z) = (f(t), g(t), h(t))\)</span>.</p></li>
+<li><p><a class="reference internal" href="FunctionSpaceCurve2D.html"><span class="doc">2-D Function Space Curve</span></a>: Graph a space curve defined by a single variable function with respect to any of the coordinate planes.</p></li>
+<li><p><a class="reference internal" href="FunctionSpaceCurve2DPolar.html"><span class="doc">2-D Polar Space Curve</span></a>: Graph a space curve defined by a single variable function with respect to any of the coordinate planes in polar coordinates.</p></li>
+<li><p><a class="reference internal" href="TracePoint.html"><span class="doc">Trace Point</span></a>: Graph a point that traces out a point set as the graph is updated, usually by the changing of a slider value.</p></li>
+<li><p><a class="reference internal" href="PointSet.html"><span class="doc">Point Set</span></a>: Graph a set of <span class="math notranslate nohighlight">\((x, y, z)\)</span> points.</p></li>
+<li><p><a class="reference internal" href="Polygon.html"><span class="doc">Polygon</span></a>: Graph a polygon through a sequence of <span class="math notranslate nohighlight">\((x, y, z)\)</span> points.</p></li>
+<li><p><a class="reference internal" href="VectorSet.html"><span class="doc">Vector Set</span></a>: Graph a set of <span class="math notranslate nohighlight">\((x, y, z)\)</span> points, as vectors <span class="math notranslate nohighlight">\(\langle x, y, z \rangle\)</span>.</p></li>
+<li><p><a class="reference internal" href="LinearSystem.html"><span class="doc">Linear System</span></a>: Graph a set of lines defining a linear system, each being the row of an <span class="math notranslate nohighlight">\(n \times 4\)</span> matrix.</p></li>
+<li><p><a class="reference internal" href="VectorField.html"><span class="doc">Vector Field</span></a>: Graph a 3-D vector field defined as <span class="math notranslate nohighlight">\(F = \langle f(x, y, z), g(x, y, z), h(x, y, z) \rangle\)</span>.</p></li>
+<li><p><a class="reference internal" href="FlowCurve.html"><span class="doc">Flow Curve</span></a>: Graph a curve following a vector field and with initial point <span class="math notranslate nohighlight">\((a, b, c)\)</span>.</p></li>
+<li><p><a class="reference internal" href="Value.html"><span class="doc">Value</span></a>: Track a value in the graphics manage and in the legend that is linked to one or more slider values.</p></li>
+</ul>
+</section>
+<section id="quick-guides">
+<h2>Quick Guides<a class="headerlink" href="#quick-guides" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Quick Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+</ul>
+</div>
+</section>
+<section id="file-options">
+<h2>File Options<a class="headerlink" href="#file-options" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">File Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+</ul>
+</div>
+</section>
+<section id="graphs">
+<h2>Graphs<a class="headerlink" href="#graphs" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Graphs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Function.html">Function z = f(x, y)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SurfaceRev.html">Surface of Revolution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Parametric.html">Parametric Surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Cylindrical.html">Cylindrical Coordinate Surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Spherical.html">Spherical Coordinate Surface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Implicit.html">Implicit Relationship f(x, y, z) = 0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FunctionSheet.html">Function Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PolarFunctionSheet.html">Polar Function Sheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SpaceCurve.html">Space Curve (x, y, z) = (f(t), g(t), h(t))</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FunctionSpaceCurve2D.html">2-D Function Space Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FunctionSpaceCurve2DPolar.html">2-D Polar Space Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="LinearSystem.html">Linear System</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Value.html">Value</a></li>
+</ul>
+</div>
+</section>
+<section id="edit-and-navigation-options">
+<h2>Edit and Navigation Options<a class="headerlink" href="#edit-and-navigation-options" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Edit and Navigation Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="EditOpts.html">Editing Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SnapshotViewer.html">Snapshot Viewer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MouseModeOpts.html">Mouse Mode Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AxesOpts.html">Axes/Grid Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CameraOpts.html">Camera Options</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../Graph2D/LegendOpts.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Legend Options</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="LayoutUse.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Program Layout and Use</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-graphics-system-layout">3D Graphics System Layout</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-a-3d-graphs-item">Inserting a 3D Graphs Item</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-the-3d-graphics-view">Navigating the 3D Graphics View</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#d-graphics-manager">3D Graphics Manager</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-graphics-item-tools">3D Graphics Item Tools</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-graphics-item-types">3D Graphics Item Types</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-graphics-item-toggle">3D Graphics Item Toggle</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#d-graphics-sliders">3D Graphics Sliders</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-graphics-object-descriptions">3-D Graphics Object Descriptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-guides">Quick Guides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#file-options">File Options</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphs">Graphs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-and-navigation-options">Edit and Navigation Options</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

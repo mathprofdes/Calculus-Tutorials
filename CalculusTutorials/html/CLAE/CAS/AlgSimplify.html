@@ -1,0 +1,958 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Simplification &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/AlgSimplify';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Approximation and Evaluation" href="AlgApproxEval.html" />
+    <link rel="prev" title="Process Manager" href="casProcess.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casCopySpecialCopy.html">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseConvert.html">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSolving.html">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalLimitsDerivatives.html">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalOde.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecProj.html">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Simplification</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="simplification">
+<h1><span class="target" id="index-0"></span>Simplification<a class="headerlink" href="#simplification" title="Link to this heading">#</a></h1>
+<p>One of the most used options will be to simplify expressions.  This program offers several ways to simplify expression, including lists, matrices, and piece wise defined expressions. The Simplify option is a general simplify routine and the Special Simplifications allows more control over what is manipulated.</p>
+<section id="simplify">
+<h2><span class="target" id="index-1"></span>Simplify<a class="headerlink" href="#simplify" title="Link to this heading">#</a></h2>
+<p>This is a general simplifying function that will be sufficient for the majority of expressions you need to simplify.  Simply select the item in the CAS you want to simplify and then select this option.  The simplified version will be loaded as a new expression in the CAS.  This option works on simple expressions, matrices, and lists of these.</p>
+</section>
+<section id="simplify-assuming-real-variables">
+<h2><span class="target" id="index-2"></span>Simplify Assuming Real Variables<a class="headerlink" href="#simplify-assuming-real-variables" title="Link to this heading">#</a></h2>
+<p>This is a general simplifying function as with Simplify except that it will assume that all variables represent real numbers.  The SymPy computer algebra system was designed to process expressions assuming that the variables represent complex numbers.  The system does allow the user to select specific domains for individual variables and a more detailed tool for doing this is the Special Simplifications.  This option will assume that all variables represent real numbers and is quicker than selecting the Special Simplifications option.  Simply select the item in the CAS you want to simplify and then select this option.  The simplified version will be loaded as a new expression in the CAS.  This option works on simple expressions, matrices, and lists of these.</p>
+</section>
+<section id="special-simplifications">
+<h2><span class="target" id="index-3"></span>Special Simplifications<a class="headerlink" href="#special-simplifications" title="Link to this heading">#</a></h2>
+<p>The special simplification options are for fine tuning the methods used for the simplifications.  When this option is selected the following dialog box will appear.  The top portion is the set of special methods that can be applied and the bottom portion is the assumptions that you can specify for the variables.</p>
+<figure class="align-default" id="id6">
+<img alt="Special Simplifications Dialog Box" src="../../_images/SpecialSimp.png" />
+<figcaption>
+<p><span class="caption-text">Special Simplifications Dialog Box</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="simplification-methods">
+<h3>Simplification Methods<a class="headerlink" href="#simplification-methods" title="Link to this heading">#</a></h3>
+<section id="general-simplify">
+<h4>General Simplify<a class="headerlink" href="#general-simplify" title="Link to this heading">#</a></h4>
+<p>This is simply a general simplification method that incorporates several of the methods below.  In most cases this will produce a reasonable, but possibly not complete, simplification of the expression.</p>
+</section>
+<section id="simplify-rational-expressions">
+<h4>Simplify Rational Expressions<a class="headerlink" href="#simplify-rational-expressions" title="Link to this heading">#</a></h4>
+<p>This will simplify rational expression.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{y} + \frac{1}{x}\]</div>
+<p>simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\frac{x + y}{x y}\]</div>
+</section>
+<section id="simplify-radical-expressions">
+<h4>Simplify Radical Expressions<a class="headerlink" href="#simplify-radical-expressions" title="Link to this heading">#</a></h4>
+<p>This will simplify expressions that contain radicals.</p>
+<p>For example, the expression, <code class="docutils literal notranslate"><span class="pre">((2</span> <span class="pre">+</span> <span class="pre">2*sqrt(2))*x</span> <span class="pre">+</span> <span class="pre">(2</span> <span class="pre">+</span> <span class="pre">sqrt(8))*y)/(2</span> <span class="pre">+</span> <span class="pre">sqrt(2))</span></code></p>
+<div class="math notranslate nohighlight">
+\[\frac{x \left(2 + 2 \sqrt{2}\right) + y \left(2 + 2 \sqrt{2}\right)}{\sqrt{2} + 2}\]</div>
+<p>simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} \left(x + y\right)\]</div>
+</section>
+<section id="simplify-trigonometric">
+<h4>Simplify Trigonometric<a class="headerlink" href="#simplify-trigonometric" title="Link to this heading">#</a></h4>
+<p>The Simplify Trigonometric option will combine trigonometric identities when possible.</p>
+<p>For example, if we start with the expression,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x \right)} \cos{\left(y \right)} + \sin{\left(y \right)} \cos{\left(x \right)}\]</div>
+<p>This option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x + y \right)}\]</div>
+</section>
+<section id="expand-trigonometric">
+<h4>Expand Trigonometric<a class="headerlink" href="#expand-trigonometric" title="Link to this heading">#</a></h4>
+<p>The Expand Trigonometric option will expand trigonometric identities when possible.</p>
+<p>For example, if we start with the expression,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x + y \right)}\]</div>
+<p>This option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x \right)} \cos{\left(y \right)} + \sin{\left(y \right)} \cos{\left(x \right)}\]</div>
+</section>
+<section id="combine-logarithms">
+<h4>Combine Logarithms<a class="headerlink" href="#combine-logarithms" title="Link to this heading">#</a></h4>
+<p>This option will combine logarithms when possible.  It applies the two identities <span class="math notranslate nohighlight">\(\log_b(x) + \log_b(y) = \log_b(x y)\)</span> and <span class="math notranslate nohighlight">\(a\log_b(x) = \log_b(x^a)\)</span> if the variables are in the correct domains.  There are two options that combine logarithms, the <code class="docutils literal notranslate"><span class="pre">Combine</span> <span class="pre">Logarithms</span></code> option will check the validity of the domains for the variables and the <code class="docutils literal notranslate"><span class="pre">Combine</span> <span class="pre">Logarithms:</span> <span class="pre">Force</span> <span class="pre">Rules</span></code> will skip the domain checks and apply the above identities to the expression.  In this case, keep in mind that you are assuming that these rules apply to your expression.</p>
+<p>For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[a \ln{\left(x \right)} + \ln{\left(y \right)} - \ln{\left(z \right)}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\ln{\left(\frac{x^{a} y}{z} \right)}\]</div>
+</section>
+<section id="expand-logarithms">
+<h4>Expand Logarithms<a class="headerlink" href="#expand-logarithms" title="Link to this heading">#</a></h4>
+<p>This option will expand logarithms when possible.  It applies the two identities <span class="math notranslate nohighlight">\(\log_b(x) + \log_b(y) = \log_b(x y)\)</span> and <span class="math notranslate nohighlight">\(a\log_b(x) = \log_b(x^a)\)</span> if the variables are in the correct domains.  There are two options that expand logarithms, the <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">Logarithms</span></code> option will check the validity of the domains for the variables and the <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">Logarithms:</span> <span class="pre">Force</span> <span class="pre">Rules</span></code> will skip the domain checks and apply the above identities to the expression.  In this case, keep in mind that you are assuming that these rules apply to your expression.</p>
+<p>For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[\ln{\left(\frac{x^{a} y}{z} \right)}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[a \ln{\left(x \right)} + \ln{\left(y \right)} - \ln{\left(z \right)}\]</div>
+</section>
+<section id="combine-powers">
+<h4>Combine Powers<a class="headerlink" href="#combine-powers" title="Link to this heading">#</a></h4>
+<p>This option will combine powers when possible.  It applies the two identities <span class="math notranslate nohighlight">\(x^a y^a = (x y)^a\)</span> and <span class="math notranslate nohighlight">\(x^a x^b = x^{a+b}\)</span> if the variables are in the correct domains.  There are two options that combine powers, the <code class="docutils literal notranslate"><span class="pre">Combine</span> <span class="pre">Powers</span></code> option will check the validity of the domains for the variables and the <code class="docutils literal notranslate"><span class="pre">Combine</span> <span class="pre">Powers:</span> <span class="pre">Force</span> <span class="pre">Rules</span></code> will skip the domain checks and apply the above identities to the expression.  In this case, keep in mind that you are assuming that these rules apply to your expression.</p>
+<p>For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[n^{y} n^{z} x^{y} x^{z}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\left(n x\right)^{y + z}\]</div>
+</section>
+<section id="expand-powers">
+<h4>Expand Powers<a class="headerlink" href="#expand-powers" title="Link to this heading">#</a></h4>
+<p>This option will expand powers when possible.  It applies the two identities <span class="math notranslate nohighlight">\(x^a y^a = (x y)^a\)</span> and <span class="math notranslate nohighlight">\(x^a x^b = x^{a+b}\)</span> if the variables are in the correct domains.  There are two options that expand powers, the <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">Powers</span></code> option will check the validity of the domains for the variables and the <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">Powers:</span> <span class="pre">Force</span> <span class="pre">Rules</span></code> will skip the domain checks and apply the above identities to the expression.  In this case, keep in mind that you are assuming that these rules apply to your expression.</p>
+<p>For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[\left(n x\right)^{y + z}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[n^{y + z} x^{y + z}\]</div>
+<p>Note that it does not always expand the expression completely.  Another example, if we change <code class="docutils literal notranslate"><span class="pre">n</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code> we have,</p>
+<div class="math notranslate nohighlight">
+\[\left(3 x\right)^{y + z}\]</div>
+<p>applying this option we get,</p>
+<div class="math notranslate nohighlight">
+\[3^{y + z} x^{y + z}\]</div>
+<p>then applying this option again results in,</p>
+<div class="math notranslate nohighlight">
+\[3^{y} 3^{z} x^{y + z}\]</div>
+</section>
+</section>
+<section id="passes">
+<h3>Passes<a class="headerlink" href="#passes" title="Link to this heading">#</a></h3>
+<p>The number of simplification passes is simply the number of times the simplification is executed.  In some cases doing a couple simplifications in a row produces a better outcome.  In these cases a first pass puts the expression into a form that a second pass can reduce further.  On the other hand, it is possible that the first pass puts the expression into a form that the second pass will produce an error.  In these cases the first pass reduced the expression to a form that did not make sense for the second pass.</p>
+</section>
+<section id="variable-assumptions">
+<h3>Variable Assumptions<a class="headerlink" href="#variable-assumptions" title="Link to this heading">#</a></h3>
+<section id="assumptions">
+<h4><span class="target" id="index-4"></span>Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h4>
+<p>Assumptions about variables are essentially what type of number does the variable represent.  In most cases in an introductory Calculus sequence you simply assume that all variables represent real numbers, and sometimes complex numbers.  The default setting for variables is as a real number except for solving equations where we use complex numbers.</p>
+<p>As a classic example, say we input <code class="docutils literal notranslate"><span class="pre">sqrt(x^2)</span></code> into the CAS, the entry would be displayed as,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>If we select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>, a simplification that makes no assumptions about the variables, the result is still,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>But if we use <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Special</span> <span class="pre">Simplifications</span></code>, leave the settings as is, and click OK the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left|{x}\right|\]</div>
+<p>The difference is that the default domain for <code class="docutils literal notranslate"><span class="pre">x</span></code> in the Special Simplifications dialog was a real number.  In the real number system, <span class="math notranslate nohighlight">\(\sqrt{x^{2}} = \left|{x}\right|\)</span> but in the complex number system it is not.  For example, <span class="math notranslate nohighlight">\(\sqrt{i^{2}} = -1 \neq \left|{i}\right| = 1\)</span>.</p>
+<p>Another classic example is in the study of l’Hospital’s Rule.  Marquis de l’Hospital published the very first Calculus textbook in 1696, where l’Hospital’s Rule is first seen in print. l’Hospital did not discover this rule, the Swiss mathematician John Bernoulli (1667–1748) is the one who discovered the method.  l’Hospital and Bernoulli had an interesting business relationship where l’Hospital purchased the rights to this method, which is why it is named after him and not Bernoulli.  In his book l’Hospital wanted to calculate,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} \frac{\sqrt{2a^3x-x^4} - a \sqrt[3]{a^2x} }{a - \sqrt[4]{ax^3}}\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span> indeterminate form and hence can be attacked using l’Hospital’s Rule.  This expression also assumed that <span class="math notranslate nohighlight">\(a &gt; 0\)</span>.</p>
+<p>If we put this expression into our CAS <code class="docutils literal notranslate"><span class="pre">(-a*(a^2*x)^(1/3)</span> <span class="pre">+</span> <span class="pre">sqrt(2*a^3*x</span> <span class="pre">-</span> <span class="pre">x^4))/(a</span> <span class="pre">-</span> <span class="pre">(a*x^3)^(1/4))</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, when the limit dialog comes up input <code class="docutils literal notranslate"><span class="pre">x</span></code> for the variable and <code class="docutils literal notranslate"><span class="pre">a</span></code> for the limit point, and click OK.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- a^{\frac{4}{3}} \left|{a}\right|^{\frac{2}{3}} + a^{2}}{a - \left|{a}\right|}\]</div>
+<p>It should be fairly obvious that this does not work for <code class="docutils literal notranslate"><span class="pre">a</span></code> being a positive real number since the denominator is clearly 0 in this case.  This time when we select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> we will change the data type of <code class="docutils literal notranslate"><span class="pre">a</span></code> to be a positive real, and leave <code class="docutils literal notranslate"><span class="pre">x</span></code> alone.  This time the result is the correct answer for these assumptions of,</p>
+<div class="math notranslate nohighlight">
+\[\frac{16 a}{9}\]</div>
+<p>In the vast majority of cases you will not need to do anything with variable assumptions. The reason we incorporated the ability to specify assumptions about the variable data type is that in a few instances (like in the above examples) you may need to tell the program that variable belongs to a more restrictive domain.</p>
+</section>
+<section id="assumptions-user-interface">
+<h4><span class="target" id="index-5"></span>Assumptions User Interface<a class="headerlink" href="#assumptions-user-interface" title="Link to this heading">#</a></h4>
+<p>The variable assumptions user interface will look like one of the two following layouts.</p>
+<figure class="align-default" id="id7">
+<img alt="Variable Properties User Interface" src="../../_images/Assump001.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties User Interface</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>or</p>
+<figure class="align-default" id="id8">
+<img alt="Variable Properties Editor User Interface" src="../../_images/Assump002.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties Editor User Interface</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If it is the first of these then clicking the <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Variable</span> <span class="pre">Properties</span></code> button will open a dialog box with the second interface.  The second is where the changes are made.  In either of these each variable in the expression is listed with the data type we are assuming it belongs.  In the second interface you can edit the domain by first selecting the variable from the list and then selecting its type by clicking on it.</p>
+<p>The reason we included the first interface was that it was less intimidating and easier to accept as is,which is what the user will do in most cases. As noted above these assumptions do not need to be changed very often.</p>
+</section>
+</section>
+</section>
+<section id="id1">
+<h2><span class="target" id="index-6"></span>Simplification Methods<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>These are the same options as with the Special Simplifications above, and the addition of rewriting options.  The difference is that these options will invoke only one simplification method and will not use any assumptions on the variables.  These options can be quicker for the user since they eliminate the use of the dialog box.</p>
+<section id="id2">
+<h3>Simplify<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>This is simply a general simplification method that incorporates several of the methods below.  In most cases this will produce a reasonable, but possibly not complete, simplification of the expression.</p>
+</section>
+<section id="id3">
+<h3>Simplify Rational Expressions<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>This will simplify rational expression.</p>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{y} + \frac{1}{x}\]</div>
+<p>simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\frac{x + y}{x y}\]</div>
+</section>
+<section id="id4">
+<h3>Simplify Radical Expressions<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>This will simplify expressions that contain radicals.</p>
+<p>For example, the expression, <code class="docutils literal notranslate"><span class="pre">((2</span> <span class="pre">+</span> <span class="pre">2*sqrt(2))*x</span> <span class="pre">+</span> <span class="pre">(2</span> <span class="pre">+</span> <span class="pre">sqrt(8))*y)/(2</span> <span class="pre">+</span> <span class="pre">sqrt(2))</span></code></p>
+<div class="math notranslate nohighlight">
+\[\frac{x \left(2 + 2 \sqrt{2}\right) + y \left(2 + 2 \sqrt{2}\right)}{\sqrt{2} + 2}\]</div>
+<p>simplifies to</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} \left(x + y\right)\]</div>
+</section>
+<section id="simplify-logarithmic-expressions">
+<h3>Simplify Logarithmic Expressions<a class="headerlink" href="#simplify-logarithmic-expressions" title="Link to this heading">#</a></h3>
+<p>This option will combine logarithms when possible.  It applies the two identities <span class="math notranslate nohighlight">\(\log_b(x) + \log_b(y) = \log_b(x y)\)</span> and <span class="math notranslate nohighlight">\(a\log_b(x) = \log_b(x^a)\)</span> if the arguments are in the correct domains.  If the arguments have undefined variables in them it is unlikely that that program will do any simplification to the expression.  If you know that these rules apply to your expressions then you can select <code class="docutils literal notranslate"><span class="pre">Simplify</span> <span class="pre">Logarithmic</span> <span class="pre">Expressions</span> <span class="pre">(Force</span> <span class="pre">Rules)</span></code> instead to ensure the application of these rules.</p>
+</section>
+<section id="expand-logarithmic-expressions">
+<h3>Expand Logarithmic Expressions<a class="headerlink" href="#expand-logarithmic-expressions" title="Link to this heading">#</a></h3>
+<p>This option will expand logarithms when possible.  It applies the two identities <span class="math notranslate nohighlight">\(\log_b(x) + \log_b(y) = \log_b(x y)\)</span> and <span class="math notranslate nohighlight">\(a\log_b(x) = \log_b(x^a)\)</span> if the arguments are in the correct domains.  If the arguments have undefined variables in them it is unlikely that that program will do any expansion to the expression.  If you know that these rules apply to your expressions then you can select <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">Logarithmic</span> <span class="pre">Expressions</span> <span class="pre">(Force</span> <span class="pre">Rules)</span></code> instead to ensure the application of these rules.</p>
+</section>
+<section id="simplify-trigonometric-expressions">
+<h3>Simplify Trigonometric Expressions<a class="headerlink" href="#simplify-trigonometric-expressions" title="Link to this heading">#</a></h3>
+<p>The Simplify Trigonometric option will combine trigonometric identities when possible.</p>
+<p>For example, if we start with the expression,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x \right)} \cos{\left(y \right)} + \sin{\left(y \right)} \cos{\left(x \right)}\]</div>
+<p>This option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x + y \right)}\]</div>
+</section>
+<section id="expand-trigonometric-expressions">
+<h3>Expand Trigonometric Expressions<a class="headerlink" href="#expand-trigonometric-expressions" title="Link to this heading">#</a></h3>
+<p>The Expand Trigonometric option will expand trigonometric identities when possible.</p>
+<p>For example, if we start with the expression,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x + y \right)}\]</div>
+<p>This option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x \right)} \cos{\left(y \right)} + \sin{\left(y \right)} \cos{\left(x \right)}\]</div>
+</section>
+<section id="simplify-powers">
+<h3>Simplify Powers<a class="headerlink" href="#simplify-powers" title="Link to this heading">#</a></h3>
+<p>This option will combine powers when possible.  It applies the two identities <span class="math notranslate nohighlight">\(x^a y^a = (x y)^a\)</span> and <span class="math notranslate nohighlight">\(x^a x^b = x^{a+b}\)</span> if the variables are in the correct domains.  If the expression has undefined variables, it is unlikely that that program will do any simplification to the expression.  If you know that these rules apply to your expressions then you can select <code class="docutils literal notranslate"><span class="pre">Simplify</span> <span class="pre">Powers</span> <span class="pre">(Force</span> <span class="pre">Rules)</span></code> instead to ensure the application of these rules.</p>
+</section>
+<section id="id5">
+<h3>Expand Powers<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>This option will expand powers when possible.  It applies the two identities <span class="math notranslate nohighlight">\(x^a y^a = (x y)^a\)</span> and <span class="math notranslate nohighlight">\(x^a x^b = x^{a+b}\)</span> if the variables are in the correct domains.  If the expression has undefined variables, it is unlikely that that program will do any expansion to the expression.  If you know that these rules apply to your expressions then you can select <code class="docutils literal notranslate"><span class="pre">Expand</span> <span class="pre">Powers</span> <span class="pre">(Force</span> <span class="pre">Rules)</span></code> instead to ensure the application of these rules.</p>
+</section>
+<section id="simplify-logarithmic-expressions-force-rules">
+<h3>Simplify Logarithmic Expressions (Force Rules)<a class="headerlink" href="#simplify-logarithmic-expressions-force-rules" title="Link to this heading">#</a></h3>
+<p>This option will combine logarithms when possible.  It applies the two identities <span class="math notranslate nohighlight">\(\log_b(x) + \log_b(y) = \log_b(x y)\)</span> and <span class="math notranslate nohighlight">\(a\log_b(x) = \log_b(x^a)\)</span>, note that these rules are applied no matter what the domains of the variables.  This option should be used only when you can assume that the above rules apply to the expressions. For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[a \ln{\left(x \right)} + \ln{\left(y \right)} - \ln{\left(z \right)}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\ln{\left(\frac{x^{a} y}{z} \right)}\]</div>
+</section>
+<section id="expand-logarithmic-expressions-force-rules">
+<h3>Expand Logarithmic Expressions (Force Rules)<a class="headerlink" href="#expand-logarithmic-expressions-force-rules" title="Link to this heading">#</a></h3>
+<p>This option will expand logarithms when possible.  It applies the two identities <span class="math notranslate nohighlight">\(\log_b(x) + \log_b(y) = \log_b(x y)\)</span> and <span class="math notranslate nohighlight">\(a\log_b(x) = \log_b(x^a)\)</span>, note that these rules are applied no matter what the domains of the variables.  This option should be used only when you can assume that the above rules apply to the expressions. For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[\ln{\left(\frac{x^{a} y}{z} \right)}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[a \ln{\left(x \right)} + \ln{\left(y \right)} - \ln{\left(z \right)}\]</div>
+</section>
+<section id="simplify-powers-force-rules">
+<h3>Simplify Powers (Force Rules)<a class="headerlink" href="#simplify-powers-force-rules" title="Link to this heading">#</a></h3>
+<p>This option will combine powers when possible.  It applies the two identities <span class="math notranslate nohighlight">\(x^a y^a = (x y)^a\)</span> and <span class="math notranslate nohighlight">\(x^a x^b = x^{a+b}\)</span>, note that these rules are applied no matter what the domains of the variables.  This option should be used only when you can assume that the above rules apply to the expressions. For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[n^{y} n^{z} x^{y} x^{z}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[\left(n x\right)^{y + z}\]</div>
+</section>
+<section id="expand-powers-force-rules">
+<h3>Expand Powers (Force Rules)<a class="headerlink" href="#expand-powers-force-rules" title="Link to this heading">#</a></h3>
+<p>This option will expand powers when possible.  It applies the two identities <span class="math notranslate nohighlight">\(x^a y^a = (x y)^a\)</span> and <span class="math notranslate nohighlight">\(x^a x^b = x^{a+b}\)</span>, note that these rules are applied no matter what the domains of the variables.  This option should be used only when you can assume that the above rules apply to the expressions. For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[\left(n x\right)^{y + z}\]</div>
+<p>this option will produce,</p>
+<div class="math notranslate nohighlight">
+\[n^{y + z} x^{y + z}\]</div>
+<p>Note that it does not always expand the expression completely.  Another example, if we change <code class="docutils literal notranslate"><span class="pre">n</span></code> to <code class="docutils literal notranslate"><span class="pre">3</span></code> we have,</p>
+<div class="math notranslate nohighlight">
+\[\left(3 x\right)^{y + z}\]</div>
+<p>applying this option we get,</p>
+<div class="math notranslate nohighlight">
+\[3^{y + z} x^{y + z}\]</div>
+<p>then applying this option again results in,</p>
+<div class="math notranslate nohighlight">
+\[3^{y} 3^{z} x^{y + z}\]</div>
+</section>
+<section id="rewrite">
+<h3>Rewrite<a class="headerlink" href="#rewrite" title="Link to this heading">#</a></h3>
+<p>Rewrite is a special option that allows the user to apply identities to functions in an expression to rewrite them in terms of other functions.  When this option is selected a dialog box will appear allowing the user to select the new function to use. For example, say we have <code class="docutils literal notranslate"><span class="pre">tanh(x)</span></code> in the CAS, and we selected this option.  In the list of functions select <code class="docutils literal notranslate"><span class="pre">exp</span></code> (for exponential functions), the result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{e^{x} - e^{- x}}{e^{x} + e^{- x}}\]</div>
+<p>This comes in handy for trigonometric functions and for hyperbolic functions.  Many algorithms in SymPy will return hyperbolic functions as answers but the user may wish to work with their exponential function definitions.</p>
+</section>
+<section id="advanced-rewrite">
+<h3>Advanced Rewrite<a class="headerlink" href="#advanced-rewrite" title="Link to this heading">#</a></h3>
+<p>The Advanced Rewrite option allows the user to do rewriting of expressions using identities selectively. The Rewrite option above works globally by do all possible replacements to the new function.  With this option the user can select which function to rewrite. When this option is selected a dialog box will appear allowing the user to input the functions to replace and the function used for replacement.  The functions to replace can be a single function or list of functions separated by commas.  The function used for replacement is a single function.  When typing in the functions you use the function name without any arguments.  For example, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">cos</span></code>, <code class="docutils literal notranslate"><span class="pre">tanh</span></code>, etc.</p>
+<p>For example, if we have the expression,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(x \right)} + \cos{\left(x \right)} + \tan{\left(x \right)}\]</div>
+<p>in the CAS and we did a Rewrite with <code class="docutils literal notranslate"><span class="pre">exp</span></code> as above, the result would be</p>
+<div class="math notranslate nohighlight">
+\[\frac{i \left(- e^{i x} + e^{- i x}\right)}{e^{i x} + e^{- i x}} - \frac{i \left(e^{i x} - e^{- i x}\right)}{2} + \frac{e^{i x}}{2} + \frac{e^{- i x}}{2}\]</div>
+<p>on the other hand, if we did an Advanced Rewrite, used <code class="docutils literal notranslate"><span class="pre">sin,</span> <span class="pre">cos</span></code> for the functions to replace and <code class="docutils literal notranslate"><span class="pre">exp</span></code> as the function used for replacement, the result is,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{i \left(e^{i x} - e^{- i x}\right)}{2} + \frac{e^{i x}}{2} + \tan{\left(x \right)} + \frac{e^{- i x}}{2}\]</div>
+<p>Note that in this case the <code class="docutils literal notranslate"><span class="pre">tan(x)</span></code> was not altered.  Also note that with Rewrite and Advanced Rewrite the program not rewrite the expression in the form you expect or desire.</p>
+</section>
+<section id="numeric-simplification">
+<h3><span class="target" id="index-7"></span>Numeric Simplification<a class="headerlink" href="#numeric-simplification" title="Link to this heading">#</a></h3>
+<p>This option attempts to convert decimal approximations into exact expressions that sre close to the decimal approximation.  The range of possible values is limited and these calculations can take some time to complete, even for a relatively simple number. It does, however, give the user a hint at what the approximation might be in exact form.  Note that it is possible that an exact result is returned that is not the mathematical equivalent to the result of the process the approximation was derived.  This option will at the very least convert the decimal expression into a fraction.  Some examples,</p>
+<ul class="simple">
+<li><p>5.8598744820488384738 is converted to <span class="math notranslate nohighlight">\(e + \pi\)</span>.</p></li>
+<li><p>7.5531177825718304862 is converted to <span class="math notranslate nohighlight">\(\frac{37765588912859152431}{5000000000000000000}\)</span>, it came from <span class="math notranslate nohighlight">\(- 3 e + 5 \pi\)</span>.</p></li>
+<li><p>0.33333333333333333 is converted to <span class="math notranslate nohighlight">\(\frac{1}{3}\)</span>.</p></li>
+<li><p>0.71428571428571428571 is converted to <span class="math notranslate nohighlight">\(\frac{5}{7}\)</span>.</p></li>
+<li><p>1.0471975511965977462 is converted to <span class="math notranslate nohighlight">\(\frac{\pi}{3}\)</span>.</p></li>
+<li><p>3.4651179781941923787 is converted to <span class="math notranslate nohighlight">\(\frac{\sqrt{7} \left(21 - 2 \sqrt{35}\right)}{7}\)</span> which simplifies to <span class="math notranslate nohighlight">\(- 2 \sqrt{5} + 3 \sqrt{7}\)</span>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="casProcess.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Process Manager</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AlgApproxEval.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Approximation and Evaluation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify">Simplify</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-assuming-real-variables">Simplify Assuming Real Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-simplifications">Special Simplifications</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplification-methods">Simplification Methods</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#general-simplify">General Simplify</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-rational-expressions">Simplify Rational Expressions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-radical-expressions">Simplify Radical Expressions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-trigonometric">Simplify Trigonometric</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-trigonometric">Expand Trigonometric</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-logarithms">Combine Logarithms</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-logarithms">Expand Logarithms</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-powers">Combine Powers</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-powers">Expand Powers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#passes">Passes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assumptions">Variable Assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-user-interface">Assumptions User Interface</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Simplification Methods</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Simplify</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Simplify Rational Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Simplify Radical Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-logarithmic-expressions">Simplify Logarithmic Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-logarithmic-expressions">Expand Logarithmic Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-trigonometric-expressions">Simplify Trigonometric Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-trigonometric-expressions">Expand Trigonometric Expressions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-powers">Simplify Powers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Expand Powers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-logarithmic-expressions-force-rules">Simplify Logarithmic Expressions (Force Rules)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-logarithmic-expressions-force-rules">Expand Logarithmic Expressions (Force Rules)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify-powers-force-rules">Simplify Powers (Force Rules)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expand-powers-force-rules">Expand Powers (Force Rules)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rewrite">Rewrite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-rewrite">Advanced Rewrite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-simplification">Numeric Simplification</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

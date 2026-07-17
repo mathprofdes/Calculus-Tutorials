@@ -1,0 +1,872 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Calculus and Support Functions &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CASGenIntro/GeoGebraCalculus';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2D Graphs" href="GeoGebra2DGraphs.html" />
+    <link rel="prev" title="GeoGebra Expression Syntax" href="GeoGebraSyntax.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="GeoGebra.html">GeoGebra User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="GeoGebraIntro.html">Introduction to GeoGebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebraInput.html">Inputting Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebraSyntax.html">GeoGebra Expression Syntax</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Calculus and Support Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebra2DGraphs.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GeoGebra3DGraphs.html">3D Graphs</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../CLAE/index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="GeoGebra.html" class="nav-link">GeoGebra User’s Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Calculus and Support Functions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="calculus-and-support-functions">
+<h1>Calculus and Support Functions<a class="headerlink" href="#calculus-and-support-functions" title="Link to this heading">#</a></h1>
+<section id="solving-equations">
+<h2>Solving Equations<a class="headerlink" href="#solving-equations" title="Link to this heading">#</a></h2>
+<p>There are a number of solving commands in GeoGebra, some return exact solutions when they can and others will return approximate solutions.  We will discuss a few of them here.</p>
+<section id="solve">
+<h3>Solve<a class="headerlink" href="#solve" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Solve</span></code> command will find a list of solutions to an equation or expression in exact form if possible.  It will revert to numeric solutions if it needs to.  With the output there will be a (<span class="math notranslate nohighlight">\(=\)</span>/<span class="math notranslate nohighlight">\(\approx\)</span>) toggle button to toggle between exact and numeric formats, that is, between <code class="docutils literal notranslate"><span class="pre">Solve</span></code> and <code class="docutils literal notranslate"><span class="pre">NSolve</span></code>.  With this command the solutions are given in equation form.</p>
+<p>For example, if you input <span class="math notranslate nohighlight">\(x^{2} + x - 3\)</span> and then do the Solve command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \frac{1}{2} + \frac{\sqrt{13}}{2}, \  - \frac{\sqrt{13}}{2} - \frac{1}{2}\right]\]</div>
+<p>there is also a (<span class="math notranslate nohighlight">\(=\)</span>/<span class="math notranslate nohighlight">\(\approx\)</span>) toggle button</p>
+<div class="math notranslate nohighlight">
+\[\{x = -2.30278, x = 1.30278\}\]</div>
+<p>As another example, if you input <span class="math notranslate nohighlight">\(x^{3} - 4 x + 2\)</span> and then do the Solve command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\{x = -2.21432, x = 0.53919, x = 1.67513\}\]</div>
+</section>
+<section id="nsolve">
+<h3>NSolve<a class="headerlink" href="#nsolve" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">NSolve</span></code> command will find a list of numeric approximations to the solutions to an equation or expression.  With the output there will be a (<span class="math notranslate nohighlight">\(=\)</span>/<span class="math notranslate nohighlight">\(\approx\)</span>) toggle button to toggle between exact and numeric formats, that is, between <code class="docutils literal notranslate"><span class="pre">Solve</span></code> and <code class="docutils literal notranslate"><span class="pre">NSolve</span></code>.  With this command the solutions are given in equation form.</p>
+<p>For example, if you input <span class="math notranslate nohighlight">\(x^{2} + x - 3\)</span> and then do the NSolve command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\{x = -2.30278, x = 1.30278\}\]</div>
+<div class="math notranslate nohighlight">
+\[\left[ - \frac{1}{2} + \frac{\sqrt{13}}{2}, \  - \frac{\sqrt{13}}{2} - \frac{1}{2}\right]\]</div>
+<p>there is also a (<span class="math notranslate nohighlight">\(=\)</span>/<span class="math notranslate nohighlight">\(\approx\)</span>) toggle button</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \frac{1}{2} + \frac{\sqrt{13}}{2}, \  - \frac{\sqrt{13}}{2} - \frac{1}{2}\right]\]</div>
+<p>As another example, if you input <span class="math notranslate nohighlight">\(x^{3} - 4 x + 2\)</span> and then do the NSolve command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\{x = -2.21432, x = 0.53919, x = 1.67513\}\]</div>
+</section>
+<section id="solutions">
+<h3>Solutions<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Solutions</span></code> command will find a list of numeric approximations to the solutions to an equation or expression.  With this command the solutions are given in list form.</p>
+<p>For example, if you input <span class="math notranslate nohighlight">\(x^{2} + x - 3\)</span> and then do the Solutions command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\{-2.30278, 1.30278\}\]</div>
+<p>As another example, if you input <span class="math notranslate nohighlight">\(x^{3} - 4 x + 2\)</span> and then do the Solutions command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\{-2.21432, 0.53919, 1.67513\}\]</div>
+</section>
+<section id="nsolutions">
+<h3>NSolutions<a class="headerlink" href="#nsolutions" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">NSolutions</span></code> command will find a list of numeric approximations to the solutions to an equation or expression.  With this command the solutions are given in list form.</p>
+<p>For example, if you input <span class="math notranslate nohighlight">\(x^{2} + x - 3\)</span> and then do the NSolutions command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\{-2.30278, 1.30278\}\]</div>
+<p>As another example, if you input <span class="math notranslate nohighlight">\(x^{3} - 4 x + 2\)</span> and then do the NSolutions command the result will be</p>
+<div class="math notranslate nohighlight">
+\[\{-2.21432, 0.53919, 1.67513\}\]</div>
+</section>
+<section id="roots">
+<h3>Roots<a class="headerlink" href="#roots" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Roots</span></code> command attempts to find all the roots of a function within a lower and upper bound.  The results are in approximate form as points that are plotted on the graphics screen.  The syntax is <code class="docutils literal notranslate"><span class="pre">Roots(f,</span> <span class="pre">lb,</span> <span class="pre">ub)</span></code> where <em>f</em> is the function, <em>lb</em> is the lower bound, and <em>ub</em> is the upper bound.  You can also skip the lower and upper bounds <code class="docutils literal notranslate"><span class="pre">Roots(f)</span></code> and it will use the visible <em>x</em>-axis range for the bounds.</p>
+</section>
+<section id="root">
+<h3>Root<a class="headerlink" href="#root" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Root</span></code> function has three forms,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Root(poly)</span></code>:  This will take a polynomial as input and find its approximate roots plotted as points.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Root(fct,</span> <span class="pre">initial)</span></code>: This will take a function and an initial guess to the root as input and find an approximate roots close to the initial point, the result is a point that will be plotted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Root(fct,</span> <span class="pre">lb,</span> <span class="pre">ub)</span></code>: This will take a function, a lower bound, and an upper bound as input and find the root that is in the interval [lb, ub], the result is a point that will be plotted.</p></li>
+</ul>
+</section>
+</section>
+<section id="simplify">
+<h2>Simplify<a class="headerlink" href="#simplify" title="Link to this heading">#</a></h2>
+<p>To simplify an expression use the <code class="docutils literal notranslate"><span class="pre">Simplify</span></code> command, just input <code class="docutils literal notranslate"><span class="pre">Simplify(fct)</span></code> and the function will be simplified.</p>
+</section>
+<section id="rational-expressions">
+<h2>Rational Expressions<a class="headerlink" href="#rational-expressions" title="Link to this heading">#</a></h2>
+<p>To extract the numerator of a rational expression use the <code class="docutils literal notranslate"><span class="pre">Numerator</span></code> command, just input <code class="docutils literal notranslate"><span class="pre">Numerator(fct)</span></code> and the numerator will be extracted.</p>
+<p>To extract the denominator of a rational expression use the <code class="docutils literal notranslate"><span class="pre">Denominator</span></code> command, just input <code class="docutils literal notranslate"><span class="pre">Denominator(fct)</span></code> and the denominator will be extracted.</p>
+</section>
+<section id="complex-numbers">
+<h2>Complex Numbers<a class="headerlink" href="#complex-numbers" title="Link to this heading">#</a></h2>
+<p>GeoGebra supports complex numbers.  To input a complex number simply use <em>i</em> for the imaginary unit, for example, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">i</span></code>.  Some functions for complex numbers are as follows, assume that <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">i</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conjugate(a)</span></code> returns the conjugate of the complex number, <span class="math notranslate nohighlight">\(3-4i\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">real(a)</span></code>  returns the real part of the complex number, <span class="math notranslate nohighlight">\(3\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">imaginary(a)</span></code>  returns the real part of the complex number, <span class="math notranslate nohighlight">\(4\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">abs(a)</span></code> or <code class="docutils literal notranslate"><span class="pre">|a|</span></code> returns the modulus of the complex number, <span class="math notranslate nohighlight">\(5\)</span>.</p></li>
+</ul>
+</section>
+<section id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h2>
+<p>There are three limit commands in GeoGebra, <code class="docutils literal notranslate"><span class="pre">Limit</span></code>, <code class="docutils literal notranslate"><span class="pre">LimitAbove</span></code>, and <code class="docutils literal notranslate"><span class="pre">LimitBelow</span></code>.</p>
+<p>The two-sided limit command is <code class="docutils literal notranslate"><span class="pre">Limit</span></code>, it takes in a function and limit point and returns the two-sided limit.  For example, input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)/x</span>
+</pre></div>
+</div>
+<p>Then</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Limit(f, 0)</span>
+</pre></div>
+</div>
+<p>and it returns,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0} \frac{\sin(x)}{x} = 1\]</div>
+<p>The one-sided limit commands are <code class="docutils literal notranslate"><span class="pre">LimitAbove</span></code> and <code class="docutils literal notranslate"><span class="pre">LimitBelow</span></code>. LimitAbove is the limit from the right and LimitBelow is the limit from the left. As with the two-sided limit they take in a function and limit point and return the one-sided limit.  For example, input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)/x</span>
+</pre></div>
+</div>
+<p>Then</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">LimitAbove(f, 0)</span>
+</pre></div>
+</div>
+<p>and it returns,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^+} \frac{\sin(x)}{x} = 1\]</div>
+<p>and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">LimitBelow(f, 0)</span>
+</pre></div>
+</div>
+<p>and it returns,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to 0^-} \frac{\sin(x)}{x} = 1\]</div>
+<p>For infinite limits just use the <code class="docutils literal notranslate"><span class="pre">Limit</span></code> command and either <code class="docutils literal notranslate"><span class="pre">inf</span></code> or <code class="docutils literal notranslate"><span class="pre">infinity</span></code> for <span class="math notranslate nohighlight">\(\infty\)</span> and either <code class="docutils literal notranslate"><span class="pre">-inf</span></code> or <code class="docutils literal notranslate"><span class="pre">-infinity</span></code> for <span class="math notranslate nohighlight">\(-\infty\)</span>.</p>
+<p>For example, input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)/x</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Limit(f, inf)</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Limit(f, infinity)</span>
+</pre></div>
+</div>
+<p>and it returns,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to \infty} \frac{\sin(x)}{x} = 0\]</div>
+</section>
+<section id="derivatives">
+<h2>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h2>
+<p>There are a number of ways to do derivatives in GeoGebra.</p>
+<section id="using-prime-notation">
+<h3>Using Prime Notation<a class="headerlink" href="#using-prime-notation" title="Link to this heading">#</a></h3>
+<p>If you have a function of a single variable you can simply use prime notation.  For example, if <code class="docutils literal notranslate"><span class="pre">f</span></code> is a function of one variable then <code class="docutils literal notranslate"><span class="pre">f'</span></code> is the first derivative, <code class="docutils literal notranslate"><span class="pre">f''</span></code> is the second derivative, <code class="docutils literal notranslate"><span class="pre">f'''</span></code> is the third derivative, and so on.</p>
+</section>
+<section id="using-the-derivative-command">
+<h3>Using the Derivative Command<a class="headerlink" href="#using-the-derivative-command" title="Link to this heading">#</a></h3>
+<p>GeoGebra has a <code class="docutils literal notranslate"><span class="pre">Derivative</span></code> command that takes several forms,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Derivative(fct)</span></code> takes the first derivative of the function.  The function must be in a single variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Derivative(fct,</span> <span class="pre">n)</span></code> takes the nth derivative of the function.  The function must be in a single variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Derivative(fct,</span> <span class="pre">var)</span></code> takes the first partial derivative of the function with respect to the variable.  The function can be either in a single variable or multiple variables.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Derivative(fct,</span> <span class="pre">var,</span> <span class="pre">n)</span></code> takes the nth partial derivative of the function with respect to the variable.  The function can be either in a single variable or multiple variables.</p></li>
+</ul>
+</section>
+<section id="implicit-differentiation">
+<h3>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Link to this heading">#</a></h3>
+<p>If you have a function of two variables, <em>x</em> and <em>y</em>, the <code class="docutils literal notranslate"><span class="pre">ImplicitDerivative</span></code> command will find <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span>.  The syntax is just ImplicitDerivative(fct) where the function is in two variables, <em>x</em> and <em>y</em>.</p>
+</section>
+</section>
+<section id="special-points">
+<h2>Special Points<a class="headerlink" href="#special-points" title="Link to this heading">#</a></h2>
+<p>In the menu for an item there is an option of Special Points.  Selecting this will run functions on the curve to find the local extremes, roots, and the y-intercept.  For example,</p>
+<figure class="align-default" id="id1">
+<img alt="Special Points Example" src="../_images/Sppts001.png" />
+<figcaption>
+<p><span class="caption-text">Special Points Example</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="local-extremes">
+<h2>Local Extremes<a class="headerlink" href="#local-extremes" title="Link to this heading">#</a></h2>
+<p>GeoGebra can find the local maximums and minimums of a function automatically.  One way is to use the Special Points option above.  The other is to run the <code class="docutils literal notranslate"><span class="pre">Extremum</span></code> function.  The <code class="docutils literal notranslate"><span class="pre">Extremum</span></code> function has two forms,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Extremum(poly)</span></code>: where poly is a polynomial, will return the local extremes as points on the curve.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Extremum(fct,</span> <span class="pre">lb,</span> <span class="pre">ub)</span></code>: will return the local extreme of the function in the interval [lb, ub] as a point on the curve.</p></li>
+</ul>
+</section>
+<section id="integrals">
+<h2>Integrals<a class="headerlink" href="#integrals" title="Link to this heading">#</a></h2>
+<section id="area-approximations">
+<h3>Area Approximations<a class="headerlink" href="#area-approximations" title="Link to this heading">#</a></h3>
+<p>GeoGebra has two very nice commands for visualizing area approximations, several are for Riemann Sums and there is one for the Trapezoidal Rule.</p>
+<section id="rectanglesum">
+<h4>RectangleSum<a class="headerlink" href="#rectanglesum" title="Link to this heading">#</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">RectangleSum</span></code> command has the form <code class="docutils literal notranslate"><span class="pre">RectangleSum(fct,</span> <span class="pre">start,</span> <span class="pre">end,</span> <span class="pre">n,</span> <span class="pre">pos)</span></code> where <code class="docutils literal notranslate"><span class="pre">fct</span></code> is the function, <code class="docutils literal notranslate"><span class="pre">start</span></code> is the beginning of the interval that you are approximating over, <code class="docutils literal notranslate"><span class="pre">end</span></code>  is the ending of the interval that you are approximating over, <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of rectangles to use, and <code class="docutils literal notranslate"><span class="pre">pos</span></code> is the position of the test point to use for each subinterval. A pos of 0 would be the left hand endpoint, 1 is the right hand endpoint, 0.5 would be the midpoint.  The value of pos can be any number in <span class="math notranslate nohighlight">\([0, 1]\)</span>.</p>
+<p>For example, with the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + 2 x + 3\)</span>, using 10 rectangles, and a pos of 0.</p>
+<figure class="align-default" id="id2">
+<img alt="RectangleSum Example" src="../_images/AreaApprox001.png" />
+<figcaption>
+<p><span class="caption-text">RectangleSum Example</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Changing this to a pos of 1,</p>
+<figure class="align-default" id="id3">
+<img alt="RectangleSum Example" src="../_images/AreaApprox002.png" />
+<figcaption>
+<p><span class="caption-text">RectangleSum Example</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>and a pos of 0.5,</p>
+<figure class="align-default" id="id4">
+<img alt="RectangleSum Example" src="../_images/AreaApprox003.png" />
+<figcaption>
+<p><span class="caption-text">RectangleSum Example</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="uppersum-and-lowersum">
+<h4>UpperSum and LowerSum<a class="headerlink" href="#uppersum-and-lowersum" title="Link to this heading">#</a></h4>
+<p>GeoGebra also has a command to calculate and visualize upper and lower sums.  They both have the same syntax, <code class="docutils literal notranslate"><span class="pre">UpperSum(fct,</span> <span class="pre">start,</span> <span class="pre">end,</span> <span class="pre">n)</span></code> and <code class="docutils literal notranslate"><span class="pre">LowerSum(fct,</span> <span class="pre">start,</span> <span class="pre">end,</span> <span class="pre">n)</span></code>,  where <code class="docutils literal notranslate"><span class="pre">fct</span></code> is the function, <code class="docutils literal notranslate"><span class="pre">start</span></code> is the beginning of the interval that you are approximating over, <code class="docutils literal notranslate"><span class="pre">end</span></code>  is the ending of the interval that you are approximating over, and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of rectangles to use.</p>
+<p>For example, with the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + 2 x + 3\)</span>, using 10 rectangles, the upper and lower sums are,</p>
+<figure class="align-default" id="id5">
+<img alt="UpperSum Example" src="../_images/AreaApprox004.png" />
+<figcaption>
+<p><span class="caption-text">UpperSum Example</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<img alt="LowerSum Example" src="../_images/AreaApprox005.png" />
+<figcaption>
+<p><span class="caption-text">LowerSum Example</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="trapezoidalsum">
+<h4>TrapezoidalSum<a class="headerlink" href="#trapezoidalsum" title="Link to this heading">#</a></h4>
+<p>GeoGebra also has a command to calculate and visualize the Trapezoidal Rule. The syntax is the same as the upper and lower sums, <code class="docutils literal notranslate"><span class="pre">TrapezoidalSum(fct,</span> <span class="pre">start,</span> <span class="pre">end,</span> <span class="pre">n)</span></code>,  where <code class="docutils literal notranslate"><span class="pre">fct</span></code> is the function, <code class="docutils literal notranslate"><span class="pre">start</span></code> is the beginning of the interval that you are approximating over, <code class="docutils literal notranslate"><span class="pre">end</span></code>  is the ending of the interval that you are approximating over, and <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of trapezoids to use.</p>
+<p>For example, with the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + 2 x + 3\)</span>, using 5 trapezoids,</p>
+<figure class="align-default" id="id7">
+<img alt="TrapezoidalSum Example" src="../_images/AreaApprox006.png" />
+<figcaption>
+<p><span class="caption-text">TrapezoidalSum Example</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="definite-and-indefinite-integrals">
+<h3>Definite and Indefinite Integrals<a class="headerlink" href="#definite-and-indefinite-integrals" title="Link to this heading">#</a></h3>
+<p>GeoGebra has functions to find both indefinite and definite integrals.  Indefinite integrals return an integral function and the definite integrals usually return an approximation. The <code class="docutils literal notranslate"><span class="pre">Integral</span></code> command that takes several forms,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Integral(fct)</span></code> takes the indefinite integral of the function.  The function must be in a single variable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Integral(fct,</span> <span class="pre">var)</span></code> takes the indefinite integral of the function with respect to the variable.  The function can be either in a single variable or multiple variables.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Integral(fct,</span> <span class="pre">start,</span> <span class="pre">end)</span></code> takes the definite integral of the function from the start to the end. The function must be in a single variable.</p></li>
+</ul>
+</section>
+</section>
+<section id="ordinary-differential-equations">
+<h2>Ordinary Differential Equations<a class="headerlink" href="#ordinary-differential-equations" title="Link to this heading">#</a></h2>
+<p>GeoGebra has functions for solving differential equations and initial-value problems of the form <span class="math notranslate nohighlight">\(y' = f(x, y)\)</span>.  Higher-order differential equations and those involving more difficult expressions need other computer algebra systems.</p>
+<section id="exact-solutions">
+<h3>Exact Solutions<a class="headerlink" href="#exact-solutions" title="Link to this heading">#</a></h3>
+<p>The function for these is <code class="docutils literal notranslate"><span class="pre">SolveODE</span></code>, which comes in several forms.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SolveODE(f(x,</span> <span class="pre">y))</span></code> solves a differential equation exactly and returns the general solution with constants implemented as sliders.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SolveODE(f(x,</span> <span class="pre">y),</span> <span class="pre">(a,</span> <span class="pre">b))</span></code> solves the initial-value problem <span class="math notranslate nohighlight">\(y' = f(x, y)\)</span> and <span class="math notranslate nohighlight">\(y(a) = b\)</span>.  Note that the point <span class="math notranslate nohighlight">\((a, b)\)</span> can be a geometric point that is on the plot.</p></li>
+</ul>
+<p>For example, let’s solve the differential equation, <span class="math notranslate nohighlight">\(y' = 2 x y \left(2 y + 1\right)\)</span>.  Input the right hand side,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">2 x y (2 y + 1)</span>
+</pre></div>
+</div>
+<p>Assuming this came in as <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">y)</span></code> in a new cell input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">SolveODE(a)</span>
+</pre></div>
+</div>
+<p>and it returns the result along with a slider for the constant.  If we check this by, assuming that the solution equation is <code class="docutils literal notranslate"><span class="pre">g</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g&#39; - a(x,g)</span>
+</pre></div>
+</div>
+<p>we see that the expression is not 0 as expected but if we look over to the graph the plot is the <em>x</em>-axis, telling us that the solution does check but the expression did not simplify to 0.  If we further did the command <code class="docutils literal notranslate"><span class="pre">Simplify(h)</span></code> (assuming the last expression was <em>h</em>) it does return 0.</p>
+</section>
+<section id="numerical-methods">
+<h3>Numerical Methods<a class="headerlink" href="#numerical-methods" title="Link to this heading">#</a></h3>
+<p>GeoGebra can produce slope fields (direction fields) as well as Euler’s method curves.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SlopeField(f(x,</span> <span class="pre">y))</span></code> or <code class="docutils literal notranslate"><span class="pre">SlopeField(f(x))</span></code> will produce a slope field (direction field) of the function.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SolveODE(f(x,</span> <span class="pre">y),</span> <span class="pre">start-x,</span> <span class="pre">start-y,</span> <span class="pre">end-x,</span> <span class="pre">step</span> <span class="pre">size)</span></code> produces an Euler’s method curve starting at the point (start-x, start-y) moving until end-x using the step size as an increment.  Note that you can link the curve up to an initial point in order to animate it.  If the point is A then <code class="docutils literal notranslate"><span class="pre">SolveODE(f(x,</span> <span class="pre">y),</span> <span class="pre">x(A),</span> <span class="pre">y(A),</span> <span class="pre">x(A)</span> <span class="pre">+</span> <span class="pre">length,</span> <span class="pre">step</span> <span class="pre">size)</span></code> will start the curve at the point A.</p></li>
+</ul>
+</section>
+</section>
+<section id="sequences">
+<h2>Sequences<a class="headerlink" href="#sequences" title="Link to this heading">#</a></h2>
+<p>To create a sequence of points when studying sequences do the following,</p>
+<ol class="arabic simple">
+<li><p>Input the expression for the nth term, using <em>x</em> as the index variable, assume this is <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>.</p></li>
+<li><p>Create a sequence (list) of <em>x</em>-values <code class="docutils literal notranslate"><span class="pre">Sequence(start</span> <span class="pre">index,</span> <span class="pre">end</span> <span class="pre">index)</span></code> for example <code class="docutils literal notranslate"><span class="pre">Sequence(1,</span> <span class="pre">100)</span></code>.  Assume this comes in as the list <code class="docutils literal notranslate"><span class="pre">l1</span></code>.</p></li>
+<li><p>Evaluate the function at the list with <code class="docutils literal notranslate"><span class="pre">f(l1)</span></code>, this will create a list l2 of corresponding y values.</p></li>
+<li><p>Finally input (l1, l2) and this will create a set of points representing the sequence.</p></li>
+</ol>
+</section>
+<section id="power-series-and-taylor-series">
+<h2>Power Series and Taylor Series<a class="headerlink" href="#power-series-and-taylor-series" title="Link to this heading">#</a></h2>
+<p>GeoGebra can create a finite portion of a power series and of a Taylor series (a Taylor polynomial).  For power series simply use the <code class="docutils literal notranslate"><span class="pre">Sum</span></code> command and for Taylor polynomials use the <code class="docutils literal notranslate"><span class="pre">TaylorPolynomial</span></code> command.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Sum(fct(n),n,start</span> <span class="pre">n,end</span> <span class="pre">n)</span></code> where <code class="docutils literal notranslate"><span class="pre">fct(n)</span></code> is the expression for the nth term.  For example, <code class="docutils literal notranslate"><span class="pre">Sum(x^n,n,0,10)</span></code> produces <span class="math notranslate nohighlight">\(x^{10} + x^{9} + x^{8} + x^{7} + x^{6} + x^{5} + x^{4} + x^{3} + x^{2} + x + 1.\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TaylorPolynomial(f(x),</span> <span class="pre">point,</span> <span class="pre">degree)</span></code> where <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> is the function, point is the expansion (center) point, and degree is the degree (or order) of the polynomial.</p></li>
+</ul>
+</section>
+<section id="parametric-equations">
+<h2>Parametric Equations<a class="headerlink" href="#parametric-equations" title="Link to this heading">#</a></h2>
+<p>Parametric equations can be input in two ways, either as an ordered pair of expressions or with the Curve command.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">function,</span> <span class="pre">y</span> <span class="pre">function)</span></code>, with this style of input the GeoGebra will select the parameter and the bounds on the parameter automatically.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Curve(x(t),</span> <span class="pre">y(t),</span> <span class="pre">parameter</span> <span class="pre">variable,</span> <span class="pre">lower</span> <span class="pre">bound,</span> <span class="pre">upper</span> <span class="pre">bound)</span></code>,  <code class="docutils literal notranslate"><span class="pre">x(t)</span></code>, and <code class="docutils literal notranslate"><span class="pre">y(t)</span></code> are the defining expressions, the <code class="docutils literal notranslate"><span class="pre">parameter</span> <span class="pre">variable</span></code> is the variable for parameter value inputs, the <code class="docutils literal notranslate"><span class="pre">lower</span> <span class="pre">bound</span></code> is the beginning value for the parameter, and the <code class="docutils literal notranslate"><span class="pre">upper</span> <span class="pre">bound</span></code> ending value for the parameter.</p></li>
+</ul>
+</section>
+<section id="polar-coordinate-plots">
+<h2>Polar Coordinate Plots<a class="headerlink" href="#polar-coordinate-plots" title="Link to this heading">#</a></h2>
+<p>In GeoGebra, you can plot a point or a curve in polar coordinates by using a semicolon in place of a comma, specifically use the syntax <code class="docutils literal notranslate"><span class="pre">(r;</span> <span class="pre">theta)</span></code>. For example, the inputs <code class="docutils literal notranslate"><span class="pre">(3;</span> <span class="pre">pi/6)</span></code>, <code class="docutils literal notranslate"><span class="pre">(1;</span> <span class="pre">pi)</span></code>, and <code class="docutils literal notranslate"><span class="pre">(2;</span> <span class="pre">5</span> <span class="pre">pi/3)</span></code> will plot three points using polar coordinates.  To plot a polar coordinate curve we use the parametric equation format, again using a semicolon in place of a comma.  Specifically, expressions of the form <code class="docutils literal notranslate"><span class="pre">(f(t);</span> <span class="pre">t)</span></code>, <code class="docutils literal notranslate"><span class="pre">(r;</span> <span class="pre">f(r))</span></code>, and <code class="docutils literal notranslate"><span class="pre">(f(t);</span> <span class="pre">g(t))</span></code>.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="GeoGebraSyntax.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">GeoGebra Expression Syntax</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="GeoGebra2DGraphs.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">2D Graphs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-equations">Solving Equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">Solve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nsolve">NSolve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nsolutions">NSolutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#roots">Roots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#root">Root</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simplify">Simplify</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rational-expressions">Rational Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-numbers">Complex Numbers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-prime-notation">Using Prime Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-derivative-command">Using the Derivative Command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implicit-differentiation">Implicit Differentiation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-points">Special Points</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#local-extremes">Local Extremes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrals">Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#area-approximations">Area Approximations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rectanglesum">RectangleSum</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#uppersum-and-lowersum">UpperSum and LowerSum</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#trapezoidalsum">TrapezoidalSum</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definite-and-indefinite-integrals">Definite and Indefinite Integrals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-differential-equations">Ordinary Differential Equations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solutions">Exact Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-methods">Numerical Methods</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequences">Sequences</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#power-series-and-taylor-series">Power Series and Taylor Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametric-equations">Parametric Equations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-coordinate-plots">Polar Coordinate Plots</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

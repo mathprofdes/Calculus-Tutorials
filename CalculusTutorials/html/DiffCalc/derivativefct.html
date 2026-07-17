@@ -1,0 +1,1011 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Derivative as a Function &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/derivativefct';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Differentiation Rules" href="derivativerules.html" />
+    <link rel="prev" title="The Definition of the Derivative" href="derivativedef.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The Derivative as a Function</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-derivative-as-a-function">
+<h1><span class="target" id="index-0"></span>The Derivative as a Function<a class="headerlink" href="#the-derivative-as-a-function" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>One of the formulations for the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> at <em>a</em> is,</p>
+<div class="admonition-definition-the-derivative admonition">
+<p class="admonition-title">Definition: The Derivative</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function that is defined on an open interval containing the point <em>a</em>.  We define the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> at <em>a</em> by</p>
+<div class="math notranslate nohighlight">
+\[f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]</div>
+<p>If this limit exists.</p>
+</div>
+<p>We can turn this into a function and define the derivative function by simply replacing <em>a</em> in the above definition with <em>x</em>.  Formally,</p>
+<div class="admonition-definition-the-derivative-as-a-function admonition">
+<p class="admonition-title">Definition: The Derivative as a Function</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function. We define the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> as,</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}\]</div>
+</div>
+<p>If we have a derivative function in general then to find the derivative at a point <em>a</em> we simply need to evaluate the derivative function at <em>a</em> ad do not need to calculate the limit again, note that,</p>
+<div class="math notranslate nohighlight">
+\[f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]</div>
+<p>A few terms about differentiability.</p>
+<div class="admonition-definition-terms-and-notations admonition">
+<p class="admonition-title">Definition: Terms and Notations</p>
+<p>A function <span class="math notranslate nohighlight">\(f(x)\)</span> is said to be <strong>differentiable</strong> at <em>a</em> if <span class="math notranslate nohighlight">\(f'(a)\)</span> exists. More generally, a function is said to be <strong>differentiable on an open interval</strong> if it is differentiable at every point in the interval, and a <strong>differentiable function</strong> is one in which <span class="math notranslate nohighlight">\(f(x)\)</span> exists on its domain.</p>
+<p>Denoting the derivatives can take several forms.  The most common is the prime notation, <span class="math notranslate nohighlight">\(f'(x), y'(x), y', f', \ldots\)</span> another notation that is more useful in multivariable calculus is due to Leibniz, <span class="math notranslate nohighlight">\(\displaystyle \frac{dy}{dx}\)</span>, <span class="math notranslate nohighlight">\(\displaystyle \frac{df}{dx}\)</span>, and <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dx} \left(f(x)\right)\)</span>.</p>
+</div>
+<p>An important theorem that relates differentiability to continuity is that if you have a function that is differentiable at <em>a</em> then that function is also continuous at <em>a</em>.</p>
+<div class="admonition-theorem-differentiability-implies-continuity admonition">
+<p class="admonition-title">Theorem: Differentiability Implies Continuity</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function and <em>a</em> be in its domain. If <span class="math notranslate nohighlight">\(f(x)\)</span> is differentiable at <em>a</em>, then <span class="math notranslate nohighlight">\(f\)</span> is continuous at <em>a</em>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful with this theorem, it does not imply that if a function is continuous at <em>a</em> then the function is differentiable at <em>a</em>.  For example, take <span class="math notranslate nohighlight">\(f(x) = |x|\)</span>,</p>
+<figure class="align-default" id="id24">
+<img alt="y = |x|" src="../_images/Diff001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = |x|\)</span></span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This function is continuous at <span class="math notranslate nohighlight">\(x = 0\)</span> but it is not differentiable at <span class="math notranslate nohighlight">\(x = 0\)</span> since the derivative limit,</p>
+<div class="math notranslate nohighlight">
+\[f'(a) = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}\]</div>
+<p>does not exist at <span class="math notranslate nohighlight">\(a = 0\)</span> since the left and right hand limits are not equal.</p>
+<div class="math notranslate nohighlight">
+\[\lim_{h \to 0^+} \frac{f(0+h) - f(0)}{h} = \lim_{h \to 0^+} \frac{|h| - 0}{h} = \lim_{h \to 0^+} \frac{|h|}{h} = \lim_{h \to 0^+} \frac{h}{h} = \lim_{h \to 0^+} 1 = 1\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{h \to 0^-} \frac{f(0+h) - f(0)}{h} = \lim_{h \to 0^-} \frac{|h| - 0}{h} = \lim_{h \to 0^-} \frac{|h|}{h} = \lim_{h \to 0^-} \frac{-h}{h} = \lim_{h \to 0^-} -1 = -1\]</div>
+<p>In general, if a function has a sharp cornet or cusp at a point then it is not differentiable at that point.</p>
+</div>
+<p>Although the converse of the theorem is not valid the contrapositive of the statement is, which gives us a nice way to determine, in some cases, if a function is not differentiable.</p>
+<div class="admonition-theorem-discontinuity-implies-non-differentiability admonition">
+<p class="admonition-title">Theorem: Discontinuity Implies Non-Differentiability</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be a function and <em>a</em> be in its domain. If <span class="math notranslate nohighlight">\(f\)</span> is not continuous at <em>a</em> then <span class="math notranslate nohighlight">\(f(x)\)</span> is not differentiable at <em>a</em>.</p>
+</div>
+<p>As an example, if we take the floor function, <span class="math notranslate nohighlight">\(f(x) = \left\lfloor{x}\right\rfloor\)</span></p>
+<figure class="align-default" id="id25">
+<img alt="y = floor(x)" src="../_images/Diff002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \left\lfloor{x}\right\rfloor\)</span></span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since the floor function is discontinuous at every integer, it is not differentiable at every integer.  Functions that are continuous at a point can still fail to be differentiable in more ways than having a cusp there, we will look at some of these in the examples.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A quick note before going into the examples, the derivative of a function is easier to calculate using derivative formulas than using limits.  Each of these software packages has a derivative function built into it and there is usually (but not always) no need to take the derivative using the definition when using a computer algebra system.  In the examples below we will go through the process of finding the derivative functions by definition and show the commands for finding the derivative without setting up the limits.</p>
+</div>
+</section>
+<section id="example-f-x-x-3-3-x-2-x-3">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 3\)</span><a class="headerlink" href="#example-f-x-x-3-3-x-2-x-3" title="Link to this heading">#</a></h2>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>In GeoGebra doing the derivative by definition is cumbersome, we will simply show the derivative command.</p>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 3\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-3 x^2+x+3</span>
+</pre></div>
+</div>
+<p>In a new cell simply type in <code class="docutils literal notranslate"><span class="pre">f'</span></code> and the derivative is computed, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[3 x^{2} - 6 x + 1\]</div>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<section id="by-definition">
+<h4>By Definition<a class="headerlink" href="#by-definition" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 3\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-3*x^2+x+3</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{h - x^{3} + 3 x^{2} + \left(h + x\right)^{3} - 3 \left(h + x\right)^{2}}{h}\]</div>
+<p>Take the limit with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> variable is <em>h</em>, limit point is 0, and direction is Two Sided.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[3 x^{2} - 6 x + 1\]</div>
+</section>
+<section id="derivative-command">
+<h4>Derivative Command<a class="headerlink" href="#derivative-command" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 3\)</span>. Note that you do not need the <code class="docutils literal notranslate"><span class="pre">f(x):=</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-3*x^2+x+3</span>
+</pre></div>
+</div>
+<p>Select the expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>x</em>, order is 1, leave the variable properties as they are.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[3 x^{2} - 6 x + 1\]</div>
+</section>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>By Definition<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 3\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-3*x^2+x+3</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{h - x^{3} + 3 x^{2} + \left(h + x\right)^{3} - 3 \left(h + x\right)^{2}}{h}\]</div>
+<p>Take the limit with the following, assuming that the difference quotient is in <code class="docutils literal notranslate"><span class="pre">%o2</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(%o2, h, 0)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[3 x^{2} - 6 x + 1\]</div>
+</section>
+<section id="id2">
+<h4>Derivative Command<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 3\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x^3-3*x^2+x+3</span>
+</pre></div>
+</div>
+<p>Take the derivative with the following command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[3 x^{2} - 6 x + 1\]</div>
+</section>
+</section>
+</section>
+<section id="example-f-x-frac-1-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span><a class="headerlink" href="#example-f-x-frac-1-x" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3>GeoGebra<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>In GeoGebra doing the derivative by definition is cumbersome, we will simply show the derivative command.</p>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x</span>
+</pre></div>
+</div>
+<p>In a new cell simply type in <code class="docutils literal notranslate"><span class="pre">f'</span></code> and the derivative is computed, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{-1}{x^2}\]</div>
+</section>
+<section id="id4">
+<h3>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h4>By Definition<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{1}{h + x} - \frac{1}{x}}{h}\]</div>
+<p>Take the limit with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> variable is <em>h</em>, limit point is 0, and direction is Two Sided.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{1}{x^{2}}\]</div>
+</section>
+<section id="id6">
+<h4>Derivative Command<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>. Note that you do not need the <code class="docutils literal notranslate"><span class="pre">f(x):=</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/x</span>
+</pre></div>
+</div>
+<p>Select the expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>x</em>, order is 1, leave the variable properties as they are.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{1}{x^{2}}\]</div>
+</section>
+</section>
+<section id="id7">
+<h3>Maxima<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<section id="id8">
+<h4>By Definition<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{1}{h + x} - \frac{1}{x}}{h}\]</div>
+<p>Take the limit with the following, assuming the difference quotient is in <code class="docutils literal notranslate"><span class="pre">%o2</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(%o2, h, 0)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{1}{x^{2}}\]</div>
+</section>
+<section id="id9">
+<h4>Derivative Command<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=1/x</span>
+</pre></div>
+</div>
+<p>Find the derivative with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{1}{x^{2}}\]</div>
+</section>
+</section>
+</section>
+<section id="example-f-x-sin-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span><a class="headerlink" href="#example-f-x-sin-x" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>GeoGebra<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>In GeoGebra doing the derivative by definition is cumbersome, we will simply show the derivative command.</p>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>In a new cell simply type in <code class="docutils literal notranslate"><span class="pre">f'</span></code> and the derivative is computed, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\cos(x)\]</div>
+</section>
+<section id="id11">
+<h3>CLAE<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<section id="id12">
+<h4>By Definition<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{- \sin{\left(x \right)} + \sin{\left(h + x \right)}}{h}\]</div>
+<p>Take the limit with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> variable is <em>h</em>, limit point is 0, and direction is Two Sided.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\cos(x)\]</div>
+</section>
+<section id="id13">
+<h4>Derivative Command<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>. Note that you do not need the <code class="docutils literal notranslate"><span class="pre">f(x):=</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Select the expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>x</em>, order is 1, leave the variable properties as they are.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\cos(x)\]</div>
+</section>
+</section>
+<section id="id14">
+<h3>Maxima<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<section id="id15">
+<h4>By Definition<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{- \sin{\left(x \right)} + \sin{\left(h + x \right)}}{h}\]</div>
+<p>Take the limit with the following, assuming the difference quotient is in <code class="docutils literal notranslate"><span class="pre">%o2</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(%o2, h, 0)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\cos(x)\]</div>
+</section>
+<section id="id16">
+<h4>Derivative Command<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sin(x)</span>
+</pre></div>
+</div>
+<p>Find the derivative with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\cos(x)\]</div>
+</section>
+</section>
+</section>
+<section id="example-f-x-x-sin-left-frac-1-x-right">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x\sin\left(\frac{1}{x}\right)\)</span><a class="headerlink" href="#example-f-x-x-sin-left-frac-1-x-right" title="Link to this heading">#</a></h2>
+<section id="id17">
+<h3>GeoGebra<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<p>In GeoGebra doing the derivative by definition is cumbersome, we will simply show the derivative command.</p>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x\sin\left(\frac{1}{x}\right)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x sin(1/x)</span>
+</pre></div>
+</div>
+<p>In a new cell simply type in <code class="docutils literal notranslate"><span class="pre">f'</span></code> and the derivative is computed, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x \sin{\left(\frac{1}{x} \right)} - \cos{\left(\frac{1}{x} \right)}}{x}\]</div>
+</section>
+<section id="id18">
+<h3>CLAE<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<section id="id19">
+<h4>By Definition<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x\sin\left(\frac{1}{x}\right)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x*sin(1/x)</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{- x \sin{\left(\frac{1}{x} \right)} + \left(h + x\right) \sin{\left(\frac{1}{h + x} \right)}}{h}\]</div>
+<p>Take the limit with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> variable is <em>h</em>, limit point is 0, and direction is Two Sided.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x \sin{\left(\frac{1}{x} \right)} - \cos{\left(\frac{1}{x} \right)}}{x}\]</div>
+</section>
+<section id="id20">
+<h4>Derivative Command<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x\sin\left(\frac{1}{x}\right)\)</span>. Note that you do not need the <code class="docutils literal notranslate"><span class="pre">f(x):=</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*sin(1/x)</span>
+</pre></div>
+</div>
+<p>Select the expression, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable is <em>x</em>, order is 1, leave the variable properties as they are.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(\frac{1}{x} \right)} - \frac{\cos{\left(\frac{1}{x} \right)}}{x}\]</div>
+<p>Note that the outputs from the limit and the derivative option are slightly different, although easily seen to be equivalent.  Since we applied a different algorithm we should expect possibly different, but equivalent, results.</p>
+</section>
+</section>
+<section id="id21">
+<h3>Maxima<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<section id="id22">
+<h4>By Definition<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x\sin\left(\frac{1}{x}\right)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x*sin(1/x)</span>
+</pre></div>
+</div>
+<p>Create the difference quotient,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(f(x+h)</span><span class="go">-f(x))/h</span>
+</pre></div>
+</div>
+<p>you should get</p>
+<div class="math notranslate nohighlight">
+\[\frac{- x \sin{\left(\frac{1}{x} \right)} + \left(h + x\right) \sin{\left(\frac{1}{h + x} \right)}}{h}\]</div>
+<p>Take the limit, assuming the difference quotient is in <code class="docutils literal notranslate"><span class="pre">%o2</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(%o2, h, 0)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(\frac{1}{x} \right)} - \frac{\cos{\left(\frac{1}{x} \right)}}{x}\]</div>
+</section>
+<section id="id23">
+<h4>Derivative Command<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
+<p>Input the function <span class="math notranslate nohighlight">\(f(x) = x\sin\left(\frac{1}{x}\right)\)</span>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=x*sin(1/x)</span>
+</pre></div>
+</div>
+<p>Find the derivative with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\sin{\left(\frac{1}{x} \right)} - \frac{\cos{\left(\frac{1}{x} \right)}}{x}\]</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="derivativedef.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The Definition of the Derivative</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="derivativerules.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Differentiation Rules</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-3-3-x-2-x-3">Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x^{2} + x + 3\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#by-definition">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivative-command">Derivative Command</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Derivative Command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-1-x">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Derivative Command</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Maxima</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Derivative Command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-sin-x">Example: <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Derivative Command</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Maxima</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Derivative Command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-sin-left-frac-1-x-right">Example: <span class="math notranslate nohighlight">\(f(x) = x\sin\left(\frac{1}{x}\right)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Derivative Command</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Maxima</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">By Definition</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Derivative Command</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

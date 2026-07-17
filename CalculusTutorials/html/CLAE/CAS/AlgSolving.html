@@ -1,0 +1,870 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Solving Equations &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/AlgSolving';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Factoring and Expanding" href="AlgFactorExpand.html" />
+    <link rel="prev" title="Approximation and Evaluation" href="AlgApproxEval.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casCopySpecialCopy.html">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseConvert.html">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSimplify.html">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalLimitsDerivatives.html">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalOde.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecProj.html">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Solving Equations</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="solving-equations">
+<h1><span class="target" id="index-0"></span>Solving Equations<a class="headerlink" href="#solving-equations" title="Link to this heading">#</a></h1>
+<p>In this software package all expressions are solved for 0.  So invoking any of the solving options on an expression on the CAS solves that expression for 0.  The underlying SymPy CAS that we are using can create and solve equations but this just introduces more unnecessary syntax for the user.  So if you need to solve an equation just put all the terms on one side and select the solver you wish to use.  This program offers several different solvers including some advanced ones.</p>
+<section id="solve">
+<h2><span class="target" id="index-1"></span>Solve<a class="headerlink" href="#solve" title="Link to this heading">#</a></h2>
+<p>This is the most general solver that will produce an acceptable answer the majority of the time.  When you select this option a dialog box will appear asking for the variable or variables you wish to solve for.  Input the desired variable or list of variables and click OK.  The output is usually a list of solutions if the program can solve the equation.  If the program cannot find an algebraic solution to the equation it will produce an error.  We will do several examples of this tool.</p>
+<ul class="simple">
+<li><p>Say we have the following in the CAS, <code class="docutils literal notranslate"><span class="pre">-x^2</span> <span class="pre">+</span> <span class="pre">(x^2</span> <span class="pre">+</span> <span class="pre">3*x</span> <span class="pre">+</span> <span class="pre">2)^2</span> <span class="pre">+</span> <span class="pre">1</span></code>, that is, <span class="math notranslate nohighlight">\(- x^{2} + \left(x^{2} + 3 x + 2\right)^{2} + 1\)</span>.  If we select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> and put in <code class="docutils literal notranslate"><span class="pre">x</span></code> as the variable we get</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\left[ -1, \  - \frac{5}{3} - \frac{4}{\left(- \frac{3}{2} - \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}} - \frac{\left(- \frac{1}{2} - \frac{\sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}{3}, \  - \frac{5}{3} - \frac{\left(- \frac{1}{2} + \frac{\sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{\left(- \frac{3}{2} + \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}, \  - \frac{5}{3} - \frac{\sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{3 \sqrt[3]{3 \sqrt{129} + 35}}\right]\]</div>
+<p>That is, the four solutions,</p>
+<div class="math notranslate nohighlight">
+\[-1\]</div>
+<div class="math notranslate nohighlight">
+\[- \frac{5}{3} - \frac{4}{\left(- \frac{3}{2} - \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}} - \frac{\left(- \frac{1}{2} - \frac{\sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}{3}\]</div>
+<div class="math notranslate nohighlight">
+\[- \frac{5}{3} - \frac{\left(- \frac{1}{2} + \frac{\sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{\left(- \frac{3}{2} + \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}\]</div>
+<div class="math notranslate nohighlight">
+\[- \frac{5}{3} - \frac{\sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{3 \sqrt[3]{3 \sqrt{129} + 35}}\]</div>
+<ul class="simple">
+<li><p>Say we have <code class="docutils literal notranslate"><span class="pre">x^2</span> <span class="pre">+</span> <span class="pre">cos(y)</span></code> in the CAS and we solve it for just <code class="docutils literal notranslate"><span class="pre">x</span></code> we get, <span class="math notranslate nohighlight">\(\left[ - \sqrt{- \cos{\left(y \right)}}, \  \sqrt{- \cos{\left(y \right)}}\right]\)</span>.</p></li>
+<li><p>Say we have <code class="docutils literal notranslate"><span class="pre">x^2</span> <span class="pre">*</span> <span class="pre">cos(y)</span></code> in the CAS and we solve it for <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code> (that is both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> together) we get, <span class="math notranslate nohighlight">\(\left[ \left( 0, \  y\right), \  \left( x, \  \frac{\pi}{2}\right), \  \left( x, \  \frac{3 \pi}{2}\right)\right]\)</span>.  The first ordered pair tells us that if <span class="math notranslate nohighlight">\(x = 0\)</span> then <span class="math notranslate nohighlight">\(y\)</span> can be any value.  The second ordered pair tells us that if <span class="math notranslate nohighlight">\(y = \pi/2\)</span> then <span class="math notranslate nohighlight">\(x\)</span> can be any value and the third ordered pair tells us that if <span class="math notranslate nohighlight">\(y = 3\pi/2\)</span> then <span class="math notranslate nohighlight">\(x\)</span> can be any value.  This is obviously not all of the solutions since the <span class="math notranslate nohighlight">\(\cos(y)\)</span> has an infinite number of distinct values where it is 0, each of these would produce an ordered pair.</p></li>
+</ul>
+<p>From the above example, it is clear that the Solve option will not always produce a complete set of solutions.  Below we will look at some advanced solvers, the result of solving a nonlinear system on the above equation gives us the following output.</p>
+<div class="math notranslate nohighlight">
+\[\left\{\left( 0, \  y\right), \left( x, \  \left\{2 \pi n + \frac{\pi}{2}\; \middle|\; n \in \mathbb{Z}\right\}\right), \left( x, \  \left\{2 \pi n + \frac{3 \pi}{2}\; \middle|\; n \in \mathbb{Z}\right\}\right)\right\}\]</div>
+<p>This gives us a complete set of solutions although they are easy to work with.  You can also solve systems of equations, simply put them in a list and select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> as before.  This will find solutions where all the expressions in the list are 0 at the same time.</p>
+<ul class="simple">
+<li><p>Say we have the following in the CAS, <code class="docutils literal notranslate"><span class="pre">[x^2</span> <span class="pre">-</span> <span class="pre">cos(y),x^2</span> <span class="pre">+</span> <span class="pre">2*x</span> <span class="pre">+</span> <span class="pre">1]</span></code>, that is, <span class="math notranslate nohighlight">\(\left[ x^{2} - \cos{\left(y \right)}, \  x^{2} + 2 x + 1\right]\)</span>, if solve this for both <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> we get, <span class="math notranslate nohighlight">\(\left[ \left( -1, \  0\right), \  \left( -1, \  2 \pi\right)\right]\)</span>.  Again, not a complete set of solutions but enough to work with in most cases.</p></li>
+</ul>
+<figure class="align-default" id="id1">
+<img alt="Non-Linear System Solving Example" src="../../_images/SolveGraph001.png" />
+<figcaption>
+<p><span class="caption-text">Non-Linear System Solving Example</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Again, if we use the advanced solver for nonlinear systems we get the solution set,</p>
+<div class="math notranslate nohighlight">
+\[\left\{\left( -1, \  \left\{2 \pi n\; \middle|\; n \in \mathbb{Z}\right\}\right)\right\}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not try to solve matrices (systems of equations) with this option.  For these you will want either an advanced solver or the system solver in the Matrix menu.</p>
+</div>
+</section>
+<section id="advanced-solvers">
+<h2><span class="target" id="index-2"></span>Advanced Solvers<a class="headerlink" href="#advanced-solvers" title="Link to this heading">#</a></h2>
+<p>The advanced solvers will, in general, produce a more complete solution set, usually in set form as with the examples we did above.  When you select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;&gt;</span> <span class="pre">Advanced</span> <span class="pre">Solvers</span></code> a dialog box will appear that will allow you to select the variable or variables you wish to solve for, the solving method, and any assumptions you wish to place on the variables in the expression.  If the program can detect the type of equation, or system, that is to be solved it will gray out any solver that is not valid for that equation or system.</p>
+<figure class="align-default" id="id2">
+<img alt="Advanced Solvers Dialog Box" src="../../_images/AdvSolve001.png" />
+<figcaption>
+<p><span class="caption-text">Advanced Solvers Dialog Box</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="general-solve">
+<h3>General Solve<a class="headerlink" href="#general-solve" title="Link to this heading">#</a></h3>
+<p>This is just the same solver that is used in the Solve option.  The difference here is that you can set the domains of the variables.</p>
+<p>For example, say we have <code class="docutils literal notranslate"><span class="pre">sin(cos(x))</span></code> in the CAS.  If we select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> and solve this for <code class="docutils literal notranslate"><span class="pre">x</span></code> we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{\pi}{2}, \  \frac{3 \pi}{2}, \  2 \pi - \operatorname{acos}{\left(\pi \right)}, \  \operatorname{acos}{\left(\pi \right)}\right]\]</div>
+<p>Looking at the graph, or simply realizing that this is clearly a periodic function, it is clear that we did not get all the solutions.</p>
+<figure class="align-default" id="id3">
+<img alt="y = sin(cos(x))" src="../../_images/SolveGraph002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = \sin(\cos(x))\)</span></span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A closer look should reveal another thing, the third and fourth solutions both contain <span class="math notranslate nohighlight">\(\operatorname{acos}(\pi)\)</span>, but since <span class="math notranslate nohighlight">\(\cos(x)\)</span> has range <span class="math notranslate nohighlight">\([-1,1]\)</span> these solutions cannot be real.  Approximating the solutions gives us,</p>
+<div class="math notranslate nohighlight">
+\[\left[ 1.5707963267949, \  4.71238898038469, \  6.28318530717959 - 1.81152627246085 i, \  1.81152627246085 i\right]\]</div>
+<p>which verifies that these solutions are not real numbers.  Of course we can simply ignore the unreal solutions if we know we want real solutions but we could also use the General Solve in the advanced solvers and change <code class="docutils literal notranslate"><span class="pre">x</span></code> to be real in the variable assumptions area at the bottom of the dialog.  If we do that our result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{\pi}{2}, \  \frac{3 \pi}{2}\right]\]</div>
+<p>Again not a complete set of solutions but the unreal solutions were removed.</p>
+</section>
+<section id="single-equation-solve-with-set-output-real-domain">
+<h3>Single Equation Solve with Set Output, Real Domain<a class="headerlink" href="#single-equation-solve-with-set-output-real-domain" title="Link to this heading">#</a></h3>
+<p>This solver will solve a single equation for a single variable and assume that all variables are real, overriding the variable assumptions at the bottom.</p>
+<p>For example, say we want to solve <span class="math notranslate nohighlight">\(\sin(2x)\)</span> for <code class="docutils literal notranslate"><span class="pre">x</span></code>.  Select the Single Equation Solve with Set Output, Real Domain solver and click OK. The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left\{\pi n\; \middle|\; n \in \mathbb{Z}\right\} \cup \left\{\pi n + \frac{\pi}{2}\; \middle|\; n \in \mathbb{Z}\right\}\]</div>
+<p>Which is the entire set of solutions.</p>
+<p>Another example, this shows that the advanced solvers may not always produce better answers.  Say we apply this solver to <span class="math notranslate nohighlight">\(\sin(\cos(x))\)</span>.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left\{x\; \middle|\; x \in \mathbb{R} \wedge \sin{\left(\cos{\left(x \right)} \right)} = 0 \right\}\]</div>
+<p>Which is not very enlightening.</p>
+</section>
+<section id="single-equation-solve-with-set-output-complex-domain">
+<h3>Single Equation Solve with Set Output, Complex Domain<a class="headerlink" href="#single-equation-solve-with-set-output-complex-domain" title="Link to this heading">#</a></h3>
+<p>This solver will solve a single equation for a single variable and assume that all variables are complex, overriding the variable assumptions at the bottom.</p>
+<p>For example, if we wanted to solve <code class="docutils literal notranslate"><span class="pre">x^4</span> <span class="pre">+</span> <span class="pre">6*x^3</span> <span class="pre">+</span> <span class="pre">12*x^2</span> <span class="pre">+</span> <span class="pre">12*x</span> <span class="pre">+</span> <span class="pre">5</span></code>, that is, <span class="math notranslate nohighlight">\(x^{4} + 6 x^{3} + 12 x^{2} + 12 x + 5\)</span>.  The solutions using the real domain would just be,</p>
+<div class="math notranslate nohighlight">
+\[\left\{-1, - \frac{5}{3} - \frac{\sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{3 \sqrt[3]{3 \sqrt{129} + 35}}\right\}\]</div>
+<p>but using the complex domain gives us all four solutions,</p>
+<div class="math notranslate nohighlight">
+\[\left\{-1, - \frac{5}{3} - \frac{\sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{3 \sqrt[3]{3 \sqrt{129} + 35}}, - \frac{5}{3} + \frac{2}{3 \sqrt[3]{3 \sqrt{129} + 35}} + \frac{\sqrt[3]{3 \sqrt{129} + 35}}{6} + i \left(- \frac{2 \sqrt{3}}{3 \sqrt[3]{3 \sqrt{129} + 35}} + \frac{\sqrt{3} \sqrt[3]{3 \sqrt{129} + 35}}{6}\right), - \frac{5}{3} + \frac{2}{3 \sqrt[3]{3 \sqrt{129} + 35}} + \frac{\sqrt[3]{3 \sqrt{129} + 35}}{6} + i \left(- \frac{\sqrt{3} \sqrt[3]{3 \sqrt{129} + 35}}{6} + \frac{2 \sqrt{3}}{3 \sqrt[3]{3 \sqrt{129} + 35}}\right)\right\}\]</div>
+</section>
+<section id="linear-system-solver">
+<h3>Linear System Solver<a class="headerlink" href="#linear-system-solver" title="Link to this heading">#</a></h3>
+<p>This solver is for the solving of linear systems of equations.  The system can be input either as a list or an augmented matrix.  The output will be in general solution vector form or sometimes as a set.</p>
+<p>For example, if we input the following matrix,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{cccc}3 &amp; -1 &amp; -9 &amp; -9\\-5 &amp; 10 &amp; -8 &amp; 8\\-3 &amp; 0 &amp; 10 &amp; 5\end{array}\right]\end{split}\]</div>
+<p>and apply this solver to the matrix we get the following result,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{15}{2}\\\frac{27}{4}\\\frac{11}{4}\end{array}\right]\end{split}\]</div>
+<p>We can also input the system as a list of linear equations as long as they are manipulated to be equations to 0.  For example, the system,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}-4x + 5y + -5z &amp;= 10 \\
+-10x + 10y + -9z &amp;= 9 \\
+-6x + 7y + -z &amp;= -1 \\\end{split}\]</div>
+<p>could be input as, <code class="docutils literal notranslate"><span class="pre">[-4*x</span> <span class="pre">+</span> <span class="pre">5*y</span> <span class="pre">-</span> <span class="pre">5*z</span> <span class="pre">-</span> <span class="pre">10,</span> <span class="pre">-10*x</span> <span class="pre">+</span> <span class="pre">10*y</span> <span class="pre">-</span> <span class="pre">9*z</span> <span class="pre">-</span> <span class="pre">9,</span> <span class="pre">-6*x</span> <span class="pre">+</span> <span class="pre">7*y</span> <span class="pre">-</span> <span class="pre">z</span> <span class="pre">+</span> <span class="pre">1]</span></code></p>
+<div class="math notranslate nohighlight">
+\[\left[ - 4 x + 5 y - 5 z - 10, \  - 10 x + 10 y - 9 z - 9, \  - 6 x + 7 y - z + 1\right]\]</div>
+<p>Applying this solver gives us the solution,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{255}{58}\\\frac{96}{29}\\- \frac{64}{29}\end{array}\right]\end{split}\]</div>
+<p>This solver can handle systems with an infinite number of solutions as well, say we have the following matrix in the CAS,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{cccccc}8 &amp; 2 &amp; 6 &amp; 1 &amp; -3 &amp; -9\\2 &amp; 2 &amp; -1 &amp; -6 &amp; 2 &amp; -3\\-9 &amp; -5 &amp; 1 &amp; -2 &amp; -9 &amp; -5\end{array}\right]\end{split}\]</div>
+<p>This solver returns the solution,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \frac{217 x_{4}}{38} - \frac{71 x_{5}}{38} + \frac{193}{38}\\\frac{405 x_{4}}{38} + \frac{77 x_{5}}{38} - \frac{349}{38}\\\frac{74 x_{4}}{19} + \frac{44 x_{5}}{19} - \frac{99}{19}\\x_{4}\\x_{5}\end{array}\right]\end{split}\]</div>
+</section>
+<section id="nonlinear-system-solver">
+<h3>Nonlinear System Solver<a class="headerlink" href="#nonlinear-system-solver" title="Link to this heading">#</a></h3>
+<p>This solver is for the solving of nonlinear systems of equations.  In this case the system should be input as a list of equations.</p>
+<p>For example, say we input <code class="docutils literal notranslate"><span class="pre">[x^2</span> <span class="pre">-</span> <span class="pre">cos(y),x^2</span> <span class="pre">+</span> <span class="pre">2*x</span> <span class="pre">+</span> <span class="pre">1]</span></code>, that is, <span class="math notranslate nohighlight">\(\left[ x^{2} - \cos{\left(y \right)}, \  x^{2} + 2 x + 1\right]\)</span>.  The nonlinear solver will produce,</p>
+<div class="math notranslate nohighlight">
+\[\left\{\left( -1, \  \left\{2 \pi n\; \middle|\; n \in \mathbb{Z}\right\}\right)\right\}\]</div>
+</section>
+</section>
+<section id="numeric-solution-close-to-x-a">
+<h2><span class="target" id="index-3"></span>Numeric Solution Close to x = a<a class="headerlink" href="#numeric-solution-close-to-x-a" title="Link to this heading">#</a></h2>
+<p>In many cases finding exact solutions to equations is very difficult, and possibly impossible.  In these cases we can still obtain numeric solutions and hence put some meaning to the solution of the expression we are working with. One tool is to find a solution close to an initial guess to the solution.  This tool is for solving single expressions in a single variable.</p>
+<p>For example, say we wanted to find the roots of the expression <span class="math notranslate nohighlight">\(x + \cos{\left(x \right)}\)</span>.  If we try to solve this algebraically with the tools mentioned above we either get an error or a result that does not mean anything.  If we graph the function we get the following,</p>
+<figure class="align-default" id="id4">
+<img alt="y = x + cos(x)" src="../../_images/SolveGraph003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = x + \cos(x)\)</span></span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There appears to be a solution close to <span class="math notranslate nohighlight">\(-1\)</span>.  If we select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Numeric</span> <span class="pre">Solution</span> <span class="pre">Close</span> <span class="pre">to</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a</span></code>, let the variable be <code class="docutils literal notranslate"><span class="pre">x</span></code> and input an initial guess of <code class="docutils literal notranslate"><span class="pre">-1</span></code> and the result is <code class="docutils literal notranslate"><span class="pre">-0.739085133215161</span></code>.</p>
+<p>It is possible that this method will not return a solution or that the solution it does return id not the closest one to the initial guess.  For example, put in the <span class="math notranslate nohighlight">\(\sin(x)\)</span> and try this with an initial guess of <span class="math notranslate nohighlight">\(\pi/2\)</span> and we get <code class="docutils literal notranslate"><span class="pre">9.42477796076938</span></code>, that is, <span class="math notranslate nohighlight">\(3\pi\)</span>, not 0 or <span class="math notranslate nohighlight">\(\pi\)</span>, the closest solutions.</p>
+</section>
+<section id="numeric-solutions-in-a-b">
+<h2><span class="target" id="index-4"></span>Numeric Solutions in [a, b]<a class="headerlink" href="#numeric-solutions-in-a-b" title="Link to this heading">#</a></h2>
+<p>This option allows the user to approximate all the solutions in a given interval. Like the previous tool, this option is for solving a single expression in a single variable.</p>
+<p>For example, say we want the roots to <span class="math notranslate nohighlight">\(\sin(x^2)\)</span>.  The solve tool gives us the result <span class="math notranslate nohighlight">\(\left[ 0, \  - \sqrt{\pi}, \  \sqrt{\pi}\right]\)</span>, which is a good start, these are the three solutions closest to the origin.</p>
+<figure class="align-default" id="id5">
+<img alt="y = sin(x^2)" src="../../_images/SolveGraph004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = \sin(x^2)\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There are, of course, an infinite number of solutions to this expression.  The next three positive solutions appear to be between 2.25 and 3.75.  If we select this option a dialog box will appear asking for lower and upper bounds for the interval (we will use 2.25 and 3.75), the number of test points (we will keep this at 100), and the tolerance exponent (we will keep that at 8).  When we click OK we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ 2.506628274631, \  3.06998012383947, \  3.54490770181103\right]\]</div>
+<p>These are the approximations to the three solutions we wanted.  What the program did was it divided the given interval <span class="math notranslate nohighlight">\([2.25, 3.75]\)</span> into 100 evenly spaced test points, it then applied the above method of finding a solution close to each of these test points (obtaining 100 solutions).  It then removed duplicate solutions that were within the tolerance leaving the three solutions above.</p>
+<p>Note that it is possible that this method will return solutions that are close to each other but are further away than the tolerance amount.  This is common when the curve osculates the x-axis.</p>
+</section>
+<section id="polynomial-roots">
+<h2><span class="target" id="index-5"></span>Polynomial Roots<a class="headerlink" href="#polynomial-roots" title="Link to this heading">#</a></h2>
+<p>This tool is for finding exact roots to a polynomial expression.  If you try to apply this to an expression that is not a polynomial you will get an error.  Note that the polynomial does not need to be in simplified or expanded form.</p>
+<p>For example, if we applied this tool to either</p>
+<div class="math notranslate nohighlight">
+\[- x^{2} + \left(x^{2} + 3 x + 2\right)^{2} + 1\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[x^{4} + 6 x^{3} + 12 x^{2} + 12 x + 5\]</div>
+<p>which is just the expanded form of the first expression, we get</p>
+<div class="math notranslate nohighlight">
+\[\left[ -1, \  - \frac{5}{3} - \frac{\sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{3 \sqrt[3]{3 \sqrt{129} + 35}}, \  - \frac{5}{3} - \frac{\left(- \frac{1}{2} + \frac{\sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}{3} - \frac{4}{\left(- \frac{3}{2} + \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}, \  - \frac{5}{3} - \frac{4}{\left(- \frac{3}{2} - \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}} - \frac{\left(- \frac{1}{2} - \frac{\sqrt{3} i}{2}\right) \sqrt[3]{3 \sqrt{129} + 35}}{3}\right]\]</div>
+</section>
+<section id="polynomial-root-approximations">
+<h2><span class="target" id="index-6"></span>Polynomial Root Approximations<a class="headerlink" href="#polynomial-root-approximations" title="Link to this heading">#</a></h2>
+<p>This tool is for finding approximations to the roots to a polynomial expression.  If you try to apply this to an expression that is not a polynomial you will get an error.  Note that the polynomial does not need to be in simplified or expanded form.</p>
+<p>For example, if we applied this tool to either</p>
+<div class="math notranslate nohighlight">
+\[- x^{2} + \left(x^{2} + 3 x + 2\right)^{2} + 1\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[x^{4} + 6 x^{3} + 12 x^{2} + 12 x + 5\]</div>
+<p>which is just the expanded form of the first expression, we get</p>
+<div class="math notranslate nohighlight">
+\[\left[ -3.35930408597178, \  -1.0, \  -0.820347957014112 - 0.903013145857004 i, \  -0.820347957014112 + 0.903013145857004 i\right]\]</div>
+<p>You may have studied at one point that you can find the exact solutions to a quadratic equation (degree 2) using the quadratic formula.  You may have also studied that there are similar, but more difficult, equations to get the exact solutions to degree 3 and degree 4 equations.  Specifically, the solutions to <span class="math notranslate nohighlight">\(a x^{3} + b x^{2} + c x + d = 0\)</span> are,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{3 c}{a} - \frac{b^{2}}{a^{2}}}{3 \sqrt[3]{\frac{\sqrt{- 4 \left(- \frac{3 c}{a} + \frac{b^{2}}{a^{2}}\right)^{3} + \left(\frac{27 d}{a} - \frac{9 b c}{a^{2}} + \frac{2 b^{3}}{a^{3}}\right)^{2}}}{2} + \frac{27 d}{2 a} - \frac{9 b c}{2 a^{2}} + \frac{b^{3}}{a^{3}}}} - \frac{\sqrt[3]{\frac{\sqrt{- 4 \left(- \frac{3 c}{a} + \frac{b^{2}}{a^{2}}\right)^{3} + \left(\frac{27 d}{a} - \frac{9 b c}{a^{2}} + \frac{2 b^{3}}{a^{3}}\right)^{2}}}{2} + \frac{27 d}{2 a} - \frac{9 b c}{2 a^{2}} + \frac{b^{3}}{a^{3}}}}{3} - \frac{b}{3 a}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{3 c}{a} - \frac{b^{2}}{a^{2}}}{\left(- \frac{3}{2} - \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{\frac{\sqrt{- 4 \left(- \frac{3 c}{a} + \frac{b^{2}}{a^{2}}\right)^{3} + \left(\frac{27 d}{a} - \frac{9 b c}{a^{2}} + \frac{2 b^{3}}{a^{3}}\right)^{2}}}{2} + \frac{27 d}{2 a} - \frac{9 b c}{2 a^{2}} + \frac{b^{3}}{a^{3}}}} - \frac{\left(- \frac{1}{2} - \frac{\sqrt{3} i}{2}\right) \sqrt[3]{\frac{\sqrt{- 4 \left(- \frac{3 c}{a} + \frac{b^{2}}{a^{2}}\right)^{3} + \left(\frac{27 d}{a} - \frac{9 b c}{a^{2}} + \frac{2 b^{3}}{a^{3}}\right)^{2}}}{2} + \frac{27 d}{2 a} - \frac{9 b c}{2 a^{2}} + \frac{b^{3}}{a^{3}}}}{3} - \frac{b}{3 a}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\frac{3 c}{a} - \frac{b^{2}}{a^{2}}}{\left(- \frac{3}{2} + \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{\frac{\sqrt{- 4 \left(- \frac{3 c}{a} + \frac{b^{2}}{a^{2}}\right)^{3} + \left(\frac{27 d}{a} - \frac{9 b c}{a^{2}} + \frac{2 b^{3}}{a^{3}}\right)^{2}}}{2} + \frac{27 d}{2 a} - \frac{9 b c}{2 a^{2}} + \frac{b^{3}}{a^{3}}}} - \frac{\left(- \frac{1}{2} + \frac{\sqrt{3} i}{2}\right) \sqrt[3]{\frac{\sqrt{- 4 \left(- \frac{3 c}{a} + \frac{b^{2}}{a^{2}}\right)^{3} + \left(\frac{27 d}{a} - \frac{9 b c}{a^{2}} + \frac{2 b^{3}}{a^{3}}\right)^{2}}}{2} + \frac{27 d}{2 a} - \frac{9 b c}{2 a^{2}} + \frac{b^{3}}{a^{3}}}}{3} - \frac{b}{3 a}\]</div>
+<p>We will forgo the solutions to the degree 4 equations. If you studied polynomial solutions a little further you know that for degree 5 and above there are no general solution equations.  Not just that they have not been discovered yet they do not exist.  So for higher degree polynomials we might get lucky and get exact solutions or we may not.</p>
+<p>For example, input the polynomial <code class="docutils literal notranslate"><span class="pre">x^5</span> <span class="pre">-</span> <span class="pre">7*x^4</span> <span class="pre">+</span> <span class="pre">x^3</span> <span class="pre">-</span> <span class="pre">5*x^2</span> <span class="pre">-</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">3</span></code>, that is, <span class="math notranslate nohighlight">\(x^{5} - 7 x^{4} + x^{3} - 5 x^{2} - x + 3\)</span>.  If we apply the Polynomial Roots tool we get <code class="docutils literal notranslate"><span class="pre">[]</span></code> in other words it could not solve the equation exactly.  If we apply the Polynomial Root Approximations tool we get the solutions,</p>
+<div class="math notranslate nohighlight">
+\[\left[ -0.643227867249394, \  0.598810703479406, \  6.96121485557466, \  0.0416011540976639 - 1.05695078535511 i, \  0.0416011540976639 + 1.05695078535511 i\right]\]</div>
+<p>The advantage to using this as opposed to finding solutions close to a value or in an interval is that with this tool you can get approximations to the unreal roots.</p>
+</section>
+<section id="variable-assumptions">
+<h2>Variable Assumptions<a class="headerlink" href="#variable-assumptions" title="Link to this heading">#</a></h2>
+<section id="assumptions">
+<h3><span class="target" id="index-7"></span>Assumptions<a class="headerlink" href="#assumptions" title="Link to this heading">#</a></h3>
+<p>Assumptions about variables are essentially what type of number does the variable represent.  In most cases in an introductory Calculus sequence you simply assume that all variables represent real numbers, and sometimes complex numbers.  The default setting for variables is as a real number except for solving equations where we use complex numbers.</p>
+<p>As a classic example, say we input <code class="docutils literal notranslate"><span class="pre">sqrt(x^2)</span></code> into the CAS, the entry would be displayed as,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>If we select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>, a simplification that makes no assumptions about the variables, the result is still,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{x^{2}}\]</div>
+<p>But if we use <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Special</span> <span class="pre">Simplifications</span></code>, leave the settings as is, and click OK the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left|{x}\right|\]</div>
+<p>The difference is that the default domain for <code class="docutils literal notranslate"><span class="pre">x</span></code> in the Special Simplifications dialog was a real number.  In the real number system, <span class="math notranslate nohighlight">\(\sqrt{x^{2}} = \left|{x}\right|\)</span> but in the complex number system it is not.  For example, <span class="math notranslate nohighlight">\(\sqrt{i^{2}} = -1 \neq \left|{i}\right| = 1\)</span>.</p>
+<p>Another classic example is in the study of l’Hospital’s Rule.  Marquis de l’Hospital published the very first Calculus textbook in 1696, where l’Hospital’s Rule is first seen in print. l’Hospital did not discover this rule, the Swiss mathematician John Bernoulli (1667–1748) is the one who discovered the method.  l’Hospital and Bernoulli had an interesting business relationship where l’Hospital purchased the rights to this method, which is why it is named after him and not Bernoulli.  In his book l’Hospital wanted to calculate,</p>
+<div class="math notranslate nohighlight">
+\[\lim_{x \to a} \frac{\sqrt{2a^3x-x^4} - a \sqrt[3]{a^2x} }{a - \sqrt[4]{ax^3}}\]</div>
+<p>which is a <span class="math notranslate nohighlight">\(\frac{0}{0}\)</span> indeterminate form and hence can be attacked using l’Hospital’s Rule.  This expression also assumed that <span class="math notranslate nohighlight">\(a &gt; 0\)</span>.</p>
+<p>If we put this expression into our CAS <code class="docutils literal notranslate"><span class="pre">(-a*(a^2*x)^(1/3)</span> <span class="pre">+</span> <span class="pre">sqrt(2*a^3*x</span> <span class="pre">-</span> <span class="pre">x^4))/(a</span> <span class="pre">-</span> <span class="pre">(a*x^3)^(1/4))</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, when the limit dialog comes up input <code class="docutils literal notranslate"><span class="pre">x</span></code> for the variable and <code class="docutils literal notranslate"><span class="pre">a</span></code> for the limit point, and click OK.  The result will be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- a^{\frac{4}{3}} \left|{a}\right|^{\frac{2}{3}} + a^{2}}{a - \left|{a}\right|}\]</div>
+<p>It should be fairly obvious that this does not work for <code class="docutils literal notranslate"><span class="pre">a</span></code> being a positive real number since the denominator is clearly 0 in this case.  This time when we select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code> we will change the data type of <code class="docutils literal notranslate"><span class="pre">a</span></code> to be a positive real, and leave <code class="docutils literal notranslate"><span class="pre">x</span></code> alone.  This time the result is the correct answer for these assumptions of,</p>
+<div class="math notranslate nohighlight">
+\[\frac{16 a}{9}\]</div>
+<p>In the vast majority of cases you will not need to do anything with variable assumptions. The reason we incorporated the ability to specify assumptions about the variable data type is that in a few instances (like in the above examples) you may need to tell the program that variable belongs to a more restrictive domain.</p>
+</section>
+<section id="assumptions-user-interface">
+<h3><span class="target" id="index-8"></span>Assumptions User Interface<a class="headerlink" href="#assumptions-user-interface" title="Link to this heading">#</a></h3>
+<p>The variable assumptions user interface will look like one of the two following layouts.</p>
+<figure class="align-default" id="id6">
+<img alt="Variable Properties User Interface" src="../../_images/Assump001.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties User Interface</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>or</p>
+<figure class="align-default" id="id7">
+<img alt="Variable Properties Editor User Interface" src="../../_images/Assump002.png" />
+<figcaption>
+<p><span class="caption-text">Variable Properties Editor User Interface</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If it is the first of these then clicking the <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">Variable</span> <span class="pre">Properties</span></code> button will open a dialog box with the second interface.  The second is where the changes are made.  In either of these each variable in the expression is listed with the data type we are assuming it belongs.  In the second interface you can edit the domain by first selecting the variable from the list and then selecting its type by clicking on it.</p>
+<p>The reason we included the first interface was that it was less intimidating and easier to accept as is,which is what the user will do in most cases. As noted above these assumptions do not need to be changed very often.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="AlgApproxEval.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Approximation and Evaluation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="AlgFactorExpand.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Factoring and Expanding</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solve">Solve</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-solvers">Advanced Solvers</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-solve">General Solve</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-equation-solve-with-set-output-real-domain">Single Equation Solve with Set Output, Real Domain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#single-equation-solve-with-set-output-complex-domain">Single Equation Solve with Set Output, Complex Domain</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-system-solver">Linear System Solver</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nonlinear-system-solver">Nonlinear System Solver</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-solution-close-to-x-a">Numeric Solution Close to x = a</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-solutions-in-a-b">Numeric Solutions in [a, b]</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-roots">Polynomial Roots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polynomial-root-approximations">Polynomial Root Approximations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assumptions">Variable Assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions">Assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-user-interface">Assumptions User Interface</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

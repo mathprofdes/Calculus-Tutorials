@@ -1,0 +1,669 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Advanced Plot Creator &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/Graph2D/AdvPlotCreator';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Legend Options" href="LegendOpts.html" />
+    <link rel="prev" title="Snapshot Viewer" href="SnapshotViewer.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">2D Graphs</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOpts.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Function.html">Function y = f(x)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewiseRect.html">Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricRect.html">Parametric Equations (x, y) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SeqSeries.html">Sequence / Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Implicit2D.html">Implicit Relationship f(x, y) = 0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ContourMap.html">Contour Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="HorizontalLine.html">Horizontal Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VerticalLine.html">Vertical Line</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TracePoint.html">Trace Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PointSet.html">Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EmptyPointSet.html">Empty Point Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Polygon.html">Polygon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorSet.html">Vector Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LinearSystem.html">Linear System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DirectionField.html">Direction Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EulerCurve.html">Euler’s Method Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VectorField.html">Vector Field</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FlowCurve.html">Flow Curve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PolarFunction.html">Polar Function r = f(t)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PiecewisePolar.html">Polar Piecewise Defined Function</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ParametricPolar.html">Polar Parametric Equations (r, theta) = (f(t), g(t))</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOpts.html">Editing Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOpts.html">View Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SnapshotViewer.html">Snapshot Viewer</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Advanced Plot Creator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LegendOpts.html">Legend Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">2D Graphs</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Advanced Plot Creator</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="advanced-plot-creator">
+<h1><span class="target" id="index-0"></span>Advanced Plot Creator<a class="headerlink" href="#advanced-plot-creator" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>This opens the current graph in the Advanced Plot Creator tool.  The graphics systems in CLAE were designed to be as fast as possible.  The goal was for quick navigation of the plots and minimal lag.  To achieve this, more advanced graphing techniques needed to be dropped and quicker, but less visually pleasing, techniques used.  This is why you see asymptotes in plots.  For example, with <span class="math notranslate nohighlight">\(y = \tan{\left(x \right)}\)</span>, the plot looks like,</p>
+<figure class="align-default" id="id1">
+<img alt="y = tan(x)" src="../../_images/APC001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = \tan{\left(x \right)}\)</span></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>when it should look like,</p>
+<figure class="align-default" id="id2">
+<img alt="y = tan(x)" src="../../_images/APC002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(y = \tan{\left(x \right)}\)</span></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The top image is fine in a classroom or exploration setting since the asymptotes can easily be explained away or ignored as part of the graph.  On the other hand, for a report or handout we would want an image more like the bottom one.  This is why we created the Advanced Plot Creator for 2D graphs.  This tool will enhance certain categories of plots to make them more visually pleasing (and accurate), primarily for use in reports or handouts.  The enhanced mode of graphing uses adaptive methods around singularities to remove the graphing of asymptotes and make the curve as detailed as possible close to the function singularities.  As a result, these graphs will, in most cases, not be real time.</p>
+<p>The types of graphs that have an enhanced mode are,</p>
+<ul class="simple">
+<li><p>Functions <span class="math notranslate nohighlight">\(y = f(x)\)</span>.</p></li>
+<li><p>Polar Functions <span class="math notranslate nohighlight">\(r = f(\theta)\)</span>.</p></li>
+<li><p>Parametric Equations <span class="math notranslate nohighlight">\((x, y) = (f(t), g(t))\)</span>.</p></li>
+<li><p>Polar Parametric Equations <span class="math notranslate nohighlight">\((r, \theta) = (f(t), g(t))\)</span>.</p></li>
+<li><p>Piecewise Defined Expressions in Rectangular Coordinates.</p></li>
+<li><p>Piecewise Defined Expressions in Polar Coordinates.</p></li>
+</ul>
+<p>If you are graphing other types of plots they are still loaded into this tool and you can still alter their attributes but the graphical image is the same as in the main program.  In addition, if you are graphing functions without singularities, this tool will not produce any better images than what the main graphing system will produce.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When the objects are loaded into this tool the slider values are automatically substituted into the object expressions and are constants in this tool.</p>
+</div>
+</section>
+<section id="tool-layout">
+<h2>Tool Layout<a class="headerlink" href="#tool-layout" title="Link to this heading">#</a></h2>
+<p>The tool layout is fairly simple, a standard menu and toolbar at the top, the main graph on the right, a list of objects in the upper left, and the properties of the selected object in the lower left.</p>
+<figure class="align-default" id="id3">
+<img alt="Advanced Plot Creator Layout" src="../../_images/APC003.png" />
+<figcaption>
+<p><span class="caption-text">Advanced Plot Creator Layout</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="tool-usage">
+<h2>Tool Usage<a class="headerlink" href="#tool-usage" title="Link to this heading">#</a></h2>
+<p>The best way to use this tool is to do the following,</p>
+<ol class="arabic simple">
+<li><p>In the main graph, include the functions and objects you want in the image and set the bounds on the graphics window to be the view you want in the final image.  In addition, set any sliders to the values you want to use, this tool does not have animation built into it as does the main graph area.  When the objects are loaded into this tool the slider values are automatically substituted into the object expressions and are constants in this tool.</p></li>
+<li><p>Invoke this tool with, <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">in</span> <span class="pre">Advanced</span> <span class="pre">Plot</span> <span class="pre">Creator</span></code>.</p></li>
+<li><p>Go through the list of objects in the upper left and set the properties you want for each of them.  Note that when you select an object from the list the properties for that object will appear in the properties box in the lower left.  Also note that you do not get all the properties as you would from the settings in the main graph area.  In this tool, you cannot add any plots to the graph or alter an attribute of the graph that changes the data of the object, just the way the object appears.</p></li>
+<li><p>Make sure that the <code class="docutils literal notranslate"><span class="pre">Enhance</span></code> option is checked for any curve you wish to remove asymptote artifacts.  If the function has no asymptote artifacts then the enhance mode will not result in any better image.</p></li>
+<li><p>Set the image size to what you want by changing the window size and/or the divider between the graph and the object list.</p></li>
+<li><p>Click the <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Plot</span></code> toolbar button on the far right of the toolbar. The percentage of completion for each enhanced object will appear in the list of objects as the plot continues.  When a plot is finished the updated image will be in the graph area.</p></li>
+<li><p>Export the image to a file or clipboard for use in your document.</p></li>
+</ol>
+<p>Note that you can move the graph around as you would in the main graph area and alter the number of points or grids used in the plotting.  When a change is made that requires regraphing of the plot area the program will drop into the quick mode, which is used for the main graph area.  If this happens there is a note in the title bar telling the user to update the plot.</p>
+<p>As an example, after graphing in the quick mode we get the same image as in the main graph area.</p>
+<figure class="align-default" id="id4">
+<img alt="Image after quick graphing mode." src="../../_images/APC004.png" />
+<figcaption>
+<p><span class="caption-text">Image after quick graphing mode.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Then after clicking the <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Plot</span></code> toolbar button (and subsequently graphing the curves in enhanced mode) we get the following image.</p>
+<figure class="align-default" id="id5">
+<img alt="Image after enhanced graphing mode." src="../../_images/APC005.png" />
+<figcaption>
+<p><span class="caption-text">Image after enhanced graphing mode.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="tool-options">
+<h2>Tool Options<a class="headerlink" href="#tool-options" title="Link to this heading">#</a></h2>
+<p>The menu and toolbar options are,</p>
+<ul class="simple">
+<li><p><strong>Save Plot to Image File</strong>:  Saves the current image to a file.  When invoked, a save as dialog box will appear asking the user for a filename.  The default will save the image as a PNG file (probably the best format for graphs), if the user includes a known extension (such as .jpg or .bmp) the program will save the image in that format.</p></li>
+<li><p><strong>Print Plot</strong>: This will send the plot to the printer. When invoked, a dialog box will appear allowing the use to set the printing options.</p></li>
+<li><p><strong>Print Preview Plot</strong>: This will open the image in a print preview dialog box that will allow the user to view the printed image as well as set other printing attributes and print the image.</p></li>
+<li><p><strong>Copy Plot as Image</strong>:  Copies the current image to the system clipboard.</p></li>
+<li><p><strong>Snapshot Viewer</strong>: Opens the Snapshot Viewer tool with the current image.</p></li>
+<li><p><strong>Show All Plots</strong>: Turns on the graphing of all objects in the list.</p></li>
+<li><p><strong>Hide All Plots</strong>: Turns off the graphing of all objects in the list.</p></li>
+<li><p><strong>Enhance All Plots</strong>: Turns on the enhanced mode for all objects in the list that have an enhanced mode.</p></li>
+<li><p><strong>Disable Enhance on All Plots</strong>: Turns off the enhanced mode for all objects in the list that have an enhanced mode.</p></li>
+<li><p><strong>Toggle Axes</strong>: Toggles the graphing of the coordinate axes.</p></li>
+<li><p><strong>Toggle Grid</strong>: Toggles the graphing of the coordinate grid.</p></li>
+<li><p><strong>Toggle Polar Grid</strong>: Toggles the graphing of the polar grid.</p></li>
+<li><p><strong>Reset View Window</strong>: Resets the viewing window to [-10, 10] X [-10, 10].</p></li>
+<li><p><strong>Center at Origin</strong>: Resets the center to the origin, keeping the current aspect ratio.</p></li>
+<li><p><strong>Translate center to (x, y)</strong>: Sets the center to the input point, keeping the current aspect ratio.</p></li>
+<li><p><strong>Set View Window to 1-1</strong>: Sets the aspect ratio to 1, by altering the y-axis to match the x-axis. The center of the grid is unaltered.</p></li>
+<li><p><strong>Snapshot</strong>: Opens the snapshot viewer with the current image.</p></li>
+<li><p><strong>View Information</strong>: Opens an information dialog box displaying the viewing ranges and center.</p></li>
+<li><p><strong>Toggle Legend</strong>: Toggles the viewing of the graph legend.</p></li>
+<li><p><strong>Increase Legend Font Size</strong>: Increases the font size of the legend.</p></li>
+<li><p><strong>Decrease Legend Font Size</strong>: Decreases the font size of the legend.</p></li>
+<li><p><strong>Reset Legend Font Size</strong>: Resets the font size of the legend.</p></li>
+<li><p><strong>Border Tools</strong>: These options are only in the toolbar. The first is to select if a border is to be drawn or not.  The second tool is the border width to use and the third tool is the color of the border.  When the border is selected you will not see the border on the current plot but it will be included in any image files that are saved, copied images, and printed images.</p></li>
+<li><p><strong>Update Plot</strong>: This is at the far right of the toolbar.  This option will update the graph using the enhanced mode on any object that has its enhanced mode checked.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="SnapshotViewer.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Snapshot Viewer</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="LegendOpts.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Legend Options</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-layout">Tool Layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-usage">Tool Usage</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tool-options">Tool Options</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

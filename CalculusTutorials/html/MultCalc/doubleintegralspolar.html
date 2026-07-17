@@ -1,0 +1,805 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Double Integrals in Polar Coordinates &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/doubleintegralspolar';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Surface Area" href="surfacearea.html" />
+    <link rel="prev" title="Double Integrals over General Regions" href="doubleintegralsgen.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Double Integrals in Polar Coordinates</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="double-integrals-in-polar-coordinates">
+<h1><span class="target" id="index-0"></span>Double Integrals in Polar Coordinates<a class="headerlink" href="#double-integrals-in-polar-coordinates" title="Link to this heading">#</a></h1>
+<section id="polar-coordinates-and-polar-rectangular-regions">
+<h2>Polar Coordinates and Polar Rectangular Regions<a class="headerlink" href="#polar-coordinates-and-polar-rectangular-regions" title="Link to this heading">#</a></h2>
+<p>Polar Coordinates are simply another way to represent points on the plane.  In rectangular coordinates we represent a point <span class="math notranslate nohighlight">\((x, y)\)</span> as moving down the <em>x</em>-axis by the amount <em>x</em> and then up the <em>y</em>-axis by the amount <em>y</em>.  In polar coordinates we represent the point as <span class="math notranslate nohighlight">\((r, \theta)\)</span> and interpret it as moving down the <em>x</em>-axis (also called the polar axis) by <span class="math notranslate nohighlight">\(r\)</span> and rotating the point about the origin by the angle <span class="math notranslate nohighlight">\(\theta\)</span>.  The image below shows the two coordinate systems of the same point.</p>
+<figure class="align-default" id="id4">
+<img alt="Polar Coordinate Definition" src="../_images/PolarDef.png" />
+<figcaption>
+<p><span class="caption-text">Polar Coordinate Definition</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>A little trigonometry gives us the following conversions between rectangular and polar coordinates.</p>
+<div class="admonition-theorem-converting-points-between-coordinate-systems admonition">
+<p class="admonition-title">Theorem: Converting Points between Coordinate Systems</p>
+<p>Given a point <span class="math notranslate nohighlight">\(P\)</span> in the plane with rectangular (Cartesian) coordinates <span class="math notranslate nohighlight">\((x, y)\)</span> and polar coordinates <span class="math notranslate nohighlight">\((r, \theta)\)</span>,  then,</p>
+<div class="math notranslate nohighlight">
+\[x = r \cos(\theta) \qquad {\rm and} \qquad y = r \sin(\theta)\]</div>
+<div class="math notranslate nohighlight">
+\[r^2 = x^2 + y^2  \qquad {\rm and} \qquad  \tan(\theta) = \frac{y}{x}\]</div>
+</div>
+<p>Along with points in the polar coordinate system we can also plot curves, as they are simply a set of points. To plot a polar function of the form <span class="math notranslate nohighlight">\(r = f(\theta)\)</span> simply evaluate <span class="math notranslate nohighlight">\(f\)</span> at all points <span class="math notranslate nohighlight">\(\theta\)</span> in its domain and then plot the corresponding <span class="math notranslate nohighlight">\((r, \theta)\)</span> pairs.  If we are doing this by hand we would use enough <span class="math notranslate nohighlight">\(\theta\)</span> values until we saw a pattern in the graph and then connect the points, just like in rectangular coordinates.  Since we are using technology we can let the machine plot hundreds to thousands of points for us.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>One big difference between rectangular and polar coordinates is in uniqueness.  In rectangular coordinates if we have <span class="math notranslate nohighlight">\((a, b) = (c, d)\)</span> then <span class="math notranslate nohighlight">\(a = c\)</span> and <span class="math notranslate nohighlight">\(b = d\)</span>.  This is not the case with polar coordinates, note that, for any polar coordinate point, <span class="math notranslate nohighlight">\((r, \theta) = (r, \theta + 2 \pi  k).\)</span></p>
+</div>
+<p>A polar coordinate rectangle is a domain of the form <span class="math notranslate nohighlight">\(D = \{ (r, \theta) \; | \; a \leq r \leq b, \alpha \leq \theta \leq \beta \}\)</span> and we usually assume that <span class="math notranslate nohighlight">\(0 \leq \beta - \alpha \leq 2\pi.\)</span>  For example, the circle of radius 3 is <span class="math notranslate nohighlight">\(D = \{ (r, \theta) \; | \; 0 \leq r \leq 3, 0 \leq \theta \leq 2 \pi \}.\)</span></p>
+<figure class="align-default" id="id5">
+<img alt="Polar Coordinate Rectangle" src="../_images/DoublePolar001.png" />
+<figcaption>
+<p><span class="caption-text">Polar Coordinate Rectangle</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As another example, the region below is <span class="math notranslate nohighlight">\(D = \{ (r, \theta) \; | \; 1 \leq r \leq 3, 0 \leq \theta \leq \pi \}.\)</span></p>
+<figure class="align-default" id="id6">
+<img alt="Polar Coordinate Rectangle" src="../_images/DoublePolar002.png" />
+<figcaption>
+<p><span class="caption-text">Polar Coordinate Rectangle</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So the upshot of this is that if you are doing a double integral over a region that is circular or a portion of a washer then converting the coordinates to polar coordinates may take a difficult integral and turn it into an integral over a rectangular region, or at least make it an easier integral.</p>
+</section>
+<section id="id1">
+<h2>Double Integrals in Polar Coordinates<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>We wish to convert the integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA\]</div>
+<p>into one with variables <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(\theta\)</span> in polar coordinates.  We can use the formulas <span class="math notranslate nohighlight">\(x = r \cos(\theta)\)</span> and <span class="math notranslate nohighlight">\(y = r \sin(\theta)\)</span> for <em>x</em> and <em>y</em> and we can rewrite the region <em>D</em> in polar coordinates as we did in the examples above.  The big question is what happens to <span class="math notranslate nohighlight">\(dA?\)</span>  As usual, we take our polar rectangle, which is a sector of a circle, looks like a truncated piece of a pie, divide it up into smaller sectors by dividing it along the radius and angle.  So in the picture below we denote <span class="math notranslate nohighlight">\(R_{ij}\)</span> as the <span class="math notranslate nohighlight">\(ij\)</span> subregion between the radius divisions <span class="math notranslate nohighlight">\(r_{i-1}\)</span> and <span class="math notranslate nohighlight">\(r_{i}\)</span> and the angle divisions <span class="math notranslate nohighlight">\(\theta_{j-1}\)</span> and <span class="math notranslate nohighlight">\(\theta_{j}.\)</span></p>
+<figure class="align-default" id="id7">
+<img alt="Polar Coordinate Rectangle" src="../_images/DoublePolar004.png" />
+<figcaption>
+<p><span class="caption-text">Polar Coordinate Rectangle</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we need to find the area of <span class="math notranslate nohighlight">\(R_{ij}.\)</span>  Let <span class="math notranslate nohighlight">\(\Delta \theta = \theta_j - \theta_{j-1},\)</span> then the area of <span class="math notranslate nohighlight">\(R_{ij}\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta A_i &amp; = \frac{1}{2} r_i^2 \Delta \theta - \frac{1}{2} r_{i-1}^2 \Delta \theta \\
+&amp; = \frac{1}{2} \left( r_i^2  -  r_{i-1}^2 \right) \Delta \theta \\
+&amp; = \frac{1}{2} \left( r_i  +  r_{i-1} \right) \left( r_i  -  r_{i-1} \right) \Delta \theta \\
+&amp; = r_i^* \Delta r \Delta \theta \\\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i^*\)</span> is the midpoint between <span class="math notranslate nohighlight">\(r_{i-1}\)</span> and <span class="math notranslate nohighlight">\(r_{i}.\)</span>  When we take the limit as <span class="math notranslate nohighlight">\(\Delta r\)</span> and <span class="math notranslate nohighlight">\(\Delta \theta\)</span> approach 0, <span class="math notranslate nohighlight">\(\Delta r \to dr\)</span>, <span class="math notranslate nohighlight">\(\Delta \theta \to d\theta\)</span>, <span class="math notranslate nohighlight">\(r_i^* \to r\)</span>, and <span class="math notranslate nohighlight">\(\Delta A_i \to dA.\)</span>  Putting this all together we have <span class="math notranslate nohighlight">\(dA = r \; dr \;  d\theta.\)</span>  So when we change coordinates to polar coordinates our integral changes as follows, just do not forget the “extra” <span class="math notranslate nohighlight">\(r.\)</span></p>
+<div class="admonition-theorem-double-integrals-in-polar-coordinates admonition">
+<p class="admonition-title">Theorem: Double Integrals in Polar Coordinates</p>
+<p>If a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> is continuous on a polar region <span class="math notranslate nohighlight">\(R = \{ (r, \theta) \; | \; a \leq r \leq b, \alpha \leq \theta \leq \beta \}\)</span> where <span class="math notranslate nohighlight">\(0 \leq \beta - \alpha \leq 2\pi,\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \int_{\alpha}^{\beta} \int_a^b f(r \cos(\theta), r \sin(\theta)) \; r \; dr \; d\theta\]</div>
+</div>
+<section id="example-iint-r-1-x-2-y-2-da-where-r-is-the-unit-disk">
+<h3>Example: <span class="math notranslate nohighlight">\(\iint_R 1-x^2-y^2 \; dA\)</span> where <em>R</em> is the Unit Disk<a class="headerlink" href="#example-iint-r-1-x-2-y-2-da-where-r-is-the-unit-disk" title="Link to this heading">#</a></h3>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>Again we will get a picture of the volume we are calculating.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-x^2 - y^2 + 1</span>
+</pre></div>
+</div>
+<p>Also input the unit disk,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 &lt;= 1</span>
+</pre></div>
+</div>
+<p>Finally input the <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b</span></code> to restrict the surface to the domain, you should see,</p>
+<figure class="align-default" id="id8">
+<img alt=":math:`z = -x^2 - y^2 + 1` on the Unit Disk" src="../_images/DoublePolar005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = -x^2 - y^2 + 1\)</span> on the Unit Disk</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>In CLAE we will get a look at the region and go through the calculations.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-x^2 - y^2 + 1</span>
+</pre></div>
+</div>
+<p>Also input the boundary to the unit disk, first making it an equation with 0, as usual.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 - 1</span>
+</pre></div>
+</div>
+<p>Click and drag both of these over to the 3D graphics window.  They will both come in as functions, for the boundary equation, change the type to Implicit Relationship, go into its properties and change the plot from Surface to Grid.  You should see the following, note that we did zoom in a bit.</p>
+<figure class="align-default" id="id9">
+<img alt=":math:`z = -x^2 - y^2 + 1` on the Unit Disk" src="../_images/DoublePolar006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = -x^2 - y^2 + 1\)</span> on the Unit Disk</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So the integral will be the volume under the surface and within the cylinder. Now for the calculations, in rectangular coordinates we would have the integral,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \int_{-1}^{1} \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} 1-x^2-y^2 \; dy \; dx\]</div>
+<p>When we convert to polar coordinates we get,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \int_{0}^{2\pi} \int_{0}^{1}  (1-r^2) r \; dr \; d\theta = \int_{0}^{2\pi} \int_{0}^{1}  r-r^3 \; dr \; d\theta\]</div>
+<p>The second one is trivial to do by hand but we can also do it on the machine, input <code class="docutils literal notranslate"><span class="pre">r-r^3</span></code> into that CAS then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, the first variable is <code class="docutils literal notranslate"><span class="pre">r</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>, the second variable is <code class="docutils literal notranslate"><span class="pre">t</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">2*pi</span></code>.  The result is, <span class="math notranslate nohighlight">\(\frac{\pi}{2}.\)</span></p>
+<p>We can do the same integral in rectangular coordinates,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \int_{-1}^{1} \int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} 1-x^2-y^2 \; dy \; dx\]</div>
+<p>Here we select the original formula for the surface, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, the first variable is <code class="docutils literal notranslate"><span class="pre">y</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">-sqrt(1-x^2)</span></code> and <code class="docutils literal notranslate"><span class="pre">sqrt(1-x^2)</span></code>, the second variable is <code class="docutils literal notranslate"><span class="pre">x</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code>.  The result is also, <span class="math notranslate nohighlight">\(\frac{\pi}{2}.\)</span></p>
+<p>One of the downsides to using technology is that you do not tend to see the computational savings when you use them as opposed to doing the work by hand.  We do not know if CLAE converted the above integral to polar before calculating it or if it attacked it with rectangular coordinates (which is really what it did).  To get a feel for this if we do the first (inside) integral in CLAE, we get,</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}} 1-x^2-y^2 \; dy = \frac{4 \left(1 - x^{2}\right)^{\frac{3}{2}}}{3}\]</div>
+<p>As part of the next integral we need to find the indefinite integral of this result before we evaluate it at the bounds, the indefinite integral of this is,</p>
+<div class="math notranslate nohighlight">
+\[\int \frac{4 \left(1 - x^{2}\right)^{\frac{3}{2}}}{3} \; dx = - \frac{x^{3} \sqrt{1 - x^{2}}}{3} + \frac{5 x \sqrt{1 - x^{2}}}{6} + \frac{\operatorname{asin}{\left(x \right)}}{2}\]</div>
+<p>Far more difficult than a polynomial on a rectangle.</p>
+</section>
+<section id="maxima">
+<h4>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h4>
+<p>In Maxima, the polar integral would be,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(-r**3 + r, r, 0, 1), t, 0, 2*%pi);</span>
+</pre></div>
+</div>
+<p>and the rectangular coordinate integral is,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(integrate(-x**2 - y**2 + 1, y, -sqrt(1 - x**2), sqrt(1 - x**2)), x, -1, 1);</span>
+</pre></div>
+</div>
+<p>They both return the result of, <span class="math notranslate nohighlight">\(\frac{\pi}{2}.\)</span></p>
+</section>
+</section>
+<section id="example-iint-r-x-y-da-where-r-is-an-annular-region">
+<h3>Example: <span class="math notranslate nohighlight">\(\iint_R x + y \; dA\)</span> where <em>R</em> is an Annular Region<a class="headerlink" href="#example-iint-r-x-y-da-where-r-is-an-annular-region" title="Link to this heading">#</a></h3>
+<p>In this example we will calculate <span class="math notranslate nohighlight">\(\iint_R x + y \; dA\)</span> where <em>R</em> is the region bounded by the circles <span class="math notranslate nohighlight">\(x^2+y^2 = 1\)</span> and <span class="math notranslate nohighlight">\(x^2+y^2 = 4\)</span> to the left of the <em>y</em>-axis.</p>
+<figure class="align-default" id="id10">
+<img alt="Polar Region" src="../_images/DoublePolar007.png" />
+<figcaption>
+<p><span class="caption-text">Polar Region</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In polar coordinates this is the rectangle, <span class="math notranslate nohighlight">\(R = \{ (r, \theta) \; | \; 1 \leq r \leq 2, \frac{\pi}{2} \leq \theta \leq \frac{3\pi}{2} \}.\)</span> So our integral is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\iint_R f(x, y) \; dA &amp; = \int_{\pi/2}^{3\pi/2} \int_1^2 (r\cos(\theta) + r\sin(\theta)) r \; dr \; d\theta \\
+&amp; = \left(\int_{\pi/2}^{3\pi/2} r^2 \; dr \right) \left( \int_1^2 \cos(\theta) + \sin(\theta) \; d\theta \right) \\
+&amp; = -\frac{14}{3}\end{split}\]</div>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>In CLAE we can get an image of the volume we are calculating in a similar manner as we did above.  Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x + y</span>
+</pre></div>
+</div>
+<p>Input the bounding curves, set to 0,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 - 1</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 - 4</span>
+</pre></div>
+</div>
+<p>Click and drag all of these to the 3D graphics window.  Set the type for the boundary curves to Implicit Relationship and change the plot to the grid.</p>
+<figure class="align-default" id="id11">
+<img alt="Surface and Bounds" src="../_images/DoublePolar008.png" />
+<figcaption>
+<p><span class="caption-text">Surface and Bounds</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we will do the calculations, first we convert the integral to polar coordinates.  This is easy enough to just do but the following might help ease the typing for larger and more complex integrands, select the function, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the variable list should be <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code>, leave this as is, for the expressions input <code class="docutils literal notranslate"><span class="pre">[r*cos(t),</span> <span class="pre">r*sin(t)]</span></code> and hit OK.  Say this results in the expression <code class="docutils literal notranslate"><span class="pre">R4</span></code>, now input <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">*</span> <span class="pre">R4</span></code> into the CAS.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[r \left(r \sin{\left(t \right)} + r \cos{\left(t \right)}\right)\]</div>
+<p>and now we are ready to integrate.  Note that the above method will work for any integrand we are converting to polar coordinates.  Select the above function, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, the first variable is <code class="docutils literal notranslate"><span class="pre">r</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code>, and the second integral is <code class="docutils literal notranslate"><span class="pre">t</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">pi/2</span></code> and <code class="docutils literal notranslate"><span class="pre">3*pi/2</span></code>. The result is <span class="math notranslate nohighlight">\(-14/3\)</span>, as expected.</p>
+<p>Note that this region is neither Type I nor Type II, so if we had attacked this with rectangular coordinates we would need to divide up the region and do multiple integrals.</p>
+</section>
+</section>
+</section>
+<section id="general-polar-regions-of-integration">
+<h2>General Polar Regions of Integration<a class="headerlink" href="#general-polar-regions-of-integration" title="Link to this heading">#</a></h2>
+<p>If our region is not a polar rectangle we can still integrate over the region just like we did in rectangular coordinates.  In rectangular coordinates we discussed Type I nd Type II regions, the same can be done here but for polar coordinate functions they are usually in the form <span class="math notranslate nohighlight">\(r = f(\theta)\)</span> so we will restrict ourselves to that case.  The general region would loo like the following,</p>
+<figure class="align-default" id="id12">
+<img alt="General Polar Region" src="../_images/DoublePolar009.png" />
+<figcaption>
+<p><span class="caption-text">General Polar Region</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>These can be calculated in a similar manner as in rectangular coordinates.</p>
+<div class="admonition-theorem-double-integrals-over-general-polar-coordinate-regions admonition">
+<p class="admonition-title">Theorem: Double Integrals over General Polar Coordinate Regions</p>
+<p>If a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> is continuous on a polar region <span class="math notranslate nohighlight">\(R = \{ (r, \theta) \; | \; h_1(\theta) \leq r \leq h_2(\theta), \alpha \leq \theta \leq \beta \}\)</span> where <span class="math notranslate nohighlight">\(0 \leq \beta - \alpha \leq 2\pi,\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\iint_R f(x, y) \; dA = \int_{\alpha}^{\beta} \int_{h_1(\theta)}^{h_2(\theta)} f(r \cos(\theta), r \sin(\theta)) \; r \; dr \; d\theta\]</div>
+</div>
+<section id="example-the-area-in-one-loop-of-r-cos-2-theta">
+<h3>Example: The Area in One Loop of <span class="math notranslate nohighlight">\(r = \cos(2\theta)\)</span><a class="headerlink" href="#example-the-area-in-one-loop-of-r-cos-2-theta" title="Link to this heading">#</a></h3>
+<p>The goal of this example is to find the area of one loop of the polar function, <span class="math notranslate nohighlight">\(r = \cos(2\theta).\)</span></p>
+<figure class="align-default" id="id13">
+<img alt=":math:`r = \cos(2\theta)`" src="../_images/DoublePolar010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(r = \cos(2\theta)\)</span></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id3">
+<h4>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>In general, we can find the area of a region <em>R</em> with the double integral,</p>
+<div class="math notranslate nohighlight">
+\[A(R) = \iint_R 1 \; dA\]</div>
+<p>Looking at the region the <em>r</em> bounds would be 0 and <span class="math notranslate nohighlight">\(\cos(2\theta)\)</span>, the question is what the bounds for <span class="math notranslate nohighlight">\(\theta\)</span> should be.  One loop of this function would be two consecutive places where <span class="math notranslate nohighlight">\(\cos(2\theta)\)</span> is 0.  That is, two consecutive places where the radius is 0 and the graph ends up back at the origin.  If we select the function and then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> the result is <span class="math notranslate nohighlight">\(\left[ \frac{\pi}{4}, \  \frac{3 \pi}{4}\right].\)</span>  Note that we can use these bounds but that is not what we have in the shaded region above.  If we restruct the above graph to this interval we get,</p>
+<figure class="align-default" id="id14">
+<img alt=":math:`r = \cos(2\theta)`" src="../_images/DoublePolar011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(r = \cos(2\theta)\)</span></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>This is still one loop but what we have shaded is <span class="math notranslate nohighlight">\(\left[ -\frac{\pi}{4}, \  \frac{\pi}{4}\right].\)</span>  If we used one of the advanced solvers in the algebra menu we would get a more detailed solution,</p>
+<div class="math notranslate nohighlight">
+\[\left\{\pi k + \frac{\pi}{4}\; \middle|\; k \in \mathbb{Z}\right\} \cup \left\{\pi k + \frac{3 \pi}{4}\; \middle|\; k \in \mathbb{Z}\right\}\]</div>
+<p>and of course our interval matches this.  So our integral is,</p>
+<div class="math notranslate nohighlight">
+\[\iint_R 1 \; dA = \int_{-\pi/4}^{\pi/4} \int_{0}^{\cos(2\theta)}  r \; dr \; d\theta = \int_{\pi/4}^{3\pi/4} \int_{0}^{\cos(2\theta)}  r \; dr \; d\theta\]</div>
+<p>To do the integral, input <code class="docutils literal notranslate"><span class="pre">r</span></code> into thee CAS.  Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Multiple</span> <span class="pre">Integrals</span> <span class="pre">&gt;</span> <span class="pre">Double</span> <span class="pre">Integral</span></code>, the first variable is <code class="docutils literal notranslate"><span class="pre">r</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">0</span></code> and <code class="docutils literal notranslate"><span class="pre">cos(2*t)</span></code>, and the second integral is <code class="docutils literal notranslate"><span class="pre">t</span></code> with bounds <code class="docutils literal notranslate"><span class="pre">-pi/4</span></code> and <code class="docutils literal notranslate"><span class="pre">pi/4</span></code>. The result is <span class="math notranslate nohighlight">\(\pi/8.\)</span></p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="doubleintegralsgen.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Double Integrals over General Regions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="surfacearea.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Surface Area</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-coordinates-and-polar-rectangular-regions">Polar Coordinates and Polar Rectangular Regions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Double Integrals in Polar Coordinates</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-iint-r-1-x-2-y-2-da-where-r-is-the-unit-disk">Example: <span class="math notranslate nohighlight">\(\iint_R 1-x^2-y^2 \; dA\)</span> where <em>R</em> is the Unit Disk</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-iint-r-x-y-da-where-r-is-an-annular-region">Example: <span class="math notranslate nohighlight">\(\iint_R x + y \; dA\)</span> where <em>R</em> is an Annular Region</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-polar-regions-of-integration">General Polar Regions of Integration</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-the-area-in-one-loop-of-r-cos-2-theta">Example: The Area in One Loop of <span class="math notranslate nohighlight">\(r = \cos(2\theta)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

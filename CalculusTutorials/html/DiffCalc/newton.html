@@ -1,0 +1,809 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Newton’s Method &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/newton';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Antiderivatives and The Indefinite Integral" href="indefint.html" />
+    <link rel="prev" title="Optimization" href="optimization.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Newton’s Method</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="newtons-method">
+<h1><span class="target" id="index-0"></span>Newton’s Method<a class="headerlink" href="#newtons-method" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Newton’s Method is a way to approximate the root of a differentiable function by using tangent lines to get better and better approximations to the root.  It is an iterative method where you do the following,</p>
+<div class="admonition-problem-solving-newtons-method admonition">
+<p class="admonition-title">Problem Solving: Newton’s Method</p>
+<ol class="arabic simple">
+<li><p>Make an initial guess of the root, usually from the graph of the function.</p></li>
+<li><p>Find the tangent line to the curve at that initial guess.</p></li>
+<li><p>Calculate the intersection of the tangent line with the <em>x</em>-axis.</p></li>
+<li><p>This intersection is the next guess, go back to step 2 and repeat the process.  You continue until the approximations are close to the root.  One question is, how will know you are close to the root?  When this is coded into calculators and computer software the process usually continues until the successive approximations are within some set tolerance, sometimes the precision of the machine.</p></li>
+</ol>
+</div>
+<p>The following image gives a nice picture of the process.  Here <span class="math notranslate nohighlight">\(x_0\)</span> is the initial guess and <span class="math notranslate nohighlight">\(x^*\)</span> is the root.  From the diagram it appears that the successive approximations <span class="math notranslate nohighlight">\(x_1, x_2, x_3, \ldots\)</span> are approaching the root.</p>
+<figure class="align-default" id="id1">
+<img alt="Visualization of Newtons Method" src="../_images/NM001.png" />
+<figcaption>
+<p><span class="caption-text">From Calculus Volume 1 by Edwin “Jed” Herman and Gilbert Strang</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The derivation of the <em>x</em>-intercept is not difficult but we will not display it here, the solution is</p>
+<div class="math notranslate nohighlight">
+\[x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}\]</div>
+<p>So our Newton’s Method algorithm is,</p>
+<ol class="arabic simple">
+<li><p>Make an initial guess of the root, usually from the graph of the function, this is <span class="math notranslate nohighlight">\(x_0\)</span>.</p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(x_1, x_2, x_3, \ldots\)</span> using</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Stop when the successive approximations are within your allowable margin of error.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A couple things to note before we look at a few examples,</p>
+<ul>
+<li><p>The function needs to be differentiable in an interval containing the root, otherwise the iterative function does not make sense.</p></li>
+<li><p>It is possible that the method could converge to a different root then the one you were aiming for.</p></li>
+<li><p>This method can fail to produce a root in several ways.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If at any point <span class="math notranslate nohighlight">\(f'(x_{n-1}) = 0\)</span> we have division by 0 in the formula.</p></li>
+<li><p>The iterations may not converge on the root but instead diverge away from the root.</p></li>
+<li><p>The iterations may not converge on the root but instead get locked into a cycle.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>When you take the result of a process and use it as input into the same process we call that a <strong>Dynamical System</strong>. Dynamical systems are at the heart of an area of mathematics called <em>Chaos Theory</em>. Although Chaos Theory is an advanced area of research-level mathematics, many of the concepts are accessible to students with a an introductory level experience in differential and integral calculus, and hence is often taught at the undergraduate level. One of  the best-known examples of chaos is the Mandelbrot Set, named after Benoit Mandelbrot (1924–2010), who investigated its properties and helped popularize the field of chaos theory.  Below are several images of the Mandelbrot Set and portions of the Mandelbrot Set.  The final image is one produced by the same Newton’s Method iteration as we did in this section, the only difference is that it is being applied to the complex plane.</p></li>
+</ul>
+<figure class="align-default" id="id2">
+<img alt="The Mandelbrot Set" src="../_images/NM002.png" />
+<figcaption>
+<p><span class="caption-text">The Mandelbrot Set</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id3">
+<img alt="A portion of the Mandelbrot Set, taken from Seahorse Valley, it is the tail of one seahorse using a curvature algorithm to establish the colors." src="../_images/gal01_frac002.png" />
+<figcaption>
+<p><span class="caption-text">A portion of the Mandelbrot Set, taken from Seahorse Valley, it is the tail of one seahorse using a curvature algorithm to establish the colors.</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id4">
+<img alt="A portion of the Mandelbrot Set, taken from close to :math:`c = i`, using a combination of distance algorithms to establish the colors." src="../_images/gal02_frac023.png" />
+<figcaption>
+<p><span class="caption-text">A portion of the Mandelbrot Set, taken from close to <span class="math notranslate nohighlight">\(c = i\)</span>, using a combination of distance algorithms to establish the colors.</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id5">
+<img alt="A portion of the Mandelbrot Set, taken from close to the real axis, using a combination of distance algorithms to establish the colors." src="../_images/gal02_frac032.png" />
+<figcaption>
+<p><span class="caption-text">A portion of the Mandelbrot Set, taken from close to the real axis, using a combination of distance algorithms to establish the colors.</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id6">
+<img alt="A portion of a Newton's Method fractal on the complex plane." src="../_images/gal05_frac004.png" />
+<figcaption>
+<p><span class="caption-text">A portion of a Newton’s Method fractal on the complex plane.</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+<p>Although our computer algebra systems have other ways of finding roots to functions we will go through the proces of using Newton’s Method using them.</p>
+</section>
+<section id="example-f-x-x-5-4-x-3-x-2-7-x-2">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^{5} - 4 x^{3} + x^{2} - 7 x + 2\)</span><a class="headerlink" href="#example-f-x-x-5-4-x-3-x-2-7-x-2" title="Link to this heading">#</a></h2>
+<p>In this example we will find at least one of the real roots to the function, <span class="math notranslate nohighlight">\(f(x) = x^{5} - 4 x^{3} + x^{2} - 7 x + 2\)</span>.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^5-4 x^3+x^2-7 x+2</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id7">
+<img alt="y = x^5-4 x^3+x^2-7 x+2" src="../_images/NM003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{5} - 4 x^{3} + x^{2} - 7 x + 2\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Assuming that this came in as <code class="docutils literal notranslate"><span class="pre">f</span></code> we can now create the Newton’s Method iteration formula for this function by,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x - f(x)/f&#39;(x)</span>
+</pre></div>
+</div>
+<p>This should come in as <code class="docutils literal notranslate"><span class="pre">g</span></code>, we will assume so.  There is a root close to 2 so we will use Newton’s Method to approximate this root.  Input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(2)</span>
+</pre></div>
+</div>
+<p>The result is <span class="math notranslate nohighlight">\(\frac{66}{29}\)</span> and came in as <code class="docutils literal notranslate"><span class="pre">a</span></code>, now input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(a)</span>
+</pre></div>
+</div>
+<p>The result is 2.20176 and came in as <code class="docutils literal notranslate"><span class="pre">b</span></code>, now input, <code class="docutils literal notranslate"><span class="pre">g(b)</span></code>, <code class="docutils literal notranslate"><span class="pre">g(c)</span></code>, and so on and the numbers should be getting closer to 2.19312.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^5-4*x^3+x^2-7*x+2</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id8">
+<img alt="y = x^5-4 x^3+x^2-7 x+2" src="../_images/NM004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{5} - 4 x^{3} + x^{2} - 7 x + 2\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Assuming that this came in as <code class="docutils literal notranslate"><span class="pre">R1</span></code>.  Find its derivative, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em> and order 1.  The result should be <span class="math notranslate nohighlight">\(5 x^{4} - 12 x^{2} + 2 x - 7\)</span>, and we will assume this came in as <code class="docutils literal notranslate"><span class="pre">R2</span></code>.  Now we can create the Newton’s Method iteration formula for this function by,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x - R1/R2</span>
+</pre></div>
+</div>
+<p>The result should be the following and be in cell R3,</p>
+<div class="math notranslate nohighlight">
+\[x - \frac{x^{5} - 4 x^{3} + x^{2} - 7 x + 2}{5 x^{4} - 12 x^{2} + 2 x - 7}\]</div>
+<p>To make things easier we will define this as a function, input</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">NM(x):=R3</span>
+</pre></div>
+</div>
+<p>There is a root close to 0.5, we will use Newton’s Method to approximate it, input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">NM(0.5)</span>
+</pre></div>
+</div>
+<p>This should result in 0.302158273381295 and come in as <code class="docutils literal notranslate"><span class="pre">R5</span></code>, now input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">NM(R5)</span>
+</pre></div>
+</div>
+<p>This should result in 0.284487882348133 and come in as <code class="docutils literal notranslate"><span class="pre">R6</span></code>, now input, <code class="docutils literal notranslate"><span class="pre">NM(R6)</span></code>, <code class="docutils literal notranslate"><span class="pre">NM(R7)</span></code>, <code class="docutils literal notranslate"><span class="pre">NM(R8)</span></code>, … until the approximations are close to each other, the sequence should converge very quickly to 0.284390640337966.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=x^5-4*x^3+x^2-7*x+2</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id9">
+<img alt="y = x^5-4 x^3+x^2-7 x+2" src="../_images/NM005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{5} - 4 x^{3} + x^{2} - 7 x + 2\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>Create the Newton’s Method function for this function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nm:x-f(x)/df</span>
+</pre></div>
+</div>
+<p>Turn it into a function and not an expression, it will be easier to work with that way,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nmf(x):=&#39;&#39;nm</span>
+</pre></div>
+</div>
+<p>There is a root around <span class="math notranslate nohighlight">\(-2.5\)</span>, we will use Newton’s Method to approximate it. Input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a:nmf(-2.5)</span>
+</pre></div>
+</div>
+<p>The result is, <span class="math notranslate nohighlight">\(-2.413156376226197\)</span>. Now input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">b:nmf(a)</span>
+</pre></div>
+</div>
+<p>The result is, <span class="math notranslate nohighlight">\(-2.40283183944818\)</span>. Now input, <code class="docutils literal notranslate"><span class="pre">c:nmf(b)</span></code>, <code class="docutils literal notranslate"><span class="pre">d:nmf(c)</span></code>, … until the values are close to each other, the final result should be <span class="math notranslate nohighlight">\(-2.402694796475954\)</span>.</p>
+<p>Note that we can shortcut this process since Maxima allows you to redefine variable names.  Input the following,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a:-2.5</span>
+</pre></div>
+</div>
+<p>This will set <em>a</em> to <span class="math notranslate nohighlight">\(-2.5\)</span>.  Now input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a:nmf(a)</span>
+</pre></div>
+</div>
+<p>This will do the Newton’s Method function on <em>a</em> and reassign the result to <em>a</em>.  At this point there is no more typing, rerun the last input by selecting it and hitting Shift+Enter, then do it again and again until the results do not change, you should end up with <span class="math notranslate nohighlight">\(-2.402694796475954\)</span> without doing all those inputs.</p>
+</section>
+</section>
+<section id="example-minimizing-f-x-frac-6-cos-left-x-right-frac-8-sin-left-x-right">
+<h2>Example: Minimizing <span class="math notranslate nohighlight">\(f(x) = \frac{6}{\cos{\left(x \right)}} + \frac{8}{\sin{\left(x \right)}}\)</span><a class="headerlink" href="#example-minimizing-f-x-frac-6-cos-left-x-right-frac-8-sin-left-x-right" title="Link to this heading">#</a></h2>
+<p>In the Optimization section we had an example where we needed to minimize the function <span class="math notranslate nohighlight">\(f(x) = \frac{6}{\cos{\left(x \right)}} + \frac{8}{\sin{\left(x \right)}}\)</span> on the interval <span class="math notranslate nohighlight">\(\left(0, \frac{\pi}{2}\right)\)</span>.  This required solving the equation,</p>
+<div class="math notranslate nohighlight">
+\[\frac{6 \sin{\left(x \right)}}{\cos^{2}{\left(x \right)}} - \frac{8 \cos{\left(x \right)}}{\sin^{2}{\left(x \right)}} = 0\]</div>
+<p>Although we could solve this equation by hand, we could have approximated it with Newton’s Method.  Go through the same steps as the above example to find an approximation to the root in the interval <span class="math notranslate nohighlight">\(\left(0, \frac{\pi}{2}\right)\)</span>.</p>
+<figure class="align-default" id="id10">
+<img alt="Graph of the derivative." src="../_images/NM009.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f'(x) = \frac{6 \sin{\left(x \right)}}{\cos^{2}{\left(x \right)}} - \frac{8 \cos{\left(x \right)}}{\sin^{2}{\left(x \right)}}\)</span></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The derivative is</p>
+<div class="math notranslate nohighlight">
+\[\frac{12 \sin^{2}{\left(x \right)}}{\cos^{3}{\left(x \right)}} + \frac{6}{\cos{\left(x \right)}} + \frac{8}{\sin{\left(x \right)}} + \frac{16 \cos^{2}{\left(x \right)}}{\sin^{3}{\left(x \right)}}\]</div>
+<p>and the Newton’s Method formula is</p>
+<div class="math notranslate nohighlight">
+\[x - \frac{\frac{6 \sin{\left(x \right)}}{\cos^{2}{\left(x \right)}} - \frac{8 \cos{\left(x \right)}}{\sin^{2}{\left(x \right)}}}{\frac{12 \sin^{2}{\left(x \right)}}{\cos^{3}{\left(x \right)}} + \frac{6}{\cos{\left(x \right)}} + \frac{8}{\sin{\left(x \right)}} + \frac{16 \cos^{2}{\left(x \right)}}{\sin^{3}{\left(x \right)}}}\]</div>
+<p>which simplifies to,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x \left(6 \sin^{5}{\left(x \right)} + 3 \sin^{3}{\left(x \right)} \cos^{2}{\left(x \right)} + 4 \sin^{2}{\left(x \right)} \cos^{3}{\left(x \right)} + 8 \cos^{5}{\left(x \right)}\right) - 3 \sin^{4}{\left(x \right)} \cos{\left(x \right)} + 4 \sin{\left(x \right)} \cos^{4}{\left(x \right)}}{6 \sin^{5}{\left(x \right)} + 3 \sin^{3}{\left(x \right)} \cos^{2}{\left(x \right)} + 4 \sin^{2}{\left(x \right)} \cos^{3}{\left(x \right)} + 8 \cos^{5}{\left(x \right)}}\]</div>
+<p>Starting at <span class="math notranslate nohighlight">\(x_0 = 1\)</span> it should only take 5 or 6 steps to get 0.833271859855495.</p>
+</section>
+<section id="example-f-x-x-1-3">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^{1/3}\)</span><a class="headerlink" href="#example-f-x-x-1-3" title="Link to this heading">#</a></h2>
+<p>Using the methods above try to use Newton’s Method to approximate the only root, 0, to the function.  Try an initial guess of 0.1.  You should see the approximations alternating between positive and negative and getting larger.  In other words diverging.  Note that if you simplify the Newton’s Method formula for this function you get <span class="math notranslate nohighlight">\(-2x\)</span>.  A graphical representation of what is happening is below.</p>
+<figure class="align-default" id="id11">
+<img alt="y = x^(1/3)" src="../_images/NM006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{1/3}\)</span></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="example-f-x-x-3-3-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x\)</span><a class="headerlink" href="#example-f-x-x-3-3-x" title="Link to this heading">#</a></h2>
+<p>Using the methods above try to use Newton’s Method to approximate a root to the function by an initial guess of 1.  This should result in an error on the first step since we chose a local minimum the derivative is 0 here and we get division by 0 in the Newton’s Method formula.</p>
+<figure class="align-default" id="id12">
+<img alt="y = x^3 - 3x" src="../_images/NM007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x\)</span></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="example-f-x-x-3-5-x">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x\)</span><a class="headerlink" href="#example-f-x-x-3-5-x" title="Link to this heading">#</a></h2>
+<p>Using the methods above try to use Newton’s Method to approximate a root to the function by an initial guess of 1.  What should happen here is that the Newton’s Method approximations will alternate between 1 and <span class="math notranslate nohighlight">\(-1\)</span> forever without converging to a root.</p>
+<figure class="align-default" id="id13">
+<img alt="y = x^3 - 5x" src="../_images/NM008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x\)</span></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="optimization.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Optimization</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="indefint.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Antiderivatives and The Indefinite Integral</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-5-4-x-3-x-2-7-x-2">Example: <span class="math notranslate nohighlight">\(f(x) = x^{5} - 4 x^{3} + x^{2} - 7 x + 2\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-minimizing-f-x-frac-6-cos-left-x-right-frac-8-sin-left-x-right">Example: Minimizing <span class="math notranslate nohighlight">\(f(x) = \frac{6}{\cos{\left(x \right)}} + \frac{8}{\sin{\left(x \right)}}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-1-3">Example: <span class="math notranslate nohighlight">\(f(x) = x^{1/3}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-3-3-x">Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 3 x\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-3-5-x">Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 5 x\)</span></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

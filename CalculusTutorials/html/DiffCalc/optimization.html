@@ -1,0 +1,947 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Optimization &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/optimization';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Newton’s Method" href="newton.html" />
+    <link rel="prev" title="Indeterminate Forms" href="indforms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Optimization</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="optimization">
+<h1><span class="target" id="index-0"></span>Optimization<a class="headerlink" href="#optimization" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>One common application of calculus is calculating the minimum or maximum value of a function.  The basic idea of <strong>optimization problems</strong> tends to be the same. We have a quantity that we want to maximize or minimize, along with some condition or restraint that needs to be satisfied as well.</p>
+<div class="admonition-problem-solving-optimization-problems admonition">
+<p class="admonition-title">Problem Solving: Optimization Problems</p>
+<ol class="arabic simple">
+<li><p>Introduce all variables. If applicable, draw a figure and label all variables.</p></li>
+<li><p>Determine which quantity is to be maximized or minimized, and for what range of values of the other variables (if this can be determined at this time).</p></li>
+<li><p>Write a formula for the quantity to be maximized or minimized in terms of the variables. This formula may involve more than one variable.</p></li>
+<li><p>Write any equations relating the independent variables in the formula from step 3. Use these equations to write the quantity to be maximized or minimized as a function of one variable.</p></li>
+<li><p>Identify the domain of consideration for the function in step 4 based on the physical problem to be solved.</p></li>
+<li><p>Locate the maximum or minimum value of the function from step 4. This step typically involves looking for critical points and evaluating a function at endpoints.</p></li>
+</ol>
+</div>
+<p>Most of this process is done by hand but once you hit step 6 a computer algebra system can be of use, especially in situations where solving equations could prove difficult.</p>
+</section>
+<section id="example-maximizing-area">
+<h2>Example: Maximizing Area<a class="headerlink" href="#example-maximizing-area" title="Link to this heading">#</a></h2>
+<p>A rectangular garden is to be constructed using a wall as one side of the garden and fencing for the other three sides. Given 100 ft of fencing, determine the dimensions that would create a garden of maximum area. What is the maximum area?</p>
+<p><strong>Step 1:</strong> We let AB be the wall and the sides AC, CD, and BD are the fencing.</p>
+<figure class="align-default" id="id7">
+<img alt="Example Figure" src="../_images/Opt001.png" />
+<figcaption>
+<p><span class="caption-text">Example Figure</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Step 2:</strong> We want to maximize the area of the rectangle.</p>
+<p><strong>Step 3:</strong> The area of the rectangle is <span class="math notranslate nohighlight">\(A = x \cdot y\)</span>.</p>
+<p><strong>Step 4:</strong> This is usually where the constraints come in.  The piece of information we have not used yet is that we have 100 ft of fencing to work with.  So this needs to stretch around the three sides, in other words, <span class="math notranslate nohighlight">\(100 = 2x + y\)</span>. Solving this for <em>y</em> gives <span class="math notranslate nohighlight">\(y = 100 - 2x\)</span>.  Substituting this into our area equation,</p>
+<div class="math notranslate nohighlight">
+\[A = x \cdot y = x  (100 - 2x)\]</div>
+<p>and since it is now in a single variable we can write,</p>
+<div class="math notranslate nohighlight">
+\[A(x) = x (100 - 2x)\]</div>
+<p><strong>Step 5:</strong> Our independent variable is <em>x</em> which is a length of fencing so it must be <span class="math notranslate nohighlight">\(x \geq 0\)</span>.  We could also say that we only have 100 ft of fence so <span class="math notranslate nohighlight">\(x \leq 100\)</span>, but there is a further constraint.  The length <em>y</em> is also a length of fencing so <span class="math notranslate nohighlight">\(y \geq 0\)</span>.  But if <em>y</em> is 0 then <em>x</em> is 50 (two sides are length <em>x</em>).  So the domain of our function is <span class="math notranslate nohighlight">\(0 \leq x \leq 50\)</span>.</p>
+<p><strong>Step 6:</strong> So now we have a continuous function <span class="math notranslate nohighlight">\(A(x) = x (100 - 2x)\)</span> on a closed bounded interval <span class="math notranslate nohighlight">\([0, 50]\)</span>.  We know that there is an absolute maximum and absolute minimum for the function on that interval.  Now it becomes a simple max/min problem.  Take the derivative,</p>
+<div class="math notranslate nohighlight">
+\[A'(x) = 100 - 4 x\]</div>
+<p>solving <span class="math notranslate nohighlight">\(A'(x) = 0\)</span> gives <span class="math notranslate nohighlight">\(x = 25\)</span>.  Evaluating <span class="math notranslate nohighlight">\(A(0) = 0\)</span>, <span class="math notranslate nohighlight">\(A(25) = 1250\)</span>, and <span class="math notranslate nohighlight">\(A(50) = 0\)</span>.  So the absolute maximum is 1250 sq.ft. when <span class="math notranslate nohighlight">\(x = 25\)</span> ft.  Graphing the area function over the domain shows,</p>
+<figure class="align-default" id="id8">
+<img alt="Graph of the area function over the domain." src="../_images/Opt002.png" />
+<figcaption>
+<p><span class="caption-text">Graph of the area function over the domain.</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Here is how we could use technology for this example, although it is really not needed for something this straight forward.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the area function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x y</span>
+</pre></div>
+</div>
+<p>this should come in as <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">y)</span></code>, we will assume it does.</p>
+<p>Input the constraint formula, solved for <em>y</em>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">100 - 2x</span>
+</pre></div>
+</div>
+<p>this should come in as <code class="docutils literal notranslate"><span class="pre">f(x)</span></code>, we will assume it does. Substitute the constraint for <em>y</em> with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">a(x, f(x))</span>
+</pre></div>
+</div>
+<p>this should come in as <code class="docutils literal notranslate"><span class="pre">g(x)</span></code>, we will assume it does.  At this point we could just select Special Points for <code class="docutils literal notranslate"><span class="pre">g</span></code> and it will find the maximum.  If we continue with the procedure we can find <code class="docutils literal notranslate"><span class="pre">Solutions(g')</span></code> which gives us 25 and then evaluate the <code class="docutils literal notranslate"><span class="pre">g</span></code> function at 0, 25, and 50 to get the maximum and the length <em>x</em> that attains it.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>There are several ways you can do this in CLAE, we will present two methods and you can choose which you prefer.</p>
+<section id="using-functions">
+<h4>Using Functions<a class="headerlink" href="#using-functions" title="Link to this heading">#</a></h4>
+<p>Input the area function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">A(x,y):=x*y</span>
+</pre></div>
+</div>
+<p>Input the constraint function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">c(x):=100-2*x</span>
+</pre></div>
+</div>
+<p>Substitute the constraint for <em>y</em> with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(x):=A(x, c(x))</span>
+</pre></div>
+</div>
+<p>Take the derivative, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em>, order 1.  Result is <span class="math notranslate nohighlight">\(100 - 4 x\)</span>.  Solve this equation to get a single value 25.  Evaluate with <code class="docutils literal notranslate"><span class="pre">g(0)</span></code>, <code class="docutils literal notranslate"><span class="pre">g(25)</span></code>, and <code class="docutils literal notranslate"><span class="pre">g(50)</span></code>, to get the maximum and the length <em>x</em> that attains it.</p>
+</section>
+<section id="using-expressions">
+<h4>Using Expressions<a class="headerlink" href="#using-expressions" title="Link to this heading">#</a></h4>
+<p>Input the area function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*y</span>
+</pre></div>
+</div>
+<p>Assume it is in R1.  Input the constraint function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">100-2*x</span>
+</pre></div>
+</div>
+<p>Assume it is in R2.  Substitute the constraint for <em>y</em> with, <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, variable <em>y</em>, expression <code class="docutils literal notranslate"><span class="pre">R2</span></code>, assume it is in <code class="docutils literal notranslate"><span class="pre">R3</span></code>. Take the derivative, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em>, order 1.  Result is <span class="math notranslate nohighlight">\(100 - 4 x\)</span>.  Solve this equation to get a single value 25.  Evaluate by selecting R3 and then selecting <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, variable <em>x</em> and expression 0.  Do the same with 25 and 50 to get the maximum and the length <em>x</em> that attains it.</p>
+</section>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the area function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">A(x,y):=x*y</span>
+</pre></div>
+</div>
+<p>Input the constraint function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">c(x):=100-2*x</span>
+</pre></div>
+</div>
+<p>Substitute the constraint for <em>y</em> with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(x):=A(x, c(x))</span>
+</pre></div>
+</div>
+<p>Take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dg:diff(g(x),x)</span>
+</pre></div>
+</div>
+<p>Solve</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(dg)</span>
+</pre></div>
+</div>
+<p>We get a single value 25.  Evaluate with <code class="docutils literal notranslate"><span class="pre">g(0)</span></code>, <code class="docutils literal notranslate"><span class="pre">g(25)</span></code>, and <code class="docutils literal notranslate"><span class="pre">g(50)</span></code>, to get the maximum and the length <em>x</em> that attains it.</p>
+</section>
+</section>
+<section id="example-maximizing-volume">
+<h2>Example: Maximizing Volume<a class="headerlink" href="#example-maximizing-volume" title="Link to this heading">#</a></h2>
+<p>You are constructing a cardboard box with the dimensions 2 m by 4 m. You then cut equal-size squares from each corner so you may fold the edges. What are the dimensions of the box with the largest volume?</p>
+<p><strong>Step 1:</strong> We will let <em>x</em> be the length of the sides of the squares we cut from each corner. The layout of the box construction is below.</p>
+<figure class="align-default" id="id9">
+<img alt="Example Figure" src="../_images/Opt003.png" />
+<figcaption>
+<p><span class="caption-text">Example Figure</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Step 2:</strong> We want to maximize the volume of the box.</p>
+<p><strong>Step 3:</strong> The volume of a rectangular solid is <span class="math notranslate nohighlight">\(V = L \cdot W \cdot H\)</span>.</p>
+<p><strong>Step 4:</strong> Once the sides are folded up the length is <span class="math notranslate nohighlight">\(L = 4-2x\)</span>, the width is <span class="math notranslate nohighlight">\(W = 2-2x\)</span>, and the height is <span class="math notranslate nohighlight">\(H = x\)</span>.  Substituting this into our volume formula gives,</p>
+<div class="math notranslate nohighlight">
+\[V(x) = L \cdot W \cdot H = (4-2x)(2-2x)x = 4 x^{3} - 12 x^{2} + 8 x\]</div>
+<p><strong>Step 5:</strong> Our independent variable is <em>x</em> which is a length of the side of the removed squares, so it must be <span class="math notranslate nohighlight">\(x \geq 0\)</span>.  Also, we can see from the shorter side that we cannot cut more than 1 m since the side is length 2 m.  So the domain of our function is <span class="math notranslate nohighlight">\(0 \leq x \leq 1\)</span>.</p>
+<p><strong>Step 6:</strong> So now we have a continuous function <span class="math notranslate nohighlight">\(V(x) = 4 x^{3} - 12 x^{2} + 8 x\)</span> on a closed bounded interval <span class="math notranslate nohighlight">\([0, 1]\)</span>.  We know that there is an absolute maximum and absolute minimum for the function on that interval.  Now it becomes a simple max/min problem.  Take the derivative,</p>
+<div class="math notranslate nohighlight">
+\[V'(x) = 12 x^{2} - 24 x + 8\]</div>
+<p>solving <span class="math notranslate nohighlight">\(V'(x) = 0\)</span> gives <span class="math notranslate nohighlight">\(x = 1 - \frac{\sqrt{3}}{3}\)</span> and  <span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{3} + 1\)</span>, which are approximately 0.422649730810374 and 1.57735026918963 respectively.  The second one is not in the domain of the function so it will be ignored.  Evaluating we get,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V(0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V\left(1 - \frac{\sqrt{3}}{3}\right) = - \frac{8 \sqrt{3}}{3} - 12 \left(1 - \frac{\sqrt{3}}{3}\right)^{2} + 4 \left(1 - \frac{\sqrt{3}}{3}\right)^{3} + 8 = \frac{8 \sqrt{3}}{9} \approx 1.539600717839\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V(1) = 0\)</span></p></li>
+</ul>
+<p>So the absolute maximum volume is <span class="math notranslate nohighlight">\(\frac{8 \sqrt{3}}{9} \approx 1.539600717839 \; m^3\)</span> when <span class="math notranslate nohighlight">\(x = 1 - \frac{\sqrt{3}}{3}\)</span> m.  Graphing the volume function over the domain shows,</p>
+<figure class="align-default" id="id10">
+<img alt="Graph of the volume function over the domain." src="../_images/Opt004.png" />
+<figcaption>
+<p><span class="caption-text">Graph of the volume function over the domain.</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the volume function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x(2 - 2 x)(4 - 2 x)</span>
+</pre></div>
+</div>
+<p>We will assume this came in as the function <span class="math notranslate nohighlight">\(f'(x)\)</span>.  Find the solutions to <span class="math notranslate nohighlight">\(f'(x) = 0\)</span> with <code class="docutils literal notranslate"><span class="pre">Solutions(f')</span></code>, the results are 0.42265 and 1.57735.  The 1.57735 is outside the domain and hence ignored.  We will assume the list of solutions is <code class="docutils literal notranslate"><span class="pre">l1</span></code>.  Evaluate the function at the critical numbers and the endpoints,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(0.42265) = 1.5396\)</span> or we could use an input of <code class="docutils literal notranslate"><span class="pre">f(l1(1))</span></code>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f(1) = 0\)</span></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We could have used <code class="docutils literal notranslate"><span class="pre">Solve(f')</span></code> to get the exact solution of <span class="math notranslate nohighlight">\(\frac{-\sqrt{3} + 3}{3}\)</span>, but when substituted into the function the approximate result is returned anyway.</p>
+</div>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Input the volume function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*(2 - 2*x)*(4 - 2*x)</span>
+</pre></div>
+</div>
+<p>We will assume this came in as R1.</p>
+<p>Expand the expression (not really necessary but we will do it anyway), <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Expand</span></code>.  The result is <span class="math notranslate nohighlight">\(4 x^{3} - 12 x^{2} + 8 x\)</span>.</p>
+<p>Differentiate this with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em>, order 1.  The result is <span class="math notranslate nohighlight">\(12 x^{2} - 24 x + 8\)</span>.</p>
+<p>Solve this with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, variable <em>x</em>, the result is <span class="math notranslate nohighlight">\(\left[ 1 - \frac{\sqrt{3}}{3}, \  \frac{\sqrt{3}}{3} + 1\right]\)</span>.  Approximate this with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span></code>, result is <span class="math notranslate nohighlight">\(\left[ 0.422649730810374, \  1.57735026918963\right]\)</span>.  This tells us that the first solution is the only critical number we need to consider.</p>
+<p>Evaluate the original expression at 0, 1, and <span class="math notranslate nohighlight">\(1 - \frac{\sqrt{3}}{3}\)</span>.  Note that if the exact solution list was R4 then <code class="docutils literal notranslate"><span class="pre">R4[0]</span></code> will extract the first solution so you do not need to enter it by hand. Your results should be,</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(V(0) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V\left(1 - \frac{\sqrt{3}}{3} \right) = \frac{2 \sqrt{3} \left(1 - \frac{\sqrt{3}}{3}\right) \left(\frac{2 \sqrt{3}}{3} + 2\right)}{3} = \frac{8 \sqrt{3}}{9} \approx 1.539600717839\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(V(1) = 0\)</span></p></li>
+</ul>
+<p>Note that for <span class="math notranslate nohighlight">\(V\left(1 - \frac{\sqrt{3}}{3} \right)\)</span> the first result is what CLAE returned from the evaluation, the second was simplifying the first, and the third was approximating the second.</p>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Input the volume function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">V(x):=x*(2 - 2*x)*(4 - 2*x)</span>
+</pre></div>
+</div>
+<p>Differentiate,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dv:diff(V(x),x);</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[-2 \left( 4-2 x\right)  x-2 \left( 2-2 x\right)  x+\left( 2-2 x\right) \, \left( 4-2 x\right) \mbox{}\]</div>
+<p>Solve this equation,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s:solve(dv)</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ x=-\frac{\sqrt{3}-3}{3}\operatorname{,}x=\frac{\sqrt{3}+3}{3}\right] \mbox{}\]</div>
+<p>Approximate,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">float(s), numer</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ x=0.4226497308103743\operatorname{,}x=1.577350269189626\right] \mbox{}\]</div>
+<p>This tells us that the first solution is the only critical number we need to consider.</p>
+<p>Evaluate <span class="math notranslate nohighlight">\(V(0) = 0\)</span>, <span class="math notranslate nohighlight">\(V(1) = 0\)</span>, and to do the critical number we can use,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vcn:V(rhs(s[1]))</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[-\frac{\left( \frac{2 \left( \sqrt{3}-3\right) }{3}+2\right) \, \left( \frac{2 \left( \sqrt{3}-3\right) }{3}+4\right) \, \left( \sqrt{3}-3\right) }{3}\mbox{}\]</div>
+<p>Approximating with</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">float(vcn), numer</span>
+</pre></div>
+</div>
+<p>returns 1.539600717839002.</p>
+</section>
+</section>
+<section id="example-maximizing-length">
+<h2>Example: Maximizing Length<a class="headerlink" href="#example-maximizing-length" title="Link to this heading">#</a></h2>
+<p>You are carrying a length of board moving from an 8 ft hallway around a <span class="math notranslate nohighlight">\(90^\circ\)</span> corner to a 6 ft hallway.  What is the length of the longest board that can be carried horizontally around the corner?</p>
+<p><strong>Step 1:</strong> A start on the diagram is below, we have labeled the length of the board as <em>L</em>.</p>
+<figure class="align-default" id="id11">
+<img alt="Example Figure" src="../_images/Opt005.png" />
+<figcaption>
+<p><span class="caption-text">Example Figure</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><strong>Step 2:</strong> We want to maximize the length of the board.</p>
+<p><strong>Steps 3 &amp; 4:</strong> In some cases w combine steps 3 and 4 since they are so interrelated.  There are many ways one can go here, we will take the following approach.  First we will divide <em>L</em> into two lengths <em>L1</em> and <em>L2</em> with <span class="math notranslate nohighlight">\(L = L_1 + L_2\)</span>.  The angle that the board makes with the left wall we will call <span class="math notranslate nohighlight">\(\theta\)</span>.  We will also draw lines across the hallways to construct several right triangles.  The angle that the board makes with the lower wall of the 6 ft hallway is <span class="math notranslate nohighlight">\(\frac{\pi}{2}-\theta\)</span>.  We can see this by looking at the largest triangle in the upper left, the angle opposite to <span class="math notranslate nohighlight">\(\theta\)</span> is complementary and hence its angle is <span class="math notranslate nohighlight">\(\frac{\pi}{2}-\theta\)</span>, additionally the angle we are interested in is an alternating interior angle with this one and hence has the same measure.  So our diagram has grown to the following.</p>
+<figure class="align-default" id="id12">
+<img alt="Example Figure" src="../_images/Opt006.png" />
+<figcaption>
+<p><span class="caption-text">Example Figure</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now if we look at the small triangle on the left (that has <span class="math notranslate nohighlight">\(L_1\)</span> as its hypotenuse), we get the trigonometric relation,</p>
+<div class="math notranslate nohighlight">
+\[\sin(\theta) = \frac{8}{L_1}\]</div>
+<p>Which give us <span class="math notranslate nohighlight">\(L_1 = \frac{8}{\sin(\theta)}\)</span>.  Using the small triangle in the upper right (that has <span class="math notranslate nohighlight">\(L_2\)</span> as its hypotenuse),</p>
+<p>we get the trigonometric relation,</p>
+<div class="math notranslate nohighlight">
+\[\sin\left(\frac{\pi}{2} - \theta\right) = \frac{6}{L_2}\]</div>
+<p>Which give us <span class="math notranslate nohighlight">\(L_2 = \frac{6}{\sin\left(\frac{\pi}{2} - \theta\right)} = \frac{6}{\cos(\theta)}\)</span>. Recall that <span class="math notranslate nohighlight">\(\sin\left(\frac{\pi}{2} - \theta\right) = \cos(\theta)\)</span>.  So we can now write the length of the board as a function of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[L(\theta) = L_1 + L_2 = \frac{8}{\sin(\theta)} + \frac{6}{\cos(\theta)}\]</div>
+<p><strong>Step 5:</strong> This one is a little tricky. Our independent variable is <span class="math notranslate nohighlight">\(\theta\)</span> which is an angle.  If we put the intersection of the board and the left wall far down the diagram it appears that we can make the angle <span class="math notranslate nohighlight">\(\theta\)</span> as small as we want but it can not be 0 since the board touches the corner at the far wall, hence <span class="math notranslate nohighlight">\(\theta &gt; 0\)</span>.  In the other extreme, if we move the intersection with the left wall up the diagram it must stop at the point where we drew the line across the 8 ft hallway, which would be at <span class="math notranslate nohighlight">\(90^\circ = \frac{\pi}{2}\)</span>.  Similarly, we cannot get exactly to <span class="math notranslate nohighlight">\(90^\circ\)</span> since the board touches the top wall, but we can get arbitrarily close to <span class="math notranslate nohighlight">\(90^\circ\)</span>, hence <span class="math notranslate nohighlight">\(\theta &lt; \frac{\pi}{2}\)</span>.  So our domain is <span class="math notranslate nohighlight">\(0 &lt; \theta &lt; \frac{\pi}{2}\)</span>, which is not a closed interval.</p>
+<p><strong>Step 6:</strong> Since <span class="math notranslate nohighlight">\(\sin(\theta)\)</span> and <span class="math notranslate nohighlight">\(\cos(\theta)\)</span> are both non-zero in <span class="math notranslate nohighlight">\((0, \frac{\pi}{2})\)</span> our function <span class="math notranslate nohighlight">\(L(\theta) = \frac{8}{\sin(\theta)} + \frac{6}{\cos(\theta)}\)</span> is continuous on that interval but since the interval is not closed we cannot use the closed-bounded interval algorithm since there are no endpoints to check.  If we graph the length function we get,</p>
+<figure class="align-default" id="id13">
+<img alt="Graph the length function." src="../_images/Opt007.png" />
+<figcaption>
+<p><span class="caption-text">Graph the length function.</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The portion in <span class="math notranslate nohighlight">\((0, \frac{\pi}{2})\)</span> is the u-shaped curve in the upper center.  Note that the function seems to be going to infinity as <span class="math notranslate nohighlight">\(\theta\)</span> approaches 0 from the right and <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> from the left.  This should make perfect sense if you draw in the board placement at different angles and consider the lengths close to 0 and <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span>.  What is interesting here is that to maximize the length of the board that will fit we need to minimize the length function.  Again, if you think about this physically it should make sense.  From the graph it appears that there is an absolute minimum of the function in this interval, which will be at a critical number.</p>
+<p>Taking the derivative of the length function,</p>
+<div class="math notranslate nohighlight">
+\[L'(t) = \frac{6 \sin{\left(t \right)}}{\cos^{2}{\left(t \right)}} - \frac{8 \cos{\left(t \right)}}{\sin^{2}{\left(t \right)}}\]</div>
+<p>Solving <span class="math notranslate nohighlight">\(L'(t) = 0\)</span> we get,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{6 \sin{\left(t \right)}}{\cos^{2}{\left(t \right)}} - \frac{8 \cos{\left(t \right)}}{\sin^{2}{\left(t \right)}} &amp; = 0 \\
+\frac{6 \sin{\left(t \right)}}{\cos^{2}{\left(t \right)}} &amp; = \frac{8 \cos{\left(t \right)}}{\sin^{2}{\left(t \right)}} \\
+6 \sin^3\left(t \right) &amp; = 8 \cos^3\left(t \right) \\
+\tan^3\left(t \right) &amp; = \frac{8}{6} = \frac{4}{3} \\
+\tan\left(t \right) &amp; = \sqrt[3]{\frac{4}{3}} \\
+t &amp; = \tan^{-1}\left(\sqrt[3]{\frac{4}{3}} \right) \approx 0.833271859855495\end{split}\]</div>
+<p>So the maximum length (in feet) is,</p>
+<div class="math notranslate nohighlight">
+\[L = 6 \sqrt{1 + \frac{2 \sqrt[3]{6}}{3}} + 4 \sqrt[3]{6} \sqrt{1 + \frac{2 \sqrt[3]{6}}{3}} = \sqrt{3 + 2 \sqrt[3]{6}} \left(2 \sqrt{3} + \frac{4 \sqrt[3]{2} \cdot 3^{\frac{5}{6}}}{3}\right) \approx 19.7313251108702.\]</div>
+<section id="id4">
+<h3>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Input the length function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">6/cos(x) + 8/sin(x)</span>
+</pre></div>
+</div>
+<p>The graph, after some adjustments, looks like,</p>
+<figure class="align-default" id="id14">
+<img alt="Graph the length function." src="../_images/Opt008.png" />
+<figcaption>
+<p><span class="caption-text">Graph the length function.</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now solve the derivative for 0 with <code class="docutils literal notranslate"><span class="pre">Solutions(f')</span></code>.  Note that the output is (probably) in degrees, go into the settings and change the angle measure to radians and the results are, -2.30832 and 0.83327.  The second one is the only one in our domain and it seems to correspond well with the image.  So the longest the board can be is <code class="docutils literal notranslate"><span class="pre">f(l1(2))</span></code> which is 19.73133.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we used Solve instead of Solutions we would still get an approximation to the value.</p>
+</div>
+</section>
+<section id="id5">
+<h3>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Input the length function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">6/cos(t) + 8/sin(t)</span>
+</pre></div>
+</div>
+<p>Graph it, with some adjustments,</p>
+<figure class="align-default" id="id15">
+<img alt="Graph the length function." src="../_images/Opt007.png" />
+<figcaption>
+<p><span class="caption-text">Graph the length function.</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Take the derivative, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>t</em>, order 1. The result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{6 \sin{\left(t \right)}}{\cos^{2}{\left(t \right)}} - \frac{8 \cos{\left(t \right)}}{\sin^{2}{\left(t \right)}}\]</div>
+<p>If we try to solve this, including using the advanced solvers, the output is not very nice.  Interestingly if we do <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Factor</span></code> on this we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{6 \sin^{3}{\left(t \right)} - 8 \cos^{3}{\left(t \right)}}{\sin^{2}{\left(t \right)} \cos^{2}{\left(t \right)}}\]</div>
+<p>Then if we do <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> on this we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \operatorname{atan}{\left(\frac{6^{\frac{2}{3}}}{3} \right)}, \  - \operatorname{atan}{\left(\frac{6^{\frac{2}{3}}}{6} - \frac{2^{\frac{2}{3}} \sqrt[6]{3} i}{2} \right)}, \  - \operatorname{atan}{\left(\frac{6^{\frac{2}{3}}}{6} + \frac{2^{\frac{2}{3}} \sqrt[6]{3} i}{2} \right)}\right]\]</div>
+<p>which is approximately</p>
+<div class="math notranslate nohighlight">
+\[\left[ 0.833271859855495, \  -0.880283538928554 + 0.650652562550789 i, \  -0.880283538928554 - 0.650652562550789 i\right]\]</div>
+<p>So only the first solution is real and in our interval, furthermore it looks close to the minimum. It is also equivalent to the solution we got by hand. Substituting this into the length equation, simplifying, and approximating gives us,</p>
+<div class="math notranslate nohighlight">
+\[6 \sqrt{1 + \frac{2 \sqrt[3]{6}}{3}} + 4 \sqrt[3]{6} \sqrt{1 + \frac{2 \sqrt[3]{6}}{3}} = \sqrt{3 + 2 \sqrt[3]{6}} \left(2 \sqrt{3} + \frac{4 \sqrt[3]{2} \cdot 3^{\frac{5}{6}}}{3}\right) \approx 19.7313251108702\]</div>
+</section>
+<section id="id6">
+<h3>Maxima<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Input the length function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">L(t):=6/cos(t) + 8/sin(t)</span>
+</pre></div>
+</div>
+<p>Graph it,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d(L(t), [t,-0.2, 1.8], [y,-5, 50])</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id16">
+<img alt="Graph the length function." src="../_images/Opt009.png" />
+<figcaption>
+<p><span class="caption-text">Graph the length function.</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dL:diff(L(t),t)</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{6 \sin{(t)}}{{{\cos{(t)}}^{2}}}-\frac{8 \cos{(t)}}{{{\sin{(t)}}^{2}}}\mbox{}\]</div>
+<p>If we try to solve this,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(dL)</span>
+</pre></div>
+</div>
+<p>we get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \sin{(t)}=\frac{\left( \sqrt{3} {{4}^{\frac{1}{3}}} \% i-{{4}^{\frac{1}{3}}}\right)  \cos{(t)}}{2 {{3}^{\frac{1}{3}}}}\operatorname{,}\sin{(t)}=-\frac{\left( \sqrt{3} {{4}^{\frac{1}{3}}} \% i+{{4}^{\frac{1}{3}}}\right)  \cos{(t)}}{2 {{3}^{\frac{1}{3}}}}\operatorname{,}\sin{(t)}=\frac{{{4}^{\frac{1}{3}}} \cos{(t)}}{{{3}^{\frac{1}{3}}}}\right] \mbox{}\]</div>
+<p>The last entry is close to our exact solution but we will go with an approximation, since the minimum is between 0.5 and 1.5 we can use the <code class="docutils literal notranslate"><span class="pre">find_root</span></code> function in Maxima to approximate the solution.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">find_root(dL,t,0.5, 1.5)</span>
+</pre></div>
+</div>
+<p>This returns 0.8332718598554955, substituting this into the length formula gives a maximum length of, 19.73132511087018.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="indforms.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Indeterminate Forms</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="newton.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Newton’s Method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-maximizing-area">Example: Maximizing Area</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-functions">Using Functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#using-expressions">Using Expressions</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-maximizing-volume">Example: Maximizing Volume</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-maximizing-length">Example: Maximizing Length</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

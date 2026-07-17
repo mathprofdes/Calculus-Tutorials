@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Expression Syntax &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/CAS/syntax';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="File Options" href="files.html" />
+    <link rel="prev" title="Program Layout and Use" href="LayoutUse.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">CAS</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="LayoutUse.html">Program Layout and Use</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="files.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casinput.html">Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseInput.html">Piecewise Expression Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSequenceInput.html">Sequence Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixInput.html">Matrix and Vector Input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDataTypes.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casSpecialMatrixInput.html">Special Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casRandomMatrixInput.html">Random Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform2DInput.html">2-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casTransform3DInput.html">3-D Transformations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casCopySpecialCopy.html">Copy, Paste, and Special Copy Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixExtract.html">Extract from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixJoin.html">Join Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixRemove.html">Remove from Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casMatrixConvert.html">Convert Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListExtract.html">Extract from List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casListConvert.html">Convert List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPiecewiseConvert.html">Piecewise Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casOtherConvert.html">Other Conversions/Extractions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casDeleteUndoRedo.html">Delete, Undo, and Redo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casPrefs.html">Preferences</a></li>
+<li class="toctree-l3"><a class="reference internal" href="casProcess.html">Process Manager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSimplify.html">Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgApproxEval.html">Approximation and Evaluation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSolving.html">Solving Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFactorExpand.html">Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgSepCollect.html">Separation and Collection of Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgComplex.html">Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgRational.html">Rational Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgEquations.html">Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgFctProps.html">Function Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="AlgForceOp.html">Force Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalLimitsDerivatives.html">Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalIntegration.html">Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSeries.html">Sequences and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalOde.html">Ordinary Differential Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalMultInt.html">Multiple Integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalSpaceCurves.html">Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CalVectorCalculus.html">Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRowColops.html">Row and Column Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatRedSolve.html">Matrix Reduction and System Solving</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatBasicOps.html">Basic Operations on Matrices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCofactors.html">Minors and Cofactors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatSpaces.html">Matrix Spaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEigens.html">Eigenvalues and Eigenvectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatEvalApply.html">Evaluate and Apply</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatFactor.html">Factorizations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatDiag.html">Diagonalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatLeast.html">Least Squares</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatCurveFit.html">Numeric Curve Fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MatOther.html">Other Matrix Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGeneral.html">General Vector Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecLinesPlanes.html">Lines and Planes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecNorms.html">Norms and Normalization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecProj.html">Projections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VecGramSchmidt.html">Gram-Schmidt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaGeneral.html">Maxima Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSimplify.html">Maxima: Simplification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaApproxEval.html">Maxima: Evaluation and Approximation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorSolve.html">Maxima: Solve</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaFactorExpand.html">Maxima: Factoring and Expanding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaComplex.html">Maxima: Complex Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaLimitDer.html">Maxima: Limits and Derivatives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaIntegration.html">Maxima: Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSeries.html">Maxima: Sums and Series</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaMultipleIntegral.html">Maxima: Multiple Integrals and Partial Differentiation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaSpaceCurves.html">Maxima: Space Curves</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaximaVectorCalc.html">Maxima: Vector Calculus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="view.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../TextEditor/index.html">Text Editor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">CAS</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Expression Syntax</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="expression-syntax">
+<h1>Expression Syntax<a class="headerlink" href="#expression-syntax" title="Link to this heading">#</a></h1>
+<section id="arithmetic-operations">
+<h2><span class="target" id="index-0"></span>Arithmetic Operations<a class="headerlink" href="#arithmetic-operations" title="Link to this heading">#</a></h2>
+<p>The basic arithmetic operations are <code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">\</span></code>, and <code class="docutils literal notranslate"><span class="pre">^</span></code>. All of which do what you would expect.  The <code class="docutils literal notranslate"><span class="pre">^</span></code> is exponentiation and you can also use <code class="docutils literal notranslate"><span class="pre">**</span></code> in place of the <code class="docutils literal notranslate"><span class="pre">^</span></code> operator, as in the Python language. Note that <code class="docutils literal notranslate"><span class="pre">*</span></code> must be used for multiplication, this program does not recognize juxtaposition as multiplication, so for <span class="math notranslate nohighlight">\(2x\)</span> we use the syntax <code class="docutils literal notranslate"><span class="pre">2*x</span></code> and not <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">2x</span></code>, the second two are syntax error.</p>
+</section>
+<section id="variables">
+<h2><span class="target" id="index-1"></span>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p>Variables, also known as symbols, can be any expression that is not a sympy function, starts with a letter or underscore and has only letters, numbers, and underscores after that.  So <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">xpt1</span></code>, and <code class="docutils literal notranslate"><span class="pre">John_Smith</span></code> are all valid variables.</p>
+</section>
+<section id="previous-cas-results">
+<h2><span class="target" id="index-2"></span>Previous CAS Results<a class="headerlink" href="#previous-cas-results" title="Link to this heading">#</a></h2>
+<p>Each (non error) entry in the CAS has a designation at the begging of the item’s description, R1, R2, … which is short for Result #1, Result #2, …  These can be used in any input expression.  For example, <code class="docutils literal notranslate"><span class="pre">R1*R2</span></code>, <code class="docutils literal notranslate"><span class="pre">sin(R2)</span></code>, <code class="docutils literal notranslate"><span class="pre">cos(x)*R1/(R2</span> <span class="pre">+</span> <span class="pre">3)</span></code> are all legitimate expressions. When these are used in an expression, the expression for the result is substituted into the expression before it it is loaded into the CAS. So if <code class="docutils literal notranslate"><span class="pre">R1</span></code> is <span class="math notranslate nohighlight">\(x^2\)</span> and <code class="docutils literal notranslate"><span class="pre">R2</span></code> is <span class="math notranslate nohighlight">\(\sqrt{y}\)</span> then <code class="docutils literal notranslate"><span class="pre">R1*R2</span></code> is <span class="math notranslate nohighlight">\(x^2 \sqrt{y}\)</span>, <code class="docutils literal notranslate"><span class="pre">sin(R2)</span></code> is <span class="math notranslate nohighlight">\(\sin(\sqrt{y})\)</span>, and <code class="docutils literal notranslate"><span class="pre">cos(x)*R1/(R2</span> <span class="pre">+</span> <span class="pre">3)</span></code> is <span class="math notranslate nohighlight">\(\displaystyle \frac{\cos(x) x^2}{\sqrt{y} + 3}.\)</span></p>
+<p>Since the previous expressions are loaded into the input expression there is no expression dependency, by design.  So if we did input <code class="docutils literal notranslate"><span class="pre">R1*R2</span></code> to get <span class="math notranslate nohighlight">\(x^2 \sqrt{y}\)</span> and then deleted either <code class="docutils literal notranslate"><span class="pre">R1</span></code> or <code class="docutils literal notranslate"><span class="pre">R2</span></code> the <span class="math notranslate nohighlight">\(x^2 \sqrt{y}\)</span> result is not affected. This also means that there is no cascading of results as in some other systems.  That is, if we changed <code class="docutils literal notranslate"><span class="pre">R1</span></code> to <span class="math notranslate nohighlight">\(\sin(x)\)</span> (which by the way we can’t, also by design) then the <code class="docutils literal notranslate"><span class="pre">R1*R2</span></code> remains <span class="math notranslate nohighlight">\(x^2 \sqrt{y}\)</span> and not <span class="math notranslate nohighlight">\(\sin(x) \sqrt{y}.\)</span></p>
+<p>CAS result expressions cannot be changed. So if you double-click a result and open up its editor, either copying it to the CAS input bar or opening up an editing dialog box, when the expression is edited and accepted, it is loaded in as a new result.  There are pros and cons about this design.  This eliminates dependencies and stale data, which is a good thing. One con is that in some systems you can make a change to a function and then see the changes that this makes to all the subsequent operations done on the function, here you cannot, you need to go through the same operations with the new expression.</p>
+</section>
+<section id="infinity">
+<h2><span class="target" id="index-3"></span>Infinity<a class="headerlink" href="#infinity" title="Link to this heading">#</a></h2>
+<p>Infinity, <span class="math notranslate nohighlight">\(\infty\)</span>, is represented as <code class="docutils literal notranslate"><span class="pre">oo</span></code> (that is two small o’s) and <span class="math notranslate nohighlight">\(-\infty\)</span> is represented as <code class="docutils literal notranslate"><span class="pre">-oo</span></code>.</p>
+</section>
+<section id="special-constants">
+<h2><span class="target" id="index-4"></span>Special Constants<a class="headerlink" href="#special-constants" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pi</span></code> represents <span class="math notranslate nohighlight">\(\pi\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> represents <span class="math notranslate nohighlight">\(e\)</span>, note it is uppercase, <code class="docutils literal notranslate"><span class="pre">e</span></code> is seen as the variable <code class="docutils literal notranslate"><span class="pre">e</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> represents <span class="math notranslate nohighlight">\(i\)</span> the imaginary unit, note it is also uppercase.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GoldenRatio</span></code> represents the Golden Ratio <span class="math notranslate nohighlight">\(\displaystyle \frac{1+\sqrt{5}}{2}.\)</span></p></li>
+</ul>
+</section>
+<section id="absolute-value">
+<h2><span class="target" id="index-5"></span>Absolute Value<a class="headerlink" href="#absolute-value" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">abs(x)</span></code> or <code class="docutils literal notranslate"><span class="pre">Abs(x)</span></code> represents <span class="math notranslate nohighlight">\(|x|.\)</span></p></li>
+</ul>
+</section>
+<section id="root-functions">
+<h2><span class="target" id="index-6"></span>Root Functions<a class="headerlink" href="#root-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fractional exponents can be used for root functions, for example <code class="docutils literal notranslate"><span class="pre">x^(1/2)</span></code>, <code class="docutils literal notranslate"><span class="pre">x^(1/3)</span></code>, and <code class="docutils literal notranslate"><span class="pre">x^(7/5)</span></code>.  Note that when we evaluate an expression with a fractional exponent the system returns the principal root.  So if we input <code class="docutils literal notranslate"><span class="pre">(-1)^(1/3)</span></code> (and approximate the value) the result is not <span class="math notranslate nohighlight">\(-1\)</span> it is <span class="math notranslate nohighlight">\(0.5 + 0.866025403784439 i.\)</span>  The 2-D and 3-D graphics systems will convert fractional exponents with odd integer denominators to their <code class="docutils literal notranslate"><span class="pre">real_root</span></code> equivalent.  So in a plot <code class="docutils literal notranslate"><span class="pre">(-1)^(1/3)</span></code> will be <code class="docutils literal notranslate"><span class="pre">-1</span></code>.  These conversions are done internally and the user does not see any alteration to their input. The computer algebra system portion of the program also works well with fractional exponents, as one would expect, so they are your best syntax to use when inputting root functions into the program.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sqrt(x)</span></code> represents <span class="math notranslate nohighlight">\(\sqrt{x}.\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cbrt(x)</span></code> returns the principal cube root, possibly complex. So for example, if we input <code class="docutils literal notranslate"><span class="pre">cbrt(-1)</span></code> (and approximate the value) the result is not <span class="math notranslate nohighlight">\(-1\)</span> it is <span class="math notranslate nohighlight">\(0.5 + 0.866025403784439 i.\)</span>  Note that <code class="docutils literal notranslate"><span class="pre">cbrt(x)</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">x^(1/3)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root(x,</span> <span class="pre">n)</span></code>  represents <span class="math notranslate nohighlight">\(\sqrt[n]{x}.\)</span> A little caution is needed here, this is complex (i.e. primitive complex) nth root of <code class="docutils literal notranslate"><span class="pre">x</span></code>.  So for example, if we input <code class="docutils literal notranslate"><span class="pre">root(-1,</span> <span class="pre">3)</span></code> (and approximate the value) the result is not <span class="math notranslate nohighlight">\(-1\)</span> it is <span class="math notranslate nohighlight">\(0.5 + 0.866025403784439 i.\)</span>  Note that <code class="docutils literal notranslate"><span class="pre">root(x,</span> <span class="pre">n)</span></code> is converted to <code class="docutils literal notranslate"><span class="pre">x^(1/n)</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">real_root(x,</span> <span class="pre">n)</span></code>  represents <span class="math notranslate nohighlight">\(\sqrt[n]{x}\)</span>.  This is the real nth root. So in this case <code class="docutils literal notranslate"><span class="pre">real_root(-1,</span> <span class="pre">3)</span></code> is <span class="math notranslate nohighlight">\(-1.\)</span> Unfortunately, the <code class="docutils literal notranslate"><span class="pre">real_root(x,</span> <span class="pre">n)</span></code> is not the best function to work with for many of the Algebra and Calculus operations since it produces a piecewise defined function that can be difficult to work with. Specifically,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{cases} x^{\frac{1}{n}} &amp; \text{for}\: n = -1 \vee n = 1 \\\left|{x}\right|^{\frac{1}{n}} \operatorname{sign}{\left(x \right)} &amp; \text{for}\: \operatorname{im}{\left(x\right)} = 0 \wedge n \bmod 2 = 1 \\x^{\frac{1}{n}} &amp; \text{otherwise} \end{cases}\end{split}\]</div>
+</section>
+<section id="trigonometric-functions">
+<h2><span class="target" id="index-7"></span>Trigonometric Functions<a class="headerlink" href="#trigonometric-functions" title="Link to this heading">#</a></h2>
+<p>The trigonometric functions are as you would expect,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sin(x)</span></code> for <span class="math notranslate nohighlight">\(\sin(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cos(x)</span></code> for <span class="math notranslate nohighlight">\(\cos(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tan(x)</span></code> for <span class="math notranslate nohighlight">\(\tan(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cot(x)</span></code> for <span class="math notranslate nohighlight">\(\cot(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sec(x)</span></code> for <span class="math notranslate nohighlight">\(\sec(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">csc(x)</span></code> for <span class="math notranslate nohighlight">\(\csc(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="inverse-trigonometric-functions">
+<h2><span class="target" id="index-8"></span>Inverse Trigonometric Functions<a class="headerlink" href="#inverse-trigonometric-functions" title="Link to this heading">#</a></h2>
+<p>The inverse trigonometric functions simply have an <code class="docutils literal notranslate"><span class="pre">a</span></code> in front of them,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">asin(x)</span></code> for <span class="math notranslate nohighlight">\(\sin^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acos(x)</span></code> for <span class="math notranslate nohighlight">\(\cos^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atan(x)</span></code> for <span class="math notranslate nohighlight">\(\tan^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acot(x)</span></code> for <span class="math notranslate nohighlight">\(\cot^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asec(x)</span></code> for <span class="math notranslate nohighlight">\(\sec^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acsc(x)</span></code> for <span class="math notranslate nohighlight">\(\csc^{-1}(x)\)</span>.</p></li>
+</ul>
+<p>In addition there is</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">atan2(y,</span> <span class="pre">x)</span></code> for <span class="math notranslate nohighlight">\(\tan^{-1}(y/x)\)</span> which also works when <span class="math notranslate nohighlight">\(x = 0\)</span>. So <code class="docutils literal notranslate"><span class="pre">atan2(1,</span> <span class="pre">0)</span></code> returns <span class="math notranslate nohighlight">\(\pi/2.\)</span></p></li>
+</ul>
+</section>
+<section id="exponential-logarithmic-functions">
+<h2><span class="target" id="index-9"></span>Exponential &amp; Logarithmic Functions<a class="headerlink" href="#exponential-logarithmic-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exp(x)</span></code> represents <span class="math notranslate nohighlight">\(e^x\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E^x</span></code> represents <span class="math notranslate nohighlight">\(e^x\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log(x)</span></code> represents <span class="math notranslate nohighlight">\(\ln(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ln(x)</span></code> represents <span class="math notranslate nohighlight">\(\ln(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">log(x,</span> <span class="pre">n)</span></code> represents <span class="math notranslate nohighlight">\(\log_n(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="hyperbolic-functions">
+<h2><span class="target" id="index-10"></span>Hyperbolic Functions<a class="headerlink" href="#hyperbolic-functions" title="Link to this heading">#</a></h2>
+<p>The hyperbolic functions are as you would expect,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sinh(x)</span></code> for <span class="math notranslate nohighlight">\(\sinh(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cosh(x)</span></code> for <span class="math notranslate nohighlight">\(\cosh(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tanh(x)</span></code> for <span class="math notranslate nohighlight">\(\tanh(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">coth(x)</span></code> for <span class="math notranslate nohighlight">\(\coth(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sech(x)</span></code> for <span class="math notranslate nohighlight">\({\rm sech}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">csch(x)</span></code> for <span class="math notranslate nohighlight">\({\rm csch}(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="inverse-hyperbolic-functions">
+<h2><span class="target" id="index-11"></span>Inverse Hyperbolic Functions<a class="headerlink" href="#inverse-hyperbolic-functions" title="Link to this heading">#</a></h2>
+<p>The inverse hyperbolic functions simply have an <code class="docutils literal notranslate"><span class="pre">a</span></code> in front of them,</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">asinh(x)</span></code> for <span class="math notranslate nohighlight">\(\sinh^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acosh(x)</span></code> for <span class="math notranslate nohighlight">\(\cosh^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atanh(x)</span></code> for <span class="math notranslate nohighlight">\(\tanh^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acoth(x)</span></code> for <span class="math notranslate nohighlight">\(\coth^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">asech(x)</span></code> for <span class="math notranslate nohighlight">\({\rm sech}^{-1}(x)\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">acsch(x)</span></code> for <span class="math notranslate nohighlight">\({\rm csch}^{-1}(x)\)</span>.</p></li>
+</ul>
+</section>
+<section id="complex-functions">
+<h2><span class="target" id="index-12"></span>Complex Functions<a class="headerlink" href="#complex-functions" title="Link to this heading">#</a></h2>
+<p>Some functions that may be of interest when dealing with complex numbers. Many of these are also menu options.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">re(z)</span></code> returns the real part of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">im(z)</span></code> returns the imaginary part of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arg(z)</span></code> returns the argument (in radians) of the complex number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conjugate(z)</span></code> returns the complex conjugate of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p></li>
+</ul>
+</section>
+<section id="integer-functions">
+<h2><span class="target" id="index-13"></span>Integer Functions<a class="headerlink" href="#integer-functions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">floor(x)</span></code> returns the largest integer value not greater than <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ceiling(x)</span></code> returns the smallest integer value not less than <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">frac(x)</span></code> returns the fractional part of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+</ul>
+</section>
+<section id="miscellaneous-functions">
+<h2><span class="target" id="index-14"></span>Miscellaneous Functions<a class="headerlink" href="#miscellaneous-functions" title="Link to this heading">#</a></h2>
+<p>Some miscellaneous functions that may be of interest.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sign(x)</span></code> returns the sign of <code class="docutils literal notranslate"><span class="pre">x</span></code>, 1 if <span class="math notranslate nohighlight">\(x&gt;0\)</span>, 0 if <span class="math notranslate nohighlight">\(x = 0\)</span>, <span class="math notranslate nohighlight">\(-1\)</span> if <span class="math notranslate nohighlight">\(x&lt;0.\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n!</span></code> returns <cite>n factorial</cite> which is defined for non-negative integers with  <span class="math notranslate nohighlight">\(0! = 1\)</span> and <span class="math notranslate nohighlight">\(n! = n(n-1)(n-2) \cdots 1\)</span> for <span class="math notranslate nohighlight">\(n &gt; 0.\)</span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">n!!</span></code> returns <cite>n double factorial</cite> which is defined for non-negative integers with  <span class="math notranslate nohighlight">\(0!! = 1\)</span> and <span class="math notranslate nohighlight">\(n!! = n(n-2)(n-4) \cdots 1\)</span> for <span class="math notranslate nohighlight">\(n &gt; 0.\)</span></p></li>
+</ul>
+</section>
+<section id="user-defined-functions">
+<h2><span class="target" id="index-15"></span>User-Defined Functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h2>
+<p>The CAS also supports declaring user-defined functions.  To create a user defined function start with a function name and variable list, as you would in writing it mathematically, then type in <code class="docutils literal notranslate"><span class="pre">:=</span></code> followed by any valid expression (including previous CAS results).</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">:=</span> <span class="pre">x^2-2*x+1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g(x)</span> <span class="pre">:=</span> <span class="pre">R2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h(x,</span> <span class="pre">y)</span> <span class="pre">:=</span> <span class="pre">sin(x)/(y^2+1)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k(t)</span> <span class="pre">:=</span> <span class="pre">cos(R1)/t^3</span> <span class="pre">+</span> <span class="pre">exp(t^2)</span></code></p></li>
+</ul>
+<p>Once a function is defined you can use it in expressions or evaluate it with functional notation.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f(5)</span></code> will return the expression value after 5 is substituted in for <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1/g(x)</span></code> would be equivalent to <code class="docutils literal notranslate"><span class="pre">1/R2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">h(cos(t),</span> <span class="pre">sin(t))</span></code> will substitute <code class="docutils literal notranslate"><span class="pre">cos(t)</span></code> for <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">sin(t)</span></code> for <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">k(1/t)</span></code> will substitute <code class="docutils literal notranslate"><span class="pre">1/t</span></code> for <code class="docutils literal notranslate"><span class="pre">t</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(f(x+h)</span> <span class="pre">-</span> <span class="pre">f(x))/h</span></code> will return the difference quotient for the function <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p></li>
+</ul>
+<p>Once a function is input into the CAS you cannot use the same function name for another function definition.  So if you define a function called <code class="docutils literal notranslate"><span class="pre">f</span></code> you may not use <code class="docutils literal notranslate"><span class="pre">f</span></code> again.  If you delete the entry where <code class="docutils literal notranslate"><span class="pre">f</span></code> was defined then you can use the function name <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+</section>
+<section id="other-function-syntax">
+<h2><span class="target" id="index-16"></span>Other Function Syntax<a class="headerlink" href="#other-function-syntax" title="Link to this heading">#</a></h2>
+<p>The program is not limited to the above expressions.  The CAS input bar will take in any SymPy “one line” expression.  So for example, <code class="docutils literal notranslate"><span class="pre">totient(12345)</span></code> will return the Euler totient (phi) function of 12345, that is, 6576.  The program was built with the goal to minimize the amount of syntax that the users needs to learn, nonetheless the functionality is there.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="LayoutUse.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Program Layout and Use</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="files.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">File Options</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operations">Arithmetic Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-cas-results">Previous CAS Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinity">Infinity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#special-constants">Special Constants</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#absolute-value">Absolute Value</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#root-functions">Root Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trigonometric-functions">Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-trigonometric-functions">Inverse Trigonometric Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponential-logarithmic-functions">Exponential &amp; Logarithmic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hyperbolic-functions">Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inverse-hyperbolic-functions">Inverse Hyperbolic Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-functions">Complex Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-functions">Integer Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miscellaneous-functions">Miscellaneous Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-defined-functions">User-Defined Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-function-syntax">Other Function Syntax</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

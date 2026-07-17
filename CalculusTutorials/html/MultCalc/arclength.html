@@ -1,0 +1,918 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Arc Length and Curvature &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/arclength';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Motion in Space" href="motion.html" />
+    <link rel="prev" title="Calculus of Vector-Valued Functions" href="calcvecfunc.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Arc Length and Curvature</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="arc-length-and-curvature">
+<h1><span class="target" id="index-0"></span>Arc Length and Curvature<a class="headerlink" href="#arc-length-and-curvature" title="Link to this heading">#</a></h1>
+<section id="arc-length">
+<h2>Arc Length<a class="headerlink" href="#arc-length" title="Link to this heading">#</a></h2>
+<p>The arc-length of curve is simply the distance traveled along the curve between two values of the parameter. The formula for finding arc-length is similar to that of arc-length of a function in the plane.</p>
+<div class="admonition-theorem-arc-length-formulas admonition">
+<p class="admonition-title">Theorem: Arc-Length Formulas</p>
+<p>If <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t))\)</span> is a plane curve then the arc-length of this curve from <span class="math notranslate nohighlight">\(t = a\)</span> to <span class="math notranslate nohighlight">\(t = b\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[s= \int_a^b \sqrt{(f'(t))^2 + (g'(t))^2} \; dt = \int_a^b |\mathbf{r}'(t)|  \; dt\]</div>
+<p>Similarly, if <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t), h(t))\)</span> is a space curve then the arc-length of this curve from <span class="math notranslate nohighlight">\(t = a\)</span> to <span class="math notranslate nohighlight">\(t = b\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[s= \int_a^b \sqrt{(f'(t))^2 + (g'(t))^2 + (h'(t))^2} \; dt = \int_a^b |\mathbf{r}'(t)|  \; dt\]</div>
+</div>
+<section id="example-left-2-e-t-e-t-cos-left-t-right-e-t-sin-left-t-right-right">
+<h3>Example: <span class="math notranslate nohighlight">\(\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)\)</span><a class="headerlink" href="#example-left-2-e-t-e-t-cos-left-t-right-e-t-sin-left-t-right-right" title="Link to this heading">#</a></h3>
+<p>In this example we will find the arc-length of the curve <span class="math notranslate nohighlight">\(\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)\)</span> for <span class="math notranslate nohighlight">\(0 \leq t \leq 1.\)</span></p>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>GeoGebra has the arc-length calculation built into its commands.  As we have seen before, it is difficult to follow the calculations given in the definition through in GeoGebra.  Nonetheless, we can still do the computations.  Input the curve into GeoGebra with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(2 exp(t)</span><span class="go">, exp(t) cos(t), exp(t) sin(t))</span>
+</pre></div>
+</div>
+<p>The image of the curve is below.  We will assume that the name of the curve was <code class="docutils literal notranslate"><span class="pre">a</span></code>.</p>
+<figure class="align-default" id="id5">
+<img alt=":math:`\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)`" src="../_images/Arc001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)\)</span></span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will not plot points where <span class="math notranslate nohighlight">\(t = 0\)</span> and <span class="math notranslate nohighlight">\(t = 1\)</span>.  Input <code class="docutils literal notranslate"><span class="pre">a(0</span></code> and then <code class="docutils literal notranslate"><span class="pre">a(1)</span></code>.  The two points are now plotted on the curve.</p>
+<figure class="align-default" id="id6">
+<img alt=":math:`\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)`" src="../_images/Arc002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To find the arc-length we can use the Length function.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">Length(a,0,1)</span>
+</pre></div>
+</div>
+<p>The result is 4.20891.</p>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>CLAE does not have the arc-length built into its menu system but it is easy to follow the calculations through with the tools it has.  First input the curve either as a list or a vector.  In general the vector form is more functional so we will use that here.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[2*exp(t), exp(t)*cos(t), exp(t)*sin(t)]</span>
+</pre></div>
+</div>
+<p>the result is <code class="docutils literal notranslate"><span class="pre">R1</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 e^{t}\\e^{t} \cos{\left(t \right)}\\e^{t} \sin{\left(t \right)}\end{array}\right]\end{split}\]</div>
+<p>Graphing this gives,</p>
+<figure class="align-default" id="id7">
+<img alt=":math:`\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)`" src="../_images/Arc003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will now plot the two endpoints for the arc.  Select the curve, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> and input 0 for the expression, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2\\1\\0\end{array}\right]\end{split}\]</div>
+<p>Do the same for 1 to get,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 e\\e \cos{\left(1 \right)}\\e \sin{\left(1 \right)}\end{array}\right]\end{split}\]</div>
+<p>Plotting these two points gives the image,</p>
+<figure class="align-default" id="id8">
+<img alt=":math:`\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)`" src="../_images/Arc004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now to do the arc-length calculation, select the curve <code class="docutils literal notranslate"><span class="pre">R1</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code> keep the variable as <em>t</em> and order 1, the result is <span class="math notranslate nohighlight">\(\mathbf{r}'(t)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}2 e^{t}\\- e^{t} \sin{\left(t \right)} + e^{t} \cos{\left(t \right)}\\e^{t} \sin{\left(t \right)} + e^{t} \cos{\left(t \right)}\end{array}\right]\end{split}\]</div>
+<p>Now take its length by <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Length</span></code>, the result is <span class="math notranslate nohighlight">\(|\mathbf{r}'(t)|\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\left(- e^{t} \sin{\left(t \right)} + e^{t} \cos{\left(t \right)}\right)^{2} + \left(e^{t} \sin{\left(t \right)} + e^{t} \cos{\left(t \right)}\right)^{2} + 4 e^{2 t}}\]</div>
+<p>This can obviously be simplified, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{6} \sqrt{e^{2 t}}\]</div>
+<p>This too can be simplified, we can assume that we are working with real numbers, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span> <span class="pre">Assuming</span> <span class="pre">Real</span> <span class="pre">Variables</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{6} e^{t}\]</div>
+<p>Now all that is left is to integrate, select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, keep the variable as <em>t</em> and input the bounds as 0 and 1, the result is,</p>
+<div class="math notranslate nohighlight">
+\[- \sqrt{6} + \sqrt{6} e \approx 4.2089137140211556657\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the above example we chose a curve that made the final integral simple to calculate.  One can imagine, given the arc-length formula, that is it is easy to be left with a difficult integral at the end.  As an example, consider the twisted cubic on the range <span class="math notranslate nohighlight">\(0 \leq t \leq 1.\)</span>  The integral we would need to evaluate is,</p>
+<div class="math notranslate nohighlight">
+\[\int\limits_{0}^{1} \sqrt{9 t^{4} + 4 t^{2} + 1}\, dt\]</div>
+<p>We will not be able to find this value exactly so we should use a numeric approximation to the integral, and get, 1.8630229825122513944.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="arc-length-parameterization">
+<h2>Arc-Length Parameterization<a class="headerlink" href="#arc-length-parameterization" title="Link to this heading">#</a></h2>
+<p>A curve can have many different parameterizations.  For example, the helix,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(t \right)}\\\sin{\left(t \right)}\\t\end{array}\right]\end{split}\]</div>
+<p>could also be written as,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(2 t \right)}\\\sin{\left(2 t \right)}\\2 t\end{array}\right]\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(\sqrt[3]{t} \right)}\\\sin{\left(\sqrt[3]{t} \right)}\\\sqrt[3]{t}\end{array}\right]\end{split}\]</div>
+<p>Of course for the different parameterizations the bounds on the parameter may change to map out the same section of the curve but the final set of points defining the curve are the same.</p>
+<p>One way to “normalize” a parameterization is to parameterize the curve by its arc-length.  The first step on doing this is to define the arc-length function.  This simply replaces the upper bound of the arc-length calculation by a variable.</p>
+<div class="admonition-definition-arc-length-function admonition">
+<p class="admonition-title">Definition: Arc-Length Function</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> describe a smooth curve for <span class="math notranslate nohighlight">\(t \geq a.\)</span> Then the arc-length function is given by</p>
+<div class="math notranslate nohighlight">
+\[s(t) = \int_a^t  |\mathbf{r}'(u)|  \; du\]</div>
+<p>Note that this implies that,</p>
+<div class="math notranslate nohighlight">
+\[\frac{ds}{dt} = s'(t) = \frac{d}{dt} \int_a^t  |\mathbf{r}'(u)|  \; du = |\mathbf{r}'(t)|\]</div>
+</div>
+<p>To find an arc-length parameterization we simply find the arc-length function and then solve it for <em>t</em> in terms of <em>s</em>.  Finally we substitute this solution in for the parameter <em>t</em> in the original parameterization.  This process can be difficult for two reasons.  First, as we saw above, finding the integral for arc-length can be lengthy (or possibly impossible) and second, solving this integral for <em>s</em> can be equally complex (if possible).</p>
+<section id="example-finding-an-arc-length-parameterization">
+<h3>Example: Finding an Arc-Length Parameterization<a class="headerlink" href="#example-finding-an-arc-length-parameterization" title="Link to this heading">#</a></h3>
+<p>We will use a fairly tame example here.  We will find the arc-length parameterization of the helix.  This is an example that can easily be done by hand but we will use the technology to show how the process can be used for more complex situations.</p>
+<section id="id1">
+<h4>CLAE<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the helix curve,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(t \right)}\\\sin{\left(t \right)}\\t\end{array}\right]\end{split}\]</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[cos(t), sin(t), t]</span>
+</pre></div>
+</div>
+<p>Now take its derivative with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>t</em> and order 1.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \sin{\left(t \right)}\\\cos{\left(t \right)}\\1\end{array}\right]\end{split}\]</div>
+<p>Now select, <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Length</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}\]</div>
+<p>Simplify with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2}\]</div>
+<p>The rest of the process is trivial but we will continue. Integrate this with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, use the variable <code class="docutils literal notranslate"><span class="pre">u</span></code>, lower bound of 0 and upper bound of <em>t</em>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{2} t\]</div>
+<p>We will assume that the above integral is in <code class="docutils literal notranslate"><span class="pre">R5</span></code>. To solve this for <em>s</em> we first include <em>s</em> by inputting <code class="docutils literal notranslate"><span class="pre">R5-s</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[- s + \sqrt{2} t\]</div>
+<p>Then we use <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code> and solve for <em>t</em>, giving,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{\sqrt{2} s}{2}\right]\]</div>
+<p>Note that the solution is in a list, select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">from</span> <span class="pre">List</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">All</span> <span class="pre">List</span> <span class="pre">Entries</span></code> to get</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{2} s}{2}\]</div>
+<p>We will assume that this is <code class="docutils literal notranslate"><span class="pre">R8</span></code>.  Now substitute this into the original curve by selecting the curve, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, leave the variable as <em>t</em> and for the expression input <code class="docutils literal notranslate"><span class="pre">R8</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(\frac{\sqrt{2} s}{2} \right)}\\\sin{\left(\frac{\sqrt{2} s}{2} \right)}\\\frac{\sqrt{2} s}{2}\end{array}\right]\end{split}\]</div>
+<p>This is our arc-length parameterization of the helix.  Note that if we find the arc-length of this curve from <em>a</em> to <em>b</em> we get the following.  The derivative is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \frac{\sqrt{2} \sin{\left(\frac{\sqrt{2} s}{2} \right)}}{2}\\\frac{\sqrt{2} \cos{\left(\frac{\sqrt{2} s}{2} \right)}}{2}\\\frac{\sqrt{2}}{2}\end{array}\right]\end{split}\]</div>
+<p>its length is 1, so</p>
+<div class="math notranslate nohighlight">
+\[s= \int_a^b |\mathbf{r}'(t)|  \; dt = \int_a^b 1  \; dt = b - a\]</div>
+<p>Hence the arc-length corresponds directly with the change in the parameter value.</p>
+</section>
+</section>
+</section>
+<section id="curvature">
+<h2>Curvature<a class="headerlink" href="#curvature" title="Link to this heading">#</a></h2>
+<p>The concept of curvature provides a way to measure how sharply a smooth curve turns. The more it turns the larger the curvature.  As an obvious example, a circle has constant curvature. The smaller the radius of the circle, the greater the curvature.  We define the curvature as the rate of change of the unit tangent vector with respect to the arc-length.  So a larger curvature would mean that the tangent vector changes a lot over a small section of the curve, hence the curve is turning a lot in that region.</p>
+<div class="admonition-definition-curvature admonition">
+<p class="admonition-title">Definition: Curvature</p>
+<p>Let <em>C</em> be a smooth curve given by <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, where <em>s</em> is the arc-length parameter. The curvature <span class="math notranslate nohighlight">\(\kappa\)</span> at <em>s</em> is</p>
+<div class="math notranslate nohighlight">
+\[\kappa = \left| \frac{d \mathbf{T}}{ds}  \right| = |\mathbf{T}'(s)|\]</div>
+</div>
+<p>This definition works well theoretically and follows our intuitive notion of curving but it can be difficult to apply.  The problem is that we need to reparameterize the unit tangent vector in terms of arc-length, and we know that this could be difficult.  We will not prove these here, but we can reformulate the curvature calculation without using the arc-length parameterization of the curve.  Instead, any parameterization will suffice.</p>
+<div class="admonition-theorem-alternative-formulas-for-curvature admonition">
+<p class="admonition-title">Theorem: Alternative Formulas for Curvature</p>
+<ul class="simple">
+<li><p>If <em>C</em> is a smooth curve given by <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, then the curvature <span class="math notranslate nohighlight">\(\kappa\)</span> of <em>C</em> at <em>t</em> is given by</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\kappa = \frac{|\mathbf{T}'(t)|}{|\mathbf{r}'(t)|}\]</div>
+<ul class="simple">
+<li><p>If <em>C</em> is a three-dimensional curve given by <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span>, then the curvature <span class="math notranslate nohighlight">\(\kappa\)</span> can be given by the formula</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\kappa = \frac{|\mathbf{r}'(t) \times \mathbf{r}''(t)|}{|\mathbf{r}'(t)|^3}\]</div>
+<ul class="simple">
+<li><p>If <em>C</em> is the graph of a function <span class="math notranslate nohighlight">\(y = f(x)\)</span> and both <span class="math notranslate nohighlight">\(f'(x)\)</span> and <span class="math notranslate nohighlight">\(f''(x)\)</span> exist, then the curvature <span class="math notranslate nohighlight">\(\kappa\)</span> at the point <span class="math notranslate nohighlight">\((x, y)\)</span> is given by</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\kappa = \frac{|f''(x)|}{\left( 1 + (f'(x)^2) \right)^{3/2} }\]</div>
+</div>
+<section id="example-curvature-of-the-twisted-cubic">
+<h3>Example: Curvature of the Twisted Cubic<a class="headerlink" href="#example-curvature-of-the-twisted-cubic" title="Link to this heading">#</a></h3>
+<p>As we have seen above, finding the curvature of the twisted cubic is very difficult to do by definition but using the alternative formulas we can do the calculations.  This would still be difficult to do by hand but with the aid of a CAS we can complete the calculations fairly easily.</p>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the twisted cubic,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}t\\t^{2}\\t^{3}\end{array}\right]\end{split}\]</div>
+<figure class="align-default" id="id9">
+<img alt="Twisted Cubic" src="../_images/Arc005.png" />
+<figcaption>
+<p><span class="caption-text">Twisted Cubic</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will use the first alternative formula, although we could also use the second one here.  Find the unit tangent vector with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Space</span> <span class="pre">Curves</span> <span class="pre">&gt;</span> <span class="pre">Unit</span> <span class="pre">Tangent</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{1}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\\\frac{2 t}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\\\frac{3 t^{2}}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\end{array}\right]\end{split}\]</div>
+<p>Find its derivative, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\frac{- 18 t^{3} - 4 t}{\left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}}\\\frac{2 t \left(- 18 t^{3} - 4 t\right)}{\left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}} + \frac{2}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\\\frac{3 t^{2} \left(- 18 t^{3} - 4 t\right)}{\left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}} + \frac{6 t}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\end{array}\right]\end{split}\]</div>
+<p>and then find its length, <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Length</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\frac{\left(- 18 t^{3} - 4 t\right)^{2}}{\left(9 t^{4} + 4 t^{2} + 1\right)^{3}} + \left(\frac{2 t \left(- 18 t^{3} - 4 t\right)}{\left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}} + \frac{2}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\right)^{2} + \left(\frac{3 t^{2} \left(- 18 t^{3} - 4 t\right)}{\left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}} + \frac{6 t}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\right)^{2}}\]</div>
+<p>The above result is the numerator to our curvature formula.  Now select the original curve and take its derivative, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}1\\2 t\\3 t^{2}\end{array}\right]\end{split}\]</div>
+<p>find its length,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{9 t^{4} + 4 t^{2} + 1}\]</div>
+<p>This is the denominator of our formula, divide the two to get the curvature,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\sqrt{\frac{\left(- 18 t^{3} - 4 t\right)^{2}}{\left(9 t^{4} + 4 t^{2} + 1\right)^{3}} + \left(\frac{2 t \left(- 18 t^{3} - 4 t\right)}{\left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}} + \frac{2}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\right)^{2} + \left(\frac{3 t^{2} \left(- 18 t^{3} - 4 t\right)}{\left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}} + \frac{6 t}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\right)^{2}}}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\]</div>
+<p>Evaluating this at 0 gives a curvature of 2 at the origin.  Evaluating this at 1 gives, <span class="math notranslate nohighlight">\(\frac{\sqrt{266}}{98} \approx 0.16642353500306214772\)</span> and evaluating this at 5 gives, <span class="math notranslate nohighlight">\(\frac{\sqrt{33502826}}{16393538} \approx 0.00035307586290792282323\)</span>.  From the evaluations it appears that the curvature is decreasing as <em>t</em> increases, that is, the curve is becoming closer to a straight line.  This corresponds directly to the graph.</p>
+<p>Note that the curvature calculation is built into CLAE, simply select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Space</span> <span class="pre">Curves</span> <span class="pre">&gt;</span> <span class="pre">Curvature</span></code> and you will get the same result.</p>
+</section>
+</section>
+</section>
+<section id="the-tangent-normal-and-binormal-vectors">
+<h2>The Tangent, Normal, and Binormal Vectors<a class="headerlink" href="#the-tangent-normal-and-binormal-vectors" title="Link to this heading">#</a></h2>
+<p>We have already seen the unit tangent vector, there are two other vectors to a curve that are important in describing curves as well as motion in space, they are the unit normal vector and the unit binormal vector.</p>
+<div class="admonition-definition-unit-tangent-normal-and-binormal-vectors admonition">
+<p class="admonition-title">Definition: Unit Tangent, Normal, and Binormal Vectors</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> represent a smooth curve in three-dimensions. Then the unit tangent vector is,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{T}(t) = \frac{\mathbf{r}'(t)}{|\mathbf{r}'(t)|}\]</div>
+<p>the unit normal vector is,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{N}(t) = \frac{\mathbf{T}'(t)}{|\mathbf{T}'(t)|}\]</div>
+<p>and the unit binormal vector is,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{B}(t) = \mathbf{T}(t) \times \mathbf{N}(t)\]</div>
+</div>
+<p>Note that the unit tangent and the unit normal vectors can be calculated for plane curves as well but the binormal vector can only be calculated for space curves.  It can be shown that these three vectors are orthogonal (perpendicular) to each other.  These three vectors form a frame of reference in three-dimensional space called the TNB frame, also called the Frenet frame of reference.  The TNB frame is used extensively in applications from aviation to computer games.</p>
+<p>In general, finding these vectors can involve a lot of calculation and algebra.  We can use the definitions with our CAS to complete the calculations but these are also built into CLAE so we will use the short-cut.</p>
+<section id="example-tnb-for-the-helix">
+<h3>Example: TNB for the Helix<a class="headerlink" href="#example-tnb-for-the-helix" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>CLAE<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Input the helix,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(t \right)}\\\sin{\left(t \right)}\\t\end{array}\right]\end{split}\]</div>
+<figure class="align-default" id="id10">
+<img alt="Helix" src="../_images/Arc006.png" />
+<figcaption>
+<p><span class="caption-text">Helix</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Space</span> <span class="pre">Curves</span> <span class="pre">&gt;</span> <span class="pre">TNB</span></code>, the result is all three vectors in a list, the tangent is first followed by the normal and finally the binormal.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}- \frac{\sin{\left(t \right)}}{\sqrt{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}}\\\frac{\cos{\left(t \right)}}{\sqrt{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}}\\\frac{1}{\sqrt{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}}\end{array}\right], \  \left[\begin{array}{c}- \frac{\cos{\left(t \right)}}{\sqrt{\frac{\sin^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1} + \frac{\cos^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}} \sqrt{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}}\\- \frac{\sin{\left(t \right)}}{\sqrt{\frac{\sin^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1} + \frac{\cos^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}} \sqrt{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}}\\0\end{array}\right], \  \left[\begin{array}{c}\frac{\sin{\left(t \right)}}{\sqrt{\frac{\sin^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1} + \frac{\cos^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}} \left(\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1\right)}\\- \frac{\cos{\left(t \right)}}{\sqrt{\frac{\sin^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1} + \frac{\cos^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}} \left(\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1\right)}\\\frac{\sin^{2}{\left(t \right)}}{\sqrt{\frac{\sin^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1} + \frac{\cos^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}} \left(\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1\right)} + \frac{\cos^{2}{\left(t \right)}}{\sqrt{\frac{\sin^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1} + \frac{\cos^{2}{\left(t \right)}}{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}} \left(\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1\right)}\end{array}\right]\right]\end{split}\]</div>
+<p>This can be simplified, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code> the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}- \frac{\sqrt{2} \sin{\left(t \right)}}{2}\\\frac{\sqrt{2} \cos{\left(t \right)}}{2}\\\frac{\sqrt{2}}{2}\end{array}\right], \  \left[\begin{array}{c}- \cos{\left(t \right)}\\- \sin{\left(t \right)}\\0\end{array}\right], \  \left[\begin{array}{c}\frac{\sqrt{2} \sin{\left(t \right)}}{2}\\- \frac{\sqrt{2} \cos{\left(t \right)}}{2}\\\frac{\sqrt{2}}{2}\end{array}\right]\right]\end{split}\]</div>
+<p>To graph these we will first substitute <em>a</em> for <em>t</em>, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, keep the variable as <em>t</em> and input <em>a</em> for the expression.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}- \frac{\sqrt{2} \sin{\left(a \right)}}{2}\\\frac{\sqrt{2} \cos{\left(a \right)}}{2}\\\frac{\sqrt{2}}{2}\end{array}\right], \  \left[\begin{array}{c}- \cos{\left(a \right)}\\- \sin{\left(a \right)}\\0\end{array}\right], \  \left[\begin{array}{c}\frac{\sqrt{2} \sin{\left(a \right)}}{2}\\- \frac{\sqrt{2} \cos{\left(a \right)}}{2}\\\frac{\sqrt{2}}{2}\end{array}\right]\right]\end{split}\]</div>
+<p>Do the same with the original expression, to get,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(a \right)}\\\sin{\left(a \right)}\\a\end{array}\right]\end{split}\]</div>
+<p>We will assume this last expression is <code class="docutils literal notranslate"><span class="pre">R5</span></code>.  CLick and drag the TNB list and the previous result to the 3D graphics window.  Change the TNB from a point set to a vector set.  Go into the properties of the TNB vector set and set the initial point to <code class="docutils literal notranslate"><span class="pre">R5</span></code>.  Click the 1-1 button to make sure that the aspect ratio is 1-1.  You should see something like the following,</p>
+<figure class="align-default" id="id11">
+<img alt="Helix with TNB" src="../_images/Arc007.png" />
+<figcaption>
+<p><span class="caption-text">Helix with TNB</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>You can change the <em>a</em> slider to see how the TNB frame changes as the point moves along the curve.</p>
+<figure class="align-default" id="id12">
+<img alt="Helix with TNB" src="../_images/Arc008.png" />
+<figcaption>
+<p><span class="caption-text">Helix with TNB</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-tnb-for-the-twisted-cubic">
+<h3>Example: TNB for the Twisted Cubic<a class="headerlink" href="#example-tnb-for-the-twisted-cubic" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>We will use the same methods as in the last example on the twisted cubic.  Input the twisted cubic,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}t\\t^{2}\\t^{3}\end{array}\right]\end{split}\]</div>
+<figure class="align-default" id="id13">
+<img alt="Twisted Cubic" src="../_images/Arc005.png" />
+<figcaption>
+<p><span class="caption-text">Twisted Cubic</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Find (and simplify) the TNB frame vectors,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[ \left[\begin{array}{c}\frac{1}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\\\frac{2 t}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\\\frac{3 t^{2}}{\sqrt{9 t^{4} + 4 t^{2} + 1}}\end{array}\right], \  \left[\begin{array}{c}\frac{t \left(- 9 t^{2} - 2\right)}{\sqrt{\frac{81 t^{8} + 117 t^{6} + 54 t^{4} + 13 t^{2} + 1}{729 t^{12} + 972 t^{10} + 675 t^{8} + 280 t^{6} + 75 t^{4} + 12 t^{2} + 1}} \left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}}\\\frac{1 - 9 t^{4}}{\sqrt{\frac{81 t^{8} + 117 t^{6} + 54 t^{4} + 13 t^{2} + 1}{729 t^{12} + 972 t^{10} + 675 t^{8} + 280 t^{6} + 75 t^{4} + 12 t^{2} + 1}} \left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}}\\\frac{3 t \left(2 t^{2} + 1\right)}{\sqrt{\frac{81 t^{8} + 117 t^{6} + 54 t^{4} + 13 t^{2} + 1}{729 t^{12} + 972 t^{10} + 675 t^{8} + 280 t^{6} + 75 t^{4} + 12 t^{2} + 1}} \left(9 t^{4} + 4 t^{2} + 1\right)^{\frac{3}{2}}}\end{array}\right], \  \left[\begin{array}{c}\frac{3 t^{2}}{\sqrt{\frac{81 t^{8} + 117 t^{6} + 54 t^{4} + 13 t^{2} + 1}{729 t^{12} + 972 t^{10} + 675 t^{8} + 280 t^{6} + 75 t^{4} + 12 t^{2} + 1}} \left(9 t^{4} + 4 t^{2} + 1\right)}\\\frac{3 t \sqrt{\frac{81 t^{8} + 117 t^{6} + 54 t^{4} + 13 t^{2} + 1}{729 t^{12} + 972 t^{10} + 675 t^{8} + 280 t^{6} + 75 t^{4} + 12 t^{2} + 1}} \left(- 9 t^{4} - 4 t^{2} - 1\right)}{9 t^{4} + 9 t^{2} + 1}\\\frac{\sqrt{\frac{81 t^{8} + 117 t^{6} + 54 t^{4} + 13 t^{2} + 1}{729 t^{12} + 972 t^{10} + 675 t^{8} + 280 t^{6} + 75 t^{4} + 12 t^{2} + 1}} \left(9 t^{4} + 4 t^{2} + 1\right)}{9 t^{4} + 9 t^{2} + 1}\end{array}\right]\right]\end{split}\]</div>
+<p>Substitute <em>a</em> for <em>t</em> both in the curve and the TNB frame, plot these and change the initial point of the TNB vector set to the point. Change the <em>a</em> slider to see how the TNB changes over the curve, you may want to zoom in a bit and decrease the slider range for a better image.</p>
+<figure class="align-default" id="id14">
+<img alt="Twisted Cubic with TNB" src="../_images/Arc009.png" />
+<figcaption>
+<p><span class="caption-text">Twisted Cubic with TNB</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id15">
+<img alt="Twisted Cubic with TNB" src="../_images/Arc010.png" />
+<figcaption>
+<p><span class="caption-text">Twisted Cubic with TNB</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id16">
+<img alt="Twisted Cubic with TNB" src="../_images/Arc011.png" />
+<figcaption>
+<p><span class="caption-text">Twisted Cubic with TNB</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="calcvecfunc.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Calculus of Vector-Valued Functions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="motion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Motion in Space</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arc-length">Arc Length</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-left-2-e-t-e-t-cos-left-t-right-e-t-sin-left-t-right-right">Example: <span class="math notranslate nohighlight">\(\left( 2 e^{t}, \  e^{t} \cos{\left(t \right)}, \  e^{t} \sin{\left(t \right)}\right)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arc-length-parameterization">Arc-Length Parameterization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-finding-an-arc-length-parameterization">Example: Finding an Arc-Length Parameterization</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#curvature">Curvature</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-curvature-of-the-twisted-cubic">Example: Curvature of the Twisted Cubic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-tangent-normal-and-binormal-vectors">The Tangent, Normal, and Binormal Vectors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tnb-for-the-helix">Example: TNB for the Helix</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-tnb-for-the-twisted-cubic">Example: TNB for the Twisted Cubic</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

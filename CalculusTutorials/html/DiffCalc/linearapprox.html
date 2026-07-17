@@ -1,0 +1,879 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linear Approximations and Differentials &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/linearapprox';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Extreme Values" href="maxmin.html" />
+    <link rel="prev" title="Related Rates" href="relatedrates.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Linear Approximations and Differentials</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="linear-approximations-and-differentials">
+<h1><span class="target" id="index-0"></span>Linear Approximations and Differentials<a class="headerlink" href="#linear-approximations-and-differentials" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>Recall that if a function <span class="math notranslate nohighlight">\(f\)</span> is differentiable at <span class="math notranslate nohighlight">\(x = a\)</span> then the equation of the tangent line to <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x = a\)</span> is,</p>
+<div class="math notranslate nohighlight">
+\[y = f'(a)(x-a)+f(a)\]</div>
+<p>To help with the general discussion let’s look at a specific example first.  Let <span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span> and let <span class="math notranslate nohighlight">\(a = 4\)</span>.  The tangent line to the curve at that point is <span class="math notranslate nohighlight">\(y = \frac{x}{4} + 1\)</span>.  Graphing the function and the tangent line we get the following image.</p>
+<figure class="align-default" id="id7">
+<img alt="y = sqrt(x) and Tangent Line" src="../_images/LA001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span> and Tangent Line</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the graph it is clear that the tangent line and the curve are close together close to the point of tangency <span class="math notranslate nohighlight">\((4,2)\)</span>.  Since the two lines are close to each other then the functional values will be close to each other as long as <em>x</em> is close to 4.  For example, if we let <span class="math notranslate nohighlight">\(x = 5\)</span>, <span class="math notranslate nohighlight">\(\sqrt{5} \approx 2.23606797749979\)</span> and if we evaluate the tangent line at <span class="math notranslate nohighlight">\(x = 5\)</span> we get 2.25. The difference between the two approximations is only 0.0139320225002102.</p>
+<p>If we are closer to <span class="math notranslate nohighlight">\(x = 4\)</span> the approximations are even better.  For example, if <span class="math notranslate nohighlight">\(x = 4.1\)</span> then the square root is 2.02484567313166 and the tangent line approximation is 2.025, a difference of only 0.000154326868339716.  On the other hand, the further we get from <span class="math notranslate nohighlight">\(x = 4\)</span> the worse the approximation becomes.  For example, say we let <span class="math notranslate nohighlight">\(x = 12\)</span>, the square root of 12 is approximately, 3.46410161513775 but the tangent line approximation at 12 is 4, a difference of 0.535898384862250, not a very good approximation.</p>
+<div class="admonition-definition-linear-approximation admonition">
+<p class="admonition-title">Definition: Linear Approximation</p>
+<p>Given a differentiable function <span class="math notranslate nohighlight">\(f\)</span>, the equation of the tangent line to <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x = a\)</span> can be used to approximate <span class="math notranslate nohighlight">\(f(x)\)</span> for <span class="math notranslate nohighlight">\(x\)</span> near <span class="math notranslate nohighlight">\(a\)</span>. Therefore, we can write</p>
+<div class="math notranslate nohighlight">
+\[f(x) \approx f'(a)(x - a) + f(a)\]</div>
+<p>for x near a.  We call the linear function</p>
+<div class="math notranslate nohighlight">
+\[L(x) = f'(a)(x - a) + f(a)\]</div>
+<p>the <strong>linear approximation</strong>, or <strong>tangent line approximation</strong>, of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x = a\)</span>. This function <em>L</em> is also known as the <strong>linearization</strong> of <span class="math notranslate nohighlight">\(f\)</span> at <span class="math notranslate nohighlight">\(x = a\)</span>.</p>
+</div>
+<p>At this point we wish to quantify the error in these approximates, that is, make the mathematics a little more formal.  The Leibniz notation for the derivative is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dy}{dx} = f'(x)\]</div>
+<p>Up until now we have simply used this notation as a single symbol representing the derivative, it is actually a bit more than that.  <span class="math notranslate nohighlight">\(dx\)</span> and <span class="math notranslate nohighlight">\(dy\)</span> are <strong>differentials</strong>.  <span class="math notranslate nohighlight">\(dx\)</span> is called the <strong>x-differential</strong> or the <strong>independent differential</strong> and <span class="math notranslate nohighlight">\(dy\)</span> is called the <strong>y-differential</strong> or the <strong>dependent differential</strong>.  We define,</p>
+<div class="math notranslate nohighlight">
+\[dy = f'(x) \; dx\]</div>
+<p>So if <span class="math notranslate nohighlight">\(dx\)</span> is not 0 then dividing both sides by <span class="math notranslate nohighlight">\(dx\)</span> gives us the familiar Leibniz notation.  In this respect we can think of the derivative as a ratio of differentials.  Let’s put this together with the linear approximation discussion above.  Consider the figure below.  We have a function <span class="math notranslate nohighlight">\(f(x)\)</span> and its graph. There is a point on the graph <span class="math notranslate nohighlight">\((a, f(a))\)</span>, now we move the <em>x</em> value a small bit, <span class="math notranslate nohighlight">\(\Delta x = dx\)</span>, and ask the question, how much did the <em>y</em> value change?</p>
+<figure class="align-default" id="id8">
+<img alt="Differential Visualization" src="../_images/LA002.png" />
+<figcaption>
+<p><span class="caption-text">From Calculus Volume 1 by Edwin “Jed” Herman and Gilbert Strang</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Although everything is pictured in the graph we will write it all out algebraically.  The actual change in <em>y</em> is</p>
+<div class="math notranslate nohighlight">
+\[\Delta y = f(a + \Delta x) - f(a) =  f(a + dx) - f(a)\]</div>
+<p>Recall from above that for x near a,</p>
+<div class="math notranslate nohighlight">
+\[f(x) \approx f'(a)(x - a) + f(a) = L(x)\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta y &amp; = f(a + \Delta x) - f(a) \\
+&amp; =  f(a + dx) - f(a) \\
+&amp; \approx L(a + dx)  - f(a) \\
+&amp; = f'(a)(a + dx - a) + f(a) - f(a) \\
+&amp; = f'(a) \, dx \\
+&amp; = dy\end{split}\]</div>
+<p>So if x is near a we have that the differential <span class="math notranslate nohighlight">\(dy\)</span> is approximately the change in <em>y</em>, namely, <span class="math notranslate nohighlight">\(\Delta y\)</span>.</p>
+<p>As an example we will revisit the example above with <span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span> and <span class="math notranslate nohighlight">\(a = 4\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = \frac{1}{2 \sqrt{x}}\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[dy = f'(x) \, dx = \frac{dx}{2 \sqrt{x}}\]</div>
+<p>If we use the differential to estimate the change in the function as <em>x</em> goes from 4 to 4.1, <span class="math notranslate nohighlight">\(a = 4\)</span> and <span class="math notranslate nohighlight">\(dx = 0.1\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[dy = f'(4) \cdot 0.1 = \frac{0.1}{2 \sqrt{4}} = 0.025\]</div>
+<p>The actual change is <span class="math notranslate nohighlight">\(f(4.1)-f(4) \approx 0.02484567313166\)</span>, a difference of only 0.000154326868339716.</p>
+<p>At this point we would like to relate this to the physical sciences.  Anytime you make a measurement there is going to be an error in the measurement. If that measurement error is factored into another calculation the error in the measurement propagates error in the calculation.  For example, if you are calculating the volume of a cube and you measure the side of the cube with a ruler that only goes down to 1/32 of an inch then your error in the side measurement is at most 1/32 of an inch but the error in the volume calculation is 1/32 of an inch in each dimension.  This type of error is known as a <strong>propagated error</strong>.  Putting this in the language of differentials, let’s say the actual value of the length is <em>a</em>, which we do not know.  We do know the measurement which is <span class="math notranslate nohighlight">\(a + dx\)</span> and we have an estimate (or upper bound) on the value of <span class="math notranslate nohighlight">\(dx\)</span>.  The propagated error is</p>
+<div class="math notranslate nohighlight">
+\[\Delta y = f(a + \Delta x) - f(a) =  f(a + dx) - f(a) \approx dy = f'(a) \, dx\]</div>
+<p>Again, we do not know the exact value <em>a</em> but we can estimate it with the measurement, so</p>
+<div class="math notranslate nohighlight">
+\[\Delta y \approx dy = f'(a) \, dx \approx f'(a + dx) \, dx\]</div>
+<p>Going back to the volume of a cube calculation. Let’s say we measured the length of the side of the cube to be 7.5 inches and our ruler only went down to 1/32 of an inch, so the accuracy is only to within 1/32 of an inch.  We will use differentials to estimate the error in the volume of the cube and we will get the actual range of the volume calculation.</p>
+<p>We know that <span class="math notranslate nohighlight">\(-0.03125 = -1/32 \leq dx \leq 1/32 = 0.03125\)</span>.  Also, <span class="math notranslate nohighlight">\(V = x^3\)</span>, so <span class="math notranslate nohighlight">\(dV = 3x^2 \, dx\)</span>. So our estimate on the volume error in cubic inches is</p>
+<div class="math notranslate nohighlight">
+\[-5.2734375 = 3(7.5)^2 \cdot (-0.03125) \leq dV \leq 3(7.5)^2 \cdot (0.03125) = 5.2734375\]</div>
+<p>To calculate the volume range we need to put upper and lower bounds on the measurement, we know,</p>
+<div class="math notranslate nohighlight">
+\[7.46875 \leq x \leq 7.53125\]</div>
+<p>so the volume is in the range,</p>
+<div class="math notranslate nohighlight">
+\[416.623504638672 = 7.46875^3 \leq V \leq 7.53125^3 = 427.170440673828\]</div>
+<p>Our calculated volume would have been <span class="math notranslate nohighlight">\(7.5^3 = 421.875\)</span>, so the actual error would be,</p>
+<div class="math notranslate nohighlight">
+\[-5.25149536132801 \leq \Delta V \leq 5.29544067382801\]</div>
+<p>which is very close to our differential approximation.</p>
+<p>A few more definitions to discuss.  The quantity <span class="math notranslate nohighlight">\(\Delta y\)</span> is the <strong>absolute error</strong> in the calculation, we define the <strong>relative error</strong> as <span class="math notranslate nohighlight">\(\Delta y/y\)</span> where <em>y</em> is the actual value of the quantity and we define the <strong>percentage error</strong> as the relative error expressed as a percentage.</p>
+<p>Going back to the volume example above, the relative error would be <span class="math notranslate nohighlight">\(\Delta V/V\)</span>.  We do not know the actual value of <em>V</em> so we will use the measured value and we will approximate <span class="math notranslate nohighlight">\(\Delta V \approx dv\)</span>.  So our relative error is approximately,</p>
+<div class="math notranslate nohighlight">
+\[dV/V = 5.2734375/421.875 = 0.0125\]</div>
+<p>which is 1.25%.</p>
+</section>
+<section id="example-sqrt-8-99">
+<h2>Example: <span class="math notranslate nohighlight">\(\sqrt{8.99}\)</span><a class="headerlink" href="#example-sqrt-8-99" title="Link to this heading">#</a></h2>
+<p>In this example we will use the linear approximation to estimate <span class="math notranslate nohighlight">\(\sqrt{8.99}\)</span>.  When you are using computer technology with a calculation this simple the point is not to just get an approximation to the value but to get a better understanding of the mathematical concepts.</p>
+<p>With this problem we can look at as <span class="math notranslate nohighlight">\(f(x) = \sqrt{x}\)</span>, <span class="math notranslate nohighlight">\(a = 9\)</span>, and <span class="math notranslate nohighlight">\(dx = -0.01\)</span>.  The reason we chose <span class="math notranslate nohighlight">\(a = 9\)</span> was because <span class="math notranslate nohighlight">\(f(9) = \sqrt{9} = 3\)</span> is easy to calculate.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sqrt(x)</span>
+</pre></div>
+</div>
+<p>Now just input the calculation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f&#39;(9) (-0.01)+f(9)</span>
+</pre></div>
+</div>
+<p>The result should be 2.99833.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>In CLAE the easiest way is to define functions, eliminates a lot of selection of evaluations.</p>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(x):=sqrt(x)</span>
+</pre></div>
+</div>
+<p>Take the derivative with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em> and order 1. Assuming that this is stored in R2, define it as a function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df(x):=R2</span>
+</pre></div>
+</div>
+<p>Now we do the calculation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df(9)*(-0.01)+f(9)</span>
+</pre></div>
+</div>
+<p>The result should be 2.99833333333333.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=sqrt(x)</span>
+</pre></div>
+</div>
+<p>Take the derivative with</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x)</span>
+</pre></div>
+</div>
+<p>Turn the df expression into a function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dff(x):=&#39;&#39;df</span>
+</pre></div>
+</div>
+<p>Now we do the calculation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dff(9)*(-0.01)+f(9)</span>
+</pre></div>
+</div>
+<p>The result should be 2.998333333333334.</p>
+</section>
+</section>
+<section id="example-f-x-frac-3x-2-2-sqrt-x-1">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \frac{3x^2+2}{\sqrt{x+1}}\)</span><a class="headerlink" href="#example-f-x-frac-3x-2-2-sqrt-x-1" title="Link to this heading">#</a></h2>
+<p>In this example we will find <span class="math notranslate nohighlight">\(dy\)</span> given <span class="math notranslate nohighlight">\(f(x) = \frac{3x^2+2}{\sqrt{x+1}}\)</span>, <span class="math notranslate nohighlight">\(x = 1\)</span>, and <span class="math notranslate nohighlight">\(dx = 0.001\)</span>.</p>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(3 x^2+2)</span><span class="go">/sqrt(x+1)</span>
+</pre></div>
+</div>
+<p>Now just input the calculation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f&#39;(1)*0.001</span>
+</pre></div>
+</div>
+<p>The result should be 0.00336.</p>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp gp-VirtualEnv">(3*x^2+2)</span><span class="go">/sqrt(x+1)</span>
+</pre></div>
+</div>
+<p>Take the derivative with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, variable <em>x</em> and order 1.</p>
+<div class="math notranslate nohighlight">
+\[\frac{6 x}{\sqrt{x + 1}} - \frac{3 x^{2} + 2}{2 \left(x + 1\right)^{\frac{3}{2}}}\]</div>
+<p>Assuming that this is stored in R2, define it as a function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df(x):=R2</span>
+</pre></div>
+</div>
+<p>Now we do the calculation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df(1)*0.001</span>
+</pre></div>
+</div>
+<p>The result is <span class="math notranslate nohighlight">\(0.002375 \sqrt{2}\)</span>, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span></code> to get 0.0033587572106361.</p>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=(3*x^2+2)/sqrt(x+1)</span>
+</pre></div>
+</div>
+<p>Take the derivative with</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x)</span>
+</pre></div>
+</div>
+<div class="math notranslate nohighlight">
+\[\frac{6 x}{\sqrt{x + 1}} - \frac{3 x^{2} + 2}{2 \left(x + 1\right)^{\frac{3}{2}}}\]</div>
+<p>Turn the df expression into a function with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dff(x):=&#39;&#39;df</span>
+</pre></div>
+</div>
+<p>Now we do the calculation.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">dff(1)*0.001</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{0.019}{{{2}^{\frac{5}{2}}}}\mbox{}\]</div>
+<p>getting an approximation to this gives, 0.003358757210636099.</p>
+</section>
+</section>
+<section id="example-f-x-sin-x-pm-0-1">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = \sin(x) \pm 0.1\)</span><a class="headerlink" href="#example-f-x-sin-x-pm-0-1" title="Link to this heading">#</a></h2>
+<p>In this section we have been discussing that the tangent line approximation is good if we are close to the point of tangency.  This example asks, if we have a set error bound, how long is our tangent line within the given error of the function.  Put another way, in what interval can we use the tangent line approximation and still be within our error tolerance?</p>
+<p>We will take the tangent line to <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> at <span class="math notranslate nohighlight">\(x = \frac{\pi}{3}\)</span> and determine the interval were the tangent line approximation is within 0.1 of the actual value.</p>
+<section id="id4">
+<h3>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Input the function plus and minus 0.1,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)+0.1</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)-0.1</span>
+</pre></div>
+</div>
+<p>Now we will create the tangent line, input and select <code class="docutils literal notranslate"><span class="pre">Tangent</span></code>, the point is <code class="docutils literal notranslate"><span class="pre">pi/3</span></code> and the function is <code class="docutils literal notranslate"><span class="pre">f</span></code>, assuming that the original function came in as <code class="docutils literal notranslate"><span class="pre">f</span></code>.</p>
+<figure class="align-default" id="id9">
+<img alt="y = sin(x) with 0.1 Band" src="../_images/LA003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> with 0.1 Band</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the image it appears that the interval is about <span class="math notranslate nohighlight">\([0.5, 1.5]\)</span>.  We will do a bit better than this.  When the tangent line goes outside the 0.1 band we put around the sine function it intersects with <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span> so we will take the difference between the tangent line and <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span> and then find the roots of this function.</p>
+<p>This is a little tricky, note that the tangent line output is in equation form, not an expression or function.  We need to extract the right hand side of the equation, do so with <code class="docutils literal notranslate"><span class="pre">RightSide</span></code> and then input the designation for the equation, most likely <code class="docutils literal notranslate"><span class="pre">i</span></code>.  This extracts the right hand side (which is a function in <em>x</em>) but GeoGebra wrote it as <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">y)</span></code> a function of two variables.  This is a minor problem that we can easily fix.</p>
+<p>Assume that <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span> came in as the function <code class="docutils literal notranslate"><span class="pre">g</span></code>, and the right hand side of the tangent line is <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">y)</span></code>.  Input,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g(x)-a(x,0)</span>
+</pre></div>
+</div>
+<p>This should now be a function of a single variable, <em>x</em>, probably called <code class="docutils literal notranslate"><span class="pre">p</span></code>.  For this function we could use the Solve or Solutions commands but we will simply ask it for its special points.  Looking at the roots of this function we see that the interval where the tangent line is within 0.1 of the function is approximately, <span class="math notranslate nohighlight">\([0.53524, 1,51165]\)</span>.</p>
+<figure class="align-default" id="id10">
+<img alt="y = sin(x) with 0.1 Band" src="../_images/LA004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> with 0.1 Band</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id5">
+<h3>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Input the function plus and minus 0.1,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)+0.1</span>
+</pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)-0.1</span>
+</pre></div>
+</div>
+<p>Note, we could have used <code class="docutils literal notranslate"><span class="pre">R1+0.1</span></code> and <code class="docutils literal notranslate"><span class="pre">R1-0.1</span></code>.  Now select the function and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Tangent</span> <span class="pre">Line</span></code>, variable <em>x</em>, point of tangency is <code class="docutils literal notranslate"><span class="pre">pi/3</span></code>, leave the rest of the options set to their defaults.  The tangent line is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{x}{2} - \frac{\pi}{6} + \frac{\sqrt{3}}{2}\]</div>
+<p>and if we graph all of this the image looks like,</p>
+<figure class="align-default" id="id11">
+<img alt="y = sin(x) with 0.1 Band" src="../_images/LA005.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> with 0.1 Band</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the image it appears that the interval is about <span class="math notranslate nohighlight">\([0.5, 1.5]\)</span>.  We will do a bit better than this.  When the tangent line goes outside the 0.1 band we put around the sine function it intersects with <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span> so we will take the difference between the tangent line and <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span> and then find the roots of this function.</p>
+<p>Take the difference between the tangent line and <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span>, probably <code class="docutils literal notranslate"><span class="pre">R4-R2</span></code>.  The result is either,</p>
+<div class="math notranslate nohighlight">
+\[- \frac{x}{2} + \sin{\left(x \right)} - \frac{\sqrt{3}}{2} + 0.1 + \frac{\pi}{6}\]</div>
+<p>or its negative.  If we try to solve this exactly CLAE will return an error meaning that it simply could not do it.  So we will get approximate solutions.  Select this function and then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Numeric</span> <span class="pre">Solutions</span> <span class="pre">in</span> <span class="pre">[a,</span> <span class="pre">b]</span></code>, the variable is <em>x</em>, the lower bound is 0.4 and the upper bound is 1.6.  This returns <span class="math notranslate nohighlight">\(\left[ 0.535237609230311, \  1.51164940503053\right]\)</span>, which is our desired interval.</p>
+</section>
+<section id="id6">
+<h3>Maxima<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>Input the function and the function plus and minus 0.1,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=sin(x);</span>
+<span class="go">ub:sin(x)+0.1;</span>
+<span class="go">lb:sin(x)-0.1</span>
+</pre></div>
+</div>
+<p>Construct the tangent line,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">df:diff(f(x),x);</span>
+<span class="go">dff(x):=&#39;&#39;df;</span>
+<span class="gp">tl:dff(%pi/3)*(x-%pi/3)+f(%</span>pi/3<span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Plot all of these together into one plot.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">wxplot2d([f(x), lb, ub, tl],[x,0.3,1.8]);</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id12">
+<img alt="y = sin(x) with 0.1 Band" src="../_images/LA006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> with 0.1 Band</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>From the image it appears that the interval is about <span class="math notranslate nohighlight">\([0.5, 1.5]\)</span>.  We will do a bit better than this.  When the tangent line goes outside the 0.1 band we put around the sine function it intersects with <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span> so we will take the difference between the tangent line and <span class="math notranslate nohighlight">\(\sin(x) + 0.1\)</span> and then find the roots of this function.  To do so simply run the commands,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">find_root(tl-ub,0.4, 0.8);</span>
+<span class="go">find_root(tl-ub,1.4, 1.8);</span>
+</pre></div>
+</div>
+<p>This returns the desired interval <span class="math notranslate nohighlight">\([0.5352376092303115, 1.511649405030529]\)</span>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="relatedrates.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Related Rates</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="maxmin.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extreme Values</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-sqrt-8-99">Example: <span class="math notranslate nohighlight">\(\sqrt{8.99}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-frac-3x-2-2-sqrt-x-1">Example: <span class="math notranslate nohighlight">\(f(x) = \frac{3x^2+2}{\sqrt{x+1}}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-sin-x-pm-0-1">Example: <span class="math notranslate nohighlight">\(f(x) = \sin(x) \pm 0.1\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

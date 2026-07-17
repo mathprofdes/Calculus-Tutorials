@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Calculus of Vector-Valued Functions &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/calcvecfunc';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Arc Length and Curvature" href="arclength.html" />
+    <link rel="prev" title="Vector-Valued Functions and Space Curves" href="spacecurve.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fctsevvars.html">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Calculus of Vector-Valued Functions</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="calculus-of-vector-valued-functions">
+<h1><span class="target" id="index-0"></span>Calculus of Vector-Valued Functions<a class="headerlink" href="#calculus-of-vector-valued-functions" title="Link to this heading">#</a></h1>
+<p>In this section we extend the concepts of differentiation and integration to vector-valued functions.  These definitions essentially turn out to be componentwise differentiation and integration of the component functions that make up the vector-valued function.  This does add a few new properties to differentiation.</p>
+<section id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Link to this heading">#</a></h2>
+<p>The definition of the limit is simply componentwise limits, as long as the limit of each component exists.</p>
+<div class="admonition-definition-limit-of-a-vector-valued-function admonition">
+<p class="admonition-title">Definition: Limit of a Vector-Valued Function</p>
+<p>The limit of a vector-valued function is simply the limits of the component functions, if they exist.  Specifically, if,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}(t) = (f(t), g(t))\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\lim_{t \to a} \mathbf{r}(t) = \left( \lim_{t \to a} f(t), \lim_{t \to a} g(t) \right)\]</div>
+<p>provided that both <span class="math notranslate nohighlight">\(\lim_{t \to a} f(t)\)</span> and <span class="math notranslate nohighlight">\(\lim_{t \to a} g(t)\)</span> exist.</p>
+<p>Similarly, if,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}(t) = (f(t), g(t), h(t))\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[\lim_{t \to a} \mathbf{r}(t) = \left( \lim_{t \to a} f(t), \lim_{t \to a} g(t), \lim_{t \to a} h(t) \right)\]</div>
+<p>provided that all of <span class="math notranslate nohighlight">\(\lim_{t \to a} f(t)\)</span>, <span class="math notranslate nohighlight">\(\lim_{t \to a} g(t)\)</span>, and <span class="math notranslate nohighlight">\(\lim_{t \to a} h(t)\)</span> exist.</p>
+<p>Note that the above is still true if the limits are one-sided or if <em>a</em> is <span class="math notranslate nohighlight">\(\pm\infty.\)</span></p>
+</div>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h3>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>In this example we will look at the space curve,</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right)\]</div>
+<p>Input this into CLAE in either the CAS or using the vector input dialog.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[(t + 1)/(2*t + 1), sin(t)/t, 3*cos(t)]</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id7">
+<img alt=":math:`\left[ \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right]`" src="../_images/SpaceCurves006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left[ \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right]\)</span></span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that we increased the range to <span class="math notranslate nohighlight">\([-100, 100]\)</span> as well as the number of points plotted.  Also note that the straight line that looks parallel to the <em>x</em>-axis is an asymptote from the first component of the vector-valued function.  We will now take the limit of this function as <span class="math notranslate nohighlight">\(t \to 0.\)</span>  Select this function and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, set the limit point to 0 and keep the other settings as they are, the result is <span class="math notranslate nohighlight">\(\left[ 1, \  1, \  3\right].\)</span>  This point is plotted in red in the above image.</p>
+<p>Note that if we try to evaluate the function at 0 with <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> we get <span class="math notranslate nohighlight">\(\left[ 1, \  \text{NaN}, \  3\right].\)</span>  The first and third component exist at 0 but the second does not, hence the vector-valued function does not exist at <span class="math notranslate nohighlight">\(t =0.\)</span>  So theoretically, there is a hole in the graph where the red point is.</p>
+</section>
+</section>
+</section>
+<section id="continuity">
+<h2>Continuity<a class="headerlink" href="#continuity" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-continuity-of-a-vector-valued-function admonition">
+<p class="admonition-title">Definition: Continuity of a Vector-Valued Function</p>
+<p>The vector-valued function <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> is continuous at <span class="math notranslate nohighlight">\(t = a\)</span> if the following three conditions hold,</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathbf{r}(a)\)</span> exists.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{t \to a} \mathbf{r}(t)\)</span> exists.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{t \to a} \mathbf{r}(t) = \mathbf{r}(a)\)</span>.</p></li>
+</ol>
+<p>Note that we can also define one-sided continuity in a similar manner.</p>
+</div>
+<section id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>We will revisit the example we did above,</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right)\]</div>
+<p>Input this into CLAE in either the CAS or using the vector input dialog.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[(t + 1)/(2*t + 1), sin(t)/t, 3*cos(t)]</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id8">
+<img alt=":math:`\left[ \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right]`" src="../_images/SpaceCurves006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left[ \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right]\)</span></span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>As we saw above, if we try to evaluate the function at <span class="math notranslate nohighlight">\(t =0\)</span> we get <span class="math notranslate nohighlight">\(\left[ 1, \  \text{NaN}, \  3\right].\)</span>  So this function is not continuous at <span class="math notranslate nohighlight">\(t =0\)</span> since the first criterion fails.  We get a similar result at <span class="math notranslate nohighlight">\(t = -1/2\)</span>, <span class="math notranslate nohighlight">\(\left[ \tilde{\infty}, \  2 \sin{\left(\frac{1}{2} \right)}, \  3 \cos{\left(\frac{1}{2} \right)}\right]\)</span>, again discontinuous.  If we try <span class="math notranslate nohighlight">\(t =1\)</span> we get</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \mathbf{r}(1) = \left[ \frac{2}{3}, \  \sin{\left(1 \right)}, \  3 \cos{\left(1 \right)}\right]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{t \to 1} \mathbf{r}(t) = \left[ \frac{2}{3}, \  \sin{\left(1 \right)}, \  3 \cos{\left(1 \right)}\right]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \lim_{t \to 1} \mathbf{r}(t) = \mathbf{r}(1)\)</span> is true from the above calculations.</p></li>
+</ol>
+<p>So our function is continuous at <span class="math notranslate nohighlight">\(t =1.\)</span></p>
+</section>
+</section>
+</section>
+<section id="derivatives">
+<h2>Derivatives<a class="headerlink" href="#derivatives" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-the-derivative-of-a-vector-valued-function admonition">
+<p class="admonition-title">Definition: The Derivative of a Vector-Valued Function</p>
+<p>The derivative of a vector-valued function <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{r}'(t) = \lim_{h \to 0} \frac{\mathbf{r}(t+h) - \mathbf{r}(t)}{h}\]</div>
+<p>as long as this limit exists.</p>
+</div>
+<p>If we look at the above definition, noting that the algebra and limits are all componentwise operations we see that the derivative of a vector-valued function is simply the derivative of the component functions.</p>
+<div class="admonition-theorem-differentiation-of-vector-valued-functions admonition">
+<p class="admonition-title">Theorem: Differentiation of Vector-Valued Functions</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t))\)</span> then <span class="math notranslate nohighlight">\(\mathbf{r}'(t) = \left( f'(t), g'(t) \right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t), h(t))\)</span> then <span class="math notranslate nohighlight">\(\mathbf{r}'(t) = \left( f'(t), g'(t), h'(t) \right).\)</span></p></li>
+</ul>
+</div>
+<p>Many of the rules for calculating derivatives of real-valued functions can be applied to calculating the derivatives of vector- valued functions as well. The derivative of a real-valued function can be interpreted as the slope of a tangent line or the instantaneous rate of change of the function. The derivative of a vector-valued function is also an instantaneous rate of change.  For example, if a function represents the position of an object at a given point in time, the derivative represents its velocity at that same point in time. Here the slope of a tangent line is replaced by the tangent vector, hence a magnitude and a direction.</p>
+<section id="id3">
+<h3>Example<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>We will revisit the example we did above,</p>
+<div class="math notranslate nohighlight">
+\[\left( \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right)\]</div>
+<p>Input this into CLAE in either the CAS or using the vector input dialog.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[(t + 1)/(2*t + 1), sin(t)/t, 3*cos(t)]</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id9">
+<img alt=":math:`\left[ \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right]`" src="../_images/SpaceCurves006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(\left[ \frac{t + 1}{2 t + 1}, \  \frac{\sin{\left(t \right)}}{t}, \  3 \cos{\left(t \right)}\right]\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Select the function and then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, keep the default settings and click OK.  The result is</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{- 2 t - 2}{\left(2 t + 1\right)^{2}} + \frac{1}{2 t + 1}, \  \frac{\cos{\left(t \right)}}{t} - \frac{\sin{\left(t \right)}}{t^{2}}, \  - 3 \sin{\left(t \right)}\right]\]</div>
+</section>
+</section>
+</section>
+<section id="derivative-properties">
+<h2>Derivative Properties<a class="headerlink" href="#derivative-properties" title="Link to this heading">#</a></h2>
+<p>Several of the derivative properties are the same as for real-valued functions, due to the componentwise nature of the calculations. Note that we get what appears to be three product rules.</p>
+<div class="admonition-theorem-derivative-properties-of-vector-valued-functions admonition">
+<p class="admonition-title">Theorem: Derivative Properties of Vector-Valued Functions</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} (c \mathbf{r}(t)) = c \mathbf{r}'(t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} (\mathbf{r}(t) \pm \mathbf{u}(t)) = \mathbf{r}'(t) \pm \mathbf{u}'(t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} (f(t) \mathbf{r}(t)) = f(t) \mathbf{r}'(t) + f'(t)\mathbf{r}'(t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} (\mathbf{r}(t) \cdot \mathbf{u}(t)) = \mathbf{r}'(t) \cdot \mathbf{u}(t) + \mathbf{r}(t) \cdot \mathbf{u}'(t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} (\mathbf{r}(t) \times \mathbf{u}(t)) = \mathbf{r}'(t) \times \mathbf{u}(t) + \mathbf{r}(t) \times \mathbf{u}'(t)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\displaystyle \frac{d}{dt} (\mathbf{r}(f(t))) = \mathbf{r}'(f(t)) f'(t)\)</span></p></li>
+</ol>
+</div>
+</section>
+<section id="tangent-vectors-and-unit-tangent-vectors">
+<h2>Tangent Vectors and Unit Tangent Vectors<a class="headerlink" href="#tangent-vectors-and-unit-tangent-vectors" title="Link to this heading">#</a></h2>
+<p>The three-dimensional counterpart to the tangent line and its slope is the tangent vector.</p>
+<div class="admonition-definition-tangent-vectors admonition">
+<p class="admonition-title">Definition: Tangent Vectors</p>
+<p>The vector <span class="math notranslate nohighlight">\(\mathbf{r}'(a)\)</span> is a tangent vector of the vector-valued function <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> at <span class="math notranslate nohighlight">\(t =a\)</span>.  If <span class="math notranslate nohighlight">\(\mathbf{r}'(a) \neq \mathbf{0}\)</span> then the vector,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{T}(a) = \frac{\mathbf{r}'(a)}{|\mathbf{r}'(a)|}\]</div>
+<p>is the unit tangent vector to <span class="math notranslate nohighlight">\(\mathbf{r}(t)\)</span> at <span class="math notranslate nohighlight">\(t =a\)</span>.  In general, if <span class="math notranslate nohighlight">\(\mathbf{r}'(t) \neq \mathbf{0}\)</span> then the vector,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{T}(t) = \frac{\mathbf{r}'(t)}{|\mathbf{r}'(t)|}\]</div>
+<p>is the unit tangent vector to <span class="math notranslate nohighlight">\(\mathbf{r}(t).\)</span></p>
+</div>
+<section id="example-visualizing-the-tangent-vector">
+<h3>Example: Visualizing the Tangent Vector<a class="headerlink" href="#example-visualizing-the-tangent-vector" title="Link to this heading">#</a></h3>
+<section id="id5">
+<h4>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>For this example we will look at the Helix.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(t \right)}\\\sin{\left(t \right)}\\t\end{array}\right]\end{split}\]</div>
+<p>For what we are doing here having vectors in (column vector) form is easier to work with.  In general, this form works best for most calculations in this software.  Select the vector input tool with either <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Input</span> <span class="pre">Vector</span></code> or its corresponding toolbar button.  Then input the following into the dialog box and click OK.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[cos(t), sin(t), t]</span>
+</pre></div>
+</div>
+<p>We will assume this is <code class="docutils literal notranslate"><span class="pre">R1</span></code>. Click and drag it over to the 3D graphics window.</p>
+<figure class="align-default" id="id10">
+<img alt="Helix" src="../_images/SpaceCurves007.png" />
+<figcaption>
+<p><span class="caption-text">Helix</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>We will calculate and graph the unit tangent vector to the curve, in fact we will link it to a slider so it can be viewed dynamically.  We will now calculate,</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{T}(t) = \frac{\mathbf{r}'(t)}{|\mathbf{r}'(t)|}\]</div>
+<p>Select the function and take its derivative with <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Derivative</span></code>, leave the default settings, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \sin{\left(t \right)}\\\cos{\left(t \right)}\\1\end{array}\right]\end{split}\]</div>
+<p>We will assume that this is <code class="docutils literal notranslate"><span class="pre">R2</span></code>.  Now we will find its length, select it and then select <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Length</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\sin^{2}{\left(t \right)} + \cos^{2}{\left(t \right)} + 1}\]</div>
+<p>we will assume that this is <code class="docutils literal notranslate"><span class="pre">R3</span></code>.  It can obviously be simplified, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Simplify</span></code> and the result is <code class="docutils literal notranslate"><span class="pre">R4</span></code> which should be <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.  Now we finish the calculation buy inputting <code class="docutils literal notranslate"><span class="pre">R2/R4</span></code> into the CAS, getting <code class="docutils literal notranslate"><span class="pre">R5</span></code> of</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \frac{\sqrt{2} \sin{\left(t \right)}}{2}\\\frac{\sqrt{2} \cos{\left(t \right)}}{2}\\\frac{\sqrt{2}}{2}\end{array}\right]\end{split}\]</div>
+<p>Note that once we had the derivative vector we could have just normalized it with <code class="docutils literal notranslate"><span class="pre">Vector</span> <span class="pre">&gt;</span> <span class="pre">Normalize</span></code>.  In addition, CLAE has an option for finding the unit tangent vector to a vector-valued function under <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Space</span> <span class="pre">Curves</span> <span class="pre">&gt;</span> <span class="pre">Unit</span> <span class="pre">Tangent</span></code>.</p>
+<p>Now we will add this to the graph.  Select the space curve <code class="docutils literal notranslate"><span class="pre">R1</span></code>, then select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, keep the variable as <em>t</em> and input the expression <code class="docutils literal notranslate"><span class="pre">a</span></code>.  The result is, <code class="docutils literal notranslate"><span class="pre">R6</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}\cos{\left(a \right)}\\\sin{\left(a \right)}\\a\end{array}\right]\end{split}\]</div>
+<p>Click and drag this over to the 3D graphics window and it will come in as a point on the curve and put an <em>a</em> slider in the graphics manager.  If you move the slider you should see the point moving along the curve.  Now select the unit tangent vector <code class="docutils literal notranslate"><span class="pre">R5</span></code> and do the same thing, select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, keep the variable as <em>t</em> and input the expression <code class="docutils literal notranslate"><span class="pre">a</span></code>.  The result is, <code class="docutils literal notranslate"><span class="pre">R7</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}- \frac{\sqrt{2} \sin{\left(a \right)}}{2}\\\frac{\sqrt{2} \cos{\left(a \right)}}{2}\\\frac{\sqrt{2}}{2}\end{array}\right]\end{split}\]</div>
+<p>Click and drag this over to the 3D graphics window.  This will come in as a point, change its type to  vector set. This is now a vector that starts at the origin, we want to start it at the point on the curve, select the properties of this last vector, the initial point should look like <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">0]</span></code>, delete this and input <code class="docutils literal notranslate"><span class="pre">R6</span></code>, and click OK.  The unit tangent vector now starts at the point on the curve. Change the <em>a</em> slider to view the unit tangent as the point moves along the curve.</p>
+<figure class="align-default" id="id11">
+<img alt="Helix with Unit Tangent Vector" src="../_images/SpaceCurves008.png" />
+<figcaption>
+<p><span class="caption-text">Helix with Unit Tangent Vector</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="integrals">
+<h2>Integrals<a class="headerlink" href="#integrals" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-integrals-of-vector-valued-functions admonition">
+<p class="admonition-title">Definition: Integrals of Vector-Valued Functions</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t))\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \int \mathbf{r}(t) \; dt = \left( \int f(t) \; dt, \int g(t) \; dt \right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t), h(t))\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \int \mathbf{r}(t) \; dt = \left( \int f(t) \; dt, \int g(t) \; dt, \int h(t) \; dt \right)\)</span>.</p></li>
+</ul>
+<p>The same is true for definite integrals,</p>
+<ul class="simple">
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t))\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \int_a^b \mathbf{r}(t) \; dt = \left( \int_a^b f(t) \; dt, \int_a^b g(t) \; dt \right)\)</span>.</p></li>
+<li><p>If <span class="math notranslate nohighlight">\(\mathbf{r}(t) = (f(t), g(t), h(t))\)</span> then <span class="math notranslate nohighlight">\(\displaystyle \int_a^b \mathbf{r}(t) \; dt = \left( \int_a^b f(t) \; dt, \int_a^b g(t) \; dt, \int_a^b h(t) \; dt \right)\)</span>.</p></li>
+</ul>
+</div>
+<section id="example-int-left-tan-left-t-right-sin-2-left-t-right-t-2-right-dt">
+<h3>Example: <span class="math notranslate nohighlight">\(\int \left( \tan{\left(t \right)}, \  \sin^{2}{\left(t \right)}, \  t^{2}\right) \; dt\)</span><a class="headerlink" href="#example-int-left-tan-left-t-right-sin-2-left-t-right-t-2-right-dt" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>CLAE<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>Input the expression in either the CAS or with the vector input.</p>
+<div class="math notranslate nohighlight">
+\[\left( \tan{\left(t \right)}, \  \sin^{2}{\left(t \right)}, \  t^{2}\right)\]</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[tan(t), sin(t)^2, t^2]</span>
+</pre></div>
+</div>
+<p>We will start with an indefinite integral, select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Indefinite</span> <span class="pre">Integral</span></code>, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \ln{\left(\cos{\left(t \right)} \right)}, \  \frac{t}{2} - \frac{\sin{\left(2 t \right)}}{4}, \  \frac{t^{3}}{3}\right]\]</div>
+<p>Next we will calculate,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{\pi/4} \left( \tan{\left(t \right)}, \  \sin^{2}{\left(t \right)}, \  t^{2}\right) \; dt\]</div>
+<p>Select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, input <code class="docutils literal notranslate"><span class="pre">0</span></code> for the lower bound and <code class="docutils literal notranslate"><span class="pre">pi/4</span></code> for the upper bound, the result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ - \ln{\left(\frac{\sqrt{2}}{2} \right)}, \  - \frac{1}{4} + \frac{\pi}{8}, \  \frac{\pi^{3}}{192}\right]\]</div>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="spacecurve.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vector-Valued Functions and Space Curves</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="arclength.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Arc Length and Curvature</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limits">Limits</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example">Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuity">Continuity</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivatives">Derivatives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Example</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivative-properties">Derivative Properties</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tangent-vectors-and-unit-tangent-vectors">Tangent Vectors and Unit Tangent Vectors</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-visualizing-the-tangent-vector">Example: Visualizing the Tangent Vector</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrals">Integrals</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-left-tan-left-t-right-sin-2-left-t-right-t-2-right-dt">Example: <span class="math notranslate nohighlight">\(\int \left( \tan{\left(t \right)}, \  \sin^{2}{\left(t \right)}, \  t^{2}\right) \; dt\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,905 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Improper Integrals &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'IntCalc/impint';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Areas Between Curves" href="areabetcurves.html" />
+    <link rel="prev" title="Numerical Integration" href="numint.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Integration</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areaapprox.html">Approximating Areas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="defint.html">The Definite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fundcalc.html">The Fundamental Theorem of Calculus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="netchange.html">The Net Change Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inttech.html">Techniques of Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="numint.html">Numerical Integration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Improper Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications of Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="areabetcurves.html">Areas Between Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volslice.html">Volumes by Slicing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="volrev.html">Volumes of Revolution: Disk and Washer Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shells.html">Volumes of Revolution by Cylindrical Shells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length of a Curve</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="physapps.html">Physical and Economic Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centmass.html">Moments and Centers of Mass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differential Equations</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="diffeq.html">Differential Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nummeth.html">Direction Fields and Numerical Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="separable.html">Separable Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expgrowth.html">Exponential Growth and Decay</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logistic.html">The Logistic Equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="firstorderlinear.html">First-Order Linear Equations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Sequences and Series</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="sequences.html">Sequences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="series.html">Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sertests.html">Convergence and Divergence Tests for Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="powerseries.html">Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FctRepPower.html">Functions as Power Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taylor.html">Taylor Series</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Parametric Equations and Polar Coordinates</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="parametric.html">Parametric Equations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parametriccalc.html">Calculus of Parametric Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polar.html">Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polarcalc.html">Area and Arc Length in Polar Coordinates</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Integral Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Improper Integrals</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="improper-integrals">
+<h1><span class="target" id="index-0"></span>Improper Integrals<a class="headerlink" href="#improper-integrals" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>There are basically two types of improper integrals, integrating over an infinite interval or integrating over a region where the function is discontinuous, usually where there is a vertical asymptote to the function.  In both cases the region bounded by the function and the curve is infinite but surprisingly it can have finite area.</p>
+<p>We will start out with integrating over an infinite interval, that is, if one or both of the bounds are <span class="math notranslate nohighlight">\(\pm \infty\)</span>.</p>
+<div class="admonition-definition-improper-integral-over-an-infinite-interval admonition">
+<p class="admonition-title">Definition: Improper Integral over an Infinite Interval</p>
+<ol class="arabic simple">
+<li><p>If a function <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous over an interval of the form <span class="math notranslate nohighlight">\([a, \infty)\)</span>. Then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_a^{\infty} f(x) \; dx = \lim_{t \to \infty} \int_a^t f(x) \; dx\]</div>
+<p>provided this limit exists.</p>
+<ol class="arabic simple" start="2">
+<li><p>If a function <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous over an interval of the form <span class="math notranslate nohighlight">\((-\infty, a]\)</span>. Then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{a} f(x) \; dx = \lim_{t \to -\infty} \int_t^a f(x) \; dx\]</div>
+<p>provided this limit exists.</p>
+<p>In each case, if the limit exists, then the <strong>improper integral</strong> is said to converge. If the limit does not exist, then
+the improper integral is said to diverge.</p>
+<ol class="arabic simple" start="3">
+<li><p>If a function <span class="math notranslate nohighlight">\(f(x)\)</span> is continuous over the interval <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>. Then</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \; dx = \int_{-\infty}^{a} f(x) \; dx + \int_a^{\infty} f(x) \; dx = \lim_{t \to -\infty} \int_t^a f(x) \; dx + \lim_{t \to \infty} \int_a^t f(x) \; dx\]</div>
+<p>for any real number <span class="math notranslate nohighlight">\(a\)</span>, provided that both of the limits exists.  If either limit does not exist then the integral diverges, even if the other does exist.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Be careful,</p>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} f(x) \; dx \neq \lim_{t \to \infty} \int_{-t}^{t} f(x) \; dx\]</div>
+</div>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\int_2^{\infty} \frac{1}{x^2} \; dx = \lim_{t \to \infty} \int_2^t \frac{1}{x^2} \; dx = \lim_{t \to \infty} \frac{1}{2} - \frac{1}{t} = \frac{1}{2}\]</div>
+<figure class="align-default" id="id13">
+<img alt="y = 1/x^2" src="../_images/Imp0013.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^2}\)</span></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>On the other hand,</p>
+<div class="math notranslate nohighlight">
+\[\int_2^{\infty} \frac{1}{x} \; dx = \lim_{t \to \infty} \int_2^t \frac{1}{x} \; dx = \lim_{t \to \infty} \ln{\left(t \right)} - \ln{\left(2 \right)} = \infty\]</div>
+<figure class="align-default" id="id14">
+<img alt="y = 1/x" src="../_images/Imp0021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x}\)</span></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now let’s look at the other type, where the function is discontinuous on the interval being integrated over. For example, if we take the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sqrt{x}}\)</span>, can we integrate from 0 to 1?</p>
+<figure class="align-default" id="id15">
+<img alt="y = 1/x^(1/2)" src="../_images/Imp0031.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sqrt{x}}\)</span></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition-definition-improper-integral-over-a-discontinuity admonition">
+<p class="admonition-title">Definition: Improper Integral Over a Discontinuity</p>
+<ol class="arabic simple">
+<li><p>If <span class="math notranslate nohighlight">\(f(x)\)</span> be continuous over <span class="math notranslate nohighlight">\([a, b)\)</span>. Then,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_a^b f(x) \; dx = \lim_{t \to b^-} \int_a^t f(x) \; dx\]</div>
+<p>if the limit exists.</p>
+<ol class="arabic simple" start="2">
+<li><p>If <span class="math notranslate nohighlight">\(f(x)\)</span> be continuous over <span class="math notranslate nohighlight">\((a, b]\)</span>. Then,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_a^b f(x) \; dx = \lim_{t \to a^+} \int_t^b f(x) \; dx\]</div>
+<p>if the limit exists.</p>
+<p>In each case, if the limit exists, then the improper integral is said to converge. If the limit does not exist, then
+the improper integral is said to diverge.</p>
+<ol class="arabic simple" start="3">
+<li><p>If <span class="math notranslate nohighlight">\(f(x)\)</span> be continuous over <span class="math notranslate nohighlight">\([a, b]\)</span> except for possibly one point <span class="math notranslate nohighlight">\(c\)</span> in <span class="math notranslate nohighlight">\((a, b)\)</span>. Then,</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_a^b f(x) \; dx = \int_a^c f(x) \; dx + \int_c^b f(x) \; dx = \lim_{t \to c^-} \int_a^t f(x) \; dx + \lim_{t \to c^+} \int_t^b f(x) \; dx\]</div>
+<p>provided that both of the limits exists.  If either limit does not exist then the integral diverges, even if the other does exist.</p>
+</div>
+<p>For example, take the function <span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sqrt{x}}\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^1 \frac{1}{\sqrt{x}} \; dx = \lim_{t \to 0^+} \int_t^1 \frac{1}{\sqrt{x}} \; dx = \lim_{t \to 0^+} 2 - 2 \sqrt{t} = 2\]</div>
+<p>On the other hand,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^{1} \frac{1}{x} \; dx = \lim_{t \to 0^+} \int_t^1 \frac{1}{x} \; dx = \lim_{t \to 0^+} - \ln{\left(t \right)} = \infty\]</div>
+<p>In many cases finding an exact value for an improper integral can be difficult.  In these cases is it sometimes sufficient to simply determine if an improper integral converges or diverges.</p>
+<div class="admonition-theorem-comparison-theorem-for-improper-integrals admonition">
+<p class="admonition-title">Theorem: Comparison Theorem for Improper Integrals</p>
+<p>If <span class="math notranslate nohighlight">\(f(x)\)</span> and <span class="math notranslate nohighlight">\(g(x)\)</span> are continuous on <span class="math notranslate nohighlight">\([a, \infty)\)</span> and <span class="math notranslate nohighlight">\(0 \leq f(x) \leq g(x)\)</span> for <span class="math notranslate nohighlight">\(x \leq a\)</span>.  Then</p>
+<ol class="arabic simple">
+<li><p>If</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_a^{\infty} g(x) \; dx\]</div>
+<p>converges, then so does</p>
+<div class="math notranslate nohighlight">
+\[\int_a^{\infty} f(x) \; dx\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\int_a^{\infty} f(x) \; dx \leq \int_a^{\infty} g(x) \; dx\]</div>
+<ol class="arabic simple" start="2">
+<li><p>If</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\int_a^{\infty} f(x) \; dx\]</div>
+<p>diverges, then so does</p>
+<div class="math notranslate nohighlight">
+\[\int_a^{\infty} g(x) \; dx\]</div>
+</div>
+<p>A quick word about computer algebra systems and improper integrals in general.  Most computer algebra systems will determine if a definite integral is improper in the process of calculating the integral and take the appropriate limits. So you rarely need to go to the lengths of the limit yourself when doing these on the machine.</p>
+</section>
+<section id="example-int-1-infty-x-e-x-dx">
+<h2>Example: <span class="math notranslate nohighlight">\(\int_1^{\infty} x e^{-x} \; dx\)</span><a class="headerlink" href="#example-int-1-infty-x-e-x-dx" title="Link to this heading">#</a></h2>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x e^(-x)</span>
+</pre></div>
+</div>
+<p>then in a new cell type in <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">1,</span> <span class="pre">infinity)</span></code>. The result is approximate of 0.73576 and it gives you a nice picture of the area.</p>
+<figure class="align-default" id="id16">
+<img alt="y = x e^(-x)" src="../_images/Imp0041.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = x e^{-x}\)</span></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x * E^(-x)</span>
+</pre></div>
+</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound is 1, upper bound is <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is <span class="math notranslate nohighlight">\(\frac{2}{e}\)</span> which approximates to 0.735758882342885.</p>
+<p>We could also have done this by definition.  If we select the function then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound is 1, upper bound is <code class="docutils literal notranslate"><span class="pre">t</span></code>. We would get the result,</p>
+<div class="math notranslate nohighlight">
+\[\left(- t - 1\right) e^{- t} + \frac{2}{e}\]</div>
+<p>Then is we select, <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Limit</span></code>, variable <em>t</em>, limit point <code class="docutils literal notranslate"><span class="pre">oo</span></code> we would get the same result of <span class="math notranslate nohighlight">\(\frac{2}{e}.\)</span></p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="gp">f(x):=x * %</span>e^<span class="o">(</span>-x<span class="o">)</span>
+</pre></div>
+</div>
+<p>then integrate with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(f(x), x, 1, inf);</span>
+</pre></div>
+</div>
+<p>The result is a bit strange, <code class="docutils literal notranslate"><span class="pre">gamma_incomplete(2,1)</span></code>.  When you approximate this you get 0.7357588823428847.  We could also do this one by definition and maybe get a better exact solution. First do the integral from 1 to <code class="docutils literal notranslate"><span class="pre">t</span></code> with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">de:integrate(f(x), x, 1, t)</span>
+</pre></div>
+</div>
+<p>then take the limit,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">limit(de, t, inf);</span>
+</pre></div>
+</div>
+<p>and we end up with <span class="math notranslate nohighlight">\(2 {{\% e}^{-1}}\)</span>.</p>
+</section>
+</section>
+<section id="example-int-0-infty-sin-x-dx">
+<h2>Example: <span class="math notranslate nohighlight">\(\int_0^{\infty} \sin(x) \; dx\)</span><a class="headerlink" href="#example-int-0-infty-sin-x-dx" title="Link to this heading">#</a></h2>
+<p>This integral will diverge since,</p>
+<div class="math notranslate nohighlight">
+\[\int_0^t \sin(x) \; dx = 1 - \cos{\left(t \right)}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\lim_{t \to \infty} 1 - \cos{\left(t \right)}\]</div>
+<p>does not exist.  Let’s see how our computer algebra systems deal with this one.</p>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>then in a new cell type in <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">0,</span> <span class="pre">infinity)</span></code>. The result is <code class="docutils literal notranslate"><span class="pre">?</span></code>, which GeoGebra uses for a number of things, in general, it means that it could not do the integral.</p>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x)</span>
+</pre></div>
+</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound is 0, upper bound is <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is <span class="math notranslate nohighlight">\(\left\langle 0, 2\right\rangle\)</span> which is what CLAE does with limits that oscillate between two numbers.</p>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>We will not bother with the function and just go to the integral,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(sin(x), x, 0, inf)</span>
+</pre></div>
+</div>
+<p>The result is,</p>
+<div class="math notranslate nohighlight">
+\[\int_{0}^{\infty }{\left. \sin{(x)}dx\right.}\]</div>
+<p>saying that Maxima could not do the integral.</p>
+</section>
+</section>
+<section id="example-int-0-1-frac-1-sqrt-x-dx">
+<h2>Example: <span class="math notranslate nohighlight">\(\int_0^{1} \frac{1}{\sqrt{x}} \; dx\)</span><a class="headerlink" href="#example-int-0-1-frac-1-sqrt-x-dx" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3>GeoGebra<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/sqrt(x)</span>
+</pre></div>
+</div>
+<p>then in a new cell type in <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">0,</span> <span class="pre">1)</span></code>. The result is <code class="docutils literal notranslate"><span class="pre">?</span></code>, which GeoGebra uses for a number of things, in general, it means that it could not do the integral.  In general, GeoGebra does not evaluate improper integrals of this type very well.</p>
+</section>
+<section id="id5">
+<h3>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/sqrt(x)</span>
+</pre></div>
+</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound is 0, upper bound is 1.  The result is 2.</p>
+</section>
+<section id="id6">
+<h3>Maxima<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>We will not bother with the function and just go to the integral,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(1/sqrt(x), x, 0, 1)</span>
+</pre></div>
+</div>
+<p>The result is 2.</p>
+</section>
+</section>
+<section id="example-int-infty-infty-frac-e-x-1-e-2x-dx">
+<h2>Example: <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} \frac{e^x}{1 + e^{2x}} \; dx\)</span><a class="headerlink" href="#example-int-infty-infty-frac-e-x-1-e-2x-dx" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h3>GeoGebra<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">e^x/(1+e^(2x))</span>
+</pre></div>
+</div>
+<p>then in a new cell type in <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">-infinity,</span> <span class="pre">infinity)</span></code>. The result is 1.5708.</p>
+</section>
+<section id="id8">
+<h3>CLAE<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">E^x/(1+E^(2*x))</span>
+</pre></div>
+</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound is <code class="docutils literal notranslate"><span class="pre">-oo</span></code>, upper bound is <code class="docutils literal notranslate"><span class="pre">oo</span></code>.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\int\limits_{-\infty}^{\infty} \frac{e^{x}}{e^{2 x} + 1}\, dx\]</div>
+<p>which approximates to 1.5707963267949.  Now this was with the course techniques turned off, if we do the same integral with the course techniques turned on we get the exact answer, <span class="math notranslate nohighlight">\(\frac{\pi}{2}.\)</span></p>
+</section>
+<section id="id9">
+<h3>Maxima<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="gp">f(x):=%e^x/(1+%</span>e^<span class="o">(</span><span class="m">2</span>*x<span class="o">))</span>
+</pre></div>
+</div>
+<p>Then integrate with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(f(x), x, -inf, inf);</span>
+</pre></div>
+</div>
+<p>The result is <span class="math notranslate nohighlight">\(\frac{\pi}{2}.\)</span></p>
+</section>
+</section>
+<section id="example-int-0-4-frac-1-x-2-x-2-dx">
+<h2>Example: <span class="math notranslate nohighlight">\(\int_{0}^{4} \frac{1}{x^{2} - x - 2} \; dx\)</span><a class="headerlink" href="#example-int-0-4-frac-1-x-2-x-2-dx" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>GeoGebra<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(x^2 - x - 2)</span>
+</pre></div>
+</div>
+<p>then in a new cell type in <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">0,</span> <span class="pre">4)</span></code>. The result is <code class="docutils literal notranslate"><span class="pre">?</span></code>.  If we look at the graph,</p>
+<figure class="align-default" id="id17">
+<img alt="y = 1/(x^2 - x - 2)" src="../_images/Imp0051.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} - x - 2}\)</span></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>we can see that there is a discontinuity at <span class="math notranslate nohighlight">\(x = 2\)</span>.  If we then go back to the definition and look at the integrals,</p>
+<div class="math notranslate nohighlight">
+\[\int_{0}^{2} \frac{1}{x^{2} - x - 2} \; dx \quad {\rm and } \quad \int_{2}^{4} \frac{1}{x^{2} - x - 2} \; dx\]</div>
+<p>In GeoGebra, both <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">0,</span> <span class="pre">2)</span></code> and <code class="docutils literal notranslate"><span class="pre">Integral(f,</span> <span class="pre">2,</span> <span class="pre">4)</span></code> give us <code class="docutils literal notranslate"><span class="pre">?</span></code> which is not enough information.</p>
+</section>
+<section id="id11">
+<h3>CLAE<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1/(x^2 - x - 2)</span>
+</pre></div>
+</div>
+<p>Now select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Definite</span> <span class="pre">Integral</span></code>, variable <em>x</em>, lower bound is <code class="docutils literal notranslate"><span class="pre">0</span></code>, upper bound is <code class="docutils literal notranslate"><span class="pre">4</span></code>.  The result is nan, which stands for “not a number”.  This is a good indication that the integral diverges.  Graphing the function shows that there is an asymptote inside the integral bounds.  We could, of course, factor the denominator as well.</p>
+<figure class="align-default" id="id18">
+<img alt="y = 1/(x^2 - x - 2)" src="../_images/Imp006.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(f(x) = \frac{1}{x^{2} - x - 2}\)</span></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we redo the definite integral from 0 to 2, we get the result, <span class="math notranslate nohighlight">\(-\infty - \frac{i \pi}{3}\)</span>, which is an interesting output but does indicate that the integral diverges.  Similarly if we redo the integral from 2 to 4 we get <span class="math notranslate nohighlight">\(\infty\)</span>.  So we know the integral diverges.</p>
+</section>
+<section id="id12">
+<h3>Maxima<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>Again we will be lazy and just to the integral,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">integrate(1/(x^2 - x - 2), x, 0, 4);</span>
+</pre></div>
+</div>
+<p>the result is,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}{\rm Principal \; Value}\\-\frac{\log{(5)}}{3}\mbox{}\end{aligned}\end{align} \]</div>
+<p>You should have the feel here that something is not quite right.  If we change this to the integral from 0 to 2 we get,</p>
+<div class="highlight-maxima notranslate"><div class="highlight"><pre><span></span><span class="nv">defint</span><span class="o">:</span><span class="w"> </span><span class="nv">integral</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">divergent</span><span class="o">.</span>
+<span class="o">--</span><span class="w"> </span><span class="nv">an</span><span class="w"> </span><span class="nv">error</span><span class="o">.</span><span class="w"> </span><span class="nv">To</span><span class="w"> </span><span class="nv">debug</span><span class="w"> </span><span class="nv">this</span><span class="w"> </span><span class="nv">try</span><span class="o">:</span><span class="w"> </span><span class="nf">debugmode</span><span class="p">(</span><span class="no">true</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>confirming that the integral diverges.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="numint.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Numerical Integration</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="areabetcurves.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Areas Between Curves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-1-infty-x-e-x-dx">Example: <span class="math notranslate nohighlight">\(\int_1^{\infty} x e^{-x} \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-0-infty-sin-x-dx">Example: <span class="math notranslate nohighlight">\(\int_0^{\infty} \sin(x) \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-0-1-frac-1-sqrt-x-dx">Example: <span class="math notranslate nohighlight">\(\int_0^{1} \frac{1}{\sqrt{x}} \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-infty-infty-frac-e-x-1-e-2x-dx">Example: <span class="math notranslate nohighlight">\(\int_{-\infty}^{\infty} \frac{e^x}{1 + e^{2x}} \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-int-0-4-frac-1-x-2-x-2-dx">Example: <span class="math notranslate nohighlight">\(\int_{0}^{4} \frac{1}{x^{2} - x - 2} \; dx\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

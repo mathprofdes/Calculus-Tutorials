@@ -1,0 +1,972 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Program Layout and Use &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAE/TextEditor/LayoutUse';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Expression Syntax" href="syntax.html" />
+    <link rel="prev" title="Text Editor" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/GeoGebra.html">GeoGebra User’s Guide</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">Calculus &amp; Linear Algebra Explorer User’s Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../CLAE/index.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CAS/index.html">CAS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph2D/index.html">2D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Graph3D/index.html">3D Graphs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../SpreadSheet/index.html">Spreadsheet</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Text Editor</a><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Program Layout and Use</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax.html">Expression Syntax</a></li>
+<li class="toctree-l3"><a class="reference internal" href="FileOps.html">File Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="EditOps.html">Edit Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="StringOps.html">String Conversion Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CharOps.html">Character Conversion Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NumOps.html">Number Conversion Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="RandomOps.html">Random Number Generation Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ViewOps.html">View Options</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../LaTeXEditor/index.html">LaTeX Table Editor</a></li>
+</ul><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../CASGenIntro/Maxima.html">Maxima User’s Guide</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../guides.html" class="nav-link">User’s Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Calculus &amp; Linear Algebra Explorer User’s Guide</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Text Editor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Program Layout and Use</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="program-layout-and-use">
+<h1>Program Layout and Use<a class="headerlink" href="#program-layout-and-use" title="Link to this heading">#</a></h1>
+<section id="program-layout">
+<h2><span class="target" id="index-0"></span>Program Layout<a class="headerlink" href="#program-layout" title="Link to this heading">#</a></h2>
+<p>The program is set up to be a configurable workspace for calculations and visualizations. When you start the program you will see the following application interface.</p>
+<figure class="align-default" id="id1">
+<img alt="CLAE Interface" src="../../_images/ProgramLayout001.png" />
+<figcaption>
+<p><span class="caption-text">CLAE Interface</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The layout of the program is labeled below.</p>
+<figure class="align-default" id="id2">
+<img alt="CLAE Interface Labeled" src="../../_images/ProgramLayout002.png" />
+<figcaption>
+<p><span class="caption-text">CLAE Interface Labeled and 2-D Graphics View</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>1: The Computer Algebra System workspace.</p></li>
+<li><p>2: The input bar for the Computer Algebra System workspace.</p></li>
+<li><p>3: The 2-D graph area.</p></li>
+<li><p>4: The 2-D graphics manager object list.</p></li>
+<li><p>5: The 2-D graphics manager slider list.</p></li>
+<li><p>6: Main menu and toolbar, options are almost entirely for calculations and manipulations of data in the Computer Algebra System.</p></li>
+<li><p>7: Menu and toolbar for the 2-D graph area.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The 2-D Graphs is in a tab along with 3-D Graphs, Spreadsheet, Text Editor, and LaTeX Table Editor.  Each tab opens up that particular tool.  Each of these has their own menu and toolbar separate from the main menu and toolbar and is dedicated to options for that tool.</p></li>
+<li><p>The divider between the Computer Algebra System and the tabbed tool set is movable. These can be moved to any position in the application, even to the far right and far left.  So, for example, if you wish to use only the Computer Algebra System and do not want to view the other tools you can move the divider to the far right of the screen.</p></li>
+<li><p>The divider between the graph area and graphics manager (areas 3 and 4, 5) is also movable.</p></li>
+<li><p>The divider between the graphics manager object list and the graphics manager slider list (areas 4 and 5) is also movable.</p></li>
+</ul>
+</div>
+<figure class="align-default" id="id3">
+<img alt="3-D Graphics View" src="../../_images/ProgramLayout003.png" />
+<figcaption>
+<p><span class="caption-text">3-D Graphics View</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>8: The 3-D graph area.</p></li>
+<li><p>9: The 3-D graphics manager object list.</p></li>
+<li><p>10: The 3-D graphics manager slider list.</p></li>
+<li><p>11: Menu and toolbar for the 3-D graph area.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The divider between the graph area and graphics manager (areas 8 and 9, 10) is also movable.</p></li>
+<li><p>The divider between the graphics manager object list and the graphics manager slider list (areas 9 and 10) is also movable.</p></li>
+</ul>
+</div>
+<figure class="align-default" id="id4">
+<img alt="Spreadsheet View" src="../../_images/ProgramLayout004.png" />
+<figcaption>
+<p><span class="caption-text">Spreadsheet View</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>12: Spreadsheet grid area.</p></li>
+<li><p>13: Menu, toolbar, and cell information area for the spreadsheet.</p></li>
+</ul>
+<figure class="align-default" id="id5">
+<img alt="Text Editor View" src="../../_images/ProgramLayout005.png" />
+<figcaption>
+<p><span class="caption-text">Text Editor View</span><a class="headerlink" href="#id5" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>14: Text editing area.</p></li>
+<li><p>15: Menu and toolbar for the text editor.</p></li>
+</ul>
+<figure class="align-default" id="id6">
+<img alt="LaTex Table Editor View" src="../../_images/ProgramLayout006.png" />
+<figcaption>
+<p><span class="caption-text">LaTex Table Editor View</span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>16: Table editing area.</p></li>
+<li><p>17: Menu, toolbar, and table size selector for the table editor.</p></li>
+</ul>
+</section>
+<section id="general-use">
+<h2><span class="target" id="index-1"></span>General Use<a class="headerlink" href="#general-use" title="Link to this heading">#</a></h2>
+<p>The Calculus &amp; Linear Algebra Explorer program offers many different ways to use the tools and options but it was primarily designed to do symbolic and numeric calculations in the CAS portion and visualize the concepts in the 2-D and 3-D graph areas.  The spreadsheet, text editor, and LaTeX table editor are more specific tools that some users will find handy and others will never use.  We will discuss all the tools in detail in their respective sections but to start we will concentrate on the CAS and the two graph areas.  Here we will simply go through some of the basic features in a series of examples.</p>
+<section id="example-exploring-some-trigonometry">
+<h3>Example: Exploring some Trigonometry<a class="headerlink" href="#example-exploring-some-trigonometry" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start the program, keep the 2-D Graphs tab open, and adjust the section dividers to give a good portion of the screen to the plot area of the 2-D Graphs area.</p></li>
+<li><p>In the CAS input bar in the upper left type in <code class="docutils literal notranslate"><span class="pre">sin(x)</span></code>, syntax in CLAE is case sensitive so keep this all lowercase.  We will discuss the syntax in the CAS section of this documentation and there is a quick reference sheet in the CAS documentation as well.  Hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>  after you input the function, you will see the entry added to the CAS workspace.</p></li>
+</ul>
+<figure class="align-default" id="id7">
+<img alt="Trigonometry Example Stage 1" src="../../_images/TrigExample001.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 1</span><a class="headerlink" href="#id7" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id8">
+<img alt="Trigonometry Example Stage 2" src="../../_images/TrigExample002.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 2</span><a class="headerlink" href="#id8" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The expression <code class="docutils literal notranslate"><span class="pre">sin(x)</span></code> is now in the CAS workspace and can be acted upon by the options in the main menu of the program.  These will be discussed in detail in the CAS section.</p></li>
+<li><p>The expression is given a name <code class="docutils literal notranslate"><span class="pre">R1</span></code>.  You can use any of these names when inputting new expressions into the CAS, as well as the tabbed tools.  The program will keep a running list of all the input expressions and the names will not be duplicated.  So the next input will be named <code class="docutils literal notranslate"><span class="pre">R2</span></code>, then <code class="docutils literal notranslate"><span class="pre">R3</span></code> and so on.</p></li>
+<li><p>You may have noticed that there was a slight pause between hitting <code class="docutils literal notranslate"><span class="pre">Enter</span></code> and the entry appearing in the CAS workspace.  This is a bit more of an advanced discussion and will be looked at in the CAS section but it is because all calculations in the CAS are done in separate processes.  This allows the continued use of the program while lengthy calculations (long simplifications or integrals) are being done.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Now input <code class="docutils literal notranslate"><span class="pre">cos(x)</span></code> in the same manner as above.</p></li>
+</ul>
+<figure class="align-default" id="id9">
+<img alt="Trigonometry Example Stage 3" src="../../_images/TrigExample003.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 3</span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The currently selected expression is highlighted in light blue.  So any menu option that is selected will be applied to to the selected expression.</p>
+</div>
+<ul class="simple">
+<li><p>Now lets input the expression <code class="docutils literal notranslate"><span class="pre">sin(x)^2</span></code>, but we will not type the full expression into the input bar.  Since <code class="docutils literal notranslate"><span class="pre">sin(x)</span></code> is already in the workspace as <code class="docutils literal notranslate"><span class="pre">R1</span></code> all we need to do is type in <code class="docutils literal notranslate"><span class="pre">R1^2</span></code> into the input bar.  As always, inputs are case sensitive, so make sure this is <code class="docutils literal notranslate"><span class="pre">R1^2</span></code> and not <code class="docutils literal notranslate"><span class="pre">r1^2</span></code></p></li>
+</ul>
+<figure class="align-default" id="id10">
+<img alt="Trigonometry Example Stage 4" src="../../_images/TrigExample004.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 4</span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The syntax <code class="docutils literal notranslate"><span class="pre">sin(x)^2</span></code> represents the expression <span class="math notranslate nohighlight">\(\displaystyle \sin^2(x)\)</span> and not <span class="math notranslate nohighlight">\(\displaystyle \sin(x^2)\)</span>, to input the latter we would input <code class="docutils literal notranslate"><span class="pre">sin(x^2)</span></code>.</p></li>
+<li><p>For the Python users, you may be hesitant to use <code class="docutils literal notranslate"><span class="pre">^</span></code> for exponentiation since you know that in Python we use <code class="docutils literal notranslate"><span class="pre">**</span></code> for exponents.  That syntax can be used here as well, but we will stick to <code class="docutils literal notranslate"><span class="pre">^</span></code> since it is more natural in mathematics.</p></li>
+<li><p>All inputs into the CAS input bar are stored in the input bar history and can be selected at any time to load previous inputs into the input bar and reduce typing. Click on the down arrow on the right of the input box and a drop-down list of all your inputs (in reverse order) will be listed.  If you select one of them the input bar will be replaced with the selection. You can also use the up and down arrow keys when the cursor is in the input box to cycle through the previous inputs.</p></li>
+<li><p>If you have a syntax error there will be an error item in the workspace and the error expression will still be loaded into the input history.  This will the user to quickly load the bad expression back into the input bar and edit the expression.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>For an example of a syntax error, input the expression <code class="docutils literal notranslate"><span class="pre">sin(x</span></code>, missing the ending parenthesis and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+</ul>
+<figure class="align-default" id="id11">
+<img alt="Trigonometry Example Stage 5" src="../../_images/TrigExample005.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 5</span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The new entry is an error entry.  Error entry descriptions are in red and there is a list of probable fixes listed below the error.</p></li>
+<li><p>The CAS workspace does not wrap at the size of the workspace but will scroll off to the right.  This is done to make longer expressions easier to view.  You can use the mouse and the scroll bar at the bottom to scroll right and left.  You can also change where the wrapping occurs in the preferences, discussed in the CAS section.</p></li>
+<li><p>You can delete the error message by simply selecting it and hitting the <code class="docutils literal notranslate"><span class="pre">Delete</span></code> key.</p></li>
+<li><p>The CAS has its own undoredo history, as do all of the tools.  So of you want the error message back you can undo the delete you just did.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Now click the drop-down arrow in the input bar and select the bad expression <code class="docutils literal notranslate"><span class="pre">sin(x</span></code>, finish the input out to <code class="docutils literal notranslate"><span class="pre">sin(x^2)</span></code>, and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.  You should see the following displayed.</p></li>
+</ul>
+<figure class="align-default" id="id12">
+<img alt="Trigonometry Example Stage 6" src="../../_images/TrigExample006.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 6</span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Now let’s move on to the visualizations.  To graph an expression all you need to do is click and drag an expression from the CAS to the graph area (or the graphics manager objects area, not the slider area).  Click and drag the <code class="docutils literal notranslate"><span class="pre">sin(x)</span></code> expression from the CAS to the graph area.  You should see the following.</p></li>
+</ul>
+<figure class="align-default" id="id13">
+<img alt="Trigonometry Example Stage 7" src="../../_images/TrigExample007.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 7</span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The function <span class="math notranslate nohighlight">\(\displaystyle y = \sin(x)\)</span> was automatically graphed in the graph area.</p></li>
+<li><p>The expression <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">sin(x)</span></code> was added to the graphics manager object lest in the lower left.</p></li>
+<li><p>The expression <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">sin(x)</span></code> was added to the graph area legend.</p></li>
+<li><dl class="simple">
+<dt>The graph area can be easily manipulated to better see the graphs that are plotted.</dt><dd><ul>
+<li><p>Click and drag in the graph area will pan the coordinate system.</p></li>
+<li><p>Click and drag in the axes area on the borders of the graph to pan in just one direction.</p></li>
+<li><p>Right click and drag in the axes areas to expand or contract in one direction.</p></li>
+<li><p>Right click and drag in the graph area to expand or contract in both directions.</p></li>
+<li><p>The mouse wheel in the graph area will zoom in and out keeping the current aspect ratio.</p></li>
+<li><p>If you want to view the graph in 1:1 aspect ratio select the <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Set</span> <span class="pre">View</span> <span class="pre">Window</span> <span class="pre">to</span> <span class="pre">1-1</span></code> from the 2-D Graphs menu or its corresponding toolbar button.  This will adjust the y axis to match the x axis and keep the current center where is is.  The 1:1 is not locking, that is, you can adjust the scales of the separate axes alone after selecting 1:1 and the aspect ratio will change.  After that you will need to select 1:1 to get back to a 1:1 ratio.  The panning operations and the mouse wheel will not affect the aspect ratio.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The legend can be moved to any spot on the graph simply by a click and drag while the cursor is over the legend.  The menu and toolbar have options for toggling the legend on and off as well as changing the font size.</p></li>
+<li><dl class="simple">
+<dt>Now take a look at the entry in the graphics manager objects window.  These are the same both in 2-D and 3-D.</dt><dd><ul>
+<li><p>The first tool is a checkbox, this determines if the graph is “active”.  Clicking this check box will toggle the viewing of that object.  Note you can also double-click on the entry description to toggle the viewing on and off.</p></li>
+<li><p>The second tool is a drop-down selection that contains all the ways that the expression can be rendered graphically.  If you click it you will see a list of items such as, Polar Function, Sequence/Series, etc.  By selecting a different mode the graph of the object will change accordingly.</p></li>
+<li><p>The third tool is simply a color selection button.  Click it and select a new color for the object.</p></li>
+<li><p>The fourth tool is the properties button.  Click it to open the properties dialog box for that object.  These will differ depending on the rendering mode of the object.  That is, a Function will have different options than a Sequence/Series.  These options will be discussed in detail in the 2-D Graphs section of this documentation.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<figure class="align-default" id="id14">
+<img alt="Trigonometry Example Stage 8" src="../../_images/TrigExample008.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 8</span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Now let’s add in some sliders and animation.  Input <code class="docutils literal notranslate"><span class="pre">a*sin(b*x</span> <span class="pre">+</span> <span class="pre">c)</span> <span class="pre">+</span> <span class="pre">d</span></code>, then click and drag it over to the graph.  You should see the following.</p></li>
+</ul>
+<figure class="align-default" id="id15">
+<img alt="Trigonometry Example Stage 9" src="../../_images/TrigExample009.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 9</span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The function was added to the object list and four sliders were automatically created in the slider window, one for each variable in the expression except for x. All animations in this program are done through sliders.</p></li>
+<li><p>Each slider shows the variable it is linked to, there is an animation button that will animate that slider. You can have as many sliders animating at the same time. Clicking the play button will start the animation, the icon will change to a stop icon, clicking it will stop the animation.  The final button for each animator will open the properties dialog box for that slider which allows the user to change the bounds, value, steps, animation speed, and the precision of the displayed slider value.</p></li>
+<li><p>Click and drag the sliders to see the affect the change of these constants have on the graph of the expression.</p></li>
+</ul>
+<figure class="align-default" id="id16">
+<img alt="Trigonometry Example Stage 10" src="../../_images/TrigExample010.png" />
+<figcaption>
+<p><span class="caption-text">Trigonometry Example Stage 10</span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A couple final notes about what we have done in this example.</p>
+<ul class="simple">
+<li><p>The Computer Algebra System portion of this program does not care what your variable names are.  So you could input <code class="docutils literal notranslate"><span class="pre">sin(w)</span></code> or <code class="docutils literal notranslate"><span class="pre">sin(alpha)</span></code> or <code class="docutils literal notranslate"><span class="pre">sin(George)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">sin(x)</span></code>.  The CAS will allow you to solve, differentiate, or integrate, etc. with respect to any variable, including George.  The graphics system on the other hand are a little more restrictive.  We could have written this application to be as general with variable names in the graphics systems as it is in the CAS but this would require the user to select independent and dependent variables.  To avoid this extra, somewhat confusing, step we designate x and t as your two options for the horizontal axis and y as the designation of the vertical axis.  Any other variable is considered to be a constant.</p></li>
+<li><p>Note in the inputs we explicitly use <code class="docutils literal notranslate"><span class="pre">*</span></code> for multiplication.  This is a requirement of the syntax. The program does not understand juxtaposition, so <code class="docutils literal notranslate"><span class="pre">2x</span></code> would be seen as an error and <code class="docutils literal notranslate"><span class="pre">xy</span></code> is seen as the single variable named xy.</p></li>
+<li><p>If you want to save your work select <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Save</span> <span class="pre">Workspace</span></code> from the main menu, or the corresponding toolbar button. Input a filename and select Save. This will save the file with a .clf extension.  You can then open this file with <code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Workspace...</span></code>.</p></li>
+<li><p>Note that there are options for saving and loading the CAS.  These will only save and load the CAS data.  The saving and opening of the workspace will save and load all current program data, including both graphics objects, the spreadsheet data and data from both editors.</p></li>
+</ul>
+</div>
+</section>
+<section id="example-a-quick-3-d-example">
+<h3>Example: A Quick 3-D Example<a class="headerlink" href="#example-a-quick-3-d-example" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start the program, click the 3-D Graphs tab to show the 3-D plot area. Adjust the section dividers to give a good portion of the screen to the plot area of the 3-D Graphs area.</p></li>
+<li><p>In the CAS input bar in the upper left type in <code class="docutils literal notranslate"><span class="pre">sin(x)</span> <span class="pre">-</span> <span class="pre">cos(y)</span></code>, and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+<li><p>Click and drag this expression over to the graph area.  You should see something like the image below.</p></li>
+</ul>
+<figure class="align-default" id="id17">
+<img alt="3-D Example Stage 1" src="../../_images/Example3D001.png" />
+<figcaption>
+<p><span class="caption-text">3-D Example Stage 1</span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>As with the 2-D graphics system, the object is added to the graphics manager and the plot.</p></li>
+<li><p>The graphics manager entry for 3-D is the same as in 2-D.  Starts with an “active” checkbox, then a drop-down list of possible visualizations, a color selector, the properties button, and finally a description.</p></li>
+<li><p>We will look at the options for each 3-D object in detail in the 3-D Graphs section of this documentation.</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>In the CAS section, you can use the input drop-down to bring in previous inputs for editing, you can also double-click the entry in the CAS workspace.  This will open up the appropriate editor for editing the expression.  In these examples we have only used the input bar but there are other dialog boxes for inputting matrices and piecewise defined expressions.</p></li>
+<li><p>Double-click the expression to load it into the input box and edit it to, <code class="docutils literal notranslate"><span class="pre">d*sin(a*x)</span> <span class="pre">-</span> <span class="pre">cos(b*y)</span></code>, and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
+<li><p>Click and drag this over to the graph.</p></li>
+<li><p>Double-click the <code class="docutils literal notranslate"><span class="pre">sin(x)</span> <span class="pre">-</span> <span class="pre">cos(y)</span></code> entry description (or click the check box) to hide that surface. You should see the following.</p></li>
+</ul>
+<figure class="align-default" id="id18">
+<img alt="3-D Example Stage 2" src="../../_images/Example3D002.png" />
+<figcaption>
+<p><span class="caption-text">3-D Example Stage 2</span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Move the sliders around to see the effects on the surface.</p></li>
+</ul>
+<figure class="align-default" id="id19">
+<img alt="3-D Example Stage 3" src="../../_images/Example3D003.png" />
+<figcaption>
+<p><span class="caption-text">3-D Example Stage 3</span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The 3-D Graphs section does not have a legend in the graph view.  The object list in the graphics manager serves as a legend in this tool.  There are several options for exporting the graphics manager  object list to text and images that can be used as a legend when exporting information to word processors.</p></li>
+<li><dl class="simple">
+<dt>The graph area can be easily manipulated to better see the graphs that are plotted.</dt><dd><ul>
+<li><p>We will discuss these in more detail in the 3-D Graphs section.  In general, how the mouse is used to manipulate the graphing region is dependent on the mouse mode selection in the 3-D graphs menu.</p></li>
+<li><dl class="simple">
+<dt>If the mouse mode is set to the default, Camera Rotation and Zoom.</dt><dd><ul>
+<li><p>Click and drag in the graph area will rotate the coordinate system about the center of the region.</p></li>
+<li><p>The mouse wheel will zoom in and out.</p></li>
+<li><p>The arrow keys will also rotate the coordinate system about the center of the region.</p></li>
+<li><p>Using Ctrl+Up and Ctrl+Up will also zoom in and out.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>If the mouse mode is set to one of the scaling options, a click and drag will do the selected scaling of the axis or axes.</p></li>
+<li><p>If the mouse mode is set to one of the translation options, a click and drag will do the selected  axis or axes translation.</p></li>
+<li><p>If you want to view the graph in 1:1 aspect ratio select the <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Set</span> <span class="pre">View</span> <span class="pre">Window</span> <span class="pre">to</span> <span class="pre">1-1</span></code> from the 3-D Graphs menu or its corresponding toolbar button.  This will adjust the axis to a 1:1 aspect ratio (which is the default).  The 1:1 is not locking, that is, you can adjust the scales of the separate axes after selecting 1:1 and the aspect ratio will change.  After that you will need to select 1:1 to get back to a 1:1 ratio.  The rotation and zooming operations will not affect the aspect ratio.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>As with the 2D graphics system, the 3D graphics system is a little restrictive on the names of the variables whereas the Computer Algebra System portion of this program is not.  In the 3D graphics system, x, y, and z are used as the axes and the variables for any rectangular coordinate expression.  The variable t is used for space curves, u and v are used for parametrically defined surfaces, r, t, ans p are used for polar, cylindrical, and spherical coordinates.  Any other variable is considered to be a constant.</p></li>
+</ul>
+</div>
+</section>
+<section id="example-a-quick-linear-algebra-example">
+<h3>Example: A Quick Linear Algebra Example<a class="headerlink" href="#example-a-quick-linear-algebra-example" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Start the program, click the 3-D Graphs tab to show the 3-D plot area. Adjust the section dividers to give a good portion of the screen to the plot area of the 3-D Graphs area.</p></li>
+<li><p>We will now input a matrix.  Although you can do this through the input bar, it is much easier to use the matrix input dialog box. Select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Input</span> <span class="pre">New</span> <span class="pre">Matrix/Vector...</span></code> from the main menu or its corresponding toolbar button.  The following dialog will appear.</p></li>
+</ul>
+<figure class="align-default" id="id20">
+<img alt="Linear Algebra Example Stage 1" src="../../_images/LinAlgExample001.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 1</span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>In the size selectors, change the number of columns to 4.</p></li>
+<li><p>Now click in the grid in the (1, 1) position.  You can input numbers or expressions into each entry of the matrix, the syntax will be discussed in detail in the CAS section of the documentation.  Here we will input just a numeric matrix.  When inputting simply type the expression and hit either <code class="docutils literal notranslate"><span class="pre">Enter</span></code> or <code class="docutils literal notranslate"><span class="pre">Tab</span></code>, the enter key will move you down a row and the tab key will move across a row.  The program will automatically move to the next row or column on the enter or tab keys.</p></li>
+<li><p>Input the following matrix and click OK.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{rrrr}2 &amp; -5 &amp; -3 &amp; -10\\4 &amp; 4 &amp; -7 &amp; 6\\-1 &amp; 5 &amp; -1 &amp; 1\end{array}\right]\end{split}\]</div>
+<figure class="align-default" id="id21">
+<img alt="Linear Algebra Example Stage 2" src="../../_images/LinAlgExample002.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 2</span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The application should look like the following.</p></li>
+</ul>
+<figure class="align-default" id="id22">
+<img alt="Linear Algebra Example Stage 3" src="../../_images/LinAlgExample003.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 3</span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Click and drag this expression over to the 3-D graph area.</p></li>
+</ul>
+<figure class="align-default" id="id23">
+<img alt="Linear Algebra Example Stage 4" src="../../_images/LinAlgExample004.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 4</span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Note that the matrix was interpreted as a set of points (each column taken as a point in 3-D), which is a very common interpretation in Linear Algebra.  We would like to interpret this a little differently, specifically as a system of linear equations, <span class="math notranslate nohighlight">\(2x -5y-3z = -10\)</span>, <span class="math notranslate nohighlight">\(4x+4y-7z = 6\)</span>, and <span class="math notranslate nohighlight">\(-x +5y-z = 1\)</span>.</p></li>
+<li><p>In the type drop-down box for the object change <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Point</span> <span class="pre">Set</span></code> to <code class="docutils literal notranslate"><span class="pre">3D</span> <span class="pre">Linear</span> <span class="pre">System</span></code></p></li>
+</ul>
+<figure class="align-default" id="id24">
+<img alt="Linear Algebra Example Stage 5" src="../../_images/LinAlgExample005.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 5</span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Now you are viewing the three planes of the linear system and it is clear from the image that there is a single point solution to the system.  Rotate ad zoom the view to get a good look at the graph.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There are other surface shading modes that may be better in this and other situations, we will discuss them in the 3-D Graphs section.</p>
+</div>
+<ul class="simple">
+<li><p>With the matrix in the CAS selected, select <code class="docutils literal notranslate"><span class="pre">Matrix</span> <span class="pre">&gt;</span> <span class="pre">Reduced</span> <span class="pre">Echelon</span> <span class="pre">Form</span></code> from the main menu.</p></li>
+</ul>
+<figure class="align-default" id="id25">
+<img alt="Linear Algebra Example Stage 6" src="../../_images/LinAlgExample006.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 6</span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The result of reducing the matrix using row operations shows the matrix,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{cccc}1 &amp; 0 &amp; 0 &amp; \frac{383}{65}\\0 &amp; 1 &amp; 0 &amp; \frac{138}{65}\\0 &amp; 0 &amp; 1 &amp; \frac{242}{65}\end{array}\right]\end{split}\]</div>
+<ul class="simple">
+<li><p>The solution, that ism the point of intersection of the three planes is the point designated by the last column,</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf{x} = \left[\begin{array}{c}\frac{383}{65}\\\frac{138}{65}\\\frac{242}{65}\end{array}\right]\end{split}\]</div>
+<ul class="simple">
+<li><p>We will extract this column and then plot it on the graph as a point to view the point of intersection along with the planes of the system.</p></li>
+<li><p>From the main menu select <code class="docutils literal notranslate"><span class="pre">Edit</span> <span class="pre">&gt;</span> <span class="pre">Extract</span> <span class="pre">from</span> <span class="pre">Matrix</span> <span class="pre">&gt;</span> <span class="pre">Column...</span></code>, a small dialog box will appear, set the column number to 4 and click OK. Now <code class="docutils literal notranslate"><span class="pre">R3</span></code> contains the point of intersection.</p></li>
+</ul>
+<figure class="align-default" id="id26">
+<img alt="Linear Algebra Example Stage 7" src="../../_images/LinAlgExample007.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 7</span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>Click and drag this point over to the graph.</p></li>
+</ul>
+<figure class="align-default" id="id27">
+<img alt="Linear Algebra Example Stage 8" src="../../_images/LinAlgExample008.png" />
+<figcaption>
+<p><span class="caption-text">Linear Algebra Example Stage 8</span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>The point comes in as a 3D Point Set, which is what we want.  You can see on the graph a red dot (although a little small) in the position of the point of intersection.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Text Editor</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="syntax.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Expression Syntax</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#program-layout">Program Layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-use">General Use</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-exploring-some-trigonometry">Example: Exploring some Trigonometry</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-quick-3-d-example">Example: A Quick 3-D Example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-a-quick-linear-algebra-example">Example: A Quick Linear Algebra Example</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

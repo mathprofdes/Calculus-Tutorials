@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Functions of Several Variables &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'MultCalc/fctsevvars';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Limits and Continuity" href="limits.html" />
+    <link rel="prev" title="Motion in Space" href="motion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../DiffCalc/index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Vectors and Vector-Valued Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors in Two and Three Dimensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dotcross.html">Dot Product and Cross Product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineplaneeq.html">Equations of Lines and Planes in Space</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadsurfaces.html">Quadric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cylcoord.html">Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sphcoord.html">Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spacecurve.html">Vector-Valued Functions and Space Curves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calcvecfunc.html">Calculus of Vector-Valued Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arclength.html">Arc Length and Curvature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="motion.html">Motion in Space</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Differentiation of Functions of Several Variables</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Functions of Several Variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limits.html">Limits and Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="partial.html">Partial Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tangent.html">Tangent Planes and Linear Approximations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chain.html">The Chain Rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="directionalder.html">Directional Derivatives and the Gradient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Maxima and Minima</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lagrange.html">Lagrange Multipliers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multiple Integration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsrect.html">Double Integrals over Rectangular Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralsgen.html">Double Integrals over General Regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doubleintegralspolar.html">Double Integrals in Polar Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfacearea.html">Surface Area</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegrals.html">Triple Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralscyl.html">Triple Integrals in Cylindrical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tripleintegralssph.html">Triple Integrals in Spherical Coordinates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="centermass.html">Centers of Mass and Moments of Inertia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changeofvar.html">Change of Variables in Multiple Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Vector Calculus</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vecfields.html">Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lineint.html">Line Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conservativevf.html">Conservative Vector Fields</a></li>
+<li class="toctree-l1"><a class="reference internal" href="greenstheorem.html">Green’s Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divergencecurl.html">Divergence and Curl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="parasurface.html">Parametric Surfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="surfaceint.html">Surface Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stokes.html">Stokes’ Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="divthm.html">The Divergence Theorem</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Multivariable Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Functions of Several Variables</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="functions-of-several-variables">
+<h1><span class="target" id="index-0"></span>Functions of Several Variables<a class="headerlink" href="#functions-of-several-variables" title="Link to this heading">#</a></h1>
+<section id="functions-of-two-variables">
+<h2>Functions of Two Variables<a class="headerlink" href="#functions-of-two-variables" title="Link to this heading">#</a></h2>
+<div class="admonition-definition-functions-of-two-variables admonition">
+<p class="admonition-title">Definition: Functions of Two Variables</p>
+<p>A function of two variables <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> maps each ordered pair <span class="math notranslate nohighlight">\((x, y)\)</span> in a subset <em>D</em> of the real plane <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> to a unique real number <em>z</em>. The set <em>D</em> is called the domain of the function. The range of the function is the set of all real numbers <em>z</em> that has at least one ordered pair <span class="math notranslate nohighlight">\((x, y) \in D\)</span> such that <span class="math notranslate nohighlight">\(f(x, y) = z\)</span>.</p>
+</div>
+<section id="example-z-sin-x-cos-y">
+<h3>Example: <span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span><a class="headerlink" href="#example-z-sin-x-cos-y" title="Link to this heading">#</a></h3>
+<section id="geogebra">
+<h4>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x) + cos(y)</span>
+</pre></div>
+</div>
+<p>The plot looks like the following, this is commonly called the egg carton function.  We will discuss graphing methods later, just think of it as all the points <span class="math notranslate nohighlight">\((x, y, z)\)</span> with <em>x</em> and <em>y</em> any real numbers and <span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y).\)</span></p>
+<figure class="align-default" id="id9">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id9" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The domain of this function is all of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> since any values of <em>x</em> and <em>y</em> result in a real number for <em>z</em>.</p>
+</section>
+<section id="clae">
+<h4>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x) + cos(y)</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window and we will see the following, this is commonly called the egg carton function.  We will discuss graphing methods later, just think of it as all the points <span class="math notranslate nohighlight">\((x, y, z)\)</span> with <em>x</em> and <em>y</em> any real numbers and <span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y).\)</span></p>
+<figure class="align-default" id="id10">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars002.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id10" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The domain of this function is all of <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> since any values of <em>x</em> and <em>y</em> result in a real number for <em>z</em>.</p>
+</section>
+</section>
+<section id="example-z-sqrt-9-x-2-y-2">
+<h3>Example: <span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span><a class="headerlink" href="#example-z-sqrt-9-x-2-y-2" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sqrt(-x^2-y^2+9)</span>
+</pre></div>
+</div>
+<p>The plot looks like the following. It is the top half of a sphere.</p>
+<figure class="align-default" id="id11">
+<img alt=":math:`z = \sqrt{9 - x^2-y^2}`" src="../_images/FctSevVars003.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span></span><a class="headerlink" href="#id11" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>GeoGebra does an excellent job at graphing surfaces, even close to the domain edges where it can get choppy, even when using adaptive methods. To find the domain graphically, we can move the camera up to the top of the <em>z</em> axis and see what the plot covers.</p>
+<figure class="align-default" id="id12">
+<img alt=":math:`z = \sqrt{9 - x^2-y^2}`" src="../_images/FctSevVars004.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span></span><a class="headerlink" href="#id12" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So it appears that the domain of this function is the circle (really the disk) centered at the origin and radius 3.</p>
+<p>If we take an algebraic approach we know that to return a real number we must have <span class="math notranslate nohighlight">\(9 - x^2-y^2 \geq 0\)</span> which is the same as <span class="math notranslate nohighlight">\(x^2+y^2 \leq 9.\)</span>  Which is the disk orf radius 3 centered st the origin.</p>
+<p>Another thing that GeoGebra does very well is graphing regions, such as domain.  If we input the above inequality,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2+y^2 &lt;= 9</span>
+</pre></div>
+</div>
+<p>and we hide the surface, we get,</p>
+<figure class="align-default" id="id13">
+<img alt="Domain of :math:`z = \sqrt{9 - x^2-y^2}`" src="../_images/FctSevVars005.png" />
+<figcaption>
+<p><span class="caption-text">Domain of <span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span></span><a class="headerlink" href="#id13" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>and if we switch back to 2D perspective we get,</p>
+<figure class="align-default" id="id14">
+<img alt="Domain of :math:`z = \sqrt{9 - x^2-y^2}`" src="../_images/FctSevVars006.png" />
+<figcaption>
+<p><span class="caption-text">Domain of <span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span></span><a class="headerlink" href="#id14" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id2">
+<h4>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sqrt(-x^2-y^2+9)</span>
+</pre></div>
+</div>
+<p>The plot looks like the following. It is the top half of a sphere.</p>
+<figure class="align-default" id="id15">
+<img alt=":math:`z = \sqrt{9 - x^2-y^2}`" src="../_images/FctSevVars007.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span></span><a class="headerlink" href="#id15" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that it is very jagged around the edges, this is common for many software packages that do not use adaptive methods, in order to speed up graphical throughput.  To find the domain graphically, we can move the camera up to the top of the <em>z</em> axis and see what the plot covers.</p>
+<figure class="align-default" id="id16">
+<img alt=":math:`z = \sqrt{9 - x^2-y^2}`" src="../_images/FctSevVars008.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span></span><a class="headerlink" href="#id16" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>It appears that the domain of this function is the circle (really the disk) centered at the origin and radius 3.</p>
+<p>If we take an algebraic approach we know that to return a real number we must have <span class="math notranslate nohighlight">\(9 - x^2-y^2 \geq 0\)</span> which is the same as <span class="math notranslate nohighlight">\(x^2+y^2 \leq 9.\)</span>  Which is the disk orf radius 3 centered st the origin.</p>
+</section>
+</section>
+</section>
+<section id="graphing-functions-of-two-variables">
+<h2>Graphing Functions of Two Variables<a class="headerlink" href="#graphing-functions-of-two-variables" title="Link to this heading">#</a></h2>
+<p>One advantage to using CAS or graphing software is that you do not need to go through all of the tedious calculation to get an image of a curve or surface.  On the other hand, just as with functions in one variable, knowing relationships between the graph and the calculus (and other indicators) give us a better understanding of the function.  We will examine the relationships between functions and calculus in later sections, for now we will look at traces.</p>
+<section id="traces">
+<h3>Traces<a class="headerlink" href="#traces" title="Link to this heading">#</a></h3>
+<div class="admonition-definition-vertical-trace admonition">
+<p class="admonition-title">Definition: Vertical Trace</p>
+<p>Consider a function <span class="math notranslate nohighlight">\(z = f(x, y)\)</span> with domain <span class="math notranslate nohighlight">\(D \subseteq \mathbb{R}^2.\)</span> A <strong>vertical trace</strong> of the function can be either the set of points <span class="math notranslate nohighlight">\(z = f(a, y)\)</span> for some constant <em>a</em> or <span class="math notranslate nohighlight">\(z = f(x, b)\)</span> for some constant <em>b</em>.</p>
+</div>
+<p>Another way to think about a trace is as the intersection of a surface and a vertical plane.</p>
+</section>
+<section id="example-traces-of-z-sin-x-cos-y">
+<h3>Example: Traces of <span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span><a class="headerlink" href="#example-traces-of-z-sin-x-cos-y" title="Link to this heading">#</a></h3>
+<section id="id3">
+<h4>GeoGebra<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x) + cos(y)</span>
+</pre></div>
+</div>
+<p>The plot looks like the following.</p>
+<figure class="align-default" id="id17">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars001.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id17" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>To visualize traces of this function we will insert a vertical plane.  Input <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">d</span></code>, note we can use any other letter in place of <code class="docutils literal notranslate"><span class="pre">d</span></code> as long as it has not been used as the name of something.  The image is now the following and there is a slider for <em>d</em> in the workspace.</p>
+<figure class="align-default" id="id18">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars009.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id18" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The trace is the intersection of these two surfaces.  You can move the <em>d</em> slider to see how the trace changes as the plane moves.  We can also get a graph of this line of intersection by selecting the intersect tool in the toolbar, then click on the plane, then click on the surface.  The result is,</p>
+<figure class="align-default" id="id19">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars010.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id19" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id4">
+<h4>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x) + cos(y)</span>
+</pre></div>
+</div>
+<p>Click and drag this to the 3D graphics window to get the graph.</p>
+<figure class="align-default" id="id20">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars011.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id20" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now input <code class="docutils literal notranslate"><span class="pre">a</span></code> into the CAS, click and drag it to the 3D graphics window, change its type to Function Sheet, go into the properties and change the independent variable to <em>y</em> and the dependent variable to <em>x</em>.  this will give you the following graph,</p>
+<figure class="align-default" id="id21">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id21" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this case it would be easier to simply put the plane in via the 3D menu system.  To do that, instead of what we did above you would, select <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">&gt;</span> <span class="pre">Function</span> <span class="pre">Sheet</span></code> from the graph menu, set the function to <code class="docutils literal notranslate"><span class="pre">a</span></code>, the independent variable to <code class="docutils literal notranslate"><span class="pre">y</span></code> and the dependent variable to <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<p>Move the <em>a</em> slider to see how the intersection changes as the vertical plane changes.  Since CLAE does not plot surfaces in a semi-transparent mode you can change the surface to plot a grid to see,</p>
+<figure class="align-default" id="id22">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars013.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id22" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you want the actual space curve for the intersection there are a number of ways to do this.  One possibility is to select the surface in the CAS, then <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code>, the dialog will have the variables populated as <code class="docutils literal notranslate"><span class="pre">[x,</span> <span class="pre">y]</span></code>, leave these as is, for the expressions input <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">t]</span></code> and click OK.  We will assume that this result is in <code class="docutils literal notranslate"><span class="pre">R2</span></code>, now select to input a vector and input <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">t,</span> <span class="pre">R2]</span></code> into the dialog, this gives you the parametric equations for the space curve,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left[\begin{array}{c}a\\t\\\sin{\left(a \right)} + \cos{\left(t \right)}\end{array}\right]\end{split}\]</div>
+<p>Click and drag this over to the 3D graphics window.</p>
+<figure class="align-default" id="id23">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars014.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id23" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The line might be partially obscured by the surfaces. To better see the curve you can either change one or more surfaces to plotting a grid or you can hide one or more of the surfaces.</p>
+<figure class="align-default" id="id24">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars015.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id24" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id25">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars016.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id25" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id26">
+<img alt=":math:`z = \sin(x) + \cos(y)`" src="../_images/FctSevVars017.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></span><a class="headerlink" href="#id26" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By setting <em>y</em> to a constant and keeping <em>x</em> as the variable we can view the traces in the other direction.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="level-curves-and-contour-maps">
+<h2>Level Curves and Contour Maps<a class="headerlink" href="#level-curves-and-contour-maps" title="Link to this heading">#</a></h2>
+<p>Another way we can visualize a function of two variables is as a topographic map in the plane.  That is, we draw curves in the plane at various heights.  Each line in this map is a level curve, that is, all points where the function is at some specified height (or <em>z</em> value).  The set of these level curves taken together is called a contour map.  Specifically,</p>
+<div class="admonition-definition-level-curve admonition">
+<p class="admonition-title">Definition: Level Curve</p>
+<p>Given a function <span class="math notranslate nohighlight">\(f(x, y)\)</span> and a number <em>c</em> in the range of <em>f</em>, a level curve of the function is the set of all points satisfying the equation <span class="math notranslate nohighlight">\(f(x, y) = c.\)</span></p>
+</div>
+<section id="example-z-x-y-e-x-2-y-2">
+<h3>Example: <span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span><a class="headerlink" href="#example-z-x-y-e-x-2-y-2" title="Link to this heading">#</a></h3>
+<p>In this example we will graph a level curve and then a contour map of the function <span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}.\)</span></p>
+<section id="id5">
+<h4>CLAE<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p>First input the function into the CAS,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-x*y*exp(-x^2 - y^2)</span>
+</pre></div>
+</div>
+<p>Click and drag this over to the 3D graphics window, it will look like a plane but at the origin there are a few humps.  Zoom in on this and scale the <em>z</em> axis until the surface looks like the following.  In the 3D graphics window the scaling options are under the Mouse Mode menu.  Once the scaling is done you should change the mode back to Camera Rotation and Zoom, there is a toolbar button for this to make that quick.</p>
+<figure class="align-default" id="id27">
+<img alt=":math:`z = - x y e^{- x^{2} - y^{2}}`" src="../_images/FctSevVars018.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span></span><a class="headerlink" href="#id27" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that the range of this function is approximately <span class="math notranslate nohighlight">\(-0.18\)</span> to 0.18.  You may have noted from the definition of a level curve that all points satisfying the equation <span class="math notranslate nohighlight">\(f(x, y) = c.\)</span> is simply an implicitly defined curve.  These were covered in the Differential Calculus part of these tutorials.  Recall that in CLAE we first make the implicit relation one with 0, that is, <span class="math notranslate nohighlight">\(f(x, y) - c= 0\)</span> and then we graph this using the Implicit Relationship graphing type.</p>
+<p>We will start with graphing the expression <span class="math notranslate nohighlight">\(- x y e^{- x^{2} - y^{2}} = 0.1.\)</span> Assuming that the function is in <code class="docutils literal notranslate"><span class="pre">R1</span></code>, input <code class="docutils literal notranslate"><span class="pre">R1</span> <span class="pre">-</span> <span class="pre">0.1</span></code> into the CAS.  Click and drag it to the 2D graphics window, you should see something like te following.</p>
+<figure class="align-default" id="id28">
+<img alt=":math:`0.1 = - x y e^{- x^{2} - y^{2}}`" src="../_images/FctSevVars020.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(0.1 = - x y e^{- x^{2} - y^{2}}\)</span></span><a class="headerlink" href="#id28" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If we go back to the 3D window and plot the function 0.1 we see,</p>
+<figure class="align-default" id="id29">
+<img alt=":math:`z = - x y e^{- x^{2} - y^{2}}` and :math:`z = 0.1`" src="../_images/FctSevVars021.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span> and <span class="math notranslate nohighlight">\(z = 0.1\)</span></span><a class="headerlink" href="#id29" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that the intersection of the surface and the plane is what is plotted in the level curve.  We can also make the graphing of the level curve dynamic. Clear the 2D graphics window, input <code class="docutils literal notranslate"><span class="pre">R1</span> <span class="pre">-</span> <span class="pre">a</span></code> into the CAS, and plot this as an implicit relationship.  Change the <em>a</em> slider properties to go from <span class="math notranslate nohighlight">\(-0.2\)</span> to 0.2.  Move the slider to see the changes in the level curves.</p>
+<figure class="align-default" id="id30">
+<img alt=":math:`a = - x y e^{- x^{2} - y^{2}}`" src="../_images/FctSevVars022.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(a = - x y e^{- x^{2} - y^{2}}\)</span></span><a class="headerlink" href="#id30" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we will create a contour map of this function.  Clear the 2D graphics window and click and drag the original expression <code class="docutils literal notranslate"><span class="pre">R1</span></code> to the graph.  Change its type to Contour Map.  The image will not look very impressive since the default contour list is <code class="docutils literal notranslate"><span class="pre">[-5,</span> <span class="pre">-4,</span> <span class="pre">-3,</span> <span class="pre">-2,</span> <span class="pre">-1,</span> <span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span></code>.  Go into the properties and input the following as the list of contours.  The program will create a level curve to the function at each of the levels in this list.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[-0.1, -0.075, -0.05, -0.04, -0.03, -0.02, -0.01, -0.01, 0.0, 0.01, 0.01, 0.02, 0.03, 0.04, 0.05, 0.075, 0.1]</span>
+</pre></div>
+</div>
+<p>The image should be something like,</p>
+<figure class="align-default" id="id31">
+<img alt="Contour map of :math:`z = - x y e^{- x^{2} - y^{2}}`" src="../_images/FctSevVars019.png" />
+<figcaption>
+<p><span class="caption-text">Contour map of <span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span></span><a class="headerlink" href="#id31" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another thing you can do that is even more informative is graph the contour map along with the dynamic level curve we did above.  Then changing the slider will illustrate the heights of the contours.</p>
+<figure class="align-default" id="id32">
+<img alt="Contour map of :math:`z = - x y e^{- x^{2} - y^{2}}`" src="../_images/FctSevVars023.png" />
+<figcaption>
+<p><span class="caption-text">Contour map of <span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span></span><a class="headerlink" href="#id32" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another option you have is to view a continuous color contour map using the 3D graph.  Go back to the 3D graph and hide the plane we plotted at 0.1.  Go into the properties of the surface and change the surface shading to Shade by Surface Height.</p>
+<figure class="align-default" id="id33">
+<img alt=":math:`z = - x y e^{- x^{2} - y^{2}}`" src="../_images/FctSevVars024.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span></span><a class="headerlink" href="#id33" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now move the camera up to the top of the <em>z</em>-axis and change the viewing to Orthogonal Mode. You will see the following, which is a color contour map, the colors are ROYGBIV from top to bottom.</p>
+<figure class="align-default" id="id34">
+<img alt=":math:`z = - x y e^{- x^{2} - y^{2}}`" src="../_images/FctSevVars025.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span></span><a class="headerlink" href="#id34" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="example-z-frac-3-y-x-2-y-2-1">
+<h3>Example: <span class="math notranslate nohighlight">\(z = - \frac{3 y}{x^{2} + y^{2} + 1}\)</span><a class="headerlink" href="#example-z-frac-3-y-x-2-y-2-1" title="Link to this heading">#</a></h3>
+<section id="id6">
+<h4>CLAE<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<p>We will follow the same procedures as we did in the last example to examine the level curves and contour maps of  <span class="math notranslate nohighlight">\(z = - \frac{3 y}{x^{2} + y^{2} + 1}.\)</span></p>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">-3*y/(x^2 + y^2 + 1)</span>
+</pre></div>
+</div>
+<p>Graph it in the 3D graphics plotter.  Note that this also requires zooming and the range of the function is approximately <span class="math notranslate nohighlight">\(-1.5\)</span> to <span class="math notranslate nohighlight">\(1.5.\)</span></p>
+<figure class="align-default" id="id35">
+<img alt=":math:`z = - \frac{3 y}{x^{2} + y^{2} + 1}`" src="../_images/FctSevVars026.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(z = - \frac{3 y}{x^{2} + y^{2} + 1}\)</span></span><a class="headerlink" href="#id35" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Here we will skip to the dynamic level curve plot.  Assuming that the function is in <code class="docutils literal notranslate"><span class="pre">R1</span></code>, input <code class="docutils literal notranslate"><span class="pre">R1-a</span></code> into the CAS and plot the expression in the 2D graphics window.  Change the range of the <em>a</em> slider to  <span class="math notranslate nohighlight">\(-1.5\)</span> to <span class="math notranslate nohighlight">\(1.5.\)</span>  Move the slider to see the change in the level curve.</p>
+<figure class="align-default" id="id36">
+<img alt=":math:`a = - \frac{3 y}{x^{2} + y^{2} + 1}`" src="../_images/FctSevVars027.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(a = - \frac{3 y}{x^{2} + y^{2} + 1}\)</span></span><a class="headerlink" href="#id36" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now we move onto the contour map. Clear the plot, click and drag the original function to the graphics window, change the type to Contour Map and use the following contour list,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[-1.5, -1.35, -1.2, -1.05, -0.9, -0.75, -0.6, -0.45, -0.3, -0.15, 0, 0.15, 0.3, 0.45, 0.6, 0.75, 0.9, 1.05, 1.2, 1.35, 1.5]</span>
+</pre></div>
+</div>
+<figure class="align-default" id="id37">
+<img alt="Contour Map of :math:`z = - \frac{3 y}{x^{2} + y^{2} + 1}`" src="../_images/FctSevVars028.png" />
+<figcaption>
+<p><span class="caption-text">Contour Map of <span class="math notranslate nohighlight">\(z = - \frac{3 y}{x^{2} + y^{2} + 1}\)</span></span><a class="headerlink" href="#id37" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that CLAE has an option under the Edit menu that allows the user to create a sequence of evenly-spaced values.  This would some in handy for creating contour level lists.  Using the 3D graph with height shading gives us the following color contour map.</p>
+<figure class="align-default" id="id38">
+<img alt="Color Contour Map of :math:`z = - \frac{3 y}{x^{2} + y^{2} + 1}`" src="../_images/FctSevVars029.png" />
+<figcaption>
+<p><span class="caption-text">Color Contour Map of <span class="math notranslate nohighlight">\(z = - \frac{3 y}{x^{2} + y^{2} + 1}\)</span></span><a class="headerlink" href="#id38" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+<section id="functions-of-more-than-two-variables-and-level-surfaces">
+<h2>Functions of More Than Two Variables and Level Surfaces<a class="headerlink" href="#functions-of-more-than-two-variables-and-level-surfaces" title="Link to this heading">#</a></h2>
+<p>In practice, we can have functions in three or more variables.  For example, say we are modeling a financial transaction that includes 5 stock options and cash.  In this situation we could be working with a model function with 6 variables.  You can still apply Calculus to these functions, it just takes more sophisticated techniques to do the derivations.  We will examine functions of three variables here and leave the higher ones to more advanced courses.</p>
+<p>An example of a function in three variables is</p>
+<div class="math notranslate nohighlight">
+\[w = f(x, y, z) = x^2y-3xyz +\cos(y/x) + e^{x^2-y^2}\]</div>
+<p>Unfortunately it takes four dimensions to visualize this function, so we have a problem here.  There are some ways we can visualize this function.  One way is to graph slices of the function.  That is, if we fix one of the variables as a constant, <span class="math notranslate nohighlight">\(w = f(x, y, a)\)</span> and then graph this in three dimensions we can get a feel for the change along one of the axes.  We can also animate <em>a</em> for a better understanding.</p>
+<section id="example-w-x-2-y-3-x-y-z">
+<h3>Example: <span class="math notranslate nohighlight">\(w = x^{2} y - 3 x y z\)</span><a class="headerlink" href="#example-w-x-2-y-3-x-y-z" title="Link to this heading">#</a></h3>
+<p>We will use the slicing technique to examine the function, <span class="math notranslate nohighlight">\(w = x^{2} y - 3 x y z.\)</span></p>
+<section id="id7">
+<h4>CLAE<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2*y - 3*x*y*z</span>
+</pre></div>
+</div>
+<p>Now we will replace <em>z</em> with a dynamic constant <em>a</em>.  Select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> edit the variables box to just <code class="docutils literal notranslate"><span class="pre">z</span></code> and input <code class="docutils literal notranslate"><span class="pre">a</span></code> for the expression.  Graph this,</p>
+<figure class="align-default" id="id39">
+<img alt=":math:`w = x^{2} y - 3 x y a`" src="../_images/FctSevVars030.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(w = x^{2} y - 3 x y a\)</span></span><a class="headerlink" href="#id39" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Change or animate the <em>a</em> slider to view the surface changes,</p>
+<figure class="align-default" id="id40">
+<img alt=":math:`w = x^{2} y - 3 x y a`" src="../_images/FctSevVars031.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(w = x^{2} y - 3 x y a\)</span></span><a class="headerlink" href="#id40" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Putting these slices together to form a four-dimensional mental image of the “surface” probably will not happen, even in the most simple of cases but it still gives you some indication of the transition as one variable changes.  Note that if we wanted to do this with either <em>x</em> or <em>y</em> we will need to change the remaining two variables fo <em>x</em> and <em>y</em>.  If we leave <em>z</em> in the expression CLAE will think of this as an implicitly defined expression.</p>
+<p>Another way to visualize these functions is with level surfaces.  This is when we fix <em>w</em> and graph the expression implicitly.  That is, fix a value <em>a</em> and then graph the implicit expression <span class="math notranslate nohighlight">\(a = f(x, y, z).\)</span></p>
+<div class="admonition-definition-level-surface admonition">
+<p class="admonition-title">Definition: Level Surface</p>
+<p>Given a function <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> and a number <em>c</em> in the range of <em>f</em>, a level surface is the set of points satisfying the equation <span class="math notranslate nohighlight">\(f(x, y, z) = c.\)</span></p>
+</div>
+</section>
+</section>
+<section id="example-w-sin-left-x-y-right-sin-left-y-z-right-cos-left-x-z-right">
+<h3>Example: <span class="math notranslate nohighlight">\(w = \sin{\left(x + y \right)} + \sin{\left(y - z \right)} - \cos{\left(x - z \right)}\)</span><a class="headerlink" href="#example-w-sin-left-x-y-right-sin-left-y-z-right-cos-left-x-z-right" title="Link to this heading">#</a></h3>
+<p>We will use level surfaces to examine the function, <span class="math notranslate nohighlight">\(w = \sin{\left(x + y \right)} + \sin{\left(y - z \right)} - \cos{\left(x - z \right)}.\)</span></p>
+<section id="id8">
+<h4>CLAE<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">sin(x + y) + sin(y - z) - cos(x - z)</span>
+</pre></div>
+</div>
+<p>then subtract <em>a</em> from the expression and graph it in the 3D graphics window.  It is clear that the range of this function must be within <span class="math notranslate nohighlight">\([-3, 3].\)</span>  Change the <em>a</em> slider range to <span class="math notranslate nohighlight">\([-3, 3]\)</span> and then move the slider or animate the slider to see the level surfaces of the function.  The response will probably be a bit sluggish since plotting 3D implicit relationships is very computationally intensive.</p>
+<figure class="align-default" id="id41">
+<img alt=":math:`a = \sin{\left(x + y \right)} + \sin{\left(y - z \right)} - \cos{\left(x - z \right)}`" src="../_images/FctSevVars032.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(a = \sin{\left(x + y \right)} + \sin{\left(y - z \right)} - \cos{\left(x - z \right)}\)</span></span><a class="headerlink" href="#id41" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="motion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Motion in Space</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="limits.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Limits and Continuity</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-two-variables">Functions of Two Variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-sin-x-cos-y">Example: <span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-sqrt-9-x-2-y-2">Example: <span class="math notranslate nohighlight">\(z = \sqrt{9 - x^2-y^2}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graphing-functions-of-two-variables">Graphing Functions of Two Variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#traces">Traces</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-traces-of-z-sin-x-cos-y">Example: Traces of <span class="math notranslate nohighlight">\(z = \sin(x) + \cos(y)\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">GeoGebra</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#level-curves-and-contour-maps">Level Curves and Contour Maps</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-x-y-e-x-2-y-2">Example: <span class="math notranslate nohighlight">\(z = - x y e^{- x^{2} - y^{2}}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-z-frac-3-y-x-2-y-2-1">Example: <span class="math notranslate nohighlight">\(z = - \frac{3 y}{x^{2} + y^{2} + 1}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-of-more-than-two-variables-and-level-surfaces">Functions of More Than Two Variables and Level Surfaces</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-w-x-2-y-3-x-y-z">Example: <span class="math notranslate nohighlight">\(w = x^{2} y - 3 x y z\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">CLAE</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-w-sin-left-x-y-right-sin-left-y-z-right-cos-left-x-z-right">Example: <span class="math notranslate nohighlight">\(w = \sin{\left(x + y \right)} + \sin{\left(y - z \right)} - \cos{\left(x - z \right)}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">CLAE</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

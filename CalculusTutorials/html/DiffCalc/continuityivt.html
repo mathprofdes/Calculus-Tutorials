@@ -1,0 +1,643 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Intermediate Value Theorem &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/continuityivt';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Definition of the Derivative" href="derivativedef.html" />
+    <link rel="prev" title="Theorems on Continuity" href="continuityTheorems.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativeimplicit.html">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">The Intermediate Value Theorem</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-intermediate-value-theorem">
+<h1><span class="target" id="index-0"></span>The Intermediate Value Theorem<a class="headerlink" href="#the-intermediate-value-theorem" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<div class="admonition-theorem-the-intermediate-value-theorem admonition">
+<p class="admonition-title">Theorem: The Intermediate Value Theorem</p>
+<p>Let <span class="math notranslate nohighlight">\(f(x)\)</span> be continuous over a closed, bounded (finite) interval <span class="math notranslate nohighlight">\([a, b]\)</span>. If <em>d</em> is any real number between <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span>, there exists a number <em>c</em> in <span class="math notranslate nohighlight">\([a, b]\)</span> such that <span class="math notranslate nohighlight">\(f(c) = d\)</span>.</p>
+</div>
+<p>The Intermediate Value Theorem has a nice pictorial representation, below.  Start with a continuous function and an interval, <span class="math notranslate nohighlight">\([a, b]\)</span>.  Take vertical lines from <em>a</em> and <em>b</em> to the curve, then from there take horizontal lines to the <em>y</em>-axis.  These are the values of <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span>.  Now select any value <em>d</em> between <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span> on the <em>y</em>-axis, call it <em>d</em>.  From <em>d</em>, slide horizontally to the curve, then vertically to the <em>x</em>-axis.  You now have a point <em>c</em> such that <span class="math notranslate nohighlight">\(f(c) = d\)</span>.</p>
+<figure class="align-default" id="id1">
+<img alt="The Intermediate Value Theorem Visualization" src="../_images/IVT001.png" />
+<figcaption>
+<p><span class="caption-text">The Intermediate Value Theorem Visualization</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A couple notes about the Intermediate Value Theorem.</p>
+<ul class="simple">
+<li><p>The theorem does not give the actual value of <em>c</em>, it simply says that <em>c</em> exists.  To find <em>c</em> we need to solve the equation <span class="math notranslate nohighlight">\(f(c) = d\)</span>, which could be difficult.</p></li>
+<li><p>The theorem simply tells us that at least one value of <em>c</em> exists, it does not tell us how many values of <em>c</em> satisfy this expression.  Again we would need to solve <span class="math notranslate nohighlight">\(f(c) = d\)</span> for all values of <em>c</em> that are in the interval, again this could be a difficult task.</p></li>
+</ul>
+</div>
+</section>
+<section id="example-f-x-x-3-4-x-2-x-3-on-1-3">
+<h2>Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 4 x^{2} + x + 3\)</span> on <span class="math notranslate nohighlight">\([1, 3]\)</span><a class="headerlink" href="#example-f-x-x-3-4-x-2-x-3-on-1-3" title="Link to this heading">#</a></h2>
+<p>For the image we used above to demonstrate the Intermediate Value Theorem was the function <span class="math notranslate nohighlight">\(f(x) = x^{3} - 4 x^{2} + x + 3\)</span> on the interval <span class="math notranslate nohighlight">\([1, 3]\)</span>.  This was chosen arbitrarily for the image but we will take it through the process.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-4 x^2+x+3</span>
+</pre></div>
+</div>
+<p>Evaluate the function at 1 and 3 by <code class="docutils literal notranslate"><span class="pre">f(1)</span></code> and <code class="docutils literal notranslate"><span class="pre">f(3)</span></code>.  The results are 1 and <span class="math notranslate nohighlight">\(-3\)</span>.</p>
+<p>We selected <span class="math notranslate nohighlight">\(d = -2\)</span>, again rather arbitrarily.  We know that the function is continuous and that <em>d</em> is between the values of <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span>, so we know that a <em>c</em> exists.  We will go one step further and find the value of <em>c</em>.  In GeoGebra, go to the next open cell and type in <code class="docutils literal notranslate"><span class="pre">Solve</span></code>, select <code class="docutils literal notranslate"><span class="pre">Solve</span></code> and in the parentheses type in <code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">-2</span></code>, this is the equation <span class="math notranslate nohighlight">\(f(c) = d\)</span> we need to solve.  GeoGebra returns <code class="docutils literal notranslate"><span class="pre">{x</span> <span class="pre">=</span> <span class="pre">-0.91223,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">1.71354,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">3.19869}</span></code>.  Only one of them <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1.71354</span></code> is in our interval, so <span class="math notranslate nohighlight">\(c = 1.71354\)</span>.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^3-4*x^2+x+3</span>
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Evaluate</span></code> we can evaluate the function at 1 and 3.  The results are 1 and <span class="math notranslate nohighlight">\(-3\)</span>.</p>
+<p>We selected <span class="math notranslate nohighlight">\(d = -2\)</span>, again rather arbitrarily.  We know that the function is continuous and that <em>d</em> is between the values of <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span>, so we know that a <em>c</em> exists.  We will go one step further and find the value of <em>c</em>.  Assuming the expression was in R1, type in <code class="docutils literal notranslate"><span class="pre">R1</span> <span class="pre">-</span> <span class="pre">(-2)</span></code> or <code class="docutils literal notranslate"><span class="pre">R1+2</span></code> into the CAS input bar and the resulting expression will be, <span class="math notranslate nohighlight">\(x^{3} - 4 x^{2} + x + 5\)</span>.  Now select <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Solve</span></code>, a dialog box will appear asking for the variable, use <em>x</em> and click OK.  The result is,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{4}{3} - \frac{13}{\left(- \frac{3}{2} - \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{\frac{43}{2} + \frac{3 \sqrt{771} i}{2}}} - \frac{\left(- \frac{1}{2} - \frac{\sqrt{3} i}{2}\right) \sqrt[3]{\frac{43}{2} + \frac{3 \sqrt{771} i}{2}}}{3}, \  \frac{4}{3} - \frac{\left(- \frac{1}{2} + \frac{\sqrt{3} i}{2}\right) \sqrt[3]{\frac{43}{2} + \frac{3 \sqrt{771} i}{2}}}{3} - \frac{13}{\left(- \frac{3}{2} + \frac{3 \sqrt{3} i}{2}\right) \sqrt[3]{\frac{43}{2} + \frac{3 \sqrt{771} i}{2}}}, \  \frac{4}{3} - \frac{\sqrt[3]{\frac{43}{2} + \frac{3 \sqrt{771} i}{2}}}{3} - \frac{13}{3 \sqrt[3]{\frac{43}{2} + \frac{3 \sqrt{771} i}{2}}}\right]\]</div>
+<p>CLAE will find exact solutions to equations when possible.  Also, the solve option in CLAE always assumes that the expression is being solved for 0.  This is why we took the equation <span class="math notranslate nohighlight">\(f(c) = d\)</span> and reformed it into <span class="math notranslate nohighlight">\(f(c) - d= 0\)</span> before solving.  This expression is rather complicated and you may notice that there are imaginary numbers involved.  We know that at least one of these solutions is a real number, in fact, all three are.  We will approximate this answer by <code class="docutils literal notranslate"><span class="pre">Algebra</span> <span class="pre">&gt;</span> <span class="pre">Approximate</span></code>.  We get,</p>
+<div class="math notranslate nohighlight">
+\[\left[ 1.7135379349684, \  3.198691243516, \  -0.912229178484397\right]\]</div>
+<p>When the expression was simplified and approximated the imaginary numbers in sense cancelled out leaving three real solutions.  Only one of these values is in our interval, so <span class="math notranslate nohighlight">\(c = 1.7135379349684\)</span>.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>Input the function,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f(x):=x^3-4*x^2+x+3</span>
+</pre></div>
+</div>
+<p>Using</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">f(1);</span>
+<span class="go">f(3)</span>
+</pre></div>
+</div>
+<p>we can evaluate the function at 1 and 3.  The results are 1 and <span class="math notranslate nohighlight">\(-3\)</span>.</p>
+<p>We selected <span class="math notranslate nohighlight">\(d = -2\)</span>, again rather arbitrarily.  We know that the function is continuous and that <em>d</em> is between the values of <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span>, so we know that a <em>c</em> exists.  We will go one step further and find the value of <em>c</em>.  Run the command,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(f(x)=-2,x)</span>
+</pre></div>
+</div>
+<p>We get the following, as with CLAE it is an exact expression.</p>
+<div class="math notranslate nohighlight">
+\[\left[x=\left( \frac{-1}{2}-\frac{\sqrt{3} \% i}{2}\right)  {{\left( \frac{\sqrt{257} \% i}{2 {{3}^{\frac{3}{2}}}}-\frac{43}{54}\right) }^{\frac{1}{3}}}+\frac{13 \left( \frac{\sqrt{3} \% i}{2}+\frac{-1}{2}\right) }{9 {{\left( \frac{\sqrt{257} \% i}{2 {{3}^{\frac{3}{2}}}}-\frac{43}{54}\right) }^{\frac{1}{3}}}}+\frac{4}{3}\operatorname{,}x=\left( \frac{\sqrt{3} \% i}{2}+\frac{-1}{2}\right)  {{\left( \frac{\sqrt{257} \% i}{2 {{3}^{\frac{3}{2}}}}-\frac{43}{54}\right) }^{\frac{1}{3}}}+ \frac{13 \left( \frac{-1}{2}-\frac{\sqrt{3} \% i}{2}\right) }{9 {{\left( \frac{\sqrt{257} \% i}{2 {{3}^{\frac{3}{2}}}}-\frac{43}{54}\right) }^{\frac{1}{3}}}}+\frac{4}{3}\operatorname{,}x={{\left( \frac{\sqrt{257} \% i}{2 {{3}^{\frac{3}{2}}}}-\frac{43}{54}\right) }^{\frac{1}{3}}}+\frac{13}{9 {{\left( \frac{\sqrt{257} \% i}{2 {{3}^{\frac{3}{2}}}}-\frac{43}{54}\right) }^{\frac{1}{3}}}}+\frac{4}{3}\right]\]</div>
+<p>Getting numerical approximations in Maxima can be a little tricky, since we know that there is at least one real root we will use both the float command and the realpart command.  Assuming that the above solution was <code class="docutils literal notranslate"><span class="pre">%o4</span></code> run the following,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">float(%o4);</span>
+<span class="go">realpart(%)</span>
+</pre></div>
+</div>
+<p>We get the following,</p>
+<div class="math notranslate nohighlight">
+\[[x=1.713537934968399, x=-0.9122291784843963, x=3.198691243515997]\]</div>
+<p>Only one of these values is in our interval, so <span class="math notranslate nohighlight">\(c = 1.713537934968399\)</span>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="continuityTheorems.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Theorems on Continuity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="derivativedef.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">The Definition of the Derivative</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-f-x-x-3-4-x-2-x-3-on-1-3">Example: <span class="math notranslate nohighlight">\(f(x) = x^{3} - 4 x^{2} + x + 3\)</span> on <span class="math notranslate nohighlight">\([1, 3]\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

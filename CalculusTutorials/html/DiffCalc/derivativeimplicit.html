@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Implicit Differentiation &#8212; Calculus Tutorials  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e7188be6" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script async="async" src="../_static/es5/tex-chtml.js?v=20daa33d"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'DiffCalc/derivativeimplicit';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Logarithmic Differentiation" href="logdiff.html" />
+    <link rel="prev" title="Higher-Order Derivatives" href="derivativehigher.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Friday, July 10, 2026  -  03:41 PM"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class=" navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-light" alt="Calculus Tutorials  documentation - Home"/>
+    <img src="../_static/ProgramIconMC2.png" class="logo__image only-dark pst-js-only" alt="Calculus Tutorials  documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class=" navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+      
+        <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../Gen/index.html">
+    Introduction
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../guides.html">
+    User’s Guides
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Differential Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../IntCalc/index.html">
+    Integral Calculus
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../MultCalc/index.html">
+    Multivariable Calculus
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mathprofdes/" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Limits</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitatapoint.html">Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitonesidedatapoint.html">One-Sided Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimits.html">Infinite Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitatinfinity.html">Limits at Infinity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infinitelimitatinfinity.html">Infinite Limits at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Precise Definitions of the Limit</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="limitprecise.html">The Precise Definition of a Limit at a Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitpreciseInfinity.html">The Precise Definition of a Limit at Infinity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Continuity</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="continuity.html">Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityoneside.html">One-Sided Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityinterval.html">Continuity on an Interval</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityTheorems.html">Theorems on Continuity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="continuityivt.html">The Intermediate Value Theorem</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivatives</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="derivativedef.html">The Definition of the Derivative</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativefct.html">The Derivative as a Function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativerules.html">Differentiation Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativehigher.html">Higher-Order Derivatives</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Implicit Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logdiff.html">Logarithmic Differentiation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Applications to the Derivative</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="rateofchange.html">Rates of Change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="relatedrates.html">Related Rates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linearapprox.html">Linear Approximations and Differentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="maxmin.html">Extreme Values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="meanvalue.html">Mean Value Theorem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="derivativetests.html">Derivatives and the Shape of a Graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indforms.html">Indeterminate Forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimization.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newton.html">Newton’s Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="indefint.html">Antiderivatives and The Indefinite Integral</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item"><nav class="sidebar-indices-items" aria-labelledby="pst-indices-navigation-heading-2">
+  <p id="pst-indices-navigation-heading-2" class="sidebar-indices-items__title" role="heading" aria-level="1">Indices</p>
+  <ul class="indices-link">
+        <li class="toctree-l1">
+          <a class="reference internal"
+             href="../genindex.html"
+             accesskey="I">General Index</a>
+        </li>
+  </ul>
+</nav></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Differential Calculus</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Implicit Differentiation</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="implicit-differentiation">
+<h1><span class="target" id="index-0"></span>Implicit Differentiation<a class="headerlink" href="#implicit-differentiation" title="Link to this heading">#</a></h1>
+<section id="discussion-definitions">
+<h2>Discussion &amp; Definitions<a class="headerlink" href="#discussion-definitions" title="Link to this heading">#</a></h2>
+<p>When you no longer have a function of the form <span class="math notranslate nohighlight">\(f(x)\)</span> but an implicit relationship <span class="math notranslate nohighlight">\(f(x, y) = 0\)</span> the procedure for finding the derivative changes a little.  Since the dependent variable <em>y</em> may not be able to be isolated to form an expression <span class="math notranslate nohighlight">\(f(x)\)</span> we need to incorporate the derivative into the implicit expression and then isolate <span class="math notranslate nohighlight">\(y'\)</span> at the end.  The procedure below outlines the steps one would take in finding the derivative of an implicit relationship <span class="math notranslate nohighlight">\(f(x, y) = 0\)</span> by hand, we will concentrate on examples using technology.</p>
+<div class="admonition-problem-solving-steps-in-implicit-differentiation admonition">
+<p class="admonition-title">Problem Solving: Steps in Implicit Differentiation</p>
+<ol class="arabic simple">
+<li><p>Differentiate both sides of the implicit equation with respect to <em>x</em> thinking of <em>y</em> as a function of <em>x</em>.</p></li>
+<li><p>Isolate all terms that have a <span class="math notranslate nohighlight">\(y'\)</span> in them.  That is, put all terms with <span class="math notranslate nohighlight">\(y'\)</span> on one side of the equation and all the other terms on the other side.</p></li>
+<li><p>On the side with <span class="math notranslate nohighlight">\(y'\)</span>, factor out the <span class="math notranslate nohighlight">\(y'\)</span>.</p></li>
+<li><p>Divide both sides by the expression times <span class="math notranslate nohighlight">\(y'\)</span> on the <span class="math notranslate nohighlight">\(y'\)</span> side of the equation.  The result will be of the form, <span class="math notranslate nohighlight">\(y' = g(x,y)\)</span>.</p></li>
+</ol>
+</div>
+</section>
+<section id="example-x-2-y-2-2">
+<h2>Example: <span class="math notranslate nohighlight">\(x^2 + y^2 = 2\)</span><a class="headerlink" href="#example-x-2-y-2-2" title="Link to this heading">#</a></h2>
+<p>This is a circle of radius <span class="math notranslate nohighlight">\(\sqrt{2}\)</span>.</p>
+<section id="geogebra">
+<h3>GeoGebra<a class="headerlink" href="#geogebra" title="Link to this heading">#</a></h3>
+<p>First rearrange the expression so that it is of the form <span class="math notranslate nohighlight">\(f(x, y) = 0\)</span>, that is, <span class="math notranslate nohighlight">\(x^2 + y^2 - 2\)</span>.</p>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 - 2</span>
+</pre></div>
+</div>
+<p>It will probably come in as <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">y)</span></code>, we will assume that in the following procedure.</p>
+<p>Go to the next cell and start typing <code class="docutils literal notranslate"><span class="pre">ImplicitDerivative</span></code>, a popup menu will appear allowing you to select <code class="docutils literal notranslate"><span class="pre">ImplicitDerivative</span></code>, do so and in the function parameter type in <code class="docutils literal notranslate"><span class="pre">a</span></code> and then Enter.  GeoGebra will find <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span> and assign it to a new function name, probably <code class="docutils literal notranslate"><span class="pre">b(x,</span> <span class="pre">y)</span></code>.  The result should be, <span class="math notranslate nohighlight">\(- \frac{x}{y}\)</span>.</p>
+</section>
+<section id="clae">
+<h3>CLAE<a class="headerlink" href="#clae" title="Link to this heading">#</a></h3>
+<p>First rearrange the expression so that it is of the form <span class="math notranslate nohighlight">\(f(x, y) = 0\)</span>, that is, <span class="math notranslate nohighlight">\(x^2 + y^2 - 2\)</span>.</p>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x^2 + y^2 - 2</span>
+</pre></div>
+</div>
+<p>Select the expression then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Implicit</span> <span class="pre">Derivative</span></code>, in the dialog box that appears you are asked for the dependent and independent variables.  We will keep the order at 1 for the moment.  If the dependent variable is <em>y</em> and the independent variable is <em>x</em> the program will return <span class="math notranslate nohighlight">\(\frac{dy}{dx}.\)</span>  On the other hand, if we input the dependent variable as <em>x</em> and the independent variable as <em>y</em> the result will be  <span class="math notranslate nohighlight">\(\frac{dx}{dy}.\)</span>  Since we want <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span> we will use a dependent variable of <em>y</em> and independent variable of <em>x</em>.  Then click OK and the result of <span class="math notranslate nohighlight">\(- \frac{x}{y}\)</span> will be added to the workspace.</p>
+</section>
+<section id="maxima">
+<h3>Maxima<a class="headerlink" href="#maxima" title="Link to this heading">#</a></h3>
+<p>The procedure in Maxima is a little different.  We keep the implicit relationship as an equation, we need to tell Maxima that <em>y</em> is a function of <em>x</em> with the notation, <code class="docutils literal notranslate"><span class="pre">y(x)</span></code>, and then we can use the <code class="docutils literal notranslate"><span class="pre">diff</span></code> command, followed by solving for the derivative.</p>
+<p>Input the expression using <code class="docutils literal notranslate"><span class="pre">y(x)</span></code> for <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f:x^2 + y(x)^2 = 2</span>
+</pre></div>
+</div>
+<p>Now take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f, x)</span>
+</pre></div>
+</div>
+<p>You should get the following,</p>
+<div class="math notranslate nohighlight">
+\[2 \operatorname{y}(x) \left( \frac{d}{d x} \operatorname{y}(x)\right) +2 x=0\]</div>
+<p>Maxima took the derivative implicitly but did not solve for <span class="math notranslate nohighlight">\(y'\)</span>.  The following command will solve for <span class="math notranslate nohighlight">\(y'\)</span>, assuming that <code class="docutils literal notranslate"><span class="pre">%o3</span></code> holds the above derivative.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(%o3,diff(y(x),x))</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{d}{d x} \operatorname{y}(x)=-\frac{x}{\operatorname{y}(x)}\right]\]</div>
+<p>which, of course, translates to <span class="math notranslate nohighlight">\(- \frac{x}{y}\)</span>.</p>
+</section>
+</section>
+<section id="example-x-cos-left-y-right-y-sin-left-x-right-frac-1-2">
+<h2>Example: <span class="math notranslate nohighlight">\(x \cos{\left(y \right)} = -y \sin{\left(x \right)} + \frac{1}{2}\)</span><a class="headerlink" href="#example-x-cos-left-y-right-y-sin-left-x-right-frac-1-2" title="Link to this heading">#</a></h2>
+<p>Let’s look at something a little more difficult, <span class="math notranslate nohighlight">\(x \cos{\left(y \right)} = -y \sin{\left(x \right)} + \frac{1}{2}\)</span>.  The graph of the relationship is below.</p>
+<figure class="align-default" id="id6">
+<img alt="Implicit Expression" src="../_images/Imp0012.png" />
+<figcaption>
+<p><span class="caption-text"><span class="math notranslate nohighlight">\(x \cos{\left(y \right)} = -y \sin{\left(x \right)} + \frac{1}{2}\)</span></span><a class="headerlink" href="#id6" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="id1">
+<h3>GeoGebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>First rearrange the expression so that it is of the form <span class="math notranslate nohighlight">\(f(x, y) = 0\)</span>, that is, <span class="math notranslate nohighlight">\(x \cos{\left(y \right)} + y \sin{\left(x \right)} - \frac{1}{2}\)</span>.</p>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x cos(y)+y sin(x)-1/2</span>
+</pre></div>
+</div>
+<p>It will probably come in as <code class="docutils literal notranslate"><span class="pre">a(x,</span> <span class="pre">y)</span></code>, we will assume that in the following procedure.</p>
+<p>Go to the next cell and start typing <code class="docutils literal notranslate"><span class="pre">ImplicitDerivative</span></code>, a popup menu will appear allowing you to select <code class="docutils literal notranslate"><span class="pre">ImplicitDerivative</span></code>, do so and in the function parameter type in <code class="docutils literal notranslate"><span class="pre">a</span></code> and then Enter.  GeoGebra will find <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span> and assign it to a new function name, probably <code class="docutils literal notranslate"><span class="pre">b(x,</span> <span class="pre">y)</span></code>.  The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{y \cos{\left(x \right)} + \cos{\left(y \right)}}{x \sin{\left(y \right)} - \sin{\left(x \right)}}\]</div>
+</section>
+<section id="id2">
+<h3>CLAE<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>First rearrange the expression so that it is of the form <span class="math notranslate nohighlight">\(f(x, y) = 0\)</span>, that is, <span class="math notranslate nohighlight">\(x^2 + y^2 - 2\)</span>.</p>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*cos(y) + y*sin(x) - 1/2</span>
+</pre></div>
+</div>
+<p>Select the expression then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Implicit</span> <span class="pre">Derivative</span></code>, in the dialog box that appears you are asked for the dependent and independent variables.  We will keep the order at 1 for the moment.  If the dependent variable is <em>y</em> and the independent variable is <em>x</em> the program will return <span class="math notranslate nohighlight">\(\frac{dy}{dx}.\)</span>  On the other hand, if we input the dependent variable as <em>x</em> and the independent variable as <em>y</em> the result will be  <span class="math notranslate nohighlight">\(\frac{dx}{dy}.\)</span>  Since we want <span class="math notranslate nohighlight">\(\frac{dy}{dx}\)</span> we will use a dependent variable of <em>y</em> and independent variable of <em>x</em>.  Then click OK and the result is,</p>
+<div class="math notranslate nohighlight">
+\[\frac{y \cos{\left(x \right)} + \cos{\left(y \right)}}{x \sin{\left(y \right)} - \sin{\left(x \right)}}\]</div>
+</section>
+<section id="id3">
+<h3>Maxima<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>The procedure in Maxima is a little different.  We keep the implicit relationship as an equation, we need to tell Maxima that <em>y</em> is a function of <em>x</em> with the notation, <code class="docutils literal notranslate"><span class="pre">y(x)</span></code>, and then we can use the <code class="docutils literal notranslate"><span class="pre">diff</span></code> command, followed by solving for the derivative.</p>
+<p>Input the expression using <code class="docutils literal notranslate"><span class="pre">y(x)</span></code> for <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f:x*cos(y(x)) = -y(x)*sin(x) + 1/2</span>
+</pre></div>
+</div>
+<p>Now take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f, x)</span>
+</pre></div>
+</div>
+<p>You should get the following,</p>
+<div class="math notranslate nohighlight">
+\[\cos{\left( \operatorname{y}(x)\right) }-x \sin{\left( \operatorname{y}(x)\right) } \left( \frac{d}{d x} \operatorname{y}(x)\right) =-\sin{(x)} \left( \frac{d}{d x} \operatorname{y}(x)\right) -\operatorname{y}(x) \cos{(x)}\]</div>
+<p>Maxima took the derivative implicitly but did not solve for <span class="math notranslate nohighlight">\(y'\)</span>.  The following command will solve for <span class="math notranslate nohighlight">\(y'\)</span>, assuming that <code class="docutils literal notranslate"><span class="pre">%o3</span></code> holds the above derivative.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(%o3,diff(y(x),x))</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{d}{d x} \operatorname{y}(x)=\frac{\cos{\left( \operatorname{y}(x)\right) }+\operatorname{y}(x) \cos{(x)}}{x \sin{\left( \operatorname{y}(x)\right) }-\sin{(x)}}\right]\]</div>
+<p>which, of course, translates to</p>
+<div class="math notranslate nohighlight">
+\[\frac{y \cos{\left(x \right)} + \cos{\left(y \right)}}{x \sin{\left(y \right)} - \sin{\left(x \right)}}\]</div>
+</section>
+</section>
+<section id="example-higher-order-implicit-derivatives">
+<h2>Example: Higher-Order Implicit Derivatives<a class="headerlink" href="#example-higher-order-implicit-derivatives" title="Link to this heading">#</a></h2>
+<p>Higher-order implicit derivatives can get a bit messy quickly.  Recall that when you do them by hand you need to substitute the first derivative into the expression for the second, and so on.  CLAE has this built in and it can be done in Maxima in a couple steps.</p>
+<p>We will take the last example, <span class="math notranslate nohighlight">\(x \cos{\left(y \right)} = -y \sin{\left(x \right)} + \frac{1}{2}\)</span>, and find the second derivative, <span class="math notranslate nohighlight">\(y''\)</span>.</p>
+<section id="id4">
+<h3>CLAE<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>First rearrange the expression so that it is of the form <span class="math notranslate nohighlight">\(f(x, y) = 0\)</span>, that is, <span class="math notranslate nohighlight">\(x^2 + y^2 - 2\)</span>.</p>
+<p>Input the expression,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">x*cos(y) + y*sin(x) - 1/2</span>
+</pre></div>
+</div>
+<p>Select the expression then select <code class="docutils literal notranslate"><span class="pre">Calculus</span> <span class="pre">&gt;</span> <span class="pre">Implicit</span> <span class="pre">Derivative</span></code>, use <em>y</em> as the dependent variable and <em>x</em> as the independent variable, and set the order to 2, the result should be,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- x^{2} y \sin{\left(x \right)} \sin^{2}{\left(y \right)} - x y^{2} \cos^{2}{\left(x \right)} \cos{\left(y \right)} + 2 x y \sin^{2}{\left(x \right)} \sin{\left(y \right)} - 2 x y \sin^{2}{\left(y \right)} \cos{\left(x \right)} + 2 x y \sin{\left(y \right)} \cos^{2}{\left(x \right)} - 2 x y \cos{\left(x \right)} \cos^{2}{\left(y \right)} - 2 x \sin^{2}{\left(y \right)} \cos{\left(y \right)} + 2 x \sin{\left(y \right)} \cos{\left(x \right)} \cos{\left(y \right)} - x \cos^{3}{\left(y \right)} - y \sin^{3}{\left(x \right)} + 2 y \sin{\left(x \right)} \sin{\left(y \right)} \cos{\left(x \right)} - 2 y \sin{\left(x \right)} \cos^{2}{\left(x \right)} + 2 \sin{\left(x \right)} \sin{\left(y \right)} \cos{\left(y \right)} - 2 \sin{\left(x \right)} \cos{\left(x \right)} \cos{\left(y \right)}}{x^{3} \sin^{3}{\left(y \right)} - 3 x^{2} \sin{\left(x \right)} \sin^{2}{\left(y \right)} + 3 x \sin^{2}{\left(x \right)} \sin{\left(y \right)} - \sin^{3}{\left(x \right)}}\]</div>
+<p>We can do the third derivative just as easily with 3 as the order and we get,</p>
+<div class="math notranslate nohighlight">
+\[\frac{- x^{4} y \sin^{4}{\left(y \right)} \cos{\left(x \right)} + 3 x^{3} y^{2} \sin{\left(x \right)} \sin^{2}{\left(y \right)} \cos{\left(x \right)} \cos{\left(y \right)} + 3 x^{3} y \sin{\left(x \right)} \sin^{4}{\left(y \right)} - 2 x^{3} y \sin{\left(x \right)} \sin^{3}{\left(y \right)} \cos{\left(x \right)} + 3 x^{3} y \sin{\left(x \right)} \sin^{2}{\left(y \right)} \cos^{2}{\left(y \right)} - 3 x^{3} \sin{\left(x \right)} \sin^{3}{\left(y \right)} \cos{\left(y \right)} + x^{2} y^{3} \sin^{2}{\left(y \right)} \cos^{3}{\left(x \right)} + 3 x^{2} y^{3} \cos^{3}{\left(x \right)} \cos^{2}{\left(y \right)} - 6 x^{2} y^{2} \sin^{2}{\left(x \right)} \sin{\left(y \right)} \cos{\left(x \right)} \cos{\left(y \right)} + 9 x^{2} y^{2} \sin^{2}{\left(y \right)} \cos^{2}{\left(x \right)} \cos{\left(y \right)} - 9 x^{2} y^{2} \sin{\left(y \right)} \cos^{3}{\left(x \right)} \cos{\left(y \right)} + 9 x^{2} y^{2} \cos^{2}{\left(x \right)} \cos^{3}{\left(y \right)} - 9 x^{2} y \sin^{2}{\left(x \right)} \sin^{3}{\left(y \right)} + 12 x^{2} y \sin^{2}{\left(x \right)} \sin^{2}{\left(y \right)} \cos{\left(x \right)} - 6 x^{2} y \sin^{2}{\left(x \right)} \sin{\left(y \right)} \cos^{2}{\left(y \right)} + 6 x^{2} y \sin^{4}{\left(y \right)} \cos{\left(x \right)} - 12 x^{2} y \sin^{3}{\left(y \right)} \cos^{2}{\left(x \right)} + 6 x^{2} y \sin^{2}{\left(y \right)} \cos^{3}{\left(x \right)} + 15 x^{2} y \sin^{2}{\left(y \right)} \cos{\left(x \right)} \cos^{2}{\left(y \right)} - 18 x^{2} y \sin{\left(y \right)} \cos^{2}{\left(x \right)} \cos^{2}{\left(y \right)} + 9 x^{2} y \cos{\left(x \right)} \cos^{4}{\left(y \right)} + 9 x^{2} \sin^{2}{\left(x \right)} \sin^{2}{\left(y \right)} \cos{\left(y \right)} + 6 x^{2} \sin^{4}{\left(y \right)} \cos{\left(y \right)} - 12 x^{2} \sin^{3}{\left(y \right)} \cos{\left(x \right)} \cos{\left(y \right)} + 6 x^{2} \sin^{2}{\left(y \right)} \cos^{2}{\left(x \right)} \cos{\left(y \right)} + 7 x^{2} \sin^{2}{\left(y \right)} \cos^{3}{\left(y \right)} - 9 x^{2} \sin{\left(y \right)} \cos{\left(x \right)} \cos^{3}{\left(y \right)} + 3 x^{2} \cos^{5}{\left(y \right)} - x y^{3} \sin{\left(x \right)} \sin{\left(y \right)} \cos^{3}{\left(x \right)} + 3 x y^{2} \sin^{3}{\left(x \right)} \cos{\left(x \right)} \cos{\left(y \right)} - 6 x y^{2} \sin{\left(x \right)} \sin{\left(y \right)} \cos^{2}{\left(x \right)} \cos{\left(y \right)} + 9 x y^{2} \sin{\left(x \right)} \cos^{3}{\left(x \right)} \cos{\left(y \right)} + 9 x y \sin^{3}{\left(x \right)} \sin^{2}{\left(y \right)} - 14 x y \sin^{3}{\left(x \right)} \sin{\left(y \right)} \cos{\left(x \right)} + 3 x y \sin^{3}{\left(x \right)} \cos^{2}{\left(y \right)} - 12 x y \sin{\left(x \right)} \sin^{3}{\left(y \right)} \cos{\left(x \right)} + 24 x y \sin{\left(x \right)} \sin^{2}{\left(y \right)} \cos^{2}{\left(x \right)} - 12 x y \sin{\left(x \right)} \sin{\left(y \right)} \cos^{3}{\left(x \right)} - 9 x y \sin{\left(x \right)} \sin{\left(y \right)} \cos{\left(x \right)} \cos^{2}{\left(y \right)} + 18 x y \sin{\left(x \right)} \cos^{2}{\left(x \right)} \cos^{2}{\left(y \right)} - 9 x \sin^{3}{\left(x \right)} \sin{\left(y \right)} \cos{\left(y \right)} - 12 x \sin{\left(x \right)} \sin^{3}{\left(y \right)} \cos{\left(y \right)} + 24 x \sin{\left(x \right)} \sin^{2}{\left(y \right)} \cos{\left(x \right)} \cos{\left(y \right)} - 12 x \sin{\left(x \right)} \sin{\left(y \right)} \cos^{2}{\left(x \right)} \cos{\left(y \right)} - 4 x \sin{\left(x \right)} \sin{\left(y \right)} \cos^{3}{\left(y \right)} + 9 x \sin{\left(x \right)} \cos{\left(x \right)} \cos^{3}{\left(y \right)} - 3 y^{2} \sin^{2}{\left(x \right)} \cos^{2}{\left(x \right)} \cos{\left(y \right)} - 3 y \sin^{4}{\left(x \right)} \sin{\left(y \right)} + 5 y \sin^{4}{\left(x \right)} \cos{\left(x \right)} + 6 y \sin^{2}{\left(x \right)} \sin^{2}{\left(y \right)} \cos{\left(x \right)} - 12 y \sin^{2}{\left(x \right)} \sin{\left(y \right)} \cos^{2}{\left(x \right)} + 6 y \sin^{2}{\left(x \right)} \cos^{3}{\left(x \right)} - 6 y \sin^{2}{\left(x \right)} \cos{\left(x \right)} \cos^{2}{\left(y \right)} + 3 \sin^{4}{\left(x \right)} \cos{\left(y \right)} + 6 \sin^{2}{\left(x \right)} \sin^{2}{\left(y \right)} \cos{\left(y \right)} - 12 \sin^{2}{\left(x \right)} \sin{\left(y \right)} \cos{\left(x \right)} \cos{\left(y \right)} + 6 \sin^{2}{\left(x \right)} \cos^{2}{\left(x \right)} \cos{\left(y \right)} - 3 \sin^{2}{\left(x \right)} \cos^{3}{\left(y \right)}}{x^{5} \sin^{5}{\left(y \right)} - 5 x^{4} \sin{\left(x \right)} \sin^{4}{\left(y \right)} + 10 x^{3} \sin^{2}{\left(x \right)} \sin^{3}{\left(y \right)} - 10 x^{2} \sin^{3}{\left(x \right)} \sin^{2}{\left(y \right)} + 5 x \sin^{4}{\left(x \right)} \sin{\left(y \right)} - \sin^{5}{\left(x \right)}}\]</div>
+</section>
+<section id="id5">
+<h3>Maxima<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Input the expression using <code class="docutils literal notranslate"><span class="pre">y(x)</span></code> for <code class="docutils literal notranslate"><span class="pre">y</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">kill(all);</span>
+<span class="go">f:x*cos(y(x)) = -y(x)*sin(x) + 1/2</span>
+</pre></div>
+</div>
+<p>Now take the derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f, x)</span>
+</pre></div>
+</div>
+<p>You should get the following,</p>
+<div class="math notranslate nohighlight">
+\[\cos{\left( \operatorname{y}(x)\right) }-x \sin{\left( \operatorname{y}(x)\right) } \left( \frac{d}{d x} \operatorname{y}(x)\right) =-\sin{(x)} \left( \frac{d}{d x} \operatorname{y}(x)\right) -\operatorname{y}(x) \cos{(x)}\]</div>
+<p>Maxima took the derivative implicitly but did not solve for <span class="math notranslate nohighlight">\(y'\)</span>.  The following command will solve for <span class="math notranslate nohighlight">\(y'\)</span>, assuming that <code class="docutils literal notranslate"><span class="pre">%o3</span></code> holds the above derivative.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">solve(%o3,diff(y(x),x))</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\left[ \frac{d}{d x} \operatorname{y}(x)=\frac{\cos{\left( \operatorname{y}(x)\right) }+\operatorname{y}(x) \cos{(x)}}{x \sin{\left( \operatorname{y}(x)\right) }-\sin{(x)}}\right]\]</div>
+<p>which, of course, translates to</p>
+<div class="math notranslate nohighlight">
+\[\frac{y \cos{\left(x \right)} + \cos{\left(y \right)}}{x \sin{\left(y \right)} - \sin{\left(x \right)}}\]</div>
+<p>Now take the second derivative with,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">diff(f, x, 2)</span>
+</pre></div>
+</div>
+<p>ou should get,</p>
+<div class="math notranslate nohighlight">
+\[-x \sin{\left( \operatorname{y}(x)\right) } \left( \frac{{{d}^{2}}}{d {{x}^{2}}} \operatorname{y}(x)\right) -x \cos{\left( \operatorname{y}(x)\right) } {{\left( \frac{d}{d x} \operatorname{y}(x)\right) }^{2}}-2 \sin{\left( \operatorname{y}(x)\right) } \left( \frac{d}{d x} \operatorname{y}(x)\right) = -\sin{(x)} \left( \frac{{{d}^{2}}}{d {{x}^{2}}} \operatorname{y}(x)\right) -2 \cos{(x)} \left( \frac{d}{d x} \operatorname{y}(x)\right) +\operatorname{y}(x) \sin{(x)}\]</div>
+<p>solve it for the second derivative, assuming the above expression is in <code class="docutils literal notranslate"><span class="pre">%o4</span></code>,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">s:solve(%o4,diff(y(x),x,2))</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{[}\frac{{{d}^{2}}}{d {{x}^{2}}} \operatorname{y}(x)=-\operatorname{(}x \cos{\left( \operatorname{y}(x)\right) } {{\left( \frac{d}{d x} \operatorname{y}(x)\right) }^{2}}+\left( 2 \sin{\left( \operatorname{y}(x)\right) }-2 \cos{(x)}\right) \, \left( \frac{d}{d x} \operatorname{y}(x)\right) +\operatorname{y}(x) \sin{(x)}\operatorname{)}/\left( x \sin{\left( \operatorname{y}(x)\right) }-\sin{(x)}\right) \operatorname{]}\mbox{}\]</div>
+<p>Note we stored this in the variable <em>s</em>.  Now substitute in the first derivative,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">subst((cos(y(x))+y(x)*cos(x))/(x*sin(y(x))-sin(x)), &#39;diff(y(x),x,1), s);</span>
+</pre></div>
+</div>
+<p>The result should be,</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{[}\frac{{{d}^{2}}}{d {{x}^{2}}} \operatorname{y}(x)=-\operatorname{(}\frac{\left( \cos{\left( \operatorname{y}(x)\right) }+\operatorname{y}(x) \cos{(x)}\right) \, \left( 2 \sin{\left( \operatorname{y}(x)\right) }-2 \cos{(x)}\right) }{x \sin{\left( \operatorname{y}(x)\right) }-\sin{(x)}}+ \frac{x \cos{\left( \operatorname{y}(x)\right) } {{\left( \cos{\left( \operatorname{y}(x)\right) }+\operatorname{y}(x) \cos{(x)}\right) }^{2}}}{{{\left( x \sin{\left( \operatorname{y}(x)\right) }-\sin{(x)}\right) }^{2}}}+\operatorname{y}(x) \sin{(x)}\operatorname{)}/\left( x \sin{\left( \operatorname{y}(x)\right) }-\sin{(x)}\right) \operatorname{]}\mbox{}\]</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="derivativehigher.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Higher-Order Derivatives</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="logdiff.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Logarithmic Differentiation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-definitions">Discussion &amp; Definitions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-x-2-y-2-2">Example: <span class="math notranslate nohighlight">\(x^2 + y^2 = 2\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geogebra">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clae">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maxima">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-x-cos-left-y-right-y-sin-left-x-right-frac-1-2">Example: <span class="math notranslate nohighlight">\(x \cos{\left(y \right)} = -y \sin{\left(x \right)} + \frac{1}{2}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">GeoGebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Maxima</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-higher-order-implicit-derivatives">Example: Higher-Order Implicit Derivatives</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">CLAE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Maxima</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Don Spickler.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Friday, July 10, 2026  -  03:41 PM.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    <br/>
+  </p>
+</div>
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

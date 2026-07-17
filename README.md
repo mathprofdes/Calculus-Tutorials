@@ -22,7 +22,7 @@ If you wish to edit the tutorials they were developed in Sphinx documentation pa
 
 **Versions**
 
-Versioning for this program is done by the time-stamp at the bottom of each page of the tutorial web site.
+Versioning for this document is done by the time-stamp at the bottom of each page of the tutorial web site.
 
 The current version is: Sunday, July 12, 2026 - 06:22 PM. 
 

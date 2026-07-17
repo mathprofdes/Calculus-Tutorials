@@ -17,7 +17,7 @@ This tutorial set was created using the Sphinx documentation package built with 
 
 **To Edit the Tutorials**
 
-If you wish to edit the tutorials they were developed in Sphinx documentation package built with the PyData Sphinx Theme.  So you will need to have Python3, Sphinx, the PyData Sphinx Theme, and the copybutton installed on your system.  The source code ia all in the ``CalculusTutorials_src`` directory.
+If you wish to edit the tutorials they were developed in Sphinx documentation package built with the PyData Sphinx Theme.  So you will need to have Python3, Sphinx, the PyData Sphinx Theme, and the copybutton installed on your system.  The source code is all in the ``CalculusTutorials_src`` directory.
 
 
 **Versions**

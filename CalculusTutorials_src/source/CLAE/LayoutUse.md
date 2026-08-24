@@ -23,11 +23,17 @@ The layout of the program is labeled below.
 - 4: The 2-D graphics manager object list.
 - 5: The 2-D graphics manager slider list.
 - 6: Main menu and toolbar, options are almost entirely for calculations and manipulations of data in the Computer Algebra System.
-- 7: Menu and toolbar for the 2-D graph area.
+- 7: Toolbar for the 2-D graph area. Note that the first toolbar button contains the menu for the 2-D graph area.
+
+.. figure:: ../Images/ProgramLayout007.png
+    :alt: Menu System for the 2-D Graphics View
+
+    Menu System for the 2-D Graphics View
 
 .. note::
 
-   - The 2-D Graphs is in a tab along with 3-D Graphs, Spreadsheet, Text Editor, and LaTeX Table Editor.  Each tab opens up that particular tool.  Each of these has their own menu and toolbar separate from the main menu and toolbar and is dedicated to options for that tool.
+   - The 2-D Graphs is in a tab along with 3-D Graphs, Spreadsheet, Text Editor, and LaTeX Table Editor.  Each tab opens up that particular tool.  Each of these has their own toolbar separate from the main menu and toolbar and is dedicated to options for that tool.  
+   - The first toolbar button for each tool contains the menu system for that tool.
    - The divider between the Computer Algebra System and the tabbed tool set is movable. These can be moved to any position in the application, even to the far right and far left.  So, for example, if you wish to use only the Computer Algebra System and do not want to view the other tools you can move the divider to the far right of the screen.
    - The divider between the graph area and graphics manager (areas 3 and 4, 5) is also movable.
    - The divider between the graphics manager object list and the graphics manager slider list (areas 4 and 5) is also movable.
@@ -40,7 +46,7 @@ The layout of the program is labeled below.
 - 8: The 3-D graph area.
 - 9: The 3-D graphics manager object list.
 - 10: The 3-D graphics manager slider list.
-- 11: Menu and toolbar for the 3-D graph area.
+- 11: Toolbar for the 3-D graph area. Note that the first toolbar button contains the menu for the 3-D graph area.
 
 .. note::
 
@@ -53,7 +59,7 @@ The layout of the program is labeled below.
     Spreadsheet View
 
 - 12: Spreadsheet grid area.
-- 13: Menu, toolbar, and cell information area for the spreadsheet.
+- 13: Toolbar, and cell information area for the spreadsheet. Note that the first toolbar button contains the menu for the spreadsheet.
 
 .. figure:: ../Images/ProgramLayout005.png
     :alt: Text Editor View
@@ -61,7 +67,7 @@ The layout of the program is labeled below.
     Text Editor View
 
 - 14: Text editing area.
-- 15: Menu and toolbar for the text editor.
+- 15: Toolbar for the text editor. Note that the first toolbar button contains the menu for the editor.
 
 .. figure:: ../Images/ProgramLayout006.png
     :alt: LaTex Table Editor View
@@ -69,7 +75,7 @@ The layout of the program is labeled below.
     LaTex Table Editor View
 
 - 16: Table editing area.
-- 17: Menu, toolbar, and table size selector for the table editor.
+- 17: Toolbar, and table size selector for the table editor. Note that the first toolbar button contains the menu for the table editor.
 
 
 :index:`General Use`
@@ -109,7 +115,7 @@ Example: Exploring some Trigonometry
 
 .. note::
 
-   The currently selected expression is highlighted in light blue.  So any menu option that is selected will be applied to to the selected expression.
+   The currently selected expression is highlighted in light blue.  So any menu option that is selected will be applied to the selected expression.
 
 - Now lets input the expression ``sin(x)^2``, but we will not type the full expression into the input bar.  Since ``sin(x)`` is already in the workspace as ``R1`` all we need to do is type in ``R1^2`` into the input bar.  As always, inputs are case sensitive, so make sure this is ``R1^2`` and not ``r1^2``
 

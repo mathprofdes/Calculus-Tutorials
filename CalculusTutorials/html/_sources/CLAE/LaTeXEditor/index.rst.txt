@@ -10,9 +10,9 @@ The LaTeX export is done through the system clipboard. The user should populate 
 
 The tool currently supports longtable, tabular, tabbing, array, matrix, pmatrix, bmatrix, vmatrix, and Vmatrix environments. When copied, the clipboard text will have a commented line of any needed packages to be included in the preamble of the document. Each of the supported environments has a set of options for that environment, which includes alignment options, border and division options, header row and column creation, automatic math mode inclusion, and matrix decorations.
 
-This program is designed to make the creation of LaTeX tables easier but is not designed to do everything for the user. For someone who is familiar with LaTeX typesetting and the basic code for tables, it will provide a nice layout that should be easy to edit and manipulate. In addition, there are options for exporting the grid contents to SageMath, Maxima, and GeoGebra code as well as [ ] and < > delimited strings that are commonly used in other packages.
+This tool is designed to make the creation of LaTeX tables easier but is not designed to do everything for the user. For someone who is familiar with LaTeX typesetting and the basic code for tables, it will provide a nice layout that should be easy to edit and manipulate. In addition, there are options for exporting the grid contents to SageMath, Maxima, and GeoGebra code as well as [ ] and < > delimited strings that are commonly used in other packages.
 
-The tool has a simple layout, menu and toolbar at the top, below that selectors for the number of rows and columns of the table, the main area is a grid of cells much like a standard spreadsheet but without any calculation abilities.
+The tool has a simple layout, toolbar at the top, menu is contained in the first toolbar button, below that selectors for the number of rows and columns of the table, the main area is a grid of cells much like a standard spreadsheet but without any calculation abilities.
 
 .. figure:: Images/LaTeXTableCreatorPython.png
     :alt: LaTeX Table Creator Layout

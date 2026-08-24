@@ -6,7 +6,7 @@ Introduction
 
 The Spreadsheet tool is not a standard spreadsheet, it is a grid of CAS type expressions, that is, SymPy expressions with the added syntax of CAS entry designations and spreadsheet cell references.  Since each cell is a CAS expression updating the cell is the same as parsing the expression and can be time consuming if there are a lot of dependencies between the cells.  For this reason we have limited the size of the grid to 50 rows and 26 columns, frankly if you need more than that you are probably using the wrong application.
 
-This tool is useful in the construction of special matrices you may see near the end of a Linear Algebra class or if you are working with experimental data and need to do some manipulations before putting it into a matrix in the CAS.  The interface looks like a standard spreadsheet with a grid of cells.  Menu and toolbar are at the top for a few options for data manipulation.
+This tool is useful in the construction of special matrices you may see near the end of a Linear Algebra class or if you are working with experimental data and need to do some manipulations before putting it into a matrix in the CAS.  The interface looks like a standard spreadsheet with a grid of cells.  The toolbar is at the top for a few options for data manipulation, the menu for the spreadsheet interface is contained in the first toolbar button.
 
 .. figure:: Images/SSView001.png
     :alt: Spreadsheet Layout

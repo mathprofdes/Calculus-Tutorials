@@ -8,7 +8,7 @@ The Text Editor is a simple text and numeric manipulation tool that allows the u
 
 There are some standard character manipulations, line splitting and joining, whitespace and special character removals, character encoding and decoding common in classical cryptography, numeric base conversions, random number and bit sequence generation.
 
-To apply any of the conversions first select the text you wish to operate on, then select the conversion you want to do on the text.
+To apply any of the conversions first select the text you wish to operate on, then select the conversion you want to do on the text.  The conversion menu is contained in the first toolbar button.
 
 .. figure:: Images/TextEditor001.png
     :alt: Text Editor Layout

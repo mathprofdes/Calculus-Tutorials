@@ -24,6 +24,6 @@ If you wish to edit the tutorials they were developed in Sphinx documentation pa
 
 Versioning for this document is done by the time-stamp at the bottom of each page of the tutorial web site.
 
-The current version is: Sunday, July 12, 2026 - 06:22 PM. 
+The current version is: Saturday, August 15, 2026 - 01:14 PM. 
 
  
